@@ -1,0 +1,303 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sebastián Azócar",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "Curso1.html",
+    "href": "Curso1.html",
+    "title": "Data Science for Math Engineers",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "programa.html",
+    "href": "programa.html",
+    "title": "Programa",
+    "section": "",
+    "text": "Objetivos Generales:\n\nDesarrollar habilidades avanzadas en ciencia de datos aplicadas en Python.\nFamiliarizar a los estudiantes con técnicas avanzadas de aprendizaje automático.\nCapacitar a los estudiantes en el uso de herramientas avanzadas para el análisis de datos en tiempo real.\nPromover la capacidad de los estudiantes para aplicar técnicas de análisis de datos en problemas del mundo real.\n\n\n\nMódulo 1: Sistemas de Recomendación\n\nIntroducción a los sistemas de recomendación.\nFamiliarización con las técnicas de filtrado colaborativo y basado en contenido.\nImplementación de sistemas de recomendación utilizando Python y la biblioteca de ciencia de datos de Pandas.\nEvaluación del rendimiento de los sistemas de recomendación.\n\n\n\nMódulo 2: Series de Tiempo con Prophet\n\nIntroducción a las series de tiempo y sus aplicaciones en la ciencia de datos.\nFamiliarización con la biblioteca Prophet de Facebook para el análisis de series de tiempo.\nImplementación de técnicas avanzadas de análisis de series de tiempo, como la descomposición y la modelización de tendencias y estacionalidad.\nEvaluación del rendimiento del modelo.\n\n\n\nMódulo 3: Teoría de Colas aplicado en Python\n\nIntroducción a la teoría de colas y sus aplicaciones en la ciencia de datos.\nFamiliarización con las técnicas avanzadas de análisis de colas, como la ley de Little y la teoría de colas de Jackson.\nImplementación de modelos de teoría de colas utilizando Python y la biblioteca de ciencia de datos de NumPy.\nEvaluación del rendimiento del modelo.\n\n\n\nMetodología y estructura del curso:\n\nEl curso tendrá una duración de un semestre.\nCada semana, se realizará un quiz corto para evaluar el progreso de los estudiantes.\nLos estudiantes trabajarán en un proyecto de ciencia de datos a lo largo del semestre.\nLa evaluación será con una proporción del 50% promedio de quiz y un 50% proyecto."
+  },
+  {
+    "objectID": "introduccion.html",
+    "href": "introduccion.html",
+    "title": "Introducción",
+    "section": "",
+    "text": "Una serie de tiempo es una secuencia de observaciones tomadas secuencialmente en el tiempo. Es una herramienta esencial en el análisis de datos temporales y se utiliza en muchos campos, como la economía, las ciencias sociales, la física, y la ingeniería.\n\n\nFormalmente, una serie de tiempo puede ser vista como un conjunto de puntos de datos indexados (o listados o graficados) en el orden del tiempo. Generalmente, una serie de tiempo se representa como:\nX = {X1, X2,..., Xt,..., Xn}\ndonde Xt representa la observación en el tiempo t.\n\n\n\nLas series de tiempo se utilizan en una amplia variedad de aplicaciones, incluyendo:\n\nEconomía: para el análisis de indicadores económicos, como el producto interno bruto, la inflación, las tasas de desempleo, etc.\nFinanzas: para el seguimiento y la predicción de los precios de las acciones, las tasas de interés, y otros indicadores financieros.\nMeteorología: para predecir el clima y los patrones climáticos.\nCiencias de la Salud: para rastrear la propagación de enfermedades o la eficacia de un tratamiento a lo largo del tiempo.\n\n\n\n\nLas series de tiempo pueden ser clasificadas de acuerdo a su estructura en:\n\nSeries de Tiempo Estacionarias: Estas series tienen propiedades que no dependen del tiempo. En otras palabras, poseen una media y una varianza constantes a lo largo del tiempo.\nSeries de Tiempo No Estacionarias: Estas series muestran tendencias y/o patrones estacionales. No tienen una media y/o varianza constantes a lo largo del tiempo.\nSeries de Tiempo Estacionales: Estas son un tipo especial de series no estacionarias que exhiben una tendencia estacional, es decir, un patrón que se repite en intervalos de tiempo específicos."
+  },
+  {
+    "objectID": "introduccion.html#definición-formal",
+    "href": "introduccion.html#definición-formal",
+    "title": "Introducción",
+    "section": "",
+    "text": "Formalmente, una serie de tiempo puede ser vista como un conjunto de puntos de datos indexados (o listados o graficados) en el orden del tiempo. Generalmente, una serie de tiempo se representa como:\nX = {X1, X2,..., Xt,..., Xn}\ndonde Xt representa la observación en el tiempo t."
+  },
+  {
+    "objectID": "introduccion.html#aplicaciones-de-las-series-de-tiempo",
+    "href": "introduccion.html#aplicaciones-de-las-series-de-tiempo",
+    "title": "Introducción",
+    "section": "",
+    "text": "Las series de tiempo se utilizan en una amplia variedad de aplicaciones, incluyendo:\n\nEconomía: para el análisis de indicadores económicos, como el producto interno bruto, la inflación, las tasas de desempleo, etc.\nFinanzas: para el seguimiento y la predicción de los precios de las acciones, las tasas de interés, y otros indicadores financieros.\nMeteorología: para predecir el clima y los patrones climáticos.\nCiencias de la Salud: para rastrear la propagación de enfermedades o la eficacia de un tratamiento a lo largo del tiempo."
+  },
+  {
+    "objectID": "introduccion.html#clasificación-de-las-series-de-tiempo",
+    "href": "introduccion.html#clasificación-de-las-series-de-tiempo",
+    "title": "Introducción",
+    "section": "",
+    "text": "Las series de tiempo pueden ser clasificadas de acuerdo a su estructura en:\n\nSeries de Tiempo Estacionarias: Estas series tienen propiedades que no dependen del tiempo. En otras palabras, poseen una media y una varianza constantes a lo largo del tiempo.\nSeries de Tiempo No Estacionarias: Estas series muestran tendencias y/o patrones estacionales. No tienen una media y/o varianza constantes a lo largo del tiempo.\nSeries de Tiempo Estacionales: Estas son un tipo especial de series no estacionarias que exhiben una tendencia estacional, es decir, un patrón que se repite en intervalos de tiempo específicos."
+  },
+  {
+    "objectID": "estacionaria.html",
+    "href": "estacionaria.html",
+    "title": "Estacionariedad",
+    "section": "",
+    "text": "Una serie de tiempo es considerada estacionaria si cumple con las siguientes propiedades estadísticas a lo largo del tiempo:\n\nTiene una media constante.\nTiene una varianza constante.\nLa covarianza entre los dos periodos (por ejemplo, t y t+m) depende solo de la diferencia m y no del tiempo t.\n\nFormalmente, una serie de tiempo {Xt} se considera estrictamente estacionaria si la distribución conjunta de (Xt1, Xt2, …, Xtk) es la misma que la de (Xt1+h, Xt2+h, …, Xtk+h) para cualquier elección de los tiempos t1, t2, …, tk y para cada desplazamiento h.\n\n\nExisten varias técnicas para determinar si una serie de tiempo es estacionaria. Algunas de las más populares incluyen:\n\nPrueba de Dickey-Fuller aumentada (ADF): Esta prueba hipotetiza que una serie de tiempo es no estacionaria (tiene alguna forma de raíz unitaria). Un resultado de prueba que rechaza esta hipótesis indica que la serie es estacionaria.\nPrueba de KPSS (Kwiatkowski-Phillips-Schmidt-Shin): A diferencia de la prueba ADF, la prueba KPSS hipotetiza que una serie de tiempo es estacionaria. Un resultado de prueba que rechaza esta hipótesis indica que la serie no es estacionaria."
+  },
+  {
+    "objectID": "estacionaria.html#pruebas-de-estacionariedad",
+    "href": "estacionaria.html#pruebas-de-estacionariedad",
+    "title": "Estacionariedad",
+    "section": "",
+    "text": "Existen varias técnicas para determinar si una serie de tiempo es estacionaria. Algunas de las más populares incluyen:\n\nPrueba de Dickey-Fuller aumentada (ADF): Esta prueba hipotetiza que una serie de tiempo es no estacionaria (tiene alguna forma de raíz unitaria). Un resultado de prueba que rechaza esta hipótesis indica que la serie es estacionaria.\nPrueba de KPSS (Kwiatkowski-Phillips-Schmidt-Shin): A diferencia de la prueba ADF, la prueba KPSS hipotetiza que una serie de tiempo es estacionaria. Un resultado de prueba que rechaza esta hipótesis indica que la serie no es estacionaria."
+  },
+  {
+    "objectID": "estacionaria.html#ejemplos-de-series-estacionarias-y-no-estacionarias",
+    "href": "estacionaria.html#ejemplos-de-series-estacionarias-y-no-estacionarias",
+    "title": "Estacionariedad",
+    "section": "Ejemplos de Series Estacionarias y No Estacionarias",
+    "text": "Ejemplos de Series Estacionarias y No Estacionarias\n\nSerie Estacionaria: Las variaciones diarias de la temperatura (alrededor de la media) podrían ser consideradas como una serie estacionaria, ya que podríamos esperar que la variación media en la temperatura no cambie mucho de un día a otro.\nSerie No Estacionaria: El precio de una acción en el mercado es un ejemplo de una serie no estacionaria, ya que tiende a seguir una tendencia ascendente o descendente y no oscila alrededor de una constante.\n\nPara implementar pruebas de estacionariedad en Python, puedes usar la biblioteca statsmodels."
+  },
+  {
+    "objectID": "estacionaria.html#ejercicio-jupyter-notebook",
+    "href": "estacionaria.html#ejercicio-jupyter-notebook",
+    "title": "Estacionariedad",
+    "section": "Ejercicio: Jupyter Notebook",
+    "text": "Ejercicio: Jupyter Notebook\nAhora debes poner manos a la obra y completar el siguiente notebook: Notebook 1 de Series de Tiempo"
+  },
+  {
+    "objectID": "prophet.html",
+    "href": "prophet.html",
+    "title": "Prophet",
+    "section": "",
+    "text": "Prophet es una biblioteca de Python desarrollada por Facebook que se utiliza para la predicción de series temporales. Prophet es especialmente útil para los casos de uso que tienen patrones estacionales fuertes y varias temporadas de datos históricos. Prophet también es robusto ante los datos faltantes y los cambios en la tendencia, y normalmente maneja bien los valores atípicos.\nLa biblioteca Prophet intenta capturar la tendencia y la estacionalidad al ajustar un modelo aditivo donde las observaciones no negativas se describen como la suma de los componentes. El objetivo de Prophet es hacer que las predicciones de series temporales sean escalables y automatizadas.\nA continuación, enumeraremos y describiremos brevemente algunas de las principales funciones que ofrece la biblioteca Prophet.\n\n\n\nProphet(): Esta es la clase principal de la biblioteca Prophet. Se utiliza para crear un objeto de Prophet que luego se puede ajustar a los datos de la serie temporal y se utiliza para hacer predicciones.\nfit(): Este método se utiliza para ajustar el modelo Prophet a los datos de la serie temporal. Se debe llamar antes de hacer predicciones.\nmake_future_dataframe(): Este método se utiliza para crear un DataFrame de Pandas de fechas futuras para las cuales hacer predicciones.\npredict(): Este método se utiliza para hacer predicciones. Se puede llamar después de ajustar el modelo Prophet a los datos de la serie temporal.\nplot() y plot_components(): Estos métodos se utilizan para visualizar las predicciones y los componentes del modelo Prophet.\nadd_seasonality(): Este método se utiliza para agregar estacionalidad personalizada al modelo Prophet.\nadd_country_holidays(): Este método se utiliza para agregar las vacaciones de un país específico al modelo Prophet.\n\n\n\n\nCrea una jupyter notebook con una data sintetica u otra a elección que simule una serie de tiempo. Usa cada función expuesta anteriormente y comenta los resultados"
+  },
+  {
+    "objectID": "prophet.html#principales-funciones-de-prophet",
+    "href": "prophet.html#principales-funciones-de-prophet",
+    "title": "Prophet",
+    "section": "",
+    "text": "Prophet(): Esta es la clase principal de la biblioteca Prophet. Se utiliza para crear un objeto de Prophet que luego se puede ajustar a los datos de la serie temporal y se utiliza para hacer predicciones.\nfit(): Este método se utiliza para ajustar el modelo Prophet a los datos de la serie temporal. Se debe llamar antes de hacer predicciones.\nmake_future_dataframe(): Este método se utiliza para crear un DataFrame de Pandas de fechas futuras para las cuales hacer predicciones.\npredict(): Este método se utiliza para hacer predicciones. Se puede llamar después de ajustar el modelo Prophet a los datos de la serie temporal.\nplot() y plot_components(): Estos métodos se utilizan para visualizar las predicciones y los componentes del modelo Prophet.\nadd_seasonality(): Este método se utiliza para agregar estacionalidad personalizada al modelo Prophet.\nadd_country_holidays(): Este método se utiliza para agregar las vacaciones de un país específico al modelo Prophet."
+  },
+  {
+    "objectID": "prophet.html#tarea-2",
+    "href": "prophet.html#tarea-2",
+    "title": "Prophet",
+    "section": "",
+    "text": "Crea una jupyter notebook con una data sintetica u otra a elección que simule una serie de tiempo. Usa cada función expuesta anteriormente y comenta los resultados"
+  },
+  {
+    "objectID": "estacionaria.html#tarea-1-jupyter-notebook",
+    "href": "estacionaria.html#tarea-1-jupyter-notebook",
+    "title": "Estacionariedad",
+    "section": "Tarea 1: Jupyter Notebook",
+    "text": "Tarea 1: Jupyter Notebook\nAhora debes poner manos a la obra y completar el siguiente notebook: Notebook 1 de Series de Tiempo"
+  },
+  {
+    "objectID": "academica.html",
+    "href": "academica.html",
+    "title": "Experiencia Académica",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "presentacion.html",
+    "href": "presentacion.html",
+    "title": "Presentando un proyecto",
+    "section": "",
+    "text": "Objetivo del Proyecto: Comienza con una visión general del proyecto y sus objetivos. Explica por qué se realizó el proyecto y cuál es su relevancia para la empresa.\n\n\n\nProblema a Resolver: Describe el problema que tu proyecto de ciencia de datos está tratando de resolver. Haz esto de una manera que sea comprensible para personas que no son expertas en el tema, utilizando ejemplos y analogías simples cuando sea posible.\n\n\n\nRecopilación de Datos: Explica cómo y de dónde obtuviste los datos para el proyecto.\n\n\nDescribe cómo se prepararon los datos para el análisis. Puedes mencionar técnicas de limpieza de datos, pero evita entrar en demasiados detalles técnicos.\n\n\n\nDescribe las técnicas y algoritmos que utilizaste para desarrollar el modelo de ciencia de datos. Explica por qué elegiste esos enfoques y cómo se relacionan con el problema que estás tratando de resolver. Intenta mantener la explicación accesible y evita el uso de jerga técnica tanto como sea posible.\n\n\n\n\nInterpretación de Resultados: Presenta los resultados de tu análisis de una manera fácil de entender. Utiliza gráficos y tablas para visualizar los datos y destacar los hallazgos clave. Evita presentar demasiados números crudos; en su lugar, trata de resumir y explicar los resultados de una manera que sea fácil de entender.\n\n\nExplica lo que los resultados significan para el negocio. ¿Qué acciones debería tomar la empresa basándose en estos resultados? ¿Cómo ayudará esto a la empresa a alcanzar sus objetivos?\n\n\n\n\n\n\nResume los hallazgos clave de tu proyecto y cómo estos hallazgos pueden beneficiar a la empresa.\n\n\n\nProporciona recomendaciones para los próximos pasos. ¿Hay otras preguntas que podrían explorarse en el futuro? ¿Cómo puede la empresa implementar los resultados de tu proyecto?\n\n\n\n\nDeja tiempo para preguntas al final de la presentación. Esto da a la audiencia la oportunidad de aclarar cualquier aspecto que no entienda y permite que se realicen preguntas más profundas que pueden no ser adecuadas durante la presentación principal.\nRecuerda, la clave es mantener el lenguaje simple y accesible, y tratar de relacionar todo con los objetivos y necesidades de la empresa. Tu meta es hacer que la audiencia comprenda el valor de tu trabajo, no impresionarlos con jerga técnica."
+  },
+  {
+    "objectID": "presentacion.html#introducción",
+    "href": "presentacion.html#introducción",
+    "title": "Presentando un proyecto",
+    "section": "",
+    "text": "Objetivo del Proyecto: Comienza con una visión general del proyecto y sus objetivos. Explica por qué se realizó el proyecto y cuál es su relevancia para la empresa."
+  },
+  {
+    "objectID": "presentacion.html#descripción-del-problema",
+    "href": "presentacion.html#descripción-del-problema",
+    "title": "Presentando un proyecto",
+    "section": "",
+    "text": "Problema a Resolver: Describe el problema que tu proyecto de ciencia de datos está tratando de resolver. Haz esto de una manera que sea comprensible para personas que no son expertas en el tema, utilizando ejemplos y analogías simples cuando sea posible."
+  },
+  {
+    "objectID": "presentacion.html#metodología",
+    "href": "presentacion.html#metodología",
+    "title": "Presentando un proyecto",
+    "section": "",
+    "text": "Recopilación de Datos: Explica cómo y de dónde obtuviste los datos para el proyecto.\n\n\nDescribe cómo se prepararon los datos para el análisis. Puedes mencionar técnicas de limpieza de datos, pero evita entrar en demasiados detalles técnicos.\n\n\n\nDescribe las técnicas y algoritmos que utilizaste para desarrollar el modelo de ciencia de datos. Explica por qué elegiste esos enfoques y cómo se relacionan con el problema que estás tratando de resolver. Intenta mantener la explicación accesible y evita el uso de jerga técnica tanto como sea posible."
+  },
+  {
+    "objectID": "presentacion.html#resultados",
+    "href": "presentacion.html#resultados",
+    "title": "Presentando un proyecto",
+    "section": "",
+    "text": "Interpretación de Resultados: Presenta los resultados de tu análisis de una manera fácil de entender. Utiliza gráficos y tablas para visualizar los datos y destacar los hallazgos clave. Evita presentar demasiados números crudos; en su lugar, trata de resumir y explicar los resultados de una manera que sea fácil de entender.\n\n\nExplica lo que los resultados significan para el negocio. ¿Qué acciones debería tomar la empresa basándose en estos resultados? ¿Cómo ayudará esto a la empresa a alcanzar sus objetivos?"
+  },
+  {
+    "objectID": "presentacion.html#conclusión",
+    "href": "presentacion.html#conclusión",
+    "title": "Presentando un proyecto",
+    "section": "",
+    "text": "Resume los hallazgos clave de tu proyecto y cómo estos hallazgos pueden beneficiar a la empresa.\n\n\n\nProporciona recomendaciones para los próximos pasos. ¿Hay otras preguntas que podrían explorarse en el futuro? ¿Cómo puede la empresa implementar los resultados de tu proyecto?"
+  },
+  {
+    "objectID": "presentacion.html#pregunta-y-respuestas",
+    "href": "presentacion.html#pregunta-y-respuestas",
+    "title": "Presentando un proyecto",
+    "section": "",
+    "text": "Deja tiempo para preguntas al final de la presentación. Esto da a la audiencia la oportunidad de aclarar cualquier aspecto que no entienda y permite que se realicen preguntas más profundas que pueden no ser adecuadas durante la presentación principal.\nRecuerda, la clave es mantener el lenguaje simple y accesible, y tratar de relacionar todo con los objetivos y necesidades de la empresa. Tu meta es hacer que la audiencia comprenda el valor de tu trabajo, no impresionarlos con jerga técnica."
+  },
+  {
+    "objectID": "data_science_ingemat/programa.html",
+    "href": "data_science_ingemat/programa.html",
+    "title": "Programa",
+    "section": "",
+    "text": "Objetivos Generales:\n\nDesarrollar habilidades avanzadas en ciencia de datos aplicadas en Python.\nFamiliarizar a los estudiantes con técnicas avanzadas de aprendizaje automático.\nCapacitar a los estudiantes en el uso de herramientas avanzadas para el análisis de datos en tiempo real.\nPromover la capacidad de los estudiantes para aplicar técnicas de análisis de datos en problemas del mundo real.\n\n\n\nMódulo 1: Sistemas de Recomendación\n\nIntroducción a los sistemas de recomendación.\nFamiliarización con las técnicas de filtrado colaborativo y basado en contenido.\nImplementación de sistemas de recomendación utilizando Python y la biblioteca de ciencia de datos de Pandas.\nEvaluación del rendimiento de los sistemas de recomendación.\n\n\n\nMódulo 2: Series de Tiempo con Prophet\n\nIntroducción a las series de tiempo y sus aplicaciones en la ciencia de datos.\nFamiliarización con la biblioteca Prophet de Facebook para el análisis de series de tiempo.\nImplementación de técnicas avanzadas de análisis de series de tiempo, como la descomposición y la modelización de tendencias y estacionalidad.\nEvaluación del rendimiento del modelo.\n\n\n\nMódulo 3: Teoría de Colas aplicado en Python\n\nIntroducción a la teoría de colas y sus aplicaciones en la ciencia de datos.\nFamiliarización con las técnicas avanzadas de análisis de colas, como la ley de Little y la teoría de colas de Jackson.\nImplementación de modelos de teoría de colas utilizando Python y la biblioteca de ciencia de datos de NumPy.\nEvaluación del rendimiento del modelo.\n\n\n\nMetodología y estructura del curso:\n\nEl curso tendrá una duración de un semestre.\nCada semana, se realizará un quiz corto para evaluar el progreso de los estudiantes.\nLos estudiantes trabajarán en un proyecto de ciencia de datos a lo largo del semestre.\nLa evaluación será con una proporción del 50% promedio de quiz y un 50% proyecto."
+  },
+  {
+    "objectID": "data_science_ingemat/presentacion.html",
+    "href": "data_science_ingemat/presentacion.html",
+    "title": "Presentando un proyecto",
+    "section": "",
+    "text": "Objetivo del Proyecto: Comienza con una visión general del proyecto y sus objetivos. Explica por qué se realizó el proyecto y cuál es su relevancia para la empresa.\n\n\n\nProblema a Resolver: Describe el problema que tu proyecto de ciencia de datos está tratando de resolver. Haz esto de una manera que sea comprensible para personas que no son expertas en el tema, utilizando ejemplos y analogías simples cuando sea posible.\n\n\n\nRecopilación de Datos: Explica cómo y de dónde obtuviste los datos para el proyecto.\n\n\nDescribe cómo se prepararon los datos para el análisis. Puedes mencionar técnicas de limpieza de datos, pero evita entrar en demasiados detalles técnicos.\n\n\n\nDescribe las técnicas y algoritmos que utilizaste para desarrollar el modelo de ciencia de datos. Explica por qué elegiste esos enfoques y cómo se relacionan con el problema que estás tratando de resolver. Intenta mantener la explicación accesible y evita el uso de jerga técnica tanto como sea posible.\n\n\n\n\nInterpretación de Resultados: Presenta los resultados de tu análisis de una manera fácil de entender. Utiliza gráficos y tablas para visualizar los datos y destacar los hallazgos clave. Evita presentar demasiados números crudos; en su lugar, trata de resumir y explicar los resultados de una manera que sea fácil de entender.\n\n\nExplica lo que los resultados significan para el negocio. ¿Qué acciones debería tomar la empresa basándose en estos resultados? ¿Cómo ayudará esto a la empresa a alcanzar sus objetivos?\n\n\n\n\n\n\nResume los hallazgos clave de tu proyecto y cómo estos hallazgos pueden beneficiar a la empresa.\n\n\n\nProporciona recomendaciones para los próximos pasos. ¿Hay otras preguntas que podrían explorarse en el futuro? ¿Cómo puede la empresa implementar los resultados de tu proyecto?\n\n\n\n\nDeja tiempo para preguntas al final de la presentación. Esto da a la audiencia la oportunidad de aclarar cualquier aspecto que no entienda y permite que se realicen preguntas más profundas que pueden no ser adecuadas durante la presentación principal.\nRecuerda, la clave es mantener el lenguaje simple y accesible, y tratar de relacionar todo con los objetivos y necesidades de la empresa. Tu meta es hacer que la audiencia comprenda el valor de tu trabajo, no impresionarlos con jerga técnica."
+  },
+  {
+    "objectID": "data_science_ingemat/presentacion.html#introducción",
+    "href": "data_science_ingemat/presentacion.html#introducción",
+    "title": "Presentando un proyecto",
+    "section": "",
+    "text": "Objetivo del Proyecto: Comienza con una visión general del proyecto y sus objetivos. Explica por qué se realizó el proyecto y cuál es su relevancia para la empresa."
+  },
+  {
+    "objectID": "data_science_ingemat/presentacion.html#descripción-del-problema",
+    "href": "data_science_ingemat/presentacion.html#descripción-del-problema",
+    "title": "Presentando un proyecto",
+    "section": "",
+    "text": "Problema a Resolver: Describe el problema que tu proyecto de ciencia de datos está tratando de resolver. Haz esto de una manera que sea comprensible para personas que no son expertas en el tema, utilizando ejemplos y analogías simples cuando sea posible."
+  },
+  {
+    "objectID": "data_science_ingemat/presentacion.html#metodología",
+    "href": "data_science_ingemat/presentacion.html#metodología",
+    "title": "Presentando un proyecto",
+    "section": "",
+    "text": "Recopilación de Datos: Explica cómo y de dónde obtuviste los datos para el proyecto.\n\n\nDescribe cómo se prepararon los datos para el análisis. Puedes mencionar técnicas de limpieza de datos, pero evita entrar en demasiados detalles técnicos.\n\n\n\nDescribe las técnicas y algoritmos que utilizaste para desarrollar el modelo de ciencia de datos. Explica por qué elegiste esos enfoques y cómo se relacionan con el problema que estás tratando de resolver. Intenta mantener la explicación accesible y evita el uso de jerga técnica tanto como sea posible."
+  },
+  {
+    "objectID": "data_science_ingemat/presentacion.html#resultados",
+    "href": "data_science_ingemat/presentacion.html#resultados",
+    "title": "Presentando un proyecto",
+    "section": "",
+    "text": "Interpretación de Resultados: Presenta los resultados de tu análisis de una manera fácil de entender. Utiliza gráficos y tablas para visualizar los datos y destacar los hallazgos clave. Evita presentar demasiados números crudos; en su lugar, trata de resumir y explicar los resultados de una manera que sea fácil de entender.\n\n\nExplica lo que los resultados significan para el negocio. ¿Qué acciones debería tomar la empresa basándose en estos resultados? ¿Cómo ayudará esto a la empresa a alcanzar sus objetivos?"
+  },
+  {
+    "objectID": "data_science_ingemat/presentacion.html#conclusión",
+    "href": "data_science_ingemat/presentacion.html#conclusión",
+    "title": "Presentando un proyecto",
+    "section": "",
+    "text": "Resume los hallazgos clave de tu proyecto y cómo estos hallazgos pueden beneficiar a la empresa.\n\n\n\nProporciona recomendaciones para los próximos pasos. ¿Hay otras preguntas que podrían explorarse en el futuro? ¿Cómo puede la empresa implementar los resultados de tu proyecto?"
+  },
+  {
+    "objectID": "data_science_ingemat/presentacion.html#pregunta-y-respuestas",
+    "href": "data_science_ingemat/presentacion.html#pregunta-y-respuestas",
+    "title": "Presentando un proyecto",
+    "section": "",
+    "text": "Deja tiempo para preguntas al final de la presentación. Esto da a la audiencia la oportunidad de aclarar cualquier aspecto que no entienda y permite que se realicen preguntas más profundas que pueden no ser adecuadas durante la presentación principal.\nRecuerda, la clave es mantener el lenguaje simple y accesible, y tratar de relacionar todo con los objetivos y necesidades de la empresa. Tu meta es hacer que la audiencia comprenda el valor de tu trabajo, no impresionarlos con jerga técnica."
+  },
+  {
+    "objectID": "data_science_ingemat/modulo2/introduccion.html",
+    "href": "data_science_ingemat/modulo2/introduccion.html",
+    "title": "Introducción",
+    "section": "",
+    "text": "Una serie de tiempo es una secuencia de observaciones tomadas secuencialmente en el tiempo. Es una herramienta esencial en el análisis de datos temporales y se utiliza en muchos campos, como la economía, las ciencias sociales, la física, y la ingeniería.\n\n\nFormalmente, una serie de tiempo puede ser vista como un conjunto de puntos de datos indexados (o listados o graficados) en el orden del tiempo. Generalmente, una serie de tiempo se representa como:\nX = {X1, X2,..., Xt,..., Xn}\ndonde Xt representa la observación en el tiempo t.\n\n\n\nLas series de tiempo se utilizan en una amplia variedad de aplicaciones, incluyendo:\n\nEconomía: para el análisis de indicadores económicos, como el producto interno bruto, la inflación, las tasas de desempleo, etc.\nFinanzas: para el seguimiento y la predicción de los precios de las acciones, las tasas de interés, y otros indicadores financieros.\nMeteorología: para predecir el clima y los patrones climáticos.\nCiencias de la Salud: para rastrear la propagación de enfermedades o la eficacia de un tratamiento a lo largo del tiempo.\n\n\n\n\nLas series de tiempo pueden ser clasificadas de acuerdo a su estructura en:\n\nSeries de Tiempo Estacionarias: Estas series tienen propiedades que no dependen del tiempo. En otras palabras, poseen una media y una varianza constantes a lo largo del tiempo.\nSeries de Tiempo No Estacionarias: Estas series muestran tendencias y/o patrones estacionales. No tienen una media y/o varianza constantes a lo largo del tiempo.\nSeries de Tiempo Estacionales: Estas son un tipo especial de series no estacionarias que exhiben una tendencia estacional, es decir, un patrón que se repite en intervalos de tiempo específicos."
+  },
+  {
+    "objectID": "data_science_ingemat/modulo2/introduccion.html#definición-formal",
+    "href": "data_science_ingemat/modulo2/introduccion.html#definición-formal",
+    "title": "Introducción",
+    "section": "",
+    "text": "Formalmente, una serie de tiempo puede ser vista como un conjunto de puntos de datos indexados (o listados o graficados) en el orden del tiempo. Generalmente, una serie de tiempo se representa como:\nX = {X1, X2,..., Xt,..., Xn}\ndonde Xt representa la observación en el tiempo t."
+  },
+  {
+    "objectID": "data_science_ingemat/modulo2/introduccion.html#aplicaciones-de-las-series-de-tiempo",
+    "href": "data_science_ingemat/modulo2/introduccion.html#aplicaciones-de-las-series-de-tiempo",
+    "title": "Introducción",
+    "section": "",
+    "text": "Las series de tiempo se utilizan en una amplia variedad de aplicaciones, incluyendo:\n\nEconomía: para el análisis de indicadores económicos, como el producto interno bruto, la inflación, las tasas de desempleo, etc.\nFinanzas: para el seguimiento y la predicción de los precios de las acciones, las tasas de interés, y otros indicadores financieros.\nMeteorología: para predecir el clima y los patrones climáticos.\nCiencias de la Salud: para rastrear la propagación de enfermedades o la eficacia de un tratamiento a lo largo del tiempo."
+  },
+  {
+    "objectID": "data_science_ingemat/modulo2/introduccion.html#clasificación-de-las-series-de-tiempo",
+    "href": "data_science_ingemat/modulo2/introduccion.html#clasificación-de-las-series-de-tiempo",
+    "title": "Introducción",
+    "section": "",
+    "text": "Las series de tiempo pueden ser clasificadas de acuerdo a su estructura en:\n\nSeries de Tiempo Estacionarias: Estas series tienen propiedades que no dependen del tiempo. En otras palabras, poseen una media y una varianza constantes a lo largo del tiempo.\nSeries de Tiempo No Estacionarias: Estas series muestran tendencias y/o patrones estacionales. No tienen una media y/o varianza constantes a lo largo del tiempo.\nSeries de Tiempo Estacionales: Estas son un tipo especial de series no estacionarias que exhiben una tendencia estacional, es decir, un patrón que se repite en intervalos de tiempo específicos."
+  },
+  {
+    "objectID": "data_science_ingemat/modulo2/estacionaria.html",
+    "href": "data_science_ingemat/modulo2/estacionaria.html",
+    "title": "Estacionariedad",
+    "section": "",
+    "text": "Una serie de tiempo es considerada estacionaria si cumple con las siguientes propiedades estadísticas a lo largo del tiempo:\n\nTiene una media constante.\nTiene una varianza constante.\nLa covarianza entre los dos periodos (por ejemplo, t y t+m) depende solo de la diferencia m y no del tiempo t.\n\nFormalmente, una serie de tiempo {Xt} se considera estrictamente estacionaria si la distribución conjunta de (Xt1, Xt2, …, Xtk) es la misma que la de (Xt1+h, Xt2+h, …, Xtk+h) para cualquier elección de los tiempos t1, t2, …, tk y para cada desplazamiento h.\n\n\nExisten varias técnicas para determinar si una serie de tiempo es estacionaria. Algunas de las más populares incluyen:\n\nPrueba de Dickey-Fuller aumentada (ADF): Esta prueba hipotetiza que una serie de tiempo es no estacionaria (tiene alguna forma de raíz unitaria). Un resultado de prueba que rechaza esta hipótesis indica que la serie es estacionaria.\nPrueba de KPSS (Kwiatkowski-Phillips-Schmidt-Shin): A diferencia de la prueba ADF, la prueba KPSS hipotetiza que una serie de tiempo es estacionaria. Un resultado de prueba que rechaza esta hipótesis indica que la serie no es estacionaria."
+  },
+  {
+    "objectID": "data_science_ingemat/modulo2/estacionaria.html#pruebas-de-estacionariedad",
+    "href": "data_science_ingemat/modulo2/estacionaria.html#pruebas-de-estacionariedad",
+    "title": "Estacionariedad",
+    "section": "",
+    "text": "Existen varias técnicas para determinar si una serie de tiempo es estacionaria. Algunas de las más populares incluyen:\n\nPrueba de Dickey-Fuller aumentada (ADF): Esta prueba hipotetiza que una serie de tiempo es no estacionaria (tiene alguna forma de raíz unitaria). Un resultado de prueba que rechaza esta hipótesis indica que la serie es estacionaria.\nPrueba de KPSS (Kwiatkowski-Phillips-Schmidt-Shin): A diferencia de la prueba ADF, la prueba KPSS hipotetiza que una serie de tiempo es estacionaria. Un resultado de prueba que rechaza esta hipótesis indica que la serie no es estacionaria."
+  },
+  {
+    "objectID": "data_science_ingemat/modulo2/estacionaria.html#ejemplos-de-series-estacionarias-y-no-estacionarias",
+    "href": "data_science_ingemat/modulo2/estacionaria.html#ejemplos-de-series-estacionarias-y-no-estacionarias",
+    "title": "Estacionariedad",
+    "section": "Ejemplos de Series Estacionarias y No Estacionarias",
+    "text": "Ejemplos de Series Estacionarias y No Estacionarias\n\nSerie Estacionaria: Las variaciones diarias de la temperatura (alrededor de la media) podrían ser consideradas como una serie estacionaria, ya que podríamos esperar que la variación media en la temperatura no cambie mucho de un día a otro.\nSerie No Estacionaria: El precio de una acción en el mercado es un ejemplo de una serie no estacionaria, ya que tiende a seguir una tendencia ascendente o descendente y no oscila alrededor de una constante.\n\nPara implementar pruebas de estacionariedad en Python, puedes usar la biblioteca statsmodels."
+  },
+  {
+    "objectID": "data_science_ingemat/modulo2/estacionaria.html#tarea-1-jupyter-notebook",
+    "href": "data_science_ingemat/modulo2/estacionaria.html#tarea-1-jupyter-notebook",
+    "title": "Estacionariedad",
+    "section": "Tarea 1: Jupyter Notebook",
+    "text": "Tarea 1: Jupyter Notebook\nAhora debes poner manos a la obra y completar el siguiente notebook: Notebook 1 de Series de Tiempo"
+  },
+  {
+    "objectID": "data_science_ingemat/modulo2/prophet.html",
+    "href": "data_science_ingemat/modulo2/prophet.html",
+    "title": "Prophet",
+    "section": "",
+    "text": "Prophet es una biblioteca de Python desarrollada por Facebook que se utiliza para la predicción de series temporales. Prophet es especialmente útil para los casos de uso que tienen patrones estacionales fuertes y varias temporadas de datos históricos. Prophet también es robusto ante los datos faltantes y los cambios en la tendencia, y normalmente maneja bien los valores atípicos.\nLa biblioteca Prophet intenta capturar la tendencia y la estacionalidad al ajustar un modelo aditivo donde las observaciones no negativas se describen como la suma de los componentes. El objetivo de Prophet es hacer que las predicciones de series temporales sean escalables y automatizadas.\nA continuación, enumeraremos y describiremos brevemente algunas de las principales funciones que ofrece la biblioteca Prophet.\n\n\n\nProphet(): Esta es la clase principal de la biblioteca Prophet. Se utiliza para crear un objeto de Prophet que luego se puede ajustar a los datos de la serie temporal y se utiliza para hacer predicciones.\nfit(): Este método se utiliza para ajustar el modelo Prophet a los datos de la serie temporal. Se debe llamar antes de hacer predicciones.\nmake_future_dataframe(): Este método se utiliza para crear un DataFrame de Pandas de fechas futuras para las cuales hacer predicciones.\npredict(): Este método se utiliza para hacer predicciones. Se puede llamar después de ajustar el modelo Prophet a los datos de la serie temporal.\nplot() y plot_components(): Estos métodos se utilizan para visualizar las predicciones y los componentes del modelo Prophet.\nadd_seasonality(): Este método se utiliza para agregar estacionalidad personalizada al modelo Prophet.\nadd_country_holidays(): Este método se utiliza para agregar las vacaciones de un país específico al modelo Prophet.\n\n\n\n\nCrea una jupyter notebook con una data sintetica u otra a elección que simule una serie de tiempo. Usa cada función expuesta anteriormente y comenta los resultados"
+  },
+  {
+    "objectID": "data_science_ingemat/modulo2/prophet.html#principales-funciones-de-prophet",
+    "href": "data_science_ingemat/modulo2/prophet.html#principales-funciones-de-prophet",
+    "title": "Prophet",
+    "section": "",
+    "text": "Prophet(): Esta es la clase principal de la biblioteca Prophet. Se utiliza para crear un objeto de Prophet que luego se puede ajustar a los datos de la serie temporal y se utiliza para hacer predicciones.\nfit(): Este método se utiliza para ajustar el modelo Prophet a los datos de la serie temporal. Se debe llamar antes de hacer predicciones.\nmake_future_dataframe(): Este método se utiliza para crear un DataFrame de Pandas de fechas futuras para las cuales hacer predicciones.\npredict(): Este método se utiliza para hacer predicciones. Se puede llamar después de ajustar el modelo Prophet a los datos de la serie temporal.\nplot() y plot_components(): Estos métodos se utilizan para visualizar las predicciones y los componentes del modelo Prophet.\nadd_seasonality(): Este método se utiliza para agregar estacionalidad personalizada al modelo Prophet.\nadd_country_holidays(): Este método se utiliza para agregar las vacaciones de un país específico al modelo Prophet."
+  },
+  {
+    "objectID": "data_science_ingemat/modulo2/prophet.html#tarea-2",
+    "href": "data_science_ingemat/modulo2/prophet.html#tarea-2",
+    "title": "Prophet",
+    "section": "",
+    "text": "Crea una jupyter notebook con una data sintetica u otra a elección que simule una serie de tiempo. Usa cada función expuesta anteriormente y comenta los resultados"
+  }
+]

@@ -1,0 +1,30 @@
+---
+title: "Prophet"
+---
+
+# Introducción a la librería Prophet
+
+Prophet es una biblioteca de Python desarrollada por Facebook que se utiliza para la predicción de series temporales. Prophet es especialmente útil para los casos de uso que tienen patrones estacionales fuertes y varias temporadas de datos históricos. Prophet también es robusto ante los datos faltantes y los cambios en la tendencia, y normalmente maneja bien los valores atípicos.
+
+La biblioteca Prophet intenta capturar la tendencia y la estacionalidad al ajustar un modelo aditivo donde las observaciones no negativas se describen como la suma de los componentes. El objetivo de Prophet es hacer que las predicciones de series temporales sean escalables y automatizadas.
+
+A continuación, enumeraremos y describiremos brevemente algunas de las principales funciones que ofrece la biblioteca Prophet.
+
+## Principales funciones de Prophet
+
+1. **Prophet()**: Esta es la clase principal de la biblioteca Prophet. Se utiliza para crear un objeto de Prophet que luego se puede ajustar a los datos de la serie temporal y se utiliza para hacer predicciones.
+
+2. **fit()**: Este método se utiliza para ajustar el modelo Prophet a los datos de la serie temporal. Se debe llamar antes de hacer predicciones.
+
+3. **make_future_dataframe()**: Este método se utiliza para crear un DataFrame de Pandas de fechas futuras para las cuales hacer predicciones.
+
+4. **predict()**: Este método se utiliza para hacer predicciones. Se puede llamar después de ajustar el modelo Prophet a los datos de la serie temporal.
+
+5. **plot() y plot_components()**: Estos métodos se utilizan para visualizar las predicciones y los componentes del modelo Prophet.
+
+6. **add_seasonality()**: Este método se utiliza para agregar estacionalidad personalizada al modelo Prophet.
+
+7. **add_country_holidays()**: Este método se utiliza para agregar las vacaciones de un país específico al modelo Prophet.
+
+## Tarea 2: 
+Crea una jupyter notebook con una data sintetica u otra a elección que simule una serie de tiempo. Usa cada función expuesta anteriormente y comenta los resultados

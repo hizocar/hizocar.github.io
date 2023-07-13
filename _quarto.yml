@@ -1,0 +1,44 @@
+project:
+  type: website
+  output-dir : docs
+
+website:
+  title: "Sebastián Azócar"
+  reader-mode: true
+  navbar:
+    tools:
+      - icon: github
+        href: https://github.com/hizocar
+    left:
+      - href: index.qmd
+        text: Home
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Personal"
+        contents:
+          - personal/perfil.qmd
+          - personal/academica.qmd
+          - personal/laboral.qmd
+      - section: "Data Science for Math Engineers (USACH)"
+        contents:
+          - data_science_ingemat/programa.qmd
+          - data_science_ingemat/presentacion.qmd
+          - section: "Series de Tiempo"
+            contents:
+              - data_science_ingemat/modulo2/introduccion.qmd
+              - data_science_ingemat/modulo2/estacionaria.qmd
+              - data_science_ingemat/modulo2/prophet.qmd
+format:
+  html:
+    theme: 
+          light: flatly
+          dark: darkly
+    css: styles.css
+    toc: true
+
+
+
+
+

@@ -1,0 +1,33 @@
+---
+title: "Programa"
+---
+
+# Objetivos Generales:
+- Desarrollar habilidades avanzadas en ciencia de datos aplicadas en Python.
+- Familiarizar a los estudiantes con técnicas avanzadas de aprendizaje automático.
+- Capacitar a los estudiantes en el uso de herramientas avanzadas para el análisis de datos en tiempo real.
+- Promover la capacidad de los estudiantes para aplicar técnicas de análisis de datos en problemas del mundo real.
+
+# Módulo 1: Sistemas de Recomendación
+- Introducción a los sistemas de recomendación.
+- Familiarización con las técnicas de filtrado colaborativo y basado en contenido.
+- Implementación de sistemas de recomendación utilizando Python y la biblioteca de ciencia de datos de Pandas.
+- Evaluación del rendimiento de los sistemas de recomendación.
+
+# Módulo 2: Series de Tiempo con Prophet
+- Introducción a las series de tiempo y sus aplicaciones en la ciencia de datos.
+- Familiarización con la biblioteca Prophet de Facebook para el análisis de series de tiempo.
+- Implementación de técnicas avanzadas de análisis de series de tiempo, como la descomposición y la modelización de tendencias y estacionalidad.
+- Evaluación del rendimiento del modelo.
+
+# Módulo 3: Teoría de Colas aplicado en Python
+- Introducción a la teoría de colas y sus aplicaciones en la ciencia de datos.
+- Familiarización con las técnicas avanzadas de análisis de colas, como la ley de Little y la teoría de colas de Jackson.
+- Implementación de modelos de teoría de colas utilizando Python y la biblioteca de ciencia de datos de NumPy.
+- Evaluación del rendimiento del modelo.
+
+# Metodología y estructura del curso:
+- El curso tendrá una duración de un semestre.
+- Cada semana, se realizará un quiz corto para evaluar el progreso de los estudiantes.
+- Los estudiantes trabajarán en un proyecto de ciencia de datos a lo largo del semestre.
+- La evaluación será con una proporción del 50% promedio de quiz y un 50% proyecto.

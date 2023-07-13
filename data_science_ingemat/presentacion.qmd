@@ -1,0 +1,39 @@
+---
+title: "Presentando un proyecto"
+---
+
+# ¿Cómo presentar un proyecto de ciencias de datos?
+## Profesor: Sebastián Azócar M.
+
+## 1. Introducción
+**Objetivo del Proyecto**: Comienza con una visión general del proyecto y sus objetivos. Explica por qué se realizó el proyecto y cuál es su relevancia para la empresa.
+
+## 2. Descripción del Problema
+**Problema a Resolver**: Describe el problema que tu proyecto de ciencia de datos está tratando de resolver. Haz esto de una manera que sea comprensible para personas que no son expertas en el tema, utilizando ejemplos y analogías simples cuando sea posible.
+
+## 3. Metodología
+**Recopilación de Datos**: Explica cómo y de dónde obtuviste los datos para el proyecto.
+
+### 3.1. Preprocesamiento de Datos
+Describe cómo se prepararon los datos para el análisis. Puedes mencionar técnicas de limpieza de datos, pero evita entrar en demasiados detalles técnicos.
+
+### 3.2. Modelado
+Describe las técnicas y algoritmos que utilizaste para desarrollar el modelo de ciencia de datos. Explica por qué elegiste esos enfoques y cómo se relacionan con el problema que estás tratando de resolver. Intenta mantener la explicación accesible y evita el uso de jerga técnica tanto como sea posible.
+
+## 4. Resultados
+**Interpretación de Resultados**: Presenta los resultados de tu análisis de una manera fácil de entender. Utiliza gráficos y tablas para visualizar los datos y destacar los hallazgos clave. Evita presentar demasiados números crudos; en su lugar, trata de resumir y explicar los resultados de una manera que sea fácil de entender.
+
+### 4.1. Implicaciones del Negocio
+Explica lo que los resultados significan para el negocio. ¿Qué acciones debería tomar la empresa basándose en estos resultados? ¿Cómo ayudará esto a la empresa a alcanzar sus objetivos?
+
+## 5. Conclusión
+### 5.1. Resumen de los Hallazgos
+Resume los hallazgos clave de tu proyecto y cómo estos hallazgos pueden beneficiar a la empresa.
+
+### 5.2. Próximos Pasos
+Proporciona recomendaciones para los próximos pasos. ¿Hay otras preguntas que podrían explorarse en el futuro? ¿Cómo puede la empresa implementar los resultados de tu proyecto?
+
+## 6. Pregunta y Respuestas
+Deja tiempo para preguntas al final de la presentación. Esto da a la audiencia la oportunidad de aclarar cualquier aspecto que no entienda y permite que se realicen preguntas más profundas que pueden no ser adecuadas durante la presentación principal.
+
+Recuerda, la clave es mantener el lenguaje simple y accesible, y tratar de relacionar todo con los objetivos y necesidades de la empresa. Tu meta es hacer que la audiencia comprenda el valor de tu trabajo, no impresionarlos con jerga técnica.

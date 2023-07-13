@@ -1,0 +1,34 @@
+---
+title: "Introducción"
+---
+
+# Introducción a las Series de Tiempo
+
+Una serie de tiempo es una secuencia de observaciones tomadas secuencialmente en el tiempo. Es una herramienta esencial en el análisis de datos temporales y se utiliza en muchos campos, como la economía, las ciencias sociales, la física, y la ingeniería.
+
+## Definición Formal
+
+Formalmente, una serie de tiempo puede ser vista como un conjunto de puntos de datos indexados (o listados o graficados) en el orden del tiempo. Generalmente, una serie de tiempo se representa como:
+
+    X = {X1, X2,..., Xt,..., Xn}
+
+donde `Xt` representa la observación en el tiempo `t`.
+
+## Aplicaciones de las Series de Tiempo
+
+Las series de tiempo se utilizan en una amplia variedad de aplicaciones, incluyendo:
+
+- **Economía**: para el análisis de indicadores económicos, como el producto interno bruto, la inflación, las tasas de desempleo, etc.
+- **Finanzas**: para el seguimiento y la predicción de los precios de las acciones, las tasas de interés, y otros indicadores financieros.
+- **Meteorología**: para predecir el clima y los patrones climáticos.
+- **Ciencias de la Salud**: para rastrear la propagación de enfermedades o la eficacia de un tratamiento a lo largo del tiempo.
+
+## Clasificación de las Series de Tiempo
+
+Las series de tiempo pueden ser clasificadas de acuerdo a su estructura en:
+
+1. **Series de Tiempo Estacionarias**: Estas series tienen propiedades que no dependen del tiempo. En otras palabras, poseen una media y una varianza constantes a lo largo del tiempo.
+
+2. **Series de Tiempo No Estacionarias**: Estas series muestran tendencias y/o patrones estacionales. No tienen una media y/o varianza constantes a lo largo del tiempo.
+
+3. **Series de Tiempo Estacionales**: Estas son un tipo especial de series no estacionarias que exhiben una tendencia estacional, es decir, un patrón que se repite en intervalos de tiempo específicos.
