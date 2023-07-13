@@ -6,7 +6,7 @@ title: "Introducción"
 
 Una serie de tiempo es una secuencia de observaciones tomadas secuencialmente en el tiempo. Es una herramienta esencial en el análisis de datos temporales y se utiliza en muchos campos, como la economía, las ciencias sociales, la física, y la ingeniería.
 
-## Definición Formal
+### Definición Formal
 
 Formalmente, una serie de tiempo puede ser vista como un conjunto de puntos de datos indexados (o listados o graficados) en el orden del tiempo. Generalmente, una serie de tiempo se representa como:
 
@@ -14,7 +14,7 @@ Formalmente, una serie de tiempo puede ser vista como un conjunto de puntos de d
 
 donde `Xt` representa la observación en el tiempo `t`.
 
-## Aplicaciones de las Series de Tiempo
+### Aplicaciones de las Series de Tiempo
 
 Las series de tiempo se utilizan en una amplia variedad de aplicaciones, incluyendo:
 
@@ -23,7 +23,7 @@ Las series de tiempo se utilizan en una amplia variedad de aplicaciones, incluye
 - **Meteorología**: para predecir el clima y los patrones climáticos.
 - **Ciencias de la Salud**: para rastrear la propagación de enfermedades o la eficacia de un tratamiento a lo largo del tiempo.
 
-## Clasificación de las Series de Tiempo
+### Clasificación de las Series de Tiempo
 
 Las series de tiempo pueden ser clasificadas de acuerdo a su estructura en:
 

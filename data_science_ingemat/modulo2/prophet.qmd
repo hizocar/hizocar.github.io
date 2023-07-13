@@ -10,7 +10,7 @@ La biblioteca Prophet intenta capturar la tendencia y la estacionalidad al ajust
 
 A continuación, enumeraremos y describiremos brevemente algunas de las principales funciones que ofrece la biblioteca Prophet.
 
-## Principales funciones de Prophet
+### Principales funciones de Prophet
 
 1. **Prophet()**: Esta es la clase principal de la biblioteca Prophet. Se utiliza para crear un objeto de Prophet que luego se puede ajustar a los datos de la serie temporal y se utiliza para hacer predicciones.
 

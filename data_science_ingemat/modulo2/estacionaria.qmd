@@ -2,7 +2,7 @@
 title: "Estacionariedad"
 ---
 
-# Series de Tiempo Estacionarias
+## Series de Tiempo Estacionarias
 
 Una serie de tiempo es considerada estacionaria si cumple con las siguientes propiedades estadísticas a lo largo del tiempo:
 
@@ -12,7 +12,7 @@ Una serie de tiempo es considerada estacionaria si cumple con las siguientes pro
 
 Formalmente, una serie de tiempo {Xt} se considera estrictamente estacionaria si la distribución conjunta de (Xt1, Xt2, ..., Xtk) es la misma que la de (Xt1+h, Xt2+h, ..., Xtk+h) para cualquier elección de los tiempos t1, t2, ..., tk y para cada desplazamiento h.
 
-## Pruebas de Estacionariedad
+### Pruebas de Estacionariedad
 
 Existen varias técnicas para determinar si una serie de tiempo es estacionaria. Algunas de las más populares incluyen:
 
@@ -20,7 +20,7 @@ Existen varias técnicas para determinar si una serie de tiempo es estacionaria.
 
 - **Prueba de KPSS (Kwiatkowski-Phillips-Schmidt-Shin)**: A diferencia de la prueba ADF, la prueba KPSS hipotetiza que una serie de tiempo es estacionaria. Un resultado de prueba que rechaza esta hipótesis indica que la serie no es estacionaria.
 
-# Prueba de Dickey-Fuller Aumentada (ADF)
+### Prueba de Dickey-Fuller Aumentada (ADF)
 
 La prueba de Dickey-Fuller Aumentada es una prueba de raíz unitaria en la presencia de estructura de serie autocorrelacionada. Para una serie de tiempo $y_t$, la versión básica de la prueba de Dickey-Fuller considera la siguiente regresión de primer orden:
 
@@ -30,7 +30,7 @@ La hipótesis nula es que $γ = 0$ (la serie tiene una raíz unitaria), mientras
 
 $Δy_t = α + βt + γy_{t-1} + δ1Δy_{t-1} + … + δ_{p-1}Δy_{t-p+1} + ε_t$
 
-# Prueba KPSS (Kwiatkowski-Phillips-Schmidt-Shin)
+### Prueba KPSS (Kwiatkowski-Phillips-Schmidt-Shin)
 
 La prueba KPSS es una prueba de hipótesis para probar la estacionariedad de una serie de tiempo (hipótesis nula) contra la presencia de una raíz unitaria (hipótesis alternativa). 
 
@@ -43,7 +43,7 @@ donde $St$ es una caminata aleatoria, que puede ser estocástica o determinísti
 La hipótesis nula es que la serie es estacionaria (o trend-estacionaria), mientras que la alternativa es que la serie tiene una raíz unitaria.
 
 
-## Ejemplos de Series Estacionarias y No Estacionarias
+#### Ejemplos de Series Estacionarias y No Estacionarias
 
 - **Serie Estacionaria**: Las variaciones diarias de la temperatura (alrededor de la media) podrían ser consideradas como una serie estacionaria, ya que podríamos esperar que la variación media en la temperatura no cambie mucho de un día a otro.
 

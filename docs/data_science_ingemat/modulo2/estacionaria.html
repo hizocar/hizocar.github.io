@@ -221,13 +221,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#series-de-tiempo-estacionarias" id="toc-series-de-tiempo-estacionarias" class="nav-link active" data-scroll-target="#series-de-tiempo-estacionarias">Series de Tiempo Estacionarias</a>
   <ul class="collapse">
   <li><a href="#pruebas-de-estacionariedad" id="toc-pruebas-de-estacionariedad" class="nav-link" data-scroll-target="#pruebas-de-estacionariedad">Pruebas de Estacionariedad</a></li>
-  </ul></li>
   <li><a href="#prueba-de-dickey-fuller-aumentada-adf" id="toc-prueba-de-dickey-fuller-aumentada-adf" class="nav-link" data-scroll-target="#prueba-de-dickey-fuller-aumentada-adf">Prueba de Dickey-Fuller Aumentada (ADF)</a></li>
-  <li><a href="#prueba-kpss-kwiatkowski-phillips-schmidt-shin" id="toc-prueba-kpss-kwiatkowski-phillips-schmidt-shin" class="nav-link" data-scroll-target="#prueba-kpss-kwiatkowski-phillips-schmidt-shin">Prueba KPSS (Kwiatkowski-Phillips-Schmidt-Shin)</a>
-  <ul class="collapse">
-  <li><a href="#ejemplos-de-series-estacionarias-y-no-estacionarias" id="toc-ejemplos-de-series-estacionarias-y-no-estacionarias" class="nav-link" data-scroll-target="#ejemplos-de-series-estacionarias-y-no-estacionarias">Ejemplos de Series Estacionarias y No Estacionarias</a></li>
-  <li><a href="#tarea-1-jupyter-notebook" id="toc-tarea-1-jupyter-notebook" class="nav-link" data-scroll-target="#tarea-1-jupyter-notebook">Tarea 1: Jupyter Notebook</a></li>
+  <li><a href="#prueba-kpss-kwiatkowski-phillips-schmidt-shin" id="toc-prueba-kpss-kwiatkowski-phillips-schmidt-shin" class="nav-link" data-scroll-target="#prueba-kpss-kwiatkowski-phillips-schmidt-shin">Prueba KPSS (Kwiatkowski-Phillips-Schmidt-Shin)</a></li>
   </ul></li>
+  <li><a href="#tarea-1-jupyter-notebook" id="toc-tarea-1-jupyter-notebook" class="nav-link" data-scroll-target="#tarea-1-jupyter-notebook">Tarea 1: Jupyter Notebook</a></li>
   </ul>
 </nav>
     </div>
@@ -251,8 +248,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="series-de-tiempo-estacionarias" class="level1">
-<h1>Series de Tiempo Estacionarias</h1>
+<section id="series-de-tiempo-estacionarias" class="level2">
+<h2 class="anchored" data-anchor-id="series-de-tiempo-estacionarias">Series de Tiempo Estacionarias</h2>
 <p>Una serie de tiempo es considerada estacionaria si cumple con las siguientes propiedades estadísticas a lo largo del tiempo:</p>
 <ul>
 <li>Tiene una media constante.</li>
@@ -260,43 +257,43 @@ ul.task-list li input[type="checkbox"] {
 <li>La covarianza entre los dos periodos (por ejemplo, <code>t</code> y <code>t+m</code>) depende solo de la diferencia <code>m</code> y no del tiempo <code>t</code>.</li>
 </ul>
 <p>Formalmente, una serie de tiempo {Xt} se considera estrictamente estacionaria si la distribución conjunta de (Xt1, Xt2, …, Xtk) es la misma que la de (Xt1+h, Xt2+h, …, Xtk+h) para cualquier elección de los tiempos t1, t2, …, tk y para cada desplazamiento h.</p>
-<section id="pruebas-de-estacionariedad" class="level2">
-<h2 class="anchored" data-anchor-id="pruebas-de-estacionariedad">Pruebas de Estacionariedad</h2>
+<section id="pruebas-de-estacionariedad" class="level3">
+<h3 class="anchored" data-anchor-id="pruebas-de-estacionariedad">Pruebas de Estacionariedad</h3>
 <p>Existen varias técnicas para determinar si una serie de tiempo es estacionaria. Algunas de las más populares incluyen:</p>
 <ul>
 <li><p><strong>Prueba de Dickey-Fuller aumentada (ADF)</strong>: Esta prueba hipotetiza que una serie de tiempo es no estacionaria (tiene alguna forma de raíz unitaria). Un resultado de prueba que rechaza esta hipótesis indica que la serie es estacionaria.</p></li>
 <li><p><strong>Prueba de KPSS (Kwiatkowski-Phillips-Schmidt-Shin)</strong>: A diferencia de la prueba ADF, la prueba KPSS hipotetiza que una serie de tiempo es estacionaria. Un resultado de prueba que rechaza esta hipótesis indica que la serie no es estacionaria.</p></li>
 </ul>
 </section>
-</section>
-<section id="prueba-de-dickey-fuller-aumentada-adf" class="level1">
-<h1>Prueba de Dickey-Fuller Aumentada (ADF)</h1>
+<section id="prueba-de-dickey-fuller-aumentada-adf" class="level3">
+<h3 class="anchored" data-anchor-id="prueba-de-dickey-fuller-aumentada-adf">Prueba de Dickey-Fuller Aumentada (ADF)</h3>
 <p>La prueba de Dickey-Fuller Aumentada es una prueba de raíz unitaria en la presencia de estructura de serie autocorrelacionada. Para una serie de tiempo <span class="math inline">\(y_t\)</span>, la versión básica de la prueba de Dickey-Fuller considera la siguiente regresión de primer orden:</p>
 <p><span class="math inline">\(Δy_t = α + βt + γy_{t-1} + ε_t\)</span></p>
 <p>La hipótesis nula es que <span class="math inline">\(γ = 0\)</span> (la serie tiene una raíz unitaria), mientras que la alternativa es <span class="math inline">\(γ &lt; 0\)</span> (la serie es estacionaria). Para la versión aumentada de la prueba, se agregan términos de rezago de la serie diferenciada a la derecha de la ecuación de regresión para eliminar la autocorrelación en los errores (<span class="math inline">\(ε_t\)</span>):</p>
 <p><span class="math inline">\(Δy_t = α + βt + γy_{t-1} + δ1Δy_{t-1} + … + δ_{p-1}Δy_{t-p+1} + ε_t\)</span></p>
 </section>
-<section id="prueba-kpss-kwiatkowski-phillips-schmidt-shin" class="level1">
-<h1>Prueba KPSS (Kwiatkowski-Phillips-Schmidt-Shin)</h1>
+<section id="prueba-kpss-kwiatkowski-phillips-schmidt-shin" class="level3">
+<h3 class="anchored" data-anchor-id="prueba-kpss-kwiatkowski-phillips-schmidt-shin">Prueba KPSS (Kwiatkowski-Phillips-Schmidt-Shin)</h3>
 <p>La prueba KPSS es una prueba de hipótesis para probar la estacionariedad de una serie de tiempo (hipótesis nula) contra la presencia de una raíz unitaria (hipótesis alternativa).</p>
 <p>Para una serie de tiempo <span class="math inline">\(y_t\)</span>, la prueba KPSS considera la siguiente ecuación de regresión:</p>
 <p><span class="math inline">\(y_t = α + βt + St + ε_t\)</span></p>
 <p>donde <span class="math inline">\(St\)</span> es una caminata aleatoria, que puede ser estocástica o determinística.</p>
 <p>La hipótesis nula es que la serie es estacionaria (o trend-estacionaria), mientras que la alternativa es que la serie tiene una raíz unitaria.</p>
-<section id="ejemplos-de-series-estacionarias-y-no-estacionarias" class="level2">
-<h2 class="anchored" data-anchor-id="ejemplos-de-series-estacionarias-y-no-estacionarias">Ejemplos de Series Estacionarias y No Estacionarias</h2>
+<section id="ejemplos-de-series-estacionarias-y-no-estacionarias" class="level4">
+<h4 class="anchored" data-anchor-id="ejemplos-de-series-estacionarias-y-no-estacionarias">Ejemplos de Series Estacionarias y No Estacionarias</h4>
 <ul>
 <li><p><strong>Serie Estacionaria</strong>: Las variaciones diarias de la temperatura (alrededor de la media) podrían ser consideradas como una serie estacionaria, ya que podríamos esperar que la variación media en la temperatura no cambie mucho de un día a otro.</p></li>
 <li><p><strong>Serie No Estacionaria</strong>: El precio de una acción en el mercado es un ejemplo de una serie no estacionaria, ya que tiende a seguir una tendencia ascendente o descendente y no oscila alrededor de una constante.</p></li>
 </ul>
 <p>Para implementar pruebas de estacionariedad en Python, puedes usar la biblioteca <code>statsmodels</code>.</p>
 </section>
+</section>
+</section>
 <section id="tarea-1-jupyter-notebook" class="level2">
 <h2 class="anchored" data-anchor-id="tarea-1-jupyter-notebook">Tarea 1: Jupyter Notebook</h2>
 <p>Ahora debes poner manos a la obra y completar el siguiente notebook: <a href="https://github.com/hizocar/data_science_ingemat/blob/main/Series_de_Tiempo.ipynb">Notebook 1 de Series de Tiempo</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
