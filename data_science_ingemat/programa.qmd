@@ -14,7 +14,7 @@ title: "Programa"
 - Implementación de sistemas de recomendación utilizando Python y la biblioteca de ciencia de datos de Pandas.
 - Evaluación del rendimiento de los sistemas de recomendación.
 
-## Módulo 2: Series de Tiempo con Prophet
+### Módulo 2: Series de Tiempo con Prophet
 - Introducción a las series de tiempo y sus aplicaciones en la ciencia de datos.
 - Familiarización con la biblioteca Prophet de Facebook para el análisis de series de tiempo.
 - Implementación de técnicas avanzadas de análisis de series de tiempo, como la descomposición y la modelización de tendencias y estacionalidad.
