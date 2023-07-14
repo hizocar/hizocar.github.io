@@ -3,24 +3,32 @@ project:
   output-dir : docs
 
 website:
-  title: "Sebastián Azócar"
+  title: Sebastián Azócar
   reader-mode: true
   navbar:
     tools:
       - icon: github
         href: https://github.com/hizocar
     left:
-      - href: index.qmd
-        text: Home
+      - text: "Home"
+        file: index.qmd
+      - sidebar:AboutMe
+      - sidebar:Courses
+
   sidebar:
-    style: "docked"
-    search: true
-    contents:
-      - section: "Personal"
-        contents:
+   - id: AboutMe
+     style: "docked"
+     search: true
+     contents: 
+       - section: "AboutMe"
+         contents:
           - personal/perfil.qmd
           - personal/academica.qmd
           - personal/laboral.qmd
+   - id: Courses
+     style: "docked"
+     search: true
+     contents:
       - section: "Data Science for Math Engineers (USACH)"
         contents:
           - data_science_ingemat/programa.qmd

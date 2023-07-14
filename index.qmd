@@ -1,9 +1,10 @@
 ---
-title: "About me"
+title: ""
 ---
 <h1 align="center">Hi 👋, I'm Sebastián Azócar</h1>
 <h3 align="center">Data Scientist and Teacher</h3>
 
+![Perfil](images/perfil.png){width=30%}
 
 - 👋 Hi there, I'm a Mathematical Engineer and hold a Master's degree in Data Science
 - 🏠 I'm currently living in Santiago, Chile.
