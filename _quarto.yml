@@ -38,6 +38,7 @@ website:
               - data_science_ingemat/modulo2/introduccion.qmd
               - data_science_ingemat/modulo2/estacionaria.qmd
               - data_science_ingemat/modulo2/prophet.qmd
+              - data_science_ingemat/modulo2/proyecto2.qmd
 format:
   html:
     theme: 

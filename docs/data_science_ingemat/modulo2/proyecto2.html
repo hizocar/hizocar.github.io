@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sebastián Azócar - Prophet</title>
+<title>Sebastián Azócar - Proyecto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -145,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../data_science_ingemat/programa.html">Data Science for Math Engineers (USACH)</a></li><li class="breadcrumb-item"><a href="../../data_science_ingemat/modulo2/introduccion.html">Series de Tiempo</a></li><li class="breadcrumb-item"><a href="../../data_science_ingemat/modulo2/prophet.html">Prophet</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../data_science_ingemat/programa.html">Data Science for Math Engineers (USACH)</a></li><li class="breadcrumb-item"><a href="../../data_science_ingemat/modulo2/introduccion.html">Series de Tiempo</a></li><li class="breadcrumb-item"><a href="../../data_science_ingemat/modulo2/proyecto2.html">Proyecto</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -209,13 +209,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data_science_ingemat/modulo2/prophet.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../data_science_ingemat/modulo2/prophet.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prophet</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../data_science_ingemat/modulo2/proyecto2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../data_science_ingemat/modulo2/proyecto2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Proyecto</span></a>
   </div>
 </li>
@@ -233,11 +233,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introducción-a-la-librería-prophet" id="toc-introducción-a-la-librería-prophet" class="nav-link active" data-scroll-target="#introducción-a-la-librería-prophet">Introducción a la librería Prophet</a>
+  <li><a href="#proyecto-de-series-de-tiempo-con-prophet" id="toc-proyecto-de-series-de-tiempo-con-prophet" class="nav-link active" data-scroll-target="#proyecto-de-series-de-tiempo-con-prophet">Proyecto de Series de Tiempo con Prophet</a>
   <ul class="collapse">
-  <li><a href="#principales-funciones-de-prophet" id="toc-principales-funciones-de-prophet" class="nav-link" data-scroll-target="#principales-funciones-de-prophet">Principales funciones de Prophet</a></li>
-  <li><a href="#tarea-2" id="toc-tarea-2" class="nav-link" data-scroll-target="#tarea-2">Tarea 2:</a></li>
+  <li><a href="#descripción" id="toc-descripción" class="nav-link" data-scroll-target="#descripción">Descripción</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos">Objetivos</a></li>
+  <li><a href="#consideraciones" id="toc-consideraciones" class="nav-link" data-scroll-target="#consideraciones">Consideraciones</a></li>
+  <li><a href="#puntos-de-evaluación" id="toc-puntos-de-evaluación" class="nav-link" data-scroll-target="#puntos-de-evaluación">Puntos de Evaluación</a></li>
+  <li><a href="#funciones-de-prophet-a-probar" id="toc-funciones-de-prophet-a-probar" class="nav-link" data-scroll-target="#funciones-de-prophet-a-probar">Funciones de Prophet a Probar</a></li>
   </ul></li>
+  <li><a href="#rúbrica-del-proyecto-de-series-de-tiempo-con-prophet" id="toc-rúbrica-del-proyecto-de-series-de-tiempo-con-prophet" class="nav-link" data-scroll-target="#rúbrica-del-proyecto-de-series-de-tiempo-con-prophet">Rúbrica del Proyecto de Series de Tiempo con Prophet</a></li>
   </ul>
 </nav>
     </div>
@@ -246,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Prophet</h1>
+<h1 class="title">Proyecto</h1>
 </div>
 
 
@@ -261,29 +265,112 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="introducción-a-la-librería-prophet" class="level1">
-<h1>Introducción a la librería Prophet</h1>
-<p>Prophet es una biblioteca de Python desarrollada por Facebook que se utiliza para la predicción de series temporales. Prophet es especialmente útil para los casos de uso que tienen patrones estacionales fuertes y varias temporadas de datos históricos. Prophet también es robusto ante los datos faltantes y los cambios en la tendencia, y normalmente maneja bien los valores atípicos.</p>
-<p>La biblioteca Prophet intenta capturar la tendencia y la estacionalidad al ajustar un modelo aditivo donde las observaciones no negativas se describen como la suma de los componentes. El objetivo de Prophet es hacer que las predicciones de series temporales sean escalables y automatizadas.</p>
-<p>A continuación, enumeraremos y describiremos brevemente algunas de las principales funciones que ofrece la biblioteca Prophet.</p>
-<section id="principales-funciones-de-prophet" class="level3">
-<h3 class="anchored" data-anchor-id="principales-funciones-de-prophet">Principales funciones de Prophet</h3>
+<section id="proyecto-de-series-de-tiempo-con-prophet" class="level2">
+<h2 class="anchored" data-anchor-id="proyecto-de-series-de-tiempo-con-prophet">Proyecto de Series de Tiempo con Prophet</h2>
+<section id="descripción" class="level3">
+<h3 class="anchored" data-anchor-id="descripción">Descripción</h3>
+<p>En este proyecto, se espera que apliquen sus conocimientos de series de tiempo y el uso de la biblioteca Prophet para realizar pronósticos. Debe encontrar un conjunto de datos con más de tres años de historia para su análisis.</p>
+</section>
+<section id="objetivos" class="level3">
+<h3 class="anchored" data-anchor-id="objetivos">Objetivos</h3>
 <ol type="1">
-<li><p><strong>Prophet()</strong>: Esta es la clase principal de la biblioteca Prophet. Se utiliza para crear un objeto de Prophet que luego se puede ajustar a los datos de la serie temporal y se utiliza para hacer predicciones.</p></li>
-<li><p><strong>fit()</strong>: Este método se utiliza para ajustar el modelo Prophet a los datos de la serie temporal. Se debe llamar antes de hacer predicciones.</p></li>
-<li><p><strong>make_future_dataframe()</strong>: Este método se utiliza para crear un DataFrame de Pandas de fechas futuras para las cuales hacer predicciones.</p></li>
-<li><p><strong>predict()</strong>: Este método se utiliza para hacer predicciones. Se puede llamar después de ajustar el modelo Prophet a los datos de la serie temporal.</p></li>
-<li><p><strong>plot() y plot_components()</strong>: Estos métodos se utilizan para visualizar las predicciones y los componentes del modelo Prophet.</p></li>
-<li><p><strong>add_seasonality()</strong>: Este método se utiliza para agregar estacionalidad personalizada al modelo Prophet.</p></li>
-<li><p><strong>add_country_holidays()</strong>: Este método se utiliza para agregar las vacaciones de un país específico al modelo Prophet.</p></li>
+<li>Realizar un análisis exploratorio de los datos para entender las características de la serie de tiempo.</li>
+<li>Preprocesar los datos si es necesario para prepararlos para Prophet.</li>
+<li>Entrenar un modelo Prophet en los datos y realizar pronósticos.</li>
+<li>Evaluar la precisión de sus pronósticos.</li>
+<li>Interpretar los componentes de su modelo (tendencia, estacionalidad).</li>
 </ol>
 </section>
-<section id="tarea-2" class="level2">
-<h2 class="anchored" data-anchor-id="tarea-2">Tarea 2:</h2>
-<p>Crea una jupyter notebook con una data sintetica u otra a elección que simule una serie de tiempo. Usa cada función expuesta anteriormente y comenta los resultados</p>
-
-
+<section id="consideraciones" class="level3">
+<h3 class="anchored" data-anchor-id="consideraciones">Consideraciones</h3>
+<ul>
+<li>Asegúrese de dividir sus datos en conjuntos de entrenamiento y prueba para evaluar la precisión de sus pronósticos.</li>
+<li>Considere la posibilidad de ajustar los hiperparámetros de Prophet para mejorar su modelo.</li>
+<li>Recuerde que Prophet puede manejar datos faltantes, pero debe decidir si imputar estos datos es la mejor opción para su situación.</li>
+<li>La entrega del proyecto debe realizarse a través de un <strong>repositorio de GitHub</strong>. Asegúrese de que su proyecto esté bien comentado, para esto use el archivo ReadMe.</li>
+<li>La fecha límite para la entrega del proyecto es el <strong>lunes 31 de julio</strong>. Las presentaciones se llevarán a cabo hasta el <strong>5 de agosto</strong>.</li>
+</ul>
 </section>
+<section id="puntos-de-evaluación" class="level3">
+<h3 class="anchored" data-anchor-id="puntos-de-evaluación">Puntos de Evaluación</h3>
+<ol type="1">
+<li>Calidad del análisis exploratorio de datos y las conclusiones extraídas.</li>
+<li>Correcta aplicación de Prophet y uso de sus funcionalidades.</li>
+<li>Precisión de los pronósticos.</li>
+<li>Interpretación de los componentes del modelo.</li>
+<li>Calidad de la presentación de sus resultados.</li>
+</ol>
+</section>
+<section id="funciones-de-prophet-a-probar" class="level3">
+<h3 class="anchored" data-anchor-id="funciones-de-prophet-a-probar">Funciones de Prophet a Probar</h3>
+<ul>
+<li>Ajuste de la flexibilidad de la tendencia con el parámetro <code>changepoint_prior_scale</code>.</li>
+<li>Ajuste de la estacionalidad con <code>add_seasonality</code> y <code>seasonality_mode</code>.</li>
+<li>Uso de <code>add_country_holidays</code> para incluir efectos de vacaciones.</li>
+<li>Uso de <code>make_future_dataframe</code> para generar fechas futuras para pronósticos.</li>
+<li>Interpretación de los componentes del modelo con <code>plot_components</code>.</li>
+</ul>
+</section>
+</section>
+<section id="rúbrica-del-proyecto-de-series-de-tiempo-con-prophet" class="level2">
+<h2 class="anchored" data-anchor-id="rúbrica-del-proyecto-de-series-de-tiempo-con-prophet">Rúbrica del Proyecto de Series de Tiempo con Prophet</h2>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Puntos de Evaluación</th>
+<th>Nivel 1</th>
+<th>Nivel 2</th>
+<th>Nivel 3</th>
+<th>Nivel 4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Calidad del análisis exploratorio de datos y las conclusiones extraídas</td>
+<td>El análisis exploratorio de datos es inexistente o muy limitado, sin conclusiones significativas.</td>
+<td>El análisis exploratorio de datos es básico, con algunas conclusiones pero falta profundidad o comprensión completa de los datos.</td>
+<td>El análisis exploratorio de datos es sólido, con conclusiones bien razonadas y una buena comprensión de los datos.</td>
+<td>El análisis exploratorio de datos es excepcionalmente detallado y perspicaz, con conclusiones profundas y una comprensión completa de los datos.</td>
+</tr>
+<tr class="even">
+<td>Correcta aplicación de Prophet y uso de sus funcionalidades</td>
+<td>Prophet no se utiliza correctamente o no se utiliza en absoluto.</td>
+<td>Prophet se utiliza de manera básica, pero no se explotan todas sus funcionalidades.</td>
+<td>Prophet se utiliza correctamente y se explotan la mayoría de sus funcionalidades.</td>
+<td>Prophet se utiliza de manera experta, aprovechando todas sus funcionalidades para mejorar el modelo.</td>
+</tr>
+<tr class="odd">
+<td>Precisión de los pronósticos</td>
+<td>Los pronósticos son inexactos y el modelo no se ajusta bien a los datos.</td>
+<td>Los pronósticos son moderadamente precisos, pero el modelo podría mejorarse.</td>
+<td>Los pronósticos son precisos y el modelo se ajusta bien a los datos.</td>
+<td>Los pronósticos son extremadamente precisos y el modelo se ajusta excepcionalmente bien a los datos.</td>
+</tr>
+<tr class="even">
+<td>Interpretación de los componentes del modelo</td>
+<td>No se realiza ninguna interpretación de los componentes del modelo.</td>
+<td>Se realiza una interpretación básica de algunos componentes del modelo.</td>
+<td>Se realiza una interpretación sólida de la mayoría de los componentes del modelo.</td>
+<td>Se realiza una interpretación detallada y perspicaz de todos los componentes del modelo.</td>
+</tr>
+<tr class="odd">
+<td>Calidad de la presentación de sus resultados</td>
+<td>Los resultados no se presentan de manera clara o comprensible.</td>
+<td>Los resultados se presentan de manera básica, pero podrían mejorarse para una mayor claridad o comprensión.</td>
+<td>Los resultados se presentan de manera clara y comprensible.</td>
+<td>Los resultados se presentan de manera excepcionalmente clara, detallada y comprensible.</td>
+</tr>
+</tbody>
+</table>
+
+
 </section>
 
 </main> <!-- /main -->

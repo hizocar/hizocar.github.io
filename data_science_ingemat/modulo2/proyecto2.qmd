@@ -1,0 +1,46 @@
+---
+title: "Proyecto"
+---
+
+## Proyecto de Series de Tiempo con Prophet
+
+### Descripción
+En este proyecto, se espera que apliquen sus conocimientos de series de tiempo y el uso de la biblioteca Prophet para realizar pronósticos. Debe encontrar un conjunto de datos con más de tres años de historia para su análisis.
+
+### Objetivos
+1. Realizar un análisis exploratorio de los datos para entender las características de la serie de tiempo.
+2. Preprocesar los datos si es necesario para prepararlos para Prophet.
+3. Entrenar un modelo Prophet en los datos y realizar pronósticos.
+4. Evaluar la precisión de sus pronósticos.
+5. Interpretar los componentes de su modelo (tendencia, estacionalidad).
+
+### Consideraciones
+- Asegúrese de dividir sus datos en conjuntos de entrenamiento y prueba para evaluar la precisión de sus pronósticos.
+- Considere la posibilidad de ajustar los hiperparámetros de Prophet para mejorar su modelo.
+- Recuerde que Prophet puede manejar datos faltantes, pero debe decidir si imputar estos datos es la mejor opción para su situación.
+- La entrega del proyecto debe realizarse a través de un **repositorio de GitHub**. Asegúrese de que su proyecto esté bien comentado, para esto use el archivo ReadMe.
+- La fecha límite para la entrega del proyecto es el **lunes 31 de julio**. Las presentaciones se llevarán a cabo hasta el **5 de agosto**.
+
+### Puntos de Evaluación
+1. Calidad del análisis exploratorio de datos y las conclusiones extraídas.
+2. Correcta aplicación de Prophet y uso de sus funcionalidades.
+3. Precisión de los pronósticos.
+4. Interpretación de los componentes del modelo.
+5. Calidad de la presentación de sus resultados.
+
+### Funciones de Prophet a Probar
+- Ajuste de la flexibilidad de la tendencia con el parámetro `changepoint_prior_scale`.
+- Ajuste de la estacionalidad con `add_seasonality` y `seasonality_mode`.
+- Uso de `add_country_holidays` para incluir efectos de vacaciones.
+- Uso de `make_future_dataframe` para generar fechas futuras para pronósticos.
+- Interpretación de los componentes del modelo con `plot_components`.
+
+## Rúbrica del Proyecto de Series de Tiempo con Prophet
+
+| Puntos de Evaluación | Nivel 1 | Nivel 2 | Nivel 3 | Nivel 4 |
+| --- | --- | --- | --- | --- |
+| Calidad del análisis exploratorio de datos y las conclusiones extraídas | El análisis exploratorio de datos es inexistente o muy limitado, sin conclusiones significativas. | El análisis exploratorio de datos es básico, con algunas conclusiones pero falta profundidad o comprensión completa de los datos. | El análisis exploratorio de datos es sólido, con conclusiones bien razonadas y una buena comprensión de los datos. | El análisis exploratorio de datos es excepcionalmente detallado y perspicaz, con conclusiones profundas y una comprensión completa de los datos. |
+| Correcta aplicación de Prophet y uso de sus funcionalidades | Prophet no se utiliza correctamente o no se utiliza en absoluto. | Prophet se utiliza de manera básica, pero no se explotan todas sus funcionalidades. | Prophet se utiliza correctamente y se explotan la mayoría de sus funcionalidades. | Prophet se utiliza de manera experta, aprovechando todas sus funcionalidades para mejorar el modelo. |
+| Precisión de los pronósticos | Los pronósticos son inexactos y el modelo no se ajusta bien a los datos. | Los pronósticos son moderadamente precisos, pero el modelo podría mejorarse. | Los pronósticos son precisos y el modelo se ajusta bien a los datos. | Los pronósticos son extremadamente precisos y el modelo se ajusta excepcionalmente bien a los datos. |
+| Interpretación de los componentes del modelo | No se realiza ninguna interpretación de los componentes del modelo. | Se realiza una interpretación básica de algunos componentes del modelo. | Se realiza una interpretación sólida de la mayoría de los componentes del modelo. | Se realiza una interpretación detallada y perspicaz de todos los componentes del modelo. |
+| Calidad de la presentación de sus resultados | Los resultados no se presentan de manera clara o comprensible. | Los resultados se presentan de manera básica, pero podrían mejorarse para una mayor claridad o comprensión. | Los resultados se presentan de manera clara y comprensible. | Los resultados se presentan de manera excepcionalmente clara, detallada y comprensible. |
