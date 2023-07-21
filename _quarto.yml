@@ -44,8 +44,8 @@ website:
 format:
   html:
     theme: 
-          light: flatly
-          dark: darkly
+          light: journal
+          dark: [journal, theme-dark.scss]
     css: styles.css
     toc: true
 
