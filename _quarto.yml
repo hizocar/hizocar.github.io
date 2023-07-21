@@ -33,7 +33,7 @@ website:
         contents:
           - data_science_ingemat/programa.qmd
           - data_science_ingemat/presentacion.qmd
-          - section: "Tema 2: Series de Tiempo"
+          - section: "Modulo 2: Series de Tiempo"
             contents:
               - data_science_ingemat/modulo2/introduccion.qmd
               - data_science_ingemat/modulo2/estacionaria.qmd
