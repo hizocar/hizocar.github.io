@@ -1,5 +1,5 @@
 ---
-title: "Estacionariedad"
+title: "Tema 2: Estacionariedad"
 ---
 
 ## Series de Tiempo Estacionarias

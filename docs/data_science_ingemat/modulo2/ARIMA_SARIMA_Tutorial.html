@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sebastián Azócar - Experiencia Académica</title>
+<title>Sebastián Azócar - Quiz: Modelos ARIMA y SARIMA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -73,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Sebastián Azócar</span>
     </a>
   </div>
@@ -84,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -94,15 +128,15 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-aboutme">    
         <li class="dropdown-header">AboutMe</li>
         <li>
-    <a class="dropdown-item" href="../personal/perfil.html" rel="" target="">
+    <a class="dropdown-item" href="../../personal/perfil.html" rel="" target="">
  <span class="dropdown-text">Perfil y habilidades</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../personal/academica.html" rel="" target="">
+    <a class="dropdown-item" href="../../personal/academica.html" rel="" target="">
  <span class="dropdown-text">Experiencia Académica</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../personal/laboral.html" rel="" target="">
+    <a class="dropdown-item" href="../../personal/laboral.html" rel="" target="">
  <span class="dropdown-text">Experiencia Data Scientist</span></a>
   </li>  
     </ul>
@@ -114,15 +148,15 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-courses">    
         <li class="dropdown-header">Data Science for Math Engineers (USACH)</li>
         <li>
-    <a class="dropdown-item" href="../data_science_ingemat/programa.html" rel="" target="">
+    <a class="dropdown-item" href="../../data_science_ingemat/programa.html" rel="" target="">
  <span class="dropdown-text">Programa</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../data_science_ingemat/presentacion.html" rel="" target="">
+    <a class="dropdown-item" href="../../data_science_ingemat/presentacion.html" rel="" target="">
  <span class="dropdown-text">Presentando un proyecto</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../data_science_ingemat/modulo2/introduccion.html" rel="" target="">
+    <a class="dropdown-item" href="../../data_science_ingemat/modulo2/introduccion.html" rel="" target="">
  <span class="dropdown-text">Tema 2: Series de Tiempo</span></a>
   </li>  
     </ul>
@@ -145,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../personal/perfil.html">AboutMe</a></li><li class="breadcrumb-item"><a href="../personal/academica.html">Experiencia Académica</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../data_science_ingemat/programa.html">Data Science for Math Engineers (USACH)</a></li><li class="breadcrumb-item"><a href="../../data_science_ingemat/modulo2/introduccion.html">Tema 2: Series de Tiempo</a></li><li class="breadcrumb-item"><a href="../../data_science_ingemat/modulo2/ARIMA_SARIMA_Tutorial.html">Quiz: Modelos ARIMA y SARIMA</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -168,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">AboutMe</span></a>
+ <span class="menu-text">Data Science for Math Engineers (USACH)</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -176,22 +210,63 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../personal/perfil.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Perfil y habilidades</span></a>
+  <a href="../../data_science_ingemat/programa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programa</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../personal/academica.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Experiencia Académica</span></a>
+  <a href="../../data_science_ingemat/presentacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentando un proyecto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Tema 2: Series de Tiempo</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../data_science_ingemat/modulo2/introduccion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 1: Introducción</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../personal/laboral.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Experiencia Data Scientist</span></a>
+  <a href="../../data_science_ingemat/modulo2/estacionaria.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 2: Estacionariedad</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../data_science_ingemat/modulo2/prophet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 3: Prophet</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../data_science_ingemat/modulo2/ARIMA_SARIMA_Tutorial.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Quiz: Modelos ARIMA y SARIMA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../data_science_ingemat/modulo2/proyecto2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proyecto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../data_science_ingemat/modulo2/complemento.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Temas complementarios</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -200,14 +275,27 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#modelos-arima" id="toc-modelos-arima" class="nav-link active" data-scroll-target="#modelos-arima">Modelos ARIMA</a></li>
+  <li><a href="#modelos-sarima" id="toc-modelos-sarima" class="nav-link" data-scroll-target="#modelos-sarima">Modelos SARIMA</a></li>
+  <li><a href="#ejemplo-en-python" id="toc-ejemplo-en-python" class="nav-link" data-scroll-target="#ejemplo-en-python">Ejemplo en Python</a></li>
+  <li><a href="#detalles-adicionales-sobre-los-modelos-arima" id="toc-detalles-adicionales-sobre-los-modelos-arima" class="nav-link" data-scroll-target="#detalles-adicionales-sobre-los-modelos-arima">Detalles adicionales sobre los modelos ARIMA</a></li>
+  <li><a href="#detalles-adicionales-sobre-los-modelos-sarima" id="toc-detalles-adicionales-sobre-los-modelos-sarima" class="nav-link" data-scroll-target="#detalles-adicionales-sobre-los-modelos-sarima">Detalles adicionales sobre los modelos SARIMA</a>
+  <ul class="collapse">
+  <li><a href="#quiz" id="toc-quiz" class="nav-link" data-scroll-target="#quiz">QUIZ:</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Experiencia Académica</h1>
+<h1 class="title">Quiz: Modelos ARIMA y SARIMA</h1>
 </div>
 
 
@@ -222,9 +310,74 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>About this site</p>
+<section id="modelos-arima" class="level2">
+<h2 class="anchored" data-anchor-id="modelos-arima">Modelos ARIMA</h2>
+<p>ARIMA es un acrónimo que significa AutoRegressive Integrated Moving Average. Es una clase de modelos que explica una serie de tiempo dada en función de sus propios valores pasados, es decir, su propia lags. Puede ser percibido como una regresión lineal de los datos pasados.</p>
+<p>Los componentes de los modelos ARIMA son:</p>
+<ul>
+<li><strong>AR: Autoregression.</strong> Un modelo que utiliza la relación dependiente entre una observación y un número de observaciones rezagadas (lagged observations).</li>
+<li><strong>I: Integrated.</strong> El uso de la diferenciación de las observaciones en bruto (por ejemplo, restar una observación de una observación en el paso de tiempo anterior) para hacer que la serie de tiempo sea estacionaria.</li>
+<li><strong>MA: Moving Average.</strong> Un modelo que utiliza la dependencia entre una observación y un error residual de un modelo de media móvil aplicado a observaciones rezagadas.</li>
+</ul>
+<p>Un modelo ARIMA se denota como ARIMA(p,d,q) donde:</p>
+<ul>
+<li><strong>p</strong> es el número de términos autorregresivos (AR part). Permite incorporar el efecto de los valores pasados en nuestro modelo.</li>
+<li><strong>d</strong> es el número de diferencias no estacionales necesarias para la estacionariedad.</li>
+<li><strong>q</strong> es el número de errores de pronóstico rezagados en la ecuación de predicción (MA part).</li>
+</ul>
+</section>
+<section id="modelos-sarima" class="level2">
+<h2 class="anchored" data-anchor-id="modelos-sarima">Modelos SARIMA</h2>
+<p>Los modelos SARIMA (Seasonal Autoregressive Integrated Moving Average) son una extensión de los modelos ARIMA que soportan directamente las series de tiempo univariadas con un componente estacional.</p>
+<p>Un modelo SARIMA se denota como SARIMA(p,d,q)(P,D,Q)m donde:</p>
+<ul>
+<li><strong>p, d, q</strong> son los parámetros del modelo ARIMA para las tendencias no estacionales.</li>
+<li><strong>P, D, Q</strong> son los parámetros del modelo ARIMA para las tendencias estacionales.</li>
+<li><strong>m</strong> se refiere al número de periodos en cada temporada.</li>
+</ul>
+</section>
+<section id="ejemplo-en-python" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-en-python">Ejemplo en Python</h2>
+<p>Aquí hay un ejemplo de cómo ajustar un modelo ARIMA y SARIMA a una serie de tiempo en Python usando la biblioteca <code>statsmodels</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.tsa.arima.model <span class="im">import</span> ARIMA</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.tsa.statespace.sarimax <span class="im">import</span> SARIMAX</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar datos</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>series <span class="op">=</span> pd.read_csv(<span class="st">'your_data.csv'</span>, header<span class="op">=</span><span class="dv">0</span>, index_col<span class="op">=</span><span class="dv">0</span>, parse_dates<span class="op">=</span><span class="va">True</span>, squeeze<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajustar modelo ARIMA</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>model_arima <span class="op">=</span> ARIMA(series, order<span class="op">=</span>(<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>model_arima_fit <span class="op">=</span> model_arima.fit(disp<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model_arima_fit.summary())</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajustar modelo SARIMA</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>model_sarima <span class="op">=</span> SARIMAX(series, order<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), seasonal_order<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">12</span>))</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>model_sarima_fit <span class="op">=</span> model_sarima.fit(disp<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model_sarima_fit.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Por favor, reemplace <code>'your_data.csv'</code> con la ruta a su archivo de datos. Los parámetros <code>(5,1,0)</code> y <code>(1, 1, 1, 12)</code> son solo ejemplos y deben ser ajustados a sus datos específicos.</p>
+</section>
+<section id="detalles-adicionales-sobre-los-modelos-arima" class="level2">
+<h2 class="anchored" data-anchor-id="detalles-adicionales-sobre-los-modelos-arima">Detalles adicionales sobre los modelos ARIMA</h2>
+<p>Los modelos ARIMA son aplicados en algunos casos donde los datos muestran evidencia de no estacionariedad, donde una etapa inicial de diferenciación (correspondiente al componente ‘I’ en el modelo) puede ser aplicada una o más veces para eliminar la tendencia no estacionaria.</p>
+<p>El componente AR del modelo ARIMA indica que la variable evolutiva de interés es regresada en sus propios valores rezagados, es decir, anteriores. Por ejemplo, si p es 5, los predictores para x(t) serán x(t-1)….x(t-5).</p>
+<p>El componente MA del modelo ARIMA indica que el error de regresión es en realidad una combinación lineal de términos de error cuyos valores ocurrieron contemporáneamente y en varios momentos en el pasado.</p>
+<p>El componente I del modelo ARIMA indica que los datos se han diferenciado al menos una vez para hacer la serie estacionaria.</p>
+</section>
+<section id="detalles-adicionales-sobre-los-modelos-sarima" class="level2">
+<h2 class="anchored" data-anchor-id="detalles-adicionales-sobre-los-modelos-sarima">Detalles adicionales sobre los modelos SARIMA</h2>
+<p>Los modelos SARIMA añaden una capa adicional de complejidad al modelado de series temporales. Estos modelos incorporan elementos de estacionalidad tanto en el componente AR como en el MA del modelo. Esto significa que el modelo no sólo considera las relaciones de los datos consigo mismo (AR), los errores (MA) y las diferencias para la estacionariedad (I), sino que también tiene en cuenta la estacionalidad de los datos.</p>
+<p>El componente SAR del modelo SARIMA indica que la serie temporal tiene correlaciones estacionales autorregresivas. Por ejemplo, si P es 2, los predictores para x(t) serán x(t-12) y x(t-24) si la serie es mensual.</p>
+<p>El componente SMA del modelo SARIMA indica que la serie temporal tiene correlaciones estacionales de media móvil. Por ejemplo, si Q es 1, los predictores para x(t) serán los errores en los periodos t-12 y t-24 si la serie es mensual.</p>
+<p>El componente SI del modelo SARIMA indica que los datos se han diferenciado al menos una vez para eliminar la estacionalidad.</p>
+<p>El parámetro m en el modelo SARIMA se refiere al número de periodos por temporada, y es fundamental para modelar correctamente la estacionalidad. Por ejemplo, m sería 4 para datos trimestrales, 12 para datos mensuales, o 7 para datos diarios si se espera una estacionalidad semanal.</p>
+<section id="quiz" class="level3">
+<h3 class="anchored" data-anchor-id="quiz">QUIZ:</h3>
+<p>A continuación responde el siguiente quiz: https://forms.gle/aA9Mx1D5BNvhb1SL7</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

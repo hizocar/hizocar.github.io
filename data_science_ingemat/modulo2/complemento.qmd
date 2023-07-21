@@ -1,0 +1,35 @@
+--- 
+title: "Temas complementarios"
+---
+
+# Temas Avanzados en Series de Tiempo
+
+## 1. Modelos ARIMA y SARIMA
+Los modelos ARIMA y SARIMA son una extensión de los modelos de regresión lineal que se utilizan para modelar series de tiempo no estacionarias. Estos modelos pueden capturar una amplia gama de estructuras de dependencia temporal.
+
+- Lectura recomendada: [ARIMA model as a tool in forecasting the variables: A case study](https://www.researchgate.net/publication/331933608_ARIMA_model_as_a_tool_in_forecasting_the_variables_A_case_study)
+
+## 2. Modelos de Volatilidad Estocástica
+Los modelos de volatilidad estocástica son útiles para modelar series de tiempo financieras, donde la volatilidad (la varianza de los errores) puede cambiar con el tiempo.
+
+- Lectura recomendada: [Stochastic Volatility Modeling](https://www.amazon.com/Stochastic-Volatility-Modeling-Chapman-Financial/dp/1482244064)
+
+## 3. Modelos de Regresión con Cambios de Régimen
+Estos modelos permiten que los parámetros de un modelo de regresión cambien en diferentes "regímenes" o estados del mundo.
+
+- Lectura recomendada: [A new approach to the economic analysis of nonstationary time series and the business cycle](https://www.jstor.org/stable/1912557)
+
+## 4. Modelos de Espacio de Estados y Filtros de Kalman
+Los modelos de espacio de estados son una clase muy general de modelos de series de tiempo que incluyen modelos ARIMA y muchos otros como casos especiales. El filtro de Kalman es un algoritmo que se utiliza para estimar las variables latentes en estos modelos.
+
+- Lectura recomendada: [Time Series Analysis by State Space Methods](https://www.amazon.com/Time-Analysis-State-Space-Methods/dp/019964117X)
+
+## 5. Modelos de Series de Tiempo Multivariadas
+Estos modelos permiten analizar varias series de tiempo a la vez, capturando las interdependencias entre las series.
+
+- Lectura recomendada: [Applied Multivariate Time Series Analysis: Foundations and Trends in Econometrics](https://www.amazon.com/Applied-Multivariate-Time-Analysis-Econometrics/dp/1601981540)
+
+## 6. Modelos de Series de Tiempo con Machine Learning
+El aprendizaje automático ofrece una serie de técnicas que pueden ser útiles para modelar series de tiempo, especialmente cuando se dispone de grandes cantidades de datos.
+
+- Lectura recomendada: [Deep Learning for Time Series Forecasting](https://machinelearningmastery.com/deep-learning-for-time-series-forecasting/)
