@@ -3,9 +3,11 @@ project:
   output-dir : docs
 
 website:
-  title: Sebastián Azócar
+  favicon: '/images/logo.png'
+  #title: "<img src='/images/logo.png' width='10%' height='10%'/>"
   reader-mode: true
   navbar:
+    logo: /images/logo.png
     tools:
       - icon: github
         href: https://github.com/hizocar
@@ -44,8 +46,8 @@ website:
 format:
   html:
     theme: 
-          light: journal
-          dark: [journal, theme-dark.scss]
+          light: minty
+          dark: [minty, theme-dark.scss]
     css: styles.css
     toc: true
 
