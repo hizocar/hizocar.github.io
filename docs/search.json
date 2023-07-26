@@ -119,6 +119,76 @@
     "text": "Hi 👋, I’m Sebastián Azócar\n\n\nData Scientist and Teacher\n\n\n\n\nPerfil\n\n\n\n👋 Hi there, I’m a Mathematical Engineer and hold a Master’s degree in Data Science\n🏠 I’m currently living in Santiago, Chile.\n🌐 I love traveling and visiting different countries.\n📚 I’m always learning and have a special interest in data analysis.\n📫 How to reach me: hizocar@gmail.com\n\n\nConnect with me:\n\n\n  \n\n\nLanguages:\n\n\n           \n     \n\nML and Data Analysis:\n\n\n              \n\nCloud:"
   },
   {
+    "objectID": "introduction_to_python/class1.html",
+    "href": "introduction_to_python/class1.html",
+    "title": "Class 1: Getting to Know Python",
+    "section": "",
+    "text": "Python is a high-level, interpreted programming language known for its readability and simplicity. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Python is widely used in data analysis, web development, machine learning, and artificial intelligence. Its extensive library support and vibrant community make it a popular choice for both beginners and experienced developers.\nHere is a simple example of Python code that takes an input and produces an output:\n# Input\nname = input('What is your name? ')\n\n# Output\nprint(f'Hello, {name}!')"
+  },
+  {
+    "objectID": "introduction_to_python/class1.html#data-types-in-python",
+    "href": "introduction_to_python/class1.html#data-types-in-python",
+    "title": "Class 1: Getting to Know Python",
+    "section": "Data Types in Python",
+    "text": "Data Types in Python\nPython has several built-in data types. Here are some of the most common ones:\n\nIntegers (int): Whole numbers, such as 3, 4, or 100.\nFloating point numbers (float): Numbers with a decimal point, such as 2.3 or 4.6.\nStrings (str): Sequences of characters, such as ‘hello’ or ‘python’.\nBooleans (bool): True or false values.\n\nLet’s see some examples:\n\n# Integer\nx = 10\nprint(type(x))\n\n# Float\ny = 3.14\nprint(type(y))\n\n# String\nz = 'Hello, Python!'\nprint(type(z))\n\n# Boolean\nw = True\nprint(type(w))"
+  },
+  {
+    "objectID": "introduction_to_python/class1.html#lists-in-python",
+    "href": "introduction_to_python/class1.html#lists-in-python",
+    "title": "Class 1: Getting to Know Python",
+    "section": "Lists in Python",
+    "text": "Lists in Python\nA list in Python is an ordered collection of items that can be of any type. Lists are very flexible and can be modified after they are created (they are mutable).\nHere is an example of a list:\n\n# List of integers\nnumbers = [1, 2, 3, 4, 5]\nprint(numbers)\n\n# List of different types\nmixed = [1, 'two', 3.0, True]\nprint(mixed)"
+  },
+  {
+    "objectID": "introduction_to_python/class1.html#dictionaries-in-python",
+    "href": "introduction_to_python/class1.html#dictionaries-in-python",
+    "title": "Class 1: Getting to Know Python",
+    "section": "Dictionaries in Python",
+    "text": "Dictionaries in Python\nA dictionary in Python is an unordered collection of items. Each item in a dictionary has a key and a corresponding value. Dictionaries are mutable, meaning they can be changed after they are created.\nHere is an example of a dictionary:\n\n# Dictionary\nperson = {\n    'name': 'John',\n    'age': 30,\n    'is_married': True\n}\nprint(person)"
+  },
+  {
+    "objectID": "introduction_to_python/class1.html#comparing-lists-and-dictionaries",
+    "href": "introduction_to_python/class1.html#comparing-lists-and-dictionaries",
+    "title": "Class 1: Getting to Know Python",
+    "section": "Comparing Lists and Dictionaries",
+    "text": "Comparing Lists and Dictionaries\nLists and dictionaries are both versatile data structures in Python, but they are used in different scenarios.\nLists are ordered collections of items, and they are best when the order of items matters. You can use lists when you have a collection of items that you want to keep in a specific order, or when you want to easily add or remove items from the collection.\nDictionaries are unordered collections of key-value pairs, and they are best when you need to associate values with keys, so you can look them up efficiently by key. Dictionaries are ideal for data that is labeled, where each item can be accessed by a unique key (like a product code or name).\nLet’s see some examples:\n\n# List example\nfruits = ['apple', 'banana', 'cherry']\nprint(fruits)\n\n# Add an item to the list\nfruits.append('date')\nprint(fruits)\n\n# Dictionary example\nfruit_colors = {\n    'apple': 'red',\n    'banana': 'yellow',\n    'cherry': 'red'\n}\nprint(fruit_colors)\n\n# Add an item to the dictionary\nfruit_colors['date'] = 'brown'\nprint(fruit_colors)\n\nIt is possible to convert a list to a dictionary and vice versa, but the way you do it depends on the structure of your data.\nFor example, if you have a list of pairs, you can convert it to a dictionary using the dict() function. And if you have a dictionary, you can convert it to a list of pairs using the items() method.\nLet’s see some examples:\n\n# List of pairs\npairs = [('one', 1), ('two', 2), ('three', 3)]\n\n# Convert list to dictionary\ndict_from_list = dict(pairs)\nprint(dict_from_list)\n\n# Dictionary\ndictionary = {'one': 1, 'two': 2, 'three': 3}\n\n# Convert dictionary to list\nlist_from_dict = list(dictionary.items())\nprint(list_from_dict)"
+  },
+  {
+    "objectID": "introduction_to_python/class1.html#operations-and-methods-in-python",
+    "href": "introduction_to_python/class1.html#operations-and-methods-in-python",
+    "title": "Class 1: Getting to Know Python",
+    "section": "Operations and Methods in Python",
+    "text": "Operations and Methods in Python\nIn Python, an operation is an action that is carried out on one or more values. For example, the + operation adds two numbers together, and the * operation multiplies them.\nA method is a function that is associated with a particular type of object. For example, the count method can be used on a list to count the number of times a particular value appears in the list, and the upper method can be used on a string to convert all the characters to uppercase.\nThe len function is a built-in Python function that returns the length of a sequence, such as a list or a string.\nLet’s see some examples:\n\n# Operations\nprint(3 + 4)  # Addition\nprint(3 * 4)  # Multiplication\n\n# Methods\nnumbers = [1, 2, 3, 2, 1]\nprint(numbers.count(2))  # Count method\n\ntext = 'hello'\nprint(text.upper())  # Upper method\n\n# Len function\nprint(len(numbers))  # Length of a list\nprint(len(text))  # Length of a string"
+  },
+  {
+    "objectID": "introduction_to_python/class1.html#combining-different-data-types-with-and",
+    "href": "introduction_to_python/class1.html#combining-different-data-types-with-and",
+    "title": "Class 1: Getting to Know Python",
+    "section": "Combining Different Data Types with + and *",
+    "text": "Combining Different Data Types with + and *\nIn Python, the + and * operators can be used with different types of data, but the behavior can be different depending on the types of the operands.\nWhen used with integers (int), the + operator performs addition and the * operator performs multiplication.\nWhen used with strings (str), the + operator concatenates the strings, and the * operator repeats the string a certain number of times.\nHowever, trying to use + or * with an integer and a string will result in a TypeError.\nLet’s see some examples:\n\n# Addition with integers\nprint(3 + 4)\n\n# Multiplication with integers\nprint(3 * 4)\n\n# Concatenation with strings\nprint('hello' + 'world')\n\n# Repetition with strings\nprint('hello' * 3)\n\n# Trying to add an integer and a string\ntry:\n    print(3 + 'hello')\nexcept TypeError as e:\n    print(e)\n\n# Trying to multiply an integer and a string\ntry:\n    print(3 * 'hello')\nexcept TypeError as e:\n    print(e)\n\n7\n12\nhelloworld\nhellohellohello\nunsupported operand type(s) for +: 'int' and 'str'\nhellohellohello"
+  },
+  {
+    "objectID": "introduction_to_python/class1.html#libraries-in-python",
+    "href": "introduction_to_python/class1.html#libraries-in-python",
+    "title": "Class 1: Getting to Know Python",
+    "section": "Libraries in Python",
+    "text": "Libraries in Python\nIn Python, a library is a collection of modules, which are files containing Python code that define functions, classes, and variables that you can use once the module is imported.\nPython comes with a standard library that includes many useful modules, and there are also many third-party libraries available that provide additional functionality.\nYou can import a module using the import statement. Once a module is imported, you can use its functions and variables by prefixing them with the module name and a dot.\nIf a library is not installed, you can install it using the pip tool, which is the package installer for Python.\nLet’s see some examples:\n\n# Importing a module from the standard library\nimport math\n\n# Using a function from the math module\nprint(math.sqrt(16))\n\n# Note: The following code is commented out because it requires user interaction and might not work in this notebook interface.\n# But you can run it in your local Python environment.\n\n# Installing a third-party library (uncomment to run)\n# !pip install numpy\n\n4.0\n\n\nIf you only need a specific function from a module, you can import just that function using the from ... import ... statement. This allows you to use the function directly without prefixing it with the module name.\nLet’s see an example:\n\n# Importing a specific function from the math module\nfrom math import sqrt\n\n# Using the function directly\nprint(sqrt(16))\n\n4.0"
+  },
+  {
+    "objectID": "introduction_to_python/class1.html#google-colab",
+    "href": "introduction_to_python/class1.html#google-colab",
+    "title": "Class 1: Getting to Know Python",
+    "section": "Google Colab",
+    "text": "Google Colab\nGoogle Colab is a cloud-based Python development environment that provides a platform for anyone to write and execute Python code through the browser. It is especially useful for machine learning, data analysis, and education.\n\nAdvantages\n\nNo setup required\nFree access to GPUs\nEasy sharing\n\nWhether you’re a student, a data scientist, or an AI researcher, Colab can make your work easier. You can write and execute code, save and share your analyses, and access powerful computing resources, all for free from your browser.\n\n\nDisadvantages\n\nInternet connection is required\nLimited resources\n\nDespite its advantages, Google Colab does have some limitations. It requires an internet connection to save and run notebooks, and the available resources (RAM and disk space) are limited.\nTo start a new notebook in Google Colab, you can follow this link."
+  },
+  {
+    "objectID": "introduction_to_python/class1.html#exercises",
+    "href": "introduction_to_python/class1.html#exercises",
+    "title": "Class 1: Getting to Know Python",
+    "section": "Exercises",
+    "text": "Exercises\n\nData Types: Write a Python function that takes two inputs, determines their data types, and returns a message indicating the data type of each input.\nList Operations: Given a list of numbers, write a Python function that returns a new list containing the square of each number. Use a loop in your solution.\nDictionary Operations: Write a Python function that takes a dictionary and a key as input, checks if the key is in the dictionary, and returns a message indicating whether the key was found.\nString Methods: Write a Python function that takes a string as input and returns a new string with the first letter of each word capitalized.\nLibrary Usage: Use the math library to write a Python function that takes a number as input and returns the square root of the number."
+  },
+  {
     "objectID": "personal/academica.html",
     "href": "personal/academica.html",
     "title": "Experiencia Académica",

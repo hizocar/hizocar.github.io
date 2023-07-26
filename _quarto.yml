@@ -4,6 +4,7 @@ project:
 
 website:
   favicon: '/images/logo.png'
+  image: '/images/logo.png'
   #title: "<img src='/images/logo.png' width='10%' height='10%'/>"
   reader-mode: true
   navbar:
@@ -31,6 +32,9 @@ website:
      style: "docked"
      search: true
      contents:
+      - section: "Introduction to Python"
+        contents:
+          - introduction_to_python/class1.ipynb
       - section: "Data Science for Math Engineers (USACH)"
         contents:
           - data_science_ingemat/programa.qmd
