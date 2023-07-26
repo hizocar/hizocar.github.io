@@ -34,10 +34,10 @@ website:
      contents:
       - section: "Machine Learning with Business Application (UFSM)"
         contents: 
-          - machine_learning_egei/class1.ipynb
+          - machine_learning_egei/classes.qmd
       - section: "Introduction to Python"
         contents:
-          - introduction_to_python/class1.ipynb
+          - introduction_to_python/classes.qmd
       - section: "Data Science for Math Engineers (USACH)"
         contents:
           - data_science_ingemat/programa.qmd
