@@ -32,6 +32,9 @@ website:
      style: "docked"
      search: true
      contents:
+      - section: "Machine Learning with Business Application (UFSM)"
+        contents: 
+          - machine_learning_egei/class1.ipynb
       - section: "Introduction to Python"
         contents:
           - introduction_to_python/class1.ipynb

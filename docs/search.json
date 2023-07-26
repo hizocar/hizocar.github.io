@@ -119,6 +119,13 @@
     "text": "Hi 👋, I’m Sebastián Azócar\n\n\nData Scientist and Teacher\n\n\n\n\nPerfil\n\n\n\n👋 Hi there, I’m a Mathematical Engineer and hold a Master’s degree in Data Science\n🏠 I’m currently living in Santiago, Chile.\n🌐 I love traveling and visiting different countries.\n📚 I’m always learning and have a special interest in data analysis.\n📫 How to reach me: hizocar@gmail.com\n\n\nConnect with me:\n\n\n  \n\n\nLanguages:\n\n\n           \n     \n\nML and Data Analysis:\n\n\n              \n\nCloud:"
   },
   {
+    "objectID": "personal/academica.html",
+    "href": "personal/academica.html",
+    "title": "Experiencia Académica",
+    "section": "",
+    "text": "About this site"
+  },
+  {
     "objectID": "introduction_to_python/class1.html",
     "href": "introduction_to_python/class1.html",
     "title": "Class 1: Getting to Know Python",
@@ -189,11 +196,32 @@
     "text": "Exercises\n\nData Types: Write a Python function that takes two inputs, determines their data types, and returns a message indicating the data type of each input.\nList Operations: Given a list of numbers, write a Python function that returns a new list containing the square of each number. Use a loop in your solution.\nDictionary Operations: Write a Python function that takes a dictionary and a key as input, checks if the key is in the dictionary, and returns a message indicating whether the key was found.\nString Methods: Write a Python function that takes a string as input and returns a new string with the first letter of each word capitalized.\nLibrary Usage: Use the math library to write a Python function that takes a number as input and returns the square root of the number."
   },
   {
-    "objectID": "personal/academica.html",
-    "href": "personal/academica.html",
-    "title": "Experiencia Académica",
+    "objectID": "machine_learning_egei/class1.html",
+    "href": "machine_learning_egei/class1.html",
+    "title": "Class1: Different types of Data",
     "section": "",
-    "text": "About this site"
+    "text": "In the field of data science, we often talk about different types of data. Understanding these types is crucial for proper data analysis and interpretation. Here are some of the most common types of data:\nIn Python, we have several data types that are commonly used. Here are some of them with examples:\nPython has a variety of operators that can be used with different data types. Here are some examples:"
+  },
+  {
+    "objectID": "machine_learning_egei/class1.html#python-data-types-exercises",
+    "href": "machine_learning_egei/class1.html#python-data-types-exercises",
+    "title": "Class1: Different types of Data",
+    "section": "Python Data Types: Exercises",
+    "text": "Python Data Types: Exercises\n\n# Exercise 1: Working with integers and floats\nnum1 = 10\nnum2 = 3\n\n# Addition\nprint('Addition:', num1 + num2)\n\n# Subtraction\nprint('Subtraction:', num1 - num2)\n\n# Multiplication\nprint('Multiplication:', num1 * num2)\n\n# Division\nprint('Division:', num1 / num2)\n\n# Floor Division\nprint('Floor Division:', num1 // num2)\n\n# Modulus\nprint('Modulus:', num1 % num2)\n\n# Exponentiation\nprint('Exponentiation:', num1 ** num2)\n\nAddition: 13\nSubtraction: 7\nMultiplication: 30\nDivision: 3.3333333333333335\nFloor Division: 3\nModulus: 1\nExponentiation: 1000\n\n\n\n# Exercise 2: Working with strings\nstr1 = 'Hello'\nstr2 = 'World'\n\n# String concatenation\nprint('Concatenation:', str1 + ' ' + str2)\n\n# String repetition\nprint('Repetition:', str1 * 3)\n\n# String slicing\nprint('Slicing:', str1[1:4])\n\n# String length\nprint('Length:', len(str1))\n\nConcatenation: Hello World\nRepetition: HelloHelloHello\nSlicing: ell\nLength: 5\n\n\n\n# Exercise 3: Working with lists\nlist1 = [1, 2, 3, 4, 5]\n\n# Accessing elements\nprint('First element:', list1[0])\nprint('Last element:', list1[-1])\n\n# List slicing\nprint('Slicing:', list1[1:4])\n\n# List length\nprint('Length:', len(list1))\n\n# Adding elements\nlist1.append(6)\nprint('After adding an element:', list1)\n\n# Removing elements\nlist1.remove(1)\nprint('After removing an element:', list1)\n\nFirst element: 1\nLast element: 5\nSlicing: [2, 3, 4]\nLength: 5\nAfter adding an element: [1, 2, 3, 4, 5, 6]\nAfter removing an element: [2, 3, 4, 5, 6]\n\n\n\n# Exercise 4: Working with dictionaries\ndict1 = {'name': 'John', 'age': 30, 'city': 'New York'}\n\n# Accessing elements\nprint('Name:', dict1['name'])\nprint('Age:', dict1['age'])\n\n# Adding elements\ndict1['job'] = 'Engineer'\nprint('After adding an element:', dict1)\n\n# Removing elements\ndel dict1['age']\nprint('After removing an element:', dict1)\n\nName: John\nAge: 30\nAfter adding an element: {'name': 'John', 'age': 30, 'city': 'New York', 'job': 'Engineer'}\nAfter removing an element: {'name': 'John', 'city': 'New York', 'job': 'Engineer'}"
+  },
+  {
+    "objectID": "machine_learning_egei/class1.html#python-functions",
+    "href": "machine_learning_egei/class1.html#python-functions",
+    "title": "Class1: Different types of Data",
+    "section": "Python Functions",
+    "text": "Python Functions\nIn Python, a function is a block of reusable code that performs a specific task. Functions help break our program into smaller and modular chunks, making it organized and manageable. They also prevent repetition and make the code reusable.\nHere’s the basic syntax of a Python function:\ndef function_name(parameters):\n    \"\"\"docstring\"\"\"\n    statement(s)\n\nThe def keyword is a statement for defining a function in Python.\nfunction_name is a unique identifier for the function.\nparameters (arguments) through which we pass values to a function. These are optional.\nA colon (:) to mark the end of the function header.\nOptional documentation string (docstring) to describe what the function does.\nOne or more valid python statements that make up the function body. Statements must have the same indentation level (usually 4 spaces).\nAn optional return statement to return a value from the function.\n\n\n# Example of a Python function\n\ndef greet(name):\n    \"\"\"\n    This function greets the person passed in as a parameter\n    \"\"\"\n    print(f'Hello, {name}. Good morning!')\n\n# Calling the function\ngreet('John')\n\nHello, John. Good morning!\n\n\n\n# Example of a Python function with a return statement\n\ndef add_numbers(num1, num2):\n    \"\"\"\n    This function adds the two numbers passed in as parameters\n    \"\"\"\n    return num1 + num2\n\n# Calling the function and printing the result\nresult = add_numbers(5, 3)\nprint(f'The sum is {result}')\n\nThe sum is 8"
+  },
+  {
+    "objectID": "machine_learning_egei/class1.html#exercises",
+    "href": "machine_learning_egei/class1.html#exercises",
+    "title": "Class1: Different types of Data",
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1: Data Types\nGiven the following variables, convert each one to a different data type:\nnum = '123'\nstr_num = 456\nConvert num to an integer and str_num to a string. Print the new variables and their types.\n\n\nExercise 2: Functions\nWrite a function named calculate_average that takes a list of numbers as a parameter and returns their average.\nThen, call your function with the list [1, 2, 3, 4, 5] and print the result.\n\n\nExercise 3: Lists and Dictionaries\nGiven the following list of dictionaries:\ndata = [\n    {'name': 'John', 'age': 30, 'job': 'Engineer'},\n    {'name': 'Anna', 'age': 27, 'job': 'Doctor'},\n    {'name': 'Mike', 'age': 35, 'job': 'Artist'}\n]\nWrite a function named get_ages that takes the list as a parameter and returns a list of all ages. Then, call your function with the data list and print the result."
   },
   {
     "objectID": "data_science_ingemat/programa.html",
