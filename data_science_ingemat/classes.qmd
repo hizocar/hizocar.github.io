@@ -1,5 +1,5 @@
 ---
-title: "Data Science for Math Engineers"
+title: "Data Science for Math Engineers USACH"
 ---
 ## Documentos del curso
 - [Programa ](/data_science_ingemat/programa.qmd) 
