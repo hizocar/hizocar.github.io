@@ -1,0 +1,15 @@
+---
+title: "Data Science for Math Engineers"
+---
+## Documentos del curso
+- [Programa ](/data_science_ingemat/programa.qmd) 
+- [Presentación ](/data_science_ingemat/presentacion.qmd)
+
+## Clases
+### Modulo 2
+- [Introducción ](/data_science_ingemat/modulo2/introduccion.qmd) 
+- [Estacionariedad ](/data_science_ingemat/modulo2/estacionaria.qmd)
+- [Prophet ](/data_science_ingemat/modulo2/prophet.qmd)
+- [Complemento ](/data_science_ingemat/modulo2/complemento.qmd)
+- [Quiz ](/data_science_ingemat/modulo2/ARIMA_SARIMA_Tutorial.ipynb)
+- [Proyecto ](/data_science_ingemat/modulo2/proyecto2.qmd)   

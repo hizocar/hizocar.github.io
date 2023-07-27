@@ -32,24 +32,9 @@ website:
      style: "docked"
      search: true
      contents:
-      - section: "Machine Learning with Business Application (UFSM)"
-        contents: 
-          - machine_learning_egei/classes.qmd
-      - section: "Introduction to Python"
-        contents:
-          - introduction_to_python/classes.qmd
-      - section: "Data Science for Math Engineers (USACH)"
-        contents:
-          - data_science_ingemat/programa.qmd
-          - data_science_ingemat/presentacion.qmd
-          - section: "Modulo 2: Series de Tiempo"
-            contents:
-              - data_science_ingemat/modulo2/introduccion.qmd
-              - data_science_ingemat/modulo2/estacionaria.qmd
-              - data_science_ingemat/modulo2/prophet.qmd
-              - data_science_ingemat/modulo2/ARIMA_SARIMA_Tutorial.ipynb
-              - data_science_ingemat/modulo2/proyecto2.qmd
-              - data_science_ingemat/modulo2/complemento.qmd
+      - machine_learning_egei/classes.qmd
+      - introduction_to_python/classes.qmd
+      - data_science_ingemat/classes.qmd
 format:
   html:
     theme: 
