@@ -133,18 +133,102 @@
     "text": "Clases\n\nModulo 2\n\nIntroducción\nEstacionariedad\nProphet\nComplemento\nQuiz\nProyecto"
   },
   {
-    "objectID": "machine_learning_egei/classes.html",
-    "href": "machine_learning_egei/classes.html",
-    "title": "Machine Learning with Business Application UTFSM",
+    "objectID": "ejemplo.html",
+    "href": "ejemplo.html",
+    "title": "TITULO DEL EJEMPLO DE JUPYTER",
     "section": "",
-    "text": "Class 1: Different type of Data |"
+    "text": "print('Hola')"
   },
   {
-    "objectID": "personal/academica.html",
-    "href": "personal/academica.html",
-    "title": "Academic Experience",
+    "objectID": "machine_learning_egei/class1.html",
+    "href": "machine_learning_egei/class1.html",
+    "title": "Class1: Different types of Data",
     "section": "",
-    "text": "About this site"
+    "text": "In the field of data science, we often talk about different types of data. Understanding these types is crucial for proper data analysis and interpretation. Here are some of the most common types of data:\nIn Python, we have several data types that are commonly used. Here are some of them with examples:\nPython has a variety of operators that can be used with different data types. Here are some examples:"
+  },
+  {
+    "objectID": "machine_learning_egei/class1.html#python-data-types-exercises",
+    "href": "machine_learning_egei/class1.html#python-data-types-exercises",
+    "title": "Class1: Different types of Data",
+    "section": "Python Data Types: Exercises",
+    "text": "Python Data Types: Exercises\n\n# Exercise 1: Working with integers and floats\nnum1 = 10\nnum2 = 3\n\n# Addition\nprint('Addition:', num1 + num2)\n\n# Subtraction\nprint('Subtraction:', num1 - num2)\n\n# Multiplication\nprint('Multiplication:', num1 * num2)\n\n# Division\nprint('Division:', num1 / num2)\n\n# Floor Division\nprint('Floor Division:', num1 // num2)\n\n# Modulus\nprint('Modulus:', num1 % num2)\n\n# Exponentiation\nprint('Exponentiation:', num1 ** num2)\n\nAddition: 13\nSubtraction: 7\nMultiplication: 30\nDivision: 3.3333333333333335\nFloor Division: 3\nModulus: 1\nExponentiation: 1000\n\n\n\n# Exercise 2: Working with strings\nstr1 = 'Hello'\nstr2 = 'World'\n\n# String concatenation\nprint('Concatenation:', str1 + ' ' + str2)\n\n# String repetition\nprint('Repetition:', str1 * 3)\n\n# String slicing\nprint('Slicing:', str1[1:4])\n\n# String length\nprint('Length:', len(str1))\n\nConcatenation: Hello World\nRepetition: HelloHelloHello\nSlicing: ell\nLength: 5\n\n\n\n# Exercise 3: Working with lists\nlist1 = [1, 2, 3, 4, 5]\n\n# Accessing elements\nprint('First element:', list1[0])\nprint('Last element:', list1[-1])\n\n# List slicing\nprint('Slicing:', list1[1:4])\n\n# List length\nprint('Length:', len(list1))\n\n# Adding elements\nlist1.append(6)\nprint('After adding an element:', list1)\n\n# Removing elements\nlist1.remove(1)\nprint('After removing an element:', list1)\n\nFirst element: 1\nLast element: 5\nSlicing: [2, 3, 4]\nLength: 5\nAfter adding an element: [1, 2, 3, 4, 5, 6]\nAfter removing an element: [2, 3, 4, 5, 6]\n\n\n\n# Exercise 4: Working with dictionaries\ndict1 = {'name': 'John', 'age': 30, 'city': 'New York'}\n\n# Accessing elements\nprint('Name:', dict1['name'])\nprint('Age:', dict1['age'])\n\n# Adding elements\ndict1['job'] = 'Engineer'\nprint('After adding an element:', dict1)\n\n# Removing elements\ndel dict1['age']\nprint('After removing an element:', dict1)\n\nName: John\nAge: 30\nAfter adding an element: {'name': 'John', 'age': 30, 'city': 'New York', 'job': 'Engineer'}\nAfter removing an element: {'name': 'John', 'city': 'New York', 'job': 'Engineer'}"
+  },
+  {
+    "objectID": "machine_learning_egei/class1.html#python-functions",
+    "href": "machine_learning_egei/class1.html#python-functions",
+    "title": "Class1: Different types of Data",
+    "section": "Python Functions",
+    "text": "Python Functions\nIn Python, a function is a block of reusable code that performs a specific task. Functions help break our program into smaller and modular chunks, making it organized and manageable. They also prevent repetition and make the code reusable.\nHere’s the basic syntax of a Python function:\ndef function_name(parameters):\n    \"\"\"docstring\"\"\"\n    statement(s)\n\nThe def keyword is a statement for defining a function in Python.\nfunction_name is a unique identifier for the function.\nparameters (arguments) through which we pass values to a function. These are optional.\nA colon (:) to mark the end of the function header.\nOptional documentation string (docstring) to describe what the function does.\nOne or more valid python statements that make up the function body. Statements must have the same indentation level (usually 4 spaces).\nAn optional return statement to return a value from the function.\n\n\n# Example of a Python function\n\ndef greet(name):\n    \"\"\"\n    This function greets the person passed in as a parameter\n    \"\"\"\n    print(f'Hello, {name}. Good morning!')\n\n# Calling the function\ngreet('John')\n\nHello, John. Good morning!\n\n\n\n# Example of a Python function with a return statement\n\ndef add_numbers(num1, num2):\n    \"\"\"\n    This function adds the two numbers passed in as parameters\n    \"\"\"\n    return num1 + num2\n\n# Calling the function and printing the result\nresult = add_numbers(5, 3)\nprint(f'The sum is {result}')\n\nThe sum is 8"
+  },
+  {
+    "objectID": "machine_learning_egei/class1.html#exercises",
+    "href": "machine_learning_egei/class1.html#exercises",
+    "title": "Class1: Different types of Data",
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1: Data Types\nGiven the following variables, convert each one to a different data type:\nnum = '123'\nstr_num = 456\nConvert num to an integer and str_num to a string. Print the new variables and their types.\n\n\nExercise 2: Functions\nWrite a function named calculate_average that takes a list of numbers as a parameter and returns their average.\nThen, call your function with the list [1, 2, 3, 4, 5] and print the result.\n\n\nExercise 3: Lists and Dictionaries\nGiven the following list of dictionaries:\ndata = [\n    {'name': 'John', 'age': 30, 'job': 'Engineer'},\n    {'name': 'Anna', 'age': 27, 'job': 'Doctor'},\n    {'name': 'Mike', 'age': 35, 'job': 'Artist'}\n]\nWrite a function named get_ages that takes the list as a parameter and returns a list of all ages. Then, call your function with the data list and print the result."
+  },
+  {
+    "objectID": "introduction_to_python/class2.html",
+    "href": "introduction_to_python/class2.html",
+    "title": "Dataframes in Python",
+    "section": "",
+    "text": "A DataFrame is a two-dimensional labeled data structure with columns of potentially different types. It is generally the most commonly used pandas object. You can think of it like a spreadsheet or SQL table, or a dictionary of Series objects. It is generally the most commonly used pandas object.\nDataFrames can be created in various ways, but for this example, we’ll create a DataFrame from a dictionary of pandas Series.\nimport pandas as pd\n\ndata = {\n    'apples': pd.Series([3, 2, 0, 1]),\n    'oranges': pd.Series([0, 3, 7, 2])\n}\n\ndf = pd.DataFrame(data)\n\ndf\n\nUnable to display output for mime type(s): application/vnd.dataresource+json"
+  },
+  {
+    "objectID": "introduction_to_python/class2.html#dataframe-indexing",
+    "href": "introduction_to_python/class2.html#dataframe-indexing",
+    "title": "Dataframes in Python",
+    "section": "DataFrame Indexing",
+    "text": "DataFrame Indexing\nIndexing in pandas means simply selecting particular rows and columns of data from a DataFrame. Indexes can be used to select specific rows and columns that you want to manipulate. They can also be used to modify the structure of the DataFrame itself, for example, by adding rows or columns.\nLet’s explore some examples of how to work with DataFrame indexes.\n\n# Set a column as the index\ndf_indexed = df.set_index('apples')\ndf_indexed\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\n# Reset the index\ndf_reset = df_indexed.reset_index()\ndf_reset\n\nUnable to display output for mime type(s): application/vnd.dataresource+json"
+  },
+  {
+    "objectID": "introduction_to_python/class2.html#creating-dataframes",
+    "href": "introduction_to_python/class2.html#creating-dataframes",
+    "title": "Dataframes in Python",
+    "section": "Creating DataFrames",
+    "text": "Creating DataFrames\nPandas DataFrames can be created in various ways. Some of the most common methods are: from a list, from a dictionary, from a list of dictionaries, and from a NumPy array. Let’s explore examples of each.\n\n# Creating a DataFrame from a list\nlist_data = [['Alex',10],['Bob',12],['Clarke',13]]\ndf_list = pd.DataFrame(list_data, columns=['Name','Age'])\ndf_list\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\n# Creating a DataFrame from a dictionary\ndict_data = {'Name':['Tom', 'Nick', 'John'], 'Age':[20, 21, 19]}\ndf_dict = pd.DataFrame(dict_data)\ndf_dict\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\n# Creating a DataFrame from a list of dictionaries\nlist_dict_data = [{'a': 1, 'b': 2},{'a': 3, 'b': 4, 'c': 5}]\ndf_list_dict = pd.DataFrame(list_dict_data)\ndf_list_dict\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\n# Creating a DataFrame from a NumPy array\nimport numpy as np\n\nnumpy_data = np.array([[1, 2], [3, 4]])\ndf_numpy = pd.DataFrame(numpy_data, columns=['Column1', 'Column2'])\ndf_numpy\n\nUnable to display output for mime type(s): application/vnd.dataresource+json"
+  },
+  {
+    "objectID": "introduction_to_python/class2.html#dataframe-operations-and-methods",
+    "href": "introduction_to_python/class2.html#dataframe-operations-and-methods",
+    "title": "Dataframes in Python",
+    "section": "DataFrame Operations and Methods",
+    "text": "DataFrame Operations and Methods\nPandas DataFrames offer a wide range of operations and methods that can be used to manipulate and analyze data. In this section, we’ll explore how to create new columns, how to create columns from other columns through operations, and how to combine DataFrames using the concatenate method.\n\n# Creating a new column\ndf['bananas'] = pd.Series([1, 0, 2, 4])\ndf\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\n# Creating a column from other columns\ndf['total_fruits'] = df['apples'] + df['oranges'] + df['bananas']\ndf\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\n# Creating another DataFrame to concatenate\ndf2 = pd.DataFrame({'apples': [5, 3], 'oranges': [2, 4], 'bananas': [7, 6]}, index=[4, 5])\n\n# Concatenating DataFrames\ndf_concat = pd.concat([df, df2])\ndf_concat\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\nThe ignore_index Parameter\nWhen concatenating DataFrames, pandas provides an ignore_index parameter. If ignore_index is set to True, the resulting DataFrame will have a new integer index, ignoring the original indices of the concatenated DataFrames. Let’s see an example.\n\n# Concatenating DataFrames with ignore_index\ndf_concat_ignore_index = pd.concat([df, df2], ignore_index=True)\ndf_concat_ignore_index\n\nUnable to display output for mime type(s): application/vnd.dataresource+json"
+  },
+  {
+    "objectID": "introduction_to_python/class2.html#exploring-a-dataframe",
+    "href": "introduction_to_python/class2.html#exploring-a-dataframe",
+    "title": "Dataframes in Python",
+    "section": "Exploring a DataFrame",
+    "text": "Exploring a DataFrame\nPandas provides several methods that are useful for quickly summarizing and gaining insights from your data. In this section, we’ll explore the value_counts, unique, nunique, and describe methods. Let’s first create a new DataFrame for these examples.\n\n# Creating a new DataFrame\ndata = {\n    'A': np.random.randint(1, 10, 20),\n    'B': np.random.choice(['red', 'green', 'blue'], 20),\n    'C': np.random.normal(0, 1, 20),\n    'D': np.random.choice(['cat', 'dog', 'rabbit'], 20),\n    'E': np.random.randint(1, 100, 20)\n}\ndf_explore = pd.DataFrame(data)\ndf_explore\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\n# value_counts method\ndf_explore['B'].value_counts()\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\n# unique method\ndf_explore['D'].unique()\n\narray(['rabbit', 'dog', 'cat'], dtype=object)\n\n\n\n# nunique method\ndf_explore['A'].nunique()\n\n9\n\n\n\n# describe method\ndf_explore.describe()\n\nUnable to display output for mime type(s): application/vnd.dataresource+json"
+  },
+  {
+    "objectID": "introduction_to_python/class2.html#sorting-and-ranking-in-a-dataframe",
+    "href": "introduction_to_python/class2.html#sorting-and-ranking-in-a-dataframe",
+    "title": "Dataframes in Python",
+    "section": "Sorting and Ranking in a DataFrame",
+    "text": "Sorting and Ranking in a DataFrame\nPandas provides several methods for sorting and ranking data in a DataFrame. In this section, we’ll explore the sort_values, iloc, and loc methods. The sort_values method sorts a DataFrame by one or more columns, while iloc and loc are used for indexing and selecting data.\n\n# sort_values method\ndf_explore_sorted = df_explore.sort_values(by='A')\ndf_explore_sorted.head()\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\n# iloc method\ndf_explore_iloc = df_explore_sorted.iloc[0:5]\ndf_explore_iloc\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\n# loc method\ndf_explore_loc = df_explore_sorted.loc[df_explore_sorted['B'] == 'red']\ndf_explore_loc.head()\n\nUnable to display output for mime type(s): application/vnd.dataresource+json"
+  },
+  {
+    "objectID": "introduction_to_python/class2.html#boolean-indexing",
+    "href": "introduction_to_python/class2.html#boolean-indexing",
+    "title": "Dataframes in Python",
+    "section": "Boolean Indexing",
+    "text": "Boolean Indexing\nBoolean indexing is a powerful tool that allows you to select data that meets certain conditions. This can be done using comparison operators (&gt;, &lt;, ==) and logical operators (& for ‘and’, | for ‘or’). Let’s see some examples.\n\n# Boolean indexing with '&gt;'\ndf_explore[df_explore['A'] &gt; 5]\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\n# Boolean indexing with '&lt;'\ndf_explore[df_explore['A'] &lt; 5]\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\n# Boolean indexing with '=='\ndf_explore[df_explore['B'] == 'red']\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\n# Boolean indexing with '&' (and)\ndf_explore[(df_explore['A'] &gt; 5) & (df_explore['B'] == 'red')]\n\nUnable to display output for mime type(s): application/vnd.dataresource+json\n\n\n\n# Boolean indexing with '|' (or)\ndf_explore[(df_explore['A'] &lt; 5) | (df_explore['B'] == 'red')]\n\nUnable to display output for mime type(s): application/vnd.dataresource+json"
+  },
+  {
+    "objectID": "introduction_to_python/class2.html#exporting-dataframes",
+    "href": "introduction_to_python/class2.html#exporting-dataframes",
+    "title": "Dataframes in Python",
+    "section": "Exporting DataFrames",
+    "text": "Exporting DataFrames\nPandas provides several methods to export a DataFrame to different file formats. This can be very useful when you want to save your data for later use or to share it with others. In this section, we’ll explore how to export a DataFrame to CSV, Excel, and JSON formats.\n\n# Exporting to CSV\n# df_explore.to_csv('df_explore.csv', index=False)\n\n\n# Exporting to Excel\n# df_explore.to_excel('df_explore.xlsx', index=False)\n\n\n# Exporting to JSON\n# df_explore.to_json('df_explore.json', orient='records')"
+  },
+  {
+    "objectID": "introduction_to_python/class2.html#exercises",
+    "href": "introduction_to_python/class2.html#exercises",
+    "title": "Dataframes in Python",
+    "section": "Exercises",
+    "text": "Exercises\nNow that we have learned about pandas DataFrames, let’s put our knowledge into practice with some exercises. These exercises cover all the topics we have discussed in this notebook and vary in difficulty from easy to hard.\n\nExercise 1 (Easy)\nCreate a DataFrame from a dictionary with keys ‘Name’, ‘Age’, and ‘City’. The ‘Name’ column should contain five different names, the ‘Age’ column should contain ages between 20 and 40, and the ‘City’ column should contain the names of five different cities.\n\n\nExercise 2 (Medium)\nGiven the DataFrame created in Exercise 1, perform the following operations:\n\nSet the ‘Name’ column as the index of the DataFrame.\nReset the index of the DataFrame.\nSelect only the rows where ‘Age’ is greater than 30.\n\n\n\nExercise 3 (Medium)\nCreate a DataFrame with 10 rows and 3 columns named ‘A’, ‘B’, and ‘C’. The ‘A’ column should contain random integers between 1 and 10, the ‘B’ column should contain random floats between 0 and 1, and the ‘C’ column should contain the string ‘random’ for all rows. Then, export this DataFrame to a CSV file named ‘random.csv’.\n\n\nExercise 4 (Hard)\nGiven the DataFrame created in Exercise 3, perform the following operations:\n\nCreate a new column ‘D’ that is the result of ‘A’ divided by ‘B’.\nReplace all ‘inf’ values in column ‘D’ with ‘NaN’.\nDrop all rows with ‘NaN’ values.\nReset the index of the DataFrame without adding a new ‘index’ column.\n\n\n\nExercise 5 (Hard)\nGiven a DataFrame with 100 rows and 5 columns named ‘A’, ‘B’, ‘C’, ‘D’, and ‘E’. All columns should contain random integers between 1 and 100. Perform the following operations:\n\nSelect only the rows where ‘A’ is greater than 50 and ‘B’ is less than 50.\nFrom the resulting DataFrame, select only the ‘C’, ‘D’, and ‘E’ columns.\nCalculate the sum of the ‘C’, ‘D’, and ‘E’ columns for each row (you should end up with a Series).\nFind the row (index) with the highest sum."
   },
   {
     "objectID": "introduction_to_python/class1.html",
@@ -221,35 +305,21 @@
     "href": "introduction_to_python/classes.html",
     "title": "Introduction to Python",
     "section": "",
-    "text": "Class 1: Getting to know python |"
+    "text": "Class 1: Getting to know python | \nClass 2: Pandas Dataframe |"
   },
   {
-    "objectID": "machine_learning_egei/class1.html",
-    "href": "machine_learning_egei/class1.html",
-    "title": "Class1: Different types of Data",
+    "objectID": "personal/academica.html",
+    "href": "personal/academica.html",
+    "title": "Academic Experience",
     "section": "",
-    "text": "In the field of data science, we often talk about different types of data. Understanding these types is crucial for proper data analysis and interpretation. Here are some of the most common types of data:\nIn Python, we have several data types that are commonly used. Here are some of them with examples:\nPython has a variety of operators that can be used with different data types. Here are some examples:"
+    "text": "About this site"
   },
   {
-    "objectID": "machine_learning_egei/class1.html#python-data-types-exercises",
-    "href": "machine_learning_egei/class1.html#python-data-types-exercises",
-    "title": "Class1: Different types of Data",
-    "section": "Python Data Types: Exercises",
-    "text": "Python Data Types: Exercises\n\n# Exercise 1: Working with integers and floats\nnum1 = 10\nnum2 = 3\n\n# Addition\nprint('Addition:', num1 + num2)\n\n# Subtraction\nprint('Subtraction:', num1 - num2)\n\n# Multiplication\nprint('Multiplication:', num1 * num2)\n\n# Division\nprint('Division:', num1 / num2)\n\n# Floor Division\nprint('Floor Division:', num1 // num2)\n\n# Modulus\nprint('Modulus:', num1 % num2)\n\n# Exponentiation\nprint('Exponentiation:', num1 ** num2)\n\nAddition: 13\nSubtraction: 7\nMultiplication: 30\nDivision: 3.3333333333333335\nFloor Division: 3\nModulus: 1\nExponentiation: 1000\n\n\n\n# Exercise 2: Working with strings\nstr1 = 'Hello'\nstr2 = 'World'\n\n# String concatenation\nprint('Concatenation:', str1 + ' ' + str2)\n\n# String repetition\nprint('Repetition:', str1 * 3)\n\n# String slicing\nprint('Slicing:', str1[1:4])\n\n# String length\nprint('Length:', len(str1))\n\nConcatenation: Hello World\nRepetition: HelloHelloHello\nSlicing: ell\nLength: 5\n\n\n\n# Exercise 3: Working with lists\nlist1 = [1, 2, 3, 4, 5]\n\n# Accessing elements\nprint('First element:', list1[0])\nprint('Last element:', list1[-1])\n\n# List slicing\nprint('Slicing:', list1[1:4])\n\n# List length\nprint('Length:', len(list1))\n\n# Adding elements\nlist1.append(6)\nprint('After adding an element:', list1)\n\n# Removing elements\nlist1.remove(1)\nprint('After removing an element:', list1)\n\nFirst element: 1\nLast element: 5\nSlicing: [2, 3, 4]\nLength: 5\nAfter adding an element: [1, 2, 3, 4, 5, 6]\nAfter removing an element: [2, 3, 4, 5, 6]\n\n\n\n# Exercise 4: Working with dictionaries\ndict1 = {'name': 'John', 'age': 30, 'city': 'New York'}\n\n# Accessing elements\nprint('Name:', dict1['name'])\nprint('Age:', dict1['age'])\n\n# Adding elements\ndict1['job'] = 'Engineer'\nprint('After adding an element:', dict1)\n\n# Removing elements\ndel dict1['age']\nprint('After removing an element:', dict1)\n\nName: John\nAge: 30\nAfter adding an element: {'name': 'John', 'age': 30, 'city': 'New York', 'job': 'Engineer'}\nAfter removing an element: {'name': 'John', 'city': 'New York', 'job': 'Engineer'}"
-  },
-  {
-    "objectID": "machine_learning_egei/class1.html#python-functions",
-    "href": "machine_learning_egei/class1.html#python-functions",
-    "title": "Class1: Different types of Data",
-    "section": "Python Functions",
-    "text": "Python Functions\nIn Python, a function is a block of reusable code that performs a specific task. Functions help break our program into smaller and modular chunks, making it organized and manageable. They also prevent repetition and make the code reusable.\nHere’s the basic syntax of a Python function:\ndef function_name(parameters):\n    \"\"\"docstring\"\"\"\n    statement(s)\n\nThe def keyword is a statement for defining a function in Python.\nfunction_name is a unique identifier for the function.\nparameters (arguments) through which we pass values to a function. These are optional.\nA colon (:) to mark the end of the function header.\nOptional documentation string (docstring) to describe what the function does.\nOne or more valid python statements that make up the function body. Statements must have the same indentation level (usually 4 spaces).\nAn optional return statement to return a value from the function.\n\n\n# Example of a Python function\n\ndef greet(name):\n    \"\"\"\n    This function greets the person passed in as a parameter\n    \"\"\"\n    print(f'Hello, {name}. Good morning!')\n\n# Calling the function\ngreet('John')\n\nHello, John. Good morning!\n\n\n\n# Example of a Python function with a return statement\n\ndef add_numbers(num1, num2):\n    \"\"\"\n    This function adds the two numbers passed in as parameters\n    \"\"\"\n    return num1 + num2\n\n# Calling the function and printing the result\nresult = add_numbers(5, 3)\nprint(f'The sum is {result}')\n\nThe sum is 8"
-  },
-  {
-    "objectID": "machine_learning_egei/class1.html#exercises",
-    "href": "machine_learning_egei/class1.html#exercises",
-    "title": "Class1: Different types of Data",
-    "section": "Exercises",
-    "text": "Exercises\n\nExercise 1: Data Types\nGiven the following variables, convert each one to a different data type:\nnum = '123'\nstr_num = 456\nConvert num to an integer and str_num to a string. Print the new variables and their types.\n\n\nExercise 2: Functions\nWrite a function named calculate_average that takes a list of numbers as a parameter and returns their average.\nThen, call your function with the list [1, 2, 3, 4, 5] and print the result.\n\n\nExercise 3: Lists and Dictionaries\nGiven the following list of dictionaries:\ndata = [\n    {'name': 'John', 'age': 30, 'job': 'Engineer'},\n    {'name': 'Anna', 'age': 27, 'job': 'Doctor'},\n    {'name': 'Mike', 'age': 35, 'job': 'Artist'}\n]\nWrite a function named get_ages that takes the list as a parameter and returns a list of all ages. Then, call your function with the data list and print the result."
+    "objectID": "machine_learning_egei/classes.html",
+    "href": "machine_learning_egei/classes.html",
+    "title": "Machine Learning with Business Application UTFSM",
+    "section": "",
+    "text": "Class 1: Different type of Data |"
   },
   {
     "objectID": "index.html",
