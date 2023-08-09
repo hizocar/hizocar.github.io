@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Dataframes in Python</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aboutme" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">AboutMe</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-aboutme">    
+        <li class="dropdown-header">AboutMe</li>
+        <li>
+    <a class="dropdown-item" href="../personal/perfil.html" rel="" target="">
+ <span class="dropdown-text">Activities and information about me</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../personal/academica.html" rel="" target="">
+ <span class="dropdown-text">Academic Experience</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../personal/laboral.html" rel="" target="">
+ <span class="dropdown-text">Data Experience</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-courses" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Courses</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-courses">    
+        <li>
+    <a class="dropdown-item" href="../machine_learning_egei/classes.html" rel="" target="">
+ <span class="dropdown-text">Machine Learning with Business Application UTFSM</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../introduction_to_python/classes.html" rel="" target="">
+ <span class="dropdown-text">Introduction to Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../data_science_ingemat/classes.html" rel="" target="">
+ <span class="dropdown-text">Data Science for Math Engineers USACH</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools ms-auto tools-wide">
+    <a href="https://github.com/hizocar" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dataframe-indexing" id="toc-dataframe-indexing" class="nav-link active" data-scroll-target="#dataframe-indexing">DataFrame Indexing</a></li>
+  <li><a href="#creating-dataframes" id="toc-creating-dataframes" class="nav-link" data-scroll-target="#creating-dataframes">Creating DataFrames</a></li>
+  <li><a href="#dataframe-operations-and-methods" id="toc-dataframe-operations-and-methods" class="nav-link" data-scroll-target="#dataframe-operations-and-methods">DataFrame Operations and Methods</a>
+  <ul class="collapse">
+  <li><a href="#the-ignore_index-parameter" id="toc-the-ignore_index-parameter" class="nav-link" data-scroll-target="#the-ignore_index-parameter">The <code>ignore_index</code> Parameter</a></li>
+  </ul></li>
+  <li><a href="#exploring-a-dataframe" id="toc-exploring-a-dataframe" class="nav-link" data-scroll-target="#exploring-a-dataframe">Exploring a DataFrame</a></li>
+  <li><a href="#sorting-and-ranking-in-a-dataframe" id="toc-sorting-and-ranking-in-a-dataframe" class="nav-link" data-scroll-target="#sorting-and-ranking-in-a-dataframe">Sorting and Ranking in a DataFrame</a></li>
+  <li><a href="#boolean-indexing" id="toc-boolean-indexing" class="nav-link" data-scroll-target="#boolean-indexing">Boolean Indexing</a></li>
+  <li><a href="#exporting-dataframes" id="toc-exporting-dataframes" class="nav-link" data-scroll-target="#exporting-dataframes">Exporting DataFrames</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1-easy" id="toc-exercise-1-easy" class="nav-link" data-scroll-target="#exercise-1-easy">Exercise 1 (Easy)</a></li>
+  <li><a href="#exercise-2-medium" id="toc-exercise-2-medium" class="nav-link" data-scroll-target="#exercise-2-medium">Exercise 2 (Medium)</a></li>
+  <li><a href="#exercise-3-medium" id="toc-exercise-3-medium" class="nav-link" data-scroll-target="#exercise-3-medium">Exercise 3 (Medium)</a></li>
+  <li><a href="#exercise-4-hard" id="toc-exercise-4-hard" class="nav-link" data-scroll-target="#exercise-4-hard">Exercise 4 (Hard)</a></li>
+  <li><a href="#exercise-5-hard" id="toc-exercise-5-hard" class="nav-link" data-scroll-target="#exercise-5-hard">Exercise 5 (Hard)</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Dataframes in Python</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p align="center">
+<img src="images/cat_class2.png" width="50%" height="50%">
+</p>
+<p>A DataFrame is a two-dimensional labeled data structure with columns of potentially different types. It is generally the most commonly used pandas object. You can think of it like a spreadsheet or SQL table, or a dictionary of Series objects. It is generally the most commonly used pandas object.</p>
+<p>DataFrames can be created in various ways, but for this example, we’ll create a DataFrame from a dictionary of pandas Series.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T22:51:41.120996+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T22:51:40.931019+00:00&quot;}" data-datalink="{&quot;f3de9e83-2927-46f3-a02c-2e6c3f0d0c63&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:2,&quot;orig_num_rows&quot;:4,&quot;orig_size_bytes&quot;:96,&quot;truncated_num_cols&quot;:2,&quot;truncated_num_rows&quot;:4,&quot;truncated_size_bytes&quot;:96,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;f3de9e83-2927-46f3-a02c-2e6c3f0d0c63&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T22:51:40.964434&quot;,&quot;user_variable_name&quot;:&quot;df&quot;,&quot;variable_name&quot;:&quot;df&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690930333546,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'apples'</span>: pd.Series([<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>]),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'oranges'</span>: pd.Series([<span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">2</span>])</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<section id="dataframe-indexing" class="level2">
+<h2 class="anchored" data-anchor-id="dataframe-indexing">DataFrame Indexing</h2>
+<p>Indexing in pandas means simply selecting particular rows and columns of data from a DataFrame. Indexes can be used to select specific rows and columns that you want to manipulate. They can also be used to modify the structure of the DataFrame itself, for example, by adding rows or columns.</p>
+<p>Let’s explore some examples of how to work with DataFrame indexes.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T22:53:56.741674+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T22:53:56.552034+00:00&quot;}" data-datalink="{&quot;56d9440c-560e-4cff-b6a0-e556b95a3a1f&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:false,&quot;orig_num_cols&quot;:1,&quot;orig_num_rows&quot;:4,&quot;orig_size_bytes&quot;:64,&quot;truncated_num_cols&quot;:1,&quot;truncated_num_rows&quot;:4,&quot;truncated_size_bytes&quot;:64,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;56d9440c-560e-4cff-b6a0-e556b95a3a1f&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T22:53:56.585496&quot;,&quot;user_variable_name&quot;:&quot;df_indexed&quot;,&quot;variable_name&quot;:&quot;df_indexed&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690930450913,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a column as the index</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_indexed <span class="op">=</span> df.set_index(<span class="st">'apples'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df_indexed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T22:54:05.196285+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T22:54:05.000822+00:00&quot;}" data-datalink="{&quot;a57b390e-29e8-46fb-a890-b8851110b927&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:2,&quot;orig_num_rows&quot;:4,&quot;orig_size_bytes&quot;:96,&quot;truncated_num_cols&quot;:2,&quot;truncated_num_rows&quot;:4,&quot;truncated_size_bytes&quot;:96,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;a57b390e-29e8-46fb-a890-b8851110b927&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T22:54:05.039762&quot;,&quot;user_variable_name&quot;:&quot;df&quot;,&quot;variable_name&quot;:&quot;df&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690930455310,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reset the index</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df_reset <span class="op">=</span> df_indexed.reset_index()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df_reset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-dataframes" class="level2">
+<h2 class="anchored" data-anchor-id="creating-dataframes">Creating DataFrames</h2>
+<p>Pandas DataFrames can be created in various ways. Some of the most common methods are: from a list, from a dictionary, from a list of dictionaries, and from a NumPy array. Let’s explore examples of each.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T22:55:57.458365+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T22:55:57.252755+00:00&quot;}" data-datalink="{&quot;66bd1095-be6a-4af2-b62b-793638410a7c&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:2,&quot;orig_num_rows&quot;:3,&quot;orig_size_bytes&quot;:72,&quot;truncated_num_cols&quot;:2,&quot;truncated_num_rows&quot;:3,&quot;truncated_size_bytes&quot;:72,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;66bd1095-be6a-4af2-b62b-793638410a7c&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T22:55:57.300382&quot;,&quot;user_variable_name&quot;:&quot;df_list&quot;,&quot;variable_name&quot;:&quot;df_list&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690930611415,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a DataFrame from a list</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>list_data <span class="op">=</span> [[<span class="st">'Alex'</span>,<span class="dv">10</span>],[<span class="st">'Bob'</span>,<span class="dv">12</span>],[<span class="st">'Clarke'</span>,<span class="dv">13</span>]]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df_list <span class="op">=</span> pd.DataFrame(list_data, columns<span class="op">=</span>[<span class="st">'Name'</span>,<span class="st">'Age'</span>])</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>df_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T22:56:08.615735+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T22:56:08.415579+00:00&quot;}" data-datalink="{&quot;eeb6be37-bb40-4a92-b287-b27d691469ce&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:2,&quot;orig_num_rows&quot;:3,&quot;orig_size_bytes&quot;:72,&quot;truncated_num_cols&quot;:2,&quot;truncated_num_rows&quot;:3,&quot;truncated_size_bytes&quot;:72,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;eeb6be37-bb40-4a92-b287-b27d691469ce&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T22:56:08.458038&quot;,&quot;user_variable_name&quot;:&quot;df_dict&quot;,&quot;variable_name&quot;:&quot;df_dict&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690930615603,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a DataFrame from a dictionary</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dict_data <span class="op">=</span> {<span class="st">'Name'</span>:[<span class="st">'Tom'</span>, <span class="st">'Nick'</span>, <span class="st">'John'</span>], <span class="st">'Age'</span>:[<span class="dv">20</span>, <span class="dv">21</span>, <span class="dv">19</span>]}</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df_dict <span class="op">=</span> pd.DataFrame(dict_data)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>df_dict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T22:56:20.865250+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T22:56:20.655897+00:00&quot;}" data-datalink="{&quot;88d8c010-b708-42e3-b0be-059f7a90009b&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:3,&quot;orig_num_rows&quot;:2,&quot;orig_size_bytes&quot;:64,&quot;truncated_num_cols&quot;:3,&quot;truncated_num_rows&quot;:2,&quot;truncated_size_bytes&quot;:64,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;88d8c010-b708-42e3-b0be-059f7a90009b&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T22:56:20.706963&quot;,&quot;user_variable_name&quot;:&quot;df_list_dict&quot;,&quot;variable_name&quot;:&quot;df_list_dict&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690930618263,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a DataFrame from a list of dictionaries</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>list_dict_data <span class="op">=</span> [{<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>},{<span class="st">'a'</span>: <span class="dv">3</span>, <span class="st">'b'</span>: <span class="dv">4</span>, <span class="st">'c'</span>: <span class="dv">5</span>}]</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>df_list_dict <span class="op">=</span> pd.DataFrame(list_dict_data)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>df_list_dict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T22:56:32.286408+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T22:56:32.059223+00:00&quot;}" data-datalink="{&quot;a508ada3-ffdf-4a40-9d55-b5b2022f73c1&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:2,&quot;orig_num_rows&quot;:2,&quot;orig_size_bytes&quot;:48,&quot;truncated_num_cols&quot;:2,&quot;truncated_num_rows&quot;:2,&quot;truncated_size_bytes&quot;:48,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;a508ada3-ffdf-4a40-9d55-b5b2022f73c1&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T22:56:32.129897&quot;,&quot;user_variable_name&quot;:&quot;df_numpy&quot;,&quot;variable_name&quot;:&quot;df_numpy&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690930621361,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a DataFrame from a NumPy array</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>numpy_data <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>df_numpy <span class="op">=</span> pd.DataFrame(numpy_data, columns<span class="op">=</span>[<span class="st">'Column1'</span>, <span class="st">'Column2'</span>])</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>df_numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+</section>
+<section id="dataframe-operations-and-methods" class="level2">
+<h2 class="anchored" data-anchor-id="dataframe-operations-and-methods">DataFrame Operations and Methods</h2>
+<p>Pandas DataFrames offer a wide range of operations and methods that can be used to manipulate and analyze data. In this section, we’ll explore how to create new columns, how to create columns from other columns through operations, and how to combine DataFrames using the concatenate method.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:00:09.522778+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:00:09.311733+00:00&quot;}" data-datalink="{&quot;e1518d2b-636a-4638-8049-71bf591b0c4c&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:3,&quot;orig_num_rows&quot;:4,&quot;orig_size_bytes&quot;:128,&quot;truncated_num_cols&quot;:3,&quot;truncated_num_rows&quot;:4,&quot;truncated_size_bytes&quot;:128,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;e1518d2b-636a-4638-8049-71bf591b0c4c&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:00:09.363875&quot;,&quot;user_variable_name&quot;:&quot;df&quot;,&quot;variable_name&quot;:&quot;df&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690930850771,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a new column</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'bananas'</span>] <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>])</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:00:19.303383+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:00:19.102267+00:00&quot;}" data-datalink="{&quot;9748e3e5-076f-4c32-a3e6-1fdf44d37d85&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:4,&quot;orig_num_rows&quot;:4,&quot;orig_size_bytes&quot;:160,&quot;truncated_num_cols&quot;:4,&quot;truncated_num_rows&quot;:4,&quot;truncated_size_bytes&quot;:160,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;9748e3e5-076f-4c32-a3e6-1fdf44d37d85&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:00:19.146047&quot;,&quot;user_variable_name&quot;:&quot;df&quot;,&quot;variable_name&quot;:&quot;df&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690930856638,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a column from other columns</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_fruits'</span>] <span class="op">=</span> df[<span class="st">'apples'</span>] <span class="op">+</span> df[<span class="st">'oranges'</span>] <span class="op">+</span> df[<span class="st">'bananas'</span>]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:00:31.397187+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:00:31.191457+00:00&quot;}" data-datalink="{&quot;ead3a51c-7b76-4754-8c27-ac868dcf0da5&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:4,&quot;orig_num_rows&quot;:6,&quot;orig_size_bytes&quot;:240,&quot;truncated_num_cols&quot;:4,&quot;truncated_num_rows&quot;:6,&quot;truncated_size_bytes&quot;:240,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;ead3a51c-7b76-4754-8c27-ac868dcf0da5&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:00:31.240299&quot;,&quot;user_variable_name&quot;:&quot;df_concat&quot;,&quot;variable_name&quot;:&quot;df_concat&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690930864508,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating another DataFrame to concatenate</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame({<span class="st">'apples'</span>: [<span class="dv">5</span>, <span class="dv">3</span>], <span class="st">'oranges'</span>: [<span class="dv">2</span>, <span class="dv">4</span>], <span class="st">'bananas'</span>: [<span class="dv">7</span>, <span class="dv">6</span>]}, index<span class="op">=</span>[<span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenating DataFrames</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>df_concat <span class="op">=</span> pd.concat([df, df2])</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>df_concat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<section id="the-ignore_index-parameter" class="level3">
+<h3 class="anchored" data-anchor-id="the-ignore_index-parameter">The <code>ignore_index</code> Parameter</h3>
+<p>When concatenating DataFrames, pandas provides an <code>ignore_index</code> parameter. If <code>ignore_index</code> is set to True, the resulting DataFrame will have a new integer index, ignoring the original indices of the concatenated DataFrames. Let’s see an example.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:02:04.602154+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:02:04.390831+00:00&quot;}" data-datalink="{&quot;5fa30701-0877-46ea-807c-ad163b23c027&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:4,&quot;orig_num_rows&quot;:6,&quot;orig_size_bytes&quot;:240,&quot;truncated_num_cols&quot;:4,&quot;truncated_num_rows&quot;:6,&quot;truncated_size_bytes&quot;:240,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;5fa30701-0877-46ea-807c-ad163b23c027&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:02:04.444133&quot;,&quot;user_variable_name&quot;:&quot;df_concat&quot;,&quot;variable_name&quot;:&quot;df_concat&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690930928088,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenating DataFrames with ignore_index</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df_concat_ignore_index <span class="op">=</span> pd.concat([df, df2], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>df_concat_ignore_index</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="exploring-a-dataframe" class="level2">
+<h2 class="anchored" data-anchor-id="exploring-a-dataframe">Exploring a DataFrame</h2>
+<p>Pandas provides several methods that are useful for quickly summarizing and gaining insights from your data. In this section, we’ll explore the <code>value_counts</code>, <code>unique</code>, <code>nunique</code>, and <code>describe</code> methods. Let’s first create a new DataFrame for these examples.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:04:13.286285+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:04:13.073194+00:00&quot;}" data-datalink="{&quot;24cd3e48-99f4-45b5-952c-9c8ec98d1e0e&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:5,&quot;orig_num_rows&quot;:20,&quot;orig_size_bytes&quot;:960,&quot;truncated_num_cols&quot;:5,&quot;truncated_num_rows&quot;:20,&quot;truncated_size_bytes&quot;:960,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;24cd3e48-99f4-45b5-952c-9c8ec98d1e0e&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:04:13.129311&quot;,&quot;user_variable_name&quot;:&quot;df_explore&quot;,&quot;variable_name&quot;:&quot;df_explore&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;simpleTableExpanded&quot;:true,&quot;updated&quot;:1690931061853,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a new DataFrame</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'A'</span>: np.random.randint(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">20</span>),</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'B'</span>: np.random.choice([<span class="st">'red'</span>, <span class="st">'green'</span>, <span class="st">'blue'</span>], <span class="dv">20</span>),</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'C'</span>: np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">20</span>),</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'D'</span>: np.random.choice([<span class="st">'cat'</span>, <span class="st">'dog'</span>, <span class="st">'rabbit'</span>], <span class="dv">20</span>),</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'E'</span>: np.random.randint(<span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">20</span>)</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>df_explore <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>df_explore</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:04:24.348585+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:04:24.150314+00:00&quot;}" data-datalink="{&quot;4b7794f1-9f08-4be4-9711-8f02ed712de3&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:false,&quot;orig_num_cols&quot;:1,&quot;orig_num_rows&quot;:3,&quot;orig_size_bytes&quot;:48,&quot;truncated_num_cols&quot;:1,&quot;truncated_num_rows&quot;:3,&quot;truncated_size_bytes&quot;:48,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;4b7794f1-9f08-4be4-9711-8f02ed712de3&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:04:24.192409&quot;,&quot;user_variable_name&quot;:null,&quot;variable_name&quot;:&quot;unk_dataframe_f261e7e5f6be45549ab675d6e84a2a5c&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690931083410,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># value_counts method</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>df_explore[<span class="st">'B'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:04:33.269618+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:04:33.108563+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># unique method</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>df_explore[<span class="st">'D'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>array(['rabbit', 'dog', 'cat'], dtype=object)</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:04:42.850993+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:04:42.691788+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nunique method</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>df_explore[<span class="st">'A'</span>].nunique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>9</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:04:52.324449+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:04:52.111413+00:00&quot;}" data-datalink="{&quot;c53e93e5-4954-47d6-827f-d7c05035cd4e&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:false,&quot;orig_num_cols&quot;:3,&quot;orig_num_rows&quot;:8,&quot;orig_size_bytes&quot;:256,&quot;truncated_num_cols&quot;:3,&quot;truncated_num_rows&quot;:8,&quot;truncated_size_bytes&quot;:256,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;c53e93e5-4954-47d6-827f-d7c05035cd4e&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:04:52.167424&quot;,&quot;user_variable_name&quot;:null,&quot;variable_name&quot;:&quot;unk_dataframe_1aecddf0d7ce44ffa9687f8e41d86936&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690931099020,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># describe method</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>df_explore.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+</section>
+<section id="sorting-and-ranking-in-a-dataframe" class="level2">
+<h2 class="anchored" data-anchor-id="sorting-and-ranking-in-a-dataframe">Sorting and Ranking in a DataFrame</h2>
+<p>Pandas provides several methods for sorting and ranking data in a DataFrame. In this section, we’ll explore the <code>sort_values</code>, <code>iloc</code>, and <code>loc</code> methods. The <code>sort_values</code> method sorts a DataFrame by one or more columns, while <code>iloc</code> and <code>loc</code> are used for indexing and selecting data.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:07:59.185622+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:07:58.963545+00:00&quot;}" data-datalink="{&quot;028dec28-d98e-4cc0-97bf-93dcb668bce5&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:5,&quot;orig_num_rows&quot;:5,&quot;orig_size_bytes&quot;:240,&quot;truncated_num_cols&quot;:5,&quot;truncated_num_rows&quot;:5,&quot;truncated_size_bytes&quot;:240,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;028dec28-d98e-4cc0-97bf-93dcb668bce5&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:07:59.028398&quot;,&quot;user_variable_name&quot;:&quot;df_explore_iloc&quot;,&quot;variable_name&quot;:&quot;df_explore_iloc&quot;},&quot;de6c767d-ef05-4db7-87c9-b8d6d3194d01&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:5,&quot;orig_num_rows&quot;:20,&quot;orig_size_bytes&quot;:960,&quot;truncated_num_cols&quot;:5,&quot;truncated_num_rows&quot;:20,&quot;truncated_size_bytes&quot;:960,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;de6c767d-ef05-4db7-87c9-b8d6d3194d01&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:07:19.274781&quot;,&quot;user_variable_name&quot;:&quot;df_explore_sorted&quot;,&quot;variable_name&quot;:&quot;df_explore_sorted&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690931263257,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sort_values method</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>df_explore_sorted <span class="op">=</span> df_explore.sort_values(by<span class="op">=</span><span class="st">'A'</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>df_explore_sorted.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:07:29.362396+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:07:29.149698+00:00&quot;}" data-datalink="{&quot;a28ac4f4-cfec-4afd-b884-9c633e0a1d5b&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:5,&quot;orig_num_rows&quot;:5,&quot;orig_size_bytes&quot;:240,&quot;truncated_num_cols&quot;:5,&quot;truncated_num_rows&quot;:5,&quot;truncated_size_bytes&quot;:240,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;a28ac4f4-cfec-4afd-b884-9c633e0a1d5b&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:07:29.205159&quot;,&quot;user_variable_name&quot;:&quot;df_explore_iloc&quot;,&quot;variable_name&quot;:&quot;df_explore_iloc&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690931268720,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># iloc method</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>df_explore_iloc <span class="op">=</span> df_explore_sorted.iloc[<span class="dv">0</span>:<span class="dv">5</span>]</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>df_explore_iloc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:08:06.256377+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:08:06.033607+00:00&quot;}" data-datalink="{&quot;d4d70664-87fe-4369-b999-6584379dbca3&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:5,&quot;orig_num_rows&quot;:9,&quot;orig_size_bytes&quot;:432,&quot;truncated_num_cols&quot;:5,&quot;truncated_num_rows&quot;:9,&quot;truncated_size_bytes&quot;:432,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;d4d70664-87fe-4369-b999-6584379dbca3&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:07:39.330905&quot;,&quot;user_variable_name&quot;:&quot;df_explore_loc&quot;,&quot;variable_name&quot;:&quot;df_explore_loc&quot;},&quot;faa0ba03-cc92-40e2-b29b-d7b90eb25066&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:5,&quot;orig_num_rows&quot;:5,&quot;orig_size_bytes&quot;:240,&quot;truncated_num_cols&quot;:5,&quot;truncated_num_rows&quot;:5,&quot;truncated_size_bytes&quot;:240,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;faa0ba03-cc92-40e2-b29b-d7b90eb25066&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:08:06.099060&quot;,&quot;user_variable_name&quot;:null,&quot;variable_name&quot;:&quot;unk_dataframe_af95c50cbef84735aeb31ca1c63c5748&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690931287854,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loc method</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>df_explore_loc <span class="op">=</span> df_explore_sorted.loc[df_explore_sorted[<span class="st">'B'</span>] <span class="op">==</span> <span class="st">'red'</span>]</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>df_explore_loc.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+</section>
+<section id="boolean-indexing" class="level2">
+<h2 class="anchored" data-anchor-id="boolean-indexing">Boolean Indexing</h2>
+<p>Boolean indexing is a powerful tool that allows you to select data that meets certain conditions. This can be done using comparison operators (<code>&gt;</code>, <code>&lt;</code>, <code>==</code>) and logical operators (<code>&amp;</code> for ‘and’, <code>|</code> for ‘or’). Let’s see some examples.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:10:11.956621+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:10:11.719972+00:00&quot;}" data-datalink="{&quot;1160aa15-c576-433f-a450-dd12d184449c&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:5,&quot;orig_num_rows&quot;:10,&quot;orig_size_bytes&quot;:480,&quot;truncated_num_cols&quot;:5,&quot;truncated_num_rows&quot;:10,&quot;truncated_size_bytes&quot;:480,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;1160aa15-c576-433f-a450-dd12d184449c&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:10:11.798434&quot;,&quot;user_variable_name&quot;:null,&quot;variable_name&quot;:&quot;unk_dataframe_6bfc0a1b7761448fa7d18f3809daa24b&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690931441894,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boolean indexing with '&gt;'</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>df_explore[df_explore[<span class="st">'A'</span>] <span class="op">&gt;</span> <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:10:21.668420+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:10:21.450498+00:00&quot;}" data-datalink="{&quot;587051b8-e31b-4649-b739-d71ca4acc205&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:5,&quot;orig_num_rows&quot;:9,&quot;orig_size_bytes&quot;:432,&quot;truncated_num_cols&quot;:5,&quot;truncated_num_rows&quot;:9,&quot;truncated_size_bytes&quot;:432,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;587051b8-e31b-4649-b739-d71ca4acc205&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:10:21.511486&quot;,&quot;user_variable_name&quot;:null,&quot;variable_name&quot;:&quot;unk_dataframe_cbc92930fcc24e7180d4aeb6f508b6ce&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690931446805,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boolean indexing with '&lt;'</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>df_explore[df_explore[<span class="st">'A'</span>] <span class="op">&lt;</span> <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:10:31.468534+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:10:31.250395+00:00&quot;}" data-datalink="{&quot;60b9da91-4783-481e-91bf-53ffb6160871&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:5,&quot;orig_num_rows&quot;:9,&quot;orig_size_bytes&quot;:432,&quot;truncated_num_cols&quot;:5,&quot;truncated_num_rows&quot;:9,&quot;truncated_size_bytes&quot;:432,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;60b9da91-4783-481e-91bf-53ffb6160871&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:10:31.311365&quot;,&quot;user_variable_name&quot;:null,&quot;variable_name&quot;:&quot;unk_dataframe_e34139c648674e9ea99b8319e0acd8b6&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690931449388,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boolean indexing with '=='</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>df_explore[df_explore[<span class="st">'B'</span>] <span class="op">==</span> <span class="st">'red'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:10:42.375899+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:10:42.157061+00:00&quot;}" data-datalink="{&quot;a40b2a9a-78bb-4e6c-bf90-0faa76daaeb7&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:5,&quot;orig_num_rows&quot;:4,&quot;orig_size_bytes&quot;:192,&quot;truncated_num_cols&quot;:5,&quot;truncated_num_rows&quot;:4,&quot;truncated_size_bytes&quot;:192,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;a40b2a9a-78bb-4e6c-bf90-0faa76daaeb7&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:10:42.218715&quot;,&quot;user_variable_name&quot;:null,&quot;variable_name&quot;:&quot;unk_dataframe_1f0760b658b342e39dce9636d7399f3c&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690931451706,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boolean indexing with '&amp;' (and)</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>df_explore[(df_explore[<span class="st">'A'</span>] <span class="op">&gt;</span> <span class="dv">5</span>) <span class="op">&amp;</span> (df_explore[<span class="st">'B'</span>] <span class="op">==</span> <span class="st">'red'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-01T23:10:52.759856+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-01T23:10:52.540982+00:00&quot;}" data-datalink="{&quot;ea304737-3109-4dac-8bfd-df816b93c8ec&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:5,&quot;orig_num_rows&quot;:13,&quot;orig_size_bytes&quot;:624,&quot;truncated_num_cols&quot;:5,&quot;truncated_num_rows&quot;:13,&quot;truncated_size_bytes&quot;:624,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;ea304737-3109-4dac-8bfd-df816b93c8ec&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-01T23:10:52.602736&quot;,&quot;user_variable_name&quot;:null,&quot;variable_name&quot;:&quot;unk_dataframe_ce76e5769b36431aaae91638f923247f&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1690931456307,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boolean indexing with '|' (or)</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>df_explore[(df_explore[<span class="st">'A'</span>] <span class="op">&lt;</span> <span class="dv">5</span>) <span class="op">|</span> (df_explore[<span class="st">'B'</span>] <span class="op">==</span> <span class="st">'red'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+</section>
+<section id="exporting-dataframes" class="level2">
+<h2 class="anchored" data-anchor-id="exporting-dataframes">Exporting DataFrames</h2>
+<p>Pandas provides several methods to export a DataFrame to different file formats. This can be very useful when you want to save your data for later use or to share it with others. In this section, we’ll explore how to export a DataFrame to CSV, Excel, and JSON formats.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exporting to CSV</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co"># df_explore.to_csv('df_explore.csv', index=False)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exporting to Excel</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="co"># df_explore.to_excel('df_explore.xlsx', index=False)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exporting to JSON</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># df_explore.to_json('df_explore.json', orient='records')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<p>Now that we have learned about pandas DataFrames, let’s put our knowledge into practice with some exercises. These exercises cover all the topics we have discussed in this notebook and vary in difficulty from easy to hard.</p>
+<section id="exercise-1-easy" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1-easy">Exercise 1 (Easy)</h3>
+<p>Create a DataFrame from a dictionary with keys ‘Name’, ‘Age’, and ‘City’. The ‘Name’ column should contain five different names, the ‘Age’ column should contain ages between 20 and 40, and the ‘City’ column should contain the names of five different cities.</p>
+</section>
+<section id="exercise-2-medium" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2-medium">Exercise 2 (Medium)</h3>
+<p>Given the DataFrame created in Exercise 1, perform the following operations:</p>
+<ol type="1">
+<li>Set the ‘Name’ column as the index of the DataFrame.</li>
+<li>Reset the index of the DataFrame.</li>
+<li>Select only the rows where ‘Age’ is greater than 30.</li>
+</ol>
+</section>
+<section id="exercise-3-medium" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3-medium">Exercise 3 (Medium)</h3>
+<p>Create a DataFrame with 10 rows and 3 columns named ‘A’, ‘B’, and ‘C’. The ‘A’ column should contain random integers between 1 and 10, the ‘B’ column should contain random floats between 0 and 1, and the ‘C’ column should contain the string ‘random’ for all rows. Then, export this DataFrame to a CSV file named ‘random.csv’.</p>
+</section>
+<section id="exercise-4-hard" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4-hard">Exercise 4 (Hard)</h3>
+<p>Given the DataFrame created in Exercise 3, perform the following operations:</p>
+<ol type="1">
+<li>Create a new column ‘D’ that is the result of ‘A’ divided by ‘B’.</li>
+<li>Replace all ‘inf’ values in column ‘D’ with ‘NaN’.</li>
+<li>Drop all rows with ‘NaN’ values.</li>
+<li>Reset the index of the DataFrame without adding a new ‘index’ column.</li>
+</ol>
+</section>
+<section id="exercise-5-hard" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5-hard">Exercise 5 (Hard)</h3>
+<p>Given a DataFrame with 100 rows and 5 columns named ‘A’, ‘B’, ‘C’, ‘D’, and ‘E’. All columns should contain random integers between 1 and 100. Perform the following operations:</p>
+<ol type="1">
+<li>Select only the rows where ‘A’ is greater than 50 and ‘B’ is less than 50.</li>
+<li>From the resulting DataFrame, select only the ‘C’, ‘D’, and ‘E’ columns.</li>
+<li>Calculate the sum of the ‘C’, ‘D’, and ‘E’ columns for each row (you should end up with a Series).</li>
+<li>Find the row (index) with the highest sum.</li>
+</ol>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -4,4 +4,6 @@ title: "Introduction to Python"
 
 [Class 1: Getting to know python ](/introduction_to_python/class1.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/introduction_to_python/class1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-[Class 2: Pandas Dataframe ](/introduction_to_python/class2.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/introduction_to_python/class2.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+[Class 2: Numpy Arrays ](/introduction_to_python/class2.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/introduction_to_python/class2.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+[Class 3: Pandas Dataframe ](/introduction_to_python/class3.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/introduction_to_python/class3.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
