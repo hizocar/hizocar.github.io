@@ -1,4 +1,9 @@
 ---
 title: "Machine Learning with Business Application UTFSM"
 ---
+# Program
+
+[Program ](/machine_learning_egei/program.qmd)
+
+# Class
 [Class 1: Different type of Data ](/machine_learning_egei/class1.ipynb) | [![](http://colab.research.google.com/assets/colab-badge.svg)](https://drive.google.com/file/d/1UqFWQAIzjaviA9PW_DAv1yjmXG1fskug/view?usp=drive_link)
