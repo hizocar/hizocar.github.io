@@ -88,33 +88,33 @@ The methodology of the course is focused on learning by doing, so the individual
   - RIDGE Regression
   - Elastic Net Regression
 
-### F. Introduction to Neural Networks
+### F. Unlabeled Data
 
-- **F.1 Neural Networks**
+- **F.1 Dimension Reduction**
+  - Unlabeled data
+  - Principal Components
+  - Application of PCA
+
+- **F.2 Clustering**
+  - k-means clustering
+  - Hierarchical clustering
+  - Advantages and Limitations
+  - Practical Application
+
+### G. Introduction to Neural Networks
+
+- **G.1 Neural Networks**
   - Basic concepts
   - Artificial neural networks (ANNs)
   - The simple perceptron
   - Structure of the ANN
   - Methods
 
-- **F.2 Neural Networks Implementation**
+- **G.2 Neural Networks Implementation**
   - Introduction
   - Advantages and Limitations
   - Training the Model
   - Model Optimization
-
-### G. Unlabeled Data
-
-- **G.1 Dimension Reduction**
-  - Unlabeled data
-  - Principal Components
-  - Application of PCA
-
-- **G.2 Clustering**
-  - k-means clustering
-  - Hierarchical clustering
-  - Advantages and Limitations
-  - Practical Application
 
 ## Readings / literature:
 

@@ -6,4 +6,6 @@ title: "Machine Learning with Business Application UTFSM"
 [Program ](/machine_learning_egei/program.qmd)
 
 # Class
-[Class 1: Different type of Data ](/machine_learning_egei/class1.ipynb) | [![](http://colab.research.google.com/assets/colab-badge.svg)](https://drive.google.com/file/d/1UqFWQAIzjaviA9PW_DAv1yjmXG1fskug/view?usp=drive_link)
+[Class 1: Different type of Data ](/machine_learning_egei/class1.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/machine_learning_egei/class1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+[Class 2: Data Manipulation ](/machine_learning_egei/class2.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/machine_learning_egei/class2.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
