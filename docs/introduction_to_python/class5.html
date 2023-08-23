@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Class 5: Data Manipulation I</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aboutme" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">AboutMe</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-aboutme">    
+        <li class="dropdown-header">AboutMe</li>
+        <li>
+    <a class="dropdown-item" href="../personal/perfil.html" rel="" target="">
+ <span class="dropdown-text">Activities and information about me</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../personal/academica.html" rel="" target="">
+ <span class="dropdown-text">Academic Experience</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../personal/laboral.html" rel="" target="">
+ <span class="dropdown-text">Data Experience</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-courses" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Courses</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-courses">    
+        <li>
+    <a class="dropdown-item" href="../machine_learning_egei/classes.html" rel="" target="">
+ <span class="dropdown-text">Machine Learning with Business Application UTFSM</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../introduction_to_python/classes.html" rel="" target="">
+ <span class="dropdown-text">Introduction to Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../data_science_ingemat/classes.html" rel="" target="">
+ <span class="dropdown-text">Data Science for Math Engineers USACH</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools ms-auto tools-wide">
+    <a href="https://github.com/hizocar" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#set-logic" id="toc-set-logic" class="nav-link active" data-scroll-target="#set-logic">Set Logic</a></li>
+  <li><a href="#pandas-merge-function" id="toc-pandas-merge-function" class="nav-link" data-scroll-target="#pandas-merge-function">Pandas Merge Function</a></li>
+  <li><a href="#outer-join-vs-inner-join" id="toc-outer-join-vs-inner-join" class="nav-link" data-scroll-target="#outer-join-vs-inner-join">Outer Join vs Inner Join</a></li>
+  <li><a href="#pivot-tables-transposition-and-lambda-functions" id="toc-pivot-tables-transposition-and-lambda-functions" class="nav-link" data-scroll-target="#pivot-tables-transposition-and-lambda-functions">Pivot Tables, Transposition, and Lambda Functions</a>
+  <ul class="collapse">
+  <li><a href="#pivot-tables" id="toc-pivot-tables" class="nav-link" data-scroll-target="#pivot-tables">Pivot Tables</a></li>
+  <li><a href="#transposition" id="toc-transposition" class="nav-link" data-scroll-target="#transposition">Transposition</a></li>
+  <li><a href="#lambda-functions-with-pivot-tables" id="toc-lambda-functions-with-pivot-tables" class="nav-link" data-scroll-target="#lambda-functions-with-pivot-tables">Lambda Functions with Pivot Tables</a></li>
+  </ul></li>
+  <li><a href="#data-cleaning-and-transformation" id="toc-data-cleaning-and-transformation" class="nav-link" data-scroll-target="#data-cleaning-and-transformation">Data Cleaning and Transformation</a>
+  <ul class="collapse">
+  <li><a href="#duplicates-in-a-dataframe" id="toc-duplicates-in-a-dataframe" class="nav-link" data-scroll-target="#duplicates-in-a-dataframe">Duplicates in a DataFrame</a></li>
+  <li><a href="#original-dataframe-superhero-records" id="toc-original-dataframe-superhero-records" class="nav-link" data-scroll-target="#original-dataframe-superhero-records">Original DataFrame (Superhero Records)</a></li>
+  <li><a href="#identified-duplicate-rows" id="toc-identified-duplicate-rows" class="nav-link" data-scroll-target="#identified-duplicate-rows">Identified Duplicate Rows</a></li>
+  <li><a href="#cleaned-dataframe-after-removing-duplicates" id="toc-cleaned-dataframe-after-removing-duplicates" class="nav-link" data-scroll-target="#cleaned-dataframe-after-removing-duplicates">Cleaned DataFrame (After Removing Duplicates)</a></li>
+  </ul></li>
+  <li><a href="#missing-data" id="toc-missing-data" class="nav-link" data-scroll-target="#missing-data">Missing Data</a>
+  <ul class="collapse">
+  <li><a href="#identifying-missing-data" id="toc-identifying-missing-data" class="nav-link" data-scroll-target="#identifying-missing-data">Identifying Missing Data</a></li>
+  <li><a href="#removing-missing-data" id="toc-removing-missing-data" class="nav-link" data-scroll-target="#removing-missing-data">Removing Missing Data</a></li>
+  <li><a href="#filling-missing-data" id="toc-filling-missing-data" class="nav-link" data-scroll-target="#filling-missing-data">Filling Missing Data</a></li>
+  </ul></li>
+  <li><a href="#apply-function" id="toc-apply-function" class="nav-link" data-scroll-target="#apply-function">Apply Function</a></li>
+  <li><a href="#differences-between-apply-and-applymap" id="toc-differences-between-apply-and-applymap" class="nav-link" data-scroll-target="#differences-between-apply-and-applymap">Differences between <code>apply</code> and <code>applymap</code></a></li>
+  <li><a href="#replacing-data" id="toc-replacing-data" class="nav-link" data-scroll-target="#replacing-data">Replacing Data</a></li>
+  <li><a href="#regular-expressions-regex" id="toc-regular-expressions-regex" class="nav-link" data-scroll-target="#regular-expressions-regex">Regular Expressions (Regex)</a></li>
+  <li><a href="#deep-dive-into-regular-expressions-regex" id="toc-deep-dive-into-regular-expressions-regex" class="nav-link" data-scroll-target="#deep-dive-into-regular-expressions-regex">Deep Dive into Regular Expressions (Regex)</a>
+  <ul class="collapse">
+  <li><a href="#basic-regex-patterns" id="toc-basic-regex-patterns" class="nav-link" data-scroll-target="#basic-regex-patterns">Basic Regex Patterns</a></li>
+  <li><a href="#advanced-regex-patterns" id="toc-advanced-regex-patterns" class="nav-link" data-scroll-target="#advanced-regex-patterns">Advanced Regex Patterns</a></li>
+  </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Class 5: Data Manipulation I</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p align="center">
+<img src="images/cat_class5.png" width="50%" height="50%">
+</p>
+<section id="set-logic" class="level2">
+<h2 class="anchored" data-anchor-id="set-logic">Set Logic</h2>
+<p>In mathematics, a set is a collection of distinct objects, considered as an object in its own right. The operations associated with sets include:</p>
+<ul>
+<li><strong>Union</strong>: Represents all elements that are in either set. Denoted as <span class="math inline">\(A \cup B\)</span>.</li>
+<li><strong>Intersection</strong>: Represents all elements that are common to both sets. Denoted as <span class="math inline">\(A \cap B\)</span>.</li>
+<li><strong>Difference</strong>: Represents all elements that are in the first set but not in the second. Denoted as <span class="math inline">\(A - B\)</span>.</li>
+<li><strong>Complement</strong>: Represents all elements that are not in the given set. Denoted as <span class="math inline">\(\overline{A}\)</span>.</li>
+</ul>
+<p>These operations form the basic foundation for set theory and are crucial when dealing with collections of data.</p>
+</section>
+<section id="pandas-merge-function" class="level2">
+<h2 class="anchored" data-anchor-id="pandas-merge-function">Pandas Merge Function</h2>
+<p>The <code>merge</code> function in pandas is used to combine two DataFrames based on common columns or indices. It’s similar to SQL JOIN operations. The key parameters include:</p>
+<ul>
+<li><code>right</code>: The DataFrame to merge with.</li>
+<li><code>on</code>: Column(s) that should be used to join the DataFrames. These columns should exist in both DataFrames.</li>
+<li><code>left_on</code>: Columns from the left DataFrame to use as keys.</li>
+<li><code>right_on</code>: Columns from the right DataFrame to use as keys.</li>
+</ul>
+<p>Let’s create two example DataFrames to demonstrate the use of <code>merge</code> with <code>right_on</code> and <code>left_on</code>.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-23T00:12:45.432209+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-23T00:12:45.212341+00:00&quot;}" data-datalink="{&quot;e0b5b8ae-adaf-45ed-b3f3-12e3f80d8c25&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:4,&quot;orig_num_rows&quot;:2,&quot;orig_size_bytes&quot;:80,&quot;truncated_num_cols&quot;:4,&quot;truncated_num_rows&quot;:2,&quot;truncated_size_bytes&quot;:80,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;e0b5b8ae-adaf-45ed-b3f3-12e3f80d8c25&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-23T00:12:45.262179&quot;,&quot;user_variable_name&quot;:&quot;merged_df&quot;,&quot;variable_name&quot;:&quot;merged_df&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1692749572262,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating two example DataFrames</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'student_id'</span>: [<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>],</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>courses <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'registration_no'</span>: [<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">104</span>],</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'course'</span>: [<span class="st">'Math'</span>, <span class="st">'Physics'</span>, <span class="st">'Chemistry'</span>]</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Merging the DataFrames using merge with right_on and left_on</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>merged_df <span class="op">=</span> students.merge(courses, left_on<span class="op">=</span><span class="st">'student_id'</span>, right_on<span class="op">=</span><span class="st">'registration_no'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>merged_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+</section>
+<section id="outer-join-vs-inner-join" class="level2">
+<h2 class="anchored" data-anchor-id="outer-join-vs-inner-join">Outer Join vs Inner Join</h2>
+<p>When merging or joining DataFrames in pandas, it’s essential to understand the type of join you want to perform. The two most common types are <code>outer join</code> and <code>inner join</code>:</p>
+<ul>
+<li><p><strong>Outer Join</strong>: This type of join returns all the rows when there is a match in one of the DataFrames. Therefore, it returns all the rows from the left DataFrame and all the rows from the right DataFrame. If there is no match, the missing side will contain NaN.</p></li>
+<li><p><strong>Inner Join</strong>: This type of join returns only the rows where there is a match in both DataFrames. If there’s no match in one of the DataFrames, that row will not be in the result.</p></li>
+</ul>
+<p>To illustrate the difference between these two types of joins, let’s consider an example. Suppose we have a DataFrame of authors and their books, and another DataFrame of books and their prices. We want to merge these DataFrames based on the book titles. Let’s first create and display these DataFrames.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-23T00:15:26.250981+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-23T00:15:26.083510+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating two example DataFrames</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>authors <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'book_title'</span>: [<span class="st">'The Great Gatsby'</span>, <span class="st">'Moby Dick'</span>, <span class="st">'Pride and Prejudice'</span>],</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'author'</span>: [<span class="st">'F. Scott Fitzgerald'</span>, <span class="st">'Herman Melville'</span>, <span class="st">'Jane Austen'</span>]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>prices <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'book_title'</span>: [<span class="st">'The Great Gatsby'</span>, <span class="st">'Moby Dick'</span>, <span class="st">'War and Peace'</span>],</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'price'</span>: [<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>]</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>authors, prices</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>(            book_title               author
+ 0     The Great Gatsby  F. Scott Fitzgerald
+ 1            Moby Dick      Herman Melville
+ 2  Pride and Prejudice          Jane Austen,
+          book_title  price
+ 0  The Great Gatsby     10
+ 1         Moby Dick     15
+ 2     War and Peace     20)</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-23T00:16:05.243455+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-23T00:16:05.073452+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Performing an outer join</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>outer_join_result <span class="op">=</span> authors.merge(prices, on<span class="op">=</span><span class="st">'book_title'</span>, how<span class="op">=</span><span class="st">'outer'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Performing an inner join</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>inner_join_result <span class="op">=</span> authors.merge(prices, on<span class="op">=</span><span class="st">'book_title'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>outer_join_result, inner_join_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>(            book_title               author  price
+ 0     The Great Gatsby  F. Scott Fitzgerald   10.0
+ 1            Moby Dick      Herman Melville   15.0
+ 2  Pride and Prejudice          Jane Austen    NaN
+ 3        War and Peace                  NaN   20.0,
+          book_title               author  price
+ 0  The Great Gatsby  F. Scott Fitzgerald     10
+ 1         Moby Dick      Herman Melville     15)</code></pre>
+</div>
+</div>
+</section>
+<section id="pivot-tables-transposition-and-lambda-functions" class="level2">
+<h2 class="anchored" data-anchor-id="pivot-tables-transposition-and-lambda-functions">Pivot Tables, Transposition, and Lambda Functions</h2>
+<p>In this section, we’ll delve into some advanced data manipulation techniques in pandas, including pivot tables, transposition, and the use of lambda functions.</p>
+<section id="pivot-tables" class="level3">
+<h3 class="anchored" data-anchor-id="pivot-tables">Pivot Tables</h3>
+<p>A pivot table is a data summarization tool used in spreadsheets and other data visualization software. It aggregates a table of data by one or more keys, arranging the data in a rectangle with some of the group keys along the rows and some along the columns. In pandas, the <code>pivot_table</code> function provides this functionality.</p>
+<p>The primary parameters of the <code>pivot_table</code> function are:</p>
+<ul>
+<li><code>values</code>: Column(s) to aggregate.</li>
+<li><code>index</code>: Column(s) to use as the row of the pivot table.</li>
+<li><code>columns</code>: Column(s) to use as the columns of the pivot table.</li>
+<li><code>aggfunc</code>: Aggregation function to use on the data. It can be ‘sum’, ‘mean’, etc. or a custom function.</li>
+</ul>
+<p>Let’s look at two practical examples to understand the use of pivot tables.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-23T00:20:50.231537+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-23T00:20:50.045270+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating two example DataFrames for pivot_table demonstration</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1: Sales data</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>sales_data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Date'</span>: [<span class="st">'2022-01-01'</span>, <span class="st">'2022-01-01'</span>, <span class="st">'2022-01-02'</span>, <span class="st">'2022-01-02'</span>],</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product'</span>: [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'A'</span>, <span class="st">'B'</span>],</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sales'</span>: [<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">110</span>, <span class="dv">160</span>]</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot table to get total sales for each product across dates</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>pivot_sales <span class="op">=</span> sales_data.pivot_table(values<span class="op">=</span><span class="st">'Sales'</span>, index<span class="op">=</span><span class="st">'Date'</span>, columns<span class="op">=</span><span class="st">'Product'</span>, aggfunc<span class="op">=</span><span class="st">'sum'</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: Student grades</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>grades_data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Student'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Alice'</span>, <span class="st">'Bob'</span>],</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Subject'</span>: [<span class="st">'Math'</span>, <span class="st">'Math'</span>, <span class="st">'History'</span>, <span class="st">'History'</span>],</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Grade'</span>: [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">88</span>]</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot table to get grades for each student across subjects</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>pivot_grades <span class="op">=</span> grades_data.pivot_table(values<span class="op">=</span><span class="st">'Grade'</span>, index<span class="op">=</span><span class="st">'Student'</span>, columns<span class="op">=</span><span class="st">'Subject'</span>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>pivot_sales, pivot_grades</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>(Product       A    B
+ Date                
+ 2022-01-01  100  150
+ 2022-01-02  110  160,
+ Subject  History  Math
+ Student               
+ Alice         78    85
+ Bob           88    90)</code></pre>
+</div>
+</div>
+</section>
+<section id="transposition" class="level3">
+<h3 class="anchored" data-anchor-id="transposition">Transposition</h3>
+<p>Transposition is a fundamental operation in linear algebra and data manipulation. In the context of DataFrames, transposition refers to switching the rows and columns with each other. In pandas, you can transpose a DataFrame using the <code>transpose()</code> method or its shorthand <code>.T</code>.</p>
+<p>Transposing can be useful in various scenarios, such as when you want to change the orientation of your data for visualization or when you want to treat columns as rows for certain operations.</p>
+<p>Let’s look at an example to understand the use of transposition.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-23T00:22:08.956996+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-23T00:22:08.787858+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example DataFrame for transposition</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df_transpose <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>],</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Age'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>],</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'City'</span>: [<span class="st">'New York'</span>, <span class="st">'London'</span>, <span class="st">'Paris'</span>]</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Transposing the DataFrame</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>transposed_df <span class="op">=</span> df_transpose.transpose()</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>df_transpose, transposed_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>(      Name  Age      City
+ 0    Alice   25  New York
+ 1      Bob   30    London
+ 2  Charlie   35     Paris,
+              0       1        2
+ Name     Alice     Bob  Charlie
+ Age         25      30       35
+ City  New York  London    Paris)</code></pre>
+</div>
+</div>
+</section>
+<section id="lambda-functions-with-pivot-tables" class="level3">
+<h3 class="anchored" data-anchor-id="lambda-functions-with-pivot-tables">Lambda Functions with Pivot Tables</h3>
+<p>Lambda functions are small, anonymous functions that can have any number of arguments, but can only have one expression. They are useful for performing simple operations without the need to define a full function. In the context of <code>pivot_table</code>, lambda functions can be used as custom aggregation functions.</p>
+<p>For instance, you might want to aggregate data in a way that’s not directly supported by built-in functions. In such cases, a lambda function can be handy.</p>
+<p>Let’s look at an example where we use a lambda function with <code>pivot_table</code> to calculate the range (difference between max and min) of values.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-23T00:23:22.788644+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-23T00:23:22.561701+00:00&quot;}" data-datalink="{&quot;84beb63a-702b-4f1d-adeb-8f50910b0ae5&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:false,&quot;orig_num_cols&quot;:1,&quot;orig_num_rows&quot;:2,&quot;orig_size_bytes&quot;:32,&quot;truncated_num_cols&quot;:1,&quot;truncated_num_rows&quot;:2,&quot;truncated_size_bytes&quot;:32,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;84beb63a-702b-4f1d-adeb-8f50910b0ae5&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-23T00:23:22.621802&quot;,&quot;user_variable_name&quot;:&quot;pivot_lambda&quot;,&quot;variable_name&quot;:&quot;pivot_lambda&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1692750208843,&quot;views&quot;:[]}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example DataFrame for lambda function with pivot_table</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df_lambda <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Category'</span>: [<span class="st">'A'</span>, <span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'B'</span>, <span class="st">'A'</span>, <span class="st">'B'</span>],</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Values'</span>: [<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>]</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Using pivot_table with lambda function to calculate the range of values for each category</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>pivot_lambda <span class="op">=</span> df_lambda.pivot_table(index<span class="op">=</span><span class="st">'Category'</span>, values<span class="op">=</span><span class="st">'Values'</span>, aggfunc<span class="op">=</span><span class="kw">lambda</span> x: x.<span class="bu">max</span>() <span class="op">-</span> x.<span class="bu">min</span>())</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>pivot_lambda</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="data-cleaning-and-transformation" class="level2">
+<h2 class="anchored" data-anchor-id="data-cleaning-and-transformation">Data Cleaning and Transformation</h2>
+<p>One of the essential steps in the data preprocessing pipeline is data cleaning and transformation. This step ensures that the data is of high quality and is ready for analysis. A common issue encountered during this phase is the presence of duplicate records.</p>
+<section id="duplicates-in-a-dataframe" class="level3">
+<h3 class="anchored" data-anchor-id="duplicates-in-a-dataframe">Duplicates in a DataFrame</h3>
+<p>Duplicates refer to rows in a DataFrame that are identical to another row. These can arise due to various reasons such as data entry errors, merging datasets, or not handling data updates correctly. Duplicates can lead to incorrect analysis results, so it’s crucial to identify and handle them appropriately.</p>
+<p>In pandas, you can use the <code>drop_duplicates()</code> method to remove duplicate rows and the <code>duplicated()</code> method to identify them. The <code>subset</code> parameter allows you to consider certain columns for identifying duplicates.</p>
+<p>Let’s dive into an entertaining example to understand the use of these functions.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-23T00:27:17.286034+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-23T00:27:17.114894+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example DataFrame with duplicate records</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df_duplicates <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Superhero'</span>: [<span class="st">'Spider-Man'</span>, <span class="st">'Iron Man'</span>, <span class="st">'Spider-Man'</span>, <span class="st">'Thor'</span>, <span class="st">'Iron Man'</span>, <span class="st">'Hulk'</span>],</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Real Name'</span>: [<span class="st">'Peter Parker'</span>, <span class="st">'Tony Stark'</span>, <span class="st">'Peter Parker'</span>, <span class="st">'Thor Odinson'</span>, <span class="st">'Tony Stark'</span>, <span class="st">'Bruce Banner'</span>],</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'City'</span>: [<span class="st">'New York'</span>, <span class="st">'New York'</span>, <span class="st">'New York'</span>, <span class="st">'Asgard'</span>, <span class="st">'Los Angeles'</span>, <span class="st">'New York'</span>]</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Identifying duplicate rows</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>duplicated_rows <span class="op">=</span> df_duplicates[df_duplicates.duplicated(subset<span class="op">=</span>[<span class="st">'Superhero'</span>, <span class="st">'Real Name'</span>])]</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Removing duplicate rows</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>df_cleaned <span class="op">=</span> df_duplicates.drop_duplicates(subset<span class="op">=</span>[<span class="st">'Superhero'</span>, <span class="st">'Real Name'</span>])</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>df_duplicates, duplicated_rows, df_cleaned</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>(    Superhero     Real Name         City
+ 0  Spider-Man  Peter Parker     New York
+ 1    Iron Man    Tony Stark     New York
+ 2  Spider-Man  Peter Parker     New York
+ 3        Thor  Thor Odinson       Asgard
+ 4    Iron Man    Tony Stark  Los Angeles
+ 5        Hulk  Bruce Banner     New York,
+     Superhero     Real Name         City
+ 2  Spider-Man  Peter Parker     New York
+ 4    Iron Man    Tony Stark  Los Angeles,
+     Superhero     Real Name      City
+ 0  Spider-Man  Peter Parker  New York
+ 1    Iron Man    Tony Stark  New York
+ 3        Thor  Thor Odinson    Asgard
+ 5        Hulk  Bruce Banner  New York)</code></pre>
+</div>
+</div>
+</section>
+<section id="original-dataframe-superhero-records" class="level3">
+<h3 class="anchored" data-anchor-id="original-dataframe-superhero-records">Original DataFrame (Superhero Records)</h3>
+<p>This DataFrame contains records of superheroes, their real names, and cities. As you can observe, there are some duplicate entries in the data.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df_duplicates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="identified-duplicate-rows" class="level3">
+<h3 class="anchored" data-anchor-id="identified-duplicate-rows">Identified Duplicate Rows</h3>
+<p>Using the <code>duplicated()</code> function with the <code>subset</code> parameter, we can identify rows where both the ‘Superhero’ and ‘Real Name’ columns are duplicated. Here are the rows that have been identified as duplicates:</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>duplicated_rows</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="cleaned-dataframe-after-removing-duplicates" class="level3">
+<h3 class="anchored" data-anchor-id="cleaned-dataframe-after-removing-duplicates">Cleaned DataFrame (After Removing Duplicates)</h3>
+<p>After identifying the duplicate rows, we can use the <code>drop_duplicates()</code> function with the <code>subset</code> parameter to remove these rows and obtain a cleaned DataFrame. Here’s the DataFrame after removing the duplicates:</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df_cleaned</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="missing-data" class="level2">
+<h2 class="anchored" data-anchor-id="missing-data">Missing Data</h2>
+<p>In the realm of data analysis, missing data, often represented as <code>NaN</code> (Not a Number), is a common occurrence. It can arise due to various reasons, such as data entry errors, unrecorded observations, or during data processing. Handling missing data is crucial as it can significantly impact the results of your analysis.</p>
+<section id="identifying-missing-data" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-missing-data">Identifying Missing Data</h3>
+<p>Before handling missing data, it’s essential to identify them in your dataset. In pandas, the <code>isna()</code> or <code>isnull()</code> methods can be used to detect missing values. These methods return a DataFrame of the same shape as the original, but with <code>True</code> where the data is missing and <code>False</code> where it’s not.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example DataFrame with missing data</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df_missing <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>, <span class="st">'David'</span>],</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Age'</span>: [<span class="dv">25</span>, np.nan, <span class="dv">35</span>, <span class="dv">40</span>],</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'City'</span>: [<span class="st">'New York'</span>, <span class="st">'Los Angeles'</span>, np.nan, <span class="st">'Chicago'</span>]</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Identifying missing data</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>df_missing.isna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="removing-missing-data" class="level3">
+<h3 class="anchored" data-anchor-id="removing-missing-data">Removing Missing Data</h3>
+<p>Once you’ve identified missing data, you might decide to remove them from your dataset. Pandas provides two main methods for this:</p>
+<ul>
+<li><code>dropna()</code>: This method allows you to drop rows or columns containing missing data.</li>
+<li><code>fillna()</code>: Instead of dropping missing data, you can also replace them with a specific value or a computed value (like mean, median, etc.).</li>
+</ul>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Removing rows with missing data</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df_no_missing_rows <span class="op">=</span> df_missing.dropna()</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Removing columns with missing data</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>df_no_missing_columns <span class="op">=</span> df_missing.dropna(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>df_no_missing_rows, df_no_missing_columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="filling-missing-data" class="level3">
+<h3 class="anchored" data-anchor-id="filling-missing-data">Filling Missing Data</h3>
+<p>Instead of removing missing data, another approach is to fill or replace them. The <code>fillna()</code> method in pandas allows you to replace missing values with a specific value, forward fill, backward fill, or even a computed value like the mean or median of the column.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filling missing data with a specific value</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>df_filled_value <span class="op">=</span> df_missing.fillna(<span class="st">'Unknown'</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Filling missing data with mean of the column</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>df_filled_mean <span class="op">=</span> df_missing.copy()</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>df_filled_mean[<span class="st">'Age'</span>] <span class="op">=</span> df_filled_mean[<span class="st">'Age'</span>].fillna(df_filled_mean[<span class="st">'Age'</span>].mean())</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>df_filled_value, df_filled_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="apply-function" class="level2">
+<h2 class="anchored" data-anchor-id="apply-function">Apply Function</h2>
+<p>The <code>apply()</code> function in pandas is a powerful tool that allows you to apply a function along the axis of a DataFrame (either rows or columns). It’s especially useful when you want to perform custom operations that are not readily available through built-in pandas functions.</p>
+<p>Let’s explore some entertaining examples to understand the versatility of the <code>apply()</code> function.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1: Capitalizing names</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df_names <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Name'</span>: [<span class="st">'alice'</span>, <span class="st">'bob'</span>, <span class="st">'charlie'</span>, <span class="st">'david'</span>]</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>df_names[<span class="st">'Capitalized Name'</span>] <span class="op">=</span> df_names[<span class="st">'Name'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x.capitalize())</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>df_names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: Calculating the length of strings</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>df_phrases <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Phrase'</span>: [<span class="st">'Hello World'</span>, <span class="st">'Pandas is awesome'</span>, <span class="st">'Apply function rocks!'</span>, <span class="st">'Data Science'</span>]</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>df_phrases[<span class="st">'Length'</span>] <span class="op">=</span> df_phrases[<span class="st">'Phrase'</span>].<span class="bu">apply</span>(<span class="bu">len</span>)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>df_phrases</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 3: Categorizing based on age</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df_age <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>, <span class="st">'David'</span>],</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Age'</span>: [<span class="dv">15</span>, <span class="dv">28</span>, <span class="dv">35</span>, <span class="dv">42</span>]</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> age_category(age):</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> age <span class="op">&lt;</span> <span class="dv">18</span>:</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Minor'</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="dv">18</span> <span class="op">&lt;=</span> age <span class="op">&lt;</span> <span class="dv">35</span>:</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Young Adult'</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Adult'</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>df_age[<span class="st">'Category'</span>] <span class="op">=</span> df_age[<span class="st">'Age'</span>].<span class="bu">apply</span>(age_category)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>df_age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="differences-between-apply-and-applymap" class="level2">
+<h2 class="anchored" data-anchor-id="differences-between-apply-and-applymap">Differences between <code>apply</code> and <code>applymap</code></h2>
+<p>Both <code>apply</code> and <code>applymap</code> are essential tools in pandas for element-wise operations, but they serve different purposes and are used in different contexts.</p>
+<ul>
+<li><p><strong>apply</strong>: This function is used on both Series and DataFrame. When used on a Series, it applies a function to each element. When used on a DataFrame, it can apply a function along the axis (either rows or columns).</p></li>
+<li><p><strong>applymap</strong>: This function is exclusive to DataFrames and is used to apply a function to each element of the DataFrame.</p></li>
+</ul>
+<p>Let’s delve into some examples to understand when to use one over the other.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-23T00:40:17.251073+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-23T00:40:17.087213+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example DataFrame</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>df_example <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'A'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'B'</span>: [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>],</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'C'</span>: [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Using apply on a Series</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>series_squared <span class="op">=</span> df_example[<span class="st">'A'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Using apply on a DataFrame to get the sum of each column</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>column_sum <span class="op">=</span> df_example.<span class="bu">apply</span>(<span class="bu">sum</span>, axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Using applymap to square each element of the DataFrame</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>df_squared <span class="op">=</span> df_example.applymap(<span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-23T00:40:24.713730+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-23T00:40:24.487033+00:00&quot;}" data-datalink="{&quot;7a5194e9-7649-4876-8d01-a5771a699be5&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:1,&quot;orig_num_rows&quot;:3,&quot;orig_size_bytes&quot;:48,&quot;truncated_num_cols&quot;:1,&quot;truncated_num_rows&quot;:3,&quot;truncated_size_bytes&quot;:48,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;7a5194e9-7649-4876-8d01-a5771a699be5&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-23T00:40:24.548201&quot;,&quot;user_variable_name&quot;:&quot;series_squared&quot;,&quot;variable_name&quot;:&quot;series_squared&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1692751226315,&quot;views&quot;:[]}" data-jupyter="{&quot;outputs_hidden&quot;:false,&quot;source_hidden&quot;:false}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>series_squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-23T00:40:33.039592+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-23T00:40:32.816993+00:00&quot;}" data-datalink="{&quot;ca669a3f-70a0-4476-abdc-d432c89e3dad&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:false,&quot;orig_num_cols&quot;:1,&quot;orig_num_rows&quot;:3,&quot;orig_size_bytes&quot;:48,&quot;truncated_num_cols&quot;:1,&quot;truncated_num_rows&quot;:3,&quot;truncated_size_bytes&quot;:48,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;ca669a3f-70a0-4476-abdc-d432c89e3dad&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-23T00:40:32.875939&quot;,&quot;user_variable_name&quot;:&quot;column_sum&quot;,&quot;variable_name&quot;:&quot;column_sum&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1692751235549,&quot;views&quot;:[]}" data-jupyter="{&quot;outputs_hidden&quot;:false,&quot;source_hidden&quot;:false}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>column_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-23T00:40:42.080794+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-23T00:40:41.847258+00:00&quot;}" data-datalink="{&quot;74f49712-15a2-494d-bc8e-fe8a859dc204&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:3,&quot;orig_num_rows&quot;:3,&quot;orig_size_bytes&quot;:96,&quot;truncated_num_cols&quot;:3,&quot;truncated_num_rows&quot;:3,&quot;truncated_size_bytes&quot;:96,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;74f49712-15a2-494d-bc8e-fe8a859dc204&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-23T00:40:41.912869&quot;,&quot;user_variable_name&quot;:&quot;df_squared&quot;,&quot;variable_name&quot;:&quot;df_squared&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1692751244419,&quot;views&quot;:[]}" data-jupyter="{&quot;outputs_hidden&quot;:false,&quot;source_hidden&quot;:false}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df_squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+</section>
+<section id="replacing-data" class="level2">
+<h2 class="anchored" data-anchor-id="replacing-data">Replacing Data</h2>
+<p>In data manipulation, there are often scenarios where you need to replace certain values in your dataset. The <code>replace()</code> method in pandas is a versatile tool that allows you to replace values in a DataFrame or Series.</p>
+<p>Let’s start with a basic example of the <code>replace()</code> method.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example DataFrame</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>df_replace <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Fruit'</span>: [<span class="st">'Apple'</span>, <span class="st">'Banana'</span>, <span class="st">'Cherry'</span>, <span class="st">'Apple'</span>],</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Color'</span>: [<span class="st">'Red'</span>, <span class="st">'Yellow'</span>, <span class="st">'Red'</span>, <span class="st">'Green'</span>]</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Using replace to change 'Apple' to 'Mango'</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>df_replaced <span class="op">=</span> df_replace.replace(<span class="st">'Apple'</span>, <span class="st">'Mango'</span>)</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>df_replaced</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="regular-expressions-regex" class="level2">
+<h2 class="anchored" data-anchor-id="regular-expressions-regex">Regular Expressions (Regex)</h2>
+<p>Regular expressions, often abbreviated as regex, are sequences of characters that define a search pattern. They are incredibly powerful for string matching and manipulation. In pandas, you can use regex with the <code>replace()</code> method to perform more complex replacements.</p>
+<p>Let’s delve into the world of regex and explore some examples to understand its capabilities.</p>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-23T00:43:55.020595+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-23T00:43:54.859079+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example DataFrame with phone numbers</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>df_phone <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>],</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Phone'</span>: [<span class="st">'123-456-7890'</span>, <span class="st">'(123) 456-7890'</span>, <span class="st">'123.456.7890'</span>]</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Using regex to standardize phone number format</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>df_phone_standardized <span class="op">=</span> df_phone.copy()</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>df_phone_standardized[<span class="st">'Phone'</span>] <span class="op">=</span> df_phone_standardized[<span class="st">'Phone'</span>].replace(<span class="vs">r'\D'</span>, <span class="st">''</span>, regex<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>df_phone_standardized[<span class="st">'Phone'</span>] <span class="op">=</span> df_phone_standardized[<span class="st">'Phone'</span>].replace(<span class="vs">r'(\d</span><span class="sc">{3}</span><span class="vs">)(\d</span><span class="sc">{3}</span><span class="vs">)(\d</span><span class="sc">{4}</span><span class="vs">)'</span>, <span class="vs">r'\1-\2-\3'</span>, regex<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-23T00:43:56.627415+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-23T00:43:56.387278+00:00&quot;}" data-datalink="{&quot;a2ab346a-f2a2-4f9d-beec-c6658e31d797&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:2,&quot;orig_num_rows&quot;:3,&quot;orig_size_bytes&quot;:72,&quot;truncated_num_cols&quot;:2,&quot;truncated_num_rows&quot;:3,&quot;truncated_size_bytes&quot;:72,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;a2ab346a-f2a2-4f9d-beec-c6658e31d797&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-23T00:43:56.462637&quot;,&quot;user_variable_name&quot;:&quot;df_phone&quot;,&quot;variable_name&quot;:&quot;df_phone&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1692751438324,&quot;views&quot;:[]}" data-jupyter="{&quot;outputs_hidden&quot;:false,&quot;source_hidden&quot;:false}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>df_phone</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-08-23T00:44:03.721474+00:00&quot;,&quot;start_time&quot;:&quot;2023-08-23T00:44:03.485962+00:00&quot;}" data-datalink="{&quot;a82e3560-dd38-4e60-80ea-572f3deebf5a&quot;:{&quot;applied_filters&quot;:[],&quot;dataframe_info&quot;:{&quot;default_index_used&quot;:true,&quot;orig_num_cols&quot;:2,&quot;orig_num_rows&quot;:3,&quot;orig_size_bytes&quot;:72,&quot;truncated_num_cols&quot;:2,&quot;truncated_num_rows&quot;:3,&quot;truncated_size_bytes&quot;:72,&quot;truncated_string_columns&quot;:[]},&quot;display_id&quot;:&quot;a82e3560-dd38-4e60-80ea-572f3deebf5a&quot;,&quot;dx_settings&quot;:{&quot;ALLOW_NOTEABLE_ATTRS&quot;:true,&quot;COLUMN_SAMPLING_METHOD&quot;:&quot;outer&quot;,&quot;DB_LOCATION&quot;:&quot;:memory:&quot;,&quot;DEV_MODE&quot;:false,&quot;DISPLAY_MAX_COLUMNS&quot;:100,&quot;DISPLAY_MAX_ROWS&quot;:50000,&quot;DISPLAY_MODE&quot;:&quot;simple&quot;,&quot;ENABLE_ASSIGNMENT&quot;:true,&quot;ENABLE_DATALINK&quot;:true,&quot;FLATTEN_COLUMN_VALUES&quot;:true,&quot;FLATTEN_INDEX_VALUES&quot;:false,&quot;GENERATE_DEX_METADATA&quot;:false,&quot;HTML_TABLE_SCHEMA&quot;:false,&quot;LOG_LEVEL&quot;:30,&quot;MAX_RENDER_SIZE_BYTES&quot;:104857600,&quot;MAX_STRING_LENGTH&quot;:250,&quot;NUM_PAST_SAMPLES_TRACKED&quot;:3,&quot;RANDOM_STATE&quot;:12648430,&quot;RESET_INDEX_VALUES&quot;:false,&quot;ROW_SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;SAMPLING_FACTOR&quot;:0.1,&quot;SAMPLING_METHOD&quot;:&quot;random&quot;,&quot;STRINGIFY_COLUMN_VALUES&quot;:true,&quot;STRINGIFY_INDEX_VALUES&quot;:false},&quot;sample_history&quot;:[],&quot;sampling_time&quot;:&quot;2023-08-23T00:44:03.557716&quot;,&quot;user_variable_name&quot;:&quot;df_phone_standardized&quot;,&quot;variable_name&quot;:&quot;df_phone_standardized&quot;}}" data-dx="{&quot;fieldMetadata&quot;:{},&quot;simpleTable&quot;:true,&quot;updated&quot;:1692751445159,&quot;views&quot;:[]}" data-jupyter="{&quot;outputs_hidden&quot;:false,&quot;source_hidden&quot;:false}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>df_phone_standardized</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.dataresource+json</code></pre>
+</div>
+</div>
+</section>
+<section id="deep-dive-into-regular-expressions-regex" class="level2">
+<h2 class="anchored" data-anchor-id="deep-dive-into-regular-expressions-regex">Deep Dive into Regular Expressions (Regex)</h2>
+<p>Regular expressions (regex) are a powerful tool for working with text data. They allow you to create search patterns using sequences of characters, which can be used for string matching and manipulation. The true power of regex lies in its flexibility and the wide range of patterns it can match.</p>
+<p>Let’s break down some of the fundamental components of regex and explore various examples to understand its capabilities.</p>
+<section id="basic-regex-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="basic-regex-patterns">Basic Regex Patterns</h3>
+<ul>
+<li><strong><code>.</code></strong> : Matches any character except a newline.</li>
+<li><strong><code>^</code></strong> : Matches the start of a string.</li>
+<li><strong><code>$</code></strong> : Matches the end of a string.</li>
+<li><strong><code>*</code></strong> : Matches 0 or more repetitions of the preceding character or group.</li>
+<li><strong><code>+</code></strong> : Matches 1 or more repetitions of the preceding character or group.</li>
+<li><strong><code>?</code></strong> : Matches 0 or 1 repetition of the preceding character or group.</li>
+<li><strong><code>\d</code></strong> : Matches any decimal digit. Equivalent to <code>[0-9]</code>.</li>
+<li><strong><code>\D</code></strong> : Matches any non-digit character.</li>
+<li><strong><code>\w</code></strong> : Matches any alphanumeric character or underscore. Equivalent to <code>[a-zA-Z0-9_]</code>.</li>
+<li><strong><code>\W</code></strong> : Matches any non-alphanumeric character.</li>
+<li><strong><code>\s</code></strong> : Matches any whitespace character (spaces, tabs, line breaks).</li>
+<li><strong><code>\S</code></strong> : Matches any non-whitespace character.</li>
+</ul>
+<p>Let’s see some of these patterns in action with examples.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample text</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">'My phone number is 123-456-7890 and my zip code is 98765.'</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Extracting phone number using regex</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>phone_pattern <span class="op">=</span> <span class="vs">r'\d</span><span class="sc">{3}</span><span class="vs">-\d</span><span class="sc">{3}</span><span class="vs">-\d</span><span class="sc">{4}</span><span class="vs">'</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>phone_match <span class="op">=</span> re.search(phone_pattern, text)</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>phone_number <span class="op">=</span> phone_match.group() <span class="cf">if</span> phone_match <span class="cf">else</span> <span class="va">None</span></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Extracting zip code using regex</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>zip_pattern <span class="op">=</span> <span class="vs">r'\d</span><span class="sc">{5}</span><span class="vs">$'</span></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>zip_match <span class="op">=</span> re.search(zip_pattern, text)</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>zip_code <span class="op">=</span> zip_match.group() <span class="cf">if</span> zip_match <span class="cf">else</span> <span class="va">None</span></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>phone_number, zip_code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In the example above, we used the following regex patterns:</p>
+<ul>
+<li><p><strong><code>\d{3}-\d{3}-\d{4}</code></strong>: This pattern matches a phone number format where there are three digits, followed by a hyphen, another three digits, another hyphen, and finally four digits.</p></li>
+<li><p><strong><code>\d{5}$</code></strong>: This pattern matches five digits at the end of a string, which is a common format for zip codes in the US.</p></li>
+</ul>
+<p>Now, let’s explore more advanced regex patterns and their applications.</p>
+</section>
+<section id="advanced-regex-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-regex-patterns">Advanced Regex Patterns</h3>
+<ul>
+<li><strong>Character Sets</strong> <code>[...]</code>: Matches any one of the characters inside the square brackets. For example, <code>[aeiou]</code> matches any vowel.</li>
+<li><strong>Negated Character Sets</strong> <code>[^...]</code>: Matches any character that is not inside the square brackets. For example, <code>[^aeiou]</code> matches any non-vowel character.</li>
+<li><strong>Quantifiers</strong> <code>{m,n}</code>: Matches between <code>m</code> and <code>n</code> repetitions of the preceding character or group. For example, <code>a{2,4}</code> matches ‘aa’, ‘aaa’, or ‘aaaa’.</li>
+<li><strong>Non-capturing Groups</strong> <code>(?:...)</code>: Groups multiple patterns together without creating a capture group.</li>
+<li><strong>Positive Lookahead</strong> <code>(?=...)</code>: Asserts that what directly follows the current position in the string matches the pattern inside the lookahead, but doesn’t consume any characters.</li>
+<li><strong>Negative Lookahead</strong> <code>(?!...)</code>: Asserts that what directly follows the current position in the string does not match the pattern inside the lookahead.</li>
+</ul>
+<p>Let’s see some of these advanced patterns in action with examples.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample text for regex examples</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>text_advanced <span class="op">=</span> <span class="st">'The price is $100.00, but there'</span>s a discount of <span class="dv">10</span><span class="op">%</span> <span class="cf">if</span> you pay within <span class="dv">5</span> days.<span class="st">'</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="er"># Extracting all prices using regex </span>(character sets)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>price_pattern <span class="op">=</span> <span class="vs">r'\$[0-9]+\.[0-9]</span><span class="sc">{2}</span><span class="vs">'</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>prices <span class="op">=</span> re.findall(price_pattern, text_advanced)</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Extracting words that don't start with a vowel (negated character sets)</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>non_vowel_pattern <span class="op">=</span> <span class="vs">r'\b[^aeiouAEIOU \d][a-zA-Z]*'</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>non_vowel_words <span class="op">=</span> re.findall(non_vowel_pattern, text_advanced)</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Using positive lookahead to find 'discount' if it's followed by '10%'</span></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>lookahead_pattern <span class="op">=</span> <span class="vs">r'discount(?= of 10%)'</span></span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>lookahead_match <span class="op">=</span> re.search(lookahead_pattern, text_advanced)</span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>lookahead_word <span class="op">=</span> lookahead_match.group() <span class="cf">if</span> lookahead_match <span class="cf">else</span> <span class="va">None</span></span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>prices, non_vowel_words, lookahead_word</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In the examples above, we utilized various advanced regex patterns:</p>
+<ul>
+<li><p><strong>Character Sets</strong>: The pattern <code>\$[0-9]+\.[0-9]{2}</code> matches dollar amounts. It looks for a dollar sign, followed by one or more digits, a period, and exactly two digits after the period.</p></li>
+<li><p><strong>Negated Character Sets</strong>: The pattern <code>\b[^aeiouAEIOU \d][a-zA-Z]*</code> matches words that don’t start with a vowel. It looks for word boundaries (<code>\b</code>), followed by any character that is not a vowel or a digit, and then any sequence of alphabetic characters.</p></li>
+<li><p><strong>Positive Lookahead</strong>: The pattern <code>discount(?= of 10%)</code> matches the word ‘discount’ only if it’s directly followed by ’ of 10%’. The positive lookahead <code>(?=...)</code> checks for the presence of a pattern without consuming any characters, allowing us to match based on what follows our main pattern.</p></li>
+</ul>
+<p>Regular expressions are a vast topic, and there’s a lot more to explore. The key is to practice and experiment with different patterns to become proficient.</p>
+</section>
+</section>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<p>Now that you’ve learned about various data manipulation techniques in pandas and regular expressions, it’s time to test your knowledge! Below are 10 exercises that cover the topics discussed in this notebook. Try to solve each one to reinforce your understanding.</p>
+<ol type="1">
+<li><p><strong>Merging DataFrames</strong>: Given two DataFrames, <code>df1</code> with columns <code>['A', 'B']</code> and <code>df2</code> with columns <code>['B', 'C']</code>, merge them on column ‘B’.</p></li>
+<li><p><strong>Pivot Tables</strong>: Create a pivot table from a DataFrame <code>df</code> with columns <code>['Date', 'Product', 'Sales']</code> to show the total sales for each product over time.</p></li>
+<li><p><strong>Transpose</strong>: Transpose a DataFrame <code>df</code> and explain what happens to its indices and columns.</p></li>
+<li><p><strong>Lambda Functions</strong>: Use a lambda function to square all the values in a DataFrame column ‘X’.</p></li>
+<li><p><strong>Regex Phone Numbers</strong>: Extract all phone numbers from a text string. Consider phone numbers to be in the formats <code>123-456-7890</code>, <code>(123) 456-7890</code>, and <code>123.456.7890</code>.</p></li>
+<li><p><strong>Handling Duplicates</strong>: Identify and remove any duplicate rows in a DataFrame <code>df</code> based on columns ‘A’ and ‘B’.</p></li>
+<li><p><strong>Handling Missing Data</strong>: Replace all NaN values in a DataFrame <code>df</code> with the mean of the column they are in.</p></li>
+<li><p><strong>Apply Function</strong>: Apply a function that calculates the length of each string in the ‘Name’ column of a DataFrame <code>df</code>.</p></li>
+<li><p><strong>Replace with Regex</strong>: Replace all occurrences of the word ‘color’ (case-insensitive) in a text string with the word ‘hue’ using regex.</p></li>
+<li><p><strong>Advanced Regex</strong>: Extract all email addresses from a text string. Consider email addresses to be in the format <code>name@domain.com</code>.</p></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
