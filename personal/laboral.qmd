@@ -1,7 +1,6 @@
 ---
 title: "Data Experience"
 ---
-# Data Experience
 
 ## **Caja los Andes**
 - **Data Scientist** (2021)

@@ -2,7 +2,6 @@
 title: "Academic Experience"
 ---
 
-# Academic Experience
 
 ## **Universidad de Santiago**
 - **Bachelor of Mathematics and Mathematical Engineering** (2009 - 2015)
