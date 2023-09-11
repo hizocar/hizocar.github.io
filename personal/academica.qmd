@@ -2,4 +2,26 @@
 title: "Academic Experience"
 ---
 
-About this site
+# Academic Experience
+
+## **Universidad de Santiago**
+- **Bachelor of Mathematics and Mathematical Engineering** (2009 - 2015)
+
+## **Universidad Diego Portales**
+- **Lecturer for Undergraduate Courses in Mathematics** (2015 - 2020)
+- **Coordinator of the Mathematics Department** (2015 - 2020)
+- **Diploma in University Teaching** (2019 - 2020)
+
+## **Universidad del Desarrollo**
+- **Master's in Data Science** (2020 - 2021)
+- **Online Course in Big Data** (2022) - Offered by e-class
+
+## **Universidad Técnica Federico Santa María**
+- **Lecturer for the course: Machine Learning with Business Applications** (2022 - 2023) - Linked to the Erasmus Mundus Master's program in Europe
+
+## **Universidad de Santiago**
+- **Lecturer for the course: Data Science for Mathematical Engineers** (First semester, 2023)
+
+## **Desafio Latam Bootcamp**
+- **Instructor for Data Science and Data Analyst courses** (2023)
+

@@ -189,6 +189,55 @@
     "text": "Exercises\n\nExercise 1: Data Types\nGiven the following variables, convert each one to a different data type:\nnum = '123'\nstr_num = 456\nConvert num to an integer and str_num to a string. Print the new variables and their types.\n\n\nExercise 2: Functions\nWrite a function named calculate_average that takes a list of numbers as a parameter and returns their average.\nThen, call your function with the list [1, 2, 3, 4, 5] and print the result.\n\n\nExercise 3: Lists and Dictionaries\nGiven the following list of dictionaries:\ndata = [\n    {'name': 'John', 'age': 30, 'job': 'Engineer'},\n    {'name': 'Anna', 'age': 27, 'job': 'Doctor'},\n    {'name': 'Mike', 'age': 35, 'job': 'Artist'}\n]\nWrite a function named get_ages that takes the list as a parameter and returns a list of all ages. Then, call your function with the data list and print the result."
   },
   {
+    "objectID": "personal/laboral.html",
+    "href": "personal/laboral.html",
+    "title": "Data Experience",
+    "section": "",
+    "text": "Data Scientist (2021)\n\nPromoted to Senior Data Scientist\nFurther promoted to Expert Data Scientist\nLed a team focusing on People Analytics and Text Analysis\n\n\n\n\n\n\nData Scientist (Mid 2023 - Present)\n\nSpecialized in Commercial Data Analysis\n\n\n\n\n\n\nOnline Big Data Course (2022)\n\nOffered by e-class\n\n\n\n\n\n\nLecturer for the course: Machine Learning with Business Applications (2022 - 2023)\n\nLinked to the Erasmus Mundus Master’s program in Europe\n\n\n\n\n\n\nLecturer for the course: Data Science for Mathematical Engineers (First semester, 2023)\n\n\n\n\n\nInstructor for Data Science and Data Analyst courses (2023)"
+  },
+  {
+    "objectID": "personal/laboral.html#caja-los-andes",
+    "href": "personal/laboral.html#caja-los-andes",
+    "title": "Data Experience",
+    "section": "",
+    "text": "Data Scientist (2021)\n\nPromoted to Senior Data Scientist\nFurther promoted to Expert Data Scientist\nLed a team focusing on People Analytics and Text Analysis"
+  },
+  {
+    "objectID": "personal/laboral.html#walmart",
+    "href": "personal/laboral.html#walmart",
+    "title": "Data Experience",
+    "section": "",
+    "text": "Data Scientist (Mid 2023 - Present)\n\nSpecialized in Commercial Data Analysis"
+  },
+  {
+    "objectID": "personal/laboral.html#universidad-del-desarrollo",
+    "href": "personal/laboral.html#universidad-del-desarrollo",
+    "title": "Data Experience",
+    "section": "",
+    "text": "Online Big Data Course (2022)\n\nOffered by e-class"
+  },
+  {
+    "objectID": "personal/laboral.html#universidad-técnicas-federico-santa-maría",
+    "href": "personal/laboral.html#universidad-técnicas-federico-santa-maría",
+    "title": "Data Experience",
+    "section": "",
+    "text": "Lecturer for the course: Machine Learning with Business Applications (2022 - 2023)\n\nLinked to the Erasmus Mundus Master’s program in Europe"
+  },
+  {
+    "objectID": "personal/laboral.html#universidad-de-santiago",
+    "href": "personal/laboral.html#universidad-de-santiago",
+    "title": "Data Experience",
+    "section": "",
+    "text": "Lecturer for the course: Data Science for Mathematical Engineers (First semester, 2023)"
+  },
+  {
+    "objectID": "personal/laboral.html#desafio-latam-bootcamp",
+    "href": "personal/laboral.html#desafio-latam-bootcamp",
+    "title": "Data Experience",
+    "section": "",
+    "text": "Instructor for Data Science and Data Analyst courses (2023)"
+  },
+  {
     "objectID": "introduction_to_python/class6.html",
     "href": "introduction_to_python/class6.html",
     "title": "Class 6: Data Manipulation II",
@@ -543,7 +592,49 @@
     "href": "personal/academica.html",
     "title": "Academic Experience",
     "section": "",
-    "text": "About this site"
+    "text": "Bachelor of Mathematics and Mathematical Engineering (2009 - 2015)\n\n\n\n\n\nLecturer for Undergraduate Courses in Mathematics (2015 - 2020)\nCoordinator of the Mathematics Department (2015 - 2020)\nDiploma in University Teaching (2019 - 2020)\n\n\n\n\n\nMaster’s in Data Science (2020 - 2021)\nOnline Course in Big Data (2022) - Offered by e-class\n\n\n\n\n\nLecturer for the course: Machine Learning with Business Applications (2022 - 2023) - Linked to the Erasmus Mundus Master’s program in Europe\n\n\n\n\n\nLecturer for the course: Data Science for Mathematical Engineers (First semester, 2023)\n\n\n\n\n\nInstructor for Data Science and Data Analyst courses (2023)"
+  },
+  {
+    "objectID": "personal/academica.html#universidad-de-santiago",
+    "href": "personal/academica.html#universidad-de-santiago",
+    "title": "Academic Experience",
+    "section": "",
+    "text": "Bachelor of Mathematics and Mathematical Engineering (2009 - 2015)"
+  },
+  {
+    "objectID": "personal/academica.html#universidad-diego-portales",
+    "href": "personal/academica.html#universidad-diego-portales",
+    "title": "Academic Experience",
+    "section": "",
+    "text": "Lecturer for Undergraduate Courses in Mathematics (2015 - 2020)\nCoordinator of the Mathematics Department (2015 - 2020)\nDiploma in University Teaching (2019 - 2020)"
+  },
+  {
+    "objectID": "personal/academica.html#universidad-del-desarrollo",
+    "href": "personal/academica.html#universidad-del-desarrollo",
+    "title": "Academic Experience",
+    "section": "",
+    "text": "Master’s in Data Science (2020 - 2021)\nOnline Course in Big Data (2022) - Offered by e-class"
+  },
+  {
+    "objectID": "personal/academica.html#universidad-técnica-federico-santa-maría",
+    "href": "personal/academica.html#universidad-técnica-federico-santa-maría",
+    "title": "Academic Experience",
+    "section": "",
+    "text": "Lecturer for the course: Machine Learning with Business Applications (2022 - 2023) - Linked to the Erasmus Mundus Master’s program in Europe"
+  },
+  {
+    "objectID": "personal/academica.html#universidad-de-santiago-1",
+    "href": "personal/academica.html#universidad-de-santiago-1",
+    "title": "Academic Experience",
+    "section": "",
+    "text": "Lecturer for the course: Data Science for Mathematical Engineers (First semester, 2023)"
+  },
+  {
+    "objectID": "personal/academica.html#desafio-latam-bootcamp",
+    "href": "personal/academica.html#desafio-latam-bootcamp",
+    "title": "Academic Experience",
+    "section": "",
+    "text": "Instructor for Data Science and Data Analyst courses (2023)"
   },
   {
     "objectID": "machine_learning_egei/classes.html",

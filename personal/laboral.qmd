@@ -1,3 +1,28 @@
 ---
 title: "Data Experience"
 ---
+# Data Experience
+
+## **Caja los Andes**
+- **Data Scientist** (2021)
+  - Promoted to **Senior Data Scientist**
+  - Further promoted to **Expert Data Scientist**
+  - Led a team focusing on People Analytics and Text Analysis
+
+## **Walmart**
+- **Data Scientist** (Mid 2023 - Present)
+  - Specialized in Commercial Data Analysis
+
+## **Universidad del Desarrollo**
+- **Online Big Data Course** (2022)
+  - Offered by e-class
+
+## **Universidad Técnicas Federico Santa María**
+- **Lecturer for the course: Machine Learning with Business Applications** (2022 - 2023)
+  - Linked to the Erasmus Mundus Master's program in Europe
+
+## **Universidad de Santiago**
+- **Lecturer for the course: Data Science for Mathematical Engineers** (First semester, 2023)
+
+## **Desafio Latam Bootcamp**
+- **Instructor for Data Science and Data Analyst courses** (2023)
