@@ -17,7 +17,7 @@ title: "Data Experience"
 - **Online Big Data Course** (2022)
   - Offered by e-class
 
-## **Universidad Técnicas Federico Santa María**
+## **Universidad Técnica Federico Santa María**
 - **Lecturer for the course: Machine Learning with Business Applications** (2022 - 2023)
   - Linked to the Erasmus Mundus Master's program in Europe
 
