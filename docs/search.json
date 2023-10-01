@@ -641,7 +641,7 @@
     "href": "machine_learning_egei/classes.html",
     "title": "Machine Learning with Business Application UTFSM",
     "section": "",
-    "text": "Program\nProgram\n\n\nClass\nClass 1: Different type of Data | \nClass 2: Data Manipulation |"
+    "text": "Program\nProgram\n\n\nClass\nClass 1: Different type of Data | \nHomework 1 |  ( Until Thursday, October 5th at 23:59 hrs. Share notebook with hizocar@gmail.com)\nClass 2: Data Manipulation |"
   },
   {
     "objectID": "machine_learning_egei/program.html",
@@ -747,5 +747,47 @@
     "title": "Tema 2: Estacionariedad",
     "section": "Tarea 1: Jupyter Notebook",
     "text": "Tarea 1: Jupyter Notebook\nAhora debes poner manos a la obra y completar el siguiente notebook: Notebook 1 de Series de Tiempo"
+  },
+  {
+    "objectID": "machine_learning_egei/homeworks/Python_Basics_Homework.html",
+    "href": "machine_learning_egei/homeworks/Python_Basics_Homework.html",
+    "title": "Python Basics Homework",
+    "section": "",
+    "text": "Welcome to your Python Basics Homework! This notebook is designed to help you practice and improve your Python programming skills. Please follow the instructions carefully and complete the tasks below."
+  },
+  {
+    "objectID": "machine_learning_egei/homeworks/Python_Basics_Homework.html#instructions",
+    "href": "machine_learning_egei/homeworks/Python_Basics_Homework.html#instructions",
+    "title": "Python Basics Homework",
+    "section": "Instructions",
+    "text": "Instructions\n\nRead each problem statement carefully.\nWrite the Python code to solve each problem in the designated cell.\nDo not delete or modify any pre-existing code or comments unless instructed to do so.\nRun your code to ensure it works as expected and you have solved the problem correctly.\nSave your notebook once you have completed the homework."
+  },
+  {
+    "objectID": "machine_learning_egei/homeworks/Python_Basics_Homework.html#problems",
+    "href": "machine_learning_egei/homeworks/Python_Basics_Homework.html#problems",
+    "title": "Python Basics Homework",
+    "section": "Problems",
+    "text": "Problems\nThis homework consists of problems that cover basic Python operations, functions, and libraries. You will practice using basic operations, creating functions, working with lists and strings, and using the random and pandas libraries.\nLet’s get started!"
+  },
+  {
+    "objectID": "machine_learning_egei/homeworks/Python_Basics_Homework.html#problem-1-basic-operations-and-functions",
+    "href": "machine_learning_egei/homeworks/Python_Basics_Homework.html#problem-1-basic-operations-and-functions",
+    "title": "Python Basics Homework",
+    "section": "Problem 1: Basic Operations and Functions",
+    "text": "Problem 1: Basic Operations and Functions\n\nPart 1.1: Basic Operations\nPerform the following operations and print the results:\n\nAdd 15 and 23.\nSubtract 50 from 200.\nMultiply 25 by 4.\nDivide 100 by 3 (get the result as a float number).\n\n\n\nPart 1.2: Creating and Using Functions\nCreate a function named calculate_area that takes the base and height of a triangle as parameters and returns its area. The formula to calculate the area of a triangle is (base * height) / 2.\nThen, call this function with base=10 and height=5 and print the result."
+  },
+  {
+    "objectID": "machine_learning_egei/homeworks/Python_Basics_Homework.html#problem-2-working-with-lists-and-strings",
+    "href": "machine_learning_egei/homeworks/Python_Basics_Homework.html#problem-2-working-with-lists-and-strings",
+    "title": "Python Basics Homework",
+    "section": "Problem 2: Working with Lists and Strings",
+    "text": "Problem 2: Working with Lists and Strings\n\nPart 2.1: Lists\nYou have a list of numbers: numbers = [10, 20, 30, 40, 50].\n\nAppend the number 60 to the list.\nInsert the number 25 between 20 and 30.\nRemove the number 40 from the list.\nPrint the modified list.\n\n\n\nPart 2.2: Strings\nYou have a string: sentence = 'Python is fun!'.\n\nConvert the string to uppercase and print it.\nCount and print the number of ‘n’ characters in the string.\nReplace ‘fun’ with ‘awesome’ in the string and print the result."
+  },
+  {
+    "objectID": "machine_learning_egei/homeworks/Python_Basics_Homework.html#problem-3-using-libraries",
+    "href": "machine_learning_egei/homeworks/Python_Basics_Homework.html#problem-3-using-libraries",
+    "title": "Python Basics Homework",
+    "section": "Problem 3: Using Libraries",
+    "text": "Problem 3: Using Libraries\n\nPart 3.1: Importing Libraries and Using the random Library\n\nImport the random library.\nGenerate and print a random integer between 1 and 100 using the random.randint() function.\nGenerate and print a random float number between 0 and 1 using the random.random() function.\n\n\n\nPart 3.2: Introduction to the pandas Library\n\nImport the pandas library with the alias pd.\nCreate a dictionary with two keys: ‘Name’ and ‘Age’. The ‘Name’ key should have a list of names as values, and the ‘Age’ key should have a list of ages as values.\nCreate a pandas DataFrame from the dictionary and print it.\nPrint the average age from the ‘Age’ column in the DataFrame."
   }
 ]

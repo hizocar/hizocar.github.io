@@ -8,4 +8,8 @@ title: "Machine Learning with Business Application UTFSM"
 # Class
 [Class 1: Different type of Data ](/machine_learning_egei/class1.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/machine_learning_egei/class1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
+[Homework 1](/machine_learning_egei/homeworks/Python_Basics_Homework.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main//machine_learning_egei/homeworks/Python_Basics_Homework.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> ( Until Thursday, October 5th at 23:59 hrs. Share notebook with hizocar@gmail.com)
+
+
+
 [Class 2: Data Manipulation ](/machine_learning_egei/class2.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/machine_learning_egei/class2.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
