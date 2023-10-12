@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Machine Learning with Business Application UTFSM</title>
+<title>Self-Learning Lab: Python Dataframes with Examples</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="..//images/logo.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../..//images/logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -64,18 +98,18 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/logo.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -85,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -95,15 +129,15 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-aboutme">    
         <li class="dropdown-header">AboutMe</li>
         <li>
-    <a class="dropdown-item" href="../personal/perfil.html" rel="" target="">
+    <a class="dropdown-item" href="../../personal/perfil.html" rel="" target="">
  <span class="dropdown-text">Activities and information about me</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../personal/academica.html" rel="" target="">
+    <a class="dropdown-item" href="../../personal/academica.html" rel="" target="">
  <span class="dropdown-text">Academic Experience</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../personal/laboral.html" rel="" target="">
+    <a class="dropdown-item" href="../../personal/laboral.html" rel="" target="">
  <span class="dropdown-text">Data Experience</span></a>
   </li>  
     </ul>
@@ -114,15 +148,15 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-courses">    
         <li>
-    <a class="dropdown-item" href="../machine_learning_egei/classes.html" rel="" target="">
+    <a class="dropdown-item" href="../../machine_learning_egei/classes.html" rel="" target="">
  <span class="dropdown-text">Machine Learning with Business Application UTFSM</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../introduction_to_python/classes.html" rel="" target="">
+    <a class="dropdown-item" href="../../introduction_to_python/classes.html" rel="" target="">
  <span class="dropdown-text">Introduction to Python</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../data_science_ingemat/classes.html" rel="" target="">
+    <a class="dropdown-item" href="../../data_science_ingemat/classes.html" rel="" target="">
  <span class="dropdown-text">Data Science for Math Engineers USACH</span></a>
   </li>  
     </ul>
@@ -140,61 +174,36 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../machine_learning_egei/classes.html">Machine Learning with Business Application UTFSM</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../machine_learning_egei/classes.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Machine Learning with Business Application UTFSM</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../introduction_to_python/classes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Python</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data_science_ingemat/classes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Science for Math Engineers USACH</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#program" id="toc-program" class="nav-link active" data-scroll-target="#program">Program</a></li>
-  <li><a href="#class" id="toc-class" class="nav-link" data-scroll-target="#class">Class</a></li>
+  <li><a href="#introduction-to-dataframes-in-pandas" id="toc-introduction-to-dataframes-in-pandas" class="nav-link active" data-scroll-target="#introduction-to-dataframes-in-pandas">1. Introduction to Dataframes in Pandas</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1.1" id="toc-exercise-1.1" class="nav-link" data-scroll-target="#exercise-1.1">Exercise 1.1:</a></li>
+  </ul></li>
+  <li><a href="#data-transformation-creating-new-columns" id="toc-data-transformation-creating-new-columns" class="nav-link" data-scroll-target="#data-transformation-creating-new-columns">2. Data Transformation: Creating New Columns</a>
+  <ul class="collapse">
+  <li><a href="#exercise-2.1" id="toc-exercise-2.1" class="nav-link" data-scroll-target="#exercise-2.1">Exercise 2.1:</a></li>
+  </ul></li>
+  <li><a href="#filtering-and-indexing-in-dataframes" id="toc-filtering-and-indexing-in-dataframes" class="nav-link" data-scroll-target="#filtering-and-indexing-in-dataframes">3. Filtering and Indexing in Dataframes</a>
+  <ul class="collapse">
+  <li><a href="#exercise-3.1" id="toc-exercise-3.1" class="nav-link" data-scroll-target="#exercise-3.1">Exercise 3.1:</a></li>
+  </ul></li>
+  <li><a href="#the-apply-function-and-lambda-expressions" id="toc-the-apply-function-and-lambda-expressions" class="nav-link" data-scroll-target="#the-apply-function-and-lambda-expressions">4. The <code>apply</code> Function and Lambda Expressions</a>
+  <ul class="collapse">
+  <li><a href="#exercise-4.1" id="toc-exercise-4.1" class="nav-link" data-scroll-target="#exercise-4.1">Exercise 4.1:</a></li>
+  </ul></li>
+  <li><a href="#one-hot-encoding" id="toc-one-hot-encoding" class="nav-link" data-scroll-target="#one-hot-encoding">5. One Hot Encoding</a>
+  <ul class="collapse">
+  <li><a href="#exercise-5.1" id="toc-exercise-5.1" class="nav-link" data-scroll-target="#exercise-5.1">Exercise 5.1:</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -203,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Machine Learning with Business Application UTFSM</h1>
+<h1 class="title">Self-Learning Lab: Python Dataframes with Examples</h1>
 </div>
 
 
@@ -218,18 +227,64 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="program" class="level1">
-<h1>Program</h1>
-<p><a href="../machine_learning_egei/program.html">Program</a></p>
+<p>Welcome to this self-learning lab on Python Dataframes! In this lab, you will explore and practice key concepts related to dataframes using the pandas library. The lab is designed to be completed in approximately two hours. For each topic, we will provide a brief overview, an example, and then an exercise for you to complete. The exercises are designed with a business context in mind, so you’ll be able to apply these concepts in real-world scenarios. ## Contents: 1. Introduction to Dataframes in Pandas 2. Data Transformation: Creating New Columns 3. Filtering and Indexing in Dataframes 4. The <code>apply</code> Function and Lambda Expressions 5. One Hot Encoding Let’s dive in!</p>
+<section id="introduction-to-dataframes-in-pandas" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-dataframes-in-pandas">1. Introduction to Dataframes in Pandas</h2>
+<p>A DataFrame is a 2-dimensional labeled data structure with columns that can be of different types. It is similar to a spreadsheet, a SQL table, or the <code>data.frame</code> in R. The DataFrame is one of the most commonly used pandas objects and is designed to handle a mix of numeric and non-numeric data. ### Example: Let’s create a simple dataframe with product sales data.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product Name'</span>: [<span class="st">'Laptop'</span>, <span class="st">'Mouse'</span>, <span class="st">'Keyboard'</span>],</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Units Sold'</span>: [<span class="dv">50</span>, <span class="dv">150</span>, <span class="dv">80</span>],</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Price per Unit'</span>: [<span class="dv">800</span>, <span class="dv">20</span>, <span class="dv">30</span>]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="exercise-1.1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1.1">Exercise 1.1:</h3>
+<p>Imagine you are a data analyst at a retail company. You have been given sales data for the past month. The data includes the product name, the number of units sold, and the price per unit. Using the pandas library, create a dataframe with the following data: | Product Name | Units Sold | Price per Unit | |————–|————|—————-| | Laptop | 50 | 800 | | Mouse | 150 | 20 | | Keyboard | 80 | 30 | Calculate the total sales for each product and add it as a new column to the dataframe.</p>
 </section>
-<section id="class" class="level1">
-<h1>Class</h1>
-<p><a href="../machine_learning_egei/class1.html">Class 1: Different type of Data</a> | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/machine_learning_egei/class1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-<p><a href="../machine_learning_egei/homeworks/Python_Basics_Homework.html">Homework 1</a> | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main//machine_learning_egei/homeworks/Python_Basics_Homework.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> ( Until Thursday, October 5th at 23:59 hrs. Share notebook with hizocar@gmail.com)</p>
-<p><a href="../machine_learning_egei/class2.html">Class 2: Data Manipulation</a> | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/machine_learning_egei/class2.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-<p><a href="../machine_learning_egei/homeworks/lab1.html">Lab 1 (Homework 2)</a> | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main//machine_learning_egei/homeworks/lab1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> ( Until Friday, October 13th at 23:59 hrs. Share notebook with hizocar@gmail.com)</p>
+</section>
+<section id="data-transformation-creating-new-columns" class="level2">
+<h2 class="anchored" data-anchor-id="data-transformation-creating-new-columns">2. Data Transformation: Creating New Columns</h2>
+<p>Often, while working with data, you might want to create new columns based on the existing columns in the dataframe. This can be done using various operations and functions. ### Example: Given the sales data, let’s calculate the total sales for each product.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Total Sales'</span>] <span class="op">=</span> df[<span class="st">'Units Sold'</span>] <span class="op">*</span> df[<span class="st">'Price per Unit'</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="exercise-2.1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2.1">Exercise 2.1:</h3>
+<p>Continuing with the retail company scenario, let’s say you have been given additional data regarding the cost of each product. You are required to calculate the profit for each product. Add the following data to your dataframe: | Product Name | Cost per Unit | |————–|—————| | Laptop | 600 | | Mouse | 10 | | Keyboard | 20 | Create a new column in the dataframe to calculate the profit for each product. Profit is calculated as <code>(Price per Unit - Cost per Unit) * Units Sold</code>.</p>
+</section>
+</section>
+<section id="filtering-and-indexing-in-dataframes" class="level2">
+<h2 class="anchored" data-anchor-id="filtering-and-indexing-in-dataframes">3. Filtering and Indexing in Dataframes</h2>
+<p>Filtering allows you to select specific rows based on a condition. Indexing, on the other hand, helps in selecting specific rows and columns from the dataframe. ### Example: From the sales data, let’s extract the details of products that have sold more than 100 units.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>high_selling_products <span class="op">=</span> df[df[<span class="st">'Units Sold'</span>] <span class="op">&gt;</span> <span class="dv">100</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(high_selling_products[[<span class="st">'Product Name'</span>, <span class="st">'Units Sold'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="exercise-3.1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3.1">Exercise 3.1:</h3>
+<p>From the sales data, extract the details of products that have sold more than 100 units. Display only the ‘Product Name’ and ‘Units Sold’ columns. ### Exercise 3.2: From the sales data, extract the details of the product that has the highest profit. Display the ‘Product Name’ and ‘Profit’ columns.</p>
+</section>
+</section>
+<section id="the-apply-function-and-lambda-expressions" class="level2">
+<h2 class="anchored" data-anchor-id="the-apply-function-and-lambda-expressions">4. The <code>apply</code> Function and Lambda Expressions</h2>
+<p>The <code>apply</code> function is used to apply a function along the axis of the dataframe. Lambda expressions are small anonymous functions that can be used with functions like <code>apply</code>. ### Example: Using the sales data, let’s create a new column ‘Category’ that categorizes products as ‘High Selling’ if units sold are greater than 100, and ‘Low Selling’ otherwise.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Category'</span>] <span class="op">=</span> df[<span class="st">'Units Sold'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="st">'High Selling'</span> <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">100</span> <span class="cf">else</span> <span class="st">'Low Selling'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[[<span class="st">'Product Name'</span>, <span class="st">'Category'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="exercise-4.1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4.1">Exercise 4.1:</h3>
+<p>Using the sales data, create a new column ‘Category’ that categorizes products as ‘High Selling’ if units sold are greater than 100, and ‘Low Selling’ otherwise. Use the <code>apply</code> function and a lambda expression to achieve this. ### Exercise 4.2: Calculate the average profit per unit for each product and add it as a new column to the dataframe. Use the <code>apply</code> function to achieve this.</p>
+</section>
+</section>
+<section id="one-hot-encoding" class="level2">
+<h2 class="anchored" data-anchor-id="one-hot-encoding">5. One Hot Encoding</h2>
+<p>One hot encoding is a process of converting categorical data variables so they can be provided to machine learning algorithms to improve predictions. It involves converting each value in a column to a new column and assigning a 1 or 0 (True/False) value to the column. ### Example: Using the sales data, let’s one-hot encode the ‘Category’ column.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>encoded_df <span class="op">=</span> pd.get_dummies(df, columns<span class="op">=</span>[<span class="st">'Category'</span>])</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(encoded_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="exercise-5.1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5.1">Exercise 5.1:</h3>
+<p>Using the sales data, one-hot encode the ‘Category’ column. This will be useful when you want to use this data for machine learning algorithms. ### Exercise 5.2: Imagine you have another column ‘Region’ with values ‘North’, ‘South’, ‘East’, and ‘West’. One-hot encode this column.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

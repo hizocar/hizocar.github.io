@@ -13,3 +13,5 @@ title: "Machine Learning with Business Application UTFSM"
 
 
 [Class 2: Data Manipulation ](/machine_learning_egei/class2.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/machine_learning_egei/class2.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+[Lab 1 (Homework 2)](/machine_learning_egei/homeworks/lab1.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main//machine_learning_egei/homeworks/lab1.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> ( Until Friday, October 13th at 23:59 hrs. Share notebook with hizocar@gmail.com)
