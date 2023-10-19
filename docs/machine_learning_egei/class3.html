@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Machine Learning Models</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-aboutme" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">AboutMe</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-aboutme">    
+        <li class="dropdown-header">AboutMe</li>
+        <li>
+    <a class="dropdown-item" href="../personal/perfil.html" rel="" target="">
+ <span class="dropdown-text">Activities and information about me</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../personal/academica.html" rel="" target="">
+ <span class="dropdown-text">Academic Experience</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../personal/laboral.html" rel="" target="">
+ <span class="dropdown-text">Data Experience</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-courses" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Courses</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-courses">    
+        <li>
+    <a class="dropdown-item" href="../machine_learning_egei/classes.html" rel="" target="">
+ <span class="dropdown-text">Machine Learning with Business Application UTFSM</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../introduction_to_python/classes.html" rel="" target="">
+ <span class="dropdown-text">Introduction to Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../data_science_ingemat/classes.html" rel="" target="">
+ <span class="dropdown-text">Data Science for Math Engineers USACH</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools ms-auto tools-wide">
+    <a href="https://github.com/hizocar" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-a-ml-model" id="toc-what-is-a-ml-model" class="nav-link active" data-scroll-target="#what-is-a-ml-model">What is a ML Model?</a></li>
+  <li><a href="#fitting-a-model" id="toc-fitting-a-model" class="nav-link" data-scroll-target="#fitting-a-model">Fitting a Model</a></li>
+  <li><a href="#knn-k-nearest-neighbors" id="toc-knn-k-nearest-neighbors" class="nav-link" data-scroll-target="#knn-k-nearest-neighbors">KNN (K-Nearest Neighbors)</a>
+  <ul class="collapse">
+  <li><a href="#business-application-of-knn" id="toc-business-application-of-knn" class="nav-link" data-scroll-target="#business-application-of-knn">Business Application of KNN</a></li>
+  </ul></li>
+  <li><a href="#polynomial-regression" id="toc-polynomial-regression" class="nav-link" data-scroll-target="#polynomial-regression">Polynomial Regression</a>
+  <ul class="collapse">
+  <li><a href="#business-application-of-polynomial-regression" id="toc-business-application-of-polynomial-regression" class="nav-link" data-scroll-target="#business-application-of-polynomial-regression">Business Application of Polynomial Regression</a></li>
+  </ul></li>
+  <li><a href="#advanced-knn-example-loan-default-prediction" id="toc-advanced-knn-example-loan-default-prediction" class="nav-link" data-scroll-target="#advanced-knn-example-loan-default-prediction">Advanced KNN Example: Loan Default Prediction</a></li>
+  <li><a href="#advanced-polynomial-regression-example-salary-prediction" id="toc-advanced-polynomial-regression-example-salary-prediction" class="nav-link" data-scroll-target="#advanced-polynomial-regression-example-salary-prediction">Advanced Polynomial Regression Example: Salary Prediction</a></li>
+  <li><a href="#knn-exercise-customer-churn-prediction" id="toc-knn-exercise-customer-churn-prediction" class="nav-link" data-scroll-target="#knn-exercise-customer-churn-prediction">KNN Exercise: Customer Churn Prediction</a>
+  <ul class="collapse">
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">Dataset Description</a></li>
+  <li><a href="#objective" id="toc-objective" class="nav-link" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a></li>
+  <li><a href="#applying-the-knn-algorithm" id="toc-applying-the-knn-algorithm" class="nav-link" data-scroll-target="#applying-the-knn-algorithm">Applying the KNN Algorithm</a></li>
+  <li><a href="#making-predictions-with-the-knn-classifier" id="toc-making-predictions-with-the-knn-classifier" class="nav-link" data-scroll-target="#making-predictions-with-the-knn-classifier">Making Predictions with the KNN Classifier</a></li>
+  </ul></li>
+  <li><a href="#overfitting-and-underfitting-bias-versus-variance" id="toc-overfitting-and-underfitting-bias-versus-variance" class="nav-link" data-scroll-target="#overfitting-and-underfitting-bias-versus-variance">Overfitting and Underfitting: Bias versus Variance</a>
+  <ul class="collapse">
+  <li><a href="#underfitting" id="toc-underfitting" class="nav-link" data-scroll-target="#underfitting">Underfitting:</a></li>
+  <li><a href="#overfitting" id="toc-overfitting" class="nav-link" data-scroll-target="#overfitting">Overfitting:</a></li>
+  </ul></li>
+  <li><a href="#the-cost-function" id="toc-the-cost-function" class="nav-link" data-scroll-target="#the-cost-function">The Cost Function</a></li>
+  <li><a href="#the-training-error-and-the-test-error" id="toc-the-training-error-and-the-test-error" class="nav-link" data-scroll-target="#the-training-error-and-the-test-error">The Training Error and The Test Error</a></li>
+  <li><a href="#the-cost-function-revisited" id="toc-the-cost-function-revisited" class="nav-link" data-scroll-target="#the-cost-function-revisited">The Cost Function (Revisited)</a></li>
+  <li><a href="#bias-versus-variance-revisited" id="toc-bias-versus-variance-revisited" class="nav-link" data-scroll-target="#bias-versus-variance-revisited">Bias versus Variance (Revisited)</a></li>
+  <li><a href="#exercise-overfitting-and-underfitting-in-business-sales-prediction" id="toc-exercise-overfitting-and-underfitting-in-business-sales-prediction" class="nav-link" data-scroll-target="#exercise-overfitting-and-underfitting-in-business-sales-prediction">Exercise: Overfitting and Underfitting in Business Sales Prediction</a></li>
+  <li><a href="#exercise-understanding-the-cost-function-in-business" id="toc-exercise-understanding-the-cost-function-in-business" class="nav-link" data-scroll-target="#exercise-understanding-the-cost-function-in-business">Exercise: Understanding the Cost Function in Business</a></li>
+  <li><a href="#exercise-evaluating-model-performance-using-training-and-test-errors" id="toc-exercise-evaluating-model-performance-using-training-and-test-errors" class="nav-link" data-scroll-target="#exercise-evaluating-model-performance-using-training-and-test-errors">Exercise: Evaluating Model Performance using Training and Test Errors</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Machine Learning Models</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In the realm of data science and artificial intelligence, machine learning models play a pivotal role. They are algorithms that learn patterns from data and then make predictions or decisions without being explicitly programmed to do so. In the business context, machine learning models can be used for a variety of tasks such as customer segmentation, sales forecasting, and even fraud detection.</p>
+<section id="what-is-a-ml-model" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-ml-model">What is a ML Model?</h2>
+<p>A machine learning model is a mathematical representation of a real-world process. Think of it as a mathematical equation that has been trained on historical data to make predictions about future data. For businesses, these models can be used to gain insights, make informed decisions, and automate tasks.</p>
+</section>
+<section id="fitting-a-model" class="level2">
+<h2 class="anchored" data-anchor-id="fitting-a-model">Fitting a Model</h2>
+<p>Fitting a model, also known as training a model, involves providing a machine learning algorithm with data and allowing it to learn the patterns. This is done by feeding the model input data and the corresponding output. The model then adjusts its weights based on the error of its predictions. In a business scenario, this could mean using past sales data to predict future sales.</p>
+<p>In the following sections, we will delve deeper into specific machine learning models and their applications in the business world.</p>
+</section>
+<section id="knn-k-nearest-neighbors" class="level2">
+<h2 class="anchored" data-anchor-id="knn-k-nearest-neighbors">KNN (K-Nearest Neighbors)</h2>
+<p>K-Nearest Neighbors (KNN) is a simple, yet powerful supervised machine learning algorithm used for classification and regression. It works by finding the ‘k’ training examples that are closest to a given input example and returning the most common output value among them.</p>
+<section id="business-application-of-knn" class="level3">
+<h3 class="anchored" data-anchor-id="business-application-of-knn">Business Application of KNN</h3>
+<p>Imagine a retail business that wants to segment its customers based on their purchase behavior. Using KNN, the business can classify a new customer into a particular segment by looking at the purchase behaviors of the ‘k’ most similar existing customers. This can help the business tailor its marketing strategies for different customer segments.</p>
+<p>Let’s see a simple example in Python where we use KNN to classify customers into two segments: ‘High Value’ and ‘Low Value’ based on their annual spending and frequency of purchase.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:24:45.184474+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:24:46.186832+00:00&quot;}">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data: Annual Spending (in $) and Frequency of Purchase (number of times in a year)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.array([[<span class="dv">500</span>, <span class="dv">2</span>], [<span class="dv">1500</span>, <span class="dv">5</span>], [<span class="dv">3000</span>, <span class="dv">8</span>], [<span class="dv">4000</span>, <span class="dv">10</span>], [<span class="dv">750</span>, <span class="dv">3</span>], [<span class="dv">400</span>, <span class="dv">1</span>], [<span class="dv">4500</span>, <span class="dv">12</span>], [<span class="dv">2000</span>, <span class="dv">6</span>]])</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Labels: 0 for 'Low Value' and 1 for 'High Value'</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>])</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Splitting data into training and testing sets</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Using KNN for classification with k=3</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>knn <span class="op">=</span> KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>knn.fit(X_train, y_train)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> knn.predict(X_test)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the data points</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>], c<span class="op">=</span>y, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Annual Spending ($)'</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency of Purchase'</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Customer Segmentation using KNN'</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="polynomial-regression" class="level2">
+<h2 class="anchored" data-anchor-id="polynomial-regression">Polynomial Regression</h2>
+<p>Polynomial Regression is a type of regression analysis used to model the relationship between a dependent variable and one or more independent variables by fitting a polynomial equation to the observed data. Unlike linear regression which models the relationship using a straight line, polynomial regression models it using a curve.</p>
+<section id="business-application-of-polynomial-regression" class="level3">
+<h3 class="anchored" data-anchor-id="business-application-of-polynomial-regression">Business Application of Polynomial Regression</h3>
+<p>Consider a business that wants to understand the relationship between advertising spend and sales. While initially, an increase in advertising might lead to a significant increase in sales, after a certain point, the effect of additional advertising might diminish. In such cases, a polynomial regression can capture the non-linear relationship between advertising spend and sales more effectively than a linear model.</p>
+<p>Let’s see a Python example where we use Polynomial Regression to model the relationship between advertising spend and sales.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:25:03.144147+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:25:03.522344+00:00&quot;}">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> PolynomialFeatures</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data: Advertising Spend (in $) and Sales (in $)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>X_ad <span class="op">=</span> np.array([[<span class="dv">50</span>], [<span class="dv">100</span>], [<span class="dv">150</span>], [<span class="dv">200</span>], [<span class="dv">250</span>], [<span class="dv">300</span>], [<span class="dv">350</span>], [<span class="dv">400</span>]])</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>y_sales <span class="op">=</span> np.array([<span class="dv">150</span>, <span class="dv">220</span>, <span class="dv">260</span>, <span class="dv">275</span>, <span class="dv">280</span>, <span class="dv">285</span>, <span class="dv">290</span>, <span class="dv">295</span>])</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Transforming our data for Polynomial Regression</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>poly <span class="op">=</span> PolynomialFeatures(degree<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>X_poly <span class="op">=</span> poly.fit_transform(X_ad)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting the Polynomial Regression model</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>poly_reg <span class="op">=</span> LinearRegression()</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>poly_reg.fit(X_poly, y_sales)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicting sales based on advertising spend</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> poly_reg.predict(X_poly)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the data points and the polynomial regression curve</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.scatter(X_ad, y_sales, color<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="st">'Actual Sales'</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.plot(X_ad, y_pred, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Polynomial Regression'</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Advertising Spend ($)'</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Sales ($)'</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Advertising Spend vs Sales using Polynomial Regression'</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="advanced-knn-example-loan-default-prediction" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-knn-example-loan-default-prediction">Advanced KNN Example: Loan Default Prediction</h2>
+<p>In this scenario, a bank wants to predict the risk associated with a loan based on a customer’s credit score and annual income. The bank classifies the risk into three categories: ‘Low Risk’, ‘Medium Risk’, and ‘High Risk’.</p>
+<p>Let’s use KNN to classify customers into these risk categories.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:27:06.620944+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:27:07.009005+00:00&quot;}">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data: Credit Score and Annual Income (in $)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>X_loan <span class="op">=</span> np.array([[<span class="dv">650</span>, <span class="dv">40000</span>], [<span class="dv">700</span>, <span class="dv">55000</span>], [<span class="dv">600</span>, <span class="dv">30000</span>], [<span class="dv">720</span>, <span class="dv">75000</span>], [<span class="dv">630</span>, <span class="dv">25000</span>], [<span class="dv">680</span>, <span class="dv">50000</span>], [<span class="dv">590</span>, <span class="dv">20000</span>], [<span class="dv">750</span>, <span class="dv">90000</span>]])</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Labels: 0 for 'Low Risk', 1 for 'Medium Risk', and 2 for 'High Risk'</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>y_risk <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>])</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Splitting data into training and testing sets</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>X_loan_train, X_loan_test, y_risk_train, y_risk_test <span class="op">=</span> train_test_split(X_loan, y_risk, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Using KNN for classification with k=3</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>knn_loan <span class="op">=</span> KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>knn_loan.fit(X_loan_train, y_risk_train)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>risk_predictions <span class="op">=</span> knn_loan.predict(X_loan_test)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the data points</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>plt.scatter(X_loan[:, <span class="dv">0</span>], X_loan[:, <span class="dv">1</span>], c<span class="op">=</span>y_risk, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Credit Score'</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Annual Income ($)'</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Loan Default Risk Prediction using KNN'</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>plt.colorbar().set_label(<span class="st">'Risk Level'</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>risk_predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="advanced-polynomial-regression-example-salary-prediction" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-polynomial-regression-example-salary-prediction">Advanced Polynomial Regression Example: Salary Prediction</h2>
+<p>In this scenario, a company wants to understand the relationship between the years of experience and the salary of its employees. As employees gain more experience, the growth in their salary might not be linear, especially at higher experience levels where salary increments might start to plateau.</p>
+<p>Let’s use Polynomial Regression to model this non-linear relationship between years of experience and salary.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:28:02.529063+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:28:02.875623+00:00&quot;}">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data: Years of Experience and Salary (in $)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>X_exp <span class="op">=</span> np.array([[<span class="dv">1</span>], [<span class="dv">2</span>], [<span class="dv">3</span>], [<span class="dv">4</span>], [<span class="dv">5</span>], [<span class="dv">6</span>], [<span class="dv">7</span>], [<span class="dv">8</span>], [<span class="dv">9</span>], [<span class="dv">10</span>]])</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>y_sal <span class="op">=</span> np.array([<span class="dv">40000</span>, <span class="dv">45000</span>, <span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">75000</span>, <span class="dv">85000</span>, <span class="dv">95000</span>, <span class="dv">105000</span>, <span class="dv">110000</span>, <span class="dv">115000</span>])</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Transforming our data for Polynomial Regression of degree 2</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>poly_exp <span class="op">=</span> PolynomialFeatures(degree<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>X_exp_poly <span class="op">=</span> poly_exp.fit_transform(X_exp)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Fitting the Polynomial Regression model</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>poly_reg_exp <span class="op">=</span> LinearRegression()</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>poly_reg_exp.fit(X_exp_poly, y_sal)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicting salary based on years of experience</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>y_sal_pred <span class="op">=</span> poly_reg_exp.predict(X_exp_poly)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the data points and the polynomial regression curve</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>plt.scatter(X_exp, y_sal, color<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="st">'Actual Salary'</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>plt.plot(X_exp, y_sal_pred, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Polynomial Regression'</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Years of Experience'</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Salary ($)'</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Years of Experience vs Salary using Polynomial Regression'</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="knn-exercise-customer-churn-prediction" class="level2">
+<h2 class="anchored" data-anchor-id="knn-exercise-customer-churn-prediction">KNN Exercise: Customer Churn Prediction</h2>
+<p>In this exercise, you’ll be working with a fictional dataset representing a company’s customer data. Your task is to predict customer churn, i.e., the likelihood of a customer leaving the company’s services, based on their usage metrics and demographic information.</p>
+<section id="dataset-description" class="level3">
+<h3 class="anchored" data-anchor-id="dataset-description">Dataset Description</h3>
+<ul>
+<li><strong>Age</strong>: Age of the customer (numeric)</li>
+<li><strong>MonthlyCharge</strong>: Monthly charge for the services (numeric, in $)</li>
+<li><strong>CustomerServiceCalls</strong>: Number of calls made to customer service (numeric)</li>
+<li><strong>Churn</strong>: Whether the customer left the company within the last month (0 for No, 1 for Yes)</li>
+</ul>
+</section>
+<section id="objective" class="level3">
+<h3 class="anchored" data-anchor-id="objective">Objective</h3>
+<p>Using the KNN algorithm, classify customers into ‘Churn’ or ‘No Churn’ based on the given features.</p>
+<p>Let’s get started!</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample dataset</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Age'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">70</span>],</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'MonthlyCharge'</span>: [<span class="dv">50</span>, <span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">70</span>, <span class="dv">75</span>, <span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">95</span>],</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'CustomerServiceCalls'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>],</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Churn'</span>: [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the dictionary to a DataFrame for better visualization</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="data-preparation">Data Preparation</h3>
+<p>Before applying the KNN algorithm, we need to prepare our data. This involves:</p>
+<ol type="1">
+<li><strong>Splitting the data</strong> into features (X) and target label (y). In our case, ‘Age’, ‘MonthlyCharge’, and ‘CustomerServiceCalls’ are our features, and ‘Churn’ is our target label.</li>
+<li><strong>Splitting the dataset</strong> into training and testing sets. This allows us to train our model on one subset and test its performance on another unseen subset.</li>
+</ol>
+<p>Let’s perform these steps.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Splitting the data into features (X) and target label (y)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df[[<span class="st">'Age'</span>, <span class="st">'MonthlyCharge'</span>, <span class="st">'CustomerServiceCalls'</span>]]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">'Churn'</span>]</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Splitting the dataset into training and testing sets (80% training, 20% testing)</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>X_train.head(), y_train.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="applying-the-knn-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="applying-the-knn-algorithm">Applying the KNN Algorithm</h3>
+<p>Now that our data is prepared, we can apply the KNN algorithm. Here are the steps we’ll follow:</p>
+<ol type="1">
+<li><strong>Initialize the KNN Classifier:</strong> We’ll use the <code>KNeighborsClassifier</code> from <code>sklearn</code> to create our KNN model. The key parameter here is <code>n_neighbors</code>, which represents the number of neighbors to consider when making a prediction.</li>
+<li><strong>Train the Classifier:</strong> We’ll use the <code>fit</code> method to train our KNN classifier on the training data.</li>
+<li><strong>Make Predictions:</strong> Once trained, we can use the <code>predict</code> method to make predictions on new, unseen data.</li>
+</ol>
+<p>Let’s go through each step with code and explanations.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Initialize the KNN Classifier</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># We'll start with 3 neighbors for our classifier</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>knn <span class="op">=</span> KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Train the Classifier on the training data</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>knn.fit(X_train, y_train)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the trained classifier</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>knn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="making-predictions-with-the-knn-classifier" class="level3">
+<h3 class="anchored" data-anchor-id="making-predictions-with-the-knn-classifier">Making Predictions with the KNN Classifier</h3>
+<p>Now that our KNN classifier is trained, we can use it to make predictions on new data. For this exercise, we’ll predict the churn for the test data and then compare these predictions to the actual churn values to evaluate the performance of our model.</p>
+<p>To make predictions, we’ll use the <code>predict</code> method of our trained KNN classifier. This method takes in the features of the data we want to predict and returns the predicted labels.</p>
+<p>Let’s make predictions on our test data and display the results.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Make Predictions on the test data</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> knn.predict(X_test)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the predicted churn values for the test data</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>y_pred</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the accuracy of the model</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the accuracy</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>accuracy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="overfitting-and-underfitting-bias-versus-variance" class="level2">
+<h2 class="anchored" data-anchor-id="overfitting-and-underfitting-bias-versus-variance">Overfitting and Underfitting: Bias versus Variance</h2>
+<p>In machine learning, achieving the right balance between bias and variance is crucial for creating models that generalize well to new, unseen data. Let’s delve into these concepts:</p>
+<ul>
+<li><p><strong>Bias:</strong> Refers to the error introduced by approximating a real-world problem (which may be complex) by a too-simple model. High bias can cause the model to miss relevant relations between features and target outputs, leading to underfitting.</p></li>
+<li><p><strong>Variance:</strong> Refers to the error introduced by using a model that’s too complex. High variance can cause the model to model the random noise in the training data, leading to overfitting.</p></li>
+</ul>
+<section id="underfitting" class="level3">
+<h3 class="anchored" data-anchor-id="underfitting">Underfitting:</h3>
+<p>Occurs when a model is too simple to capture the underlying structure of the data. Such a model has high bias and low variance.</p>
+</section>
+<section id="overfitting" class="level3">
+<h3 class="anchored" data-anchor-id="overfitting">Overfitting:</h3>
+<p>Occurs when a model is too complex and fits the training data too closely, including its noise and outliers. Such a model has low bias and high variance.</p>
+<p>The goal in machine learning is to achieve a balance between bias and variance, ensuring that the model is flexible enough to model the data’s structure but not so flexible that it fits the noise in the data.</p>
+<p>Let’s visualize the concepts of overfitting and underfitting.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:57:30.586865+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:57:31.156329+00:00&quot;}">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> PolynomialFeatures</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample data</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.sort(<span class="dv">5</span> <span class="op">*</span> np.random.rand(<span class="dv">80</span>, <span class="dv">1</span>), axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(X).ravel() <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="fl">0.1</span>, X.shape[<span class="dv">0</span>])</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Create polynomial regression models of different degrees</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>degrees <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">15</span>]</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">5</span>))</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(degrees)):</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> plt.subplot(<span class="dv">1</span>, <span class="bu">len</span>(degrees), i <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    plt.setp(ax, xticks<span class="op">=</span>(), yticks<span class="op">=</span>())</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    polynomial_features <span class="op">=</span> PolynomialFeatures(degree<span class="op">=</span>degrees[i], include_bias<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>    linear_regression <span class="op">=</span> LinearRegression()</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    pipeline <span class="op">=</span> make_pipeline(polynomial_features, linear_regression)</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    pipeline.fit(X, y)</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Evaluate the models using cross-validation</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    X_test <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    plt.plot(X_test, pipeline.predict(X_test[:, np.newaxis]), label<span class="op">=</span><span class="st">"Model"</span>)</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>    plt.scatter(X, y, edgecolor<span class="op">=</span><span class="st">'b'</span>, s<span class="op">=</span><span class="dv">20</span>, label<span class="op">=</span><span class="st">"Samples"</span>)</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">"y"</span>)</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>    plt.xlim((<span class="dv">0</span>, <span class="dv">5</span>))</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>    plt.ylim((<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>    plt.legend(loc<span class="op">=</span><span class="st">"best"</span>)</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">"Degree </span><span class="sc">%d</span><span class="st">"</span> <span class="op">%</span> degrees[i])</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="the-cost-function" class="level2">
+<h2 class="anchored" data-anchor-id="the-cost-function">The Cost Function</h2>
+<p>In machine learning, the cost function (or loss function) quantifies how well the model’s predictions match the actual values. In other words, it measures the error of the model. The goal during training is to minimize this error.</p>
+<p>For linear regression, a common cost function is the <strong>Mean Squared Error (MSE)</strong>, which calculates the average of the squared differences between the predicted and actual values.</p>
+<p>The formula for MSE is:</p>
+<p><span class="math display">\[ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \]</span></p>
+<p>Where: - <span class="math inline">\(y_i\)</span> is the actual value. - <span class="math inline">\(\hat{y}_i\)</span> is the predicted value. - $ n $ is the number of observations.</p>
+<p>Let’s implement the MSE in Python and calculate it for a sample set of actual and predicted values.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:57:10.318228+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:57:10.475266+00:00&quot;}">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample actual and predicted values</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>y_true <span class="op">=</span> np.array([<span class="dv">3</span>, <span class="fl">2.5</span>, <span class="dv">4</span>, <span class="fl">5.6</span>])</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> np.array([<span class="fl">2.8</span>, <span class="fl">2.7</span>, <span class="fl">3.8</span>, <span class="fl">5.5</span>])</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate MSE</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>mse_value <span class="op">=</span> mean_squared_error(y_true, y_pred)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>mse_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="the-training-error-and-the-test-error" class="level2">
+<h2 class="anchored" data-anchor-id="the-training-error-and-the-test-error">The Training Error and The Test Error</h2>
+<p>In machine learning, it’s essential to evaluate how well a model performs. Two common metrics used for this purpose are the training error and the test error:</p>
+<ul>
+<li><p><strong>Training Error:</strong> This is the error (typically the MSE) of the model on the same data it was trained on. A low training error might indicate that the model fits the training data well, but it doesn’t necessarily mean the model will perform well on new, unseen data.</p></li>
+<li><p><strong>Test Error:</strong> This is the error of the model on a separate set of data that it hasn’t seen during training. It gives a better indication of how the model will perform in real-world scenarios. A model that performs well on the training data but poorly on the test data is likely overfitting.</p></li>
+</ul>
+<p>In a business context, the training error can help in understanding how well the model fits historical data, while the test error can provide insights into how the model might perform on future data.</p>
+<p>Let’s calculate the training and test errors for a sample linear regression model using a business-related dataset.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:56:35.055582+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:56:35.214953+00:00&quot;}">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample business data: Sales vs. Advertising Spend</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> <span class="fl">2.5</span> <span class="op">*</span> np.random.rand(<span class="dv">100</span>, <span class="dv">1</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> X <span class="op">+</span> np.random.randn(<span class="dv">100</span>, <span class="dv">1</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the data into training and test sets</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Train a linear regression model</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>regressor <span class="op">=</span> LinearRegression()</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>regressor.fit(X_train, y_train)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the training error</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>y_train_pred <span class="op">=</span> regressor.predict(X_train)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>training_error <span class="op">=</span> mean_squared_error(y_train, y_train_pred)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the test error</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>y_test_pred <span class="op">=</span> regressor.predict(X_test)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>test_error <span class="op">=</span> mean_squared_error(y_test, y_test_pred)</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>training_error, test_error</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="the-cost-function-revisited" class="level2">
+<h2 class="anchored" data-anchor-id="the-cost-function-revisited">The Cost Function (Revisited)</h2>
+<p>The cost function, as previously mentioned, quantifies the error between the model’s predictions and the actual values. For regression problems, the Mean Squared Error (MSE) is a commonly used cost function. It’s crucial to minimize this error during the training process to ensure the model makes accurate predictions.</p>
+<p>In a business context, the cost function can be thought of as a measure of how far off our predictions are from the actual outcomes. For instance, if we’re predicting monthly sales, a high cost would indicate that our predictions are far from the actual sales figures, which could lead to incorrect business decisions.</p>
+<p>Now, let’s move on to the next topic.</p>
+</section>
+<section id="bias-versus-variance-revisited" class="level2">
+<h2 class="anchored" data-anchor-id="bias-versus-variance-revisited">Bias versus Variance (Revisited)</h2>
+<p>Bias and variance are two fundamental concepts in understanding the performance of machine learning models. They represent two types of errors that can occur:</p>
+<ul>
+<li><p><strong>Bias:</strong> This is the error introduced by approximating a real-world problem, which might be complex, by a too-simple model. High bias can cause the model to miss the relevant relations between features and target outputs, leading to underfitting. In a business context, a high-bias model might consistently make the same type of error, such as consistently underestimating sales by a certain amount.</p></li>
+<li><p><strong>Variance:</strong> This is the error introduced by using a model that’s too complex. High variance can cause the model to model the random noise in the training data, leading to overfitting. In a business context, a high-variance model might be very sensitive to small fluctuations in the training data, leading to erratic predictions.</p></li>
+</ul>
+<p>The challenge in machine learning is to find the right trade-off between bias and variance. Ideally, we want a model with low bias and low variance, but in practice, there’s often a trade-off. Reducing bias might increase variance and vice versa.</p>
+<p>In a business scenario, understanding bias and variance is crucial. A model with high bias might lead to consistent errors in decision-making, while a model with high variance might lead to unpredictable and erratic decisions.</p>
+<p>Now, let’s move on to the next topic.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:58:26.078139+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:58:26.244195+00:00&quot;}">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample business data: Sales vs. Advertising Spend</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> <span class="fl">2.5</span> <span class="op">*</span> np.random.rand(<span class="dv">100</span>, <span class="dv">1</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> X <span class="op">+</span> np.random.randn(<span class="dv">100</span>, <span class="dv">1</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the data into training and test sets</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Train a linear regression model</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>regressor <span class="op">=</span> LinearRegression()</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>regressor.fit(X_train, y_train)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the training error</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>y_train_pred <span class="op">=</span> regressor.predict(X_train)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>training_error <span class="op">=</span> mean_squared_error(y_train, y_train_pred)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the test error</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>y_test_pred <span class="op">=</span> regressor.predict(X_test)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>test_error <span class="op">=</span> mean_squared_error(y_test, y_test_pred)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>training_error, test_error</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-overfitting-and-underfitting-in-business-sales-prediction" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-overfitting-and-underfitting-in-business-sales-prediction">Exercise: Overfitting and Underfitting in Business Sales Prediction</h2>
+<p><strong>Scenario:</strong> You are a data scientist at a retail company, and you are tasked with predicting monthly sales based on advertising spend. You decide to use polynomial regression. However, you want to ensure that your model neither overfits nor underfits the data.</p>
+<p><strong>Objective:</strong> Fit polynomial regression models of varying degrees to the sales data and visualize the results to understand the concepts of overfitting and underfitting.</p>
+<p>Let’s start by visualizing the provided sales data.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample business data: Sales vs. Advertising Spend</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> <span class="fl">2.5</span> <span class="op">*</span> np.random.rand(<span class="dv">100</span>, <span class="dv">1</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> X <span class="op">+</span> np.random.randn(<span class="dv">100</span>, <span class="dv">1</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the data</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>plt.scatter(X, y, color<span class="op">=</span><span class="st">'blue'</span>, s<span class="op">=</span><span class="dv">30</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Sales vs. Advertising Spend'</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Advertising Spend (in thousands)'</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Sales (in thousands)'</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the data into training and test sets</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the size of the training and test sets</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(X_train), <span class="bu">len</span>(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit polynomial regression models of varying degrees and visualize the results</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>degrees <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">15</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">5</span>))</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(degrees)):</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> plt.subplot(<span class="dv">1</span>, <span class="bu">len</span>(degrees), i <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    plt.setp(ax, xticks<span class="op">=</span>(), yticks<span class="op">=</span>())</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    polynomial_features <span class="op">=</span> PolynomialFeatures(degree<span class="op">=</span>degrees[i], include_bias<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    linear_regression <span class="op">=</span> LinearRegression()</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    pipeline <span class="op">=</span> make_pipeline(polynomial_features, linear_regression)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    pipeline.fit(X_train, y_train)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Visualize the models</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    X_range <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="fl">2.5</span>, <span class="dv">100</span>)</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    plt.plot(X_range, pipeline.predict(X_range[:, np.newaxis]), label<span class="op">=</span><span class="st">"Model"</span>)</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    plt.scatter(X_train, y_train, edgecolor<span class="op">=</span><span class="st">'b'</span>, s<span class="op">=</span><span class="dv">20</span>, label<span class="op">=</span><span class="st">"Training Data"</span>)</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    plt.scatter(X_test, y_test, edgecolor<span class="op">=</span><span class="st">'r'</span>, s<span class="op">=</span><span class="dv">20</span>, label<span class="op">=</span><span class="st">"Test Data"</span>)</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"Advertising Spend (in thousands)"</span>)</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">"Sales (in thousands)"</span>)</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    plt.xlim((<span class="dv">0</span>, <span class="fl">2.5</span>))</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    plt.ylim((<span class="dv">0</span>, <span class="dv">15</span>))</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    plt.legend(loc<span class="op">=</span><span class="st">"best"</span>)</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">"Degree </span><span class="sc">%d</span><span class="st">"</span> <span class="op">%</span> degrees[i])</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-understanding-the-cost-function-in-business" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-understanding-the-cost-function-in-business">Exercise: Understanding the Cost Function in Business</h2>
+<p><strong>Scenario:</strong> You are working for a retail company and are tasked with predicting monthly sales based on advertising spend. You’ve chosen a linear regression model for this task. To evaluate the performance of your model, you decide to compute the Mean Squared Error (MSE) as your cost function.</p>
+<p><strong>Objective:</strong> Calculate the MSE for your linear regression model using both the training and test data. Compare the results to understand the model’s performance.</p>
+<p>Let’s begin by calculating the MSE for the training data.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the MSE for the training data</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>y_train_pred <span class="op">=</span> regressor.predict(X_train)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>mse_train <span class="op">=</span> mean_squared_error(y_train, y_train_pred)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>mse_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the MSE for the test data</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>y_test_pred <span class="op">=</span> regressor.predict(X_test)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>mse_test <span class="op">=</span> mean_squared_error(y_test, y_test_pred)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>mse_test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-evaluating-model-performance-using-training-and-test-errors" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-evaluating-model-performance-using-training-and-test-errors">Exercise: Evaluating Model Performance using Training and Test Errors</h2>
+<p><strong>Scenario:</strong> You are a data scientist at a retail company. The marketing team wants to understand the performance of the sales prediction model before launching a new advertising campaign. They are particularly interested in knowing how well the model performs on historical data (training data) and how it might perform on future data (test data).</p>
+<p><strong>Objective:</strong> Calculate the training and test errors for the sales prediction model. Analyze the results to provide insights to the marketing team.</p>
+<p>Let’s begin by calculating the training and test errors.</p>
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the training error</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>training_error <span class="op">=</span> mean_squared_error(y_train, y_train_pred)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the test error</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>test_error <span class="op">=</span> mean_squared_error(y_test, y_test_pred)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>training_error, test_error</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
