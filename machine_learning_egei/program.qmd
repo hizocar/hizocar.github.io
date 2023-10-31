@@ -3,7 +3,7 @@
 
 **Course title:** Machine Learning – Business Applications  
 **ECTS:** 5  
-**Semester:** 3  
+**Semester:** 4  
 **Location:** Universidad Técnica Federico Santa María (Chile)  
 **Compulsory course:** YES – Track GEME - Globalisation and Emerging Market Economies  
 **Lecturer & Contact:** Sebastián Azócar M. Master's in Data Science  
