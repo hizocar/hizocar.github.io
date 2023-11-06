@@ -18,4 +18,5 @@ title: "Machine Learning with Business Application UTFSM"
 
 [Class 3: What is Machine Learning? ](/machine_learning_egei/class3.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/machine_learning_egei/class3.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-[Class 4
+[Class 4: Classification ](/machine_learning_egei/class4.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/machine_learning_egei/class4.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
