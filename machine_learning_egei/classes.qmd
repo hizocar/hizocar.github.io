@@ -20,3 +20,5 @@ title: "Machine Learning with Business Application UTFSM"
 
 [Class 4: Classification ](/machine_learning_egei/class4.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/machine_learning_egei/class4.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
+[Homework 3](/machine_learning_egei/homeworks/homework_III.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main//machine_learning_egei/homeworks/homework_III.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> ( Until Thursday, November 23th at 23:59 hrs. Share notebook with hizocar@gmail.com)
+
