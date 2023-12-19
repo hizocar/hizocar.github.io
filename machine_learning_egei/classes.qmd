@@ -24,4 +24,17 @@ title: "Machine Learning with Business Application UTFSM"
 
 [Class 5: Decision Trees and Random Forest ](/machine_learning_egei/class5.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/machine_learning_egei/class5.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
+
 [Final Project](/machine_learning_egei/homeworks/Final%20Project.ipynb) | <a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main//machine_learning_egei/homeworks/Final%20Project.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> 
+
+## Students' projects and presentations (2023)
+
+[Clustering](https://zoom.us/rec/share/pzwjHgJPGhrVQXRlX2GOzM7zZ7OpatitI8nAMhYgPT0LwprlsA9RJURfLadCTT_s.-zHHR4v0fHqvzZDe?startTime=1702040726000)
+
+[Regression](https://zoom.us/rec/share/pzwjHgJPGhrVQXRlX2GOzM7zZ7OpatitI8nAMhYgPT0LwprlsA9RJURfLadCTT_s.-zHHR4v0fHqvzZDe?startTime=1702041989000)
+
+[Final project: Heart Failure prediction](machine_learning_egei/homeworks_2023/Heart_prediction.pdf)
+
+[Final project: Loan default prediction](machine_learning_egei/homeworks_2023/Loan_default.pdf)
+
+[Final project: Stroke_prediction](machine_learning_egei/homeworks_2023/Stroke_prediction.pdf)
