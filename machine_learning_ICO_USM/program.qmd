@@ -1,0 +1,152 @@
+# Machine Learning – Business Applications
+## Course syllabus
+
+**Course title:** Machine Learning – Business Applications  
+**ECTS:** 5  
+**Semester:** 4  
+**Location:** Universidad Técnica Federico Santa María (Chile)  
+**Compulsory course:** YES – Track GEME - Globalisation and Emerging Market Economies  
+**Lecturer & Contact:** Sebastián Azócar M. Master's in Data Science  
+**Email:** [hizocar@gmail.com](mailto:hizocar@gmail.com)  
+**Prerequisites:** Applied Econometrics I and II  
+
+### Learning outcomes and competences:
+
+The general objective of the course is that students acquire the knowledge and practice necessary to Machine learning (ML). This is a branch of computer science that uses algorithms to mimic the way humans learn. In this course, we will analyze the different techniques and statistical methods used in ML to make predictions with Business Applications.
+
+### Organisation / learning methods:
+
+The methodology of the course is focused on learning by doing, so the individual work of each student is key (a study load of at least 3 hours per week is assumed), and each student is required to read the required material before each class.
+
+## Course contents:
+
+### A. Data
+
+- **A. Data and Decision Making**
+  - Different Types of Data
+  - Data manipulation
+
+### B. What is Machine Learning?
+
+- **B.1 Machine Learning Models**
+  - What is a ML Model?
+  - Fitting a Model
+  - KNN
+  - Polynomial Regression
+  - Overfitting and Underfitting: Bias versus Variance
+  - The Cost  Function
+  - The Training Error
+  - The Test Error
+
+- **B.2 The Machine Learning Pipeline**
+  - The Bias-Variance Trade-Off
+  - Cross-Validation
+  - Applying the machine learning pipeline
+
+### C. Classification
+
+- **C.1 Logistic Regression**
+  - What is classification?
+  - Technique and Methodology
+  - Measuring the Model Performance
+  - The ROC Curve
+
+- **C.2 Generative Models**
+  - Basic Concepts
+  - The Naïve Bayesian Classifier
+  - Text Classification
+  - NLP Application: Measuring Text Sentiment
+
+### D. Trees and Forests
+
+- **D.1 Tree based Methods**
+  - Structure of decision trees
+  - Types of tree-based methods
+  - Loss functions
+  - Tree pruning
+  - Regression Trees
+  - Classification Trees
+
+- **D.2 Ensemble Methods**
+  - Basic Concepts
+  - Techniques and Methodology
+  - Bagging 
+  - Random Forests
+  - Boosting
+
+### E. Selection
+
+- **E.1 Variable Selection**
+  - Applications to Variable Selections
+  - Techniques and Methodology
+  - Best subset selection
+  - Stepwise, Backward and Forward Selection
+
+- **E.2 Shrinkage Methods**
+  - Shrinkage versus Selection
+  - LASSO Regression 
+  - RIDGE Regression
+  - Elastic Net Regression
+
+### F. Unlabeled Data
+
+- **F.1 Dimension Reduction**
+  - Unlabeled data
+  - Principal Components
+  - Application of PCA
+
+- **F.2 Clustering**
+  - k-means clustering
+  - Hierarchical clustering
+  - Advantages and Limitations
+  - Practical Application
+
+### G. Introduction to Neural Networks
+
+- **G.1 Neural Networks**
+  - Basic concepts
+  - Artificial neural networks (ANNs)
+  - The simple perceptron
+  - Structure of the ANN
+  - Methods
+
+- **G.2 Neural Networks Implementation**
+  - Introduction
+  - Advantages and Limitations
+  - Training the Model
+  - Model Optimization
+
+## Readings / literature:
+
+### A. Readings
+
+1. [Breiman, L. (2001). Statistical modeling: The two cultures (with comments and a rejoinder by the author). Statistical science, 16(3), 199-231.](http://users.csc.calpoly.edu/~dsun09/data401/readings/Breiman-Two-Cultures.pdf)
+2. [Burgess, M. (2018). This is how Netflix's secret recommendation system works. Wired.](https://www.wired.co.uk/article/netflix-data-personalisation-watching)
+3. [Castañón, J. (10). Machine Learning Methods that Every Data Scientist Should Know, 2019.](https://towardsdatascience.com/10-machine-learning-methods-that-every-data-scientist-should-know-3cc96e0eeee9)
+4. [Pant, A. (2019). Introduction to Machine Learning for Beginners. Preuzeto, 19, 2021.](https://towardsdatascience.com/introduction-to-machine-learning-for-beginners-eed6024fdb08)
+5. [Zhang (2018). Data Types From A Machine Learning Perspective With Examples.](https://towardsdatascience.com/data-types-from-a-machine-learning-perspective-with-examples-111ac679e8bc)
+
+### B. Readings
+
+1. [Agarwal, A. (2018). Polynomial Regression](https://towardsdatascience.com/polynomial-regression-bbe8b9d97491)
+2. [Koehrsen, W. (2018). Overfitting vs. Underfitting: A Complete Example](https://towardsdatascience.com/overfitting-vs-underfitting-a-complete-example-d05dd7e19765)
+3. [Gupta, P. (2017). Cross-Validation in Machine Learning](https://towardsdatascience.com/cross-validation-in-machine-learning-72924a69872f)
+
+### E. Readings
+
+1. ISLR sections 6.1 (Subset selection), 6.2 (Shrinkage methods)
+2. [Lesson 4: Variable Selection](https://online.stat.psu.edu/stat508/lesson/4)
+3. [Lesson 5:  Shrinkage Methods](https://online.stat.psu.edu/stat508/lesson/5)
+4. [Deol, G. (2019)](https://hackernoon.com/an-introduction-to-ridge-lasso-and-elastic-net-regression-cca60b4b934f)
+
+### C. Readings
+
+1. ISLR sections 4.1, 4.2, 4.3, 4.6.2
+2. [Lesson 9.1: Logistic Regression](https://online.stat.psu.edu/stat508/lesson/9/9.1)
+3. [Asiri, S.(2018)](https://towardsdatascience.com/machine-learning-classifiers-a5cc4e1b0623)
+
+### D. Readings
+
+1. ISLR Chapter 8
+2. [Lesson 11: Tree-based Methods](https://online.stat.psu.edu/stat508/lesson/11)
+3. [Analytics Vidha (2016). Tree Based Algorithms: A Complete Tutorial from Scratch (in R & Python)](https://www.analyticsvidhya.com/blog/2016/04/tree-based-algorithms-complete-tutorial-s

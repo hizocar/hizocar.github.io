@@ -35,6 +35,7 @@ website:
       - machine_learning_egei/classes.qmd
       - introduction_to_python/classes.qmd
       - data_science_ingemat/classes.qmd
+      - machine_learning_ICO_USM/classes.qmd
 format:
   html:
     theme: 
