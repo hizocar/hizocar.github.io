@@ -161,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../machine_learning_ICO_USM/classes.html" rel="" target="">
- <span class="dropdown-text">Machine Learning ICO USM</span></a>
+ <span class="dropdown-text">Machine Learning ICO USM 202401</span></a>
   </li>  
     </ul>
   </li>
@@ -224,6 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p><a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/machine_learning_egei/class5.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 <p>Decision trees are a type of supervised learning algorithm used for both classification and regression tasks. Their aim is to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features.</p>
 <section id="characteristics-of-decision-trees" class="level3">
 <h3 class="anchored" data-anchor-id="characteristics-of-decision-trees">Characteristics of Decision Trees:</h3>
@@ -253,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-decision-tree-classification-in-python" class="level2">
 <h2 class="anchored" data-anchor-id="example-decision-tree-classification-in-python">Example: Decision Tree Classification in Python</h2>
 <p>In this example, we will use a dataset from scikit-learn, convert it to a DataFrame, describe it, and then apply a decision tree model for classification. After obtaining the results, we will analyze the precision, recall, accuracy, and ROC curve.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-11-28T14:42:33.770796+00:00&quot;,&quot;end_time&quot;:&quot;2023-11-28T14:42:34.745845+00:00&quot;}">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-11-28T14:42:34.745845+00:00&quot;,&quot;start_time&quot;:&quot;2023-11-28T14:42:33.770796+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
@@ -302,7 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-decision-tree-classification-with-a-different-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="example-decision-tree-classification-with-a-different-dataset">Example: Decision Tree Classification with a Different Dataset</h2>
 <p>In this example, we will use another dataset from scikit-learn, convert it to a DataFrame, describe it, and then apply a decision tree model for classification. We will follow the same steps as the previous example, including analyzing precision, recall, accuracy, and the ROC curve.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-11-28T14:46:46.626891+00:00&quot;,&quot;end_time&quot;:&quot;2023-11-28T14:46:47.024424+00:00&quot;}">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-11-28T14:46:47.024424+00:00&quot;,&quot;start_time&quot;:&quot;2023-11-28T14:46:46.626891+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_wine</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
@@ -386,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="random-forest-example-with-iris-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="random-forest-example-with-iris-dataset">Random Forest Example with Iris Dataset</h2>
 <p>Following the same steps as in the decision tree examples, we will now apply a Random Forest model to the Iris dataset. We will load the dataset, convert it to a DataFrame, describe it, apply the Random Forest model for classification, and analyze the precision, recall, accuracy, and ROC curve.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize and train the Random Forest classifier</span></span>
@@ -418,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="random-forest-example-with-wine-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="random-forest-example-with-wine-dataset">Random Forest Example with Wine Dataset</h2>
 <p>Now, we will apply the Random Forest model to the Wine dataset, following the same procedure as before. We will load the dataset, convert it to a DataFrame, describe it, apply the Random Forest model for classification, and analyze the precision, recall, accuracy, and ROC curve for each class.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize and train the Random Forest classifier for the Wine dataset</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>rf_clf_wine <span class="op">=</span> RandomForestClassifier(random_state<span class="op">=</span><span class="dv">42</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>rf_clf_wine.fit(X_train_wine, y_train_wine)</span>

@@ -163,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
         <li>
     <a class="dropdown-item" href="../machine_learning_ICO_USM/classes.html" rel="" target="">
- <span class="dropdown-text">Machine Learning ICO USM</span></a>
+ <span class="dropdown-text">Machine Learning ICO USM 202401</span></a>
   </li>  
     </ul>
   </li>
@@ -245,6 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p><a href="https://colab.research.google.com/github/hizocar/hizocar.github.io/blob/main/machine_learning_egei/class3.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 <p>In the realm of data science and artificial intelligence, machine learning models play a pivotal role. They are algorithms that learn patterns from data and then make predictions or decisions without being explicitly programmed to do so. In the business context, machine learning models can be used for a variety of tasks such as customer segmentation, sales forecasting, and even fraud detection.</p>
 <section id="what-is-a-ml-model" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-a-ml-model">What is a ML Model?</h2>
@@ -262,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="business-application-of-knn">Business Application of KNN</h3>
 <p>Imagine a retail business that wants to segment its customers based on their purchase behavior. Using KNN, the business can classify a new customer into a particular segment by looking at the purchase behaviors of the ‘k’ most similar existing customers. This can help the business tailor its marketing strategies for different customer segments.</p>
 <p>Let’s see a simple example in Python where we use KNN to classify customers into two segments: ‘High Value’ and ‘Low Value’ based on their annual spending and frequency of purchase.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:24:45.184474+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:24:46.186832+00:00&quot;}">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-10-19T20:24:46.186832+00:00&quot;,&quot;start_time&quot;:&quot;2023-10-19T20:24:45.184474+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
@@ -299,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="business-application-of-polynomial-regression">Business Application of Polynomial Regression</h3>
 <p>Consider a business that wants to understand the relationship between advertising spend and sales. While initially, an increase in advertising might lead to a significant increase in sales, after a certain point, the effect of additional advertising might diminish. In such cases, a polynomial regression can capture the non-linear relationship between advertising spend and sales more effectively than a linear model.</p>
 <p>Let’s see a Python example where we use Polynomial Regression to model the relationship between advertising spend and sales.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:25:03.144147+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:25:03.522344+00:00&quot;}">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-10-19T20:25:03.522344+00:00&quot;,&quot;start_time&quot;:&quot;2023-10-19T20:25:03.144147+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> PolynomialFeatures</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -333,7 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="advanced-knn-example-loan-default-prediction">Advanced KNN Example: Loan Default Prediction</h2>
 <p>In this scenario, a bank wants to predict the risk associated with a loan based on a customer’s credit score and annual income. The bank classifies the risk into three categories: ‘Low Risk’, ‘Medium Risk’, and ‘High Risk’.</p>
 <p>Let’s use KNN to classify customers into these risk categories.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:27:06.620944+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:27:07.009005+00:00&quot;}">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-10-19T20:27:07.009005+00:00&quot;,&quot;start_time&quot;:&quot;2023-10-19T20:27:06.620944+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data: Credit Score and Annual Income (in $)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>X_loan <span class="op">=</span> np.array([[<span class="dv">650</span>, <span class="dv">40000</span>], [<span class="dv">700</span>, <span class="dv">55000</span>], [<span class="dv">600</span>, <span class="dv">30000</span>], [<span class="dv">720</span>, <span class="dv">75000</span>], [<span class="dv">630</span>, <span class="dv">25000</span>], [<span class="dv">680</span>, <span class="dv">50000</span>], [<span class="dv">590</span>, <span class="dv">20000</span>], [<span class="dv">750</span>, <span class="dv">90000</span>]])</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Labels: 0 for 'Low Risk', 1 for 'Medium Risk', and 2 for 'High Risk'</span></span>
@@ -362,7 +363,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="advanced-polynomial-regression-example-salary-prediction">Advanced Polynomial Regression Example: Salary Prediction</h2>
 <p>In this scenario, a company wants to understand the relationship between the years of experience and the salary of its employees. As employees gain more experience, the growth in their salary might not be linear, especially at higher experience levels where salary increments might start to plateau.</p>
 <p>Let’s use Polynomial Regression to model this non-linear relationship between years of experience and salary.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:28:02.529063+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:28:02.875623+00:00&quot;}">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-10-19T20:28:02.875623+00:00&quot;,&quot;start_time&quot;:&quot;2023-10-19T20:28:02.529063+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data: Years of Experience and Salary (in $)</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>X_exp <span class="op">=</span> np.array([[<span class="dv">1</span>], [<span class="dv">2</span>], [<span class="dv">3</span>], [<span class="dv">4</span>], [<span class="dv">5</span>], [<span class="dv">6</span>], [<span class="dv">7</span>], [<span class="dv">8</span>], [<span class="dv">9</span>], [<span class="dv">10</span>]])</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>y_sal <span class="op">=</span> np.array([<span class="dv">40000</span>, <span class="dv">45000</span>, <span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">75000</span>, <span class="dv">85000</span>, <span class="dv">95000</span>, <span class="dv">105000</span>, <span class="dv">110000</span>, <span class="dv">115000</span>])</span>
@@ -404,7 +405,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="objective">Objective</h3>
 <p>Using the KNN algorithm, classify customers into ‘Churn’ or ‘No Churn’ based on the given features.</p>
 <p>Let’s get started!</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample dataset</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Age'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">70</span>],</span>
@@ -427,7 +428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Splitting the dataset</strong> into training and testing sets. This allows us to train our model on one subset and test its performance on another unseen subset.</li>
 </ol>
 <p>Let’s perform these steps.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Splitting the data into features (X) and target label (y)</span></span>
@@ -449,7 +450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Make Predictions:</strong> Once trained, we can use the <code>predict</code> method to make predictions on new, unseen data.</li>
 </ol>
 <p>Let’s go through each step with code and explanations.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Initialize the KNN Classifier</span></span>
@@ -468,14 +469,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now that our KNN classifier is trained, we can use it to make predictions on new data. For this exercise, we’ll predict the churn for the test data and then compare these predictions to the actual churn values to evaluate the performance of our model.</p>
 <p>To make predictions, we’ll use the <code>predict</code> method of our trained KNN classifier. This method takes in the features of the data we want to predict and returns the predicted labels.</p>
 <p>Let’s make predictions on our test data and display the results.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Make Predictions on the test data</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> knn.predict(X_test)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the predicted churn values for the test data</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>y_pred</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the accuracy of the model</span></span>
@@ -502,7 +503,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Occurs when a model is too complex and fits the training data too closely, including its noise and outliers. Such a model has low bias and high variance.</p>
 <p>The goal in machine learning is to achieve a balance between bias and variance, ensuring that the model is flexible enough to model the data’s structure but not so flexible that it fits the noise in the data.</p>
 <p>Let’s visualize the concepts of overfitting and underfitting.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:57:30.586865+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:57:31.156329+00:00&quot;}">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-10-19T20:57:31.156329+00:00&quot;,&quot;start_time&quot;:&quot;2023-10-19T20:57:30.586865+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> make_pipeline</span>
@@ -550,7 +551,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><span class="math display">\[ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \]</span></p>
 <p>Where: - <span class="math inline">\(y_i\)</span> is the actual value. - <span class="math inline">\(\hat{y}_i\)</span> is the predicted value. - $ n $ is the number of observations.</p>
 <p>Let’s implement the MSE in Python and calculate it for a sample set of actual and predicted values.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:57:10.318228+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:57:10.475266+00:00&quot;}">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-10-19T20:57:10.475266+00:00&quot;,&quot;start_time&quot;:&quot;2023-10-19T20:57:10.318228+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample actual and predicted values</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>y_true <span class="op">=</span> np.array([<span class="dv">3</span>, <span class="fl">2.5</span>, <span class="dv">4</span>, <span class="fl">5.6</span>])</span>
@@ -570,7 +571,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>In a business context, the training error can help in understanding how well the model fits historical data, while the test error can provide insights into how the model might perform on future data.</p>
 <p>Let’s calculate the training and test errors for a sample linear regression model using a business-related dataset.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:56:35.055582+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:56:35.214953+00:00&quot;}">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-10-19T20:56:35.214953+00:00&quot;,&quot;start_time&quot;:&quot;2023-10-19T20:56:35.055582+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -613,7 +614,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The challenge in machine learning is to find the right trade-off between bias and variance. Ideally, we want a model with low bias and low variance, but in practice, there’s often a trade-off. Reducing bias might increase variance and vice versa.</p>
 <p>In a business scenario, understanding bias and variance is crucial. A model with high bias might lead to consistent errors in decision-making, while a model with high variance might lead to unpredictable and erratic decisions.</p>
 <p>Now, let’s move on to the next topic.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-executetime="{&quot;start_time&quot;:&quot;2023-10-19T20:58:26.078139+00:00&quot;,&quot;end_time&quot;:&quot;2023-10-19T20:58:26.244195+00:00&quot;}">
+<div class="cell" data-executetime="{&quot;end_time&quot;:&quot;2023-10-19T20:58:26.244195+00:00&quot;,&quot;start_time&quot;:&quot;2023-10-19T20:58:26.078139+00:00&quot;}" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample business data: Sales vs. Advertising Spend</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> <span class="fl">2.5</span> <span class="op">*</span> np.random.rand(<span class="dv">100</span>, <span class="dv">1</span>)</span>
@@ -642,7 +643,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Scenario:</strong> You are a data scientist at a retail company, and you are tasked with predicting monthly sales based on advertising spend. You decide to use polynomial regression. However, you want to ensure that your model neither overfits nor underfits the data.</p>
 <p><strong>Objective:</strong> Fit polynomial regression models of varying degrees to the sales data and visualize the results to understand the concepts of overfitting and underfitting.</p>
 <p>Let’s start by visualizing the provided sales data.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample business data: Sales vs. Advertising Spend</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> <span class="fl">2.5</span> <span class="op">*</span> np.random.rand(<span class="dv">100</span>, <span class="dv">1</span>)</span>
@@ -657,14 +658,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
 <span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the data into training and test sets</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the size of the training and test sets</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(X_train), <span class="bu">len</span>(X_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit polynomial regression models of varying degrees and visualize the results</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>degrees <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">15</span>]</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">5</span>))</span>
@@ -698,13 +699,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Scenario:</strong> You are working for a retail company and are tasked with predicting monthly sales based on advertising spend. You’ve chosen a linear regression model for this task. To evaluate the performance of your model, you decide to compute the Mean Squared Error (MSE) as your cost function.</p>
 <p><strong>Objective:</strong> Calculate the MSE for your linear regression model using both the training and test data. Compare the results to understand the model’s performance.</p>
 <p>Let’s begin by calculating the MSE for the training data.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the MSE for the training data</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>y_train_pred <span class="op">=</span> regressor.predict(X_train)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>mse_train <span class="op">=</span> mean_squared_error(y_train, y_train_pred)</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>mse_train</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the MSE for the test data</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>y_test_pred <span class="op">=</span> regressor.predict(X_test)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>mse_test <span class="op">=</span> mean_squared_error(y_test, y_test_pred)</span>
@@ -716,7 +717,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Scenario:</strong> You are a data scientist at a retail company. The marketing team wants to understand the performance of the sales prediction model before launching a new advertising campaign. They are particularly interested in knowing how well the model performs on historical data (training data) and how it might perform on future data (test data).</p>
 <p><strong>Objective:</strong> Calculate the training and test errors for the sales prediction model. Analyze the results to provide insights to the marketing team.</p>
 <p>Let’s begin by calculating the training and test errors.</p>
-<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}">
+<div class="cell" data-noteable="{&quot;cell_type&quot;:&quot;code&quot;}" data-vscode="{&quot;languageId&quot;:&quot;python&quot;}">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the training error</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>training_error <span class="op">=</span> mean_squared_error(y_train, y_train_pred)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
