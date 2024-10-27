@@ -40,3 +40,7 @@ title: "Machine Learning with Business Application UTFSM"
 [Final project: Stroke_prediction](machine_learning_egei/homeworks_2023/Stroke_prediction.pdf)
 
 [Final Scores](https://docs.google.com/spreadsheets/d/1dnI2Fa_Vy4rlKm5p8G6uZUESMcjIdf4M26vyKBZdUI8/edit#gid=0)
+
+## Homeworks (2024)
+
+- [Task 2 ](/machine_learning_egei/homeworks_2024/task2.md)
