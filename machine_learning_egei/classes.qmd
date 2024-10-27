@@ -43,4 +43,4 @@ title: "Machine Learning with Business Application UTFSM"
 
 ## Homeworks (2024)
 
-- [Task 2 ](/machine_learning_egei/homeworks_2024/task2.md)
+- [Task 2 ](/machine_learning_egei/homeworks_2024/task2.qmd)
