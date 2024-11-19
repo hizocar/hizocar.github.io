@@ -1,7 +1,10 @@
 ---
 title: "Data Experience"
 ---
-
+## **Latam Airlines**
+- **Data Scientist** (Mid 2024 - Present)
+  - Specialized in Marketing Science
+  
 ## **Caja los Andes**
 - **Data Scientist** (2021)
   - Promoted to **Senior Data Scientist**
@@ -9,7 +12,7 @@ title: "Data Experience"
   - Led a team focusing on People Analytics and Text Analysis
 
 ## **Walmart**
-- **Data Scientist** (Mid 2023 - Present)
+- **Data Scientist** (Mid 2023 - 2024)
   - Specialized in Commercial Data Analysis
 
 ## **Universidad del Desarrollo**
