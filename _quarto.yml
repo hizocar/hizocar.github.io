@@ -19,22 +19,12 @@ website:
       - sidebar:Courses
 
   sidebar:
-   - id: AboutMe
-     style: "docked"
-     search: true
-     contents: 
-       - section: "AboutMe"
-         contents:
-          - personal/perfil.qmd
-          - personal/academica.qmd
-          - personal/laboral.qmd
    - id: Courses
      style: "docked"
      search: true
      contents:
       - machine_learning_egei/classes.qmd
       - introduction_to_python/classes.qmd
-      - data_science_ingemat/classes.qmd
       - machine_learning_ICO_USM/classes.qmd
 format:
   html:

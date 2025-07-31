@@ -42,8 +42,4 @@ title: ""
 <h3 align="left">Cloud:</h3>
 <p align="left"> <a href="https://cloud.google.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/> </a>
 
-## Check my Schedule
-
- <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%2333B679&ctz=America%2FSantiago&mode=WEEK&src=aGl6b2NhckBnbWFpbC5jb20&src=c2ViYXN0aWFuLmF6b2NhckBsYXRhbS5jb20&color=%23E67C73&color=%230B8043" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-
 
