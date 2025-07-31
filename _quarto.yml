@@ -15,8 +15,6 @@ website:
     left:
       - text: "Home"
         file: index.qmd
-      - sidebar:AboutMe
-      - sidebar:Courses
 
   sidebar:
    - id: Courses
