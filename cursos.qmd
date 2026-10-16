@@ -1,0 +1,43 @@
+---
+title: "Cursos"
+subtitle: "Material de los cursos que dicto en la Universidad Técnica Federico Santa María"
+toc: false
+---
+
+```{=html}
+<div class="cursos-grid">
+
+<a class="curso-card" href="https://hizocar.github.io/econometria-usm/">
+  <span class="curso-tag curso-tag-now">En curso · Trimestre 3, 2026</span>
+  <span class="curso-sigla">ICS-294 · USM</span>
+  <h3>Econometría</h3>
+  <p>Regresión lineal, causalidad, inferencia, variables dummy, heterocedasticidad y series de tiempo, con clases interactivas y simuladores.</p>
+  <span class="curso-link">Ir al curso →</span>
+</a>
+
+<a class="curso-card" href="https://hizocar.github.io/ia-course-usm/">
+  <span class="curso-tag">2026</span>
+  <span class="curso-sigla">ICS64225 · USM</span>
+  <h3>Inteligencia Artificial y Estrategia Empresarial</h3>
+  <p>IA, machine learning e IA generativa aplicados a modelos de negocio, con un proyecto de prototipo a lo largo del semestre.</p>
+  <span class="curso-link">Ir al curso →</span>
+</a>
+
+<a class="curso-card" href="https://hizocar.github.io/machine_learning_egei/">
+  <span class="curso-tag">EGEI · UTFSM</span>
+  <span class="curso-sigla">Machine Learning</span>
+  <h3>Machine Learning with Business Applications</h3>
+  <p>Machine learning aplicado a negocios, trabajando con asistentes de IA para programar.</p>
+  <span class="curso-link">Ir al curso →</span>
+</a>
+
+<a class="curso-card" href="https://hizocar.github.io/usm-course/">
+  <span class="curso-tag">USM</span>
+  <span class="curso-sigla">Machine Learning</span>
+  <h3>Machine Learning and Business Applications</h3>
+  <p>Curso de machine learning de la USM: fundamentos, modelos y aplicaciones a problemas de negocio.</p>
+  <span class="curso-link">Ir al curso →</span>
+</a>
+
+</div>
+```
