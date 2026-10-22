@@ -89,14 +89,14 @@ toc: false
       </a>
     </li>
     <li class="hz-course">
-      <a href="https://hizocar.github.io/usm-course-intensivo/">
+      <a href="https://hizocar.github.io/usm-course-intensivo/" lang="en">
         <span class="hz-num hz-mono">02</span>
         <span class="hz-course-body">
-          <h3>Machine Learning and Business Applications · Intensivo</h3>
-          <p>Seis semanas de Python en Colab, análisis de datos y modelos de machine learning, cerrando con un proyecto final.</p>
+          <h3>Machine Learning and Business Applications · Intensive</h3>
+          <p>Six weeks of Python in Colab, data analysis, and machine learning models, ending with a final project.</p>
         </span>
         <span class="hz-course-meta">
-          <span class="hz-tag is-now">En curso · Oct–Dic 2026</span>
+          <span class="hz-tag is-now">In progress · Oct–Dec 2026</span>
           <span class="hz-mono">Casa Central · Vitacura</span>
         </span>
         <span class="hz-arrow" aria-hidden="true">→</span>
