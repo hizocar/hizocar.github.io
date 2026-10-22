@@ -15,6 +15,14 @@ toc: false
   <span class="curso-link">Ir al curso →</span>
 </a>
 
+<a class="curso-card" href="https://hizocar.github.io/usm-course-intensivo/">
+  <span class="curso-tag curso-tag-now">En curso · 26 oct – 4 dic 2026</span>
+  <span class="curso-sigla">Modalidad intensiva · USM</span>
+  <h3>Machine Learning and Business Applications</h3>
+  <p>Seis semanas de Python en Colab, análisis de datos y modelos de machine learning, con un proyecto final como evaluación única. Secciones Casa Central y Vitacura.</p>
+  <span class="curso-link">Ir al curso →</span>
+</a>
+
 <a class="curso-card" href="https://hizocar.github.io/ia-course-usm/">
   <span class="curso-tag">2026</span>
   <span class="curso-sigla">ICS64225 · USM</span>
