@@ -1,0 +1,12 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+  (function () {
+    var d = document.documentElement;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    d.classList.add("hz-motion");
+    // If the motion script never runs, show the content anyway.
+    setTimeout(function () { if (!window.__hzReady) d.classList.remove("hz-motion"); }, 3000);
+  })();
+</script>

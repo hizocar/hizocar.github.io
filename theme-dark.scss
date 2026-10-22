@@ -1,8 +1,41 @@
 /*-- scss:defaults --*/
-// Base document colors
-$body-bg: #181818;
-$body-color: white;
-$link-color: #75AADB;
+$hz-paper: #15130f;
+$hz-ink: #efe8dc;
+$hz-accent: #f08a4b;
+
+$body-bg: $hz-paper;
+$body-color: $hz-ink;
+$primary: $hz-accent;
+$secondary: #a39a8c;
+$link-color: $hz-accent;
+
+$font-family-sans-serif: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-family-monospace: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+$headings-font-weight: 600;
+
+$navbar-bg: $hz-paper;
+$navbar-fg: $hz-ink;
+$navbar-hl: $hz-accent;
+$sidebar-bg: #1b1814;
+$sidebar-fg: #c9c0b2;
+$sidebar-hl: $hz-accent;
+$border-color: rgba($hz-ink, 0.12);
 
 // Code blocks
 $code-block-bg-alpha: -.8;
+
+/*-- scss:rules --*/
+:root {
+  --hz-bg: #{$hz-paper};
+  --hz-surface: #1e1b16;
+  --hz-ink: #{$hz-ink};
+  --hz-ink-2: #d6cdbf;
+  --hz-muted: #a39a8c;
+  --hz-line: rgba(239, 232, 220, 0.12);
+  --hz-line-strong: rgba(239, 232, 220, 0.3);
+  --hz-accent: #{$hz-accent};
+  --hz-accent-bright: #f08a4b;
+  --hz-accent-soft: rgba(240, 138, 75, 0.1);
+  --hz-on-accent: #1d1209;
+  --hz-nav: rgba(21, 19, 15, 0.8);
+}

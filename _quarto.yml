@@ -1,22 +1,33 @@
 project:
   type: website
   output-dir : docs
+  resources:
+    - assets/
+    - images/
 
 website:
+  title: "Sebastián Azócar"
+  description: "Data scientist en LATAM Airlines y profesor de machine learning, econometría e IA en la USM."
+  site-url: https://hizocar.github.io
   favicon: '/images/logo.png'
   image: '/images/logo.png'
-  #title: "<img src='/images/logo.png' width='10%' height='10%'/>"
+  open-graph: true
+  twitter-card: true
   reader-mode: true
   navbar:
+    title: false
     logo: /images/logo.png
+    logo-alt: "Inicio"
     tools:
       - icon: github
         href: https://github.com/hizocar
     left:
-      - text: "Home"
+      - text: "Inicio"
         file: index.qmd
       - text: "Cursos"
         file: cursos.qmd
+      - text: "Contacto"
+        href: index.html#contacto
 
   sidebar:
    - id: Courses
@@ -28,13 +39,9 @@ website:
       - machine_learning_ICO_USM/classes.qmd
 format:
   html:
-    theme: 
-          light: minty
-          dark: [minty, theme-dark.scss]
+    theme:
+          light: [cosmo, theme-light.scss]
+          dark: [cosmo, theme-dark.scss]
     css: styles.css
+    include-in-header: _includes/head.html
     toc: true
-
-
-
-
-
