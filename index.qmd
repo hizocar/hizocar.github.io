@@ -103,14 +103,14 @@ toc: false
       </a>
     </li>
     <li class="hz-course">
-      <a href="https://hizocar.github.io/usm-course-intensivo/" lang="en">
+      <a href="https://hizocar.github.io/usm-course-intensivo/">
         <span class="hz-num hz-mono">03</span>
         <span class="hz-course-body">
-          <h3>Machine Learning and Business Applications · Intensive</h3>
-          <p>Six weeks of Python in Colab, data analysis, and machine learning models, ending with a final project.</p>
+          <h3>Analítica para los Negocios I · Modalidad Intensivo</h3>
+          <p>Seis semanas de Python, análisis de datos y machine learning, siguiendo a una misma empresa en todas las clases, con avances semanales y un proyecto final.</p>
         </span>
         <span class="hz-course-meta">
-          <span class="hz-tag is-now">In progress · Oct–Dec 2026</span>
+          <span class="hz-tag is-now">En curso · Oct–Dic 2026</span>
           <span class="hz-mono">Casa Central · Vitacura</span>
         </span>
         <span class="hz-arrow" aria-hidden="true">→</span>
@@ -124,7 +124,7 @@ toc: false
           <p>IA, machine learning e IA generativa aplicados a modelos de negocio, con un prototipo construido a lo largo del semestre.</p>
         </span>
         <span class="hz-course-meta">
-          <span class="hz-tag">2026</span>
+          <span class="hz-tag is-now">En curso · 2026</span>
           <span class="hz-mono">ICS64225 · USM</span>
         </span>
         <span class="hz-arrow" aria-hidden="true">→</span>
@@ -138,8 +138,8 @@ toc: false
           <p>Machine learning aplicado a negocios, programando junto a asistentes de IA. Parte del programa Erasmus Mundus.</p>
         </span>
         <span class="hz-course-meta">
-          <span class="hz-tag">EGEI</span>
-          <span class="hz-mono">UTFSM</span>
+          <span class="hz-tag is-now">En curso · 2026</span>
+          <span class="hz-mono">EGEI · UTFSM</span>
         </span>
         <span class="hz-arrow" aria-hidden="true">→</span>
       </a>

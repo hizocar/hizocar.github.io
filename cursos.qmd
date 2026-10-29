@@ -23,16 +23,16 @@ toc: false
   <span class="curso-link">Ir al curso →</span>
 </a>
 
-<a class="curso-card" href="https://hizocar.github.io/usm-course-intensivo/" lang="en">
-  <span class="curso-tag curso-tag-now">In progress · Oct 26 – Dec 4, 2026</span>
-  <span class="curso-sigla">Intensive format · USM</span>
-  <h3>Machine Learning and Business Applications</h3>
-  <p>Six weeks of Python in Colab, data analysis, and machine learning models, with a final project as the only assessment. Casa Central and Vitacura sections.</p>
-  <span class="curso-link">Go to the course →</span>
+<a class="curso-card" href="https://hizocar.github.io/usm-course-intensivo/">
+  <span class="curso-tag curso-tag-now">En curso · 26 oct – 4 dic, 2026</span>
+  <span class="curso-sigla">Modalidad Intensivo · USM</span>
+  <h3>Analítica para los Negocios I</h3>
+  <p>Seis semanas de Python, análisis de datos y modelos de machine learning, siguiendo a una misma empresa en todas las clases, con avances semanales y un proyecto final. Secciones Casa Central y Vitacura.</p>
+  <span class="curso-link">Ir al curso →</span>
 </a>
 
 <a class="curso-card" href="https://hizocar.github.io/ia-course-usm/">
-  <span class="curso-tag">2026</span>
+  <span class="curso-tag curso-tag-now">En curso · 2026</span>
   <span class="curso-sigla">ICS64225 · USM</span>
   <h3>Inteligencia Artificial y Estrategia Empresarial</h3>
   <p>IA, machine learning e IA generativa aplicados a modelos de negocio, con un proyecto de prototipo a lo largo del semestre.</p>
@@ -40,8 +40,8 @@ toc: false
 </a>
 
 <a class="curso-card" href="https://hizocar.github.io/machine_learning_egei/">
-  <span class="curso-tag">EGEI · UTFSM</span>
-  <span class="curso-sigla">Machine Learning</span>
+  <span class="curso-tag curso-tag-now">En curso · 2026</span>
+  <span class="curso-sigla">EGEI · UTFSM</span>
   <h3>Machine Learning with Business Applications</h3>
   <p>Machine learning aplicado a negocios, trabajando con asistentes de IA para programar.</p>
   <span class="curso-link">Ir al curso →</span>
