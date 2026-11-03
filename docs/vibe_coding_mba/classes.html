@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sebastián Azócar - Source review: UAI’s Curso en Vibe Coding</title>
+<title>Sebastián Azócar - Classes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,15 +77,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Sebastián Azócar - Source review: UAI’s Curso en Vibe Coding">
-<meta property="og:description" content="The program we started from, what it gets right, where it breaks, and the changes that shaped the MBA elective">
+<meta property="og:title" content="Sebastián Azócar - Classes">
+<meta property="og:description" content="Five interactive sessions. Each page teaches on its own, with simulators, practice questions and the build lab for the session.">
 <meta property="og:site-name" content="Sebastián Azócar">
-<meta name="twitter:title" content="Sebastián Azócar - Source review: UAI’s Curso en Vibe Coding">
-<meta name="twitter:description" content="The program we started from, what it gets right, where it breaks, and the changes that shaped the MBA elective">
+<meta name="twitter:title" content="Sebastián Azócar - Classes">
+<meta name="twitter:description" content="Five interactive sessions. Each page teaches on its own, with simulators, practice questions and the build lab for the session.">
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -132,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Source review: UAI’s <em>Curso en Vibe Coding</em></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Classes</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -181,37 +181,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#the-published-program" id="toc-the-published-program" class="nav-link active" data-scroll-target="#the-published-program">1. The published program</a>
-  <ul class="collapse">
-  <li><a href="#stated-learning-objectives" id="toc-stated-learning-objectives" class="nav-link" data-scroll-target="#stated-learning-objectives">Stated learning objectives</a></li>
-  <li><a href="#methodology-and-evaluation" id="toc-methodology-and-evaluation" class="nav-link" data-scroll-target="#methodology-and-evaluation">Methodology and evaluation</a></li>
-  <li><a href="#the-eight-sessions" id="toc-the-eight-sessions" class="nav-link" data-scroll-target="#the-eight-sessions">The eight sessions</a></li>
-  </ul></li>
-  <li><a href="#what-the-program-gets-right" id="toc-what-the-program-gets-right" class="nav-link" data-scroll-target="#what-the-program-gets-right">2. What the program gets right</a></li>
-  <li><a href="#where-it-breaks" id="toc-where-it-breaks" class="nav-link" data-scroll-target="#where-it-breaks">3. Where it breaks</a>
-  <ul class="collapse">
-  <li><a href="#identity-the-title-promises-one-course-and-the-syllabus-delivers-another" id="toc-identity-the-title-promises-one-course-and-the-syllabus-delivers-another" class="nav-link" data-scroll-target="#identity-the-title-promises-one-course-and-the-syllabus-delivers-another">3.1 Identity: the title promises one course and the syllabus delivers another</a></li>
-  <li><a href="#scope-roughly-26-hours-roughly-60-technologies" id="toc-scope-roughly-26-hours-roughly-60-technologies" class="nav-link" data-scroll-target="#scope-roughly-26-hours-roughly-60-technologies">3.2 Scope: roughly 26 hours, roughly 60 technologies</a></li>
-  <li><a href="#audience-no-one-is-named-so-no-one-is-served" id="toc-audience-no-one-is-named-so-no-one-is-served" class="nav-link" data-scroll-target="#audience-no-one-is-named-so-no-one-is-served">3.3 Audience: no one is named, so no one is served</a></li>
-  <li><a href="#sequence-students-are-asked-to-design-what-they-cannot-yet-build" id="toc-sequence-students-are-asked-to-design-what-they-cannot-yet-build" class="nav-link" data-scroll-target="#sequence-students-are-asked-to-design-what-they-cannot-yet-build">3.4 Sequence: students are asked to design what they cannot yet build</a></li>
-  <li><a href="#assessment-and-risk-vague-where-it-matters-most" id="toc-assessment-and-risk-vague-where-it-matters-most" class="nav-link" data-scroll-target="#assessment-and-risk-vague-where-it-matters-most">3.5 Assessment and risk: vague where it matters most</a></li>
-  </ul></li>
-  <li><a href="#improvement-summary" id="toc-improvement-summary" class="nav-link" data-scroll-target="#improvement-summary">4. Improvement summary</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Source review: UAI’s <em>Curso en Vibe Coding</em></h1>
-<p class="subtitle lead">The program we started from, what it gets right, where it breaks, and the changes that shaped the MBA elective</p>
+<h1 class="title">Classes</h1>
+<p class="subtitle lead">Five interactive sessions. Each page teaches on its own, with simulators, practice questions and the build lab for the session.</p>
 </div>
 
 
@@ -226,214 +203,53 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This course was designed by reverse-engineering a public program: the <strong>Curso en Vibe Coding</strong> offered by Universidad Adolfo Ibáñez (UAI), Facultad de Ingeniería y Ciencias, in strategic alliance with the consultancy XeraX. The page was captured on 3 November 2026 from <a href="https://www.uai.cl/postgrados/cursos/curso-en-vibe-coding">uai.cl</a>. The program is listed first, as published, then reviewed.</p>
-<section id="the-published-program" class="level2">
-<h2 class="anchored" data-anchor-id="the-published-program">1. The published program</h2>
-<table class="table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Item</th>
-<th>As published</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Title</td>
-<td>Curso en Vibe Coding</td>
-</tr>
-<tr class="even">
-<td>Tagline</td>
-<td><em>Domina el ciclo completo de un producto de IA: estrategia, diseño, desarrollo y producción</em></td>
-</tr>
-<tr class="odd">
-<td>Internal name</td>
-<td>VIBE: Diseño y desarrollo de aplicaciones de IA: de la estrategia a producción</td>
-</tr>
-<tr class="even">
-<td>Format</td>
-<td>8 live online sessions over Zoom, Wednesdays 18:30 to 21:45 (GMT-3)</td>
-</tr>
-<tr class="odd">
-<td>Dates</td>
-<td>28 October to 16 December 2026</td>
-</tr>
-<tr class="even">
-<td>Total hours</td>
-<td>Not stated. Eight 3h15 blocks imply roughly 26 contact hours</td>
-</tr>
-<tr class="odd">
-<td>Audience</td>
-<td>Section titled <em>Para quién es este programa</em> is empty. The welcome text invites “profesionales, diseñadores, desarrolladores, líderes de producto, equipos de innovación y tomadores de decisión”</td>
-</tr>
-<tr class="even">
-<td>Prerequisites</td>
-<td>Not stated</td>
-</tr>
-<tr class="odd">
-<td>Credits</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>Faculty</td>
-<td>Rolando de la Cruz (academic director), Ahmad Armoush (M.Sc. Data Science)</td>
-</tr>
-<tr class="odd">
-<td>Price</td>
-<td>CLP 560,000, discounts of 10 to 20%</td>
-</tr>
-</tbody>
-</table>
-<section id="stated-learning-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="stated-learning-objectives">Stated learning objectives</h3>
-<p>At the end of the course participants will be able to:</p>
-<ol type="1">
-<li>Decide when AI generates competitive advantage and select the appropriate model architecture.</li>
-<li>Apply the essentials of context engineering and RAG as a base, without making it the center of the product.</li>
-<li>Design the user experience (UX) of AI applications, including patterns for non-deterministic results, trust, and error handling.</li>
-<li>Design the interface (UI) with design systems, reusable components, and accessibility.</li>
-<li>Build modern web applications that integrate LLMs and agents, with streaming and good perceived performance.</li>
-<li>Use <em>Vibe Engineering</em> and <em>Vibe Coding</em> to build and deploy an end-to-end, production-ready AI application.</li>
-</ol>
-</section>
-<section id="methodology-and-evaluation" class="level3">
-<h3 class="anchored" data-anchor-id="methodology-and-evaluation">Methodology and evaluation</h3>
-<p>Each session combines a conceptual framework, live demonstrations and applied work. The course is cumulative and product oriented: the capstone is an AI web application that evolves session by session, from strategic problem definition and UX flows, through a UI prototype and full-stack build, to deployment. Evaluation is based on incremental deliverables (UX flows, UI prototype, functional integration) and a final deliverable: a deployed AI application. Benchmarks and performance figures mentioned in class are treated as illustrative or industry-reported values.</p>
-</section>
-<section id="the-eight-sessions" class="level3">
-<h3 class="anchored" data-anchor-id="the-eight-sessions">The eight sessions</h3>
-<p><strong>Session 1. AI as a strategic capability and foundation models.</strong> When and why AI constitutes a competitive advantage. AI Push vs.&nbsp;Problem Pull. High-impact opportunities in the value chain. Closed vs.&nbsp;open-source LLMs, multi-model routing. AI moats based on data, learning and algorithms.</p>
-<p><strong>Session 2. Context engineering and applied RAG (essentials).</strong> Context engineering as infrastructure. Vector search, hybrid search, embeddings and chunking “without over-engineering”. Knowledge graphs and multimodal data. Guardrails and hallucination control as a product quality requirement.</p>
-<p><strong>Session 3. UX for AI products.</strong> User-centered design for AI. UX for non-deterministic interfaces. Trust and transparency patterns (explainability, citations, confidence levels). Error and hallucination handling from the user’s side. Loading, streaming and real-time feedback states. User research and early validation.</p>
-<p><strong>Session 4. UI design and design systems.</strong> Visual hierarchy, typography, color, spacing. Design systems and reusable component libraries. Conversational and copilot interfaces. Accessibility (WCAG). Prototyping and handoff from Figma to code components.</p>
-<p><strong>Session 5. Modern web application architecture.</strong> Frontend–backend architecture for AI apps. React / Next.js and rendering strategies. LLM integration from the frontend: APIs, SDKs, streaming. State, sessions and token handling. Authentication, authorization and client-side security. Perceived latency.</p>
-<p><strong>Session 6. Agentic systems in applications.</strong> From chatbots to autonomous enterprise agents. ReAct, Planner-Executor, multi-agent systems. Tool calling with APIs, databases and corporate systems. Memory loops and persistent context. Orchestration with LangGraph, CrewAI, AutoGen and DSPy. Observability, telemetry and token economics.</p>
-<p><strong>Session 7. Vibe Coding: building AI applications.</strong> Vibe Engineering: personality, tone and system behavior. Vibe Coding: accelerated development of apps and agents through human–AI collaboration. Vibe-driven application development with conversational frontends. Full-stack integration from UI prototype to working app. Executive copilots and cognitive assistants as a product.</p>
-<p><strong>Session 8. Deployment, production and operations.</strong> Scalable enterprise architectures and multi-cloud strategies (AWS, Azure, GCP). Microservices, serverless and edge. Zero Trust, IAM, VPC and sensitive data protection. Governance, regulatory compliance and algorithmic traceability. Cost optimization: dynamic routing, semantic caching, quantization. Observability, SLO/SLA metrics and resilience.</p>
-</section>
-</section>
-<section id="what-the-program-gets-right" class="level2">
-<h2 class="anchored" data-anchor-id="what-the-program-gets-right">2. What the program gets right</h2>
-<ul>
-<li><strong>Product, not prompts.</strong> The welcome text explicitly distances the course from “programs centered exclusively on prompting”, and the capstone is a deployed application. That is the right ambition.</li>
-<li><strong>A cumulative capstone.</strong> One project that grows every session is the strongest pedagogical choice in the program and we keep it.</li>
-<li><strong>UX for non-deterministic systems.</strong> Session 3 is unusually good: trust patterns, confidence, error recovery and streaming states are exactly what distinguishes a usable AI product from a demo.</li>
-<li><strong>Strategic framing first.</strong> Opening with “AI Push vs.&nbsp;Problem Pull” and value-chain opportunities is the correct order for a business audience.</li>
-<li><strong>Honesty about benchmarks.</strong> Flagging vendor figures as illustrative is rare and welcome.</li>
-</ul>
-</section>
-<section id="where-it-breaks" class="level2">
-<h2 class="anchored" data-anchor-id="where-it-breaks">3. Where it breaks</h2>
-<p>The flaws fall into five groups. Each one changed something in the MBA design.</p>
-<section id="identity-the-title-promises-one-course-and-the-syllabus-delivers-another" class="level3">
-<h3 class="anchored" data-anchor-id="identity-the-title-promises-one-course-and-the-syllabus-delivers-another">3.1 Identity: the title promises one course and the syllabus delivers another</h3>
-<p><em>Vibe coding</em> appears in one of eight sessions. The other seven are a compressed AI-product-engineering bootcamp (RAG, Next.js, agent frameworks, multi-cloud). A participant who signs up to learn how to build software by directing an AI gets the build tool in week 7, after six weeks of theory about systems they cannot yet build. The internal name, <em>VIBE: Diseño y desarrollo de aplicaciones de IA</em>, reveals that “vibe coding” was attached as a marketing label.</p>
-<p><strong>Change made:</strong> vibe coding is the spine, not a module. Students ship their first working app in the first session and every later topic is learned by changing that app.</p>
-</section>
-<section id="scope-roughly-26-hours-roughly-60-technologies" class="level3">
-<h3 class="anchored" data-anchor-id="scope-roughly-26-hours-roughly-60-technologies">3.2 Scope: roughly 26 hours, roughly 60 technologies</h3>
-<p>Session 8 alone lists AWS, Azure, GCP, microservices, serverless, edge, Zero Trust, IAM, VPC, regulatory compliance, dynamic routing, semantic caching, quantization and SLO/SLA. Session 6 names four agent-orchestration frameworks. Session 2 adds knowledge graphs and multimodal data to an “essentials” RAG block. None of this can be practiced in a 3h15 block, so it is necessarily delivered as slideware. The content is a vendor capability map, not a curriculum.</p>
-<p><strong>Change made:</strong> every topic that cannot be exercised by the student on their own project within the session was cut or reduced to a one-page decision aid. Deployment is “publish to a managed platform and know what to ask your engineers”, not multi-cloud architecture.</p>
-</section>
-<section id="audience-no-one-is-named-so-no-one-is-served" class="level3">
-<h3 class="anchored" data-anchor-id="audience-no-one-is-named-so-no-one-is-served">3.3 Audience: no one is named, so no one is served</h3>
-<p>The <em>Para quién es este programa</em> section is empty, there are no prerequisites, and the invitation covers designers, developers, product leads and decision makers at once. Sessions 5 and 6 (React, state management, tool calling, LangGraph) assume a developer; sessions 1 and 3 assume a manager. Serving both in the same room with the same deliverables means each half is bored or lost half the time.</p>
-<p><strong>Change made:</strong> the audience is one group, MBA students and managers with no programming background, and the prerequisites, hardware and account costs are explicit.</p>
-</section>
-<section id="sequence-students-are-asked-to-design-what-they-cannot-yet-build" class="level3">
-<h3 class="anchored" data-anchor-id="sequence-students-are-asked-to-design-what-they-cannot-yet-build">3.4 Sequence: students are asked to design what they cannot yet build</h3>
-<p>The capstone “evolves session by session”, yet students produce UX flows (S3) and UI prototypes (S4, via Figma handoff) before they have touched a build tool (S7). This mirrors a 2015 agency workflow, design in Figma then hand off to code, which is precisely what vibe coding makes unnecessary for a prototype. The sequence also places the strategic “AI moats” discussion before anyone has felt how cheap building has become, which is the fact that changes the strategy.</p>
-<p><strong>Change made:</strong> build first, then reflect. Strategy questions (what to build, what moat remains) are revisited in the final sessions once students have experienced the cost of building collapse.</p>
-</section>
-<section id="assessment-and-risk-vague-where-it-matters-most" class="level3">
-<h3 class="anchored" data-anchor-id="assessment-and-risk-vague-where-it-matters-most">3.5 Assessment and risk: vague where it matters most</h3>
-<ul>
-<li>Evaluation is “incremental deliverables” with no weights, rubric, criteria or individual component. In a credit-bearing course this is not acceptable.</li>
-<li>Learning objectives are stated with good verbs but no evidence: “decide when AI generates competitive advantage” has no observable artifact.</li>
-<li>The real risks of vibe-coded software are absent: leaked API keys, missing authorization, prompt injection, hallucinated dependencies, unbounded API bills, unmaintainable code nobody understands, intellectual property of generated code, personal data processed under Chile’s Ley 21.719. “Governance” appears only as cloud compliance in session 8.</li>
-<li>The course never says <em>when not to vibe code</em> or how to hand a prototype to an engineering team, the two decisions a manager will actually face.</li>
-<li>Tooling is never named. A vibe coding course that does not say which AI coding tools it uses cannot be evaluated or prepared for.</li>
-</ul>
-<p><strong>Change made:</strong> weighted assessment with rubrics and an individual component; one full session on the governance of AI-generated software; an explicit build / buy / vibe decision framework; a named, costed toolkit.</p>
-</section>
-</section>
-<section id="improvement-summary" class="level2">
-<h2 class="anchored" data-anchor-id="improvement-summary">4. Improvement summary</h2>
-<table class="table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Dimension</th>
-<th>UAI program</th>
-<th>MBA elective</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Spine</td>
-<td>AI product engineering survey; vibe coding in session 7</td>
-<td>Vibe coding from hour one; every concept practiced on the student’s own app</td>
-</tr>
-<tr class="even">
-<td>Audience</td>
-<td>Undefined, mixed</td>
-<td>MBA students and managers without programming experience</td>
-</tr>
-<tr class="odd">
-<td>Breadth</td>
-<td>~60 named technologies in 8 sessions</td>
-<td>5 units, each with one build milestone and one decision framework</td>
-</tr>
-<tr class="even">
-<td>Infrastructure</td>
-<td>Multi-cloud, microservices, VPC, quantization</td>
-<td>Managed deployment; a one-page “questions to ask engineering” aid</td>
-</tr>
-<tr class="odd">
-<td>Agents</td>
-<td>Four orchestration frameworks</td>
-<td>Concepts plus one tool, built into the capstone</td>
-</tr>
-<tr class="even">
-<td>Design workflow</td>
-<td>Figma to code handoff</td>
-<td>Prompt-to-UI; UX principles applied directly in the built product</td>
-</tr>
-<tr class="odd">
-<td>Risk and governance</td>
-<td>Cloud compliance, session 8 only</td>
-<td>Dedicated unit: security, privacy, cost, maintainability, IP, when to stop</td>
-</tr>
-<tr class="even">
-<td>Assessment</td>
-<td>Unspecified incremental deliverables</td>
-<td>5 weighted components, rubrics, individual and team grades</td>
-</tr>
-<tr class="odd">
-<td>Competency mapping</td>
-<td>None</td>
-<td>Mapped to USM MBA CE1, CE2, CE3, CE4 and CGT1, CGT2, CGT3</td>
-</tr>
-<tr class="even">
-<td>Credits and hours</td>
-<td>0 credits, hours not stated</td>
-<td>2 SCT-Chile, 20 contact + 25 autonomous = 45 hours</td>
-</tr>
-<tr class="odd">
-<td>Tooling</td>
-<td>Not named</td>
-<td>Named toolkit with per-student cost estimate</td>
-</tr>
-</tbody>
-</table>
-<p>Source: UAI course page, captured 3 November 2026. Quotations are translated from Spanish; headings and session titles follow the original.</p>
+<div class="cursos-grid">
+
+<a class="curso-card" href="class1.html">
+  <span class="curso-tag">Session 1 · 4 h</span>
+  <span class="curso-sigla">Milestone M1 · problem brief</span>
+  <h3 class="anchored">Ship something today</h3>
+  <p>What changed in the cost of building software, Problem Pull vs AI Push, when vibes are enough, and a first deployed app before the session ends.</p>
+  <span class="curso-link">Open class 1 →</span>
+</a>
+
+<a class="curso-card" href="class2.html">
+  <span class="curso-tag">Session 2 · 4 h</span>
+  <span class="curso-sigla">Milestone M2 · prototype v1</span>
+  <h3 class="anchored">Specify, iterate, keep what works</h3>
+  <p>Prompting as specification, small steps, checkpoints and rollback, real data and login, and UX patterns for output that is not always right.</p>
+  <span class="curso-link">Open class 2 →</span>
+</a>
+
+<a class="curso-card" href="class3.html">
+  <span class="curso-tag">Session 3 · 4 h</span>
+  <span class="curso-sigla">Milestone M3 · AI feature and test set</span>
+  <h3 class="anchored">Add intelligence, then prove it works</h3>
+  <p>What a model call costs, four patterns that cover most business cases, retrieval over company documents, and an evaluation set with a guardrail.</p>
+  <span class="curso-link">Open class 3 →</span>
+</a>
+
+<a class="curso-card" href="class4.html">
+  <span class="curso-tag">Session 4 · 4 h</span>
+  <span class="curso-sigla">Risk memo · build / buy / vibe</span>
+  <h3 class="anchored">Govern what you built</h3>
+  <p>Leaked keys, authorization, prompt injection, personal data under Ley 21.719, cost at scale, maintainability, and when to stop and hand off.</p>
+  <span class="curso-link">Open class 4 →</span>
+</a>
+
+<a class="curso-card" href="class5.html">
+  <span class="curso-tag">Session 5 · 4 h</span>
+  <span class="curso-sigla">Demo Day · reflection memo</span>
+  <h3 class="anchored">Demo Day and strategy revisited</h3>
+  <p>The 10-minute pitch, the rubric, what remains a moat when building is cheap, the road to production, and the reflection memo.</p>
+  <span class="curso-link">Open class 5 →</span>
+</a>
+
+</div>
+<section id="how-the-classes-work" class="level2">
+<h2 class="anchored" data-anchor-id="how-the-classes-work">How the classes work</h2>
+<p>Every session has the same rhythm: a 45-minute framework block, a 2-hour guided build on your team’s own product, a 45-minute critique, and a 30-minute milestone review. The class page is the framework block and the lab guide in one place. Read it before the session if you can; during the session you will spend most of the time building.</p>
+<p>The simulators are safe to play with. The practice questions explain why each wrong option is wrong. The lab checklist is saved in your browser, so you can come back to it between sessions.</p>
 
 
 </section>

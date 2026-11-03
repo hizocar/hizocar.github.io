@@ -4,7 +4,7 @@ subtitle: "Five 4-hour workshops. One business problem carried from brief to dep
 lang: en
 ---
 
-Every session has the same rhythm so students spend their attention on the product, not the format.
+Every session has the same rhythm so students spend their attention on the product, not the format. Each session has an interactive class page; the full list is in [Classes](classes.html).
 
 | Block | Minutes | What happens |
 |---|---|---|
@@ -16,6 +16,8 @@ Every session has the same rhythm so students spend their attention on the produ
 Teams of 2 to 3 form in session 1 around a problem from one member's organization. The capstone is **one** application; each session adds a layer to it.
 
 ## Session 1. Ship something today
+
+Class page: [Class 1 · Ship something today](class1.html)
 
 **Build goal:** a deployed web application that a real user could open in a browser by the end of the session.
 
@@ -31,6 +33,8 @@ Teams of 2 to 3 form in session 1 around a problem from one member's organizatio
 
 ## Session 2. Specify, iterate, keep what works
 
+Class page: [Class 2 · Specify, iterate, keep what works](class2.html)
+
 **Build goal:** the application stores real data for real users, has a login, and a version history you can roll back.
 
 **Pre-work (90 min).** Submit M1. Read Mollick, *Co-Intelligence*, chapters on working with AI as a co-worker. Watch the short course video on version control for managers.
@@ -44,6 +48,8 @@ Teams of 2 to 3 form in session 1 around a problem from one member's organizatio
 **Milestone set:** M2, team, due before session 3. Deployed prototype v1 with login and persistent data, three working user stories, repository link, and each member's build log.
 
 ## Session 3. Add intelligence, then prove it works
+
+Class page: [Class 3 · Add intelligence, then prove it works](class3.html)
 
 **Build goal:** the application uses a language model for one capability that matters to the user, and the team can show a test set with results.
 
@@ -59,6 +65,8 @@ Teams of 2 to 3 form in session 1 around a problem from one member's organizatio
 
 ## Session 4. Govern what you built
 
+Class page: [Class 4 · Govern what you built](class4.html)
+
 **Build goal:** the application has no leaked secrets, authorization is enforced, personal data is handled deliberately, the monthly cost is known, and the team has decided whether to keep building, hand off, or stop.
 
 **Pre-work (60 min).** Read OWASP Top 10 for LLM Applications 2025 (summary) and the course note on Ley 21.719. Run the course security checklist on your own app and bring the results.
@@ -72,6 +80,8 @@ Teams of 2 to 3 form in session 1 around a problem from one member's organizatio
 **Pre-work for Demo Day.** Prepare a 10-minute live demonstration and business case. Rehearse once with another team.
 
 ## Session 5. Demo Day and strategy revisited
+
+Class page: [Class 5 · Demo Day and strategy revisited](class5.html)
 
 **Build goal:** none. The product is frozen 24 hours before.
 

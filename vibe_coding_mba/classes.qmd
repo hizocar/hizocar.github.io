@@ -1,0 +1,58 @@
+---
+title: "Classes"
+subtitle: "Five interactive sessions. Each page teaches on its own, with simulators, practice questions and the build lab for the session."
+lang: en
+toc: false
+---
+
+```{=html}
+<div class="cursos-grid">
+
+<a class="curso-card" href="class1.html">
+  <span class="curso-tag">Session 1 · 4 h</span>
+  <span class="curso-sigla">Milestone M1 · problem brief</span>
+  <h3>Ship something today</h3>
+  <p>What changed in the cost of building software, Problem Pull vs AI Push, when vibes are enough, and a first deployed app before the session ends.</p>
+  <span class="curso-link">Open class 1 →</span>
+</a>
+
+<a class="curso-card" href="class2.html">
+  <span class="curso-tag">Session 2 · 4 h</span>
+  <span class="curso-sigla">Milestone M2 · prototype v1</span>
+  <h3>Specify, iterate, keep what works</h3>
+  <p>Prompting as specification, small steps, checkpoints and rollback, real data and login, and UX patterns for output that is not always right.</p>
+  <span class="curso-link">Open class 2 →</span>
+</a>
+
+<a class="curso-card" href="class3.html">
+  <span class="curso-tag">Session 3 · 4 h</span>
+  <span class="curso-sigla">Milestone M3 · AI feature and test set</span>
+  <h3>Add intelligence, then prove it works</h3>
+  <p>What a model call costs, four patterns that cover most business cases, retrieval over company documents, and an evaluation set with a guardrail.</p>
+  <span class="curso-link">Open class 3 →</span>
+</a>
+
+<a class="curso-card" href="class4.html">
+  <span class="curso-tag">Session 4 · 4 h</span>
+  <span class="curso-sigla">Risk memo · build / buy / vibe</span>
+  <h3>Govern what you built</h3>
+  <p>Leaked keys, authorization, prompt injection, personal data under Ley 21.719, cost at scale, maintainability, and when to stop and hand off.</p>
+  <span class="curso-link">Open class 4 →</span>
+</a>
+
+<a class="curso-card" href="class5.html">
+  <span class="curso-tag">Session 5 · 4 h</span>
+  <span class="curso-sigla">Demo Day · reflection memo</span>
+  <h3>Demo Day and strategy revisited</h3>
+  <p>The 10-minute pitch, the rubric, what remains a moat when building is cheap, the road to production, and the reflection memo.</p>
+  <span class="curso-link">Open class 5 →</span>
+</a>
+
+</div>
+```
+
+## How the classes work
+
+Every session has the same rhythm: a 45-minute framework block, a 2-hour guided build on your team's own product, a 45-minute critique, and a 30-minute milestone review. The class page is the framework block and the lab guide in one place. Read it before the session if you can; during the session you will spend most of the time building.
+
+The simulators are safe to play with. The practice questions explain why each wrong option is wrong. The lab checklist is saved in your browser, so you can come back to it between sessions.

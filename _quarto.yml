@@ -4,6 +4,7 @@ project:
   resources:
     - assets/
     - images/
+    - vibe_coding_mba/assets/
 
 website:
   title: "Sebastián Azócar"

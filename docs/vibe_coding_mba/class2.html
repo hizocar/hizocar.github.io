@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sebastián Azócar - Class 2 · Specify, iterate, keep what works</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<script>
+  (function () {
+    var d = document.documentElement;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    d.classList.add("hz-motion");
+    // If the motion script never runs, show the content anyway.
+    setTimeout(function () { if (!window.__hzReady) d.classList.remove("hz-motion"); }, 3000);
+  })();
+</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="assets/vc.css">
+<meta property="og:title" content="Sebastián Azócar - Class 2 · Specify, iterate, keep what works">
+<meta property="og:description" content="By the end of this session QuoteDesk stores real quotes for real reps, has a login, shows honest states when the assistant is unsure, and has a version history you can roll back.">
+<meta property="og:site-name" content="Sebastián Azócar">
+<meta name="twitter:title" content="Sebastián Azócar - Class 2 · Specify, iterate, keep what works">
+<meta name="twitter:description" content="By the end of this session QuoteDesk stores real quotes for real reps, has a login, shows honest states when the assistant is unsure, and has a version history you can roll back.">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="Inicio" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../cursos.html" rel="" target="">
+ <span class="menu-text">Cursos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html#contacto" rel="" target="">
+ <span class="menu-text">Contacto</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto tools-wide">
+    <a href="https://github.com/hizocar" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Class 2 · Specify, iterate, keep what works</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../vibe_coding_mba/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vibe Coding for Business Leaders</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../machine_learning_egei/classes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Machine Learning with Business Application UTFSM</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../introduction_to_python/classes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Python</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../machine_learning_ICO_USM/classes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Machine Learning ICO USM 202401</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-you-will-be-able-to-do" id="toc-what-you-will-be-able-to-do" class="nav-link active" data-scroll-target="#what-you-will-be-able-to-do">What you will be able to do</a></li>
+  <li><a href="#route-of-the-session" id="toc-route-of-the-session" class="nav-link" data-scroll-target="#route-of-the-session">Route of the session</a></li>
+  <li><a href="#topic-1" id="toc-topic-1" class="nav-link" data-scroll-target="#topic-1">Topic 1 · Prompting as specification</a></li>
+  <li><a href="#topic-2" id="toc-topic-2" class="nav-link" data-scroll-target="#topic-2">Topic 2 · Small steps beat big bangs</a></li>
+  <li><a href="#topic-3" id="toc-topic-3" class="nav-link" data-scroll-target="#topic-3">Topic 3 · Checkpoints, branches and undo</a></li>
+  <li><a href="#topic-4" id="toc-topic-4" class="nav-link" data-scroll-target="#topic-4">Topic 4 · Where the data lives</a></li>
+  <li><a href="#topic-5" id="toc-topic-5" class="nav-link" data-scroll-target="#topic-5">Topic 5 · UX for output that is sometimes wrong</a></li>
+  <li><a href="#lab" id="toc-lab" class="nav-link" data-scroll-target="#lab">Build lab · QuoteDesk v1: login, real data, rollback</a></li>
+  <li><a href="#critique-and-reflection" id="toc-critique-and-reflection" class="nav-link" data-scroll-target="#critique-and-reflection">Critique and reflection</a></li>
+  <li><a href="#before-next-session" id="toc-before-next-session" class="nav-link" data-scroll-target="#before-next-session">Before next session</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Class 2 · Specify, iterate, keep what works</h1>
+<p class="subtitle lead">By the end of this session QuoteDesk stores real quotes for real reps, has a login, shows honest states when the assistant is unsure, and has a version history you can roll back.</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="vc-meta">
+<span class="is-accent">Session 2 · 4 hours</span>
+<span>Build goal: real data, login, rollback</span>
+<span>Milestone: M2 due before session 3</span>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="How to use this page">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How to use this page
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Read the topics in order. Each one opens with a guiding question and uses the Cerro Azul case.</li>
+<li>Every topic has one simulator. Predict what will happen before you touch it, then check.</li>
+<li>The “In the business” note says why the idea matters to a manager, not to a programmer.</li>
+<li>The practice questions explain why each wrong option is wrong. Retry as often as you like.</li>
+<li>The build lab is what your team does in class. The checklist is saved in your browser between sessions.</li>
+</ul>
+</div>
+</div>
+<section id="what-you-will-be-able-to-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-will-be-able-to-do">What you will be able to do</h2>
+<ul>
+<li>Write a user story with acceptance criteria that an assistant can build without guessing.</li>
+<li>Break a build into small requests, test each one by using the app, and ask the assistant to explain what it changed.</li>
+<li>Save checkpoints, start an experiment on a branch, and roll back a bad change without reading code.</li>
+<li>Move QuoteDesk from a page that forgets everything to a managed database with a login for each rep.</li>
+<li>Apply four UX patterns for output that is sometimes wrong: visible confidence, streaming, honest errors, user correction.</li>
+<li>Deliver milestone M2: a deployed prototype v1 with login, persistent data and three working user stories.</li>
+</ul>
+</section>
+<section id="route-of-the-session" class="level2">
+<h2 class="anchored" data-anchor-id="route-of-the-session">Route of the session</h2>
+<ol class="vc-route">
+<li><span class="vc-route-h">20 min</span><a class="vc-route-a" href="#topic-1"><span class="vc-route-n">1</span><span class="vc-route-t">Prompting as specification</span><span class="vc-route-l">simulator · 3 questions</span></a></li>
+<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-2"><span class="vc-route-n">2</span><span class="vc-route-t">Small steps beat big bangs</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
+<li><span class="vc-route-h">20 min</span><a class="vc-route-a" href="#topic-3"><span class="vc-route-n">3</span><span class="vc-route-t">Checkpoints, branches and undo</span><span class="vc-route-l">simulator · 3 questions</span></a></li>
+<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-4"><span class="vc-route-n">4</span><span class="vc-route-t">Where the data lives</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
+<li><span class="vc-route-h">20 min</span><a class="vc-route-a" href="#topic-5"><span class="vc-route-n">5</span><span class="vc-route-t">UX for output that is sometimes wrong</span><span class="vc-route-l">simulator · 3 questions</span></a></li>
+<li class="is-break"><span class="vc-route-h">10 min</span><span class="vc-route-t">Break. Form up with your team and open your repository.</span></li>
+<li><span class="vc-route-h">120 min</span><a class="vc-route-a" href="#lab"><span class="vc-route-n">6</span><span class="vc-route-t">Build lab: QuoteDesk v1 with login, data and rollback</span><span class="vc-route-l">prompts · checklist</span></a></li>
+<li class="is-break"><span class="vc-route-h">45 min</span><span class="vc-route-t">Critique, milestone review, pre-work for session 3</span></li>
+</ol>
+</section>
+<section id="topic-1" class="level2">
+<h2 class="anchored" data-anchor-id="topic-1">Topic 1 · Prompting as specification</h2>
+<p class="vc-guide"><strong>Guiding question:</strong> if the assistant builds exactly what you asked, why does it so often build the wrong thing?</p>
+<p>In session 1 your team wrote a brief and got a working page out of it in under an hour. That felt like magic. The second hour usually feels different: the assistant adds a button you never asked for, the list sorts the wrong way, the “save” works on your laptop and not on your phone. None of that is the assistant being dumb. It is the assistant filling the gaps you left, with the most common guess from millions of other apps. A quote tool for a distributor in Chile is not the most common app.</p>
+<p>The fix is a habit, not a tool. Before you ask for a feature, write it as a <strong>user story</strong> with <strong>acceptance criteria</strong>. A user story is one sentence: <em>as a sales rep, I want to paste a customer message and save it as a quote request, so that I stop retyping it into the ERP.</em> Acceptance criteria are the three to six checks that tell you, and the assistant, when the story is done: the customer is chosen from the existing customer list, not typed; the saved request shows date, rep and customer; an empty message cannot be saved; the list shows the newest request first.</p>
+<p>Managers already know this format from product teams. What is new is that the assistant reads it literally. Each criterion you write is one decision the assistant does not have to guess. Each one you leave out is a surprise waiting for you in the next hour.</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>Weak</th>
+<th>Strong</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>User</td>
+<td>“users”</td>
+<td>“a Cerro Azul sales rep on a phone, between customer visits”</td>
+</tr>
+<tr class="even">
+<td>Action</td>
+<td>“handle quotes”</td>
+<td>“paste a WhatsApp message and save it as a quote request for one named customer”</td>
+</tr>
+<tr class="odd">
+<td>Done when</td>
+<td>“it works”</td>
+<td>“the request appears at the top of the list with date, rep and customer; empty messages are refused”</td>
+</tr>
+</tbody>
+</table>
+<div class="vc-widget" data-widget="c2-spec"></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="In the business">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In the business
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A rep who retypes quotes is slow. A manager who specifies badly is expensive: every vague request costs a build, a test, a complaint and a rebuild. The assistant is cheap per attempt, but your team’s two hours in this lab are not. Treat acceptance criteria as the cheapest insurance you will ever buy.</p>
+</div>
+</div>
+
+<div class="vc-practice">
+<p class="vc-practice-t"><span>Practice · Topic 1</span></p>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Which of these is an acceptance criterion, as opposed to a wish?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="This is a goal. It says nothing a tester could check as done or not done.">The quote tool should be fast and easy for reps.</button>
+<button class="vc-quiz-opt" data-correct="">An empty message cannot be saved; the save button stays disabled until there is text.</button>
+<button class="vc-quiz-opt" data-why="This is a user story, the one-sentence framing. It still needs criteria to be testable.">As a rep, I want to save quote requests so I stop retyping them.</button>
+</div>
+<p class="vc-quiz-fb">A criterion is a check that is either true or false when you use the app. "Cannot be saved when empty" is one. "Fast and easy" is a wish, and the assistant will decide for you what it means.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Your assistant added a "priority" dropdown that nobody asked for. What most likely happened?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="Assistants rarely refuse; they fill gaps. A missing instruction was the cause, not a technical limit.">The assistant could not build what you asked, so it built something else.</button>
+<button class="vc-quiz-opt" data-correct="">Your story left the fields of a quote request unspecified, so the assistant used the most common fields from similar apps.</button>
+<button class="vc-quiz-opt" data-why="There is no hidden plan. The assistant predicts the likeliest completion of your request, and 'priority' is common in ticket-like apps.">The assistant has a plan for the app and is following it.</button>
+</div>
+<p class="vc-quiz-fb">Every unspecified field is a guess. Listing the fields of a quote request (customer, message, date, rep, status) in the criteria removes the guess, and the dropdown.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">How many acceptance criteria should a user story carry for the assistant?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="One criterion leaves most decisions to the assistant. You will get surprises.">One. Keep it simple.</button>
+<button class="vc-quiz-opt" data-correct="">Three to six: enough to cover the fields, the rules and the failure cases that matter.</button>
+<button class="vc-quiz-opt" data-why="Twenty criteria usually means several stories glued together. Split them; the assistant builds one story at a time better.">Twenty or more. The more detail, the better.</button>
+</div>
+<p class="vc-quiz-fb">Three to six criteria is the sweet spot: fields, the rules that matter, and what happens when input is bad. More than that is a sign the story should be split.</p>
+</div>
+</div>
+</section>
+<section id="topic-2" class="level2">
+<h2 class="anchored" data-anchor-id="topic-2">Topic 2 · Small steps beat big bangs</h2>
+<p class="vc-guide"><strong>Guiding question:</strong> why does asking for ten features at once take longer than asking for them one at a time?</p>
+<p>Here is the pattern every first-time builder repeats. The brief is ready, confidence is high, and the team pastes a single request: login, customer list, quote request form, item table, PDF export, email notification, dashboard. The assistant works for a few minutes and produces something that mostly runs. Then the login breaks the list, the PDF breaks the form, and nobody knows which of the seven changes caused which of the four problems.</p>
+<p>The alternative is boring and it works: one story per request. Ask for the customer picker. Open the app and use it as a rep would. If it works, save a checkpoint (topic 3). If it does not, you know exactly what broke, because only one thing changed. Then ask for the next story.</p>
+<p>The rule has a second half: <strong>test by using, not by reading</strong>. You are not going to read the code, and you do not need to. Use the app the way a rep would, on a phone if that is where reps will use it. When something looks wrong, ask the assistant: <em>what did you change and why?</em> The explanation is written for you, in plain language, and it is often where you discover the gap in your criteria.</p>
+<div class="vc-widget" data-widget="c2-steps"></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="In the business">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In the business
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Small steps are how good operations teams already work: change one thing on the line, measure, keep or revert. The assistant makes the cycle minutes instead of weeks, which means the discipline matters more, not less. A team that batches twenty changes has thrown away the main advantage of the tool.</p>
+</div>
+</div>
+<div class="vc-practice">
+<p class="vc-practice-t"><span>Practice · Topic 2</span></p>
+<div class="vc-quiz">
+<p class="vc-quiz-q">After a request for three features, the quote list stopped loading. What is the fastest way to find the cause?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="Reading code you cannot evaluate is slow and rarely conclusive for a non-programmer.">Read through the code the assistant wrote until you spot the error.</button>
+<button class="vc-quiz-opt" data-correct="">Roll back to the last checkpoint and re-request the three features one at a time, testing after each.</button>
+<button class="vc-quiz-opt" data-why="A vague fix request on top of three tangled changes often produces a fourth change and a new problem.">Tell the assistant "fix it" and hope.</button>
+</div>
+<p class="vc-quiz-fb">Going back to the last known-good state and re-adding changes one by one isolates the cause in minutes. This is why checkpoints and small steps belong together.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">What does "test by using" mean for a manager who cannot read code?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-correct="">Open the app and do the rep's task end to end, including the error cases, on the device reps will use.</button>
+<button class="vc-quiz-opt" data-why="Asking the assistant whether its own work is correct is not a test. It will usually say yes.">Ask the assistant to confirm the feature works.</button>
+<button class="vc-quiz-opt" data-why="Looking at the screen is not the same as doing the task. Most bugs appear when you save, refresh, or type something unexpected.">Look at the new screen and check that it looks right.</button>
+</div>
+<p class="vc-quiz-fb">The test is the task: paste a real message, pick a real customer, save, refresh, try an empty message, try it on a phone. If the rep could not do it, it is not done.</p>
+</div>
+</div>
+</section>
+<section id="topic-3" class="level2">
+<h2 class="anchored" data-anchor-id="topic-3">Topic 3 · Checkpoints, branches and undo</h2>
+<p class="vc-guide"><strong>Guiding question:</strong> how do you make it safe to break the app?</p>
+<p>Software teams use a tool called <strong>version control</strong>, and the most common one is Git, hosted on GitHub. You will use it through the assistant, so you need three ideas, not the commands.</p>
+<p>A <strong>commit</strong> is a checkpoint: a named snapshot of the whole app at a moment you were happy with it. “Customer picker working” is a good name. You make one after every story that passes your test. A <strong>branch</strong> is an experiment: a copy of the app where you can try something risky, like redesigning the quote list, without touching the version that works. If the experiment is good, you <strong>merge</strong> it back. If it is bad, you delete the branch and nothing happened. <strong>Rollback</strong> means returning the app to any earlier checkpoint. It takes seconds, and it is what makes small steps safe: the worst case of any request is “go back twenty minutes”.</p>
+<p>The assistant does all of this when you ask in plain language: <em>save a checkpoint called “login working”</em>, <em>start a branch to try a new layout for the list</em>, <em>go back to the checkpoint before the PDF export</em>. GitHub keeps the history online, so your teammates and the instructor see the same timeline, and milestone M2 is the link to it.</p>
+<div class="vc-widget" data-widget="c2-commits"></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="In the business">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In the business
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The repository is also the audit trail. When a rep asks why the discount field disappeared last Tuesday, the timeline answers in one click. When you hand the prototype to an engineering team in session 4, the history of what was tried and why is worth more to them than the code itself.</p>
+</div>
+</div>
+<div class="vc-practice">
+<p class="vc-practice-t"><span>Practice · Topic 3</span></p>
+<div class="vc-quiz">
+<p class="vc-quiz-q">When should you save a checkpoint?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="Once a day is too rare. A bad change in the afternoon would cost you a whole day of work.">At the end of each day of work.</button>
+<button class="vc-quiz-opt" data-correct="">After every story that passes your test, with a name that says what works.</button>
+<button class="vc-quiz-opt" data-why="Checkpoints are only useful if they capture a state that works. Saving broken states defeats the purpose.">After every request to the assistant, whether it worked or not.</button>
+</div>
+<p class="vc-quiz-fb">A checkpoint is a known-good state. Save it when the test passes and name it after what works, so that rolling back is a choice between meaningful states, not timestamps.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Your teammate wants to try a radical redesign of the quote list while you keep adding the login. What should they do?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-correct="">Start a branch for the redesign, so the working version and your login work are untouched until it is merged.</button>
+<button class="vc-quiz-opt" data-why="Working in the same version means the redesign's breakage interrupts your login work, and nobody knows which change caused what.">Make the changes directly, since the assistant can always fix it later.</button>
+<button class="vc-quiz-opt" data-why="Copying the project manually loses the shared history and makes merging the two versions a manual, error-prone job.">Copy the whole project to another folder and work there.</button>
+</div>
+<p class="vc-quiz-fb">A branch is exactly for this: an experiment that cannot break the working app. Merge it when it passes the test, or discard it at no cost.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">A change broke the app and you cannot tell what went wrong. Rollback means:</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="Deleting is not rollback. You would lose everything, including what worked.">Deleting the app and starting from the brief again.</button>
+<button class="vc-quiz-opt" data-why="Asking the assistant to undo relies on it remembering exactly what it changed. The checkpoint is a guaranteed record.">Asking the assistant to remember what it did and reverse it.</button>
+<button class="vc-quiz-opt" data-correct="">Returning the whole app to the last checkpoint that worked, in seconds, and then re-doing the change in smaller steps.</button>
+</div>
+<p class="vc-quiz-fb">Rollback restores a snapshot. Nothing is lost except the bad change, and the history keeps it in case you want to look at it later.</p>
+</div>
+</div>
+</section>
+<section id="topic-4" class="level2">
+<h2 class="anchored" data-anchor-id="topic-4">Topic 4 · Where the data lives</h2>
+<p class="vc-guide"><strong>Guiding question:</strong> why did the quote requests disappear when a rep refreshed the page?</p>
+<p>The first version of QuoteDesk kept quote requests “in the page”: they existed only in the browser that created them. Refresh, and they are gone. Open the app on a second phone, and the list is empty. This is normal for a first hour and useless for a second rep.</p>
+<p>There are three places data can live. <strong>In the page</strong>: fast, free, vanishes on refresh. <strong>In a file</strong> on the server: survives refresh, but two reps saving at the same time can overwrite each other, and there is no way to say who may see what. <strong>In a managed database</strong>: a service, such as the one in the course toolkit, that stores rows, serves many users at once, and comes with <strong>authentication</strong> (who are you: the login) built in. For anything two people will use, the database is the answer, and the assistant can set it up for you in one request.</p>
+<p>Authentication is the other half of “real users”. A login means each quote request is tied to the rep who created it, which is what you need for the list “my requests”, for the manager’s view, and for the authorization rules you will add in session 4. The assistant will build the login screen, the password reset and the session handling; your job is to specify who logs in and what they should see first.</p>
+<div class="vc-widget" data-widget="c2-data"></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="In the business">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In the business
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“Where does the data live” is the question legal, IT and finance will ask you first, long before they ask what the app does. Knowing that quote requests sit in a managed database, in a named region, with a login per rep, is the difference between a prototype that can be piloted with real customers and one that cannot leave your laptop.</p>
+</div>
+</div>
+<div class="vc-practice">
+<p class="vc-practice-t"><span>Practice · Topic 4</span></p>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Two reps use QuoteDesk at the same time. Which storage choice handles this safely?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="Each browser holds its own copy. The two reps would never see each other's requests.">In the page (browser memory).</button>
+<button class="vc-quiz-opt" data-why="A single file on the server can be overwritten when two people save at once, and it has no concept of users.">In a file on the server.</button>
+<button class="vc-quiz-opt" data-correct="">In a managed database with a login for each rep.</button>
+</div>
+<p class="vc-quiz-fb">A managed database is built for many users writing at once and ties every row to the user who created it. The other two options break as soon as there is a second person.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">What does authentication give you, in one line?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-correct="">Knowing who the user is, so each action and record is tied to a person.</button>
+<button class="vc-quiz-opt" data-why="That is authorization: what a known user is allowed to do. Session 4 covers it. Authentication comes first.">Deciding which quotes each rep may see.</button>
+<button class="vc-quiz-opt" data-why="Encryption protects data in transit or at rest. It does not identify the user.">Encrypting the data so nobody can read it.</button>
+</div>
+<p class="vc-quiz-fb">Authentication answers "who are you". Authorization answers "what may you do". QuoteDesk v1 needs the first; session 4 adds the second.</p>
+</div>
+</div>
+</section>
+<section id="topic-5" class="level2">
+<h2 class="anchored" data-anchor-id="topic-5">Topic 5 · UX for output that is sometimes wrong</h2>
+<p class="vc-guide"><strong>Guiding question:</strong> a rep will trust QuoteDesk once. What makes them trust it the second time?</p>
+<p>Next session QuoteDesk will read a pasted message and propose the items: “20 boxes of 900 cc oil, 5 sacks of rice, the usual dairy”. The last one is a guess. If the app shows that guess with the same confidence as the first two, the rep learns, after one wrong delivery, that nothing on the screen can be trusted. Then they check every line, and the app saves nobody any time.</p>
+<p>Four patterns fix this, and they are decisions you make in the spec, not in the code. <strong>Show confidence</strong>: lines the model is unsure about look different and say so. <strong>Stream the result</strong>: items appear as they are produced, so a three-second wait feels like progress instead of a frozen screen. <strong>Honest errors</strong>: when the model cannot read the message, the app says “I could not find items in this message” and offers the manual form, instead of an empty table or a generic error. <strong>Let the user correct</strong>: every proposed line can be edited in place, and the correction is saved, so the app is never the last word.</p>
+<p>These patterns are what separate an AI demo from an AI product. The model will be wrong some of the time no matter what you do. The experience decides whether being wrong costs a glance or costs a customer.</p>
+<div class="vc-widget" data-widget="c2-ux"></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="In the business">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In the business
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Trust is a metric you can measure: how often reps edit the proposed lines, how often they abandon the tool and go back to retyping, how many wrong deliveries trace back to a quote. Put the correction button in and you also get the data to improve the model later. Leave it out and you get complaints.</p>
+</div>
+</div>
+
+<div class="vc-practice">
+<p class="vc-practice-t"><span>Practice · Topic 5</span></p>
+<div class="vc-quiz">
+<p class="vc-quiz-q">The model is unsure whether "lo de siempre de lácteos" means the customer's usual dairy order. What should the screen do?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="Hiding the uncertainty means the rep finds out from the customer, after delivery.">Show the best guess as a normal line, like the others.</button>
+<button class="vc-quiz-opt" data-correct="">Show the guess marked as uncertain, with the reason, and make it one tap to confirm or edit.</button>
+<button class="vc-quiz-opt" data-why="Dropping the line silently loses information the rep needed. A visible, editable guess is better than nothing.">Leave the line out so nothing wrong is shown.</button>
+</div>
+<p class="vc-quiz-fb">Visible uncertainty plus an easy correction is the pattern. The rep spends two seconds on the one line that needs it and trusts the rest.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Why stream results instead of showing them all at once after three seconds?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="Streaming does not make the model faster. It changes how the wait feels, which is what the rep experiences.">Because streaming makes the model compute faster.</button>
+<button class="vc-quiz-opt" data-correct="">Because a screen that shows progress feels responsive, and the rep can start checking the first lines while the rest arrive.</button>
+<button class="vc-quiz-opt" data-why="Streaming is a presentation choice, not a cost choice. The number of tokens is the same.">Because it is cheaper per request.</button>
+</div>
+<p class="vc-quiz-fb">Perceived latency is what matters to the user. Three seconds of visible progress feel shorter than three seconds of a spinner, and the rep gets a head start on checking.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">The model cannot find any items in a message that is just "hola, me llamas?". What is the honest error?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="An empty table looks like a bug, not like a message with no order in it.">Show an empty items table.</button>
+<button class="vc-quiz-opt" data-why="A generic error does not tell the rep what happened or what to do next.">Show "Something went wrong".</button>
+<button class="vc-quiz-opt" data-correct="">Say that no items were found in this message and offer the manual form or a call-back note.</button>
+</div>
+<p class="vc-quiz-fb">An honest error says what happened and what the user can do next. It keeps the rep inside the tool instead of sending them back to the old way.</p>
+</div>
+</div>
+</section>
+<section id="lab" class="level2">
+<h2 class="anchored" data-anchor-id="lab">Build lab · QuoteDesk v1: login, real data, rollback</h2>
+<div class="vc-lab">
+<p class="vc-lab-t">What your team builds in the next 120 minutes</p>
+<p class="vc-lab-time">Teams of 2 to 3 · the instructor circulates · save a checkpoint every 20 minutes</p>
+<ol>
+<li><strong>Move the project to the agentic assistant and GitHub.</strong> Open your QuoteDesk v0 from session 1 in the agentic coding assistant from the toolkit. Ask it to create a GitHub repository for the project and save a first checkpoint called "v0 from session 1". Open the repository in the browser and confirm the checkpoint is there.</li>
+<li><strong>Write the first story with criteria.</strong> In your shared document, write the user story for saving a quote request with 3 to 6 acceptance criteria (fields, rules, failure case). Paste it to the assistant as one request. Do not add other features in the same message.</li>
+<li><strong>Test by using.</strong> Open the app, paste a real customer message from your team's case, pick a customer, save, refresh. Try an empty message. Try it on a phone. If anything fails, ask the assistant "what did you change and why?" and adjust the criteria before asking for a fix.</li>
+<li><strong>Save a checkpoint</strong> named after what works, for example "quote request saves with customer and date".</li>
+<li><strong>Add the managed database.</strong> Ask the assistant to store quote requests in the managed database from the toolkit, keeping the same fields. Test: save a request on one device, open the app on another, the request is there. Checkpoint.</li>
+<li><strong>Add the login.</strong> Ask for a login for reps with email and password, password reset, and the rule that each request is tied to the rep who created it and the list shows "my requests" first. Test with two different rep accounts. Checkpoint.</li>
+<li><strong>Break something on purpose and roll back.</strong> Ask for a risky change you do not need, such as "replace the list with a calendar view". Confirm it broke or changed something you did not want. Ask the assistant to roll back to the last checkpoint. Confirm the app is exactly as before. This step is graded.</li>
+<li><strong>Start a branch for an experiment.</strong> One teammate asks for a new layout of the quote list on a branch while another keeps testing the main version. Merge only if the test passes.</li>
+<li><strong>Apply two UX patterns.</strong> Add the honest empty state ("no requests yet, paste a message to start") and a loading state when the list is fetching. Mark in your build log which patterns from topic 5 you chose and why.</li>
+<li><strong>Deploy and share.</strong> Publish the app to its public URL, open it on a phone, and paste the URL, the repository link and the checkpoint list into your team's milestone M2 document.</li>
+</ol>
+</div>
+<p>Two prompts to adapt. The first is the kind of request that produces surprises; the second is the same story written so the assistant does not have to guess.</p>
+<div class="vc-compare">
+<div class="is-weak"><p>Weak request</p><p>Add a way to save quote requests and make a nice list. Also add login and a database and make it work on mobile.</p></div>
+<div class="is-strong"><p>Strong request</p><p>One story, with the fields, the rules, the failure case and the device named. Login and database come as separate requests after this one passes.</p></div>
+</div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · story 1</div><div class="vc-prompt-b">User story: as a Cerro Azul sales rep using a phone between visits, I want to paste a customer's WhatsApp message and save it as a quote request for one customer, so that I stop retyping it into the ERP.
+
+Acceptance criteria:
+1. The customer is chosen from the existing customer list (search by name), not typed freely.
+2. A quote request has: customer, pasted message, date and time created, rep name, status "new".
+3. The save button is disabled while the message is empty.
+4. After saving, the request appears at the top of the list with customer, date and the first line of the message.
+5. The list and the form work on a phone screen without horizontal scrolling.
+
+Build only this. Do not add other features. When done, tell me in plain language what you changed.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · data and login, after story 1 passes</div><div class="vc-prompt-b">Store quote requests in the managed database we set up, with the same fields. Then add a login for reps with email and password and a password reset. Each quote request must be tied to the rep who created it. After login, a rep sees their own requests first, newest at the top. Do not change the form or the list layout. Save a checkpoint called "database and login working" when you are done and tell me how to test it with two rep accounts.</div></div>
+
+<div class="vc-prompt is-ai"><div class="vc-prompt-h">The assistant, a good reply</div><div class="vc-prompt-b">Done. I moved quote requests to the database (table quote_requests with customer_id, message, created_at, rep_id, status). I added sign-in with email and password, a reset link, and a rule so each saved request carries the signed-in rep. The list now filters by the current rep. To test: create two accounts, save a request from each, and confirm each account sees its own request first. Checkpoint "database and login working" is saved.</div></div>
+<p>Your lab checklist. It stays saved in this browser.</p>
+<ul class="vc-checklist" id="lab-checklist">
+<li>Project is in the agentic assistant with a GitHub repository and a first checkpoint.</li>
+<li>Story 1 written with 3 to 6 acceptance criteria before asking the assistant.</li>
+<li>Story 1 tested by using: real message, empty message, refresh, phone.</li>
+<li>Quote requests are stored in the managed database and visible from a second device.</li>
+<li>Login works with two rep accounts; each sees their own requests first.</li>
+<li>One risky change was made on purpose and rolled back to a checkpoint.</li>
+<li>One experiment was tried on a branch and merged or discarded.</li>
+<li>Honest empty state and loading state are in the app.</li>
+<li>App deployed to a public URL and opened on a phone.</li>
+<li>Each team member's build log is updated with prompts, decisions and what the assistant changed.</li>
+</ul>
+</section>
+<section id="critique-and-reflection" class="level2">
+<h2 class="anchored" data-anchor-id="critique-and-reflection">Critique and reflection</h2>
+<p>Two teams show one user story end to end: paste a message, pick the customer, save, refresh, log in as a second rep. The class applies the rubric with the criterion in focus for this session, <strong>functionality</strong>: does the product work for its user end to end, including the failure cases? The class also asks the presenting team to roll back one change live.</p>
+<p>Reflection prompt for your build log: <em>what did the assistant guess that you should have specified, and what would the criterion have said?</em></p>
+</section>
+<section id="before-next-session" class="level2">
+<h2 class="anchored" data-anchor-id="before-next-session">Before next session</h2>
+<p>Milestone <strong>M2</strong> is due before session 3. It is a team deliverable: the deployed prototype v1 with login and persistent data, three working user stories with their acceptance criteria, the repository link with named checkpoints, and each member’s build log.</p>
+<p>Pre-work for session 3 (about 90 minutes): read Anthropic’s <em>Building effective agents</em>, and collect 20 to 30 real or realistic customer messages that your AI feature will receive, with what the correct extracted items would be. This becomes your test set.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<ul>
+<li>The assistant builds what you specify and guesses the rest. Acceptance criteria remove the guesses.</li>
+<li>One story per request. Test by using, not by reading. Ask “what did you change and why?”</li>
+<li>A checkpoint is a known-good state with a name. Save one after every story that passes.</li>
+<li>A branch is an experiment that cannot break the working app. Rollback is the safety net that makes small steps cheap.</li>
+<li>Data for two or more people belongs in a managed database with a login per user.</li>
+<li>Authentication is “who are you”. Authorization, “what may you do”, comes in session 4.</li>
+<li>Four UX patterns for output that is sometimes wrong: visible confidence, streaming, honest errors, user correction.</li>
+<li>Milestone M2 is the proof: deployed, with login, with data, with three stories and a history you can roll back.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
+<script src="assets/vc-core.js"></script>
+<script src="assets/widgets-class2.js"></script>
+
+
+
+</body></html>
