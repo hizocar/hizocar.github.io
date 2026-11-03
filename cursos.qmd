@@ -7,6 +7,14 @@ toc: false
 ```{=html}
 <div class="cursos-grid">
 
+<a class="curso-card" href="vibe_coding_mba/index.html">
+  <span class="curso-tag">Nuevo · MBA USM 2026</span>
+  <span class="curso-sigla">MGE 4xx · 2 SCT · en inglés</span>
+  <h3>Vibe Coding for Business Leaders</h3>
+  <p>De un problema de negocio a un producto de IA funcionando: cinco talleres de 4 horas para construir, desplegar y gobernar aplicaciones con asistentes de IA, sin saber programar.</p>
+  <span class="curso-link">Ir al curso →</span>
+</a>
+
 <a class="curso-card" href="https://hizocar.github.io/econometria-usm/">
   <span class="curso-tag curso-tag-now">En curso · Trimestre 3, 2026</span>
   <span class="curso-sigla">ICS-294 · USM</span>

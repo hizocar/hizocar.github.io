@@ -1,0 +1,92 @@
+---
+title: "Session plan"
+subtitle: "Five 4-hour workshops. One business problem carried from brief to deployed product."
+lang: en
+---
+
+Every session has the same rhythm so students spend their attention on the product, not the format.
+
+| Block | Minutes | What happens |
+|---|---|---|
+| Framework | 45 | The concept of the day, with a live demo including at least one failure and its recovery |
+| Build | 120 | Teams work on their own project toward the session's build goal; instructor circulates |
+| Critique | 45 | Two teams show their work; the class applies the rubric; reflection prompt in the build log |
+| Milestone review | 30 | Milestone check-in, feedback on the last deliverable, pre-work for next session |
+
+Teams of 2 to 3 form in session 1 around a problem from one member's organization. The capstone is **one** application; each session adds a layer to it.
+
+## Session 1. Ship something today
+
+**Build goal:** a deployed web application that a real user could open in a browser by the end of the session.
+
+**Pre-work (60 min).** Create accounts on the course toolkit. Read Karpathy's original post and Willison's "Not all AI-assisted programming is vibe coding". Bring one business problem from your organization that involves people filling, reading or deciding on information.
+
+**Framework.** What changed between 2023 and now in the cost of building software. Vibe coding versus AI-assisted engineering: where the "vibes" are enough (prototypes, internal tools, tests of demand) and where they are not (regulated, high-volume, safety-critical). Problem Pull versus AI Push. A one-paragraph product brief: user, pain, what the tool does, how we know it works.
+
+**Build.** Live demo: the instructor builds and deploys a working app from a brief in 20 minutes, including a bug. Teams then choose a problem, write the brief, and build a first version with a conversational UI builder. Deploy to a public URL. Open it on a phone.
+
+**Critique.** Reflection prompt: *what did you expect to be hard that was easy, and vice versa?*
+
+**Milestone set:** M1, individual, due before session 2. A one-page problem brief and product specification (user, pain, value hypothesis, success metric, three user stories with acceptance criteria), written as an instruction to an AI.
+
+## Session 2. Specify, iterate, keep what works
+
+**Build goal:** the application stores real data for real users, has a login, and a version history you can roll back.
+
+**Pre-work (90 min).** Submit M1. Read Mollick, *Co-Intelligence*, chapters on working with AI as a co-worker. Watch the short course video on version control for managers.
+
+**Framework.** Prompting as specification: the product brief, user stories and acceptance criteria as the contract with the assistant. Working in small steps, testing by using, asking the assistant to explain what it did. Commits as checkpoints, branches as experiments. UX for AI products: designing for non-deterministic output, visible uncertainty, error and loading states.
+
+**Build.** Move the project to an agentic coding assistant working on a GitHub repository. Add a managed database and authentication. Practice a deliberate rollback: break something, go back. Apply two UX patterns from the framework block to the app.
+
+**Critique.** Two teams demonstrate a user story end to end. Rubric criterion in focus: *functionality*.
+
+**Milestone set:** M2, team, due before session 3. Deployed prototype v1 with login and persistent data, three working user stories, repository link, and each member's build log.
+
+## Session 3. Add intelligence, then prove it works
+
+**Build goal:** the application uses a language model for one capability that matters to the user, and the team can show a test set with results.
+
+**Pre-work (90 min).** Submit M2. Read Anthropic, *Building effective agents*. Collect 20 to 30 real or realistic examples of the inputs your AI feature will receive.
+
+**Framework.** Language-model APIs for managers: a request, a response, tokens, cost, latency, context window, choosing a model. Four patterns that cover most business cases: classification, extraction with structured output, summarization, conversational assistant. Retrieval over company documents: when you need it and how it fails. Agents and tool calling: when autonomy is worth the risk. Evaluation: a test set, a success definition, a hallucination count, a human in the loop.
+
+**Build.** Add one language-model capability to the product. Build a test set from the pre-work examples, run it, record results. Add a guardrail (input validation, refusal behavior, confidence display or human review step) and re-run.
+
+**Critique.** Teams report the number of tests passed before and after the guardrail. Rubric criterion in focus: *AI quality and safety*.
+
+**Milestone set:** M3, team, due before session 5. The AI feature in production, the test set and results, and a two-page risk memo (completed after session 4).
+
+## Session 4. Govern what you built
+
+**Build goal:** the application has no leaked secrets, authorization is enforced, personal data is handled deliberately, the monthly cost is known, and the team has decided whether to keep building, hand off, or stop.
+
+**Pre-work (60 min).** Read OWASP Top 10 for LLM Applications 2025 (summary) and the course note on Ley 21.719. Run the course security checklist on your own app and bring the results.
+
+**Framework.** Security of AI-generated software: secrets, authentication versus authorization, prompt injection, dependency hallucination. Data protection: personal data, Ley 21.719 and GDPR basics, data residency, what vendors do with your data. Cost: token economics, budgets, rate limits, caching. Maintainability: the code nobody understands, documentation, tests, prototypes that became products. IP and licensing of generated code. The decision frameworks: build / buy / vibe; prototype versus production; when to stop and hand off; the questions to ask engineering.
+
+**Build.** Fix the findings of the security checklist with the assistant. Add a privacy notice and a data retention decision. Compute the cost of the AI feature at 10x and 100x current usage. Write the risk memo and the build / buy / vibe decision for the product.
+
+**Critique.** A simulated handoff: one team presents its product to another team acting as the engineering department, which asks the questions from the framework block. Rubric criterion in focus: *communication*.
+
+**Pre-work for Demo Day.** Prepare a 10-minute live demonstration and business case. Rehearse once with another team.
+
+## Session 5. Demo Day and strategy revisited
+
+**Build goal:** none. The product is frozen 24 hours before.
+
+**Demo Day (150 min).** Each team has 10 minutes plus 5 of Q&A in front of a panel (instructor plus two invited managers or alumni): live demonstration of the product with a real user story, the problem and value hypothesis, evidence from the test set, the risk memo's main findings, the build / buy / vibe decision and a roadmap to production. The class grades with the rubric; the panel's grade counts.
+
+**Framework (45 min).** Strategy revisited now that students have built: what remains a moat when building is cheap (proprietary data, distribution, workflow integration, trust and compliance); organizational implications of citizen developers and how to govern them; what the course toolkit will look like in two years.
+
+**Reflection (45 min).** Individual reflection memo written in class from the build log: what the AI did, what I decided, where it misled me, what I would do differently, and how this changes my work with technology teams. Peer assessment within teams.
+
+## Deliverable summary
+
+| Deliverable | Who | When | Weight |
+|---|---|---|---|
+| M1. Problem brief and product specification | Individual | Before S2 | 15% |
+| M2. Deployed prototype v1 with build logs | Team | Before S3 | 20% |
+| M3. AI feature, test set and risk memo | Team | Before S5 | 25% |
+| Demo Day | Team, individually adjusted | S5 | 25% |
+| Reflection memo and participation | Individual | S5 | 15% |

@@ -1,0 +1,70 @@
+---
+title: "Vibe Coding for Business Leaders"
+subtitle: "From business problem to working AI product · MBA USM elective · 2 SCT-Chile · taught in English"
+lang: en
+toc: false
+---
+
+```{=html}
+<div class="cursos-grid">
+
+<a class="curso-card" href="syllabus.html">
+  <span class="curso-tag">Program</span>
+  <span class="curso-sigla">USM MBA template · 9 sections + SCT hours</span>
+  <h3>Course syllabus</h3>
+  <p>Description, competencies CE1–CE4 and CGT1–CGT3, learning outcomes, five content units, methodology, weighted assessment and bibliography.</p>
+  <span class="curso-link">Read the syllabus →</span>
+</a>
+
+<a class="curso-card" href="sessions.html">
+  <span class="curso-tag">Plan</span>
+  <span class="curso-sigla">5 sessions · 4 hours each</span>
+  <h3>Session plan</h3>
+  <p>Build goal, pre-work, framework, guided build and critique for each session, with the milestones that carry one product from brief to Demo Day.</p>
+  <span class="curso-link">See the sessions →</span>
+</a>
+
+<a class="curso-card" href="source-review.html">
+  <span class="curso-tag">Design notes</span>
+  <span class="curso-sigla">Source: UAI Curso en Vibe Coding</span>
+  <h3>Source review</h3>
+  <p>The published UAI program, what it gets right, five groups of flaws, and the change each one produced in this elective.</p>
+  <span class="curso-link">Read the review →</span>
+</a>
+
+<a class="curso-card" href="files/Vibe_Coding_MBA_Elective_Syllabus.docx">
+  <span class="curso-tag">Download</span>
+  <span class="curso-sigla">.docx · Programa de Asignatura</span>
+  <h3>Word version</h3>
+  <p>The syllabus filled into the official USM MBA <em>Programa de Asignatura</em> template, ready for departmental review.</p>
+  <span class="curso-link">Download →</span>
+</a>
+
+</div>
+```
+
+## The course in one paragraph
+
+Vibe coding, building software by describing intent to an AI and iterating on what it produces, has collapsed the cost of a working prototype from weeks of engineering to hours of a manager's time. This elective puts that capability in the hands of MBA students with no programming background. Over five 4-hour workshops, teams take one real problem from their own organizations to a deployed web application with an integrated language-model capability, evaluate the security, privacy, cost and maintainability risks of what they built, decide between build, buy and hand-off, and present a working product and business case to a panel on Demo Day.
+
+## Who it is for
+
+MBA students and managers who need to test ideas, specify what they need from technology teams, and judge AI-built software, without becoming programmers. No coding experience is required or assumed.
+
+## What students leave with
+
+- A deployed, working AI-powered application built for a problem they chose.
+- A tested test set and a risk memo for that application.
+- A build / buy / vibe decision framework they have applied once.
+- A first-hand understanding of what has changed in the economics of building software, and of what remains a defensible advantage.
+
+## At a glance
+
+| | |
+|---|---|
+| Credits | 2 SCT-Chile (20 contact hours + 25 autonomous = 45 hours) |
+| Format | 5 workshop sessions of 4 hours, teams of 2 to 3 |
+| Language | English (deliverables in English or Spanish) |
+| Assessment | 5 weighted components, no final exam, pass at 55/100 |
+| Competencies | CE1, CE2, CE4 (CE3 secondary); CGT1, CGT2, CGT3 |
+| Instructor | Sebastián Azócar M. · [hizocar@gmail.com](mailto:hizocar@gmail.com) |
