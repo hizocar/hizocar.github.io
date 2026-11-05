@@ -151,6 +151,17 @@ Three rules that are never broken:
 
 **Ask the assistant:** "I have a publishable key and a secret key for [service]. Tell me exactly where each one goes in this project and in [hosting platform], and confirm that the secret key will never be sent to the browser. Do not ask me to paste the secret key into this chat."
 
+## If you could not get your app out of the builder
+
+Use the course starter instead of Part A. It is the app as it stands at the end of session 1: paste a message, pick a customer, save to today's list.
+
+1. Open [github.com/hizocar/vibe-coding-starter](https://github.com/hizocar/vibe-coding-starter). If the page says it cannot be found, ask your instructor for an invitation and open the link again.
+2. Press **Use this template**, then **Create a new repository**. Name it after your product, choose **Private**, and create it.
+3. Invite your teammates in the new repository's settings.
+4. Continue this guide from Part B with your new repository. In the lab you will reshape its one screen to fit your own product.
+
+**It worked when:** your own copy shows the word "Private" next to its name and contains a file called `AGENTS.md`, the standing instructions your assistant will read.
+
 ## If you could not finish
 
-Bring your laptop to session 2 fifteen minutes early. If the export from the builder is the problem, your instructor has a template repository with a working starting point that you can copy; you will rebuild your screens on top of it in the lab. Nobody is graded on this guide.
+Bring your laptop to session 2 fifteen minutes early. Nobody is graded on this guide.

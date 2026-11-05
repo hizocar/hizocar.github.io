@@ -1929,7 +1929,7 @@
     "href": "vibe_coding_mba/setup.html#if-you-could-not-finish",
     "title": "Toolkit setup guide",
     "section": "If you could not finish",
-    "text": "If you could not finish\nBring your laptop to session 2 fifteen minutes early. If the export from the builder is the problem, your instructor has a template repository with a working starting point that you can copy; you will rebuild your screens on top of it in the lab. Nobody is graded on this guide."
+    "text": "If you could not finish\nBring your laptop to session 2 fifteen minutes early. Nobody is graded on this guide."
   },
   {
     "objectID": "vibe_coding_mba/class5.html",
@@ -2077,5 +2077,12 @@
     "title": "Tema 2: Estacionariedad",
     "section": "Tarea 1: Jupyter Notebook",
     "text": "Tarea 1: Jupyter Notebook\nAhora debes poner manos a la obra y completar el siguiente notebook: Notebook 1 de Series de Tiempo"
+  },
+  {
+    "objectID": "vibe_coding_mba/setup.html#if-you-could-not-get-your-app-out-of-the-builder",
+    "href": "vibe_coding_mba/setup.html#if-you-could-not-get-your-app-out-of-the-builder",
+    "title": "Toolkit setup guide",
+    "section": "If you could not get your app out of the builder",
+    "text": "If you could not get your app out of the builder\nUse the course starter instead of Part A. It is the app as it stands at the end of session 1: paste a message, pick a customer, save to today’s list.\n\nOpen github.com/hizocar/vibe-coding-starter. If the page says it cannot be found, ask your instructor for an invitation and open the link again.\nPress Use this template, then Create a new repository. Name it after your product, choose Private, and create it.\nInvite your teammates in the new repository’s settings.\nContinue this guide from Part B with your new repository. In the lab you will reshape its one screen to fit your own product.\n\nIt worked when: your own copy shows the word “Private” next to its name and contains a file called AGENTS.md, the standing instructions your assistant will read."
   }
 ]
