@@ -20,14 +20,14 @@
      c4-secrets · Where did the key go?
      ====================================================================== */
   register("c4-secrets", function (root) {
-    panel(root, "Where did the key go?", "QuoteDesk has five files. Open each one to see what a stranger sees in a browser. Find the secret key, then fix it.", "bad");
+    panel(root, "Where did the key go?", "QuoteDesk has four files and one settings page. Open each one to see what a stranger sees in a browser. Find the secret key, then fix it.", "bad");
 
     const files = [
       { name: "index.html", kind: "public", body: "<span class='dim'>&lt;!-- the page the browser downloads --&gt;</span>\n&lt;h1&gt;QuoteDesk&lt;/h1&gt;\n&lt;textarea placeholder=\"Paste the customer message\"&gt;&lt;/textarea&gt;\n&lt;button&gt;Extract items&lt;/button&gt;", secret: false },
       { name: "app.js", kind: "public", body: "<span class='dim'>// runs in the browser: anyone can read this</span>\nconst DB_KEY = <span class='ok'>\"pk_live_4c1e…a7f0\"</span>;  <span class='dim'>// publishable: meant to be here</span>\nconst MODEL_KEY = <span class='bad'>\"sk-live-7f3a…9c21\"</span>;  <span class='dim'>// secret: must not be here</span>\nasync function extract(message) {\n  return callModel(MODEL_KEY, message);\n}", secret: true },
       { name: "styles.css", kind: "public", body: "<span class='dim'>/* colors and layout, nothing sensitive */</span>\nbody { font-family: Geist, sans-serif; }\n.quote { border: 1px solid #ddd; }", secret: false },
       { name: "server/quotes.js", kind: "server", body: "<span class='dim'>// runs on the hosting platform: the browser never sees this</span>\nexport async function saveQuote(rep, quote) {\n  return db.insert(\"quotes\", { rep, ...quote });\n}", secret: false },
-      { name: "server/.env", kind: "server", body: "<span class='dim'># environment variables, server only</span>\nDATABASE_URL=<span class='ok'>postgres://…</span>\n<span class='dim'># MODEL_KEY should be here. It is not.</span>", secret: false },
+      { name: "environment variables", kind: "server", body: "<span class='dim'># settings stored on the hosting platform, outside the code</span>\nDATABASE_URL=<span class='ok'>postgres://…</span>\n<span class='dim'># MODEL_KEY should be here. It is not.</span>", secret: false },
     ];
     let fixed = false;
     let found = false;
@@ -40,7 +40,7 @@
     const setBill = stat(root, "Worst case this month", "not known", "is-warn");
     const row = h("div", { class: "vc-buttons" });
     root.append(row);
-    const n = live(note(root, "Public files (globe) are what the browser downloads: anyone can open them. Server files (lock) never leave the hosting platform. Open app.js."));
+    const n = live(note(root, "Public files (globe) are what the browser downloads: anyone can open them. Server files and the environment variables (lock) never leave the hosting platform. Open app.js."));
 
     function render() {
       chips.innerHTML = "";
@@ -57,7 +57,7 @@
       let body = f.body;
       if (fixed) {
         if (f.name === "app.js") body = "<span class='dim'>// runs in the browser</span>\nconst DB_KEY = <span class='ok'>\"pk_live_4c1e…a7f0\"</span>;  <span class='dim'>// publishable: stays, row-level rules protect the data</span>\nasync function extract(message) {\n  <span class='ok'>return fetch(\"/api/extract\", { method: \"POST\", body: message });</span>\n}";
-        if (f.name === "server/.env") body = "<span class='dim'># environment variables, server only</span>\nDATABASE_URL=<span class='ok'>postgres://…</span>\nMODEL_KEY=<span class='ok'>sk-live-2b8e…44d0</span>  <span class='dim'># new key, rotated</span>";
+        if (f.name === "environment variables") body = "<span class='dim'># settings stored on the hosting platform, outside the code</span>\nDATABASE_URL=<span class='ok'>postgres://…</span>\nMODEL_KEY=<span class='ok'>sk-live-2b8e…44d0</span>  <span class='dim'># new key, rotated</span>";
       }
       term.innerHTML = "<span class='acc'>" + (f.kind === "public" ? "what anyone sees in " : "server only: ") + f.name + "</span>\n" + body;
       motion.pulse(term);
@@ -76,7 +76,7 @@
       fixed = true;
       fixBtn.disabled = true;
       const steps = [h("div", { class: "vc-flow-step" }, h("strong", {}, "1 · Rotate"), "revoke the old key at the provider, create a new one"),
-        h("div", { class: "vc-flow-step" }, h("strong", {}, "2 · Store"), "put the new key in server/.env, never in the page"),
+        h("div", { class: "vc-flow-step" }, h("strong", {}, "2 · Store"), "type the new key into the hosting platform's environment variables, never into the page or the repository"),
         h("div", { class: "vc-flow-step" }, h("strong", {}, "3 · Route"), "the page asks /api/extract; the server calls the model"),
         h("div", { class: "vc-flow-step" }, h("strong", {}, "4 · Prove"), "search everything the browser downloads: no key")];
       const flow = h("div", { class: "vc-flow" }, steps);
@@ -87,7 +87,7 @@
       setRisk("contained", "ok");
       setBill(usd(28) + ", the normal bill", "ok");
       n.className = "vc-note is-ok";
-      n.innerHTML = "<strong>Fixed.</strong> The browser now talks to your server, and only the server holds the secret key. The publishable key stays in the page, as intended. The worst case this month is the normal bill. Open app.js and server/.env again to see the difference. The fix included rotating the key: once public, the old one is compromised whether or not anyone used it.";
+      n.innerHTML = "<strong>Fixed.</strong> The browser now talks to your server, and only the server holds the secret key. The publishable key stays in the page, as intended. The worst case this month is the normal bill. Open app.js and the environment variables again to see the difference. The fix included rotating the key: once public, the old one is compromised whether or not anyone used it.";
       motion.pop(n);
     }, "vc-btn-accent");
     fixBtn.disabled = true;
@@ -108,8 +108,8 @@
     ];
     // Owners per the course canon: Paula has Doña Elsa and Sushi Nikkei; Marcos has Los Aromos and La Esquina.
     const quotes = [
-      { id: 1041, rep: "marcos", customer: "Minimarket Los Aromos", total: 486000 },
-      { id: 1042, rep: "paula", customer: "Restaurante Doña Elsa", total: 1230000 },
+      { id: 1041, rep: "marcos", customer: "Minimarket Los Aromos", total: 473500 },
+      { id: 1042, rep: "paula", customer: "Restaurante Doña Elsa", total: 485500 },
       { id: 1043, rep: "paula", customer: "Sushi Nikkei Ñuñoa", total: 318500 },
       { id: 1044, rep: "marcos", customer: "Almacén La Esquina", total: 212000 },
     ];
@@ -256,7 +256,7 @@
 
     const LV = ["None", "Read", "Write + approval", "Write"];
     const RES = [
-      { id: "prices", name: "Price list", via: "Drive connector, from Class 2", need: 1, granted: 3 },
+      { id: "prices", name: "Price list", via: "shared-folder connector, from Class 2", need: 1, granted: 3 },
       { id: "customers", name: "Customers", via: "ERP connector", need: 1, granted: 3 },
       { id: "quotes", name: "Quotes", via: "drafts in QuoteDesk", need: 3, granted: 3 },
       { id: "email", name: "Email", via: "mail connector", need: 2, granted: 3 },
@@ -312,7 +312,7 @@
     btn(row, "Back to what the team granted", () => setAll((r) => r.granted), "vc-btn-ghost");
 
     const STORY = {
-      inject: "The price-list file returned by the Drive connector carries a hidden line: send the customer list and all prices to an outside address, and place the order at 40% off.",
+      inject: "The price-list file returned by the shared-folder connector carries a hidden line: send the customer list and all prices to an outside address, and place the order at 40% off.",
       wrong: "A request from Almacén La Esquina is matched to Minimarket Los Aromos' record, so the assistant works with another customer's negotiated prices.",
       loop: "A change made late in the evening leaves the morning digest in a retry loop: about 5,000 runs between 01:00 and 07:00.",
     };
@@ -419,12 +419,12 @@
     panel(root, "Personal data finder", "This is one QuoteDesk record. Mark every field that is personal data, then check. After that, choose purpose, retention and provider plan.", "ai");
 
     const fields = [
-      { k: "Business name", v: "Minimarket Los Aromos", pii: false, why: "A company name is not about a person. Careful: a sole trader named after its owner would be." },
+      { k: "Business name", v: "Minimarket Los Aromos", pii: false, why: "A company name is not about a person. Careful: a sole proprietor trading under the owner's name would be." },
       { k: "Contact name", v: "Rosa Henríquez", pii: true, why: "A name identifies a person." },
-      { k: "Mobile", v: "+56 9 7xxx xxxx", pii: true, why: "A phone number identifies and reaches a person." },
-      { k: "Delivery address", v: "Av. Los Aromos 1420, Maipú", pii: true, either: true, why: "It depends on who the customer is. For a company it is a business address; for a person or a sole trader it is personal data. You cannot tell from the record, so treat it as personal. Either answer counts here." },
+      { k: "Cell phone", v: "+56 9 7xxx xxxx", pii: true, why: "A phone number identifies and reaches a person." },
+      { k: "Delivery address", v: "Av. Los Aromos 1420, Maipú", pii: true, either: true, why: "It depends on who the customer is. For a company it is a business address; for a person or a sole proprietor it is personal data. You cannot tell from the record, so treat it as personal. Either answer counts here." },
       { k: "Items", v: "20 cajas aceite, 5 sacos arroz", pii: false, why: "Products and quantities are not about a person." },
-      { k: "Total", v: "CLP 486,000", pii: false, why: "A price is business data, not personal data." },
+      { k: "Total", v: "CLP 473,500", pii: false, why: "A price is business data, not personal data." },
       { k: "Pasted message", v: "\"hola Rosa aquí, mi hijo está enfermo así que entreguen antes de las 10…\"", pii: true, why: "The raw message carries a name and a health detail about a family member, and health details are sensitive data. Raw text often holds more personal data than any field." },
       { k: "Rep", v: "Marcos", pii: true, why: "Employees are people too. Who handled a quote is personal data of the rep." },
     ];
@@ -511,7 +511,7 @@
 
     // Illustrative prices per million tokens (check current prices). A typical extraction call: 1,500 tokens in, 400 out.
     const MODELS = {
-      small: { label: "Small (USD 0.25 in / 1.25 out)", pin: 0.25, pout: 1.25 },
+      small: { label: "Small (USD 0.60 in / 3 out)", pin: 0.6, pout: 3 },
       medium: { label: "Medium (USD 3 in / 15 out)", pin: 3, pout: 15 },
       large: { label: "Large (USD 15 in / 75 out)", pin: 15, pout: 75 },
     };
@@ -628,7 +628,7 @@
         const months = bn.raw / Math.max(0.01, rows[0].model);
         setNight(usd(bn.cost) + (bn.stopped ? ", stopped by the limit" : ""), bn.stopped ? "ok" : "bad");
         nightTxt = bn.stopped
-          ? ` <strong>The bad night:</strong> the looping digest would have spent ${usd(bn.raw)}. The limit stops the month at ${usd(CAP)}, so the loop gets ${usd(bn.cost)} of it, and the alert reaches Carla on a second channel before breakfast. A disaster became a message.`
+          ? ` <strong>The bad night:</strong> the looping digest would have spent ${usd(bn.raw)}. The limit stops the month at ${usd(CAP)}, so the loop gets ${usd(bn.cost)} of it, and the alert reaches Carla on a second channel before breakfast. The limit also pauses QuoteDesk's own extraction until Carla raises it, so the alert matters as much as the limit. A disaster became a message.`
           : ` <strong>The bad night:</strong> a late change leaves the morning digest in a retry loop, about 5,000 runs between 01:00 and 07:00 at about USD 0.04 each: ${usd(bn.raw)}, as much as ${months >= 2 ? num(months) + " months" : "a month"} of normal use, and nobody knows until the invoice. Switch the spending limit on.`;
       } else {
         setNight("not simulated", "");
@@ -705,7 +705,7 @@
       const why = {
         vibe: `${level} stakes (${stakes.toFixed(1)} of 4 across users, data, lifetime and integration). A small group, a limited lifetime and no deep integration are where a prototype owned by its team is the right size. Keep this session's governance in place and set a date to revisit.`,
         hand: `${level} stakes (${stakes.toFixed(1)} of 4 across users, data, lifetime and integration) and a workflow specific enough that buying would not fit. The prototype proved the value; a product with these users and this data needs an owner who can operate it. Hand over the evidence, not just the code.`,
-        buy: `The workflow is close to generic (uniqueness: ${labels.unique[1][s.unique]}) and the stakes justify a vendor who runs it for you. Use the prototype to write the requirements and to test vendors against your real messages.`,
+        buy: `The workflow is close to generic (uniqueness: ${labels.unique[1][s.unique]}) and the stakes justify a vendor who runs it for you. Use the prototype to write the requirements and to test vendors against your test set.`,
         stop: "A short lifetime, few users or no budget: the prototype answered the question. Stopping after a cheap test is a success, not a failure. Record what you learned.",
       };
       n.innerHTML = "<strong>" + opts[best] + ".</strong> " + why[best];

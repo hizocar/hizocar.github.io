@@ -26,7 +26,7 @@ The session is 4 hours. The framework block is a recap of this page, which you r
 - The simulators cannot break. Predict what will happen before you move a slider or press a button, then check.
 - The build lab is what you do in class with your team during the 120-minute build block. The prompts in it are meant to be copied and adapted.
 - The lab checklist is saved in your browser, so you can close the page and come back.
-- **Data rule.** Until your team has completed the Class 4 lab, use only invented or de-identified messages: no real names, phones, addresses or tax numbers in the app, in a test or in any prompt.
+- **Data rule.** Until your team has completed the Class 4 lab, closed every critical finding and has the written agreement of the organization that owns the data, use only invented or de-identified messages: no real names, phone numbers, addresses or tax numbers in the app, in a test or in any prompt.
 - Also before this session: create your accounts on the course toolkit (the [setup guide](setup.html) lists them), read Karpathy's original post on vibe coding and Willison's "Not all AI-assisted programming is vibe coding", and bring one problem from your organization in which people enter, read or act on information by hand.
 :::
 
@@ -118,7 +118,7 @@ Carla, Cerro Azul's sales manager, has had a list of eleven "small improvements"
 <p class="vc-guide"><strong>Guiding question:</strong> Carla, the sales manager, wants a page for customers, an app for her reps, a deck for the board and a report every Monday. Is that one tool or four, and what does each one need?</p>
 ```
 
-"The assistant" is not one product. A manager will meet four kinds of tool, and they overlap more every month. A **chat assistant** answers in a conversation and can now hand back a finished page, document or set of slides. An **app builder** turns a description into a deployed application with its own address. An **agentic coding assistant** works on a project folder (a repository) from a terminal, an editor or a desktop app, changing many files and running what it builds. A **desktop agent app** does knowledge work on your own files and connected systems, with no terminal. Product names change; examples today include Claude, ChatGPT and Gemini for chat, Lovable, v0 and Replit for app building, and Claude Code, Cursor and Codex for agentic coding. Check what is current when you read this.
+"The assistant" is not one product. A manager will meet four kinds of tool, and they overlap more every month. A **chat assistant** answers in a conversation and can now hand back a finished page, document or set of slides. An **app builder** turns a description into a deployed application with its own address. An **agentic coding assistant** works on a project folder (a repository) from a terminal (a window where commands are typed), an editor or a desktop app, changing many files and running what it builds. A **desktop agent app** does knowledge work on your own files and connected systems, with no terminal. Product names change; examples today include Claude, ChatGPT and Gemini for chat, Lovable, v0 and Replit for app building, and Claude Code, Cursor and Codex for agentic coding. Check what is current when you read this.
 
 What matters more than the product is what the job is built from. There are six building blocks, and the rest of the course is about using them well:
 
@@ -342,7 +342,7 @@ The simulator below replays the sequence so you can see each step on its own, in
 ```
 
 ::: {.callout-tip title="In the business"}
-A public address changes who can give feedback. Before the lab ends, send yours to one person outside the team, ideally someone who has the actual problem, with one sentence: "paste a realistic message, with names and numbers changed, and tell me what is wrong". The reply is worth more than another hour of building.
+A public address changes who can give feedback. Before the lab ends, send yours to one person outside the team, ideally someone who has the actual problem, with one sentence: "paste a realistic message, with names, phone numbers and addresses changed, and tell me what is wrong". The reply is worth more than another hour of building.
 :::
 
 ```{=html}
@@ -381,12 +381,12 @@ A public address changes who can give feedback. Before the lab ends, send yours 
 <li><strong>Write the brief (10 min).</strong> Use the brief builder from Topic 5 until the meter says four of four, or your instructor signs the brief off. The meter reads English only and looks for a role word, a number and a verb, so a good brief in Spanish or about an unusual role can score low. Copy the paragraph into your build log as its first entry, with the date and the team members.</li>
 <li><strong>Send the first prompt (5 min).</strong> Open the app builder from the course toolkit and start a new project. Paste the first prompt below, replacing the brief with yours. Do not add anything else yet.</li>
 <li><strong>Read the plan before accepting it (5 min).</strong> The assistant will describe what it intends to build. Check each line against the brief. If it adds things you did not ask for (login, dashboards, charts), reply: "Remove X for now; keep the first version to the brief."</li>
-<li><strong>Test by using (10 min).</strong> Do the three things your user would do, in order, in a phone-sized window (drag the browser window narrow). Paste a realistic message with names and numbers changed, never a real one. Write in the build log what worked and what did not, in the user's words.</li>
+<li><strong>Test by using (10 min).</strong> Do the three things your user would do, in order, in a phone-sized window (drag the browser window narrow). Paste a realistic message with names, phone numbers and addresses changed, never a real one. Write in the build log what worked and what did not, in the user's words.</li>
 <li><strong>Ask for one change at a time (15 min).</strong> Use the second prompt below. After each change, read the assistant's summary of what it did, then test again. Two focused changes beat one long list. Save a checkpoint after every change that works (the builder calls it a version, a snapshot or a publish). You will learn in Class 2 why this matters; for now, just do it.</li>
 <li><strong>Deploy the app (5 min).</strong> Publish to a public address. Open it on a real phone, not only in the narrow window on your laptop.</li>
 <li><strong>Break (10 min).</strong> Stand up. On the way back, open your app on someone else's phone and watch them use it without helping.</li>
 <li><strong>Build the public page (15 min).</strong> In the same builder, start a second project: one page that explains your product to the people it is for. Use the fourth prompt below. Check it against the four review questions under that prompt, then publish it.</li>
-<li><strong>Ask for feedback (5 min).</strong> Send both addresses to one person outside the team, ideally someone who has the actual problem, with one sentence: "paste a realistic message, with names and numbers changed, and tell me what is wrong".</li>
+<li><strong>Ask for feedback (5 min).</strong> Send both addresses to one person outside the team, ideally someone who has the actual problem, with one sentence: "paste a realistic message, with names, phone numbers and addresses changed, and tell me what is wrong".</li>
 <li><strong>Write the build log entry (5 min).</strong> What you asked, what the assistant did, what you decided, what surprised you. Include both public addresses.</li>
 <li><strong>Prepare for the critique (5 min).</strong> Two teams will show their work end to end. Choose who demonstrates and which user action you will show first.</li>
 </ol>
@@ -491,7 +491,7 @@ Then 10 minutes alone with your build log. The reflection prompt for session 1: 
 - In the illustration used here, a working prototype costs about a hundred times less than ten years ago. Your numbers will differ; the direction will not. The threshold for "worth trying" moved and most organizations have not updated their list.
 - Six building blocks cover what a manager builds with an assistant: prompt, project instructions, skill, connector, agent, scheduled automation. Name the blocks a job needs before choosing a tool, and say which "assistant" you mean: the one you build with, the one a rep uses, or the model inside the app.
 - Vibe coding is building without understanding, on purpose; AI-assisted engineering is building faster with understanding. Blast radius, users, regulation and lifetime decide which one a problem needs, and a prototype that quietly becomes the production system is the most common failure.
-- Problem Pull ideas name a user, a number and a moment. AI Push ideas name a technology. Cheap building makes the test more important, because nothing else filters ideas any more.
+- Problem Pull ideas name a user, a number and a moment. AI Push ideas name a technology. Cheap building makes the test more important, because nothing else filters ideas anymore.
 - The brief has four parts: user, pain with a number, what the tool does, how we know it works. It is also the business case and the first page of the build log, and its metric is a target until you time it.
 - Read the assistant's plan before accepting it, read its summary after every change, and test by using in a phone-sized window, with invented or de-identified messages only until the Class 4 lab is done. Judging takes longer than building, and it is your job.
 - A bug is a conversation: describe what the user saw, ask for the explanation, then the fix, then test again.

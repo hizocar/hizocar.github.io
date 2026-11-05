@@ -39,7 +39,7 @@
         sentence: "We found three risks and fixed them; one is still open.",
         body: ["Fixed: the secret key in the public page, reps opening each other's priced quotes, a message that asked for 40% off.", "Open: customer phone numbers have no retention rule yet."] },
       { block: "Decision", sec: 60, short: "Keep vibe coding, hand off the ERP write", needs: ["risk"],
-        sentence: "We keep vibe coding QuoteDesk and hand the write into the ERP to engineering.",
+        sentence: "We keep vibe coding QuoteDesk and hand the ERP write-back to engineering.",
         body: ["Carla approves every discount; a rep approves every quote.", "Buying a product was ruled out: none knows our catalog's local names."] },
       { block: "Roadmap", sec: 90, short: "Three conditions, about USD 28 a month", needs: ["cost"],
         sentence: "Rolling out to 14 reps needs three things and about USD 28 a month in model calls.",
@@ -447,7 +447,7 @@
       "Move the cards up or down, then check. The exact order is debatable at the edges; the three classic mistakes are not.");
     const STEPS = [
       { k: "Close the critical findings", d: "Secret key on the server, authorization tested with three accounts, discounts wait for Carla." },
-      { k: "Data protection decisions, written down", d: "Purpose, retention and provider terms for customer names, phones and addresses." },
+      { k: "Data protection decisions, written down", d: "Purpose, retention and provider terms for customer names, phone numbers and addresses." },
       { k: "Pilot with real users and the metric", d: "Paula, Diego and Marcos for two weeks; quote time measured against the brief." },
       { k: "Engineering review and the decision", d: "The five questions from Class 4: keep vibe coding it, hand it to engineering, buy, or stop." },
       { k: "An owner and a budget", d: "Company account with a USD 50 monthly limit; Carla's name on the tool." },

@@ -467,7 +467,7 @@
 
   /* ================= c2-skills ================= */
   register("c2-skills", function (root) {
-    panel(root, "A skill, opened up", "Left: the skills folder; click a file to read it. Right: three things Paula asks. Run one and watch what the assistant loads. Then rewrite the description and run again.", "accent");
+    panel(root, "A skill, opened up", "Left: your assistant's skills folder, which is not the QuoteDesk repository; click a file to read it. Right: three things Paula asks. Run one and watch what the assistant loads. Then rewrite the description and run again.", "accent");
     const STRONG = "Drafts or checks a Cerro Azul quote in the house format. Use whenever the user asks for a quote, cotización or price offer for a customer, or pastes a quote request.";
     const VAGUE = "Formats quotes.";
     let desc = STRONG, file = "skill", req = "quote", runId = 0, loadedNow = 1400;
@@ -480,8 +480,8 @@
     /* ---- left: folder and file ---- */
     const fileBtns = {};
     const fb = (key, label) => { const b = h("button", { type: "button", "aria-pressed": String(key === file) }, label); b.addEventListener("click", () => { file = key; showFile(true); }); fileBtns[key] = b; return b; };
-    const tree = h("ul", { class: "vc-tree", "aria-label": "Skills folder" },
-      h("li", {}, h("span", { class: "dim" }, "skills/"),
+    const tree = h("ul", { class: "vc-tree", "aria-label": "Your assistant's skills folder" },
+      h("li", {}, h("span", { class: "dim" }, "your assistant's skills/"),
         h("ul", {},
           h("li", {}, "quote-format/",
             h("ul", {},
@@ -495,7 +495,7 @@
     left.append(sub("20 skills installed. Only two are shown.", "0"), tree, doc);
     const FILES = {
       skill: () =>
-        `<span class="c">---</span>\n<span class="k">name:</span> quote-format\n<span class="k">description:</span> <mark>${esc(desc.trim() || "(empty)")}</mark>\n<span class="c">---</span>\n<span class="s"># Cerro Azul quote format</span>\n1. Find the customer in the customer list. If there is no match, stop and ask.\n2. One line per product: code, name, quantity, unit, list price in CLP.\n3. Mark any line you are not sure about with CHECK and say why.\n4. Never apply a discount. Discounts need Carla's approval.\n5. Fill template.md. Compare with examples/dona-elsa.md before answering.`,
+        `<span class="c">---</span>\n<span class="k">name:</span> quote-format\n<span class="k">description:</span> <mark>${esc(desc.trim() || "(empty)")}</mark>\n<span class="c">---</span>\n<span class="s"># Cerro Azul quote format</span>\n1. Use the customer name the user gives. If there is none, stop and ask.\n2. One line per product: code, name, quantity, unit, list price in CLP.\n3. Mark any line you are not sure about with CHECK and say why.\n4. Never apply a discount. Discounts need Carla's approval.\n5. Fill template.md. Compare with examples/dona-elsa.md before answering.`,
       template: () =>
         `<span class="s"># Quote · {customer} · {date}</span>\nRep: {rep} · Valid for: 7 days\n\nCode · Product · Qty · Unit · List price (CLP)\n{one line per product}\n\nDelivery: {day}, {route}\n<span class="c">Lines marked CHECK need a call to the customer.</span>`,
       example: () =>
@@ -646,10 +646,10 @@
         label: "What does aceite 900 cc cost for Los Aromos?",
         think: "I need the customer's price tier and the price list. Two look-ups, both read-only.",
         calls: [
-          { need: "customers", call: 'find_customer("Minimarket Los Aromos")', res: "Tier B · Maipú route · rep: Marcos" },
+          { need: "customers", call: 'look_up_customer("Minimarket Los Aromos")', res: "Tier B · Maipú route · rep: Marcos" },
           { need: "prices", call: 'read_price("aceite 900 cc")', res: "AC-900 · caja de 12 · list CLP 18,900 · tier B CLP 18,300" },
         ],
-        done: ["done", "Answer: <strong>CLP 18,300 per caja</strong> for Los Aromos (tier B column, row 42 of the price list). Paula can open the row and check."],
+        done: ["done", "Answer: <strong>CLP 18,300 per caja</strong> for Los Aromos (tier B column, row 42 of the price list). Marcos, who owns the account, can open the row and check."],
       },
       inbox: {
         label: "Which WhatsApp requests have no answer yet?",
@@ -661,7 +661,7 @@
         label: "Send the quote to Doña Elsa",
         think: "The quote is drafted. Sending needs her contact and the email connector.",
         calls: [
-          { need: "customers", call: 'find_customer("Restaurante Doña Elsa")', res: "Contact on file: purchasing · rep: Paula" },
+          { need: "customers", call: 'look_up_customer("Restaurante Doña Elsa")', res: "Contact on file: purchasing · rep: Paula" },
           { need: "email", call: "send_email(to: Doña Elsa purchasing, attach: quote)", res: "Sent from Paula's address at 10:42" },
         ],
         done: ["human", "Sent, in Paula's name. <strong>Nobody read it before it left.</strong> Class 3 adds the approval step that belongs here."],
@@ -721,7 +721,7 @@
       const risk = byKey.orders.on ? "Orders are open: a mistake is no longer a sentence on a screen, it is a delivery."
         : byKey.email.on ? "Email is open: the assistant can send messages in a rep's name, so a wrong quote can reach a customer before anyone reads it."
         : open.length === 0 ? "No doors open: the assistant knows only what you paste into it."
-        : "Read-only doors: the worst case is a wrong answer on Paula's screen, and she can check the source.";
+        : "Read-only doors: the worst case is a wrong answer on the rep's screen, where the source can be checked.";
       const result = p.blocked ? `This task stops at <strong>${esc(p.blocked.name)}</strong>. Connect it only if the task is worth that door.`
         : p.risky ? "The task ran end to end with no person in the loop."
         : "The task ran using read access only.";

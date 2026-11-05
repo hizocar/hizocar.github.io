@@ -26,7 +26,7 @@ The session is 4 hours. The pitch clinic is a recap of topics 1 to 3 of this pag
 - Every topic opens with a guiding question, explains the idea with Cerro Azul and QuoteDesk, gives you one simulator, an "In the business" note and a short practice set.
 - The deck builder, the pitch timer and the rubric self-scorer are tools for your rehearsal. Use them with your team the day before.
 - The reflection memo builder keeps your draft in this browser. Draft the five parts before class and finish them in the last block.
-- The Demo Day checklist is also saved in your browser. Tick it the night before.
+- The Demo Day checklist is also saved in your browser. Check it off the night before.
 :::
 
 ## What you will be able to do
@@ -76,7 +76,7 @@ By now the raw material for the pitch exists: your build log, the results of the
 | Live demo | Paula quotes Doña Elsa's request in under two minutes | The product itself; a screenshot holds the slide |
 | Evidence | On 24 de-identified messages, the guardrail cut unnoticed wrong quotes from 6 to 1 | Test-set results |
 | Risks | Three findings fixed, one still open | Risk memo |
-| Decision | Keep vibe coding QuoteDesk; hand the write into the ERP to engineering | Risk memo and the decision matrix from Class 4 |
+| Decision | Keep vibe coding QuoteDesk; hand the ERP write-back to engineering | Risk memo and the decision matrix from Class 4 |
 | Roadmap | Three conditions for rollout and about USD 28 a month in model calls | Cost model |
 
 The roadmap figure is the kind of number to check twice: about 2,600 requests a month on a mid-sized model at the illustrative prices from Class 3, under the USD 50 monthly limit you set in Class 4. Prices change, so the slide names its source and the date.
@@ -321,7 +321,7 @@ The classic view of an AI moat was about data, learning and algorithms. Look at 
 - **Proprietary data.** Cerro Azul has its own catalog with its local names ("lo de siempre de lácteos"), what each customer usually orders, and every correction the reps have made to an extraction since the first week. That data makes QuoteDesk right for Cerro Azul's customers and useless, as is, for anyone else's.
 - **Distribution: the customer relationships.** Cerro Azul already sells to 1,800 accounts, and its reps know them and their history. A rival that copies QuoteDesk quotes faster for its own customers. The copy does not bring these accounts with it.
 - **Workflow integration.** The quote-format skill and the price-list connector the reps' assistants use, and the rule that Carla approves discounts. Each one is cheap to write and slow to earn, because it encodes how Cerro Azul actually operates.
-- **Trust.** Customers trust the quote because a rep approved it. Management trusts the tool because the test set and the risk memo exist. Customers trust Cerro Azul with their names, phones and orders because that data is handled well. Complying with Ley 21.719 is an obligation, not an advantage; trust is what you earn on top of it, slowly, and it does not copy with the code.
+- **Trust.** Customers trust the quote because a rep approved it. Management trusts the tool because the test set and the risk memo exist. Customers trust Cerro Azul with their names, phone numbers and orders because that data is handled well. Complying with Ley 21.719 is an obligation, not an advantage; trust is what you earn on top of it, slowly, and it does not copy with the code.
 
 Notice what the list does not include: the app itself. If your roadmap depends on "being first with a quote extraction tool", the panel will ask what happens the Monday after a competitor's manager takes a course like this one.
 
@@ -394,7 +394,7 @@ The simulator asks you to put those steps in order. The exact order is debatable
 ```
 
 ::: {.callout-tip title="In the business"}
-"Citizen developers", managers who build their own tools, are becoming a governance question, not a curiosity. A workable answer has three parts: a registry of tools, connectors and automations that touch company data, a light review before any tool gets real users, and a named owner for each one. None of it stops managers from building. All of it prevents the Monday when the only person who understands the quoting tool is on holiday.
+"Citizen developers", managers who build their own tools, are becoming a governance question, not a curiosity. A workable answer has three parts: a registry of tools, connectors and automations that touch company data, a light review before any tool gets real users, and a named owner for each one. None of it stops managers from building. All of it prevents the Monday when the only person who understands the quoting tool is on vacation.
 :::
 
 ```{=html}

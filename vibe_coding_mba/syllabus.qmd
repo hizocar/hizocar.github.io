@@ -38,7 +38,7 @@ As set out in the MBA admission profile. In addition:
 - No programming or software development experience is required or assumed.
 - Working reading and listening comprehension of English; deliverables may be written in English or Spanish.
 - A laptop (any OS) with a modern browser and administrator rights to install one application.
-- Accounts on the course toolkit (GitHub, an AI assistant with skills and connectors, a managed database and a hosting platform). Estimated out-of-pocket cost for the course: USD 20 to 40 per student, confirmed before enrollment.
+- Accounts on the course toolkit (GitHub, an AI assistant with skills and connectors, a managed database, a hosting platform and a model provider's developer account). Estimated out-of-pocket cost for the course: USD 45 to 60 per student (two months of the assistant's individual plan and about USD 5 to 10 of model usage), confirmed before enrollment.
 
 ## 4. Graduate-profile competencies the course contributes to
 
@@ -67,7 +67,7 @@ As set out in the MBA admission profile. In addition:
 
 - **LO-S1 (CE1).** Analyzes a business process and its context to identify, prioritize and frame an opportunity where an AI-powered application creates measurable value, specifying users, value hypothesis and success metric.
 - **LO-S2 (CE2).** Solves a business problem by specifying, building and deploying a functional web application with AI assistants, integrating a language-model capability with appropriate guardrails and an evaluation set, and extending the work with one skill and one connector for the team's assistants, one agentic step that waits for human approval and one scheduled automation.
-- **LO-S3 (CE4).** Applies AI assistants, skills, connectors (MCP), agents, automations, language-model APIs, version control and managed deployment platforms as management tools, and decides between building, buying, continuing to prototype and handing off to engineering using explicit criteria.
+- **LO-S3 (CE4).** Applies AI assistants, skills, connectors (MCP), agents, automations, language-model APIs, version control and managed deployment platforms as management tools, and makes the build / buy / vibe decision with explicit criteria: keep vibe coding it, hand it to engineering to build properly, buy a product, or stop.
 - **LO-S4 (CE3).** Designs a roadmap from prototype to production that identifies the strategic, organizational and technical conditions under which the solution should be scaled, and what remains a defensible advantage when building software is cheap.
 
 ## 6. Contents
@@ -104,7 +104,7 @@ As set out in the MBA admission profile. In addition:
 - Data protection: personal data under Chile's Ley 21.719 and GDPR basics, data residency, vendor terms and training on customer data.
 - Cost control: token economics, rate limits, budgets, caching, runaway automations.
 - Maintainability: the code nobody understands, documentation, tests, technical debt in prototypes that became products; intellectual property and vendor lock-in.
-- Decision frameworks: build / buy / vibe; prototype versus production; when to stop vibe coding and hand off to engineering; the questions to ask an engineering team.
+- The build / buy / vibe decision and its four answers: keep vibe coding it, hand it to engineering to build properly, buy a product, or stop; the questions to ask an engineering team.
 
 **Unit 5. Demo Day and strategy revisited**
 
@@ -118,9 +118,9 @@ As set out in the MBA admission profile. In addition:
 
 - **Workshop format, build first then reflect.** Sessions 1 to 4 follow the same rhythm: a 45-minute framework block, a 2-hour guided build in teams working on their own project (with a 10-minute break), a 45-minute critique and reflection block, and a 30-minute milestone review. Session 5 is Demo Day.
 - **Interactive class pages.** Each session has a self-teaching page with simulators, practice questions, the lab guide and prompts to adapt, read before class (90 to 100 minutes) so class time is spent building. Three support pages complete them: a [toolkit setup guide](setup.html), a [security checklist](security-checklist.html) and the [rubric](rubric.html).
-- **Live demonstrations** by the instructor of every technique before students apply it, including failures and recovery.
+- **A live demonstration** by the instructor opens every build lab, including one failure and its recovery.
 - **One cumulative team project** (teams of 2 to 3) chosen by the students from their own organizations, carried from problem brief to deployed product to Demo Day. A running case, a food distributor's quote-request tool, is used in every class.
-- **Data rule.** Until a team has completed the session 4 lab, only invented or de-identified information is used in the product, in the test set and in any prompt: no real names, phone numbers, addresses or tax numbers.
+- **Data rule.** Until your team has completed the session 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade.
 - **Individual build log**: each student keeps a running record of prompts, decisions, failures and what the AI did, used for assessment and reflection.
 - **Peer review** at every milestone with a shared rubric.
 - **Course toolkit** (subject to update each term): an AI assistant that supports project instructions, skills, connectors (MCP), agents and scheduled tasks as the primary tool; a conversational app builder; GitHub for version control; a managed database and a managed hosting platform. Principles are taught tool-agnostically so students can switch tools.
@@ -165,7 +165,7 @@ As set out in the MBA admission profile. In addition:
 - NIST (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*.
 - Official documentation of the course toolkit, updated each term.
 
-## Dedication hours (SCT-Chile)
+## Workload hours (SCT-Chile)
 
 | Activity | Hours |
 |---|---|

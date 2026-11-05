@@ -30,7 +30,7 @@ The session is 4 hours. The framework block is a 45-minute recap of this page, w
 - The build lab is what your team does in class, on your own app, with the assistant. The prompts are there to copy and adapt.
 - The lab checklist is saved in your browser, so you can come back to it before the milestone.
 - You do not need to read code at any point. You need to ask the right questions and recognize the right answers.
-- The data rule still holds: until your team finishes this lab, the app, the test set and every prompt contain only invented or de-identified messages. Topic 5 and the lab are where that changes, on purpose.
+- Data rule: only invented or de-identified information until the session 4 lab is done, critical findings are closed and the data's owner has agreed in writing. Topic 5 and the lab are where you prepare for that, on purpose.
 :::
 
 ## What you will be able to do
@@ -67,15 +67,15 @@ The times next to each topic are reading times for this page, at your own pace, 
 <p class="vc-guide"><strong>Guiding question:</strong> if a stranger opened QuoteDesk in their browser tonight, what could they take?</p>
 ```
 
-QuoteDesk talks to a language model. To do that it uses an API key: a long string that tells the model provider "this request is from Cerro Azul, charge their account". The key is like a company credit card number. Whoever has it can spend on it.
+QuoteDesk talks to a language model through an API, the door through which one program asks another for a service. To do that it uses an API key: a long string that tells the model provider "this request is from Cerro Azul, charge their account". The key is like a company credit card number. Whoever has it can spend on it.
 
 When your team asked the assistant to add the AI extraction in session 3, it had to put that key somewhere. There are two places it can go. The server side runs on the hosting platform and is invisible to users. The client side is the page the browser downloads: anyone can open it, read it, and copy what is inside. An assistant given a vague instruction sometimes puts the key in the page, because that is the shortest path to "it works".
 
 This is one of the most common security failures in vibe-coded apps, and it is silent. The app works perfectly. Nothing looks wrong. Then the provider bill shows a spike from a country where Cerro Azul has no customers. Automated scanners look for keys in public pages and public repositories all the time, so a key left in the open can be found within hours.
 
-Not every key is a secret, and this trips up many teams. Managed databases issue two kinds. A publishable key is meant to be in the page: it only says which project the page belongs to. What protects the data is the set of row-level rules in the database, which say who may read or write each row. A secret key, such as the model key or the database's service key, skips those rules and must never leave the server. So the question is not "is there a key in the page". It is "is there a secret key in the page, and do the row-level rules hold". Topic 2 tests the second half.
+Not every key is a secret, and this trips up many teams. Managed databases issue two kinds. A publishable key is meant to be in the page: it only says which project the page belongs to. What protects the data is the set of row-level rules in the database, which say who may read or write each row. A secret key must never leave the server: the model key spends your money, and the database's service key skips those rules. So the question is not "is there a key in the page". It is "is there a secret key in the page, and do the row-level rules hold". Topic 2 tests the second half.
 
-The fix is not complicated, and you do not need to understand code to request it. The secret key lives in an environment variable on the server, the page asks your server, and your server asks the model. When you ask the assistant to fix it, you also ask it to show that no secret key appears in anything the browser can download, and you rotate the old key, because once it was public it is compromised whether or not someone used it.
+The fix is not complicated, and you do not need to understand code to request it. The secret key lives in an environment variable, a setting stored on the server, outside the code. The page asks your server, and your server asks the model. When you ask the assistant to fix it, you also ask it to show that no secret key appears in anything the browser can download, and you rotate the old key, because once it was public it is compromised whether or not someone used it.
 
 | Where the secret key is | Who can read it | What happens when it is found |
 |---|---|---|
@@ -130,11 +130,11 @@ Cerro Azul's finance team would never let 14 sales reps carry the company credit
 <p class="vc-guide"><strong>Guiding question:</strong> QuoteDesk has a login. Why can Paula still open Marcos's priced quotes?</p>
 ```
 
-In session 2 your team added a login with two roles, rep and manager. That is authentication: the app knows who is at the keyboard. It is not the same as authorization: the app deciding what that person is allowed to see and do. Many vibe-coded apps get the first and forget the second, because "add login" is a common request and the access rule is a sentence nobody thinks to say.
+In session 2 your team added a login with two roles, rep and manager, and turned on row-level rules so that the database refuses anyone who is not signed in. That is authentication: the app knows who is at the keyboard. It is not the same as authorization: the app deciding what that person is allowed to see and do. Many vibe-coded apps get the first and forget the second, because "add login" is a common request and the access rule is a sentence nobody thinks to say.
 
 For QuoteDesk the rule has two halves. Quote requests are a shared queue that every rep sees, so that anyone can pick up a message that just arrived. Priced quotes, with their discounts, are private to the rep who owns the customer and to Carla, the sales manager. Restaurante Doña Elsa is Paula's customer; Minimarket Los Aromos is Marcos's.
 
-The symptom of a missing rule is easy to test and easy to miss. Log in as Paula, open one of her priced quotes, and look at the address bar. It probably ends in a quote number. Change the number. If the quote for Los Aromos appears, authorization is missing. No hacking skill was involved; a curious rep, or a former employee with an old link, can do it. The address bar tests the pages. The database can also be reached directly with the publishable key from Topic 1, so the test has a second half: ask the assistant to prove that every table refuses reads and writes without a signed-in user, and refuses rows that belong to another rep.
+The symptom of a missing rule is easy to test and easy to miss. Log in as Paula, open one of her priced quotes, and look at the address bar. It probably ends in a quote number. Change the number. If the quote for Los Aromos appears, authorization is missing. No hacking skill was involved; a curious rep, or a former employee with an old link, can do it. The address bar tests the pages. The database can also be reached directly with the publishable key from Topic 1, so the test has a second half. The Class 2 rule only asks "is somebody signed in". Today you tighten it per owner, then ask the assistant to prove that every table still refuses reads and writes without a signed-in user, and now also refuses priced quotes that belong to another rep.
 
 Why does this matter for a food distributor? Priced quotes contain customer names, prices, and negotiated discounts. A rep who can see colleagues' discounts can undercut them, or take the list to a competitor. The quotes also hold personal data of customers, and a company that holds personal data is expected to control who inside it can reach that data and why. What exactly Ley 21.719 requires of Cerro Azul on that point is a question to check with legal; the tests above are ones you can run today.
 
@@ -145,7 +145,7 @@ The fix is a rule enforced on the server and in the database, on every request: 
 ```
 
 ::: {.callout-tip title="In the business"}
-Write the access rules as a table before you ask the assistant: who, what, and whether they can read, create, edit or delete it. For QuoteDesk it fits on five lines: every rep sees the shared queue of requests; a rep sees and edits priced quotes only for their own customers; Carla, the manager, sees all of them and approves discounts; finance reads approved quotes; customers and former employees see nothing. Hand that table to the assistant and ask it to enforce every line on the server and in the database, and to show you a test for each.
+Write the access rules as a table before you ask the assistant: who, what, and whether they can read, create, edit or delete it. For QuoteDesk it fits on four lines: every rep sees the shared queue of requests; a rep sees and edits priced quotes only for their own customers; Carla, the manager, sees all of them and approves discounts; customers and former employees see nothing. Hand that table to the assistant and ask it to enforce every line on the server and in the database, and to show you a test for each.
 :::
 
 ```{=html}
@@ -235,7 +235,7 @@ The question for your team is not "can the model be tricked" (it can) but "what 
 <p class="vc-guide"><strong>Guiding question:</strong> suppose the team's assistant could read the price list, edit customers, send email and place orders. Which of those would you take back before a bad day instead of after it?</p>
 ```
 
-By now three different things at Cerro Azul get called "the AI", and each has its own doors. The building assistant, which your team builds QuoteDesk with, and the assistant a rep such as Paula uses for daily work share what you set up in Class 2: the project instructions, the quote-format skill and one read-only connector to the price list. The model inside QuoteDesk has no skills and no connectors. It acts only through the five tools the app defines for its agentic step: `find_customer`, `read_price_list`, `read_last_orders`, `draft_quote` and `send_quote`.
+By now three different things at Cerro Azul get called "the AI", and each has its own doors. The building assistant, which your team builds QuoteDesk with, and the assistant a rep such as Paula uses for daily work are one assistant app opened in two places. They share the quote-format skill and one read-only connector to the shared Drive folder that holds the price list and the pending-requests file. The project instructions belong to the repository and reach only the building assistant. The model inside QuoteDesk has no skills and no connectors. It acts only through the five tools the app defines for its agentic step: `find_customer`, `read_price_list`, `read_last_orders`, `draft_quote` and `send_quote`.
 
 So there are four kinds of power to govern. A skill is a set of instructions an assistant follows ("the way we format quotes here"). A connector is a door from an assistant into a company system. A tool is a door the app opens for its own model. An agent or an automation is any of them acting in a loop, sometimes at 08:00 with nobody watching. Each one is useful. Each one also widens how far a mistake, or an injected instruction, can travel. Security people call that distance the blast radius.
 
@@ -243,7 +243,7 @@ The principle that controls it is least privilege: every door as small as the jo
 
 | System | The job needs | Why not more |
 |---|---|---|
-| Price list (Drive) | Read | Prices change through finance, not through a quoting tool |
+| Price list (shared Drive folder) | Read | Prices change through finance, not through a quoting tool |
 | Customers (ERP) | Read | The assistant looks customers up; it does not edit them |
 | Quotes (QuoteDesk) | Write | Saving drafts is the job, and a rep reviews every draft |
 | Email | Write, with approval | Nothing reaches a customer without a person |
@@ -262,7 +262,7 @@ Security teams keep a shared list of what goes wrong with applications built on 
 | LLM01 Prompt Injection | A customer message or a returned file that gives orders | Topic 3 |
 | LLM02 Sensitive Information Disclosure | Another customer's prices or contacts appearing in an answer | Topics 2, 3 and 5 |
 | LLM03 Supply Chain | A third-party skill or connector that nobody read | This topic |
-| LLM04 Data and Model Poisoning | A wrong or planted row in the imported price sheet that every quote then trusts | Show the import date; finance owns the sheet |
+| LLM04 Data and Model Poisoning | Tampered data used to train or tune a model, or planted in the documents a retrieval step indexes. QuoteDesk trains nothing; the nearest case is a planted row in the price sheet | Show the import date; finance owns the sheet |
 | LLM05 Improper Output Handling | Saving what the model returns without checking it against the catalog | Topic 3 |
 | LLM06 Excessive Agency | An assistant that can send email or place orders with no approval | This topic |
 | LLM07 System Prompt Leakage | A key or a discount rule written into the instructions, as if nobody could read them | Topic 1: instructions hold no secrets |
@@ -319,9 +319,9 @@ Keep a one-page permissions register: every skill, connector, tool and automatio
 <p class="vc-guide"><strong>Guiding question:</strong> which fields in a QuoteDesk record would Cerro Azul have to answer for if a customer asked "what do you hold about me"?</p>
 ```
 
-A quote record has the customer's business name, the contact person's name, their mobile number, the delivery address, the items, the prices, and the pasted message. Some of those are personal data, and in Chile that now carries weight. Ley 21.719, published on 13 December 2024 and in force from 1 December 2026, modernizes Chile's personal data regime and creates the Agencia de Protección de Datos Personales. It protects natural persons, and it gives them rights over their data: access, rectification, erasure, objection, portability, blocking, and rights about decisions made by automated means, which matters for a tool with a model inside. A tool you build this term will operate under it. Fine amounts, procedures and how the Agencia will set its priorities are details to check with legal before you rely on them.
+A quote record has the customer's business name, the contact person's name, their cell phone number, the delivery address, the items, the prices, and the pasted message. Some of those are personal data, and in Chile that now carries weight. Ley 21.719, published on 13 December 2024 and in force from 1 December 2026, modernizes Chile's personal data regime and creates the Agencia de Protección de Datos Personales. It protects natural persons, and it gives them rights over their data: access, rectification, erasure, objection, portability, blocking, and rights about decisions made by automated means, which matters for a tool with a model inside. A tool you build this term will operate under it. Fine amounts, procedures and how the Agencia will set its priorities are details to check with legal before you rely on them.
 
-Personal data is any information about an identified or identifiable natural person. The contact's name and mobile are personal data. A delivery address is personal data when the customer is a person or a sole trader; you often cannot tell from the record, so treat it as personal. The pasted WhatsApp message often contains more than you expect: a customer mentions a relative, a health condition, a home address. Health details are sensitive data, a category the law protects more strictly. The business name alone usually is not personal data, unless the business is the person, as with a minimarket that trades under its owner's name.
+Personal data is any information about an identified or identifiable natural person. The contact's name and cell phone number are personal data. A delivery address is personal data when the customer is a person or a sole proprietor; you often cannot tell from the record, so treat it as personal. The pasted WhatsApp message often contains more than you expect: a customer mentions a relative, a health condition, a home address. Health details are sensitive data, a category the law protects more strictly. The business name alone usually is not personal data, unless the business is the person, as with a minimarket that trades under its owner's name.
 
 Two principles make the law practical for a prototype. Purpose limitation: you collect data for a stated purpose (preparing a quote) and you do not quietly use it for something else (marketing campaigns, training a model). Minimization and retention: you keep only what the purpose needs, and only for as long as it needs it. A QuoteDesk that keeps every raw WhatsApp message forever "just in case" is a liability, not an asset.
 
@@ -373,7 +373,7 @@ Three things change as usage grows. The model bill grows with the number of call
 
 Two levers cut the model bill without touching the product. Model routing: use a small, cheap model for the easy work (extracting "20 cajas de aceite") and keep the larger model for the hard cases (ambiguous messages, "lo de siempre"). For QuoteDesk this is the big one, and it can cut the bill by more than half. Caching comes in two kinds, and they are easy to confuse. The provider can cache repeated input: the instructions and the product list are the same on every call, and many providers bill that repeated part at a fraction. And the app can answer a repeated question from memory: if the same question about the delivery policy is asked many times a day, ask the model once and reuse the answer. The second kind helps the policy assistant. It does nothing for the extractions, because every customer message is different.
 
-A fourth thing does not scale with users at all: an automation with nobody watching. In Class 3 you scheduled the morning digest of pending quotes for weekdays at 08:00. One run costs about USD 0.04, and a normal month of 22 runs costs about USD 1. Now suppose a change made late in the evening leaves the digest in a retry loop. Between 01:00 and 07:00 it runs about 5,000 times, about USD 200, seven times what QuoteDesk spends in a normal month. A monthly spending limit with an alert turns that night from a disaster into a message. QuoteDesk's limit is USD 50, a little above normal use: the loop stops when the month reaches USD 50. A limit is a seatbelt, not a budget, so raise it on purpose as usage grows. And send the failure alert through a second channel, not the one that just failed: if the digest's email step is what broke, an email will not tell Carla.
+A fourth thing does not scale with users at all: an automation with nobody watching. In Class 3 you scheduled the morning digest of pending quotes for weekdays at 08:00. One run costs about USD 0.04, and a normal month of 22 runs costs about USD 1. Now suppose a change made late in the evening leaves the digest in a retry loop. Between 01:00 and 07:00 it runs about 5,000 times, about USD 200, seven times what QuoteDesk spends in a normal month. A monthly spending limit with an alert turns that night from a disaster into a message. QuoteDesk's limit is USD 50, a little above normal use: the loop stops when the month reaches USD 50. This assumes Cerro Azul's assistants are billed by use on the same company account as QuoteDesk's model. On a flat subscription a runaway task burns the plan's allowance instead, and everyone's assistant stops for the day. Reaching the limit also stops QuoteDesk's own extraction until Carla raises it, which is why the alert matters as much as the limit. A limit is a seatbelt, not a budget, so raise it on purpose as usage grows. And send the failure alert through a second channel, not the one that just failed: if the step that delivers the digest is what broke, the same channel will not tell Carla.
 
 At some scale, cost is not the reason to involve engineering; reliability is. When the app matters to 1,400 users at 8 am, you need monitoring, alerts, someone on call, and a way to roll back in minutes. That is an operations capability, not a feature, and it is the point where a vibe-coded prototype becomes a product someone has to own.
 
@@ -393,18 +393,18 @@ Put a spending limit and an alert on the model account before anyone else uses t
 <div class="vc-quiz-opts">
 <button class="vc-quiz-opt" data-why="The model bill grows, but predictably. You can compute it today, and it arrives as an invoice, not an outage.">The budget: the model bill becomes too large for the company to pay.</button>
 <button class="vc-quiz-opt" data-correct>The app at peak hours, when plan limits and rate limits are crossed.</button>
-<button class="vc-quiz-opt" data-why="A domain costs the same at any usage.">The domain: the renewal price of the address grows with the traffic.</button>
+<button class="vc-quiz-opt" data-why="Quotes are small records. The database stays far below its plan for years; the busiest hour is what breaks first.">The database: it fills up with old quotes and every page becomes slow.</button>
 </div>
 <p class="vc-quiz-fb">Step changes hurt more than linear ones because they arrive as outages, not invoices. Know your plan's limits before you cross them.</p>
 </div>
 <div class="vc-quiz">
 <p class="vc-quiz-q">Which change cuts QuoteDesk's model bill most without changing what reps see?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-correct>Send easy extractions to a small model and answer repeated policy questions from memory.</button>
+<button class="vc-quiz-opt" data-correct>Send the easy extractions to a small model and keep the larger one for the ambiguous messages.</button>
 <button class="vc-quiz-opt" data-why="A larger model raises the cost of every call. It may improve quality, not cost.">Switch every call to the largest model, so that fewer extractions need to be repeated.</button>
 <button class="vc-quiz-opt" data-why="Fewer reps using the tool is a product failure, not a cost strategy.">Ask the reps to paste fewer messages into the app, so that fewer calls are made at all.</button>
 </div>
-<p class="vc-quiz-fb">Most calls are easy, and some questions are repeated. Serve the easy ones cheaply and the repeated ones from memory.</p>
+<p class="vc-quiz-fb">Most extractions are easy. Serve those with the small model and keep the larger one for the messages that need it. Answering from memory only helps where questions repeat, as in the policy assistant.</p>
 </div>
 <div class="vc-quiz">
 <p class="vc-quiz-q">The digest automation looped all night. Which control would have turned the incident into a message on Carla's phone?</p>
@@ -421,7 +421,7 @@ Put a spending limit and an alert on the model account before anyone else uses t
 ## Topic 7 · The build / buy / vibe decision {#topic-7}
 
 ```{=html}
-<p class="vc-guide"><strong>Guiding question:</strong> QuoteDesk works. Should Cerro Azul keep vibe coding it, hand it to engineering, buy a product that does this, or stop?</p>
+<p class="vc-guide"><strong>Guiding question:</strong> QuoteDesk works. Should Cerro Azul keep vibe coding it, hand it to engineering to build properly, buy a product, or stop?</p>
 ```
 
 This is the decision the course has been preparing you for. It is called the build / buy / vibe decision, and it has four possible answers. Keep vibe coding it: the prototype stays as it is, owned by the team that built it, for a small number of users and a limited lifetime. Hand it to engineering to build properly: the prototype proved the idea, and engineering rebuilds or hardens it as a product the company owns and operates. Buy a product: a vendor sells something close enough, and your advantage does not lie in this tool. Or stop: the test showed the idea does not create enough value, and that is a successful experiment too.
@@ -430,9 +430,9 @@ Six criteria separate the answers. Uniqueness: is this workflow specific to Cerr
 
 The criteria push in different directions. High uniqueness pushes away from buying. Many users, sensitive data, a long lifetime and deep integration push away from vibe coding and toward engineering. A low budget pushes toward buying or staying with the prototype. The matrix below makes that explicit. It structures a conversation; it does not replace one.
 
-What a prototype gives you that a slide deck never could is evidence. Reps used it. You know which messages break the extraction. You know the real volume and the real cost. When you hand it to engineering you hand over a working specification: the app, the test set, the risk memo, the permissions register and the build log.
+What a prototype gives you that a slide deck never could is evidence. You timed five requests. You know which messages break the extraction. You know what a call costs. When you hand it to engineering you hand over a working specification: the app, the test set, the risk memo, the permissions register and the build log.
 
-Two questions are easy to skip. Who owns the code the assistant wrote? Usually your organization does, but the answer depends on the terms of the tool you used and on your employment contract, so read both before you build something valuable on a personal account. And can you leave? Check that you can export the code to your own repository and the data out of the managed database. If either stays locked inside one vendor's builder, you are renting the product, not owning it.
+Two questions are easy to skip. Who owns the code the assistant wrote? The tool's terms usually assign the output to you and your employment contract usually passes it to your employer, but whether purely generated code can be protected by copyright at all is unsettled in several countries. Read both documents before you build something valuable on a personal account. And can you leave? Check that you can export the code to your own repository and the data out of the managed database. If either stays locked inside one vendor's builder, you are renting the product, not owning it.
 
 Maintainability deserves its own warning. Vibe-coded apps accumulate code that nobody on the team has read. That is fine while the app is small and the assistant can keep changing it. It becomes a problem when a change breaks something that was working, nobody knows why, and the fix breaks something else. Three habits keep that in check: ask the assistant to write tests for every feature that matters, ask it to keep a short document describing how the app is organized, and keep the app small by saying no to features that are not in the brief.
 
@@ -441,7 +441,7 @@ Maintainability deserves its own warning. Vibe-coded apps accumulate code that n
 ```
 
 ::: {.callout-tip title="In the business"}
-Engineering teams are often skeptical of prototypes built outside their control, sometimes with reason. The way to earn a good handoff is to arrive with the evidence they need, not the code they will replace: the brief, usage numbers, the test set with results, the risk memo with what you found and fixed, and a clear statement of what you need from them. Treat the prototype as the specification, not as the product.
+Engineering teams are often skeptical of prototypes built outside their control, sometimes with good reason. The way to earn a good handoff is to arrive with the evidence they need, not the code they will replace: the brief, the five timed requests, the test set with results, the risk memo with what you found and fixed, and a clear statement of what you need from them. Treat the prototype as the specification, not as the product.
 :::
 
 ```{=html}
@@ -454,7 +454,7 @@ Engineering teams are often skeptical of prototypes built outside their control,
 <button class="vc-quiz-opt" data-correct>Hand it to engineering: the stakes now call for a product with an owner.</button>
 <button class="vc-quiz-opt" data-why="A generic quoting product rarely reads Chilean WhatsApp messages against your price list and policies. Uniqueness is high.">Buy a product: any quoting software on the market will do the same job.</button>
 </div>
-<p class="vc-quiz-fb">The prototype did its job. Its evidence (usage, test set, risk memo) is the handoff package.</p>
+<p class="vc-quiz-fb">The prototype did its job. Its evidence (the timed requests, the test set, the risk memo) is the handoff package.</p>
 </div>
 <div class="vc-quiz">
 <p class="vc-quiz-q">Which is a sign that a vibe-coded app has become hard to maintain?</p>
@@ -469,7 +469,7 @@ Engineering teams are often skeptical of prototypes built outside their control,
 <p class="vc-quiz-q">What is the most valuable thing to hand an engineering team along with the prototype?</p>
 <div class="vc-quiz-opts">
 <button class="vc-quiz-opt" data-why="They will probably rewrite the code. The evidence around it is what they cannot reproduce.">The code, cleaned up and commented, so that they can read it quickly.</button>
-<button class="vc-quiz-opt" data-correct>The brief, usage numbers, test set results, risk memo and build log.</button>
+<button class="vc-quiz-opt" data-correct>The brief, the timed requests, test set results, risk memo and build log.</button>
 <button class="vc-quiz-opt" data-why="A deadline without evidence is what makes engineering teams skeptical of prototypes.">A firm deadline, so that they know how soon the product is expected.</button>
 </div>
 <p class="vc-quiz-fb">A working prototype plus evidence is the best specification a team can receive. The code is the least of it.</p>
@@ -484,14 +484,15 @@ Engineering teams are often skeptical of prototypes built outside their control,
 <p class="vc-lab-t">What your team builds in the next 120 minutes</p>
 <p class="vc-lab-time">Teams of 2 to 3 · the instructor circulates · save a checkpoint after every story that passes, and at least every 20 minutes · the minutes below include a 10-minute break</p>
 <ol>
+<li><strong>Watch the live demo (10 min).</strong> The instructor runs the secrets audit and the address-bar test on a sample app, finds one failure and fixes it.</li>
 <li><strong>Bring the pre-work results (5 min).</strong> Open the <a href="security-checklist.html">security checklist</a> you ran on your own app before the session. List each finding in the build log in one line: what, where, how serious.</li>
 <li><strong>Secrets (10 min).</strong> Ask the assistant to list every key in the app, say which are publishable and which are secret, and show that no secret key is in anything the browser downloads (first prompt below). If one was exposed, rotate it at the provider now, before anything else.</li>
-<li><strong>Authorization (15 min).</strong> Write the access table (who, what, read / create / edit / delete). Hand it to the assistant and ask for enforcement on the server and in the database, plus one test per rule. Then test it yourselves: log in as two users and try to open each other's records by changing the address. Ask the assistant to prove that every table refuses reads and writes without a signed-in user, and refuses another rep's rows.</li>
-<li><strong>Injection (15 min).</strong> Paste the test messages from the simulator into your app's AI feature. Then test the part that reads content you did not write: put one hidden instruction in a note your agentic step reads, or in a file your assistant reads through its connector, and run it. If anything changes beyond the extracted items, apply the three guardrails (second prompt below) and test again.</li>
+<li><strong>Authorization (15 min).</strong> Write the access table (who, what, read / create / edit / delete). Hand it to the assistant and ask for enforcement on the server and in the database, plus one test per rule. This tightens the row-level rules from Class 2, which only checked that somebody was signed in. Then test it yourselves at the public address: log in as two users and try to open each other's records by changing the address. Ask the assistant to prove that every table still refuses reads and writes without a signed-in user, and now refuses another rep's priced quotes.</li>
+<li><strong>Injection (10 min).</strong> Paste the test messages from the simulator into your app's AI feature. Then test the part that reads content you did not write: put one hidden instruction in a note your agentic step reads, or in a file your assistant reads through its connector, and run it. If anything changes beyond the extracted items, apply the three guardrails (second prompt below) and test again.</li>
 <li><strong>Break (10 min).</strong> Leave the laptops.</li>
-<li><strong>Permissions (15 min).</strong> Start the permissions register: every skill, connector, tool and automation, its owner, and what it can read and write. Shrink each grant to what the job needs (third prompt below). Reconnect any connector that signs in with a manager's account. Read every skill you did not write.</li>
-<li><strong>Personal data (15 min).</strong> Up to now your app, test set and prompts held only invented or de-identified messages. This step is what has to be true before real customer data enters. Mark every personal data field in your records. For each, write purpose and retention. Ask the assistant to add a short privacy notice and a "delete this record" routine. Note which model provider and plan you use and what their terms say about retention and training.</li>
-<li><strong>Cost and limits (10 min).</strong> Take your session 3 cost figures and compute 10x and 100x. Set a monthly spending limit a little above normal use, and an alert, on the model account. Give each automation an owner, a log and a failure alert on a second channel. Write down the usage level at which you would revisit the architecture.</li>
+<li><strong>Permissions (15 min).</strong> Start the permissions register: every skill, connector, tool and automation, its owner, and what it can read and write. The building assistant lists the tools the app gives its agentic step; you add your assistants' skills, connectors and scheduled tasks yourselves, from their settings screens. Shrink each grant to what the job needs (third prompt below). Reconnect any connector that signs in with a manager's account. Read every skill you did not write.</li>
+<li><strong>Personal data (10 min).</strong> Up to now your app, test set and prompts held only invented or de-identified messages. This step is one of three conditions before any real customer data enters: this lab done, every critical finding closed, and the written agreement of the organization that owns the data. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade. Mark every personal data field in your records. For each, write purpose and retention. Ask the assistant to add a short privacy notice and a "delete this record" routine. Note which model provider and plan you use and what their terms say about retention and training.</li>
+<li><strong>Cost and limits (10 min).</strong> Take your session 3 cost figures and compute 10x and 100x. Check that the USD 10 monthly spending limit and the email alert from the setup guide are still set on your model account. Give each automation an owner and a log, and check that its failure notification reaches a phone. If you built the morning digest, a view that refreshes by itself and a second alert channel are open items for the risk memo. Write down the usage level at which you would revisit the architecture.</li>
 <li><strong>Maintainability (5 min).</strong> Ask the assistant for a one-page description of how the app is organized and for tests on the two features that matter most. Confirm you can export the code and the data. Save a checkpoint.</li>
 <li><strong>Decide (10 min).</strong> Run the build / buy / vibe matrix for your product as a team, disagree out loud, and record which of the four answers you chose and why.</li>
 <li><strong>Outline the risk memo (5 min).</strong> The memo itself is homework. In class you collect its inputs under six headings: findings and fixes (secrets, authorization, injection), cost at 1x / 10x / 100x and the spending limit, maintainability actions, the build / buy / vibe decision, the five questions for engineering, and what is still open. The memo is two pages. The permissions register and the personal data inventory go with it as one-page annexes.</li>
@@ -509,7 +510,7 @@ Engineering teams are often skeptical of prototypes built outside their control,
 ```
 
 ```{=html}
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · permissions review</div><div class="vc-prompt-b">List everything this project and our assistants can reach: every tool the app gives its agentic step, every connector, every skill and every scheduled task. For each one, tell me in a table: which account it signs in with, what it can read, what it can write, and whether any action happens without a person approving it. Then propose the smallest permission that still does this job: turn a customer message into a draft quote and send it after a rep approves. Do not change anything yet. Show me the table and the proposed changes, and wait for my answer.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · permissions review</div><div class="vc-prompt-b">List every tool the app gives its agentic step. I will add our assistants' skills, connectors and scheduled tasks myself from their settings screens. For each tool, tell me in a table: which key or account it uses, what it can read, what it can write, and whether any action happens without a person approving it. Then propose the smallest permission that still does this job: turn a customer message into a draft quote and send it after a rep approves. Do not change anything yet. Show me the table and the proposed changes, and wait for my answer.</div></div>
 ```
 
 ```{=html}
@@ -524,13 +525,13 @@ Engineering teams are often skeptical of prototypes built outside their control,
 <li>Every secret key lives in a server environment variable, and the assistant showed evidence that none is in what the browser downloads.</li>
 <li>Any key that was exposed has been rotated at the provider.</li>
 <li>The access table is written, and every rule is enforced on the server and in the database with a test.</li>
-<li>We tried to open another user's record by changing the address and were refused, and the database refuses requests with no signed-in user.</li>
+<li>We tried to open another user's record by changing the address and were refused, and the database refuses requests with no signed-in user and another rep's priced quotes.</li>
 <li>The injection tests, including a hidden line in content a tool or connector returns, produce only extracted items and no action.</li>
 <li>Discounts, approvals and outgoing emails need a person.</li>
 <li>The permissions register lists every skill, connector, tool and automation with its owner, and each grant is the smallest that does the job.</li>
 <li>No connector signs in with a manager's account, and we have read every skill we did not write.</li>
 <li>Personal data fields are inventoried with purpose and retention; a privacy notice and a delete routine exist; we know our provider's terms on retention and training.</li>
-<li>A monthly spending limit and an alert are set on the model account, and every automation has an owner, a log and a failure alert on a second channel.</li>
+<li>The USD 10 monthly spending limit and its alert are set on our model account, and every automation has an owner, a log and a failure notification that reaches a phone.</li>
 <li>Cost at 1x, 10x and 100x is written down, with the level at which we revisit the architecture.</li>
 <li>The build / buy / vibe decision is recorded, and the inputs for the risk memo and its two annexes are in the build log.</li>
 </ul>
@@ -538,7 +539,7 @@ Engineering teams are often skeptical of prototypes built outside their control,
 
 ## Critique and reflection
 
-The critique block is a simulated handoff. One team presents its product to another team acting as Cerro Azul's engineering department, in eight minutes: the brief, the usage so far, the test set results, the main findings and fixes for the risk memo, the permissions register, and the build / buy / vibe decision. The engineering team asks the five questions from the decision simulator and any others they would ask before taking ownership. The class applies the [rubric](rubric.html) with communication as the criterion in focus: did the presenting team give evidence, not reassurance, and did they adapt the message to a technical audience?
+The critique block is a simulated handoff. One team presents its product to another team acting as Cerro Azul's engineering department, in eight minutes: the brief, the five timed requests (or your plan for them), the test set results, the main findings and fixes for the risk memo, the permissions register, and the build / buy / vibe decision. The engineering team asks the five questions from the decision simulator and any others they would ask before taking ownership. The class applies the [rubric](rubric.html) with communication as the criterion in focus: did the presenting team give evidence, not reassurance, and did they adapt the message to a technical audience?
 
 Reflection prompt for the build log: what did you find in your own app today that you did not know was there, and what question would have surfaced it a week earlier?
 

@@ -45,7 +45,7 @@ toc: false
 
 ## The course in one paragraph
 
-Vibe coding, building software by describing intent to an AI and iterating on what it produces, has collapsed the cost of a working prototype from weeks of engineering to hours of a manager's time. This elective puts that capability in the hands of MBA students with no programming background. Over five 4-hour workshops, teams take one real problem from their own organizations to a deployed web application with an integrated language-model capability. Along the way they teach the assistant how their organization works with skills, connect it to company systems, let it act as an agent with their approval, and set one automation running. They then evaluate the security, privacy, cost and maintainability risks of what they built, make the build / buy / vibe decision (keep vibe coding it, hand it to engineering, buy a product, or stop), and present a working product and business case to a panel on Demo Day.
+Vibe coding, building software by describing intent to an AI and iterating on what it produces, has collapsed the cost of a working prototype from weeks of engineering to hours of a manager's time. This elective puts that capability in the hands of MBA students with no programming background. Over five 4-hour workshops, teams take one real problem from their own organizations to a deployed web application with an integrated language-model capability. Along the way they teach the assistant how their organization works with skills, connect it to company systems, let it act as an agent with their approval, and set one automation running. They then evaluate the security, privacy, cost and maintainability risks of what they built, make the build / buy / vibe decision (keep vibe coding it, hand it to engineering to build properly, buy a product, or stop), and present a working product and business case to a panel on Demo Day.
 
 ## Who it is for
 
@@ -55,12 +55,16 @@ MBA students and managers who need to test ideas, specify what they need from te
 
 | | |
 |---|---|
-| Web pages and apps | A deployed application with login and real data, and a public page that explains it |
+| Web pages and apps | A deployed application with login and stored data, and a public page that explains it |
 | Skills | "How we do it here" packaged so the assistant repeats it |
 | Connectors (MCP) | Scoped access to company systems, read before write |
 | Agents | A model that takes steps with tools and waits for approval |
 | Automations | Work that starts on a schedule, with an owner and a log |
 | Presentations | A Demo Day deck generated from the evidence and verified by the team |
+
+## The data rule
+
+Until your team has completed the session 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade.
 
 ## What students leave with
 

@@ -250,7 +250,7 @@ How to use this page
 <li>The “In the business” note says why the idea matters to a manager, not to a programmer.</li>
 <li>The practice questions explain why each wrong option is wrong. Retry as often as you like.</li>
 <li>The build lab is what your team does in class. Its prompts are meant to be copied and adapted, and the checklist is saved in your browser.</li>
-<li>Data rule: until your team has completed the Class 4 lab, use only invented or de-identified messages. No real names, phones, addresses or tax numbers in the app, in the test set or in any prompt.</li>
+<li>Data rule: only invented or de-identified information until the session 4 lab is done, critical findings are closed and the data’s owner has agreed in writing. No real names, phone numbers, addresses or tax numbers in the app, in the test set or in any prompt.</li>
 </ul>
 </div>
 </div>
@@ -360,17 +360,18 @@ In the business
 <h2 class="anchored" data-anchor-id="topic-2">Topic 2 · Small steps, checkpoints and undo</h2>
 <p class="vc-guide"><strong>Guiding question:</strong> how do you make it safe, and fast, to break the app?</p>
 <p>Every first-time builder repeats one pattern. Confidence is high, so the team pastes a single request: login, customer list, quote form, PDF export, email notification, dashboard. The assistant produces something that mostly runs. Then the login breaks the list, the PDF breaks the form, and nobody knows which of the six changes caused which of the four problems.</p>
-<p>The alternative is boring and it works: <strong>one story per request</strong>. Ask for the customer picker. Use the app as Paula would, on a phone. If it works, save a checkpoint. If it does not, you know what broke, because only one thing changed.</p>
+<p>The alternative is boring and it works: <strong>one story per request</strong>. Ask for the customer picker. Use the app as Paula would, in a phone-sized window on your laptop (your browser can show any page at a phone’s width). If it works, save a checkpoint. If it does not, you know what broke, because only one thing changed.</p>
 <div class="vc-widget" data-widget="c2-steps"></div>
 <p>The rule has a second half: <strong>test by using, not by reading</strong>. You are not going to read the code and you do not need to. Do the rep’s task end to end, including the cases that should fail. When something looks wrong, ask: <em>what did you change and why?</em> The answer is written in plain language, and it is often where you find the gap in your criteria.</p>
 <p>Small steps are only cheap if going back is cheap. Software teams solve that with <strong>version control</strong> (the usual tool is Git, with the history kept online on GitHub). You will use it through the assistant, so you need three ideas, not the commands:</p>
 <ul>
-<li>A <strong>checkpoint</strong> (a commit) is a named snapshot of the whole app at a moment it worked. “Customer picker working” is a good name. Save one after every story that passes your test, and at least every 20 minutes.</li>
+<li>A <strong>checkpoint</strong> (a commit) is a named snapshot of the whole app at a moment it worked. In this course, saving a checkpoint always includes sending it to GitHub, which is what updates your public address a minute later. “Customer picker working” is a good name. Save one after every story that passes your test, and at least every 20 minutes.</li>
 <li>A <strong>branch</strong> is an experiment: a copy where you try something risky without touching the version that works. If it is good you <strong>merge</strong> it. If not, you discard it and nothing happened.</li>
 <li><strong>Rollback</strong> returns the app to any earlier checkpoint, in seconds. The worst case of a bad request becomes “go back twenty minutes”.</li>
 </ul>
 <p>Rollback has a limit worth knowing before you rely on it. It restores the code. It does not restore what is in the database, emails that were already sent, or what customers already saw. A change that deletes or rewrites data needs its own care: ask the assistant what the change does to existing rows before you approve it.</p>
 <p>You ask for all of it in plain language: <em>save a checkpoint called “login working”</em>, <em>start a branch to try a new layout</em>, <em>go back to the checkpoint before the PDF export</em>.</p>
+<p>That gives every test in the lab one of two places. <strong>On your laptop</strong>, before the checkpoint: the app runs on your own machine and only you can see it. <strong>At the public address</strong>, after the checkpoint: a phone or a second device can open it, about a minute later. A test on a real phone always belongs to the second kind.</p>
 <div class="vc-widget" data-widget="c2-commits"></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="In the business">
 <div class="callout-header d-flex align-content-center">
@@ -481,7 +482,7 @@ In the business
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Trust can be measured: how often reps edit a proposed line, how often they give up and retype, how many wrong deliveries trace back to a quote. The correction button gives you that data for free, and in session 3 those corrections become your test set.</p>
+<p>Trust can be measured: how often reps edit a proposed line, how often they give up and retype, how many wrong deliveries trace back to a quote. Once reps use the tool, the correction button gives you that data for free, and the corrections become new examples for the test set you start in session 3.</p>
 </div>
 </div>
 
@@ -533,29 +534,30 @@ In the business
 <td><strong>The building assistant</strong></td>
 <td>The agentic coding assistant your team builds QuoteDesk with</td>
 <td>Your team, while building</td>
-<td>The repository, plus the project instructions, skills and connectors you give it</td>
+<td>The repository and its project instructions, plus the assistant’s own skills and connectors</td>
 </tr>
 <tr class="even">
 <td><strong>A rep’s assistant</strong></td>
 <td>The assistant Paula or Carla uses directly for daily work: drafting a quote, summarizing calls, the morning digest</td>
 <td>A rep or a manager, every day</td>
-<td>The same skills and connectors, with that person’s own access</td>
+<td>The same skills and connectors, with that person’s own access. Not the project instructions</td>
 </tr>
 <tr class="odd">
 <td><strong>The model inside QuoteDesk</strong></td>
-<td>The model that the deployed app calls through an API</td>
+<td>The model that the deployed app calls through an API (an API is the door through which one program asks another for a service)</td>
 <td>Nobody directly; the app calls it</td>
 <td>Only what the app sends it, and only the tools the app defines. No skills, no connectors</td>
 </tr>
 </tbody>
 </table>
-<p>The consequence matters for your milestone. Everything in this topic and the next extends the first two: the skill and the connector you deliver in M2 belong to your team’s assistants, not to the deployed app. QuoteDesk itself cannot open a skill or pass through a connector. In session 3 it gets its prices from its own products table, imported from the price sheet.</p>
+<p>In this course one assistant app plays both parts: opened on the repository it is the building assistant; opened anywhere else it is your rep’s assistant.</p>
+<p>The consequence matters for your milestone. Everything in this topic and the next extends the first two, never the deployed app. The project instructions belong to the repository and reach only the building assistant. The skill and the connector you deliver in M2 belong to the assistant itself and work in any conversation. QuoteDesk cannot open a skill or pass through a connector. In session 3 it gets its prices from its own products table, imported from the price sheet.</p>
 </section>
 <section id="project-instructions-and-skills" class="level3">
 <h3 class="anchored" data-anchor-id="project-instructions-and-skills">Project instructions and skills</h3>
 <p>The assistant starts every session knowing nothing about Cerro Azul. It does not know that a quote request is not a quote, that a <em>caja</em> of aceite holds 12 bottles, or that only Carla approves discounts. So far you have repeated these things in every prompt. There are two better places to put them, and they do different jobs.</p>
-<p><strong>Project instructions</strong> are a plain-text file in the project that the assistant reads at the start of every session. Different tools give it different names (for example <code>CLAUDE.md</code> or <code>AGENTS.md</code>); the idea is the same. It holds what is always true: what the product is, your vocabulary, the rules (“one story per change”, “all money in CLP without decimals”, “ask before touching the login”) and how you want changes reported. Because it is always loaded, every line is paid for in every session. Keep it under a page.</p>
-<p><strong>Skills</strong> hold procedures that are needed only sometimes. A skill is a folder with a file called <code>SKILL.md</code>: a name, a one-line description that says when to use it, and the steps. It can carry other files too: a template, examples, even small scripts. The assistant sees only the names and descriptions of your skills until a request matches one, and then it opens that folder and follows it. This is called progressive disclosure, and it is why twenty installed skills cost almost nothing until one is used. The format was published as an open standard in December 2025 and dozens of assistants and coding tools support it, so a skill written for one tool usually works in another.</p>
+<p><strong>Project instructions</strong> are a plain-text file in the project that the assistant reads at the start of every session. Different tools give it different names (for example <code>CLAUDE.md</code> or <code>AGENTS.md</code>); the idea is the same. It holds what is always true: what the product is, your vocabulary, the rules (“one story per change”, “all money in CLP without decimals”, “ask before touching the login”) and how you want changes reported. Because it is always loaded, every line is paid for in every session. Keep it under a page. It lives in the repository, so only the building assistant reads it.</p>
+<p><strong>Skills</strong> hold procedures that are needed only sometimes. A skill is a folder with a file called <code>SKILL.md</code>: a name, a one-line description that says when to use it, and the steps. It can carry other files too: a template, examples, even small scripts. The assistant sees only the names and descriptions of your skills until a request matches one, and then it opens that folder and follows it. This is called progressive disclosure, and it is why twenty installed skills cost almost nothing until one is used. The format was published as an open standard in December 2025 and dozens of assistants and coding tools support it, so a skill written for one tool usually works in another. In this course you keep your skill among the assistant’s own skills, not inside the QuoteDesk repository, so that it is available in any conversation.</p>
 <table class="table">
 <colgroup>
 <col style="width: 25%">
@@ -683,7 +685,7 @@ In the business
 <li><strong>One system at a time.</strong> Add a door, use it for a week, then add the next. If five open at once you cannot tell which one caused the problem.</li>
 <li><strong>What comes back is data, not instructions.</strong> A document or an email fetched through a connector may contain text that looks like an order. Session 4 shows what happens when the assistant obeys it.</li>
 </ol>
-<p>Skills and connectors complete each other. The skill is <em>how we write a quote</em>. The connector is <em>where the prices are</em>. With both, Paula’s one-line request to her assistant produces a quote in the house format with real prices. Remember whose doors these are: they belong to the team’s assistants. The deployed QuoteDesk does not pass through them.</p>
+<p>Skills and connectors complement each other. The skill is <em>how we write a quote</em>. The connector is <em>where the prices are</em>. With both, Paula’s one-line request to her assistant produces a quote in the house format with prices read from the list, not guessed. Remember whose doors these are: they belong to the team’s assistants. The deployed QuoteDesk does not pass through them.</p>
 <div class="vc-widget" data-widget="c2-mcp"></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="In the business">
 <div class="callout-header d-flex align-content-center">
@@ -722,7 +724,7 @@ In the business
 <p class="vc-quiz-q">Paula connects her assistant to Drive by signing in with her own account. What can the assistant read?</p>
 <div class="vc-quiz-opts">
 <button class="vc-quiz-opt" data-why="Access follows the person who signed in. Folders Paula cannot open stay closed to her assistant.">Everything in Cerro Azul's Drive, because the connector belongs to the company account.</button>
-<button class="vc-quiz-opt" data-correct="">At most what Paula herself can open, which is a good deal more than the price list.</button>
+<button class="vc-quiz-opt" data-correct="">At most what Paula herself can open, which may be far more than the price list.</button>
 <button class="vc-quiz-opt" data-why="The sign-in grants access to her account, not to one file. Unless the connector is limited to a folder, everything she can open is in reach.">Only the price list, because that is the one file she asked the assistant about.</button>
 </div>
 <p class="vc-quiz-fb">The assistant can reach at most what Paula can open, narrowed by the permissions the connector asks for. If that is too wide, share a single folder with a dedicated account, or limit the connector to that folder.</p>
@@ -733,20 +735,21 @@ In the business
 <h2 class="anchored" data-anchor-id="lab">Build lab · QuoteDesk v1, one skill, one connector</h2>
 <div class="vc-lab">
 <p class="vc-lab-t">What your team builds in the next 120 minutes</p>
-<p class="vc-lab-time">Teams of 2 to 3 · the instructor circulates · minutes in brackets are a guide and include a 10-minute break · save a checkpoint after every story that passes, and at least every 20 minutes</p>
+<p class="vc-lab-time">Teams of 2 to 3 · the instructor circulates · minutes in parentheses are a guide and include a 10-minute break · save a checkpoint after every story that passes, and at least every 20 minutes · a checkpoint always goes to GitHub</p>
 <ol>
+<li><strong>Watch the live demo (10).</strong> The instructor adds the database and the login to a v0 in two separate requests, tests each on the laptop, saves a checkpoint, and shows the public address updating. One change goes wrong on purpose and is rolled back.</li>
 <li><strong>Open the project you prepared (5).</strong> Before class you followed the <a href="setup.html">setup guide</a>: QuoteDesk v0 is in a GitHub repository, it opens in the building assistant, and an empty database project exists. Confirm that the repository is private. Ask the assistant to save a first checkpoint called "v0 from session 1" and check that it appears in the repository's history. If your setup is not finished, tell the instructor now and start from the template repository.</li>
 <li><strong>Write the project instructions file (10).</strong> Use the first prompt below. Read what the assistant proposes, cut it to under 40 lines, and save it. From now on you stop repeating these rules.</li>
 <li><strong>Write the first story with criteria (10).</strong> In your shared document, write the user story for saving a quote request with 3 to 6 acceptance criteria: the fields, the rules, the failure case, the device. Paste it as one request. Nothing else in the same message.</li>
-<li><strong>Test by using, then checkpoint (10).</strong> Paste a realistic message with names and numbers changed, pick a customer, save. Try an empty message. Try it on a phone. If something fails, ask "what did you change and why?" and fix the criteria before asking for a fix. When it passes, save a checkpoint named after what works.</li>
-<li><strong>Add the database (15).</strong> Use the database prompt below: quote requests go into the database project from the setup guide, with the same fields. The connection keys are already in the project's settings, so nobody pastes a key into the chat. Test: save, refresh, the request is still there; open the app on a second device, it is there too. Save the checkpoint "database working".</li>
-<li><strong>Add the login, as its own request (15).</strong> Use the login prompt below: sign-in with email and password, a password reset, two roles (rep and manager, with Carla's account as the manager), and each request tied to the rep who created it. Test with two rep accounts and signed out. Save the checkpoint "login working".</li>
+<li><strong>Test by using, then checkpoint (10).</strong> On your laptop: paste a realistic message with names, phone numbers and addresses changed, pick a customer, save. Try an empty message. Try it in a phone-sized window on your laptop. If something fails, ask "what did you change and why?" and fix the criteria before asking for a fix. When it passes, save a checkpoint named after what works, wait for the public address to update, and repeat the test there on a real phone.</li>
+<li><strong>Add the database (10).</strong> Use the database prompt below: quote requests go into the database project from the setup guide, with the same fields. The project address and the publishable key are already in the project's settings, and the secret key is only on the hosting platform, so nobody pastes a key into the chat. Test on your laptop: save, refresh, the request is still there. Save the checkpoint "database working". Then open the public address on a second device: the request is there too.</li>
+<li><strong>Add the login, as its own request (15).</strong> Use the login prompt below: sign-in with email and password, a password reset, two roles (rep and manager, with Carla's account as the manager), and each request tied to the rep who created it. The same prompt turns on row-level rules, so that the database itself refuses anyone who is not signed in; ask to see the refusals. Test on your laptop with two rep accounts and signed out. Save the checkpoint "login working", then sign in at the public address from a phone.</li>
 <li><strong>Break (10).</strong> Stand up. Leave the laptop open on the last checkpoint.</li>
-<li><strong>Break something on purpose, roll back, try a branch (10).</strong> Ask for a risky change you do not need, such as "replace the list with a calendar view". Confirm it changed something you did not want, roll back to the last checkpoint and confirm the app is exactly as before, and notice that the requests in the database were not touched by the rollback. Then let one teammate try a new list layout on a branch, and merge it only if it passes the test. The rollback is graded.</li>
+<li><strong>Break something on purpose, roll back, try a branch (10).</strong> Ask for a risky change you do not need, such as "replace the list with a calendar view". Confirm on your laptop that it changed something you did not want, roll back to the last checkpoint and confirm the app is exactly as before, and notice that the requests in the database were not touched by the rollback. Then let one teammate try a new list layout on a branch, and merge it only if it passes the test. The rollback counts for M2: the repository history must show it.</li>
 <li><strong>Apply two UX patterns (5).</strong> In one request, add the honest empty state ("no requests yet, paste a message to start") and a loading state while the queue is fetched. Note in your build log which patterns from topic 4 you chose and why.</li>
-<li><strong>Create the quote-format skill and prove it triggers (15).</strong> Use the skill prompt below with your own format. Start a new session, ask for a quote without mentioning the skill, and check that the output follows your template. Then ask for something unrelated and check that the skill stays closed.</li>
+<li><strong>Create the quote-format skill and prove it triggers (10).</strong> Use the skill prompt below with your own format. It is a personal skill of your assistant, not a folder in the QuoteDesk repository. Start a new conversation outside the repository, ask for a quote without mentioning the skill, and check that the output follows your template. Take a screenshot for M2. Then ask for something unrelated and check that the skill stays closed.</li>
 <li><strong>Connect the price list, read-only (10).</strong> Put your price list in a shared folder (a sheet with 20 rows is enough, with invented prices if yours are confidential), switch on the connector for it in your assistant with read access only, and run the connector test prompt. Check the answer against the sheet with your own eyes and take a screenshot for M2.</li>
-<li><strong>Deploy and share (5).</strong> Publish the app following the hosting section of the <a href="setup.html">setup guide</a>, open it on a phone, and paste the URL, the repository link and the checkpoint list into your team's M2 document.</li>
+<li><strong>Check the public address and share (5).</strong> Confirm that the public address shows your last checkpoint (the hosting section of the <a href="setup.html">setup guide</a> explains how it updates), open it on a phone, and paste the address, the repository link and the checkpoint list into your team's M2 document.</li>
 </ol>
 </div>
 <p>Six prompts to adapt. Start with the difference between a request that produces surprises and the same story written so the assistant does not have to guess.</p>
@@ -754,15 +757,15 @@ In the business
 <div class="is-weak"><p>Weak request</p><p>Add a way to save quote requests and make a nice list. Also add login and a database and make it work on mobile.</p></div>
 <div class="is-strong"><p>Strong request</p><p>One story, with the fields, the rules, the failure case and the device named. The database comes as its own request after this one passes, and the login after that.</p></div>
 </div>
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · project instructions (step 2)</div><div class="vc-prompt-b">Create the project instructions file for this repository, using the file name you read at the start of every session. Keep it under 40 lines. Include:
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · project instructions (step 3)</div><div class="vc-prompt-b">Create the project instructions file for this repository, using the file name you read at the start of every session. Keep it under 40 lines. Include:
 
 What this is: QuoteDesk, an internal tool for Cerro Azul's 14 sales reps to turn pasted customer messages into quote requests.
 Vocabulary: a quote request is the customer's message saved against a customer; a quote is the priced answer. Keep product units as written (caja, saco); never convert them.
-Rules: one user story per change. Do not add features I did not ask for. All money in CLP without decimals. Dates as day-month-year. Ask before changing the login or the structure of the database. Never write a key or a password into a file. Use only invented or de-identified customer data. After each story I confirm works, save a checkpoint named after what works.
-Reporting: after every change, tell me in plain language what you changed and how to test it on a phone.
+Rules: one user story per change. Do not add features I did not ask for. All money in CLP without decimals. Dates as day-month-year. Ask before changing the login or the structure of the database. Never write a key or a password into a file. Use only invented or de-identified customer data. After each story I confirm works, save a checkpoint named after what works. A checkpoint means: commit and push to GitHub. Tell me when the public address has updated.
+Reporting: after every change, tell me in plain language what you changed and how to test it on my laptop, in a phone-sized window.
 
 Show me the file before you save it.</div></div>
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · story 1 (step 3)</div><div class="vc-prompt-b">User story: as a Cerro Azul sales rep using a phone between visits, I want to paste a customer's WhatsApp message and save it as a quote request for one customer, so that I stop retyping it into the ERP.
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · story 1 (step 4)</div><div class="vc-prompt-b">User story: as a Cerro Azul sales rep using a phone between visits, I want to paste a customer's WhatsApp message and save it as a quote request for one customer, so that I stop retyping it into the ERP.
 
 Acceptance criteria:
 1. The customer is chosen from the existing customer list (search by name), not typed freely.
@@ -772,37 +775,38 @@ Acceptance criteria:
 5. The list and the form work on a phone screen without sideways scrolling.
 
 Build only this. When done, tell me in plain language what you changed.</div></div>
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · database (step 5, after story 1 passes)</div><div class="vc-prompt-b">Store quote requests in the database project that is already connected to this repository, with the same fields: customer, message, date and time created, rep name, status. The connection keys are in the project's settings. Do not ask me to paste them here and do not write them into any file the browser downloads. Do not change the form or the list. Build only this, and tell me how to test it from two devices.</div></div>
-<div class="vc-prompt is-ai"><div class="vc-prompt-h">The assistant, a good reply</div><div class="vc-prompt-b">Done. Quote requests are now saved in the database with the five fields you listed. I read the connection keys from the project's settings and wrote none of them into the page. To test: save a request and refresh, it is still there; open the app on a second device, it is there too. I did not touch the form or the list. Tell me when it passes and I will save the checkpoint "database working".</div></div>
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · login (step 6, after the database passes)</div><div class="vc-prompt-b">Add sign-in for reps with email and password, and a password reset. There are two roles: rep and manager. Carla's account is the manager; every other account is a rep. Each quote request is tied to the rep who created it and shows that rep's name. After signing in, every rep sees the shared queue of quote requests, newest at the top. Someone who is not signed in sees only the sign-in screen. Do not change the form or the layout of the list. Build only this, and tell me how to test it with two rep accounts and signed out.</div></div>
-<div class="vc-prompt is-ai"><div class="vc-prompt-h">The assistant, a good reply</div><div class="vc-prompt-b">Done. I added sign-in with email and password and a reset link, and two roles: Carla's account is the manager, the others are reps. Each saved request carries the signed-in rep and shows the name in the queue. To test: create two rep accounts, save one request from each, and confirm both appear in the queue under the right name; then sign out and confirm you see only the sign-in screen. I did not touch the form or the layout. Tell me when it passes and I will save the checkpoint "login working".</div></div>
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the skill (step 10)</div><div class="vc-prompt-b">Create a skill called quote-format in this project's skills folder.
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · database (step 6, after story 1 passes)</div><div class="vc-prompt-b">Store quote requests in the database project that is already connected to this repository, with the same fields: customer, message, date and time created, rep name, status. The project address and the publishable key are in the project's settings; the publishable key may reach the browser. Do not ask me for any secret key and do not use one. Do not change the form or the list. Build only this, and tell me how to test it on my laptop, and then from a second device at the public address.</div></div>
+<div class="vc-prompt is-ai"><div class="vc-prompt-h">The assistant, a good reply</div><div class="vc-prompt-b">Done. Quote requests are now saved in the database with the five fields you listed. I used the project address and the publishable key from the project's settings and no secret key. To test on your laptop: save a request and refresh, it is still there. I did not touch the form or the list. Tell me when it passes and I will save the checkpoint "database working" and push it to GitHub. About a minute later, open the public address on a second device: the request is there too.</div></div>
+
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · login (step 7, after the database passes)</div><div class="vc-prompt-b">Add sign-in for reps with email and password, and a password reset. There are two roles: rep and manager. Carla's account is the manager; every other account is a rep. Each quote request is tied to the rep who created it and shows that rep's name. After signing in, every rep sees the shared queue of quote requests, newest at the top. Someone who is not signed in sees only the sign-in screen. Then turn on row-level rules in the database so that every table refuses reads and writes when nobody is signed in. Run that test and show me the refusals. Do not change the form or the layout of the list. Build only this, and tell me how to test it on my laptop with two rep accounts and signed out.</div></div>
+<div class="vc-prompt is-ai"><div class="vc-prompt-h">The assistant, a good reply</div><div class="vc-prompt-b">Done. I added sign-in with email and password and a reset link, and two roles: Carla's account is the manager, the others are reps. Each saved request carries the signed-in rep and shows the name in the queue. To test: create two rep accounts, save one request from each, and confirm both appear in the queue under the right name; then sign out and confirm you see only the sign-in screen. I turned on row-level rules: with no signed-in user, reading and writing the quote requests table are both refused, and the two refusals are shown below. I did not touch the form or the layout. Tell me when it passes and I will save the checkpoint "login working" and push it.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the skill (step 11)</div><div class="vc-prompt-b">Create a skill called quote-format as a personal skill of this assistant, not inside the QuoteDesk repository, so that it is available in any conversation.
 
 Description, written so that you will find it: "Drafts or checks a Cerro Azul quote in the house format. Use whenever I ask for a quote, cotización or price offer for a customer, or paste a quote request."
 
 Instructions:
-1. Find the customer in the customer list. If there is no match, stop and ask me.
+1. Use the customer name I give you. If I give none, stop and ask me.
 2. One line per product: code, name, quantity, unit, list price in CLP.
 3. Mark any line you are not sure about with CHECK and say why.
 4. Never apply a discount. Discounts need Carla's approval.
 5. Fill template.md and compare with the example before answering.
 
-Add template.md with our header, the product lines and the delivery note, and one worked example made from the request I paste below. Then tell me how to check, in a new session, that the skill loads without my naming it.</div></div>
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · connector test (step 11)</div><div class="vc-prompt-b">Using the price list connector, tell me the list price of aceite 900 cc, caja de 12, and name the file and the row where you found it. Do not change anything in the file. If you cannot find the product, say so. Do not estimate a price.</div></div>
+Add template.md with our header, the product lines and the delivery note, and one worked example made from the request I paste below. Then tell me how to check, in a new conversation, that the skill loads without my naming it.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · connector test (step 12)</div><div class="vc-prompt-b">Using the price list connector, tell me the list price of aceite 900 cc, caja de 12, and name the file and the row where you found it. Do not change anything in the file. If you cannot find the product, say so. Do not estimate a price.</div></div>
 <p>Your lab checklist. It stays saved in this browser.</p>
 <ul class="vc-checklist" id="lab-checklist">
 <li>The project is in a private repository, opens in the building assistant, and has a first checkpoint.</li>
 <li>The project instructions file exists, is under 40 lines, and the team has read it.</li>
 <li>Story 1 was written with 3 to 6 acceptance criteria before asking the assistant.</li>
-<li>Story 1 was tested by using: a realistic message with names changed, an empty message, a phone.</li>
+<li>Story 1 was tested on the laptop with a realistic message (names, phone numbers and addresses changed) and an empty message, then on a phone at the public address.</li>
 <li>Quote requests are in the database: they survive a refresh and show on a second device.</li>
-<li>Sign-in works with two rep accounts, signed-out visitors see nothing, and each request shows its rep.</li>
+<li>Sign-in works with two rep accounts, signed-out visitors see nothing, each request shows its rep, and the database itself refuses a request with no signed-in user.</li>
 <li>One risky change was made on purpose and rolled back to a checkpoint.</li>
 <li>One experiment was tried on a branch and merged or discarded.</li>
 <li>The honest empty state and the loading state are in the app.</li>
-<li>The quote-format skill triggers in a new session without being named, and stays closed for an unrelated request.</li>
+<li>The quote-format skill triggers in a new conversation without being named, and stays closed for an unrelated request.</li>
 <li>One connector is on in the team's assistant, read-only, and its answer was checked against the source.</li>
-<li>The app is deployed and opened on a phone, no key was pasted into a chat, and every build log is up to date.</li>
+<li>The public address shows the last checkpoint and opens on a phone, no secret key was pasted into a chat, and every build log is up to date.</li>
 </ul>
 </section>
 <section id="critique-and-reflection" class="level2">
@@ -816,22 +820,23 @@ Add template.md with our header, the product lines and the delivery note, and on
 <ul>
 <li>the deployed prototype v1, with sign-in and persistent data;</li>
 <li>three working user stories with their acceptance criteria;</li>
-<li>the link to the private repository, with named checkpoints;</li>
-<li>the project instructions file and one skill for your team’s assistant (quote-format, or the equivalent for your case);</li>
+<li>the link to the private repository, with named checkpoints and one rollback in its history;</li>
+<li>the project instructions file in the repository;</li>
+<li>one skill for your team’s assistant (quote-format, or the equivalent for your case), with a screenshot of it triggering;</li>
 <li>one read-only connector for your team’s assistant, with a screenshot of its test;</li>
 <li>each member’s build log.</li>
 </ul>
-<p>Pre-work for session 3: read the Class 3 page (about 95 minutes) and Anthropic’s <em>Building effective agents</em> (about 20 minutes). Then collect 20 to 30 messages that your AI feature will receive: real ones, de-identified, or realistic ones, each with the items a careful rep would extract from it. This becomes your test set.</p>
+<p>Pre-work for session 3: read the Class 3 page (about 100 minutes) and Anthropic’s <em>Building effective agents</em> (about 20 minutes). Complete the section “Before session 3” of the <a href="setup.html">setup guide</a> (about 25 minutes): a developer account with the model provider, a monthly spending limit, and one key typed only into your hosting platform. Then collect 20 to 30 messages that your AI feature will receive: real ones with names, phone numbers and addresses changed, or realistic ones you write, each with the items a careful rep would extract from it. This becomes your test set.</p>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <ul>
 <li>The assistant builds what you specify and guesses the rest. Three to six acceptance criteria remove the guesses.</li>
 <li>One story per request. Test by using, not by reading. Ask “what did you change and why?”</li>
-<li>A checkpoint is a state that worked, with a name. A branch is an experiment that cannot break the working app. Rollback makes small steps cheap, and it restores the code, not the data or the emails already sent.</li>
+<li>A checkpoint is a state that worked, with a name, sent to GitHub; that is what updates the public address. Test on your laptop before it and at the public address after it. A branch is an experiment that cannot break the working app. Rollback makes small steps cheap, and it restores the code, not the data or the emails already sent.</li>
 <li>Data for two or more people belongs in a managed database with a login. Authentication is “who are you”; authorization comes in session 4.</li>
 <li>Four UX patterns for output that is sometimes wrong: visible confidence, streaming, honest errors, user correction.</li>
-<li>Three things are called “the AI”: the building assistant, a rep’s assistant, and the model inside QuoteDesk. Skills and connectors extend the first two, never the deployed app.</li>
+<li>Three things are called “the AI”: the building assistant, a rep’s assistant, and the model inside QuoteDesk. Project instructions live in the repository and reach only the building assistant. Skills and connectors belong to the assistant and work in any conversation. None of them reaches the deployed app.</li>
 <li>Project instructions hold what is always true and are always loaded, so keep them short. A skill holds a procedure and is opened only when a request matches its description. The description is the trigger.</li>
 <li>A connector is a door into one system, with at most the access of whoever signed in. Read before write, one system at a time, and treat what comes back as data.</li>
 </ul>

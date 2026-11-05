@@ -44,7 +44,7 @@
   /* Illustrative prices per million tokens (input / output). They change often; the page says so.
      right = messages right out of the 24 in the team's test set, with no guardrail. */
   const MODELS = {
-    small:  { label: "Small",  pin: 0.25, pout: 1.25, lat: 0.9, right: 14 },
+    small:  { label: "Small",  pin: 0.6,  pout: 3,    lat: 0.9, right: 14 },
     medium: { label: "Medium", pin: 3,    pout: 15,   lat: 2.1, right: 18 },
     large:  { label: "Large",  pin: 15,   pout: 75,   lat: 4.8, right: 20 },
   };
@@ -504,9 +504,9 @@
      The account's monthly spending limit is USD 50; with it the loop stops at USD 50.
      ===================================================================== */
   register("c3-automation", function (root) {
-    panel(root, "The morning digest: work that starts without you", "A scheduled task of the team's assistant. Set the trigger, the steps and the two safety switches, then press <b>Run a week</b>. Two things go wrong this week. What Carla hears about depends on your switches.", "accent");
+    panel(root, "The morning digest: work that starts without you", "A scheduled task of the team's assistant, billed by use on the same account as QuoteDesk's model. Set the trigger, the steps and the two safety switches, then press <b>Run a week</b>. Two things go wrong this week. What Carla hears about depends on your switches.", "accent");
     const CAP = 50, LOOP = 5000;
-    const st = { trigger: "schedule", sum: true, drafts: true, notify: true, dest: "email", alert: false, limit: false };
+    const st = { trigger: "schedule", sum: true, drafts: true, notify: true, dest: "assistant", alert: false, limit: false };
     let ran = false, runId = 0, running = false, skip = false;
     const changed = () => { flowDraw(); ran ? show(false) : ready(); };
 
@@ -519,7 +519,7 @@
     toggle(sw, "Alert Carla by text message when a run fails", (on) => { st.alert = on; changed(); }, st.alert);
     toggle(sw, "Monthly spending limit: USD 50", (on) => { st.limit = on; changed(); }, st.limit);
     const ctr = controls(root);
-    select(ctr, "Where the digest goes", [{ label: "Email to Carla and the 14 reps", value: "email" }, { label: "The sales team's chat channel", value: "chat" }, { label: "A shared sheet", value: "sheet" }], (v) => { st.dest = v; changed(); }, st.dest);
+    select(ctr, "Where the digest goes", [{ label: "In the assistant, to Carla and each rep", value: "assistant" }, { label: "The sales team's chat channel", value: "chat" }, { label: "A shared sheet", value: "sheet" }], (v) => { st.dest = v; changed(); }, st.dest);
     const flow = h("div", { class: "vc-flow", "aria-label": "The automation as configured" });
     root.append(flow);
     const actions = h("div", { class: "vc-buttons" });
@@ -535,8 +535,8 @@
     const perRun = () => 0.005 + (st.sum ? 0.015 : 0) + (st.drafts ? 0.02 : 0);
     const clock = (min) => { const t = 60 + Math.round(min); return String(Math.floor(t / 60)).padStart(2, "0") + ":" + String(t % 60).padStart(2, "0"); };
     function flowDraw() {
-      const where = { email: "Email Carla and the reps", chat: "Post in the sales channel", sheet: "Write to the shared sheet" }[st.dest];
-      const parts = [{ schedule: "Weekdays at 08:00", event: "Every new message", button: "When Carla asks" }[st.trigger], "Read pending quotes"];
+      const where = { assistant: "Deliver to Carla and each rep", chat: "Post in the sales channel", sheet: "Write to the shared sheet" }[st.dest];
+      const parts = [{ schedule: "Weekdays at 08:00", event: "Every new message", button: "When Carla asks" }[st.trigger], "Read the pending-requests file"];
       if (st.sum) parts.push("Summarize by rep");
       if (st.drafts) parts.push("Draft follow-ups");
       parts.push(st.notify ? where : "Save in the log only");
@@ -545,9 +545,9 @@
     }
     function simulate() {
       const p = perRun();
-      const where = { email: "emailed to Carla and the 14 reps", chat: "posted in the sales channel", sheet: "written to the shared sheet" }[st.dest];
+      const where = { assistant: "delivered to Carla and the 14 reps in their assistant", chat: "posted in the sales channel", sheet: "written to the shared sheet" }[st.dest];
       const ok = (pend, old) => `${pend} pending, ${old} older than 3 h. ` + (st.sum ? "Summary by rep" : "Raw list") + (st.drafts ? `, ${old} follow-ups drafted for approval` : "") + (st.notify ? `, ${where}.` : ". Saved in the log; nobody was told.");
-      const FAIL = "The first step failed: the sign-in to QuoteDesk's pending-quotes view expired. Nothing sent.";
+      const FAIL = "The first step failed: the connector's sign-in to the shared folder expired. Nothing delivered.";
       const E = [];
       const add = (t, text, tone) => E.push({ t, text, tone });
       let runs = 0, days = 0, seen = 0, problems = 2, spent = 0, loopCost = 0, hit = false, paused = false;
@@ -560,8 +560,8 @@
         add("Wed 01:00", "A step times out and the task starts again, and again: a retry loop.", "warn");
         if (st.alert) { seen++; add("Wed 01:01", "Text message to Carla: \"Morning digest failed and is retrying\". She is asleep.", "warn"); }
         if (hit) {
-          add("Wed " + clock((n * 360) / LOOP), `The monthly limit of ${usd(CAP, 0)} is reached after ${n0(n)} runs. The task is paused.`, "warn");
-          if (st.alert) add("Wed 07:40", "Carla reads the message, sees that the timeout has cleared and resumes the task.", "ok");
+          add("Wed " + clock((n * 360) / LOOP), `The monthly limit of ${usd(CAP, 0)} is reached after ${n0(n)} runs. The task is paused, and so is QuoteDesk's extraction, which shares the account.`, "warn");
+          if (st.alert) add("Wed 07:40", "Carla reads the message, stops the loop and raises the limit, so QuoteDesk's extraction works when the reps start. She resumes the task.", "ok");
           else { paused = true; add("Wed 07:00", "Nobody was told. The task stays paused.", "bad"); }
         } else {
           add("Wed 07:00", (st.alert ? "Carla wakes up, reads the message and stops it" : "The loop ends by itself when the timeout clears") + `: ${n0(LOOP)} runs, ${usd(loopCost, 0)}` + (st.limit ? `, still under the ${usd(CAP, 0)} limit because these runs are cheap.` : st.alert ? "." : ". Nobody knows until the invoice."), "bad");
@@ -569,6 +569,7 @@
       };
       const pausedDays = (what) => {
         add("Wed 08:00", `The task is paused. ${what}`, "bad");
+        add("Wed 08:10", "QuoteDesk's extraction fails for every rep: the shared account is at its limit. Carla raises the limit at 09:30. Nobody connects it to the digest.", "bad");
         add("Thu 08:00", `Still paused. ${what}`, "bad");
         add("Fri 08:00", `Still paused. ${what}`, "bad");
         add("Fri 11:40", "Minimarket Los Aromos calls Marcos: their quote has been pending since Tuesday.", "bad");
@@ -587,14 +588,14 @@
             add("Thu 08:25", "Carla signs in again and reruns it, 25 minutes late. " + ok(12, 4), "warn"); good(); days++;
             add("Fri 08:00", ok(9, 2), "ok"); good(); days++;
           } else {
-            add("Fri 08:00", "The first step failed again: the same expired sign-in. Nothing sent.", "bad"); runs++;
+            add("Fri 08:00", "The first step failed again: the same expired sign-in. Nothing delivered.", "bad"); runs++;
             add("Fri 11:40", "Minimarket Los Aromos calls Marcos: their quote has been pending since Tuesday.", "bad");
           }
         }
       } else if (st.trigger === "event") {
         const told = st.notify ? " and notifies: 120 notifications" : "";
         add("Mon", `120 new messages, 120 runs. Each run rebuilds the whole digest${told}.`, "warn"); good(120); days++;
-        add("Tue", "118 runs." + (st.notify ? { chat: " Diego mutes the channel.", email: " Diego sets a rule that archives them unread.", sheet: " The sheet now has 238 versions." }[st.dest] : ""), "warn"); good(118); days++;
+        add("Tue", "118 runs." + (st.notify ? { chat: " Diego mutes the channel.", assistant: " Diego turns the assistant's notifications off.", sheet: " The sheet now has 238 versions." }[st.dest] : ""), "warn"); good(118); days++;
         loopNight();
         if (paused) pausedDays("Every new message is ignored.");
         else {
@@ -630,12 +631,12 @@
       const month = usd(22 * r.p);
       const loopLine = `the loop ran ${n0(LOOP)} times and cost <b>${usd(r.loopCost, 0)}</b>`;
       if (st.alert && st.limit) return (r.hit
-        ? `Both problems still happened. The limit stopped the loop at ${usd(CAP, 0)}, the text message told Carla why the task was paused, and Thursday's expired sign-in was fixed in 25 minutes.`
+        ? `Both problems still happened. The limit stopped the loop at ${usd(CAP, 0)}, which also stopped QuoteDesk's extraction on the shared account. The text message told Carla why, so she raised the limit before the reps started. Thursday's expired sign-in was fixed in 25 minutes.`
         : `Both problems still happened, and Carla heard about both. The limit was never reached because these runs are cheap, so ${loopLine} before she stopped it.`) +
         ` The team got the digest on all five days. A normal month costs about <b>${month}</b>. This is an automation you can leave running.` + sheet;
       if (st.alert) return `Carla heard about both problems, but an alert does not stop anything: ${loopLine} while she slept. An alert tells you. A limit stops it. Turn on the limit and run the week again.` + sheet;
       if (st.limit) return (r.hit
-        ? `The limit contained the loop at ${usd(CAP, 0)} and paused the task, in silence. Nothing arrived for the rest of the week. A missing digest looks like a quiet morning, so nobody asked until a customer called.`
+        ? `The limit contained the loop at ${usd(CAP, 0)} and paused the task, in silence. It also stopped QuoteDesk's extraction on Wednesday morning, and when Carla raised the limit nobody thought of the digest. Nothing arrived for the rest of the week: a missing digest looks like a quiet morning, so nobody asked until a customer called.`
         : `The limit was never reached, so ${loopLine}. Then the sign-in expired on Thursday and nothing arrived. A missing digest looks like a quiet morning, so nobody asked until a customer called.`) +
         " Turn on the alert and run the week again." + sheet;
       return `Carla heard about neither problem. Overnight ${loopLine}, and from Thursday the digest stopped arriving; the first sign was a customer's call on Friday. Automations fail in silence. Turn on the two safety switches and run the week again.` + sheet;

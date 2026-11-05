@@ -11,7 +11,7 @@ include-after-body:
 
 You do not need to read code to run this list. Each check is something you do in a browser, or a question you put to your building assistant together with the proof you should ask for. An answer of "yes, it is secure" is not proof. Ask to be shown.
 
-Run the checks on your own app before session 4 and note, for each one, **pass**, **fail** or **could not tell**. "Could not tell" is a finding. In the session 4 lab you fix the failures with your team. Your ticks are saved in this browser.
+Run the checks on your own app before session 4 and note, for each one, **pass**, **fail** or **could not tell**. "Could not tell" is a finding. In the session 4 lab you fix the failures with your team. Your check marks are saved in this browser.
 
 ## Keys and secrets
 
@@ -57,4 +57,4 @@ Run the checks on your own app before session 4 and note, for each one, **pass**
 
 ## What to bring to session 4
 
-A single page with the fourteen checks and, next to each, pass, fail or could not tell, plus one sentence for every item that is not a pass. That page becomes the first section of your risk memo.
+A single page with the fourteen checks and, next to each, pass, fail or could not tell, plus one sentence for every item that is not a pass. That page is the source for the findings section of your risk memo; attach it to your build log.
