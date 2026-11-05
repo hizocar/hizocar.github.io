@@ -1,0 +1,88 @@
+---
+title: "Rubric"
+subtitle: "The four criteria, what each level looks like, and how they apply to every graded component"
+lang: en
+css: assets/vc.css
+---
+
+Everything graded in this course is judged on the same four criteria. Each criterion has four levels. A level converts to points the same way everywhere: level 1 is 25, level 2 is 55, level 3 is 80, level 4 is 100. A component's grade is the weighted average of its criteria. The course is passed with 55 or more overall, which is level 2 across the board.
+
+## The four criteria
+
+### Problem and value
+
+Is the problem real, is the user named, and is the benefit measured?
+
+| Level | What the work shows |
+|---|---|
+| 1 | No named user or metric. The problem is a slogan. |
+| 2 | A user is named and the pain is described, but nothing is measured. |
+| 3 | The metric from the brief is measured once, on realistic requests. |
+| 4 | Baseline and result are both shown, with the gap. A manager could decide on it tomorrow. |
+
+### Functionality
+
+Does the product work, end to end, for the person it was built for?
+
+| Level | What the work shows |
+|---|---|
+| 1 | No user story can be completed. |
+| 2 | One story works when the team drives it. A new input breaks it. |
+| 3 | A user completes the story alone on the deployed app, signed in. |
+| 4 | It works end to end, handles a bad input gracefully, and nothing is hidden from the demo. |
+
+### AI quality and safety
+
+Is the model's work useful, tested and guarded, and are permissions as small as the job allows?
+
+| Level | What the work shows |
+|---|---|
+| 1 | The AI feature is shown but never tested. No guardrail. |
+| 2 | A few examples were tried by hand. A guardrail exists but its effect is unknown. |
+| 3 | A test set was run. Results before and after the guardrail are reported, and the review workload is known. |
+| 4 | Failure cases are explained, an injection was tried, a person approves wherever money or customers are involved, and every connector and tool has the least permission that works. |
+
+### Communication
+
+Can the audience say what it is, what it proved, and what to decide?
+
+| Level | What the work shows |
+|---|---|
+| 1 | The audience cannot say what the tool is for. |
+| 2 | Clear to the team, confusing to others. Terms are not explained. |
+| 3 | Problem, evidence and decision appear in order. Questions get direct answers. |
+| 4 | Adapted to the room. Technical and non-technical listeners both leave able to act. |
+
+## How the criteria apply to each component
+
+| Component | Weight in the course | Problem and value | Functionality | AI quality and safety | Communication |
+|---|---|---|---|---|---|
+| M1. Problem brief and product specification | 15% | 60% | not graded | not graded | 40% |
+| M2. Prototype v1 with one skill, one connector and build logs | 20% | 20% | 50% | 15% | 15% |
+| M3. AI feature, test set, agentic step, automation, metric and risk memo | 25% | 15% | 20% | 50% | 15% |
+| Demo Day | 25% | 25% | 25% | 25% | 25% |
+| Reflection memo and participation | 15% | see below | | | |
+
+**What counts as evidence in each component**
+
+- **M1.** The brief names one user, one pain with a number, what the tool does, and how you will know it works. Three user stories each have acceptance criteria that someone could check. It is written as an instruction an assistant could build from.
+- **M2.** The deployed address works for a second person on a second device. Three user stories pass. The repository is private. The project instructions file, one skill and one read-only connector exist, with a screenshot of the skill being used. Each member's build log is attached.
+- **M3.** The AI feature is deployed. The test set and its results are attached, before and after the guardrail. One agentic step waits for approval and one automation runs on a schedule with an owner and a log. The brief's metric has a baseline and one measurement on at least five timed requests. The risk memo is two pages, with the permissions register and the data inventory as annexes.
+- **Demo Day.** Ten minutes and five of questions. The panel grades the four criteria equally. AI use in the deck is declared.
+
+## Reflection memo and participation
+
+This component is individual and is worth 15% of the course: 10 points for the memo and 5 for participation. The memo is read on two of the four criteria, AI quality and safety (an honest account of what the AI did and where it misled you) and communication (specific, clear, in your own words). The table gives the levels for this component.
+
+| | Level 1 | Level 2 | Level 3 | Level 4 |
+|---|---|---|---|---|
+| **Memo** (400 to 600 words, written in class from the build log) | Generic. Could describe any project. | Describes what was built, not what was decided. | Names specific decisions, one place the AI misled you, and what you would do differently. | Also draws a conclusion about how you will work with technology teams, supported by entries from your log. |
+| **Participation** | Attended fewer than four sessions. | Attended, build log has gaps. | Attended, kept the log, gave critique when asked. | Critique that another team acted on; log complete enough for someone else to continue the work. |
+
+## Individual adjustment
+
+Team components receive one grade for the team. The Demo Day grade alone is adjusted for each member by up to 10 points up or down, based on the build log and the peer assessment collected in session 5. The adjustment is explained in writing when it is applied.
+
+## Use of AI
+
+Using AI is required and must be declared. The build log is the record. Work that presents AI output as your own reasoning without the log, or a log that was written afterwards to look complete, is treated as academic dishonesty under the MBA regulations.

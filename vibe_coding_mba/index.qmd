@@ -8,6 +8,14 @@ toc: false
 ```{=html}
 <div class="cursos-grid">
 
+<a class="curso-card" href="classes.html">
+  <span class="curso-tag">Classes</span>
+  <span class="curso-sigla">5 interactive pages · simulators · labs</span>
+  <h3>Class material</h3>
+  <p>Each session as a self-teaching page: guiding questions, simulators, practice questions, the build lab with prompts to adapt, and a checklist that remembers your progress.</p>
+  <span class="curso-link">Go to the classes →</span>
+</a>
+
 <a class="curso-card" href="syllabus.html">
   <span class="curso-tag">Program</span>
   <span class="curso-sigla">USM MBA template · 9 sections + SCT hours</span>
@@ -24,14 +32,6 @@ toc: false
   <span class="curso-link">See the sessions →</span>
 </a>
 
-<a class="curso-card" href="classes.html">
-  <span class="curso-tag">Classes</span>
-  <span class="curso-sigla">5 interactive pages · simulators · labs</span>
-  <h3>Class material</h3>
-  <p>Each session as a self-teaching page: guiding questions, simulators, practice questions, the build lab with prompts to adapt, and a checklist that remembers your progress.</p>
-  <span class="curso-link">Go to the classes →</span>
-</a>
-
 <a class="curso-card" href="files/Vibe_Coding_MBA_Elective_Syllabus.docx">
   <span class="curso-tag">Download</span>
   <span class="curso-sigla">.docx · Programa de Asignatura</span>
@@ -45,16 +45,28 @@ toc: false
 
 ## The course in one paragraph
 
-Vibe coding, building software by describing intent to an AI and iterating on what it produces, has collapsed the cost of a working prototype from weeks of engineering to hours of a manager's time. This elective puts that capability in the hands of MBA students with no programming background. Over five 4-hour workshops, teams take one real problem from their own organizations to a deployed web application with an integrated language-model capability, evaluate the security, privacy, cost and maintainability risks of what they built, decide between build, buy and hand-off, and present a working product and business case to a panel on Demo Day.
+Vibe coding, building software by describing intent to an AI and iterating on what it produces, has collapsed the cost of a working prototype from weeks of engineering to hours of a manager's time. This elective puts that capability in the hands of MBA students with no programming background. Over five 4-hour workshops, teams take one real problem from their own organizations to a deployed web application with an integrated language-model capability. Along the way they teach the assistant how their organization works with skills, connect it to company systems, let it act as an agent with their approval, and set one automation running. They then evaluate the security, privacy, cost and maintainability risks of what they built, make the build / buy / vibe decision (keep vibe coding it, hand it to engineering, buy a product, or stop), and present a working product and business case to a panel on Demo Day.
 
 ## Who it is for
 
 MBA students and managers who need to test ideas, specify what they need from technology teams, and judge AI-built software, without becoming programmers. No coding experience is required or assumed.
 
+## What students build and use
+
+| | |
+|---|---|
+| Web pages and apps | A deployed application with login and real data, and a public page that explains it |
+| Skills | "How we do it here" packaged so the assistant repeats it |
+| Connectors (MCP) | Scoped access to company systems, read before write |
+| Agents | A model that takes steps with tools and waits for approval |
+| Automations | Work that starts on a schedule, with an owner and a log |
+| Presentations | A Demo Day deck generated from the evidence and verified by the team |
+
 ## What students leave with
 
 - A deployed, working AI-powered application built for a problem they chose.
-- A tested test set and a risk memo for that application.
+- A test set with results and a risk memo for that application.
+- A small personal system for working with AI: skills, trusted connectors and one automation with an owner and a log.
 - A build / buy / vibe decision framework they have applied once.
 - A first-hand understanding of what has changed in the economics of building software, and of what remains a defensible advantage.
 
@@ -65,6 +77,7 @@ MBA students and managers who need to test ideas, specify what they need from te
 | Credits | 2 SCT-Chile (20 contact hours + 25 autonomous = 45 hours) |
 | Format | 5 workshop sessions of 4 hours, teams of 2 to 3 |
 | Language | English (deliverables in English or Spanish) |
-| Assessment | 5 weighted components, no final exam, pass at 55/100 |
+| Assessment | 5 weighted components graded with one [rubric](rubric.html), no final exam, pass at 55/100 |
+| Before you start | [Toolkit setup guide](setup.html) |
 | Competencies | CE1, CE2, CE4 (CE3 secondary); CGT1, CGT2, CGT3 |
 | Instructor | Sebastián Azócar M. · [hizocar@gmail.com](mailto:hizocar@gmail.com) |

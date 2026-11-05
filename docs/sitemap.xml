@@ -2,190 +2,202 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hizocar.github.io/data_science_ingemat/presentacion.html</loc>
-    <lastmod>2026-11-03T03:53:03.010Z</lastmod>
+    <lastmod>2026-11-05T04:31:27.628Z</lastmod>
   </url>
   <url>
     <loc>https://hizocar.github.io/data_science_ingemat/modulo2/ARIMA_SARIMA_Tutorial.html</loc>
-    <lastmod>2026-11-03T03:53:01.739Z</lastmod>
+    <lastmod>2026-11-05T04:31:26.514Z</lastmod>
   </url>
   <url>
     <loc>https://hizocar.github.io/data_science_ingemat/modulo2/complemento.html</loc>
-    <lastmod>2026-11-03T03:53:00.282Z</lastmod>
+    <lastmod>2026-11-05T04:31:25.225Z</lastmod>
   </url>
   <url>
     <loc>https://hizocar.github.io/data_science_ingemat/modulo2/introduccion.html</loc>
-    <lastmod>2026-11-03T03:52:59.041Z</lastmod>
+    <lastmod>2026-11-05T04:31:24.163Z</lastmod>
   </url>
   <url>
     <loc>https://hizocar.github.io/data_science_ingemat/classes.html</loc>
-    <lastmod>2026-11-03T03:52:57.733Z</lastmod>
+    <lastmod>2026-11-05T04:31:23.093Z</lastmod>
   </url>
   <url>
-    <loc>https://hizocar.github.io/vibe_coding_mba/class5.html</loc>
-    <lastmod>2026-11-03T03:52:56.664Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/vibe_coding_mba/class1.html</loc>
-    <lastmod>2026-11-03T03:52:54.272Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/vibe_coding_mba/class2.html</loc>
-    <lastmod>2026-11-03T03:52:51.968Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/vibe_coding_mba/index.html</loc>
-    <lastmod>2026-11-03T03:52:49.980Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/vibe_coding_mba/classes.html</loc>
-    <lastmod>2026-11-03T03:52:48.643Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/ejemplo.html</loc>
-    <lastmod>2026-11-03T03:52:47.623Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_ICO_USM/clases/Python_for_Data_Science_NumPy_Working_notebook.html</loc>
-    <lastmod>2026-11-03T03:52:45.454Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_ICO_USM/classes.html</loc>
-    <lastmod>2026-11-03T03:52:43.778Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_egei/homeworks/Final Project.html</loc>
-    <lastmod>2026-11-03T03:52:42.773Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_egei/homeworks/Python_Basics_Homework.html</loc>
-    <lastmod>2026-11-03T03:52:41.467Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_egei/program.html</loc>
-    <lastmod>2026-11-03T03:52:40.156Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_egei/class2.html</loc>
-    <lastmod>2026-11-03T03:52:38.454Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_egei/class3.html</loc>
-    <lastmod>2026-11-03T03:52:36.900Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_egei/class1.html</loc>
-    <lastmod>2026-11-03T03:52:35.280Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/personal/laboral.html</loc>
-    <lastmod>2026-11-03T03:52:34.013Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/introduction_to_python/class6.html</loc>
-    <lastmod>2026-11-03T03:52:33.003Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/introduction_to_python/class2.html</loc>
-    <lastmod>2026-11-03T03:52:31.353Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/introduction_to_python/class3.html</loc>
-    <lastmod>2026-11-03T03:52:29.523Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/introduction_to_python/class1.html</loc>
-    <lastmod>2026-11-03T03:52:28.157Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/introduction_to_python/classes.html</loc>
-    <lastmod>2026-11-03T03:52:28.715Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/introduction_to_python/class5.html</loc>
-    <lastmod>2026-11-03T03:52:30.679Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/introduction_to_python/class4.html</loc>
-    <lastmod>2026-11-03T03:52:32.096Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/personal/perfil.html</loc>
-    <lastmod>2026-11-03T03:52:33.488Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/personal/academica.html</loc>
-    <lastmod>2026-11-03T03:52:34.534Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_egei/classes.html</loc>
-    <lastmod>2026-11-03T03:52:35.873Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_egei/class5.html</loc>
-    <lastmod>2026-11-03T03:52:37.610Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_egei/class4.html</loc>
-    <lastmod>2026-11-03T03:52:39.475Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_egei/homeworks/homework_III.html</loc>
-    <lastmod>2026-11-03T03:52:40.884Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_egei/homeworks/lab1.html</loc>
-    <lastmod>2026-11-03T03:52:42.185Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_egei/homeworks_2024/task2.html</loc>
-    <lastmod>2026-11-03T03:52:43.262Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_ICO_USM/program.html</loc>
-    <lastmod>2026-11-03T03:52:44.294Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/machine_learning_ICO_USM/clases/Python_For_DataScience_intro.html</loc>
-    <lastmod>2026-11-03T03:52:47.100Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/cursos.html</loc>
-    <lastmod>2026-11-03T03:52:48.124Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/vibe_coding_mba/sessions.html</loc>
-    <lastmod>2026-11-03T03:52:49.397Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/vibe_coding_mba/syllabus.html</loc>
-    <lastmod>2026-11-03T03:52:50.999Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hizocar.github.io/vibe_coding_mba/class3.html</loc>
-    <lastmod>2026-11-03T03:52:53.131Z</lastmod>
+    <loc>https://hizocar.github.io/vibe_coding_mba/rubric.html</loc>
+    <lastmod>2026-11-05T04:31:22.077Z</lastmod>
   </url>
   <url>
     <loc>https://hizocar.github.io/vibe_coding_mba/class4.html</loc>
-    <lastmod>2026-11-03T03:52:55.519Z</lastmod>
+    <lastmod>2026-11-05T04:31:19.851Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/vibe_coding_mba/class1.html</loc>
+    <lastmod>2026-11-05T04:31:17.128Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/vibe_coding_mba/class3.html</loc>
+    <lastmod>2026-11-05T04:31:15.136Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/vibe_coding_mba/syllabus.html</loc>
+    <lastmod>2026-11-05T04:31:12.200Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/vibe_coding_mba/sessions.html</loc>
+    <lastmod>2026-11-05T04:31:10.470Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/cursos.html</loc>
+    <lastmod>2026-11-05T04:31:08.999Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_ICO_USM/clases/Python_For_DataScience_intro.html</loc>
+    <lastmod>2026-11-05T04:31:08.018Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_ICO_USM/program.html</loc>
+    <lastmod>2026-11-05T04:31:05.353Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_egei/homeworks_2024/task2.html</loc>
+    <lastmod>2026-11-05T04:31:04.380Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_egei/homeworks/lab1.html</loc>
+    <lastmod>2026-11-05T04:31:03.351Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_egei/homeworks/homework_III.html</loc>
+    <lastmod>2026-11-05T04:31:02.156Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_egei/class4.html</loc>
+    <lastmod>2026-11-05T04:31:00.672Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_egei/class5.html</loc>
+    <lastmod>2026-11-05T04:30:58.837Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_egei/classes.html</loc>
+    <lastmod>2026-11-05T04:30:57.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/personal/academica.html</loc>
+    <lastmod>2026-11-05T04:30:55.738Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/personal/perfil.html</loc>
+    <lastmod>2026-11-05T04:30:54.665Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/introduction_to_python/class4.html</loc>
+    <lastmod>2026-11-05T04:30:53.238Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/introduction_to_python/class5.html</loc>
+    <lastmod>2026-11-05T04:30:51.724Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/introduction_to_python/classes.html</loc>
+    <lastmod>2026-11-05T04:30:49.688Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/introduction_to_python/class1.html</loc>
+    <lastmod>2026-11-05T04:30:49.136Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/introduction_to_python/class3.html</loc>
+    <lastmod>2026-11-05T04:30:50.499Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/introduction_to_python/class2.html</loc>
+    <lastmod>2026-11-05T04:30:52.452Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/introduction_to_python/class6.html</loc>
+    <lastmod>2026-11-05T04:30:54.193Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/personal/laboral.html</loc>
+    <lastmod>2026-11-05T04:30:55.205Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_egei/class1.html</loc>
+    <lastmod>2026-11-05T04:30:56.507Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_egei/class3.html</loc>
+    <lastmod>2026-11-05T04:30:58.142Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_egei/class2.html</loc>
+    <lastmod>2026-11-05T04:30:59.651Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_egei/program.html</loc>
+    <lastmod>2026-11-05T04:31:01.417Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_egei/homeworks/Python_Basics_Homework.html</loc>
+    <lastmod>2026-11-05T04:31:02.729Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_egei/homeworks/Final Project.html</loc>
+    <lastmod>2026-11-05T04:31:03.912Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_ICO_USM/classes.html</loc>
+    <lastmod>2026-11-05T04:31:04.882Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/machine_learning_ICO_USM/clases/Python_for_Data_Science_NumPy_Working_notebook.html</loc>
+    <lastmod>2026-11-05T04:31:06.422Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/ejemplo.html</loc>
+    <lastmod>2026-11-05T04:31:08.535Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/vibe_coding_mba/classes.html</loc>
+    <lastmod>2026-11-05T04:31:09.583Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/vibe_coding_mba/index.html</loc>
+    <lastmod>2026-11-05T04:31:11.083Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/vibe_coding_mba/class2.html</loc>
+    <lastmod>2026-11-05T04:31:13.561Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/vibe_coding_mba/security-checklist.html</loc>
+    <lastmod>2026-11-05T04:31:15.663Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/vibe_coding_mba/setup.html</loc>
+    <lastmod>2026-11-05T04:31:17.960Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hizocar.github.io/vibe_coding_mba/class5.html</loc>
+    <lastmod>2026-11-05T04:31:21.312Z</lastmod>
   </url>
   <url>
     <loc>https://hizocar.github.io/index.html</loc>
-    <lastmod>2026-11-03T03:52:57.165Z</lastmod>
+    <lastmod>2026-11-05T04:31:22.561Z</lastmod>
   </url>
   <url>
     <loc>https://hizocar.github.io/data_science_ingemat/programa.html</loc>
-    <lastmod>2026-11-03T03:52:58.380Z</lastmod>
+    <lastmod>2026-11-05T04:31:23.631Z</lastmod>
   </url>
   <url>
     <loc>https://hizocar.github.io/data_science_ingemat/modulo2/prophet.html</loc>
-    <lastmod>2026-11-03T03:52:59.669Z</lastmod>
+    <lastmod>2026-11-05T04:31:24.688Z</lastmod>
   </url>
   <url>
     <loc>https://hizocar.github.io/data_science_ingemat/modulo2/proyecto2.html</loc>
-    <lastmod>2026-11-03T03:53:01.033Z</lastmod>
+    <lastmod>2026-11-05T04:31:25.885Z</lastmod>
   </url>
   <url>
     <loc>https://hizocar.github.io/data_science_ingemat/modulo2/estacionaria.html</loc>
-    <lastmod>2026-11-03T03:53:02.379Z</lastmod>
+    <lastmod>2026-11-05T04:31:27.083Z</lastmod>
   </url>
 </urlset>

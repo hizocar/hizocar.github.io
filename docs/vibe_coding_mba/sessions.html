@@ -77,6 +77,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="assets/vc.css">
 <meta property="og:title" content="Sebastián Azócar - Session plan">
 <meta property="og:description" content="Five 4-hour workshops. One business problem carried from brief to deployed product.">
 <meta property="og:site-name" content="Sebastián Azócar">
@@ -216,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Every session has the same rhythm so students spend their attention on the product, not the format. Each session has an interactive class page; the full list is in <a href="classes.html">Classes</a>.</p>
+<p>Sessions 1 to 4 follow the same rhythm so students spend their attention on the product, not the format. Session 5 is Demo Day. Each session has an interactive class page, read before class; the full list is in <a href="classes.html">Classes</a>.</p>
 <table class="table">
 <colgroup>
 <col style="width: 33%">
@@ -234,12 +235,12 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td>Framework</td>
 <td>45</td>
-<td>The concept of the day, with a live demo including at least one failure and its recovery</td>
+<td>A recap of the class page, with a live demo including at least one failure and its recovery</td>
 </tr>
 <tr class="even">
-<td>Build</td>
+<td>Build lab</td>
 <td>120</td>
-<td>Teams work on their own project toward the session’s build goal; instructor circulates</td>
+<td>Teams work on their own project toward the session’s build goal, with a 10-minute break; instructor circulates</td>
 </tr>
 <tr class="odd">
 <td>Critique</td>
@@ -254,53 +255,132 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p>Teams of 2 to 3 form in session 1 around a problem from one member’s organization. The capstone is <strong>one</strong> application; each session adds a layer to it.</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Session</th>
+<th>The product gains</th>
+<th>New building block</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>A deployed app and a public web page</td>
+<td>Prompts and the brief</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Login, real data storage, rollback</td>
+<td>Project instructions, one skill, one connector</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>An AI capability with a test set</td>
+<td>One agentic step with approval, one automation</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Fixed security findings, a risk memo, a decision</td>
+<td>Least-privilege permissions</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>A pitch in front of a panel</td>
+<td>A deck generated with AI</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The data rule.</strong> Until a team has completed the session 4 lab, only invented or de-identified information is used in the product, in the test set and in any prompt: no real names, phone numbers, addresses or tax numbers.</p>
+<p><strong>Work outside class.</strong> Each session asks for the class page (90 to 100 minutes), one short reading (about 20 minutes) and one task. The milestones take about 8 hours in total and Demo Day preparation about 7.</p>
 <section id="session-1.-ship-something-today" class="level2">
 <h2 class="anchored" data-anchor-id="session-1.-ship-something-today">Session 1. Ship something today</h2>
 <p>Class page: <a href="class1.html">Class 1 · Ship something today</a></p>
-<p><strong>Build goal:</strong> a deployed web application that a real user could open in a browser by the end of the session.</p>
-<p><strong>Pre-work (60 min).</strong> Create accounts on the course toolkit. Read Karpathy’s original post and Willison’s “Not all AI-assisted programming is vibe coding”. Bring one business problem from your organization that involves people filling, reading or deciding on information.</p>
-<p><strong>Framework.</strong> What changed between 2023 and now in the cost of building software. Vibe coding versus AI-assisted engineering: where the “vibes” are enough (prototypes, internal tools, tests of demand) and where they are not (regulated, high-volume, safety-critical). Problem Pull versus AI Push. A one-paragraph product brief: user, pain, what the tool does, how we know it works.</p>
-<p><strong>Build.</strong> Live demo: the instructor builds and deploys a working app from a brief in 20 minutes, including a bug. Teams then choose a problem, write the brief, and build a first version with a conversational UI builder. Deploy to a public URL. Open it on a phone.</p>
+<p><strong>Build goal:</strong> a deployed web application that a real user could open in a browser by the end of the session, and a one-page public site that explains it.</p>
+<p><strong>Before the session.</strong> Read the class page (90 min). Create the accounts in the <a href="setup.html">toolkit setup guide</a> (20 min). Read Karpathy’s original post and Willison’s “Not all AI-assisted programming is vibe coding” (20 min). Bring one business problem from your organization in which people enter, read or act on information.</p>
+<p><strong>Framework.</strong> What changed in the cost of building software. The toolkit map: which tool and which building block (prompt, project instructions, skill, connector, agent, automation) for which job. Vibe coding versus AI-assisted programming: where the “vibes” are enough (prototypes, internal tools, tests of demand) and where they are not (regulated, high-volume, safety-critical). Problem Pull versus AI Push. A one-paragraph product brief: user, pain, what the tool does, how we know it works.</p>
+<p><strong>Build.</strong> Live demo: the instructor builds and deploys a working app from a brief in 20 minutes, including a bug. Teams then choose a problem, write the brief, and build a first version with a conversational app builder. Deploy to a public address. Open it on a phone. Second deliverable: a one-page public site for the product.</p>
 <p><strong>Critique.</strong> Reflection prompt: <em>what did you expect to be hard that was easy, and vice versa?</em></p>
 <p><strong>Milestone set:</strong> M1, individual, due before session 2. A one-page problem brief and product specification (user, pain, value hypothesis, success metric, three user stories with acceptance criteria), written as an instruction to an AI.</p>
 </section>
 <section id="session-2.-specify-iterate-keep-what-works" class="level2">
 <h2 class="anchored" data-anchor-id="session-2.-specify-iterate-keep-what-works">Session 2. Specify, iterate, keep what works</h2>
 <p>Class page: <a href="class2.html">Class 2 · Specify, iterate, keep what works</a></p>
-<p><strong>Build goal:</strong> the application stores real data for real users, has a login, and a version history you can roll back.</p>
-<p><strong>Pre-work (90 min).</strong> Submit M1. Read Mollick, <em>Co-Intelligence</em>, chapters on working with AI as a co-worker. Watch the short course video on version control for managers.</p>
-<p><strong>Framework.</strong> Prompting as specification: the product brief, user stories and acceptance criteria as the contract with the assistant. Working in small steps, testing by using, asking the assistant to explain what it did. Commits as checkpoints, branches as experiments. UX for AI products: designing for non-deterministic output, visible uncertainty, error and loading states.</p>
-<p><strong>Build.</strong> Move the project to an agentic coding assistant working on a GitHub repository. Add a managed database and authentication. Practice a deliberate rollback: break something, go back. Apply two UX patterns from the framework block to the app.</p>
-<p><strong>Critique.</strong> Two teams demonstrate a user story end to end. Rubric criterion in focus: <em>functionality</em>.</p>
-<p><strong>Milestone set:</strong> M2, team, due before session 3. Deployed prototype v1 with login and persistent data, three working user stories, repository link, and each member’s build log.</p>
+<p><strong>Build goal:</strong> the application stores data for signed-in users and has a version history you can roll back, and the team’s assistants know how the team works: project instructions, one skill and one read-only connector.</p>
+<p><strong>Before the session.</strong> Submit M1. Read the class page (100 min). Complete the second part of the <a href="setup.html">toolkit setup guide</a>: the app in a private repository, opened in your assistant, with an empty database project and a hosting address (60 min).</p>
+<p><strong>Framework.</strong> Prompting as specification: the product brief, user stories and acceptance criteria as the contract with the assistant. Working in small steps with checkpoints, branches and rollback. Where the data lives. UX for AI products: non-deterministic output, visible uncertainty, error and loading states. The three things people call “the AI”: the assistant you build with, the assistant a person uses directly, and the model inside the app. Project instructions and skills: packaging “how we do it here”. Connectors and the Model Context Protocol: scoped access to company systems, read before write.</p>
+<p><strong>Build.</strong> Add the database and sign-in, as two separate requests with two checkpoints. Practice a deliberate rollback: break something, go back. Apply two UX patterns. Write the project instructions file, create one skill and test that it triggers, connect one company source read-only.</p>
+<p><strong>Critique.</strong> Two teams demonstrate a user story end to end and show their skill being used. Rubric criterion in focus: <em>functionality</em>.</p>
+<p><strong>Milestone set:</strong> M2, team, due before session 3. Deployed prototype v1 with sign-in and stored data, three working user stories, one skill, one connector, a private repository, and each member’s build log.</p>
 </section>
 <section id="session-3.-add-intelligence-then-prove-it-works" class="level2">
 <h2 class="anchored" data-anchor-id="session-3.-add-intelligence-then-prove-it-works">Session 3. Add intelligence, then prove it works</h2>
 <p>Class page: <a href="class3.html">Class 3 · Add intelligence, then prove it works</a></p>
-<p><strong>Build goal:</strong> the application uses a language model for one capability that matters to the user, and the team can show a test set with results.</p>
-<p><strong>Pre-work (90 min).</strong> Submit M2. Read Anthropic, <em>Building effective agents</em>. Collect 20 to 30 real or realistic examples of the inputs your AI feature will receive.</p>
-<p><strong>Framework.</strong> Language-model APIs for managers: a request, a response, tokens, cost, latency, context window, choosing a model. Four patterns that cover most business cases: classification, extraction with structured output, summarization, conversational assistant. Retrieval over company documents: when you need it and how it fails. Agents and tool calling: when autonomy is worth the risk. Evaluation: a test set, a success definition, a hallucination count, a human in the loop.</p>
-<p><strong>Build.</strong> Add one language-model capability to the product. Build a test set from the pre-work examples, run it, record results. Add a guardrail (input validation, refusal behavior, confidence display or human review step) and re-run.</p>
+<p><strong>Build goal:</strong> the application uses a language model for one capability that matters to the user, the team can show a test set with results before and after a guardrail, and one step runs either as an agent that waits for approval or as a scheduled automation.</p>
+<p><strong>Before the session.</strong> Submit M2. Read the class page (95 min). Read Anthropic, <em>Building effective agents</em> (20 min). Collect 20 to 30 messages your AI feature will receive: real ones with every name and number changed, or realistic ones you write.</p>
+<p><strong>Framework.</strong> Language-model APIs for managers: a request, a response, tokens, cost, latency, the context window, choosing a model. Four patterns that cover most business cases: classification, extraction with structured output, summarization, conversational assistant. Retrieval over company documents: when you need it and how it fails. Agents: a model in a loop with tools, and the three levels of autonomy. Automations: triggers, schedules, owners, logs and spending limits. Evaluation: a test set, a success definition, a human in the loop.</p>
+<p><strong>Build.</strong> Add one language-model capability to the product. Build a test set from the pre-work messages, run it, record results. Add a guardrail and re-run. Then one of two: an agentic step that proposes and waits for approval, or a scheduled automation (for the running case, a morning digest of pending quotes). The other one is homework.</p>
 <p><strong>Critique.</strong> Teams report the number of tests passed before and after the guardrail. Rubric criterion in focus: <em>AI quality and safety</em>.</p>
-<p><strong>Milestone set:</strong> M3, team, due before session 5. The AI feature in production, the test set and results, and a two-page risk memo (completed after session 4).</p>
+<p><strong>Milestone set:</strong> M3, team, due before session 5. The AI feature deployed, the test set and results, the guardrail, one agentic step with approval and one scheduled automation, a baseline and one measurement of the brief’s metric on at least five timed requests, and a two-page risk memo (written after session 4).</p>
 </section>
 <section id="session-4.-govern-what-you-built" class="level2">
 <h2 class="anchored" data-anchor-id="session-4.-govern-what-you-built">Session 4. Govern what you built</h2>
 <p>Class page: <a href="class4.html">Class 4 · Govern what you built</a></p>
-<p><strong>Build goal:</strong> the application has no leaked secrets, authorization is enforced, personal data is handled deliberately, the monthly cost is known, and the team has decided whether to keep building, hand off, or stop.</p>
-<p><strong>Pre-work (60 min).</strong> Read OWASP Top 10 for LLM Applications 2025 (summary) and the course note on Ley 21.719. Run the course security checklist on your own app and bring the results.</p>
-<p><strong>Framework.</strong> Security of AI-generated software: secrets, authentication versus authorization, prompt injection, dependency hallucination. Data protection: personal data, Ley 21.719 and GDPR basics, data residency, what vendors do with your data. Cost: token economics, budgets, rate limits, caching. Maintainability: the code nobody understands, documentation, tests, prototypes that became products. IP and licensing of generated code. The decision frameworks: build / buy / vibe; prototype versus production; when to stop and hand off; the questions to ask engineering.</p>
-<p><strong>Build.</strong> Fix the findings of the security checklist with the assistant. Add a privacy notice and a data retention decision. Compute the cost of the AI feature at 10x and 100x current usage. Write the risk memo and the build / buy / vibe decision for the product.</p>
+<p><strong>Build goal:</strong> the application has no leaked secrets, authorization is enforced, the assistants’ permissions are minimal, personal data is handled deliberately, the monthly cost is known, and the team has made the build / buy / vibe decision.</p>
+<p><strong>Before the session.</strong> Read the class page (95 min). Run the <a href="security-checklist.html">security checklist</a> on your own app and bring the results (30 min). Skim the OWASP Top 10 for LLM Applications (15 min).</p>
+<p><strong>Framework.</strong> Security of AI-generated software: secrets, authentication versus authorization, prompt injection in messages and in content returned by connectors. Permissions for skills, connectors and agents: least privilege, approval for consequential actions, third-party skills as a supply chain. Data protection: personal data under Ley 21.719, what vendors do with your data. Cost: token economics, budgets, caching, runaway automations. Maintainability, ownership of generated code and lock-in. The build / buy / vibe decision and its four answers: keep vibe coding it, hand it to engineering, buy a product, or stop.</p>
+<p><strong>Build.</strong> Fix the findings of the security checklist with the assistant. Reduce every connector and tool to the least permission that still works. Decide purpose, retention and provider for the personal data you hold. Compute the cost of the AI feature at 10x and 100x current usage. Make the build / buy / vibe decision. The risk memo is written from these results as homework.</p>
 <p><strong>Critique.</strong> A simulated handoff: one team presents its product to another team acting as the engineering department, which asks the questions from the framework block. Rubric criterion in focus: <em>communication</em>.</p>
-<p><strong>Pre-work for Demo Day.</strong> Prepare a 10-minute live demonstration and business case. Rehearse once with another team.</p>
+<p><strong>Before Demo Day.</strong> Finish M3. Read the Class 5 page (90 min). Generate the deck with AI from the build log, the test results and the risk memo (Class 5, topic 1), verify every number, and rehearse once with another team.</p>
 </section>
 <section id="session-5.-demo-day-and-strategy-revisited" class="level2">
 <h2 class="anchored" data-anchor-id="session-5.-demo-day-and-strategy-revisited">Session 5. Demo Day and strategy revisited</h2>
 <p>Class page: <a href="class5.html">Class 5 · Demo Day and strategy revisited</a></p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Block</th>
+<th>Minutes</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pitch clinic</td>
+<td>30</td>
+<td>Last check of the deck and the demo against the rubric</td>
+</tr>
+<tr class="even">
+<td>Demo Day</td>
+<td>150</td>
+<td>Each team: 10 minutes plus 5 of questions, in front of the panel</td>
+</tr>
+<tr class="odd">
+<td>Strategy revisited</td>
+<td>30</td>
+<td>What remains a moat; from prototype to production</td>
+</tr>
+<tr class="even">
+<td>Reflection memo</td>
+<td>30</td>
+<td>Memo written in class from the build log (20), peer assessment (10)</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Build goal:</strong> none. The product is frozen 24 hours before.</p>
-<p><strong>Demo Day (150 min).</strong> Each team has 10 minutes plus 5 of Q&amp;A in front of a panel (instructor plus two invited managers or alumni): live demonstration of the product with a real user story, the problem and value hypothesis, evidence from the test set, the risk memo’s main findings, the build / buy / vibe decision and a roadmap to production. The class grades with the rubric; the panel’s grade counts.</p>
-<p><strong>Framework (45 min).</strong> Strategy revisited now that students have built: what remains a moat when building is cheap (proprietary data, distribution, workflow integration, trust and compliance); organizational implications of citizen developers and how to govern them; what the course toolkit will look like in two years.</p>
-<p><strong>Reflection (45 min).</strong> Individual reflection memo written in class from the build log: what the AI did, what I decided, where it misled me, what I would do differently, and how this changes my work with technology teams. Peer assessment within teams.</p>
+<p><strong>Demo Day (150 min).</strong> Each team has 10 minutes plus 5 of questions in front of a panel (instructor plus two invited managers or alumni): live demonstration of the product with a user story, the problem and value hypothesis, evidence from the test set, the risk memo’s main findings, the build / buy / vibe decision and a roadmap to production. The deck is generated with AI and its use is declared. The class grades with the <a href="rubric.html">rubric</a>; the panel’s grade counts.</p>
+<p><strong>Strategy revisited (30 min).</strong> What remains a moat when building is cheap (proprietary data, distribution, workflow integration, earned trust); organizational implications of citizen developers and how to govern them; the personal AI work system each student keeps after the course: a library of skills, trusted connectors, one automation with an owner and a log.</p>
+<p><strong>Reflection (30 min).</strong> Individual reflection memo written in class from the build log: what the AI did, what I decided, where it misled me, what I would do differently, and how this changes my work with technology teams. Peer assessment within teams.</p>
 </section>
 <section id="deliverable-summary" class="level2">
 <h2 class="anchored" data-anchor-id="deliverable-summary">Deliverable summary</h2>
@@ -327,19 +407,19 @@ ul.task-list li input[type="checkbox"] {
 <td>15%</td>
 </tr>
 <tr class="even">
-<td>M2. Deployed prototype v1 with build logs</td>
+<td>M2. Deployed prototype v1 with one skill, one connector and build logs</td>
 <td>Team</td>
 <td>Before S3</td>
 <td>20%</td>
 </tr>
 <tr class="odd">
-<td>M3. AI feature, test set and risk memo</td>
+<td>M3. AI feature, test set, agentic step, automation, metric measurement and risk memo</td>
 <td>Team</td>
 <td>Before S5</td>
 <td>25%</td>
 </tr>
 <tr class="even">
-<td>Demo Day</td>
+<td>Demo Day, with a deck generated with AI and declared</td>
 <td>Team, individually adjusted</td>
 <td>S5</td>
 <td>25%</td>

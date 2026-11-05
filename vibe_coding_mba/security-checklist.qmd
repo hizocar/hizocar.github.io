@@ -1,0 +1,60 @@
+---
+title: "Security checklist"
+subtitle: "Fourteen checks a manager can run on an AI-built app. Session 4 pre-work: run them on your own product and bring the results."
+lang: en
+css: assets/vc.css
+include-after-body:
+  text: |
+    <script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
+    <script src="assets/vc-core.js"></script>
+---
+
+You do not need to read code to run this list. Each check is something you do in a browser, or a question you put to your building assistant together with the proof you should ask for. An answer of "yes, it is secure" is not proof. Ask to be shown.
+
+Run the checks on your own app before session 4 and note, for each one, **pass**, **fail** or **could not tell**. "Could not tell" is a finding. In the session 4 lab you fix the failures with your team. Your ticks are saved in this browser.
+
+## Keys and secrets
+
+```{=html}
+<ul class="vc-checklist" id="sec-keys">
+<li><strong>No secret key reaches the browser.</strong> Ask: "List every key this app uses. For each one say whether it is publishable or secret, and show me where it is stored. Then search everything the browser downloads and prove no secret key appears in it."</li>
+<li><strong>No secret key is in the repository or its history.</strong> Ask: "Search this repository, including earlier versions, for anything that looks like a key or password. List what you find."</li>
+<li><strong>Any key that ever leaked was revoked.</strong> If the answer to either question above was yes, the key is revoked in the service's dashboard and replaced. Deleting the line is not enough.</li>
+</ul>
+```
+
+## Who can see and do what
+
+```{=html}
+<ul class="vc-checklist" id="sec-access">
+<li><strong>Nothing works without signing in.</strong> Open the app's address in a private browser window. You should reach the sign-in page and nothing else.</li>
+<li><strong>The database refuses strangers.</strong> Ask: "Show me, table by table, that a request with no signed-in user is refused for reading and for writing. Run the test and show me the refusals."</li>
+<li><strong>One user cannot open another user's private records.</strong> Sign in as one user, open a private record, copy its address, sign in as a second user, paste the address. You should be refused. Then ask the assistant to prove the same refusal at the database, not only on the screen.</li>
+<li><strong>Roles are enforced on the server.</strong> Sign in as an ordinary user and try the action only a manager may take. Ask: "Where is this rule checked? Show me that it is checked on the server and not only by hiding the button."</li>
+</ul>
+```
+
+## What the model is allowed to do
+
+```{=html}
+<ul class="vc-checklist" id="sec-model">
+<li><strong>A message cannot give orders.</strong> Paste a test message that contains an instruction, for example a line asking for a discount on everything. The app should treat it as text to process and should not act on it.</li>
+<li><strong>The model can only return what the app expects.</strong> Ask: "What exactly can the model return to this app? Show me that anything outside that shape is rejected." A free-text answer that the app then acts on is a finding.</li>
+<li><strong>Every action that reaches a customer or moves money waits for a person.</strong> List the actions your app can take on its own. For each, ask who approves it.</li>
+<li><strong>Every connector and tool has the least permission that works.</strong> For each one write: what it can read, what it can change, and whether the job would still get done with less.</li>
+</ul>
+```
+
+## Data, cost and recovery
+
+```{=html}
+<ul class="vc-checklist" id="sec-rest">
+<li><strong>You can list the personal data the app holds.</strong> One line each: what it is, why you need it, how long you keep it, which outside provider sees it.</li>
+<li><strong>There is a spending limit and someone is told when it is reached.</strong> Find the limit in the model provider's dashboard. If there is none, that is a finding.</li>
+<li><strong>You can go back.</strong> Name the last checkpoint that worked and confirm you know how to return to it. Remember what going back does not undo: data already changed and messages already sent.</li>
+</ul>
+```
+
+## What to bring to session 4
+
+A single page with the fourteen checks and, next to each, pass, fail or could not tell, plus one sentence for every item that is not a pass. That page becomes the first section of your risk memo.

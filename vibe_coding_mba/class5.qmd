@@ -1,6 +1,6 @@
 ---
 title: "Class 5 · Demo Day and strategy revisited"
-subtitle: "By the end of the session you will have presented QuoteDesk to a panel, graded it against the rubric, decided what in it is defensible, and written your reflection memo."
+subtitle: "By the end of the session you will have presented QuoteDesk to a panel with a deck you generated and checked, graded it against the rubric, decided what in it is defensible, and written your reflection memo."
 lang: en
 css: assets/vc.css
 include-after-body:
@@ -16,142 +16,241 @@ include-after-body:
 <span>Build goal: none. The product is frozen 24 hours before.</span>
 <span>Deliverables: Demo Day (25%) · reflection memo and participation (15%)</span>
 </div>
+<div class="vc-daybar" data-blocks="Pitch clinic:30|Demo Day:150|Strategy revisited:30|Reflection memo:30"></div>
 ```
 
+The session is 4 hours. The pitch clinic is a recap of topics 1 to 3 of this page, which you read before class; the strategy block discusses topics 4 and 5.
+
 ::: {.callout-note title="How to use this page"}
-- Read it before Demo Day. The first half is the run of show and the rubric; the second half is the strategy block we discuss after the pitches.
-- Every topic opens with a guiding question, explains the idea with Cerro Azul and QuoteDesk, gives you one simulator to play with, an "In the business" note, and a short practice set.
-- The pitch timer and the rubric self-scorer are tools for your rehearsal. Use them with your team the day before.
-- The reflection memo builder at the end assembles the memo you hand in at the close of the session. It stays in this tab only, so copy it out when you are done.
-- The Demo Day checklist is saved in your browser. Tick it the night before.
+- Read it before Demo Day, in order. Topics 1 to 3 prepare the pitch: the deck, the ten minutes, the rubric. Topics 4 and 5 are the strategy block we discuss after the pitches.
+- Every topic opens with a guiding question, explains the idea with Cerro Azul and QuoteDesk, gives you one simulator, an "In the business" note and a short practice set.
+- The deck builder, the pitch timer and the rubric self-scorer are tools for your rehearsal. Use them with your team the day before.
+- The reflection memo builder keeps your draft in this browser. Draft the five parts before class and finish them in the last block.
+- The Demo Day checklist is also saved in your browser. Tick it the night before.
 :::
 
 ## What you will be able to do
 
-- Deliver a 10-minute live demonstration of a working product and its business case to a panel of decision makers, and survive the questions.
-- Grade a product against the course rubric and name the one change that would move the grade most.
+- Generate a deck with an AI assistant from your own sources, with one message per slide and every number traced to a file you can open.
+- Deliver a 10-minute live demonstration of a working product and its business case to a panel of decision makers, and answer their questions.
+- Grade a product against the course rubric and name the one change that would raise the grade most.
 - Explain which parts of what you built are defensible when anyone can build the same thing in a weekend, and which are not.
 - Order the steps that take a vibe-coded prototype to a production system, and say who owns each one.
-- Write a reflection memo that separates what the AI did from what you decided, with evidence from your build log.
-- Describe how the next version of the course toolkit will change what managers can build, and what will not change.
+- Write a reflection memo that separates what the AI did from what you decided, and leave with a small AI work system of your own: skills, connectors and one automation.
 
 ## Route of the session
 
+Times beside the numbered topics are reading times for this page, about 90 minutes in total, before class. Rows that start with "In class" are the four blocks of the session.
+
 ```{=html}
 <ol class="vc-route">
-<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-1"><span class="vc-route-n">1</span><span class="vc-route-t">The ten minutes that matter</span><span class="vc-route-l">pitch timer · 2 questions</span></a></li>
-<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-2"><span class="vc-route-n">2</span><span class="vc-route-t">How the panel grades you</span><span class="vc-route-l">rubric self-scorer · 3 questions</span></a></li>
-<li><span class="vc-route-h">150 min</span><a class="vc-route-a" href="#lab"><span class="vc-route-n">★</span><span class="vc-route-t">Demo Day</span><span class="vc-route-l">8 teams · 10 minutes each plus 5 of questions · panel of three</span></a></li>
+<li><span class="vc-route-h">25 min</span><a class="vc-route-a" href="#topic-1"><span class="vc-route-n">1</span><span class="vc-route-t">Build the deck with AI</span><span class="vc-route-l">deck builder · 3 prompts · 3 questions</span></a></li>
+<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-2"><span class="vc-route-n">2</span><span class="vc-route-t">The ten minutes that matter</span><span class="vc-route-l">pitch timer · 2 questions</span></a></li>
+<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-3"><span class="vc-route-n">3</span><span class="vc-route-t">How the panel grades you</span><span class="vc-route-l">rubric self-scorer · 3 questions</span></a></li>
+<li><span class="vc-route-h">30 min</span><a class="vc-route-a" href="#lab"><span class="vc-route-n">▶</span><span class="vc-route-t">In class · Pitch clinic</span><span class="vc-route-l">order drawn · screens tested · every team says its opening line</span></a></li>
+<li><span class="vc-route-h">150 min</span><a class="vc-route-a" href="#lab"><span class="vc-route-n">★</span><span class="vc-route-t">In class · Demo Day</span><span class="vc-route-l">8 teams · 10 minutes each plus 5 of questions · panel of three · checklist</span></a></li>
 <li class="is-break"><span class="vc-route-h">☕</span><span class="vc-route-t">Break after the fourth team. Stretch, do not fix your demo.</span></li>
-<li><span class="vc-route-h">20 min</span><a class="vc-route-a" href="#topic-3"><span class="vc-route-n">3</span><span class="vc-route-t">What remains a moat when building is cheap</span><span class="vc-route-l">defensibility meter · 3 questions</span></a></li>
-<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-4"><span class="vc-route-n">4</span><span class="vc-route-t">From prototype to production, and who owns it</span><span class="vc-route-l">roadmap builder · 2 questions</span></a></li>
-<li><span class="vc-route-h">10 min</span><a class="vc-route-a" href="#topic-5"><span class="vc-route-n">5</span><span class="vc-route-t">The toolkit two years from now</span><span class="vc-route-l">discussion · 2 questions</span></a></li>
-<li><span class="vc-route-h">45 min</span><a class="vc-route-a" href="#reflection"><span class="vc-route-n">✎</span><span class="vc-route-t">Reflection memo, written in class</span><span class="vc-route-l">memo builder · peer assessment</span></a></li>
+<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-4"><span class="vc-route-n">4</span><span class="vc-route-t">What remains a moat when building is cheap</span><span class="vc-route-l">defensibility meter · 3 questions</span></a></li>
+<li><span class="vc-route-h">12 min</span><a class="vc-route-a" href="#topic-5"><span class="vc-route-n">5</span><span class="vc-route-t">From prototype to production, and who owns it</span><span class="vc-route-l">roadmap builder · 2 questions</span></a></li>
+<li><span class="vc-route-h">30 min</span><a class="vc-route-a" href="#topic-4"><span class="vc-route-n">◆</span><span class="vc-route-t">In class · Strategy revisited</span><span class="vc-route-l">discussion of topics 4 and 5 with the panel</span></a></li>
+<li><span class="vc-route-h">30 min</span><a class="vc-route-a" href="#reflection"><span class="vc-route-n">✎</span><span class="vc-route-t">In class · Reflection memo</span><span class="vc-route-l">memo 20 min · peer assessment 10 min</span></a></li>
+<li><span class="vc-route-h">8 min</span><a class="vc-route-a" href="#after"><span class="vc-route-n">6</span><span class="vc-route-t">Your AI work system</span><span class="vc-route-l">what to keep after the course · 2 questions</span></a></li>
 </ol>
 ```
 
-## Topic 1 · The ten minutes that matter {#topic-1}
+## Topic 1 · Build the deck with AI {#topic-1}
 
 ```{=html}
-<p class="vc-guide"><strong>Guiding question:</strong> You have ten minutes with three people who can fund QuoteDesk or kill it. What do they need to see, in what order?</p>
+<p class="vc-guide"><strong>Guiding question:</strong> The assistant can produce twelve slides in a minute. Which of them would you put your name under in front of the panel?</p>
 ```
 
-The panel on Demo Day is the instructor plus two invited managers or alumni. They have not read your milestones. They will form their opinion of QuoteDesk in the first ninety seconds and spend the rest of the time looking for reasons to change it. Your job is to give them the evidence in the order they need it, not in the order you built it.
+By now the raw material for the pitch exists: your build log, the results of the 24-message test set, the risk memo, screenshots of QuoteDesk and the cost model. An assistant with a presentation skill turns those files into a deck in about the time it takes to read this paragraph. A presentation skill is a skill like the one you wrote in Class 2, except that it knows how to produce slides in a given format. Most assistants ship with one built in, and your instructor shares one for the course. Without a skill, ask for an HTML deck, which any assistant can write. The output is an HTML deck you open in a browser or a PowerPoint file. The deck is no longer the work. The judgment is.
 
-The structure the course asks for has six blocks. **Problem** (60 seconds): Cerro Azul's reps retype WhatsApp messages into the ERP, quotes take three to six hours, and the number that matters is quotes per rep per day. **Demo** (3 minutes): one real user story, end to end, live. A rep pastes a message, QuoteDesk extracts the items, flags the line it is not sure about, the rep corrects it, the quote is saved. Nothing else. **Evidence** (2 minutes): the test set. Twenty-four messages, the pass rate before and after the guardrail, and what the review workload looks like. **Risks** (1.5 minutes): the three findings from your risk memo that a manager would want to know, and what you did about each. **Decision** (1 minute): build, buy or keep vibing, with the reasoning. **Roadmap** (1.5 minutes): what has to be true to put this in front of 14 reps, who does it, and roughly what it costs.
+**Storyline first.** Before any slide exists, write six sentences, one for each block of the pitch in Topic 2. Sentences, not labels. "Problem" is a label. "Cerro Azul's 14 reps retype about 120 quote requests a day, and a quote goes out 3 to 6 hours later" is a message the panel can agree or disagree with. Each sentence becomes the title of one slide, and a slide carries one message. If you cannot write the sentence, the slide has nothing to say.
 
-Two rules that teams break every year. First, the demo is live. A video or screenshots tell the panel you do not trust your product. If the deploy breaks, that is a risk finding, and you say so. Second, the business case is not a slide of benefits. It is the metric from your brief, the number you measured, and the gap between them.
+**Every number needs a source.** The assistant does not leave gaps. Ask it for a roadmap slide without giving it the cost model and it will write "saves 70% of rep time", because decks usually say something like that. That is the failure to watch for. The rule is simple: a number on a slide must be traceable to one of your files, or it comes off.
 
-A side example. A dental clinic team built a triage tool for appointment requests. Their first rehearsal spent six minutes on how retrieval works. Their second rehearsal opened with the receptionist's screen at 8:05 on a Monday morning, 40 unread requests, and the tool sorting them in twelve seconds. The panel asked about retrieval themselves, which is where you want that question to come from.
+| Block | The message, as a sentence | Where the number must come from |
+|---|---|---|
+| Problem | 14 reps retype about 120 requests a day; a quote takes 3 to 6 hours | The brief (M1) and the five timed requests from M3, in the build log |
+| Live demo | Paula quotes Doña Elsa's request in under two minutes | The product itself; a screenshot holds the slide |
+| Evidence | On 24 de-identified messages, the guardrail cut unnoticed wrong quotes from 6 to 1 | Test-set results |
+| Risks | Three findings fixed, one still open | Risk memo |
+| Decision | Keep vibe coding QuoteDesk; hand the write into the ERP to engineering | Risk memo and the decision matrix from Class 4 |
+| Roadmap | Three conditions for rollout and about USD 28 a month in model calls | Cost model |
+
+The roadmap figure is the kind of number to check twice: about 2,600 requests a month on a mid-sized model at the illustrative prices from Class 3, under the USD 50 monthly limit you set in Class 4. Prices change, so the slide names its source and the date.
+
+**The demo stays live.** The deck reserves one slide for it, with a screenshot that holds the screen while the product loads. A 90-second recording is the fallback if the deployed app fails, and you say out loud that it is a recording.
+
+**AI use is declared, here as everywhere in the course.** The closing slide names the sources and says the slides were generated with an assistant and checked by the team. The prompts go in the build log.
+
+**The public page from Class 1 becomes the demo page.** Update it with what is now true and give the panel its address on the closing slide. The same rule applies: no claim on it that your sources cannot support.
+
+A side example. Imagine an HR team that built a tool for onboarding contractors and asks the assistant for "a deck about our project". It returns 19 slides, including one on the future of work. The team deletes every slide whose title is not one of their six sentences and presents eight.
 
 ```{=html}
-<div class="vc-widget" data-widget="c5-pitch"></div>
+<div class="vc-widget" data-widget="c5-deck"></div>
+```
+
+Three prompts, in this order. The first produces no slides at all, on purpose.
+
+```{=html}
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · 1 of 3, the storyline</div><div class="vc-prompt-b">Read the attached build log, test-set results, risk memo and cost model for QuoteDesk. Do not make slides yet. Write the storyline for a 10-minute pitch to a panel of three managers as six full sentences, one for each block: problem, live demo, evidence, risks, decision, roadmap. Each sentence states one claim. If it contains a number, name the file and the line the number comes from. If a block has no evidence in the files, write MISSING instead of a sentence and tell me what I would need to measure.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · 2 of 3, the slides</div><div class="vc-prompt-b">Use your presentation skill; if you have none, produce an HTML deck. Turn the six approved sentences below into a deck of eight slides: a title slide, one slide per sentence with the sentence as its title, and a closing slide that lists the sources, gives the address of our demo page, and says the deck was generated with an AI assistant and checked by the team. One message per slide, at most 25 words of body text, no stock images, no slide I did not ask for. Print the source under every number in small type. For the live demo slide use the screenshot quote-screen.png and the words "Live demo". Then list every number you used with its source, and list anything you wanted to add and did not.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · 3 of 3, the one-page handout</div><div class="vc-prompt-b">From the same six sentences and the same sources, write a one-page handout the panel can keep: the problem in two lines, what QuoteDesk does in three, a small table with the test-set result before and after the guardrail, the three risk findings with their status, our decision, and the three conditions for rollout with an owner and a cost for each. No adjectives about the product. Same numbers as the deck, same sources. End with one line saying the deck and this page were drafted with an AI assistant and checked by the team.</div></div>
 ```
 
 ::: {.callout-tip title="In the business"}
-Executives are used to pitches that end with "and so we need budget". A working demo changes the dynamic: the question is no longer whether the idea could work but what it would take to roll it out. Use that. Spend the roadmap block on the three conditions for rollout and let the panel do the arithmetic. The team that asks for a decision, not for enthusiasm, usually gets one.
+For a long time the deck was the bottleneck: days of someone's time. When a deck costs a minute, more decks appear, and the scarce thing becomes the reader's trust in the numbers. A manager whose decks are believed asks "where does this number come from" of every generated slide, starting with their own. Ask it of the decks your teams send you too.
 :::
 
 ```{=html}
 <div class="vc-practice">
 <p class="vc-practice-t"><span>Practice · Topic 1</span></p>
 <div class="vc-quiz">
-<p class="vc-quiz-q">Your QuoteDesk deploy fails five minutes before your slot. What do you do with the demo block?</p>
+<p class="vc-quiz-q">The generated deck has a slide that says "QuoteDesk reduces quoting time by 70%". Nothing in your build log supports that figure. What do you do?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Screenshots tell the panel you do not trust the product, and they cannot ask you to try an input.">Show the screenshots you prepared as a backup and move on.</button>
-<button class="vc-quiz-opt" data-correct>Run the demo on the local version from your laptop, say the deploy broke, and add it to the risks block.</button>
-<button class="vc-quiz-opt" data-why="Dropping the demo removes the strongest evidence you have. Local still counts as live.">Skip the demo and spend the time on the test set evidence.</button>
+<button class="vc-quiz-opt" data-why="Roughly what the team saw is not a source. The panel's first question will be how you measured it.">Keep it as it stands, since 70% is roughly what the team saw while testing the product last week.</button>
+<button class="vc-quiz-opt" data-correct>Replace it with the figure from your five timed requests in M3, with its source, or take it off.</button>
+<button class="vc-quiz-opt" data-why="A softer wording of an invented number is still an invented number, and now it has a footnote.">Soften it to "up to 70%" and add a footnote saying the figure is an estimate made by the team.</button>
 </div>
-<p class="vc-quiz-fb">A live demo on the local build still shows a working product. A deploy that broke under pressure is exactly the kind of risk finding the panel wants to hear you name, and naming it earns more trust than hiding it.</p>
+<p class="vc-quiz-fb">The assistant filled a gap with a plausible figure. Either the number is traceable to a file of yours or it does not go in front of the panel. Five timed requests is a small sample, and it is real.</p>
 </div>
 <div class="vc-quiz">
-<p class="vc-quiz-q">Which opening line gives the panel the most in the first fifteen seconds?</p>
+<p class="vc-quiz-q">Which of these is a storyline sentence, not a label?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="The technology is not the problem. The panel does not yet know why they should care.">"QuoteDesk uses a language model with retrieval to extract line items from unstructured messages."</button>
-<button class="vc-quiz-opt" data-why="A vision statement is not evidence. It delays the thing the panel can judge.">"We believe AI will transform B2B distribution in Chile."</button>
-<button class="vc-quiz-opt" data-correct>"Cerro Azul's 14 reps retype 300 WhatsApp messages a day into the ERP. A quote takes up to six hours. Here is the rep's screen."</button>
+<button class="vc-quiz-opt" data-why="It names a topic. There is nothing in it the panel can agree or disagree with.">"Evidence and results from our evaluation of the extraction feature on customer messages."</button>
+<button class="vc-quiz-opt" data-why="Adjectives and a topic. No claim, no number, no source.">"Our rigorous, data-driven approach to evaluating quality and safety across the product."</button>
+<button class="vc-quiz-opt" data-correct>"On 24 de-identified messages, the guardrail cut unnoticed wrong quotes from 6 to 1."</button>
 </div>
-<p class="vc-quiz-fb">User, pain, number, then the screen. The panel now knows what QuoteDesk is for, how to judge it, and that you are about to show it working.</p>
+<p class="vc-quiz-fb">A sentence makes a claim that can be checked against a source. That is what lets one slide carry one message, and what lets you cut every slide that has no sentence.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">The assistant returned 14 slides for a 10-minute slot that includes a 3-minute live demo. What is the best fix?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="The panel stops listening before you run out of slides, and the clock stops at 10:00 either way.">Keep all 14, and rehearse until you can speak fast enough to reach the last slide before 10:00.</button>
+<button class="vc-quiz-opt" data-why="The talk does not get shorter. The panel reads the second message while you explain the first.">Merge them two by two into 7 denser slides, so the count fits the clock and nothing is lost.</button>
+<button class="vc-quiz-opt" data-correct>Delete every slide whose title is not one of your six sentences; keep one or two as backup.</button>
+</div>
+<p class="vc-quiz-fb">Generating slides is free; the panel's attention is not. The storyline is the filter: six sentences, six slides, plus title and sources. Anything else answers a question nobody has asked yet.</p>
 </div>
 </div>
 ```
 
-## Topic 2 · How the panel grades you {#topic-2}
+## Topic 2 · The ten minutes that matter {#topic-2}
 
 ```{=html}
-<p class="vc-guide"><strong>Guiding question:</strong> If you could improve one thing in QuoteDesk tonight, which one would move your grade most?</p>
+<p class="vc-guide"><strong>Guiding question:</strong> You have ten minutes with three people who can fund QuoteDesk or stop it. What do they need to see, and in what order?</p>
 ```
 
-Demo Day is 25% of the course grade. It is graded as a team, with an individual adjustment of up to ten points from the build log and the peer assessment. The class grades with the rubric too, and the panel's grade counts. The rubric has four criteria, the same four used for every milestone:
+The panel on Demo Day is the instructor plus two invited managers or alumni. They have not read your milestones. They form a first opinion of QuoteDesk in the first minute or two and spend the rest of the time testing it. Your job is to give them the evidence in the order they need it, not in the order you built it.
 
-| Criterion | What the panel looks for | Where it shows in the pitch |
+The pitch has six blocks, the same six as your storyline.
+
+| Block | Time | What goes in it |
 |---|---|---|
-| Problem and value | Is the problem real, the user named, the metric measurable | Problem block, roadmap |
-| Functionality | Does the product work for its user, end to end | Demo |
-| AI quality and safety | Is the model capability useful, evaluated and guarded | Evidence, risks |
-| Communication | Is the product and the decision explained clearly to its audience | All of it, and the questions |
+| Problem | 1:00 | Cerro Azul's reps retype about 120 quote requests a day, a quote takes 3 to 6 hours, and the number that matters is quote time. |
+| Live demo | 3:00 | One user story, end to end, with a de-identified message. Paula pastes it, QuoteDesk extracts the items and flags the line it is unsure about ("lo de siempre de lácteos"), Paula corrects it, the quote is saved. If a discount appears, Carla approves it. Nothing else. |
+| Evidence | 2:00 | The test set: 24 messages, the result before and after the guardrail, and what the review workload looks like. |
+| Risks | 1:30 | The three findings from your risk memo that a manager would want to know, and what you did about each. |
+| Decision | 1:00 | The build / buy / vibe decision: keep vibe coding it, hand it to engineering to build properly, buy a product, or stop, with the reasoning. |
+| Roadmap | 1:30 | What has to be true to put this in front of 14 reps, who does it, and roughly what it costs. |
 
-Each criterion has four levels. Level 1 is "absent or not credible". Level 4 is "a manager could act on this tomorrow". Most teams arrive at level 3 on functionality because they have been building for four weeks, and at level 2 on problem and value because the brief from session 1 was never revisited. That is the cheapest grade to recover: the metric you wrote in M1, measured once with real messages, moves you a full level.
+Two rules that are easy to break. First, the demo is live. Use the deployed app; if it fails, play the recording and say that it is a recording. Screenshots alone tell the panel you do not trust your product, and a failure you name becomes a risk finding, which is what the risks block is for. Second, the business case is not a slide of benefits. It is the metric from your brief (three reps use it for two weeks and quote time drops below one hour), the number you measured in M3 on at least five timed requests, and the gap between them.
 
-The simulator below lets you score QuoteDesk against the rubric as the panel would. Notice which criterion is weighted most in your own case, and which one is one evening of work away from the next level.
+A side example. Imagine a dental clinic team that built a tool for rescheduling appointments. Their first rehearsal spends six minutes on how retrieval works. Their second opens with the receptionist's screen at 8:05 on a Monday, 40 unread rescheduling requests, and the tool proposing new slots for them in twelve seconds. The panel asks about retrieval themselves, which is where you want that question to come from.
 
 ```{=html}
-<div class="vc-widget" data-widget="c5-rubric"></div>
+<div class="vc-widget" data-widget="c5-pitch"></div>
 ```
 
 ::: {.callout-tip title="In the business"}
-Rubrics are how large organizations decide on prototypes too, just unwritten. A steering committee asks the same four questions: is the problem worth it, does it work, can we trust it, do I understand it. Teams that write their own rubric before an internal demo, and score themselves honestly, present better and get fewer surprise questions. Take the habit with you.
+Executives are used to pitches that end with "and so we need budget". A working demo changes the conversation: the question is no longer whether the idea could work but what it would take to roll it out. Use that. Spend the roadmap block on the three conditions for rollout and let the panel do the arithmetic. A team that asks for a decision, not for enthusiasm, is more likely to get one.
 :::
 
 ```{=html}
 <div class="vc-practice">
 <p class="vc-practice-t"><span>Practice · Topic 2</span></p>
 <div class="vc-quiz">
-<p class="vc-quiz-q">A team's QuoteDesk extracts items perfectly in the demo, but they never measured quotes per rep per day. Which criterion suffers most?</p>
+<p class="vc-quiz-q">Your deployed QuoteDesk stops responding five minutes before your slot. What do you do with the demo block?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="The product works. Functionality is fine.">Functionality.</button>
-<button class="vc-quiz-opt" data-correct>Problem and value.</button>
-<button class="vc-quiz-opt" data-why="A perfect demo may still be well evaluated. The missing piece is the business metric, not the model.">AI quality and safety.</button>
+<button class="vc-quiz-opt" data-correct>Play the 90-second recording, say that it is a recording and that the deploy broke, and add it to the risks block.</button>
+<button class="vc-quiz-opt" data-why="Screenshots cannot show the product completing a story, and hiding the failure costs more trust than naming it.">Show screenshots of each screen and describe what the product would have done, without mentioning the failure.</button>
+<button class="vc-quiz-opt" data-why="Dropping the demo removes the strongest evidence you have. The recording still shows the real product working.">Skip the demo block entirely, and give its three minutes to the test-set evidence and to a longer roadmap block.</button>
+</div>
+<p class="vc-quiz-fb">The recording still shows the real product completing the story. A deploy that broke under pressure is exactly the kind of finding the panel wants to hear you name, and naming it earns more trust than hiding it.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Which opening line gives the panel the most in the first fifteen seconds?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="The technology is not the problem. The panel does not yet know why they should care.">"QuoteDesk uses a language model with retrieval to extract line items from unstructured messages."</button>
+<button class="vc-quiz-opt" data-correct>"Cerro Azul's 14 reps retype 120 quote requests a day. A quote takes up to six hours. Here is Paula's screen."</button>
+<button class="vc-quiz-opt" data-why="A vision statement is not evidence. It delays the thing the panel can judge.">"We believe AI will transform B2B food distribution in Chile, and QuoteDesk is our first step toward that future."</button>
+</div>
+<p class="vc-quiz-fb">User, pain, number, then the screen. The panel now knows what QuoteDesk is for, how to judge it, and that you are about to show it working.</p>
+</div>
+</div>
+```
+
+## Topic 3 · How the panel grades you {#topic-3}
+
+```{=html}
+<p class="vc-guide"><strong>Guiding question:</strong> If you could improve one thing in QuoteDesk tonight, which one would raise your grade most?</p>
+```
+
+Demo Day is 25% of the course grade. It is graded as a team, with an individual adjustment of up to ten points from the build log and the peer assessment. That adjustment applies to the Demo Day grade only. The class grades with the rubric too, and the panel's grade is the one that counts. The rubric has four criteria, the same four used for every graded component of the course:
+
+| Criterion | What the panel looks for | Where it shows in the pitch |
+|---|---|---|
+| Problem and value | Is the problem real, the user named, the metric measurable | Problem block, roadmap |
+| Functionality | Does the product work for its user, end to end | Demo |
+| AI quality and safety | Is the model capability useful, evaluated and guarded | Evidence, risks |
+| Communication | Are the product and the decision explained clearly to this audience | All of it, and the questions |
+
+Where a criterion does not apply to a component, it is left out. M1, a brief with no product yet, was graded on problem and value and on communication. The reflection memo is graded on AI quality and safety (what the AI did, what you decided, where it misled you) and on communication. The level descriptors for every component are on the [rubric page](rubric.html).
+
+Each criterion has four levels. Level 1 is "absent or not credible". Level 4 is "a manager could act on this tomorrow". Expect to arrive at level 3 on functionality, because you have been building for four sessions, and at level 2 on problem and value if the brief from session 1 was never revisited. That is the cheapest grade to recover: the metric you wrote in M1, measured in M3 on at least five timed requests, moves you a full level.
+
+The simulator lets you score QuoteDesk as the panel would. It converts levels into an approximate grade: level 2 across the board is about 55, the pass mark, and level 3 is about 80. Look for the criterion that is lowest in your own case and is one evening of work away from the next level.
+
+```{=html}
+<div class="vc-widget" data-widget="c5-rubric"></div>
+```
+
+::: {.callout-tip title="In the business"}
+Large organizations decide on prototypes with a rubric too, usually an unwritten one. A steering committee asks the same four questions: is the problem worth it, does it work, can we trust it, do I understand it. Writing your own rubric before an internal demo, and scoring yourself honestly, is the cheapest way to hear the surprise questions before the committee asks them. Take the habit with you.
+:::
+
+```{=html}
+<div class="vc-practice">
+<p class="vc-practice-t"><span>Practice · Topic 3</span></p>
+<div class="vc-quiz">
+<p class="vc-quiz-q">A team's QuoteDesk extracts items perfectly in the demo, but the team never did the five timed requests for M3. Which criterion suffers most?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="The product completes the story in the demo. Functionality is about whether it works, and it does.">Functionality, because a product without timings cannot be said to work.</button>
+<button class="vc-quiz-opt" data-correct>Problem and value, because the metric in the brief has no measurement.</button>
+<button class="vc-quiz-opt" data-why="The AI feature is judged by the test set and the guardrail. The missing piece is the business metric, not the model.">AI quality and safety, because a perfect demo hides the model's errors.</button>
 </div>
 <p class="vc-quiz-fb">Without the metric from the brief the panel cannot tell whether QuoteDesk solves the problem or just impresses. Problem and value stays at level 2 however good the extraction is.</p>
 </div>
 <div class="vc-quiz">
-<p class="vc-quiz-q">How does the individual adjustment to the team grade work?</p>
+<p class="vc-quiz-q">How does the individual adjustment work?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="The panel does not grade individuals. It grades the product and the pitch.">The panel assigns a separate grade to whoever presented.</button>
-<button class="vc-quiz-opt" data-correct>Up to ±10 points based on each member's build log and the peer assessment within the team.</button>
-<button class="vc-quiz-opt" data-why="The reflection memo is a separate component, worth 15% on its own.">The reflection memo replaces the team grade for each student.</button>
+<button class="vc-quiz-opt" data-why="The panel does not grade individuals. It grades the product and the pitch.">The panel gives a separate grade to whichever team member presented the live demo block.</button>
+<button class="vc-quiz-opt" data-why="The reflection memo is a separate component, worth 15% together with participation. It replaces nothing.">The reflection memo grade replaces the Demo Day grade for any student who did not present at all.</button>
+<button class="vc-quiz-opt" data-correct>Up to ±10 points on the Demo Day grade, from each member's build log and the peer assessment.</button>
 </div>
-<p class="vc-quiz-fb">The build log is the evidence of what each person did and decided. The peer assessment at the end of the session confirms it. Together they move the team grade up or down by at most ten points per person.</p>
+<p class="vc-quiz-fb">The build log is the evidence of what each person did and decided. The peer assessment at the end of the session confirms it. Together they move the Demo Day grade up or down by at most ten points per person, and no other component.</p>
 </div>
 <div class="vc-quiz">
-<p class="vc-quiz-q">Which single addition most often moves a team from level 2 to level 3 on "AI quality and safety"?</p>
+<p class="vc-quiz-q">Which single addition is most likely to move a team from level 2 to level 3 on "AI quality and safety"?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="A larger model without a test set is still an unevaluated capability.">Switching to a larger model for the demo.</button>
-<button class="vc-quiz-opt" data-why="More features do not make the AI feature better evaluated or better guarded.">Adding a second AI feature.</button>
-<button class="vc-quiz-opt" data-correct>Showing the test set pass rate before and after the guardrail, with the review workload.</button>
+<button class="vc-quiz-opt" data-why="A larger model without a test set is still an unevaluated capability.">Switching to the largest model for the demo, so the extraction makes fewer visible mistakes.</button>
+<button class="vc-quiz-opt" data-correct>Showing the test-set result before and after the guardrail, with the review workload it adds.</button>
+<button class="vc-quiz-opt" data-why="More features do not make the first feature better evaluated or better guarded.">Adding a second AI feature, so the panel sees the model doing more than one kind of task.</button>
 </div>
-<p class="vc-quiz-fb">"Evaluated and guarded" is the definition of the criterion. A number before, a number after, and the cost in human review is the evidence that you know what the model gets wrong and what you did about it.</p>
+<p class="vc-quiz-fb">"Evaluated and guarded" is the definition of the criterion. A count before, a count after, and the cost in human review is the evidence that you know what the model gets wrong and what you did about it.</p>
 </div>
 </div>
 ```
@@ -160,29 +259,27 @@ Rubrics are how large organizations decide on prototypes too, just unwritten. A 
 
 ```{=html}
 <div class="vc-lab">
-<p class="vc-lab-t">What happens in the next 150 minutes</p>
-<p class="vc-lab-time">8 teams · 10 minutes plus 5 of questions each · panel: instructor and two invited managers or alumni · break after team 4</p>
+<p class="vc-lab-t">What happens in the first 180 minutes of the session</p>
+<p class="vc-lab-time">Pitch clinic 30 min · then 8 teams, 10 minutes plus 5 of questions each · panel: the instructor and two invited managers or alumni · break after team 4</p>
 <ol>
-<li>Order is drawn at the start of the session. Every team has its deployed URL and its local build open before the first pitch begins.</li>
+<li><strong>Pitch clinic (30 min).</strong> The order is drawn. Every team opens its deployed address, its recording and its deck on the classroom screen once, then says its opening line aloud. The instructor recaps the six blocks and the rubric. Nobody changes the product.</li>
 <li>Each pitch follows the six blocks: problem, live demo, evidence from the test set, risk memo findings, the build / buy / vibe decision, roadmap to production. The timer is visible to everyone and stops at 10:00.</li>
-<li>Five minutes of questions. The panel asks first; the class asks if time remains. Answer the question asked. "We did not test that" is a complete answer.</li>
-<li>While a team presents, every other student scores it on the four criteria with the rubric sheet. Scores are collected after each pitch, not at the end.</li>
-<li>The panel's grade counts for the Demo Day component. The class scores are returned to each team as feedback the same day.</li>
+<li>Five minutes of questions. The panel asks first; the class asks if time remains. Answer the question that was asked. "We did not test that" is a complete answer.</li>
+<li>While a team presents, every other student scores it on the four criteria of the <a href="rubric.html">rubric</a>. Scores are collected after each pitch, not at the end.</li>
+<li>The panel's grade counts for the Demo Day component. The class scores go back to each team as feedback the same day.</li>
 <li>After team 4, ten minutes of break. Nobody touches their product; it was frozen 24 hours ago and the panel knows it.</li>
 <li>After the last pitch, the panel gives five minutes of overall comments before the strategy block.</li>
-<li>Products stay deployed for one week after Demo Day so the instructor can verify any claim made in the pitch.</li>
+<li>Products stay deployed for one week after Demo Day so the instructor can verify any claim made in a pitch.</li>
 </ol>
 </div>
 ```
 
-Two prompts worth using the day before, when you rehearse. The first turns the assistant into a hostile panel member; the second checks your demo script against the rubric.
+Three prompts for the day before, when you rehearse. The first turns the assistant into a hostile panel member, the second checks your script against the rubric, the third fits it to the clock.
 
 ```{=html}
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant</div><div class="vc-prompt-b">You are a skeptical operations director at a Chilean food distributor with 14 sales reps. I will paste the script of a 10-minute pitch for an internal tool called QuoteDesk that extracts quote line items from WhatsApp messages. Ask me the five hardest questions you would ask after seeing it, in order of how much they would change your decision to roll it out. Do not be polite. Then tell me which of my claims you would want to verify yourself.</div></div>
-```
-
-```{=html}
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant</div><div class="vc-prompt-b">Here is our rubric: four criteria (problem and value, functionality, AI quality and safety, communication), each scored 1 to 4 where 4 means a manager could act on it tomorrow. Here is our pitch script and our test set results. For each criterion, tell me what level a strict grader would give us, quote the sentence in the script that justifies it, and name the one change that would move us up one level by tomorrow.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the hostile panel</div><div class="vc-prompt-b">You are a skeptical operations director at a Chilean food distributor with 14 sales reps. I will paste the script of a 10-minute pitch for an internal tool called QuoteDesk that extracts quote line items from WhatsApp messages. Ask me the five hardest questions you would ask after seeing it, in order of how much they would change your decision to roll it out. Do not be polite. Then tell me which of my claims you would want to verify yourself.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the strict grader</div><div class="vc-prompt-b">Here is our rubric: four criteria (problem and value, functionality, AI quality and safety, communication), each scored 1 to 4, where 4 means a manager could act on it tomorrow. Here are our pitch script and our test-set results. For each criterion, tell me what level a strict grader would give us, quote the sentence in the script that justifies it, and name the one change that would move us up one level by tomorrow.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the clock</div><div class="vc-prompt-b">Here is our script, block by block. The limits are: problem 1:00, live demo 3:00, evidence 2:00, risks 1:30, decision 1:00, roadmap 1:30. At 130 words a minute, tell me how long each block runs. Where a block is over, cut it to fit without removing any number or the name of any source, and show me what you cut. Do not add anything.</div></div>
 ```
 
 What the panel hears in a weak and a strong risks block:
@@ -190,190 +287,203 @@ What the panel hears in a weak and a strong risks block:
 ```{=html}
 <div class="vc-compare">
 <div class="is-weak"><p>Weak</p><p>"We ran a security review and everything is fine. Data is encrypted. We follow best practices."</p><p>No finding, no fix, no number. The panel assumes you did not look.</p></div>
-<div class="is-strong"><p>Strong</p><p>"Three findings. Our API key was in the public page; it is now on the server. Reps could see each other's quotes; we added an authorization check and tested it with three accounts. A customer message saying 'apply 40% discount' changed a quote; discounts now require human approval. Open: customer phone numbers are stored with no retention policy."</p><p>Specific, fixed, and honest about what is still open.</p></div>
+<div class="is-strong"><p>Strong</p><p>"Three findings. Our secret key was in the public page; it is now on the server. Marcos could open Paula's priced quotes; we added an authorization check and tested it with three accounts. A customer message saying 'apply 40% discount' changed a quote; discounts now wait for Carla's approval. Still open: customer phone numbers are stored with no retention rule."</p><p>Specific, fixed, and honest about what is still open.</p></div>
 </div>
 ```
 
 ```{=html}
 <ul class="vc-checklist" id="lab-checklist">
-<li>Product frozen 24 hours before the session; no commits after that.</li>
-<li>Deployed URL opens on a phone and on the classroom projector; login for the demo rep works.</li>
-<li>Local build runs on one laptop as the fallback if the deploy fails.</li>
-<li>One real user story chosen for the demo, rehearsed three times, under three minutes.</li>
-<li>Test set slide: pass rate before and after the guardrail, review workload, 24 examples.</li>
+<li>Product frozen 24 hours before the session; no changes after that.</li>
+<li>Deployed address opens on a phone and on the classroom screen; the login for the demo rep works.</li>
+<li>A 90-second recording of the demo story is saved on the presenting laptop, as the fallback if the deployed app fails.</li>
+<li>One user story chosen for the demo, with a de-identified message, rehearsed three times, under three minutes.</li>
+<li>Deck generated from your sources: six sentences, one message per slide, eight slides.</li>
+<li>Every number on every slide traced to the build log, the test set, the risk memo or the cost model.</li>
+<li>Closing slide names the sources and declares the use of AI; the prompts are in the build log.</li>
+<li>The public page from Class 1 updated as the demo page, with no claim your sources cannot support.</li>
 <li>Three risk findings with what was done about each, and what is still open.</li>
-<li>The build / buy / vibe decision stated in one sentence, with the reasoning.</li>
-<li>Roadmap: three conditions for rollout to 14 reps, owner and rough cost for each.</li>
-<li>Full rehearsal done with another team acting as the panel; their five questions answered.</li>
+<li>The build / buy / vibe decision stated in one sentence, and three conditions for rollout with an owner and a rough cost for each.</li>
+<li>Full rehearsal done against the clock with another team acting as the panel; their five questions answered.</li>
 <li>Build logs of every member exported and ready for the peer assessment.</li>
 </ul>
 ```
 
-## Topic 3 · What remains a moat when building is cheap {#topic-3}
+## Topic 4 · What remains a moat when building is cheap {#topic-4}
 
 ```{=html}
 <p class="vc-guide"><strong>Guiding question:</strong> Any competitor of Cerro Azul could build QuoteDesk in a weekend. So what, if anything, is worth protecting?</p>
 ```
 
-In session 1 we noted that the cost of a working prototype collapsed from weeks of engineering to hours of a manager's time. In session 4 you measured it on your own product. Now follow that fact to its strategic conclusion: if the software is cheap to build, the software is not where the advantage lives.
+In session 1 you saw that the cost of a working prototype fell from weeks of engineering to hours of a manager's time. Over four sessions you felt it on your own product. Now follow that fact to its strategic conclusion: if the software is cheap to build, the software is not where the advantage lives.
 
-The classic view of AI moats was about data, learning and algorithms. Look at QuoteDesk with that lens. The algorithm is a rented model that every competitor rents too. The code was written by an assistant and could be rewritten by the same assistant for anyone. What is left are four things that were never in the code.
+The classic view of an AI moat was about data, learning and algorithms. Look at QuoteDesk through that lens. The algorithm is a rented model that every competitor can rent too. The code was written by an assistant and could be written again by the same assistant for anyone. What is left are four things that were never in the code.
 
-**Proprietary data.** Cerro Azul has 1,800 customers' order histories, their own product catalog with its local names ("lo de siempre de lácteos"), and the corrections reps made to the extractions since the first week. That data makes QuoteDesk right for Cerro Azul's customers and useless, as is, for anyone else's. **Distribution.** The 14 reps already have the tool in their workflow; a competitor has to win the reps before winning the customers. **Workflow integration.** QuoteDesk writes into the ERP, respects the price list, and knows the delivery policy. The integration took longer than the prototype and encodes how Cerro Azul operates. **Trust and compliance.** Customers trust the quote because a rep approved it; management trusts the tool because the test set and the risk memo exist, and because personal data is handled under Ley 21.719. Trust is slow to build and does not copy with the code.
+- **Proprietary data.** Cerro Azul has its own catalog with its local names ("lo de siempre de lácteos"), what each customer usually orders, and every correction the reps have made to an extraction since the first week. That data makes QuoteDesk right for Cerro Azul's customers and useless, as is, for anyone else's.
+- **Distribution: the customer relationships.** Cerro Azul already sells to 1,800 accounts, and its reps know them and their history. A rival that copies QuoteDesk quotes faster for its own customers. The copy does not bring these accounts with it.
+- **Workflow integration.** The quote-format skill and the price-list connector the reps' assistants use, and the rule that Carla approves discounts. Each one is cheap to write and slow to earn, because it encodes how Cerro Azul actually operates.
+- **Trust.** Customers trust the quote because a rep approved it. Management trusts the tool because the test set and the risk memo exist. Customers trust Cerro Azul with their names, phones and orders because that data is handled well. Complying with Ley 21.719 is an obligation, not an advantage; trust is what you earn on top of it, slowly, and it does not copy with the code.
 
-Notice what the list does not include: the app itself. If your team's roadmap depends on "being first with a quote extraction tool", the panel will ask what happens the Monday after a competitor's manager takes this course.
+Notice what the list does not include: the app itself. If your roadmap depends on "being first with a quote extraction tool", the panel will ask what happens the Monday after a competitor's manager takes a course like this one.
 
 ```{=html}
 <div class="vc-widget" data-widget="c5-moats"></div>
 ```
 
 ::: {.callout-tip title="In the business"}
-This changes where a manager should spend the next budget. Not on a better model or a prettier interface, which anyone can rent, but on the loop that makes the data better every day: rep corrections flowing back into the system, customer histories attached to quotes, the tool sitting where the work already happens. Cheap building means the strategic question moves from "can we build it" to "what do we own that makes ours better".
-:::
-
-```{=html}
-<div class="vc-practice">
-<p class="vc-practice-t"><span>Practice · Topic 3</span></p>
-<div class="vc-quiz">
-<p class="vc-quiz-q">A rival distributor copies QuoteDesk's features exactly in a weekend. Which of Cerro Azul's advantages survives that copy?</p>
-<div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="The model is rented from the same provider by both companies.">Using a more capable language model.</button>
-<button class="vc-quiz-opt" data-correct>Three months of rep corrections and 1,800 customers' order histories attached to the extractions.</button>
-<button class="vc-quiz-opt" data-why="A clean interface is a prompt away for anyone with the same assistant.">The clean interface designed in session 2.</button>
-</div>
-<p class="vc-quiz-fb">Proprietary data accumulates with use and does not copy with the code. The rival starts the same weekend with zero corrections and no customer histories.</p>
-</div>
-<div class="vc-quiz">
-<p class="vc-quiz-q">Why does "workflow integration" count as a moat when the ERP connector was also written by the assistant?</p>
-<div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="The code of the connector is not the point. Anyone can write a connector.">Because the connector code is complex.</button>
-<button class="vc-quiz-opt" data-correct>Because it encodes how Cerro Azul operates, its price list, its policies and its approvals, and the reps already work inside it.</button>
-<button class="vc-quiz-opt" data-why="Integrations are rarely patentable and that is not the mechanism here.">Because integrations can be patented.</button>
-</div>
-<p class="vc-quiz-fb">The integration is cheap to write and expensive to earn: it reflects decisions, approvals and habits specific to the company. A competitor has to replicate the organization, not the code.</p>
-</div>
-<div class="vc-quiz">
-<p class="vc-quiz-q">A team's roadmap says "our advantage is being first with AI quoting in Chilean food distribution". What is the panel's likely objection?</p>
-<div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-correct>Being first with something that takes a weekend to copy is not an advantage; ask what the tool owns that others cannot build.</button>
-<button class="vc-quiz-opt" data-why="The market is large enough; the objection is about defensibility, not size.">The market is too small.</button>
-<button class="vc-quiz-opt" data-why="The model's capability is not the issue; it is rented by everyone.">The model is not accurate enough yet.</button>
-</div>
-<p class="vc-quiz-fb">First-mover advantage requires that the move be hard to follow. When building is cheap, the follow is easy, and the advantage has to come from data, distribution, integration or trust.</p>
-</div>
-</div>
-```
-
-## Topic 4 · From prototype to production, and who owns it {#topic-4}
-
-```{=html}
-<p class="vc-guide"><strong>Guiding question:</strong> QuoteDesk works for your team of three. What has to happen before 14 reps and 1,800 customers depend on it, and in what order?</p>
-```
-
-A prototype that a manager built and a system that a company depends on are different objects, even when the screens look the same. The difference is not features. It is who is on call when it fails, whose budget pays the API bill, where the customer data is, and who can change it without breaking it.
-
-The road from one to the other has a sensible order, and teams get it wrong in two predictable ways. The first is to start with scaling, buying infrastructure before anyone has measured whether the tool changes quotes per rep per day. The second is to skip the handoff, leaving a tool that only the manager who built it understands, used by 14 people, with the API key on the manager's personal account.
-
-The sequence the course recommends starts with **a pilot with real users and the metric from the brief**, because every later step costs money and the pilot tells you whether to spend it. Then **the risk findings closed**, since you cannot put customer data in front of 14 reps with an open authorization bug. Then **engineering review and the handoff decision**: a technology team looks at the product with the five questions from session 4 and tells you whether to rebuild, harden or keep. Then **an owner and a budget**, meaning the API cost moves to a company account with a limit and someone's name is on the tool. Then **data protection and retention**, the purpose and retention policy for personal data, written down. Then **monitoring and the test set in production**, so the extraction quality is measured every week, not once. Then **training and rollout to the 14 reps**, in two waves. And only then **scaling, integration depth and cost optimization**, because now you know what you are scaling.
-
-The simulator asks you to put those steps in order. The exact order is debatable at the edges; the mistakes are not.
-
-```{=html}
-<div class="vc-widget" data-widget="c5-roadmap"></div>
-```
-
-::: {.callout-tip title="In the business"}
-"Citizen developers", managers who build their own tools, are now a governance question in most organizations, not a curiosity. The companies handling it well do three things: a registry of tools that touch company data, a light review before any tool gets real users, and a named owner for every tool in use. None of it stops managers from building. All of it stops the Monday when the only person who understands the quoting tool is on holiday.
+This changes where a manager should spend the next budget. Not on a better model or a prettier interface, which anyone can rent, but on the loop that makes the data better every day: rep corrections flowing back into the system, customer histories attached to quotes, the tool sitting where the work already happens. Cheap building moves the strategic question from "can we build it" to "what do we own that makes ours better".
 :::
 
 ```{=html}
 <div class="vc-practice">
 <p class="vc-practice-t"><span>Practice · Topic 4</span></p>
 <div class="vc-quiz">
-<p class="vc-quiz-q">What should come first on QuoteDesk's road to production?</p>
+<p class="vc-quiz-q">A rival distributor copies QuoteDesk's features exactly in a weekend. Which of Cerro Azul's advantages survives that copy?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Scaling before measuring spends money on a tool whose value is still a hypothesis.">Move it to scalable infrastructure.</button>
-<button class="vc-quiz-opt" data-correct>A pilot with three reps measuring quotes per rep per day, the metric from the brief.</button>
-<button class="vc-quiz-opt" data-why="Adding features before the pilot delays the only evidence that matters.">Add the second AI feature the reps asked for.</button>
+<button class="vc-quiz-opt" data-why="Both companies rent from the same providers, and the rival can switch models in a day.">A more capable language model than the one the rival chose to rent for its own copy.</button>
+<button class="vc-quiz-opt" data-why="A clean interface is one prompt away for anyone with the same assistant.">The clean interface and the quote layout that the team designed back in session 2.</button>
+<button class="vc-quiz-opt" data-correct>Three months of rep corrections and what each of its 1,800 customers usually orders.</button>
 </div>
-<p class="vc-quiz-fb">The pilot answers whether the tool changes the number that justified it. Every later step costs money, and the pilot tells you whether to spend it.</p>
+<p class="vc-quiz-fb">Proprietary data accumulates with use and does not copy with the code. The rival starts the same weekend with zero corrections and no customer histories.</p>
 </div>
 <div class="vc-quiz">
-<p class="vc-quiz-q">The API key for QuoteDesk is on the personal account of the manager who built it. Why is that a production problem and not a detail?</p>
+<p class="vc-quiz-q">Why does workflow integration count as a moat when the skill and the connector were also set up with an assistant?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Cost is part of it, but the real problem is ownership: nobody else can see, limit or rotate it.">Because personal accounts are more expensive.</button>
-<button class="vc-quiz-opt" data-correct>Because the company depends on a tool it does not control: no budget limit, no owner, and the tool stops when that person leaves.</button>
-<button class="vc-quiz-opt" data-why="Personal keys work the same way technically. The issue is control, not capability.">Because personal keys cannot call the model.</button>
+<button class="vc-quiz-opt" data-why="The files are short. Anyone can write a skill or switch on a connector.">Because a skill and a connector are technically complex pieces that only a few people can write well.</button>
+<button class="vc-quiz-opt" data-correct>Because they encode Cerro Azul's price list, quote format and approvals, and reps work inside them.</button>
+<button class="vc-quiz-opt" data-why="Integrations are rarely patentable, and that is not the mechanism here.">Because integrations with company systems can be patented, which blocks a rival from copying.</button>
 </div>
-<p class="vc-quiz-fb">An owner and a budget is a step on the roadmap precisely because a tool 14 reps depend on cannot live on someone's credit card. It is a control problem, and it is cheap to fix early.</p>
+<p class="vc-quiz-fb">The integration is cheap to write and expensive to earn: it reflects decisions, approvals and habits specific to the company. A competitor has to replicate the organization, not the files.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">A team's roadmap says "our advantage is being first with AI quoting in Chilean food distribution". What is the panel's likely objection?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-correct>Being first with something a rival copies in a weekend is no advantage; say what you own.</button>
+<button class="vc-quiz-opt" data-why="The objection is about defensibility, not about the size of the market.">The Chilean food distribution market is too small to justify building an AI quoting tool.</button>
+<button class="vc-quiz-opt" data-why="The model's capability is not the issue; everyone rents the same one.">The model is not yet accurate enough for quoting, so being first only means failing first.</button>
+</div>
+<p class="vc-quiz-fb">A first move is an advantage only if it is hard to follow. When building is cheap, following is easy, and the advantage has to come from data, customer relationships, integration or trust.</p>
 </div>
 </div>
 ```
 
-## Topic 5 · The toolkit two years from now {#topic-5}
+## Topic 5 · From prototype to production, and who owns it {#topic-5}
 
 ```{=html}
-<p class="vc-guide"><strong>Guiding question:</strong> The assistant you used this month will be obsolete before you finish the MBA. What did you learn that is not obsolete with it?</p>
+<p class="vc-guide"><strong>Guiding question:</strong> QuoteDesk works for your team of three. What has to happen before 14 reps and 1,800 customers depend on it, and in what order?</p>
 ```
 
-The course named a toolkit each term because tools change. Over the five sessions you used an agentic coding assistant, a UI builder, a managed database, a hosting platform and a version control service. Two years from now the names will differ, the assistants will take larger steps with fewer mistakes, and the first version of QuoteDesk will take minutes instead of a session.
+A prototype that a manager built and a system that a company depends on are different objects, even when the screens look the same. The difference is not features. It is who is on call when it fails, whose budget pays for the model calls, where the customer data is, and who can change it without breaking it.
 
-Three things will not change. The brief will still be yours to write: a named user, a pain, a metric. The assistant does not know which of Cerro Azul's problems is worth solving. The risks will still be yours to own: whose data, whose money, what happens when it is wrong. And the decision of build, buy, vibe or hand off will still be a management decision, made with better evidence and faster, but not made by the tool.
+The road from one to the other has a sensible order, and it goes wrong in three predictable ways. The first is to start with scaling, buying infrastructure before anyone has measured whether the tool changes quote time. The second is to pilot with real customer messages while a critical finding is still open and nobody has decided what happens to the data. The third is to skip the handoff, leaving a tool that only the manager who built it understands, used by 14 people, with the key on that manager's personal account and a morning automation nobody else knows exists.
 
-What will change is the ratio. Today a manager can build a prototype; soon a manager will be able to build most of a production system, and the engineering review will move from "rebuild this" to "verify this". The managers who do well in that world are the ones who learned to specify, to test and to govern, which is what the five milestones asked of you.
+The sequence the course recommends:
+
+1. **The critical findings closed.** No secret key in the page, authorization tested, discounts behind Carla's approval. Until then no real customer message goes into the tool.
+2. **The data protection decisions, written down.** The purpose of each piece of personal data, how long it is kept, and what the model provider's terms say about it.
+3. **A pilot with real users and the metric from the brief.** Three reps, two weeks, quote time measured. Every later step costs money, and the pilot tells you whether to spend it.
+4. **Engineering review and the build / buy / vibe decision.** A technology team looks at the product with the five questions from Class 4, and you decide: keep vibe coding it, hand it to engineering to build properly, buy a product, or stop.
+5. **An owner and a budget.** The model calls move to a company account with a spending limit, and someone's name is on the tool, its connectors and its automations.
+6. **Monitoring, with the test set run every week.** Extraction quality measured, every automation logged, an alert on a second channel when one fails.
+7. **Training and rollout to the 14 reps,** in two waves.
+8. **Scaling, deeper integration and cost optimization,** because now you know what you are scaling.
+
+The simulator asks you to put those steps in order. The exact order is debatable at the edges; the three mistakes are not.
+
+```{=html}
+<div class="vc-widget" data-widget="c5-roadmap"></div>
+```
+
+::: {.callout-tip title="In the business"}
+"Citizen developers", managers who build their own tools, are becoming a governance question, not a curiosity. A workable answer has three parts: a registry of tools, connectors and automations that touch company data, a light review before any tool gets real users, and a named owner for each one. None of it stops managers from building. All of it prevents the Monday when the only person who understands the quoting tool is on holiday.
+:::
 
 ```{=html}
 <div class="vc-practice">
 <p class="vc-practice-t"><span>Practice · Topic 5</span></p>
 <div class="vc-quiz">
-<p class="vc-quiz-q">Which skill from this course is most likely to still matter when the current assistants are obsolete?</p>
+<p class="vc-quiz-q">What must be true before three reps pilot QuoteDesk with real customer messages?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="The menus of a specific tool are the first thing to change.">Knowing the menus of the UI builder used this term.</button>
-<button class="vc-quiz-opt" data-correct>Writing a brief with a named user, a pain and a measurable metric, and testing the result against it.</button>
-<button class="vc-quiz-opt" data-why="Pricing changes every few months; the habit of calculating cost at scale is what lasts, not the numbers.">The price per million tokens of the model used in class 3.</button>
+<button class="vc-quiz-opt" data-why="Scaling before measuring spends money on a tool whose value is still a hypothesis.">It runs on infrastructure sized for all 14 reps, so the pilot results hold at full scale.</button>
+<button class="vc-quiz-opt" data-why="Adding features before the pilot delays the only evidence that matters, and adds new things to secure.">The second AI feature the reps asked for is built, so the pilot tests the whole product.</button>
+<button class="vc-quiz-opt" data-correct>Critical findings are closed, and purpose, retention and provider terms are written down.</button>
 </div>
-<p class="vc-quiz-fb">Specifying and testing are independent of the tool. A better assistant makes a good brief more valuable, not less, because it executes it more faithfully.</p>
+<p class="vc-quiz-fb">The pilot is the first moment real customer data and real users meet the tool, so the findings and the data decisions come first. After that the pilot answers whether the tool changes the number that justified it, before you spend on anything else.</p>
 </div>
 <div class="vc-quiz">
-<p class="vc-quiz-q">As assistants improve, what happens to the engineering review step on the roadmap?</p>
+<p class="vc-quiz-q">The key that pays for QuoteDesk's model calls is on the personal account of the manager who built it. Why is that a production problem and not a detail?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Someone still has to own the system and verify it. The review changes shape, it does not vanish.">It disappears; managers will deploy directly.</button>
-<button class="vc-quiz-opt" data-correct>It shifts from "rebuild this properly" toward "verify this and take ownership".</button>
-<button class="vc-quiz-opt" data-why="Better tools reduce the rebuild work; they do not increase it.">It becomes longer because there is more code to rewrite.</button>
+<button class="vc-quiz-opt" data-why="Price is not the issue. The problem is ownership: nobody else can see it, limit it or replace it.">Because a personal account pays a higher price per call than a company account would pay.</button>
+<button class="vc-quiz-opt" data-correct>Because the company depends on a tool it does not control: no limit, no owner, no successor.</button>
+<button class="vc-quiz-opt" data-why="A personal key works the same way technically. The issue is control, not capability.">Because a key issued to a person cannot technically call the model from a deployed app.</button>
 </div>
-<p class="vc-quiz-fb">The review exists because a company needs an owner and a verification before depending on a system. As the generated system gets better, the review spends less time rebuilding and more time verifying and governing.</p>
+<p class="vc-quiz-fb">"An owner and a budget" is a step on the roadmap precisely because a tool 14 reps depend on cannot live on someone's credit card. It is a control problem, and it is cheap to fix early.</p>
 </div>
 </div>
 ```
 
 ## Reflection memo, written in class {#reflection}
 
-The last 45 minutes are individual. You write the reflection memo from your build log, in class, and hand it in before leaving. It is worth 15% together with participation and it is graded on honesty and specificity, not on the quality of your product. A memo that says the assistant misled you three times and shows the three prompts scores higher than one that says everything went well.
+The last block is 30 minutes and it is individual: about 20 minutes to finish the reflection memo from your build log, then 10 for the peer assessment. You hand the memo in before leaving. It is worth 15% together with participation. It is graded with the [rubric](rubric.html) on the two criteria that apply to a memo, AI quality and safety and communication, and what earns the levels is honesty and specificity, not the quality of your product. A memo that says the assistant misled you three times and shows the three prompts scores higher than one that says everything went well.
 
-The memo has five parts: what the AI did, what I decided, where it misled me, what I would do differently, and how this changes my work with technology teams. Each part should cite at least one concrete moment from your build log, with the date and what you typed. Length: 500 to 800 words. English or Spanish.
+The memo has five parts: what the AI did, what I decided, where it misled me, what I would do differently, and how this changes my work with technology teams. Each part cites at least one concrete moment from your build log: the session, and what you typed. Length: 400 to 600 words. English or Spanish. The reflection is yours: if an assistant helped you edit it, say so in the last line, as with everything else in the course.
 
-Use the builder below. It keeps a word count, and the copy button puts the memo on your clipboard for the submission form. The text stays in this tab only; copy it before you close the page.
+Twenty minutes is enough to finish a memo, not to start one. Draft the five parts in the builder before class; it keeps the draft in this browser, counts the words, and the copy button puts the memo on your clipboard for the submission form.
 
 ```{=html}
 <div class="vc-widget" data-widget="c5-reflection"></div>
 ```
 
-Then the peer assessment within your team: each member rates the others on contribution to the build, to the decisions and to the pitch, with one sentence of evidence per rating. It takes ten minutes and it is the basis for the individual adjustment to the Demo Day grade.
+Then the peer assessment within your team, in the last ten minutes: each member rates the others on their contribution to the build, to the decisions and to the pitch, with one sentence of evidence per rating. It is the basis, with the build log, for the individual adjustment to the Demo Day grade.
 
-## After the course
+## Your AI work system {#after}
 
-- **Due at the end of this session:** the reflection memo (individual) and the peer assessment within your team.
-- **Products stay deployed one week** after Demo Day. After that, remove the API keys and either hand the product to an owner in your organization or shut it down. A deployed tool with no owner is the first risk on the memo you just wrote.
-- **If you keep building:** run the pilot with real users and the metric from your brief before anything else. Register the tool with whoever owns technology in your company and tell them what data it touches.
-- **Keep the build log going.** It is the most useful document you produced in the course: a record of what the assistant did and what you decided, which is what you will need the next time someone asks whether a tool can be trusted.
+```{=html}
+<p class="vc-guide"><strong>Guiding question:</strong> The assistant you used this month will be replaced before you finish the MBA. What do you keep?</p>
+```
+
+**Due at the end of this session:** the reflection memo and the peer assessment. **One week later:** revoke the keys of your deployed product and delete the personal data in it, then either hand it to an owner in your organization or shut it down. A deployed tool with no owner is the first risk on the memo you just wrote.
+
+What you take with you is not QuoteDesk. It is a small work system for the assistant you use yourself, and it has three parts.
+
+- **A library of skills.** The quote-format skill was the first. Add one each time you catch yourself explaining the same thing to the assistant twice: how your team writes a weekly note, how a supplier review is structured, how your decks look. Five good skills are worth more than fifty installed ones. Before you install a skill written by someone else, read it yourself; the assistant may help you read it, but its verdict is not the control.
+- **The connectors you trust.** Each one is a door into a company system. Keep the list short, read access before write access, and review it every quarter the way you would review who holds keys to the office.
+- **One automation, with an owner and a log.** The 08:00 digest of pending quotes, a scheduled task of the team's assistant, is the model: a trigger, a few steps, a destination, an alert on a second channel when it fails, and a spending limit. Run one well before you run ten.
+
+And keep the build log going. It is the record of what the assistant did and what you decided, which is what you will need the next time someone asks whether a tool can be trusted.
+
+The tools will change. Two years from now the assistants may take larger steps with fewer mistakes, the names in the toolkit will probably be different, and the first version of QuoteDesk may take minutes. Three things will still be yours: the brief (a named user, a pain, a metric), the risks (whose data, whose money, what happens when it is wrong), and the build / buy / vibe decision: keep vibe coding it, hand it to engineering to build properly, buy a product, or stop. What may shift is the ratio. The engineering review moves from "rebuild this" toward "verify this and take ownership", and the managers who do well are the ones who learned to specify, to test and to govern, which is what the milestones asked of you.
+
+```{=html}
+<div class="vc-practice">
+<p class="vc-practice-t"><span>Practice · Your AI work system</span></p>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Which of these is most likely to still be useful when the current assistants have been replaced?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="The menus of a specific tool are the first thing to change.">Knowing exactly where every menu and setting sits in the app builder the course used this term.</button>
+<button class="vc-quiz-opt" data-why="Prices change every few months. The habit of calculating cost at scale lasts; the numbers do not.">Knowing by heart the price per million tokens of the mid-sized model used in Class 3.</button>
+<button class="vc-quiz-opt" data-correct>A brief with a named user, a pain and a metric, and the habit of testing results against it.</button>
+</div>
+<p class="vc-quiz-fb">Specifying and testing do not depend on the tool. A better assistant makes a good brief more valuable, not less, because it carries it out more faithfully.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">A colleague sends you a folder: "50 skills that make your assistant better at sales". What do you do first?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="A skill is instructions and sometimes code from a stranger, running with your permissions and your connectors.">Install all fifty at once, since a skill costs almost nothing in tokens until it is used.</button>
+<button class="vc-quiz-opt" data-correct>Open the two or three you might use, read what they tell the assistant to do, install those.</button>
+<button class="vc-quiz-opt" data-why="Refusing everything written by others throws away useful work. Reading before installing is the control.">Refuse the whole folder, because only skills you wrote yourself can ever be trusted.</button>
+</div>
+<p class="vc-quiz-fb">A skill is someone else's instructions running with your access. Unused skills are cheap in tokens, and that is exactly why the cost to watch is trust, not tokens. Read it yourself, install few.</p>
+</div>
+</div>
+```
 
 ## Summary
 
-- The panel decides in the first ninety seconds and spends the rest looking for reasons to change its mind. Problem, live demo, evidence, risks, decision, roadmap, in that order.
-- A live demo that breaks and is named as a risk earns more trust than screenshots that never break.
+- The deck is generated; the judgment is yours. Six sentences first, one message per slide, eight slides, and every number traced to a file you can open. What has no source comes off.
+- AI use in the deck is declared on the closing slide, and the prompts are in the build log.
+- The pitch is problem, live demo, evidence, risks, decision, roadmap, in that order and inside 10:00. A live demo that breaks and is named as a risk earns more trust than screenshots that never break.
 - The rubric's four criteria are the four questions any steering committee asks: is it worth it, does it work, can we trust it, do I understand it. The cheapest grade to recover is problem and value, by measuring the metric from your brief.
-- When building is cheap, the software is not the moat. Proprietary data, distribution, workflow integration and trust are, and none of them copy with the code.
-- The road to production starts with a pilot and the metric, closes the risk findings, gets an engineering review and an owner with a budget, and scales last.
-- A tool a company depends on needs a named owner, a company account with a limit, and a written data retention policy. That is governance, and it does not stop managers from building.
-- The assistants will be obsolete; the brief, the test set and the decision are yours and stay with you.
+- When building is cheap, the software is not the moat. Proprietary data, customer relationships, workflow integration and trust are, and none of them copy with the code.
+- The road to production closes the critical findings and settles the data decisions first, then pilots and measures, gets an engineering review and an owner with a budget, and scales last.
 - The reflection memo is graded on honesty with evidence from the build log. Where the assistant misled you is the most valuable paragraph you will write.
+- Keep a small AI work system: a few skills you wrote or read, the connectors you trust, one automation with an owner and a log. The assistants will be replaced; the brief, the test set and the decision stay with you.

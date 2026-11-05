@@ -1,6 +1,6 @@
 ---
 title: "Class 1 · Ship something today"
-subtitle: "By the end of this session your team has a web application a real user can open on a phone, and a one-paragraph brief that tells the assistant what to build next."
+subtitle: "By the end of this session your team has a web application a real user can open on a phone, a public page that explains it, and a one-paragraph brief that tells the assistant what to build next."
 lang: en
 css: assets/vc.css
 include-after-body:
@@ -16,37 +16,44 @@ include-after-body:
 <span>Build goal: QuoteDesk v0 deployed to a public URL</span>
 <span>Milestone: M1 problem brief, due before session 2</span>
 </div>
+<div class="vc-daybar" data-blocks="Framework:45|Build lab:120|Critique:45|Milestone review:30"></div>
 ```
 
+The session is 4 hours. The framework block is a recap of this page, which you read before class, so that most of the time in the room goes to building.
+
 ::: {.callout-note title="How to use this page"}
-- Read it in order. Each topic opens with a guiding question, explains the idea with the Cerro Azul case, gives you one simulator to play with, one note on what it means in the business, and a short practice set.
+- Read it before the session, in order. Each topic opens with a guiding question, explains the idea with the Cerro Azul case, gives you one simulator to play with, one note on what it means in the business, and a short practice set.
 - The simulators cannot break. Predict what will happen before you move a slider or press a button, then check.
 - The build lab is what you do in class with your team during the 120-minute build block. The prompts in it are meant to be copied and adapted.
 - The lab checklist is saved in your browser, so you can close the page and come back.
-- Before this session: create your accounts on the course toolkit, read Karpathy's original post on vibe coding and Willison's "Not all AI-assisted programming is vibe coding", and bring one problem from your organization that involves people filling, reading or deciding on information.
+- **Data rule.** Until your team has completed the Class 4 lab, use only invented or de-identified messages: no real names, phones, addresses or tax numbers in the app, in a test or in any prompt.
+- Also before this session: create your accounts on the course toolkit (the [setup guide](setup.html) lists them), read Karpathy's original post on vibe coding and Willison's "Not all AI-assisted programming is vibe coding", and bring one problem from your organization in which people enter, read or act on information by hand.
 :::
 
 ## What you will be able to do
 
 - Explain what changed in the cost of a working prototype between 2015 and today, and what that does to the list of ideas worth testing.
+- Choose where to build a given job (a page, an app, a deck, a recurring report) and name the building blocks it needs: prompt, project instructions, skill, connector, agent, automation.
 - Tell vibe coding apart from AI-assisted engineering, and decide which one a given problem needs.
-- Apply the Problem Pull test to an idea before building anything.
-- Write a one-paragraph brief with a named user, a measured pain, what the tool does and how you will know it works.
-- Build and deploy a first version of a web application by directing an assistant in plain language, test it by using it, and recover from a bug.
+- Apply the Problem Pull test to an idea before building anything, and write a one-paragraph brief with a named user, a measured pain, what the tool does and how you will know it works.
+- Build and deploy a first version of a web application and a one-page public site by directing an assistant in plain language, test them by using them, and recover from a bug.
 - Start a build log that records what you asked, what the assistant did, and what you decided.
 
 ## Route of the session
 
+The times next to each topic are reading times for this page, at your own pace, before class: about 90 minutes in total. The last three rows are what happens in the room.
+
 ```{=html}
 <ol class="vc-route">
-<li><span class="vc-route-h">20 min</span><a class="vc-route-a" href="#topic-1"><span class="vc-route-n">1</span><span class="vc-route-t">What changed: the cost of a working prototype</span><span class="vc-route-l">simulator · 3 questions</span></a></li>
-<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-2"><span class="vc-route-n">2</span><span class="vc-route-t">Vibe coding or engineering: when vibes are enough</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
-<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-3"><span class="vc-route-n">3</span><span class="vc-route-t">Problem Pull versus AI Push</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
-<li><span class="vc-route-h">20 min</span><a class="vc-route-a" href="#topic-4"><span class="vc-route-n">4</span><span class="vc-route-t">The brief: one paragraph the assistant can build from</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
-<li><span class="vc-route-h">20 min</span><a class="vc-route-a" href="#topic-5"><span class="vc-route-n">5</span><span class="vc-route-t">Your first build, including the bug</span><span class="vc-route-l">live demo · simulator · 2 questions</span></a></li>
-<li class="is-break"><span class="vc-route-h">10 min</span><span class="vc-route-t">Break. Form your team of 2 or 3 before you sit down again.</span></li>
-<li><span class="vc-route-h">120 min</span><a class="vc-route-a" href="#lab"><span class="vc-route-n">6</span><span class="vc-route-t">Build lab: QuoteDesk v0, or your own problem, deployed</span><span class="vc-route-l">prompts to adapt · checklist</span></a></li>
-<li class="is-break"><span class="vc-route-h">45 min</span><span class="vc-route-t">Critique, reflection in the build log, and the milestone briefing</span></li>
+<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-1"><span class="vc-route-n">1</span><span class="vc-route-t">What changed: the cost of a working prototype</span><span class="vc-route-l">simulator · 3 questions</span></a></li>
+<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-2"><span class="vc-route-n">2</span><span class="vc-route-t">The toolkit map: which tool for which job</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
+<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-3"><span class="vc-route-n">3</span><span class="vc-route-t">Vibe coding or engineering: when vibes are enough</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
+<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-4"><span class="vc-route-n">4</span><span class="vc-route-t">Problem Pull versus AI Push</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
+<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-5"><span class="vc-route-n">5</span><span class="vc-route-t">The brief: one paragraph the assistant can build from</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
+<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-6"><span class="vc-route-n">6</span><span class="vc-route-t">Your first build, including the bug</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
+<li><span class="vc-route-h">120 min in class</span><a class="vc-route-a" href="#lab"><span class="vc-route-n">▶</span><span class="vc-route-t">Build lab: QuoteDesk v0 and its public page, or your own problem, deployed</span><span class="vc-route-l">live demo first · prompts to adapt · checklist</span></a></li>
+<li class="is-break"><span class="vc-route-h">45 min in class</span><span class="vc-route-t">Critique: two teams show their page, then reflection in the build log</span></li>
+<li class="is-break"><span class="vc-route-h">30 min in class</span><span class="vc-route-t">Milestone review: M1 explained, teams confirmed, pre-work for session 2</span></li>
 </ol>
 ```
 
@@ -56,11 +63,11 @@ include-after-body:
 <p class="vc-guide"><strong>Guiding question:</strong> if a working version of your idea cost a hundred times less than it did ten years ago, which ideas would you test that you are not testing today?</p>
 ```
 
-Cerro Azul Distribuidora sells food to 1,800 restaurants and minimarkets. Its 14 sales reps receive quote requests all day as free text on WhatsApp and email: "hola, necesito 20 cajas de aceite 900cc, 5 sacos de arroz y lo de siempre de lácteos para el jueves". A rep reads the message, opens the ERP, retypes the items, guesses what "lo de siempre" means, and sends a quote three to six hours later. Everyone at Cerro Azul knows this is a problem. Nobody has fixed it.
+Cerro Azul Distribuidora sells food to 1,800 restaurants and minimarkets. Its 14 sales reps receive quote requests all day as free text on WhatsApp and email: "hola, necesito 20 cajas de aceite 900cc, 5 sacos de arroz y lo de siempre de lácteos para el jueves". A rep reads the message, opens the ERP (the company's system for orders, stock and invoices), retypes the items, guesses what "lo de siempre" means, and sends a quote three to six hours later. Everyone at Cerro Azul knows this is a problem. Nobody has fixed it.
 
-The reason is not that the fix is hard to imagine. A small web page where a rep pastes the message, picks the customer and saves a structured request would already remove half the retyping. The reason is what that page used to cost. In 2015 a tool like that was an agency project: a designer, two developers, six weeks, and a quote that made the commercial manager decide the problem was not worth it. Around 2020, no-code tools cut that to a couple of weeks for one person who had learned the tool. Today, a manager with no programming background describes the page to an assistant and has a working version in an afternoon.
+The reason is not that the fix is hard to imagine. A small web page where a rep pastes the message, picks the customer and saves a structured request would already remove half the retyping. The reason is what that page used to cost. In 2015 a tool like that was an agency project: a designer and two developers for about ten working days, and a quote that made the sales manager decide the problem was not worth it. Around 2020, no-code tools cut that to about a week of work for one person who had learned the tool. Today, a manager with no programming background describes the page to an assistant and has a working version in an afternoon.
 
-That collapse in cost is the subject of this course. It does not mean every piece of software should be built this way. It means the threshold for "worth trying" moved, by roughly two orders of magnitude, and most organizations have not updated the list of things they consider worth trying.
+That collapse in cost is the subject of this course. It does not mean every piece of software should be built this way. It means the threshold for "worth trying" moved: about a hundred times cheaper in the illustration below. Your numbers will differ; the direction will not. Most organizations have not updated the list of things they consider worth trying.
 
 Three things follow. First, ideas that were never worth a project are now worth an afternoon. Second, the scarce resource is no longer developer time but a clear description of the problem and a person who can judge whether the result is right. Third, the manager who can produce a working demo changes the conversation with the technology team from "could we build this?" to "here is what I need, and here is what it looks like".
 
@@ -69,7 +76,7 @@ Three things follow. First, ideas that were never worth a project are now worth 
 ```
 
 ::: {.callout-tip title="In the business"}
-Cerro Azul's commercial manager has had a list of eleven "small improvements" for the sales team for two years. None was ever scheduled because each needed a developer for a week or more. At today's cost, the right question is not which one to fund but which three to try this month, knowing that two will probably be thrown away.
+Carla, Cerro Azul's sales manager, has had a list of eleven "small improvements" for the sales team for two years. None was ever scheduled because each needed a developer for a week or more. At today's cost, the right question is not which one to fund but which three to try this month, knowing that two will probably be thrown away.
 :::
 
 ```{=html}
@@ -78,34 +85,91 @@ Cerro Azul's commercial manager has had a list of eleven "small improvements" fo
 <div class="vc-quiz">
 <p class="vc-quiz-q">What is the main reason Cerro Azul never fixed the quote-retyping problem before?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Everyone at the company could describe the fix; the idea was never the bottleneck.">Nobody could imagine a solution.</button>
-<button class="vc-quiz-opt" data-correct>The cost of a working version was higher than the problem seemed to justify.</button>
-<button class="vc-quiz-opt" data-why="The reps feel this pain every day; the resistance was in the budget, not in the users.">The sales reps resisted any change.</button>
+<button class="vc-quiz-opt" data-why="Everyone at the company could describe the fix; the idea was never the bottleneck.">Nobody in the company could picture what a fix would look like.</button>
+<button class="vc-quiz-opt" data-correct>A working version cost more than the problem seemed to justify.</button>
+<button class="vc-quiz-opt" data-why="The reps feel this pain every day; the resistance was in the budget, not in the users.">The sales reps pushed back against any change to their routine.</button>
 </div>
-<p class="vc-quiz-fb">The fix was obvious for years. What changed is not the idea but its price: from a six-week agency project to an afternoon with an assistant. That moves the problem across the "worth trying" line.</p>
+<p class="vc-quiz-fb">The fix was obvious for years. What changed is not the idea but its price: from an agency project of about ten working days to an afternoon with an assistant. That moves the problem across the "worth trying" line.</p>
 </div>
 <div class="vc-quiz">
-<p class="vc-quiz-q">When the cost of a prototype falls by a hundred times, which resource becomes the scarce one?</p>
+<p class="vc-quiz-q">When the cost of a prototype falls about a hundred times, which resource becomes the scarce one?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Developer time matters less for the first version; that is exactly what got cheaper.">Developer time.</button>
-<button class="vc-quiz-opt" data-why="Hosting a small internal tool costs a few dollars a month; it is not what limits the organization.">Server capacity.</button>
-<button class="vc-quiz-opt" data-correct>A clear description of the problem and someone who can judge whether the result is right.</button>
+<button class="vc-quiz-opt" data-why="Developer time matters less for the first version; that is exactly what got cheaper.">Developer hours to write and test the first working version.</button>
+<button class="vc-quiz-opt" data-why="Hosting a small internal tool costs a few dollars a month; it is not what limits the organization.">Server capacity to host the growing number of small tools.</button>
+<button class="vc-quiz-opt" data-correct>A clear problem description and someone to judge the result.</button>
 </div>
 <p class="vc-quiz-fb">The assistant builds what it is told. Describing the user, the pain and the success metric precisely, and then testing the result by using it, is the work that remains, and it is management work.</p>
 </div>
 <div class="vc-quiz">
 <p class="vc-quiz-q">A manager shows the technology team a working demo instead of a requirements document. What changes in that conversation?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-correct>The question moves from "could we build this?" to "here is what I need; what would it take to run it properly?"</button>
-<button class="vc-quiz-opt" data-why="A demo does not replace engineering; it changes what engineering is asked to do and when.">The technology team is no longer needed.</button>
-<button class="vc-quiz-opt" data-why="A working demo removes ambiguity; it is the opposite of a longer document.">The specification becomes longer and more formal.</button>
+<button class="vc-quiz-opt" data-correct>The question becomes what it would take to run this properly.</button>
+<button class="vc-quiz-opt" data-why="A demo does not replace engineering; it changes what engineering is asked to do and when.">The technology team is no longer needed for tools like this one.</button>
+<button class="vc-quiz-opt" data-why="A working demo removes ambiguity; it is the opposite of a longer document.">The specification has to become longer and more formal than before.</button>
 </div>
-<p class="vc-quiz-fb">A demo is a specification nobody can misread. Engineering time then goes to what only engineering can do: security, scale, integration with the ERP, maintenance.</p>
+<p class="vc-quiz-fb">The conversation moves from "could we build this?" to "here is what I need". A demo is a specification nobody can misread. Engineering time then goes to what only engineering can do: security, scale, integration with the ERP, maintenance.</p>
 </div>
 </div>
 ```
 
-## Topic 2 · Vibe coding or engineering: when vibes are enough {#topic-2}
+## Topic 2 · The toolkit map: which tool for which job {#topic-2}
+
+```{=html}
+<p class="vc-guide"><strong>Guiding question:</strong> Carla, the sales manager, wants a page for customers, an app for her reps, a deck for the board and a report every Monday. Is that one tool or four, and what does each one need?</p>
+```
+
+"The assistant" is not one product. A manager will meet four kinds of tool, and they overlap more every month. A **chat assistant** answers in a conversation and can now hand back a finished page, document or set of slides. An **app builder** turns a description into a deployed application with its own address. An **agentic coding assistant** works on a project folder (a repository) from a terminal, an editor or a desktop app, changing many files and running what it builds. A **desktop agent app** does knowledge work on your own files and connected systems, with no terminal. Product names change; examples today include Claude, ChatGPT and Gemini for chat, Lovable, v0 and Replit for app building, and Claude Code, Cursor and Codex for agentic coding. Check what is current when you read this.
+
+What matters more than the product is what the job is built from. There are six building blocks, and the rest of the course is about using them well:
+
+| Building block | What it is | Cerro Azul example |
+|---|---|---|
+| Prompt (a brief) | What you ask for, in one conversation | "Build a page where a rep pastes a message and saves it" |
+| Project instructions | A plain-text file the assistant reads at the start of every session | "Prices are in CLP without decimals. Never change the customer list." |
+| Skill | A folder with instructions and templates the assistant loads when a task matches | "How we write a quote here": the format, the steps, an example |
+| Connector | A door to another system, built on an open standard called MCP | Read the price list that lives in Drive |
+| Agent | A model that works in a loop: act, look at the result, decide the next step | Find the customer, read the prices, draft the quote, wait for approval before sending |
+| Scheduled automation | Work started by a clock or an event instead of a person | Every weekday at 08:00, send Carla the list of pending quotes |
+
+The blocks stack. A prompt is enough for something you make once. Instructions and skills are for things you make again and again. Connectors give the assistant your data. Agents and automations let it act, and each step up that ladder adds both usefulness and risk, which is why Class 4 is about permissions.
+
+One warning about the word "assistant". In this course it can mean three different things. The **building assistant** is the one your team uses to build QuoteDesk. A **rep's assistant** is the one Paula or Carla uses directly for daily work, such as drafting a quote or reading the morning list. The **model inside QuoteDesk** is what the deployed app calls when a rep presses a button; it sees only what the app sends it. Skills and connectors extend the first two. The third has neither. Class 2 comes back to this distinction, because most confusion about "our AI" starts here.
+
+You do not need all six to start. Today you need one: a good prompt. The map below shows where the others come in.
+
+```{=html}
+<div class="vc-widget" data-widget="c1-toolkit"></div>
+```
+
+::: {.callout-tip title="In the business"}
+When someone proposes "an AI agent for sales", ask which blocks it actually needs. Most first requests at Cerro Azul are a prompt and a skill: cheap, safe and useful this week. The ones that need a connector with write access or an automation that runs unattended are different projects, with an owner and a review. Naming the blocks turns a vague ambition into a list of decisions.
+:::
+
+```{=html}
+<div class="vc-practice">
+<p class="vc-practice-t"><span>Practice · Topic 2</span></p>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Paula explains Cerro Azul's quote format to the assistant at the start of every conversation, and Diego's quotes still come out different from hers. Which building block fixes this?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="A longer prompt still lives in one person's conversation; Diego will not have it, and Paula will forget a line next week.">A longer prompt that Paula pastes at the start of each conversation.</button>
+<button class="vc-quiz-opt" data-correct>A skill with the format, the steps and an example, shared by the team.</button>
+<button class="vc-quiz-opt" data-why="An automation starts work on a schedule. The problem here is consistency while writing, not timing.">A scheduled automation that rewrites every quote at the end of the day.</button>
+</div>
+<p class="vc-quiz-fb">A skill turns "the way we do quotes here" into something the assistant loads whenever the task matches, for every rep who has it installed. Class 2 builds exactly this one.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Carla wants the list of pending quotes in her inbox every weekday at 08:00 without asking for it. What does this job need that a public web page does not?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="A larger model writes better prose; it does not start work on its own or reach the quotes.">A more capable model that writes a clearer, better organized summary.</button>
+<button class="vc-quiz-opt" data-why="A page builder publishes pages. It has no access to the quotes and nothing that runs each morning.">An app builder with a better design and a page that updates each morning.</button>
+<button class="vc-quiz-opt" data-correct>A connector to read the quotes, a schedule to start it, and an owner.</button>
+</div>
+<p class="vc-quiz-fb">The page needs only a prompt because nothing is read and nothing runs later. The morning list reads company data and runs unattended, so it needs a connector, a trigger and someone who is told when it fails. You build one in Class 3.</p>
+</div>
+</div>
+```
+
+## Topic 3 · Vibe coding or engineering: when vibes are enough {#topic-3}
 
 ```{=html}
 <p class="vc-guide"><strong>Guiding question:</strong> QuoteDesk and the payroll system are both "software". Why should one be built by a manager in an afternoon and the other not?</p>
@@ -113,7 +177,7 @@ Cerro Azul's commercial manager has had a list of eleven "small improvements" fo
 
 The term *vibe coding* was coined in February 2025 by Andrej Karpathy to describe a way of building where you "fully give in to the vibes": you tell the assistant what you want, accept what it produces, run it, and when something breaks you paste the error back and ask for a fix. You do not read the code. The result is software you did not write and do not fully understand.
 
-Simon Willison, who has followed this practice closely, insists on a distinction that matters for managers. If a professional developer uses an assistant but reviews every change, keeps tests, and can explain how the system works, that is *AI-assisted engineering*. It is faster than before but it is still engineering. Vibe coding is the other thing: building without understanding, on purpose, because understanding is not worth its cost for this particular piece of software.
+Simon Willison, who has followed this practice closely, insists on a distinction that matters for managers. If a professional developer uses an assistant but reviews every change, keeps tests, and can explain how the system works, that is not vibe coding. Willison calls it AI-assisted programming and, at its most disciplined, "vibe engineering". This course calls it *AI-assisted engineering*: faster than before, but still engineering. Vibe coding is the other thing: building without understanding, on purpose, because understanding is not worth its cost for this particular piece of software.
 
 Both are legitimate. The question is which one a given problem deserves, and the answer depends on four properties:
 
@@ -121,10 +185,10 @@ Both are legitimate. The question is which one a given problem deserves, and the
 |---|---|---|
 | Blast radius | A failure annoys a few people and is visible immediately | A failure moves money, exposes data or harms someone, possibly silently |
 | Users | A handful of colleagues who know it is a prototype | Customers, the public, or hundreds of employees |
-| Regulation | Nothing legal depends on it | Tax, labor, health, personal data or financial rules apply |
+| Regulation | No sensitive or regulated data; at most ordinary contact details in a small internal tool | Sensitive or regulated data at scale: tax, payroll, health or financial records, or personal data of many people |
 | Lifetime | Weeks; it will be rebuilt or thrown away | Years; it will be maintained by people who did not build it |
 
-QuoteDesk v0 is an internal tool for 14 reps who will be told it is a prototype. If it fails, a rep goes back to retyping. It processes customer names and phone numbers, which brings personal-data rules into play in Class 4, but nothing legal depends on a draft quote. Vibes are enough to start. The payroll system fails all four tests.
+QuoteDesk v0 is an internal tool for 14 reps who will be told it is a prototype. If it fails, a rep goes back to retyping. It will hold customer names and phone numbers, which are ordinary personal data in a small internal tool; you will decide how to handle them in Class 4, and until then you work with invented messages. Nothing legal depends on a draft quote. Vibes are enough to start. The payroll system fails all four tests.
 
 The practical rule for this course: vibe coding is how you learn what to build and prove that it is worth building. When the prototype earns its way to the right of that table, you hand it to engineering, and the demo becomes their specification.
 
@@ -138,35 +202,35 @@ The most common failure is not vibe coding something that needed engineering. It
 
 ```{=html}
 <div class="vc-practice">
-<p class="vc-practice-t"><span>Practice · Topic 2</span></p>
+<p class="vc-practice-t"><span>Practice · Topic 3</span></p>
 <div class="vc-quiz">
 <p class="vc-quiz-q">A developer on the Cerro Azul IT team uses an assistant to write code, but reads every change and keeps automated tests. Which term describes this?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Vibe coding means accepting what the assistant produces without reading it. This developer reads everything.">Vibe coding.</button>
-<button class="vc-quiz-opt" data-correct>AI-assisted engineering.</button>
-<button class="vc-quiz-opt" data-why="The assistant wrote most of the code; the difference is who takes responsibility for understanding it.">Manual programming.</button>
+<button class="vc-quiz-opt" data-why="Vibe coding means accepting what the assistant produces without reading it. This developer reads everything.">Vibe coding, because an assistant wrote most of the code here.</button>
+<button class="vc-quiz-opt" data-correct>AI-assisted engineering, because the developer understands it.</button>
+<button class="vc-quiz-opt" data-why="The assistant wrote most of the code; the difference is who takes responsibility for understanding it.">Manual programming, because a person checks each line by hand.</button>
 </div>
 <p class="vc-quiz-fb">The assistant makes the developer faster, but the developer still understands and is accountable for the system. Vibe coding is the deliberate choice not to pay for that understanding.</p>
 </div>
 <div class="vc-quiz">
 <p class="vc-quiz-q">Which property of a problem most clearly says "do not vibe code this"?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Many good vibe-coded tools are used daily; frequency is not the risk.">It will be used every day.</button>
-<button class="vc-quiz-opt" data-correct>A failure could move money, expose data or harm someone without anyone noticing.</button>
-<button class="vc-quiz-opt" data-why="A complex-looking problem can still be low risk; the test is what happens when it fails.">It looks complicated.</button>
+<button class="vc-quiz-opt" data-why="Many good vibe-coded tools are used daily; frequency is not the risk.">It will be used every day by the same small group of colleagues.</button>
+<button class="vc-quiz-opt" data-correct>A failure could move money or expose data without anyone noticing.</button>
+<button class="vc-quiz-opt" data-why="A complex-looking problem can still be low risk; the test is what happens when it fails.">It looks complicated and has more screens than a simple prototype.</button>
 </div>
 <p class="vc-quiz-fb">Blast radius, and especially silent failure, is the decisive criterion. A tool that fails loudly in front of a colleague is safe to vibe; one that fails quietly in a bank transfer is not.</p>
 </div>
 </div>
 ```
 
-## Topic 3 · Problem Pull versus AI Push {#topic-3}
+## Topic 4 · Problem Pull versus AI Push {#topic-4}
 
 ```{=html}
 <p class="vc-guide"><strong>Guiding question:</strong> "Let's put AI on our ERP" and "reps spend two hours a day retyping orders" can lead to the same tool. Why does only one of them lead to a tool anyone uses?</p>
 ```
 
-Now that building is cheap, the risk moves. In 2015 the risk was spending six weeks on the wrong thing. Today the risk is spending six afternoons on the wrong thing, which is cheaper, but also easier to repeat forever. The way to avoid it is the oldest question in product work, asked before touching the assistant: where does this idea start?
+Now that building is cheap, the risk moves. In 2015 the risk was spending two weeks of an agency team on the wrong thing. Today the risk is spending six afternoons on the wrong thing, which is cheaper, but also easier to repeat forever. The way to avoid it is the oldest question in product work, asked before touching the assistant: where does this idea start?
 
 An idea starts from *AI Push* when its first sentence names a technology: "we should use AI for…", "a chatbot on the website", "an agent that handles finance". Push ideas are not necessarily bad, but they have no user and no number attached, so there is no way to know when they are done or whether they worked.
 
@@ -184,29 +248,29 @@ Push ideas usually come from the top of the organization and Pull ideas from the
 
 ```{=html}
 <div class="vc-practice">
-<p class="vc-practice-t"><span>Practice · Topic 3</span></p>
+<p class="vc-practice-t"><span>Practice · Topic 4</span></p>
 <div class="vc-quiz">
 <p class="vc-quiz-q">Which of these ideas passes the Problem Pull test?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="This names a technology and a goal, but no user, no number and no moment.">Use generative AI to modernize the customer experience.</button>
-<button class="vc-quiz-opt" data-correct>Dispatchers at the dental clinic spend 40 minutes a day on reschedule calls that could be a two-tap message.</button>
-<button class="vc-quiz-opt" data-why="A chatbot is a technology. Who is asking, how often, and what does it cost today?">A chatbot that answers customer questions.</button>
+<button class="vc-quiz-opt" data-why="This names a technology and a goal, but no user, no number and no moment.">Use generative AI to modernize the customer experience across all of our channels by next year.</button>
+<button class="vc-quiz-opt" data-correct>Clinic receptionists spend 40 minutes a day on reschedule calls that a message could replace.</button>
+<button class="vc-quiz-opt" data-why="A chatbot is a technology. Who is asking, how often, and what does it cost today?">A chatbot on the website that answers the questions customers ask most often about orders.</button>
 </div>
-<p class="vc-quiz-fb">The clinic idea names a user (dispatchers), a number (40 minutes a day) and a moment (reschedule calls). You know who to show the prototype to and what to measure afterwards.</p>
+<p class="vc-quiz-fb">The clinic idea names a user (receptionists), a number (40 minutes a day) and a moment (reschedule calls). You know who to show the prototype to and what to measure afterwards.</p>
 </div>
 <div class="vc-quiz">
 <p class="vc-quiz-q">Why does cheap building make the Pull test more important, not less?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="The cost per attempt fell, but the number of attempts rose. Waste is now spread across many small projects.">It is less important: a wrong prototype costs almost nothing.</button>
-<button class="vc-quiz-opt" data-correct>Because it is now easy to build many things nobody needs, and only a named user and a number tell you which ones to keep.</button>
-<button class="vc-quiz-opt" data-why="The test takes a minute and no technology; cost is not the issue.">Because the test itself is expensive and must be justified.</button>
+<button class="vc-quiz-opt" data-why="The cost per attempt fell, but the number of attempts rose. Waste is now spread across many small projects.">It does not: a wrong prototype now costs almost nothing, so the test can be skipped.</button>
+<button class="vc-quiz-opt" data-correct>It is now easy to build things nobody needs, and the test says which ones to keep.</button>
+<button class="vc-quiz-opt" data-why="The test takes a minute and no technology; cost is not the issue.">The test itself has become expensive to run, so each use of it has to be justified.</button>
 </div>
 <p class="vc-quiz-fb">When building was expensive, the budget filtered ideas. Now nothing filters them unless you do. The Pull test is that filter.</p>
 </div>
 </div>
 ```
 
-## Topic 4 · The brief: one paragraph the assistant can build from {#topic-4}
+## Topic 5 · The brief: one paragraph the assistant can build from {#topic-5}
 
 ```{=html}
 <p class="vc-guide"><strong>Guiding question:</strong> you have an afternoon and an assistant. What is the shortest text that gets you a tool a rep would actually use?</p>
@@ -217,9 +281,11 @@ The assistant will build whatever you describe, including things you did not mea
 1. **The user.** A role, not "people": a sales rep at Cerro Azul, on a phone, between customer visits.
 2. **The pain, with a number.** Reps retype every WhatsApp quote request into the ERP; a quote takes three to six hours; about one request in ten is lost.
 3. **What the tool does.** Verbs, in the order the user does them: paste the message, pick the customer, save a structured request, see today's list.
-4. **How we know it works.** A measurable outcome and when it will be measured: quote time under one hour for three reps during one week.
+4. **How we know it works.** A measurable outcome and when it will be measured: quote time under one hour for three reps during two weeks.
 
-For QuoteDesk the brief reads: *For sales reps at Cerro Azul, who retype every WhatsApp quote request into the ERP and take three to six hours to send a quote, QuoteDesk is a web page where a rep pastes the customer's message, picks the customer from a list, and saves the request so the team sees it in a shared list. We will know it works when three reps use it for a week and quote time drops below one hour.*
+For QuoteDesk the brief reads: *For sales reps at Cerro Azul, who retype every WhatsApp quote request into the ERP and take three to six hours to send a quote, QuoteDesk is a web page where a rep pastes the customer's message, picks the customer from a list, and saves the request so it appears in today's list. We will know it works when three reps use it for two weeks and quote time drops below one hour.*
+
+The fourth part is a promise to measure, not a result. "Under one hour" is a target until someone times it. In this course you time it once: milestone M3 asks for a baseline and one measurement of your metric on at least five timed requests.
 
 Notice what the brief does not say: which colors, which framework, how the data is stored. Those are questions the assistant can answer better than you can at this point. The brief is about the user and the outcome. Everything else is negotiable.
 
@@ -230,42 +296,42 @@ The brief is also the first page of your build log. Every time the assistant pro
 ```
 
 ::: {.callout-tip title="In the business"}
-A brief with a number in the pain and a number in the success metric is also the business case. "Quote time from four hours to under one, for 14 reps, at roughly 30 requests a day" converts directly into hours saved and orders not lost. Write the brief once; reuse it in the milestone, the Demo Day pitch, and the conversation with the technology team.
+A brief with a number in the pain and a number in the success metric is also the business case. Cerro Azul receives about 120 quote requests per working day, and each one costs a rep about 12 minutes of retyping. That is 24 rep-hours a day, roughly CLP 216,000 at a loaded cost of CLP 9,000 per hour, before counting the orders lost while customers wait. Write the brief once; reuse it in the milestone, the Demo Day pitch, and the conversation with the technology team.
 :::
 
 ```{=html}
 <div class="vc-practice">
-<p class="vc-practice-t"><span>Practice · Topic 4</span></p>
+<p class="vc-practice-t"><span>Practice · Topic 5</span></p>
 <div class="vc-quiz">
 <p class="vc-quiz-q">Which part is missing from this brief? "For warehouse staff, who lose time looking for products, a tool that shows where each product is. We will know it works when staff like it."</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="The user is named: warehouse staff. That part is fine.">The user.</button>
-<button class="vc-quiz-opt" data-correct>Numbers: how much time is lost, and a measurable success metric instead of "staff like it".</button>
-<button class="vc-quiz-opt" data-why="The brief should not specify the technology; the assistant chooses it.">The technology to use.</button>
+<button class="vc-quiz-opt" data-why="The user is named: warehouse staff. That part is fine.">The user: it does not say who in the company will use the tool.</button>
+<button class="vc-quiz-opt" data-correct>Numbers: how much time is lost and a success measure to count.</button>
+<button class="vc-quiz-opt" data-why="The brief should not specify the technology; the assistant chooses it.">The technology: it does not say which tools to build it with.</button>
 </div>
 <p class="vc-quiz-fb">"Lose time" and "staff like it" cannot be measured. "Lose 25 minutes per shift" and "search time under two minutes for one week" can, and they tell the assistant and the team what to optimize.</p>
 </div>
 <div class="vc-quiz">
 <p class="vc-quiz-q">What should the brief say about colors, layout and the database?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Specifying these early costs time and locks the assistant into choices you are not equipped to make yet.">Everything, in detail, so the assistant does not guess.</button>
-<button class="vc-quiz-opt" data-correct>Nothing at first. The brief is about the user and the outcome; the assistant proposes the rest and you react to it.</button>
-<button class="vc-quiz-opt" data-why="Only the brand colors matter at this stage, and even those can wait until the tool works.">Only the database, because it is the hardest part.</button>
+<button class="vc-quiz-opt" data-why="Specifying these early costs time and locks the assistant into choices you are not equipped to make yet.">Everything, in detail, so that the assistant never has to guess.</button>
+<button class="vc-quiz-opt" data-correct>Nothing at first; the assistant proposes them and you react.</button>
+<button class="vc-quiz-opt" data-why="At this stage the assistant is better placed than you to choose how the data is stored. You judge the result, not the storage.">Only the database, because it is the hardest part to change.</button>
 </div>
-<p class="vc-quiz-fb">You will have opinions once you see a working version. Reacting to something real is faster and more accurate than specifying something imaginary.</p>
+<p class="vc-quiz-fb">The brief is about the user and the outcome. You will have opinions on the rest once you see a working version. Reacting to something real is faster and more accurate than specifying something imaginary.</p>
 </div>
 </div>
 ```
 
-## Topic 5 · Your first build, including the bug {#topic-5}
+## Topic 6 · Your first build, including the bug {#topic-6}
 
 ```{=html}
 <p class="vc-guide"><strong>Guiding question:</strong> the instructor will build and deploy QuoteDesk v0 in twenty minutes, and something will go wrong on purpose. What should you be watching?</p>
 ```
 
-Watch the live demo for the rhythm, not the details. The instructor pastes the brief into a conversational app builder with three constraints: one page, no login yet, keep it simple. The assistant replies with a plan in plain language. The instructor reads the plan against the brief, accepts it, and waits while the assistant produces the page. Then the instructor does something most people skip: uses the page the way a rep would, on a phone-sized window, three times.
+The build lab opens with a live demo. Watch it for the rhythm, not the details. The instructor pastes the brief into an app builder with three constraints: one page, no login yet, keep it simple. The assistant replies with a plan in plain language. The instructor reads the plan against the brief, accepts it, and waits while the assistant produces the page. Then the instructor does something most people skip: uses the page the way a rep would, three times, in a phone-sized window (the browser window dragged narrow, to about the width of a phone).
 
-The third time, something fails. The Save button does nothing on the phone layout. This is the moment the demo is about. The instructor does not open the code. The instructor describes what happened, in the same words a rep would use, and asks the assistant to explain what it did and fix it. The assistant finds the cause, changes it, and says what it changed. The instructor tests again. Then the instructor publishes the page to a public address and opens it on a real phone.
+The third time, something fails. The Save button does nothing on the phone layout. This is the moment the demo is about. The instructor does not open the code. The instructor describes what happened, in the same words a rep would use, and asks the assistant to explain what it did and fix it. The assistant finds the cause (on narrow screens the customer picker was covering the button), changes it, and says what it changed. The instructor tests again. Then the instructor publishes the page to a public address and opens it on a real phone.
 
 Five things to notice. The plan is in plain language and you can reject it. The assistant always says what it did; read that paragraph every time. Testing by using is your job and takes longer than building. A bug is normal and recovery is a conversation, not a crisis. Deploying is one click and gives you an address anyone can open.
 
@@ -276,64 +342,67 @@ The simulator below replays the sequence so you can see each step on its own, in
 ```
 
 ::: {.callout-tip title="In the business"}
-A public address changes who can give feedback. Before the lab ends, send yours to one person outside the team, ideally someone who has the actual problem, with one sentence: "paste a real message and tell me what is wrong". The reply is worth more than another hour of building.
+A public address changes who can give feedback. Before the lab ends, send yours to one person outside the team, ideally someone who has the actual problem, with one sentence: "paste a realistic message, with names and numbers changed, and tell me what is wrong". The reply is worth more than another hour of building.
 :::
 
 ```{=html}
 <div class="vc-practice">
-<p class="vc-practice-t"><span>Practice · Topic 5</span></p>
+<p class="vc-practice-t"><span>Practice · Topic 6</span></p>
 <div class="vc-quiz">
 <p class="vc-quiz-q">The Save button does nothing on the phone. What is the right first move for a manager who does not read code?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="You cannot read the code and the assistant cannot read your mind. Reading the code is not the manager's job here.">Open the code and look for the problem.</button>
-<button class="vc-quiz-opt" data-correct>Describe exactly what happened, as a user would, and ask the assistant to explain what it did and fix it.</button>
-<button class="vc-quiz-opt" data-why="Starting over throws away everything that works; a bug is a conversation, not a reason to restart.">Start again from an empty project.</button>
+<button class="vc-quiz-opt" data-why="You cannot read the code and the assistant cannot read your mind. Reading the code is not the manager's job here.">Open the code and look for the line that handles the Save button.</button>
+<button class="vc-quiz-opt" data-correct>Describe what a user saw and ask for an explanation, then a fix.</button>
+<button class="vc-quiz-opt" data-why="Starting over throws away everything that works; a bug is a conversation, not a reason to restart.">Start again from an empty project with a more detailed first prompt.</button>
 </div>
 <p class="vc-quiz-fb">The assistant fixes what it can see. A precise description of the failure ("on a phone-sized screen, tapping Save does nothing, no message appears") is the most useful thing you can give it.</p>
 </div>
 <div class="vc-quiz">
 <p class="vc-quiz-q">What takes most of the time in a good first build?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="The assistant produces a first version in minutes; that is the cheap part.">Waiting for the assistant to produce the page.</button>
-<button class="vc-quiz-opt" data-correct>Using the page the way the real user would and checking what the assistant says it did.</button>
-<button class="vc-quiz-opt" data-why="Deploying to a public address is one click on the course toolkit.">Deploying it to a public address.</button>
+<button class="vc-quiz-opt" data-why="The assistant produces a first version in minutes; that is the cheap part.">Waiting for the assistant to produce the first version of the page.</button>
+<button class="vc-quiz-opt" data-correct>Using the page as the real user would and reading what was changed.</button>
+<button class="vc-quiz-opt" data-why="Deploying to a public address is one click on the course toolkit.">Publishing the page to a public address that opens on any phone.</button>
 </div>
 <p class="vc-quiz-fb">Building got cheap; judging did not. Testing by using and reading the assistant's summary is where the manager adds value, and it should take longer than the build.</p>
 </div>
 </div>
 ```
 
-## Build lab · QuoteDesk v0, or your own problem, deployed {#lab}
+## Build lab · QuoteDesk v0 and its public page, or your own problem, deployed {#lab}
 
 ```{=html}
 <div class="vc-lab">
 <p class="vc-lab-t">What your team builds in the next 120 minutes</p>
-<p class="vc-lab-time">Teams of 2 to 3 · the instructor circulates · save a checkpoint every 20 minutes</p>
+<p class="vc-lab-time">Teams of 2 to 3 · the instructor circulates · save a checkpoint after every change that passes your test, and at least every 20 minutes · a 10-minute break is included</p>
 <ol>
-<li><strong>Pick the problem (10 min).</strong> Each member reads their problem aloud. Apply the Pull test from Topic 3: named user, number, moment. Choose the one that passes with the strongest number. If none passes, build QuoteDesk for Cerro Azul and use the lab to learn the tools.</li>
-<li><strong>Write the brief (15 min).</strong> Use the brief builder from Topic 4 until the meter says four of four. Copy the paragraph into your build log as its first entry, with the date and the team members.</li>
-<li><strong>Open the conversational app builder from the course toolkit.</strong> Start a new project. Paste the first prompt below, replacing the brief with yours. Do not add anything else yet.</li>
+<li><strong>Watch the live demo (20 min).</strong> The instructor builds and deploys QuoteDesk v0, including the bug from Topic 6. Note the order of moves, not the clicks.</li>
+<li><strong>Pick the problem (10 min).</strong> Each member reads their problem aloud. Apply the Pull test from Topic 4: named user, number, moment. Choose the one that passes with the strongest number. If none passes, build QuoteDesk for Cerro Azul and use the lab to learn the tools.</li>
+<li><strong>Write the brief (10 min).</strong> Use the brief builder from Topic 5 until the meter says four of four, or your instructor signs the brief off. The meter reads English only and looks for a role word, a number and a verb, so a good brief in Spanish or about an unusual role can score low. Copy the paragraph into your build log as its first entry, with the date and the team members.</li>
+<li><strong>Send the first prompt (5 min).</strong> Open the app builder from the course toolkit and start a new project. Paste the first prompt below, replacing the brief with yours. Do not add anything else yet.</li>
 <li><strong>Read the plan before accepting it (5 min).</strong> The assistant will describe what it intends to build. Check each line against the brief. If it adds things you did not ask for (login, dashboards, charts), reply: "Remove X for now; keep the first version to the brief."</li>
-<li><strong>Test by using (15 min).</strong> Do the three things your user would do, in order, on a phone-sized window. Write in the build log what worked and what did not, in the user's words.</li>
-<li><strong>Ask for one change at a time (30 min).</strong> Use the second prompt below. After each change, read the assistant's summary of what it did, then test again. Three focused changes beat one long list.</li>
-<li><strong>Save a checkpoint</strong> after every change that works (the builder calls it a version, a snapshot or a publish). You will learn in Class 2 why this matters; for now, just do it.</li>
-<li><strong>Deploy (10 min).</strong> Publish to a public address. Open it on a real phone, not the simulator. Send the address to one person outside the team with the request in the note above.</li>
-<li><strong>Write the build log entry (10 min).</strong> What you asked, what the assistant did, what you decided, what surprised you. Include the public address.</li>
-<li><strong>Prepare for the critique.</strong> Two teams will show their page end to end. Choose who demonstrates and which user action you will show first.</li>
+<li><strong>Test by using (10 min).</strong> Do the three things your user would do, in order, in a phone-sized window (drag the browser window narrow). Paste a realistic message with names and numbers changed, never a real one. Write in the build log what worked and what did not, in the user's words.</li>
+<li><strong>Ask for one change at a time (15 min).</strong> Use the second prompt below. After each change, read the assistant's summary of what it did, then test again. Two focused changes beat one long list. Save a checkpoint after every change that works (the builder calls it a version, a snapshot or a publish). You will learn in Class 2 why this matters; for now, just do it.</li>
+<li><strong>Deploy the app (5 min).</strong> Publish to a public address. Open it on a real phone, not only in the narrow window on your laptop.</li>
+<li><strong>Break (10 min).</strong> Stand up. On the way back, open your app on someone else's phone and watch them use it without helping.</li>
+<li><strong>Build the public page (15 min).</strong> In the same builder, start a second project: one page that explains your product to the people it is for. Use the fourth prompt below. Check it against the four review questions under that prompt, then publish it.</li>
+<li><strong>Ask for feedback (5 min).</strong> Send both addresses to one person outside the team, ideally someone who has the actual problem, with one sentence: "paste a realistic message, with names and numbers changed, and tell me what is wrong".</li>
+<li><strong>Write the build log entry (5 min).</strong> What you asked, what the assistant did, what you decided, what surprised you. Include both public addresses.</li>
+<li><strong>Prepare for the critique (5 min).</strong> Two teams will show their work end to end. Choose who demonstrates and which user action you will show first.</li>
 </ol>
 </div>
 ```
 
-The first prompt is deliberately short. It gives the assistant the brief, three constraints, and asks for a plan before any building.
+The first prompt is deliberately short. It gives the assistant the brief, three constraints, and asks for a plan before any building. The first constraint keeps version 0 honest: the list lives on one device and disappears if the page is reloaded. That weakness is what Class 2 fixes with a database and a login.
 
 ```{=html}
 <div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · first prompt</div><div class="vc-prompt-b">I want to build a small internal web tool. Here is the brief:
 
-For sales reps at Cerro Azul Distribuidora, who retype every WhatsApp quote request into the ERP and take three to six hours to send a quote, QuoteDesk is a web page where a rep pastes the customer's message, picks the customer from a short list, and saves the request so the whole team sees it in a shared list. We will know it works when three reps use it for a week and quote time drops below one hour.
+For sales reps at Cerro Azul Distribuidora, who retype every WhatsApp quote request into the ERP and take three to six hours to send a quote, QuoteDesk is a web page where a rep pastes the customer's message, picks the customer from a short list, and saves the request so it appears in today's list. We will know it works when three reps use it for two weeks and quote time drops below one hour.
 
 Constraints for this first version:
-1. One page only. No login, no dashboard, no charts.
-2. The list of customers can be a fixed list of eight names for now.
+1. One page only. No login, no dashboard, no charts, no shared storage: today's list only needs to show on the device that saved it.
+2. The list of customers can be a fixed list of eight invented names for now.
 3. Keep the design plain and readable on a phone.
 
 Before building, tell me in plain language what you plan to build, as a short numbered list. Then wait for my answer.</div></div>
@@ -351,7 +420,7 @@ Compare it with a prompt that looks more complete and produces a worse first ver
 After the first version works, every change goes in on its own, with the test you will run.
 
 ```{=html}
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · one change</div><div class="vc-prompt-b">One change, nothing else: when a rep saves a request, show it at the top of the shared list with the customer name, the first 60 characters of the message, and the time it was saved. Keep everything else as it is.
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · one change</div><div class="vc-prompt-b">One change, nothing else: when a rep saves a request, show it at the top of today's list with the customer name, the first 60 characters of the message, and the time it was saved. Keep everything else as it is.
 
 After the change, tell me in two or three sentences what you changed and how I can test it.</div></div>
 ```
@@ -364,41 +433,66 @@ When something fails, describe it the way the user experienced it and ask for th
 First explain in plain language what you think is happening. Then fix it, and tell me what you changed so I can test it again on the phone size.</div></div>
 ```
 
+### The second deliverable: one public page
+
+The same builder that makes apps makes pages, and a page is the simplest thing you will build in this course: nothing is stored and nothing is decided. That is why it is a good place to practice the part that is not simple, which is the brief. A page is a brief plus structure: who it is for, the one action you want from them, the proof that makes them believe you, and the call to action.
+
+For Cerro Azul the page is for customers. Restaurants and minimarkets do not care about QuoteDesk; they care that their quote arrives sooner. The page cannot promise "in under an hour" yet: that is the target in the brief, not a measured result. Until the pilot gives you a number, the honest headline is that Cerro Azul is piloting faster quotes.
+
+```{=html}
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the public page</div><div class="vc-prompt-b">Build a one-page public site. No login, no forms that store data, no other pages.
+
+Who it is for: owners and buyers of restaurants and minimarkets that already buy from Cerro Azul Distribuidora, reading on a phone.
+The one action I want: send their next order request by WhatsApp to [WhatsApp number]. Keep that placeholder exactly as written; I will replace it.
+What we can say: we are piloting a faster way to answer quote requests. Do not promise a time.
+Proof: we serve 1,800 restaurants and minimarkets, with 14 sales reps. Leave a clearly marked placeholder for "average time to quote during the pilot"; I will fill it when I have the real number. Do not invent figures or testimonials.
+Call to action: one button, "Send your order on WhatsApp", repeated at the top and at the bottom.
+
+Structure, in this order: a headline that states the benefit in plain words, two sentences on how it works, the proof, the button. Spanish, formal "usted". Plain design, large text, fast to load.
+
+Before building, show me the headline and the two sentences. Then wait for my answer.</div></div>
+```
+
+If you are building for your own organization, publish the page under a fictional company name unless your employer has agreed to it. A public page speaks for the company whose name is on it.
+
+Review the page with four questions before you publish it. Would the person it is for understand the headline in five seconds? Is there exactly one thing to do? Is every number on the page one you can defend? Does it read well on a real phone? If the assistant added a claim you cannot prove, such as a testimonial, a percentage or a promised time, remove it. Every claim on the page is yours.
+
 ```{=html}
 <ul class="vc-checklist" id="lab-checklist">
 <li>Team of 2 or 3 formed, with names in the build log.</li>
 <li>The chosen problem passes the Pull test: named user, a number, a moment.</li>
-<li>The brief has all four parts and the builder's meter shows four of four.</li>
+<li>The brief has all four parts: the meter shows four of four, or the instructor signed it off.</li>
 <li>First prompt sent with the brief and the three constraints; the plan was read and accepted or corrected.</li>
-<li>The three user actions were tested on a phone-sized window and the results written in the user's words.</li>
+<li>The three user actions were tested in a phone-sized window, with invented or de-identified messages only, and the results written in the user's words.</li>
 <li>At least one change requested on its own, the assistant's summary read, and the change tested.</li>
 <li>At least one bug described to the assistant and fixed, with the explanation recorded.</li>
 <li>A checkpoint saved after the last working change.</li>
-<li>The page is deployed to a public address and opens on a real phone.</li>
-<li>The address was sent to one person outside the team with a request for feedback.</li>
+<li>The app is deployed to a public address and opens on a real phone.</li>
+<li>The public page is published: one audience, one action, no number or claim you cannot defend, and a fictional company name unless your employer agreed.</li>
+<li>Both addresses were sent to one person outside the team with a request for feedback.</li>
 <li>The build log entry for session 1 is written: what you asked, what the assistant did, what you decided, what surprised you.</li>
 </ul>
 ```
 
 ## Critique and reflection
 
-Two teams show their page end to end, in 5 minutes each: the brief in one sentence, then the three user actions on a phone-sized window, then one thing that broke and how it was fixed. The class applies one rubric criterion, **problem and value**: is the user named, is the pain measured, would that user open this page tomorrow? Comments go to the team's build log, not into the air.
+Two teams show their work end to end, in 5 minutes each: the brief in one sentence, then the three user actions in a phone-sized window, then one thing that broke and how it was fixed, then the public page. The class applies one criterion of the [course rubric](rubric.html), **problem and value**: is the user named, is the pain measured, would that user open this page tomorrow? Comments go to the team's build log, not into the air.
 
 Then 10 minutes alone with your build log. The reflection prompt for session 1: *what did you expect to be hard that turned out to be easy, and what did you expect to be easy that turned out to be hard?* Write it down before the discussion; the point is to notice how your own estimate of "hard" has to change.
 
 ## Before next session
 
-**Milestone M1, individual, 15% of the grade, due before session 2.** A one-page problem brief and product specification, written as an instruction to an AI: the user, the pain with a number, the value hypothesis, the success metric, and three user stories, each with acceptance criteria ("a rep can paste a message and save it; the saved request appears at the top of the shared list within two seconds; an empty message cannot be saved"). The brief from the lab is the first paragraph; the three user stories are what you want QuoteDesk, or your own product, to do by session 3. It is graded on problem and value and on communication.
+**Milestone M1, individual, 15% of the grade, due before session 2.** A one-page problem brief and product specification, written as an instruction to an AI: the user, the pain with a number, the value hypothesis, the success metric, and three user stories, each with acceptance criteria ("a rep can paste a message and save it; the saved request appears at the top of the list within two seconds; an empty message cannot be saved"). The brief from the lab is the first paragraph; the three user stories are what you want QuoteDesk, or your own product, to do by session 3. It is graded with the [course rubric](rubric.html) on the two criteria that apply to a brief: problem and value, and communication. Write it with invented or de-identified examples only.
 
-**Pre-work for session 2 (90 minutes).** Read the chapters of Mollick's *Co-Intelligence* on working with AI as a co-worker, and watch the short course video on version control for managers. Keep your project open: session 2 starts by moving it to an agentic coding assistant with a repository, and adding real data and a login.
+**Pre-work for session 2.** Read the [Class 2 page](class2.html), about 100 minutes; its topic 2 covers checkpoints and undo, which the lab uses from the first minute. Then follow the [toolkit setup guide](setup.html) so that, before class, your app is in a private repository and opens in the building assistant, and the database project exists. Session 2 starts from there: it adds stored data and a login, and then teaches the assistant how your team works with project instructions, a first skill and a read-only connector. Optional reading: the chapters of Mollick's *Co-Intelligence* on working with AI as a co-worker.
 
 ## Summary
 
-- The cost of a working prototype fell by roughly a hundred times in ten years. The threshold for "worth trying" moved and most organizations have not updated their list.
-- Vibe coding is building without understanding, on purpose; AI-assisted engineering is building faster with understanding. Blast radius, users, regulation and lifetime decide which one a problem needs.
-- A prototype that quietly becomes the production system is the most common failure. Decide in the brief how long it may live.
+- In the illustration used here, a working prototype costs about a hundred times less than ten years ago. Your numbers will differ; the direction will not. The threshold for "worth trying" moved and most organizations have not updated their list.
+- Six building blocks cover what a manager builds with an assistant: prompt, project instructions, skill, connector, agent, scheduled automation. Name the blocks a job needs before choosing a tool, and say which "assistant" you mean: the one you build with, the one a rep uses, or the model inside the app.
+- Vibe coding is building without understanding, on purpose; AI-assisted engineering is building faster with understanding. Blast radius, users, regulation and lifetime decide which one a problem needs, and a prototype that quietly becomes the production system is the most common failure.
 - Problem Pull ideas name a user, a number and a moment. AI Push ideas name a technology. Cheap building makes the test more important, because nothing else filters ideas any more.
-- The brief has four parts: user, pain with a number, what the tool does, how we know it works. It is also the business case and the first page of the build log.
-- Read the assistant's plan before accepting it, read its summary after every change, and test by using on a phone-sized window. Judging takes longer than building, and it is your job.
+- The brief has four parts: user, pain with a number, what the tool does, how we know it works. It is also the business case and the first page of the build log, and its metric is a target until you time it.
+- Read the assistant's plan before accepting it, read its summary after every change, and test by using in a phone-sized window, with invented or de-identified messages only until the Class 4 lab is done. Judging takes longer than building, and it is your job.
 - A bug is a conversation: describe what the user saw, ask for the explanation, then the fix, then test again.
-- Deploy early. A public address turns a demo into feedback from someone who has the problem.
+- Deploy early, the app and the page. A public address turns a demo into feedback from someone who has the problem, and every claim on a public page is yours to defend.

@@ -192,10 +192,83 @@
     }
   }
 
+  /** Accessible on/off switch. Returns the button; state: el.getAttribute("aria-checked") === "true". */
+  function toggle(parent, label, onChange, initial = false) {
+    const b = h("button", { type: "button", class: "vc-switch", role: "switch", "aria-checked": String(!!initial) },
+      h("span", { class: "vc-switch-track" }), h("span", {}, label));
+    b.addEventListener("click", () => {
+      const on = b.getAttribute("aria-checked") !== "true";
+      b.setAttribute("aria-checked", String(on));
+      onChange && onChange(on);
+    });
+    parent.append(b);
+    return b;
+  }
+
+  /** Responsive SVG chart. One viewBox unit = one CSS pixel, so text sizes are real pixels on every screen.
+      opts.height: number or (width) => number.  opts.draw(svgEl, width, height, {first, narrow}) draws from scratch.
+      Redraws when the container width changes. Returns { svg, redraw }. */
+  function plot(parent, opts) {
+    const el = svg("svg", { class: "vc-plot", role: "img", "aria-label": opts.label || "chart" });
+    parent.append(el);
+    let lastW = 0, first = true;
+    const size = () => Math.max(260, Math.round(el.clientWidth || parent.clientWidth || 600));
+    function redraw(force) {
+      const w = size();
+      if (!force && w === lastW) return;
+      lastW = w;
+      const hgt = typeof opts.height === "function" ? opts.height(w) : (opts.height || 220);
+      el.setAttribute("viewBox", `0 0 ${w} ${hgt}`);
+      el.style.aspectRatio = `${w} / ${hgt}`;
+      while (el.firstChild) el.firstChild.remove();
+      opts.draw(el, w, hgt, { first, narrow: w < 480 });
+      first = false;
+    }
+    if (window.ResizeObserver) { let t; new ResizeObserver(() => { clearTimeout(t); t = setTimeout(() => redraw(false), 80); }).observe(parent); }
+    setTimeout(() => redraw(true), 0);
+    return { svg: el, redraw: () => redraw(true) };
+  }
+
+  /* ---------- Day bar: <div class="vc-daybar" data-blocks="Framework:45|Build:120|Critique:45|Milestone review:30"></div> ---------- */
+  function mountDaybar(el) {
+    if (el.dataset.mounted) return;
+    el.dataset.mounted = "1";
+    const blocks = (el.dataset.blocks || "").split("|").map((s) => { const i = s.lastIndexOf(":"); return { label: s.slice(0, i).trim(), min: +s.slice(i + 1) }; }).filter((b) => b.min > 0);
+    const total = blocks.reduce((a, b) => a + b.min, 0) || 1;
+    const track = h("div", { class: "vc-daybar-track", role: "img", "aria-label": "The session: " + blocks.map((b) => `${b.label} ${b.min} minutes`).join(", ") });
+    const segs = blocks.map((b) => { const s = h("div", { class: "vc-daybar-seg", style: { width: `calc(${(b.min / total) * 100}% - 3px)` } }, b.min + "′"); track.append(s); return s; });
+    const colors = ["var(--vc-ai)", "var(--hz-accent)", "var(--hz-ink-2)", "var(--hz-muted)"];
+    const legend = h("ul", { class: "vc-daybar-legend" }, blocks.map((b, i) => h("li", {}, h("i", { style: { background: colors[i % 4] } }), h("b", {}, b.label), ` ${b.min} min`)));
+    el.append(track, legend);
+    if (!reduced() && M()) {
+      segs.forEach((s) => { s.style.transform = "scaleX(0)"; });
+      motion.onView(el, () => M().animate(segs, { scaleX: [0, 1] }, { duration: 0.5, ease: EASE.out, delay: M().stagger(0.11) }));
+    }
+  }
+
+  /* ---------- Reading progress, linked to scroll ---------- */
+  function mountProgress() {
+    if (document.querySelector(".vc-progress") || !document.querySelector(".vc-widget, .vc-quiz")) return;
+    const bar = h("i", {});
+    document.body.append(h("div", { class: "vc-progress", "aria-hidden": "true" }, bar));
+    const upd = () => { const d = document.documentElement; bar.style.transform = `scaleX(${Math.min(1, d.scrollTop / Math.max(1, d.scrollHeight - d.clientHeight))})`; };
+    addEventListener("scroll", upd, { passive: true }); addEventListener("resize", upd, { passive: true }); upd();
+  }
+
   /* ---------- Quizzes ---------- */
   function mountQuiz(q) {
     if (q.dataset.mounted) return;
     q.dataset.mounted = "1";
+    // Shuffle the options on every page load so the position never gives the answer away.
+    const box = q.querySelector(".vc-quiz-opts");
+    if (box) {
+      const items = [...box.querySelectorAll(".vc-quiz-opt")];
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [items[i], items[j]] = [items[j], items[i]];
+      }
+      items.forEach((it) => box.append(it));
+    }
     const opts = q.querySelectorAll(".vc-quiz-opt");
     const fb = q.querySelector(".vc-quiz-fb");
     const why = h("p", { class: "vc-quiz-why", "aria-live": "polite" });
@@ -298,8 +371,10 @@
     document.querySelectorAll(".vc-quiz").forEach(mountQuiz);
     document.querySelectorAll(".vc-practice").forEach(mountPractice);
     document.querySelectorAll(".vc-checklist").forEach(mountChecklist);
+    document.querySelectorAll(".vc-daybar").forEach(mountDaybar);
+    mountProgress();
     if (!reduced() && M()) {
-      document.querySelectorAll(".vc-widget, .vc-lab, .vc-practice, .vc-prompt, .vc-compare").forEach((el) => {
+      document.querySelectorAll(".vc-widget, .vc-lab, .vc-practice").forEach((el) => {
         if (el.dataset.entered) return;
         el.dataset.entered = "1";
         el.style.opacity = "0";
@@ -308,7 +383,7 @@
     }
   }
 
-  window.VC = { h, svg, motion, sleep, panel, controls, slider, select, text, btn, buttons, stat, note, runFlow, register, mountAll, WIDGETS };
+  window.VC = { h, svg, motion, sleep, panel, controls, slider, select, text, btn, buttons, toggle, plot, stat, note, runFlow, register, mountAll, WIDGETS };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => setTimeout(mountAll, 0));
   else setTimeout(mountAll, 0);
 })();

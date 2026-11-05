@@ -2,6 +2,7 @@
 title: "Course syllabus"
 subtitle: "Vibe Coding for Business Leaders: From Business Problem to Working AI Product · MBA USM elective · 2 SCT-Chile"
 lang: en
+css: assets/vc.css
 ---
 
 Format follows the USM MBA *Programa de Asignatura* template. A Word version in the same template is available here: [Vibe_Coding_MBA_Elective_Syllabus.docx](files/Vibe_Coding_MBA_Elective_Syllabus.docx).
@@ -13,31 +14,31 @@ Format follows the USM MBA *Programa de Asignatura* template. A Word version in 
 | **Course** | Elective: Vibe Coding for Business Leaders. From Business Problem to Working AI Product |
 | **Department** | Ingeniería Comercial |
 | **Code** | MGE 4xx (to be assigned) |
-| **Prerequisites** | Those indicated in the admission profile. No programming experience required. |
+| **Prerequisites** | As set out in the MBA admission profile. No programming experience required. |
 | **SCT-Chile credits** | 2 |
 | **Exam** | No |
 | **Direct teaching hours** | 20 (15 lecture/workshop + 5 assessment) |
 | **Autonomous work hours** | 25 |
-| **Total chronological dedication** | 45 hours |
+| **Total workload (clock hours)** | 45 hours |
 | **Language** | English |
 | **Knowledge area (OECD)** | Economics and Business |
 
 ## 2. Course description
 
-This course belongs to the elective area of the MBA. In it, students analyze business problems that can be solved with software and develop the ability to build, deploy and govern working AI-powered applications by directing AI coding assistants in natural language, without prior programming experience.
+This course belongs to the elective area of the MBA. In it, students analyze business problems that can be solved with software and develop the ability to build, deploy and govern working AI-powered applications, web pages, presentations and automations by directing AI assistants in natural language, without prior programming experience.
 
-*Vibe coding*, the practice of building software by describing intent to an AI and iterating on what it produces, has collapsed the cost of a working prototype from weeks of engineering to hours of a manager's time. This changes which ideas are worth testing, how managers specify what they need, how they work with technology teams, and which risks they now own. Over five intensive workshop sessions, students take one real business problem from framing to a deployed web application with an integrated language-model capability, evaluate the security, privacy, cost and maintainability risks of AI-generated software, and present a working product and business case to decision makers.
+*Vibe coding*, the practice of building software by describing intent to an AI and iterating on what it produces, has collapsed the cost of a working prototype from weeks of engineering to hours of a manager's time. This changes which ideas are worth testing, how managers specify what they need, how they work with technology teams, and which risks they now own. Over five intensive workshop sessions, students take one real business problem from framing to a deployed web application with an integrated language-model capability. They extend it with the building blocks of current AI work: project instructions and skills that package how their organization works, connectors (the Model Context Protocol) that give the assistant scoped access to company systems, agents that act with human approval, and automations that run on a schedule. They then evaluate the security, privacy, cost and maintainability risks of what they built, and present a working product and business case to decision makers with a deck generated with AI and verified by them.
 
-The course is deliberately built around *build first, then reflect*. Students ship a first application in the first session; strategy, user experience, governance and organizational questions are then examined on something they have made themselves. Students leave with a deployed product, a tested decision framework for build / buy / vibe, and a first-hand understanding of what has changed in the economics of building software.
+The course is deliberately built around *build first, then reflect*. Students ship a first application in the first session; strategy, user experience, governance and organizational questions are then examined on something they have made themselves. Students leave with a deployed product, a small personal system for working with AI (skills, connectors and one automation), a tested decision framework for build / buy / vibe, and a first-hand understanding of what has changed in the economics of building software.
 
 ## 3. Entry requirements / prior learning
 
-Those indicated in the MBA admission profile. In addition:
+As set out in the MBA admission profile. In addition:
 
 - No programming or software development experience is required or assumed.
 - Working reading and listening comprehension of English; deliverables may be written in English or Spanish.
 - A laptop (any OS) with a modern browser and administrator rights to install one application.
-- Accounts on the course toolkit (GitHub, an AI coding assistant, a managed database and a hosting platform). Estimated out-of-pocket cost for the course: USD 20 to 40 per student, confirmed before enrollment.
+- Accounts on the course toolkit (GitHub, an AI assistant with skills and connectors, a managed database and a hosting platform). Estimated out-of-pocket cost for the course: USD 20 to 40 per student, confirmed before enrollment.
 
 ## 4. Graduate-profile competencies the course contributes to
 
@@ -58,15 +59,15 @@ Those indicated in the MBA admission profile. In addition:
 
 **From the generic transversal competencies**
 
-- **LO-G1 (CGT1, indicators 1.1, 1.2, 1.3).** Evaluates the ethical, privacy and security implications of AI-generated software and of processing personal and company data in a prototype, and declares transparently the role AI played in their own work.
+- **LO-G1 (CGT1, indicators 1.1, 1.2, 1.3).** Evaluates the ethical, privacy and security implications of AI-generated software, of processing personal and company data, and of granting AI assistants access to company systems, and declares transparently the role AI played in their own work.
 - **LO-G2 (CGT2, indicators 2.1, 2.2, 2.4).** Leads a small team through an iterative build cycle with explicit roles, milestones and critical peer review of their own and others' work.
-- **LO-G3 (CGT3, indicators 3.1, 3.2, 3.3).** Communicates a working product and its business case to decision makers through a live demonstration, a written memo and a visual presentation, adapting the message to a technical and a non-technical audience.
+- **LO-G3 (CGT3, indicators 3.1, 3.2, 3.3).** Communicates a working product and its business case to decision makers through a live demonstration, a written memo and a visual presentation generated with AI and verified by the presenter, adapting the message to a technical and a non-technical audience.
 
 **From the specific competencies**
 
 - **LO-S1 (CE1).** Analyzes a business process and its context to identify, prioritize and frame an opportunity where an AI-powered application creates measurable value, specifying users, value hypothesis and success metric.
-- **LO-S2 (CE2).** Solves a business problem by specifying, building and deploying a functional web application with AI coding assistants, integrating a language-model capability with appropriate guardrails and an evaluation set.
-- **LO-S3 (CE4).** Applies AI coding assistants, language-model APIs, version control and managed deployment platforms as management tools, and decides between building, buying, continuing to prototype and handing off to engineering using explicit criteria.
+- **LO-S2 (CE2).** Solves a business problem by specifying, building and deploying a functional web application with AI assistants, integrating a language-model capability with appropriate guardrails and an evaluation set, and extending the work with one skill and one connector for the team's assistants, one agentic step that waits for human approval and one scheduled automation.
+- **LO-S3 (CE4).** Applies AI assistants, skills, connectors (MCP), agents, automations, language-model APIs, version control and managed deployment platforms as management tools, and decides between building, buying, continuing to prototype and handing off to engineering using explicit criteria.
 - **LO-S4 (CE3).** Designs a roadmap from prototype to production that identifies the strategic, organizational and technical conditions under which the solution should be scaled, and what remains a defensible advantage when building software is cheap.
 
 ## 6. Contents
@@ -74,51 +75,55 @@ Those indicated in the MBA admission profile. In addition:
 **Unit 1. The new economics of building software: vibe coding from hour one**
 
 - What changed: from writing code to expressing intent. Vibe coding versus AI-assisted engineering; what each is good for.
-- The toolkit: conversational app builders, agentic coding assistants, version control, managed databases and hosting. What each costs and where the data goes.
+- The toolkit map: chat assistants, app builders, agentic coding assistants and desktop agent apps; and the building blocks used with them: prompts, project instructions, skills, connectors, agents and automations. Which one for which job.
 - Problem Pull versus AI Push. Selecting a business problem worth building for: users, pain, value hypothesis, success metric.
-- First build: from a one-paragraph brief to a deployed web application within the session.
+- First builds: from a one-paragraph brief to a deployed web application and a public web page within the session.
 
 **Unit 2. From specification to product**
 
 - Prompting as specification: product briefs, user stories and acceptance criteria written for an AI.
-- Iterative building: small steps, testing by using, reading what the assistant did without reading code, recovering from a bad change.
+- Iterative building: small steps, testing by using, checkpoints, branches and rollback without reading code.
 - Data: forms, tables and a managed database; authentication for real users.
-- Version control for managers: commits as checkpoints, branches as experiments.
 - User experience for AI products: designing for non-deterministic output, trust, error states, loading and streaming.
+- Project instructions and skills: packaging how the organization works so the assistant repeats it; anatomy of a skill and how it is triggered.
+- Connectors and the Model Context Protocol (MCP): giving the assistant scoped access to company systems; read before write.
 
 **Unit 3. Adding intelligence**
 
 - Language-model APIs for managers: what a call is, what it costs, latency, context windows, choosing a model.
 - Integration patterns: classification, extraction with structured output, summarization, conversational assistant.
 - Retrieval over company documents (RAG): when it is needed, how it fails, how to test it.
-- Simple agents and automations: tool calling, when autonomy is worth its risk.
+- Agents: a model in a loop with tools, tool calling, subagents, and levels of autonomy with human approval.
+- Automations: triggers, schedules and recurring work; owners, logs, alerts and spending limits.
 - Guardrails and evaluation: building a test set, measuring hallucination, keeping a human in the loop.
 
 **Unit 4. Governing AI-generated software**
 
-- Security: secrets and keys, authentication and authorization, prompt injection, the OWASP Top 10 for LLM applications.
+- Security: secrets and keys, authentication and authorization, prompt injection in messages and in content returned by connectors, the OWASP Top 10 for LLM applications.
+- Permissions for skills, connectors and agents: least privilege, approval for consequential actions, third-party skills and connectors as a supply chain.
 - Data protection: personal data under Chile's Ley 21.719 and GDPR basics, data residency, vendor terms and training on customer data.
-- Cost control: token economics, rate limits, budgets, caching.
-- Maintainability: the code nobody understands, documentation, tests, technical debt in prototypes that became products.
-- Intellectual property and licensing of generated code; vendor lock-in.
+- Cost control: token economics, rate limits, budgets, caching, runaway automations.
+- Maintainability: the code nobody understands, documentation, tests, technical debt in prototypes that became products; intellectual property and vendor lock-in.
 - Decision frameworks: build / buy / vibe; prototype versus production; when to stop vibe coding and hand off to engineering; the questions to ask an engineering team.
 
 **Unit 5. Demo Day and strategy revisited**
 
+- Presenting with AI: storyline first, then a deck, a one-page handout and a demo page generated from the build log and the test results; the presenter owns every number.
 - Demo Day: live demonstration of the product and presentation of the business case to an invited panel.
 - What remains a moat when building is cheap: proprietary data, distribution, workflow integration, trust.
 - From prototype to production: roadmap, organizational implications, citizen developers and governance.
-- Reflection: what the AI did, what I decided, what I would do differently.
+- A personal AI work system after the course: a library of skills, trusted connectors, one automation with an owner and a log. Reflection: what the AI did, what I decided, what I would do differently.
 
 ## 7. Methodology (teaching and learning strategies)
 
-- **Workshop format, build first then reflect.** Each 4-hour session follows the same rhythm: a 45-minute framework block, a 2-hour guided build in teams working on their own project, a 45-minute critique and reflection block, and a 30-minute milestone review.
+- **Workshop format, build first then reflect.** Sessions 1 to 4 follow the same rhythm: a 45-minute framework block, a 2-hour guided build in teams working on their own project (with a 10-minute break), a 45-minute critique and reflection block, and a 30-minute milestone review. Session 5 is Demo Day.
+- **Interactive class pages.** Each session has a self-teaching page with simulators, practice questions, the lab guide and prompts to adapt, read before class (90 to 100 minutes) so class time is spent building. Three support pages complete them: a [toolkit setup guide](setup.html), a [security checklist](security-checklist.html) and the [rubric](rubric.html).
 - **Live demonstrations** by the instructor of every technique before students apply it, including failures and recovery.
-- **One cumulative team project** (teams of 2 to 3) chosen by the students from their own organizations, carried from problem brief to deployed product to Demo Day.
-- **Short pre-readings and a pre-work task** before each session (60 to 90 minutes), so class time is spent building.
+- **One cumulative team project** (teams of 2 to 3) chosen by the students from their own organizations, carried from problem brief to deployed product to Demo Day. A running case, a food distributor's quote-request tool, is used in every class.
+- **Data rule.** Until a team has completed the session 4 lab, only invented or de-identified information is used in the product, in the test set and in any prompt: no real names, phone numbers, addresses or tax numbers.
 - **Individual build log**: each student keeps a running record of prompts, decisions, failures and what the AI did, used for assessment and reflection.
 - **Peer review** at every milestone with a shared rubric.
-- **Course toolkit** (subject to update each term): an agentic AI coding assistant as the primary tool, a conversational UI builder, GitHub for version control, a managed database and a managed hosting platform. Principles are taught tool-agnostically so students can switch tools.
+- **Course toolkit** (subject to update each term): an AI assistant that supports project instructions, skills, connectors (MCP), agents and scheduled tasks as the primary tool; a conversational app builder; GitHub for version control; a managed database and a managed hosting platform. Principles are taught tool-agnostically so students can switch tools.
 - **Asynchronous support** through a course channel between sessions.
 
 ## 8. Assessment of learning outcomes
@@ -126,14 +131,14 @@ Those indicated in the MBA admission profile. In addition:
 | Component | Weight | Type | Learning outcomes | Due |
 |---|---|---|---|---|
 | M1. Problem brief and product specification | 15% | Individual | LO-S1, LO-G3 | Before session 2 |
-| M2. Working prototype v1, deployed, with build log | 20% | Team | LO-S2, LO-S3, LO-G2 | Before session 3 |
-| M3. AI feature with evaluation set and risk memo | 25% | Team | LO-S2, LO-G1 | Before session 5 |
-| Demo Day: live demo and business case (10 min + Q&A) | 25% | Team, individually adjusted | LO-S4, LO-G3, LO-G2 | Session 5 |
+| M2. Working prototype v1, deployed, with one skill, one connector and the build log | 20% | Team | LO-S2, LO-S3, LO-G2 | Before session 3 |
+| M3. AI feature with evaluation set, one agentic step with approval, one automation, the measurement of the brief's metric, and risk memo | 25% | Team | LO-S2, LO-S3, LO-G1 | Before session 5 |
+| Demo Day: live demo and business case (10 min + Q&A), deck generated with AI and declared | 25% | Team, individually adjusted | LO-S4, LO-G3, LO-G2 | Session 5 |
 | Individual reflection memo and participation | 15% | Individual | LO-G1, LO-S3 | End of session 5 |
 
-**Approval and grading.** Grades on the 0 to 100 scale used by the MBA; the course is passed with a weighted average of 55 or higher and attendance of at least 75% of sessions, in accordance with MBA regulations. There is no final exam. Team grades are adjusted individually by up to ±10 points based on the build log and peer assessment.
+**Passing and grading.** Grades on the 0 to 100 scale used by the MBA; the course is passed with a weighted average of 55 or higher and attendance of at least 75% of sessions, in accordance with MBA regulations. There is no final exam. Team components receive one grade for the team; the Demo Day grade alone is adjusted individually by up to ±10 points, based on the build log and peer assessment.
 
-**Rubrics.** Each component is graded on four criteria with a published rubric: problem and value (is the problem real, the user named, the metric measurable), functionality (does the product work for its user end to end), AI quality and safety (is the model capability useful, evaluated and guarded), and communication (is the product and decision explained clearly to its audience).
+**Rubrics.** Every component is graded with the published [rubric](rubric.html), which gives level descriptors and the weight of each criterion per component. The four criteria are: problem and value (is the problem real, the user named, the metric measurable), functionality (does the product work for its user end to end), AI quality and safety (is the model capability useful, evaluated and guarded, and are permissions minimal), and communication (is the product and decision explained clearly to its audience).
 
 **Policy on AI use.** Using AI tools is mandatory in this course and must be declared. The build log is the record of that use. Presenting AI output as one's own reasoning without the log, or fabricating a log, is academic dishonesty under MBA regulations.
 
@@ -145,18 +150,20 @@ Those indicated in the MBA admission profile. In addition:
 - Willison, S. (2025). "Not all AI-assisted programming is vibe coding (but vibe coding rocks)" and "Vibe engineering". simonwillison.net.
 - Karpathy, A. (2025). Post introducing the term "vibe coding", 2 February 2025.
 - Anthropic (2024). *Building effective agents*. anthropic.com/engineering.
-- OWASP Foundation (2025). *OWASP Top 10 for LLM Applications 2025*.
+- OWASP Foundation (2025). *OWASP Top 10 for LLM Applications 2025*. Check owasp.org for the current edition.
 - Iansiti, M., & Lakhani, K. R. (2020). *Competing in the Age of AI*. Harvard Business Review Press.
 
 **Recommended bibliography**
 
+- Agent Skills specification. agentskills.io. Current version.
+- Model Context Protocol specification and documentation. modelcontextprotocol.io. Current version.
 - Huyen, C. (2025). *AI Engineering: Building Applications with Foundation Models*. O'Reilly. Selected chapters.
 - Agrawal, A., Gans, J., & Goldfarb, A. (2022). *Power and Prediction: The Disruptive Economics of Artificial Intelligence*. Harvard Business Review Press.
 - Ries, E. (2011). *The Lean Startup*. Crown Business.
 - Thomke, S. (2020). *Experimentation Works*. Harvard Business Review Press.
 - Ley N° 21.719 (2024). Regula la protección y el tratamiento de los datos personales y crea la Agencia de Protección de Datos Personales. Chile.
 - NIST (2023). *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*.
-- Official documentation of the course toolkit (AI coding assistant, UI builder, GitHub, managed database, hosting platform), updated each term.
+- Official documentation of the course toolkit, updated each term.
 
 ## Dedication hours (SCT-Chile)
 
@@ -164,14 +171,14 @@ Those indicated in the MBA admission profile. In addition:
 |---|---|
 | **In class** | |
 | Lectures / workshop | 15 |
-| Assessment (milestone reviews and Demo Day) | 5 |
+| Assessment (milestone reviews, Demo Day and reflection memo) | 5 |
 | **Autonomous** | |
 | Mandatory assignments (milestones M1 to M3) | 8 |
 | Preparation of presentations (Demo Day) | 7 |
-| Personal study (pre-readings, build log, reflection) | 10 |
+| Personal study (class pages about 8 hours, short readings about 2 hours) | 10 |
 | **Total (clock hours)** | **45** |
 | **Transferable credits** | **2 SCT-Chile** |
 
-## Course summary
+## Prepared by
 
-Prepared by: Sebastián Azócar M., Ingeniero Matemático, Magíster en Data Science. Department approval, Graduate Office approval and CPP approval: pending (2026).
+ Sebastián Azócar M., Ingeniero Matemático, Magíster en Data Science. Department approval, Graduate Office approval and CPP approval: pending (2026).

@@ -1,6 +1,6 @@
 ---
 title: "Class 2 · Specify, iterate, keep what works"
-subtitle: "By the end of this session QuoteDesk stores real quotes for real reps, has a login, shows honest states when the assistant is unsure, and has a version history you can roll back."
+subtitle: "By the end of this session QuoteDesk keeps quote requests for every rep behind a login, has a history you can roll back, and your team's assistant knows how Cerro Azul writes a quote and where the price list lives."
 lang: en
 css: assets/vc.css
 include-after-body:
@@ -13,40 +13,52 @@ include-after-body:
 ```{=html}
 <div class="vc-meta">
 <span class="is-accent">Session 2 · 4 hours</span>
-<span>Build goal: real data, login, rollback</span>
+<span>Build goal: database, login, rollback, one skill, one connector</span>
 <span>Milestone: M2 due before session 3</span>
 </div>
 ```
 
+```{=html}
+<div class="vc-daybar" data-blocks="Framework:45|Build lab:120|Critique:45|Milestone review:30"></div>
+```
+
+The session is 4 hours. The framework block is a recap of this page, which you read before class, so that most of the time goes to building. The build lab includes a 10-minute break.
+
 ::: {.callout-note title="How to use this page"}
 - Read the topics in order. Each one opens with a guiding question and uses the Cerro Azul case.
-- Every topic has one simulator. Predict what will happen before you touch it, then check.
+- Every topic has at least one simulator. Predict what will happen before you touch it, then check.
 - The "In the business" note says why the idea matters to a manager, not to a programmer.
 - The practice questions explain why each wrong option is wrong. Retry as often as you like.
-- The build lab is what your team does in class. The checklist is saved in your browser between sessions.
+- The build lab is what your team does in class. Its prompts are meant to be copied and adapted, and the checklist is saved in your browser.
+- Data rule: until your team has completed the Class 4 lab, use only invented or de-identified messages. No real names, phones, addresses or tax numbers in the app, in the test set or in any prompt.
 :::
 
 ## What you will be able to do
 
 - Write a user story with acceptance criteria that an assistant can build without guessing.
-- Break a build into small requests, test each one by using the app, and ask the assistant to explain what it changed.
-- Save checkpoints, start an experiment on a branch, and roll back a bad change without reading code.
+- Work in small requests, test by using the app, save checkpoints, and roll back a bad change without reading code.
 - Move QuoteDesk from a page that forgets everything to a managed database with a login for each rep.
-- Apply four UX patterns for output that is sometimes wrong: visible confidence, streaming, honest errors, user correction.
-- Deliver milestone M2: a deployed prototype v1 with login, persistent data and three working user stories.
+- Specify four UX patterns for output that is sometimes wrong.
+- Tell apart the three things people call "the AI": the assistant you build with, the assistant a rep works with, and the model inside the app.
+- Write a project instructions file, and package "how we write a quote here" as a skill the assistant loads on its own.
+- Connect your team's assistant to one company system through a connector, read-only, and say in one sentence what that door allows.
+- Deliver milestone M2: the deployed prototype v1, with one skill and one connector.
 
 ## Route of the session
 
+Times are reading times for this page, at your own pace, before class: about 100 minutes. The last three rows are the blocks you do in class.
+
 ```{=html}
 <ol class="vc-route">
-<li><span class="vc-route-h">20 min</span><a class="vc-route-a" href="#topic-1"><span class="vc-route-n">1</span><span class="vc-route-t">Prompting as specification</span><span class="vc-route-l">simulator · 3 questions</span></a></li>
-<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-2"><span class="vc-route-n">2</span><span class="vc-route-t">Small steps beat big bangs</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
-<li><span class="vc-route-h">20 min</span><a class="vc-route-a" href="#topic-3"><span class="vc-route-n">3</span><span class="vc-route-t">Checkpoints, branches and undo</span><span class="vc-route-l">simulator · 3 questions</span></a></li>
-<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-4"><span class="vc-route-n">4</span><span class="vc-route-t">Where the data lives</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
-<li><span class="vc-route-h">20 min</span><a class="vc-route-a" href="#topic-5"><span class="vc-route-n">5</span><span class="vc-route-t">UX for output that is sometimes wrong</span><span class="vc-route-l">simulator · 3 questions</span></a></li>
-<li class="is-break"><span class="vc-route-h">10 min</span><span class="vc-route-t">Break. Form up with your team and open your repository.</span></li>
-<li><span class="vc-route-h">120 min</span><a class="vc-route-a" href="#lab"><span class="vc-route-n">6</span><span class="vc-route-t">Build lab: QuoteDesk v1 with login, data and rollback</span><span class="vc-route-l">prompts · checklist</span></a></li>
-<li class="is-break"><span class="vc-route-h">45 min</span><span class="vc-route-t">Critique, milestone review, pre-work for session 3</span></li>
+<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-1"><span class="vc-route-n">1</span><span class="vc-route-t">Prompting as specification</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
+<li><span class="vc-route-h">20 min</span><a class="vc-route-a" href="#topic-2"><span class="vc-route-n">2</span><span class="vc-route-t">Small steps, checkpoints and undo</span><span class="vc-route-l">2 simulators · 3 questions</span></a></li>
+<li><span class="vc-route-h">10 min</span><a class="vc-route-a" href="#topic-3"><span class="vc-route-n">3</span><span class="vc-route-t">Where the data lives</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
+<li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-4"><span class="vc-route-n">4</span><span class="vc-route-t">UX for output that is sometimes wrong</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
+<li><span class="vc-route-h">20 min</span><a class="vc-route-a" href="#topic-5"><span class="vc-route-n">5</span><span class="vc-route-t">Teach the assistant how you work: project instructions and skills</span><span class="vc-route-l">simulator · 3 questions</span></a></li>
+<li><span class="vc-route-h">20 min</span><a class="vc-route-a" href="#topic-6"><span class="vc-route-n">6</span><span class="vc-route-t">Connect the assistant to your systems: connectors and MCP</span><span class="vc-route-l">simulator · 3 questions</span></a></li>
+<li><span class="vc-route-h">120 min</span><a class="vc-route-a" href="#lab"><span class="vc-route-n">▶</span><span class="vc-route-t">In class · Build lab: QuoteDesk v1, one skill, one connector</span><span class="vc-route-l">6 prompts to adapt · checklist · 10-minute break</span></a></li>
+<li class="is-break"><span class="vc-route-h">45 min</span><span class="vc-route-t">In class · Critique: two teams show a story end to end and roll back a change live</span></li>
+<li class="is-break"><span class="vc-route-h">30 min</span><span class="vc-route-t">In class · Milestone review: feedback on M1, briefing for M2, pre-work for session 3</span></li>
 </ol>
 ```
 
@@ -56,11 +68,9 @@ include-after-body:
 <p class="vc-guide"><strong>Guiding question:</strong> if the assistant builds exactly what you asked, why does it so often build the wrong thing?</p>
 ```
 
-In session 1 your team wrote a brief and got a working page out of it in under an hour. That felt like magic. The second hour usually feels different: the assistant adds a button you never asked for, the list sorts the wrong way, the "save" works on your laptop and not on your phone. None of that is the assistant being dumb. It is the assistant filling the gaps you left, with the most common guess from millions of other apps. A quote tool for a distributor in Chile is not the most common app.
+In session 1 your team wrote a brief and had a working page in under an hour. The second hour usually feels different: the assistant adds a button you never asked for, the list sorts the wrong way, "save" works on your laptop and not on your phone. None of that is the assistant being careless. It is the assistant filling the gaps you left with the most common answer from millions of other apps. A quote tool for a food distributor in Chile is not the most common app.
 
-The fix is a habit, not a tool. Before you ask for a feature, write it as a **user story** with **acceptance criteria**. A user story is one sentence: *as a sales rep, I want to paste a customer message and save it as a quote request, so that I stop retyping it into the ERP.* Acceptance criteria are the three to six checks that tell you, and the assistant, when the story is done: the customer is chosen from the existing customer list, not typed; the saved request shows date, rep and customer; an empty message cannot be saved; the list shows the newest request first.
-
-Managers already know this format from product teams. What is new is that the assistant reads it literally. Each criterion you write is one decision the assistant does not have to guess. Each one you leave out is a surprise waiting for you in the next hour.
+The fix is a habit, not a tool. Before you ask for a feature, write it as a **user story** with **acceptance criteria**. A user story is one sentence: *as a sales rep, I want to paste a customer message and save it as a quote request, so that I stop retyping it into the ERP.* Acceptance criteria are the three to six checks that tell you, and the assistant, when the story is done. With fewer than three you leave the decisions to the assistant. With more than six you have probably glued two stories together.
 
 | Part | Weak | Strong |
 |---|---|---|
@@ -68,12 +78,14 @@ Managers already know this format from product teams. What is new is that the as
 | Action | "handle quotes" | "paste a WhatsApp message and save it as a quote request for one named customer" |
 | Done when | "it works" | "the request appears at the top of the list with date, rep and customer; empty messages are refused" |
 
+Managers know this format from product teams. What is new is that the assistant reads it literally. Each criterion you write is one decision it does not have to guess. Each one you leave out is a surprise waiting in the next hour.
+
 ```{=html}
 <div class="vc-widget" data-widget="c2-spec"></div>
 ```
 
 ::: {.callout-tip title="In the business"}
-A rep who retypes quotes is slow. A manager who specifies badly is expensive: every vague request costs a build, a test, a complaint and a rebuild. The assistant is cheap per attempt, but your team's two hours in this lab are not. Treat acceptance criteria as the cheapest insurance you will ever buy.
+Paula retyping a quote costs Cerro Azul about 12 minutes. A manager who specifies badly costs more: every vague request is a build, a test, a complaint and a rebuild. The assistant is cheap per attempt, but your team's two hours in the lab are not. Acceptance criteria are the cheapest insurance you will buy in this course.
 :::
 
 ```{=html}
@@ -82,314 +94,464 @@ A rep who retypes quotes is slow. A manager who specifies badly is expensive: ev
 <div class="vc-quiz">
 <p class="vc-quiz-q">Which of these is an acceptance criterion, as opposed to a wish?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="This is a goal. It says nothing a tester could check as done or not done.">The quote tool should be fast and easy for reps.</button>
+<button class="vc-quiz-opt" data-why="This is a goal. It says nothing a tester could check as done or not done.">The quote tool should be fast, clear and easy for reps to use on a phone between visits.</button>
 <button class="vc-quiz-opt" data-correct>An empty message cannot be saved; the save button stays disabled until there is text.</button>
-<button class="vc-quiz-opt" data-why="This is a user story, the one-sentence framing. It still needs criteria to be testable.">As a rep, I want to save quote requests so I stop retyping them.</button>
+<button class="vc-quiz-opt" data-why="This is the user story, the one-sentence framing. It still needs criteria to be testable.">As a rep, I want to save quote requests quickly so that I stop retyping them into the ERP.</button>
 </div>
 <p class="vc-quiz-fb">A criterion is a check that is either true or false when you use the app. "Cannot be saved when empty" is one. "Fast and easy" is a wish, and the assistant will decide for you what it means.</p>
 </div>
 <div class="vc-quiz">
-<p class="vc-quiz-q">Your assistant added a "priority" dropdown that nobody asked for. What most likely happened?</p>
+<p class="vc-quiz-q">The assistant added a "priority" dropdown to the quote request that nobody asked for. What most likely happened?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Assistants rarely refuse; they fill gaps. A missing instruction was the cause, not a technical limit.">The assistant could not build what you asked, so it built something else.</button>
-<button class="vc-quiz-opt" data-correct>Your story left the fields of a quote request unspecified, so the assistant used the most common fields from similar apps.</button>
-<button class="vc-quiz-opt" data-why="There is no hidden plan. The assistant predicts the likeliest completion of your request, and 'priority' is common in ticket-like apps.">The assistant has a plan for the app and is following it.</button>
+<button class="vc-quiz-opt" data-why="Assistants rarely refuse; they fill gaps. A missing instruction was the cause, not a technical limit.">The assistant could not build the fields you asked for, so it replaced them with something it could build.</button>
+<button class="vc-quiz-opt" data-correct>Your story did not list the fields of a quote request, so the assistant used the usual ones from similar apps.</button>
+<button class="vc-quiz-opt" data-why="There is no hidden plan. The assistant produces the likeliest completion of your request, and 'priority' is common in ticket-style apps.">The assistant has its own plan for what the app should become and is quietly adding features toward that plan.</button>
 </div>
-<p class="vc-quiz-fb">Every unspecified field is a guess. Listing the fields of a quote request (customer, message, date, rep, status) in the criteria removes the guess, and the dropdown.</p>
-</div>
-<div class="vc-quiz">
-<p class="vc-quiz-q">How many acceptance criteria should a user story carry for the assistant?</p>
-<div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="One criterion leaves most decisions to the assistant. You will get surprises.">One. Keep it simple.</button>
-<button class="vc-quiz-opt" data-correct>Three to six: enough to cover the fields, the rules and the failure cases that matter.</button>
-<button class="vc-quiz-opt" data-why="Twenty criteria usually means several stories glued together. Split them; the assistant builds one story at a time better.">Twenty or more. The more detail, the better.</button>
-</div>
-<p class="vc-quiz-fb">Three to six criteria is the sweet spot: fields, the rules that matter, and what happens when input is bad. More than that is a sign the story should be split.</p>
+<p class="vc-quiz-fb">Every unspecified field is a guess. Listing the fields (customer, message, date, rep, status) in the criteria removes the guess, and the dropdown.</p>
 </div>
 </div>
 ```
 
-## Topic 2 · Small steps beat big bangs {#topic-2}
+## Topic 2 · Small steps, checkpoints and undo {#topic-2}
 
 ```{=html}
-<p class="vc-guide"><strong>Guiding question:</strong> why does asking for ten features at once take longer than asking for them one at a time?</p>
+<p class="vc-guide"><strong>Guiding question:</strong> how do you make it safe, and fast, to break the app?</p>
 ```
 
-Here is the pattern every first-time builder repeats. The brief is ready, confidence is high, and the team pastes a single request: login, customer list, quote request form, item table, PDF export, email notification, dashboard. The assistant works for a few minutes and produces something that mostly runs. Then the login breaks the list, the PDF breaks the form, and nobody knows which of the seven changes caused which of the four problems.
+Every first-time builder repeats one pattern. Confidence is high, so the team pastes a single request: login, customer list, quote form, PDF export, email notification, dashboard. The assistant produces something that mostly runs. Then the login breaks the list, the PDF breaks the form, and nobody knows which of the six changes caused which of the four problems.
 
-The alternative is boring and it works: one story per request. Ask for the customer picker. Open the app and use it as a rep would. If it works, save a checkpoint (topic 3). If it does not, you know exactly what broke, because only one thing changed. Then ask for the next story.
-
-The rule has a second half: **test by using, not by reading**. You are not going to read the code, and you do not need to. Use the app the way a rep would, on a phone if that is where reps will use it. When something looks wrong, ask the assistant: *what did you change and why?* The explanation is written for you, in plain language, and it is often where you discover the gap in your criteria.
+The alternative is boring and it works: **one story per request**. Ask for the customer picker. Use the app as Paula would, on a phone. If it works, save a checkpoint. If it does not, you know what broke, because only one thing changed.
 
 ```{=html}
 <div class="vc-widget" data-widget="c2-steps"></div>
 ```
 
-::: {.callout-tip title="In the business"}
-Small steps are how good operations teams already work: change one thing on the line, measure, keep or revert. The assistant makes the cycle minutes instead of weeks, which means the discipline matters more, not less. A team that batches twenty changes has thrown away the main advantage of the tool.
-:::
+The rule has a second half: **test by using, not by reading**. You are not going to read the code and you do not need to. Do the rep's task end to end, including the cases that should fail. When something looks wrong, ask: *what did you change and why?* The answer is written in plain language, and it is often where you find the gap in your criteria.
 
-```{=html}
-<div class="vc-practice">
-<p class="vc-practice-t"><span>Practice · Topic 2</span></p>
-<div class="vc-quiz">
-<p class="vc-quiz-q">After a request for three features, the quote list stopped loading. What is the fastest way to find the cause?</p>
-<div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Reading code you cannot evaluate is slow and rarely conclusive for a non-programmer.">Read through the code the assistant wrote until you spot the error.</button>
-<button class="vc-quiz-opt" data-correct>Roll back to the last checkpoint and re-request the three features one at a time, testing after each.</button>
-<button class="vc-quiz-opt" data-why="A vague fix request on top of three tangled changes often produces a fourth change and a new problem.">Tell the assistant "fix it" and hope.</button>
-</div>
-<p class="vc-quiz-fb">Going back to the last known-good state and re-adding changes one by one isolates the cause in minutes. This is why checkpoints and small steps belong together.</p>
-</div>
-<div class="vc-quiz">
-<p class="vc-quiz-q">What does "test by using" mean for a manager who cannot read code?</p>
-<div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-correct>Open the app and do the rep's task end to end, including the error cases, on the device reps will use.</button>
-<button class="vc-quiz-opt" data-why="Asking the assistant whether its own work is correct is not a test. It will usually say yes.">Ask the assistant to confirm the feature works.</button>
-<button class="vc-quiz-opt" data-why="Looking at the screen is not the same as doing the task. Most bugs appear when you save, refresh, or type something unexpected.">Look at the new screen and check that it looks right.</button>
-</div>
-<p class="vc-quiz-fb">The test is the task: paste a real message, pick a real customer, save, refresh, try an empty message, try it on a phone. If the rep could not do it, it is not done.</p>
-</div>
-</div>
-```
+Small steps are only cheap if going back is cheap. Software teams solve that with **version control** (the usual tool is Git, with the history kept online on GitHub). You will use it through the assistant, so you need three ideas, not the commands:
 
-## Topic 3 · Checkpoints, branches and undo {#topic-3}
+- A **checkpoint** (a commit) is a named snapshot of the whole app at a moment it worked. "Customer picker working" is a good name. Save one after every story that passes your test, and at least every 20 minutes.
+- A **branch** is an experiment: a copy where you try something risky without touching the version that works. If it is good you **merge** it. If not, you discard it and nothing happened.
+- **Rollback** returns the app to any earlier checkpoint, in seconds. The worst case of a bad request becomes "go back twenty minutes".
 
-```{=html}
-<p class="vc-guide"><strong>Guiding question:</strong> how do you make it safe to break the app?</p>
-```
+Rollback has a limit worth knowing before you rely on it. It restores the code. It does not restore what is in the database, emails that were already sent, or what customers already saw. A change that deletes or rewrites data needs its own care: ask the assistant what the change does to existing rows before you approve it.
 
-Software teams use a tool called **version control**, and the most common one is Git, hosted on GitHub. You will use it through the assistant, so you need three ideas, not the commands.
-
-A **commit** is a checkpoint: a named snapshot of the whole app at a moment you were happy with it. "Customer picker working" is a good name. You make one after every story that passes your test. A **branch** is an experiment: a copy of the app where you can try something risky, like redesigning the quote list, without touching the version that works. If the experiment is good, you **merge** it back. If it is bad, you delete the branch and nothing happened. **Rollback** means returning the app to any earlier checkpoint. It takes seconds, and it is what makes small steps safe: the worst case of any request is "go back twenty minutes".
-
-The assistant does all of this when you ask in plain language: *save a checkpoint called "login working"*, *start a branch to try a new layout for the list*, *go back to the checkpoint before the PDF export*. GitHub keeps the history online, so your teammates and the instructor see the same timeline, and milestone M2 is the link to it.
+You ask for all of it in plain language: *save a checkpoint called "login working"*, *start a branch to try a new layout*, *go back to the checkpoint before the PDF export*.
 
 ```{=html}
 <div class="vc-widget" data-widget="c2-commits"></div>
 ```
 
 ::: {.callout-tip title="In the business"}
-The repository is also the audit trail. When a rep asks why the discount field disappeared last Tuesday, the timeline answers in one click. When you hand the prototype to an engineering team in session 4, the history of what was tried and why is worth more to them than the code itself.
+This is how good operations teams already work: change one thing on the line, measure, keep or revert. The history is also your audit trail. When Diego asks why the discount field disappeared last Tuesday, the timeline answers in one click, and when you hand the prototype to engineering in session 4, the record of what was tried and why is worth more to them than the code.
 :::
 
 ```{=html}
 <div class="vc-practice">
-<p class="vc-practice-t"><span>Practice · Topic 3</span></p>
+<p class="vc-practice-t"><span>Practice · Topic 2</span></p>
 <div class="vc-quiz">
-<p class="vc-quiz-q">When should you save a checkpoint?</p>
+<p class="vc-quiz-q">After one request for three features, the quote list stopped loading. You described the bug precisely once and the fix did not work. What is the fastest way forward?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Once a day is too rare. A bad change in the afternoon would cost you a whole day of work.">At the end of each day of work.</button>
-<button class="vc-quiz-opt" data-correct>After every story that passes your test, with a name that says what works.</button>
-<button class="vc-quiz-opt" data-why="Checkpoints are only useful if they capture a state that works. Saving broken states defeats the purpose.">After every request to the assistant, whether it worked or not.</button>
+<button class="vc-quiz-opt" data-why="Reading code you cannot evaluate is slow and rarely conclusive for someone who does not program.">Read through the code the assistant wrote for the three features until you spot the line that is wrong.</button>
+<button class="vc-quiz-opt" data-correct>Roll back to the last checkpoint and ask for the three features again one at a time, testing after each.</button>
+<button class="vc-quiz-opt" data-why="A second and a third fix on top of three tangled changes usually add a fourth change and a new problem.">Describe the bug again in other words and keep asking for fixes until the list loads as it did before.</button>
 </div>
-<p class="vc-quiz-fb">A checkpoint is a known-good state. Save it when the test passes and name it after what works, so that rolling back is a choice between meaningful states, not timestamps.</p>
-</div>
-<div class="vc-quiz">
-<p class="vc-quiz-q">Your teammate wants to try a radical redesign of the quote list while you keep adding the login. What should they do?</p>
-<div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-correct>Start a branch for the redesign, so the working version and your login work are untouched until it is merged.</button>
-<button class="vc-quiz-opt" data-why="Working in the same version means the redesign's breakage interrupts your login work, and nobody knows which change caused what.">Make the changes directly, since the assistant can always fix it later.</button>
-<button class="vc-quiz-opt" data-why="Copying the project manually loses the shared history and makes merging the two versions a manual, error-prone job.">Copy the whole project to another folder and work there.</button>
-</div>
-<p class="vc-quiz-fb">A branch is exactly for this: an experiment that cannot break the working app. Merge it when it passes the test, or discard it at no cost.</p>
+<p class="vc-quiz-fb">One precise description is worth trying: a bug is a conversation. When that fails on a tangle of changes, going back to the last state that worked and adding the changes one by one isolates the cause in minutes. This is why checkpoints and small steps belong together.</p>
 </div>
 <div class="vc-quiz">
-<p class="vc-quiz-q">A change broke the app and you cannot tell what went wrong. Rollback means:</p>
+<p class="vc-quiz-q">When should your team save a checkpoint?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Deleting is not rollback. You would lose everything, including what worked.">Deleting the app and starting from the brief again.</button>
-<button class="vc-quiz-opt" data-why="Asking the assistant to undo relies on it remembering exactly what it changed. The checkpoint is a guaranteed record.">Asking the assistant to remember what it did and reverse it.</button>
-<button class="vc-quiz-opt" data-correct>Returning the whole app to the last checkpoint that worked, in seconds, and then re-doing the change in smaller steps.</button>
+<button class="vc-quiz-opt" data-why="Once a day is too rare. A bad change in the afternoon would cost you most of a day.">At the end of each working day, with the date in the name so that the history reads like a calendar.</button>
+<button class="vc-quiz-opt" data-correct>After every story that passes your test, with a name that says what works, and at least every 20 minutes.</button>
+<button class="vc-quiz-opt" data-why="A checkpoint is only useful if it captures a state that works. Saving broken states defeats the purpose.">After every single request to the assistant, whether or not the result passed your test, to lose nothing.</button>
 </div>
-<p class="vc-quiz-fb">Rollback restores a snapshot. Nothing is lost except the bad change, and the history keeps it in case you want to look at it later.</p>
+<p class="vc-quiz-fb">A checkpoint is a state you would be happy to return to. Name it after what works, so rolling back is a choice between meaningful states and not between timestamps.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Diego wants to try a radical redesign of the quote list while Paula's login story is half built. What should he do?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-correct>Start a branch for the redesign, so the working version and the login work stay untouched until it is merged.</button>
+<button class="vc-quiz-opt" data-why="In the same version, the redesign's breakage interrupts the login work and nobody knows which change caused what.">Make the changes directly in the working version, since the assistant can always repair what the redesign breaks.</button>
+<button class="vc-quiz-opt" data-why="A manual copy loses the shared history and turns joining the two versions into hand work.">Copy the whole project to another folder on his laptop and build the redesign there, away from Paula's work.</button>
+</div>
+<p class="vc-quiz-fb">A branch is exactly this: an experiment that cannot break the working app. Merge it when it passes the test, or discard it at no cost.</p>
 </div>
 </div>
 ```
 
-## Topic 4 · Where the data lives {#topic-4}
+## Topic 3 · Where the data lives {#topic-3}
 
 ```{=html}
-<p class="vc-guide"><strong>Guiding question:</strong> why did the quote requests disappear when a rep refreshed the page?</p>
+<p class="vc-guide"><strong>Guiding question:</strong> why did the quote requests disappear when Paula refreshed the page?</p>
 ```
 
-The first version of QuoteDesk kept quote requests "in the page": they existed only in the browser that created them. Refresh, and they are gone. Open the app on a second phone, and the list is empty. This is normal for a first hour and useless for a second rep.
+QuoteDesk v0 kept its quote requests in the page: they existed only in the browser that created them, as "today's list on that device". Refresh, and they are gone. Open the app on Diego's phone, and the list is empty. That is normal for a first hour and useless for a second rep.
 
-There are three places data can live. **In the page**: fast, free, vanishes on refresh. **In a file** on the server: survives refresh, but two reps saving at the same time can overwrite each other, and there is no way to say who may see what. **In a managed database**: a service, such as the one in the course toolkit, that stores rows, serves many users at once, and comes with **authentication** (who are you: the login) built in. For anything two people will use, the database is the answer, and the assistant can set it up for you in one request.
+Data can live in three places. **In the page**: instant, free, gone on refresh. **In a file** on the server: survives refresh, but two reps saving at once can overwrite each other and nothing says who is who. **In a managed database**: a service that stores rows, serves many users at once, keeps backups, and comes with **authentication** (the login: who are you) built in. For anything two people will use, the database is the answer, and the assistant sets it up in a few requests.
 
-Authentication is the other half of "real users". A login means each quote request is tied to the rep who created it, which is what you need for the list "my requests", for the manager's view, and for the authorization rules you will add in session 4. The assistant will build the login screen, the password reset and the session handling; your job is to specify who logs in and what they should see first.
+The login matters beyond security. It ties each quote request to the rep who created it, and it lets the app have two roles from today: rep and manager, with Carla's account as the manager. In v1 the quote requests are a shared queue that every signed-in rep sees, so that anyone can pick up a waiting customer. Priced quotes, with their discounts, will be private to the rep who owns the customer and to Carla. That second rule is not built by a login; it is the subject of session 4.
 
 ```{=html}
 <div class="vc-widget" data-widget="c2-data"></div>
 ```
 
 ::: {.callout-tip title="In the business"}
-"Where does the data live" is the question legal, IT and finance will ask you first, long before they ask what the app does. Knowing that quote requests sit in a managed database, in a named region, with a login per rep, is the difference between a prototype that can be piloted with real customers and one that cannot leave your laptop.
+"Where does the data live?" is the first question legal, IT and finance will ask, long before they ask what the app does. "In a managed database, in a named region, with a login per rep" is the answer that lets a prototype be piloted with real customers. "On my laptop" is the answer that ends the meeting.
 :::
 
 ```{=html}
 <div class="vc-practice">
-<p class="vc-practice-t"><span>Practice · Topic 4</span></p>
+<p class="vc-practice-t"><span>Practice · Topic 3</span></p>
 <div class="vc-quiz">
-<p class="vc-quiz-q">Two reps use QuoteDesk at the same time. Which storage choice handles this safely?</p>
+<p class="vc-quiz-q">Paula and Diego save quote requests at the same moment. Which storage choice handles this safely?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Each browser holds its own copy. The two reps would never see each other's requests.">In the page (browser memory).</button>
-<button class="vc-quiz-opt" data-why="A single file on the server can be overwritten when two people save at once, and it has no concept of users.">In a file on the server.</button>
-<button class="vc-quiz-opt" data-correct>In a managed database with a login for each rep.</button>
+<button class="vc-quiz-opt" data-why="Each browser holds its own copy. Neither rep would ever see the other's requests.">In the page, held in each rep's browser memory.</button>
+<button class="vc-quiz-opt" data-why="One file on the server can be overwritten when two people save at once, and it has no idea of users.">In one shared file kept on the server.</button>
+<button class="vc-quiz-opt" data-correct>In a managed database with a login per rep.</button>
 </div>
-<p class="vc-quiz-fb">A managed database is built for many users writing at once and ties every row to the user who created it. The other two options break as soon as there is a second person.</p>
+<p class="vc-quiz-fb">A managed database is built for many people writing at once and records who created each row. The other two break as soon as there is a second person.</p>
 </div>
 <div class="vc-quiz">
-<p class="vc-quiz-q">What does authentication give you, in one line?</p>
+<p class="vc-quiz-q">QuoteDesk v1 has a login. Marcos signs in. What has the app established?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-correct>Knowing who the user is, so each action and record is tied to a person.</button>
-<button class="vc-quiz-opt" data-why="That is authorization: what a known user is allowed to do. Session 4 covers it. Authentication comes first.">Deciding which quotes each rep may see.</button>
-<button class="vc-quiz-opt" data-why="Encryption protects data in transit or at rest. It does not identify the user.">Encrypting the data so nobody can read it.</button>
+<button class="vc-quiz-opt" data-correct>Who he is, so what he saves is tied to him. What he may see is a separate rule still to be written.</button>
+<button class="vc-quiz-opt" data-why="That is authorization: what a known user is allowed to see or do. A login alone does not provide it, as session 4 shows.">That he can see only his own customers' priced quotes, because the login filters everything by rep.</button>
+<button class="vc-quiz-opt" data-why="Encryption protects data on the way or in storage. It is a different mechanism from identifying the user.">That everything he types is encrypted, so nobody else at Cerro Azul or outside can read his quotes.</button>
 </div>
-<p class="vc-quiz-fb">Authentication answers "who are you". Authorization answers "what may you do". QuoteDesk v1 needs the first; session 4 adds the second.</p>
+<p class="vc-quiz-fb">Authentication answers "who are you". Authorization answers "what may you do". QuoteDesk v1 needs the first; assuming it gives you the second is the mistake session 4 opens with.</p>
 </div>
 </div>
 ```
 
-## Topic 5 · UX for output that is sometimes wrong {#topic-5}
+## Topic 4 · UX for output that is sometimes wrong {#topic-4}
 
 ```{=html}
-<p class="vc-guide"><strong>Guiding question:</strong> a rep will trust QuoteDesk once. What makes them trust it the second time?</p>
+<p class="vc-guide"><strong>Guiding question:</strong> Paula will trust QuoteDesk once. What makes her trust it the second time?</p>
 ```
 
-Next session QuoteDesk will read a pasted message and propose the items: "20 boxes of 900 cc oil, 5 sacks of rice, the usual dairy". The last one is a guess. If the app shows that guess with the same confidence as the first two, the rep learns, after one wrong delivery, that nothing on the screen can be trusted. Then they check every line, and the app saves nobody any time.
+Next session QuoteDesk will read a pasted message and propose the items: 20 cajas of aceite 900 cc, 5 sacos of arroz, "lo de siempre de lácteos". The last one is a guess. If the app shows that guess with the same confidence as the first two, Paula learns after one wrong delivery that nothing on the screen can be trusted. Then she checks every line, and the app saves nobody any time.
 
-Four patterns fix this, and they are decisions you make in the spec, not in the code. **Show confidence**: lines the model is unsure about look different and say so. **Stream the result**: items appear as they are produced, so a three-second wait feels like progress instead of a frozen screen. **Honest errors**: when the model cannot read the message, the app says "I could not find items in this message" and offers the manual form, instead of an empty table or a generic error. **Let the user correct**: every proposed line can be edited in place, and the correction is saved, so the app is never the last word.
+Four patterns fix this. They are decisions you write into the story, not into the code:
 
-These patterns are what separate an AI demo from an AI product. The model will be wrong some of the time no matter what you do. The experience decides whether being wrong costs a glance or costs a customer.
+- **Show confidence.** Lines the model is unsure about look different and say why.
+- **Stream the result.** Items appear as they are produced, so a three-second wait looks like progress and not like a frozen screen.
+- **Honest errors.** When there is nothing to extract, the app says "no items found in this message" and offers the manual form, not an empty table.
+- **Let the user correct.** Every proposed line can be edited in place and the correction is saved. The app is never the last word.
+
+The model will be wrong some of the time whatever you do. The experience decides whether being wrong costs a glance or costs a customer.
 
 ```{=html}
 <div class="vc-widget" data-widget="c2-ux"></div>
 ```
 
 ::: {.callout-tip title="In the business"}
-Trust is a metric you can measure: how often reps edit the proposed lines, how often they abandon the tool and go back to retyping, how many wrong deliveries trace back to a quote. Put the correction button in and you also get the data to improve the model later. Leave it out and you get complaints.
+Trust can be measured: how often reps edit a proposed line, how often they give up and retype, how many wrong deliveries trace back to a quote. The correction button gives you that data for free, and in session 3 those corrections become your test set.
+:::
+
+```{=html}
+<div class="vc-practice">
+<p class="vc-practice-t"><span>Practice · Topic 4</span></p>
+<div class="vc-quiz">
+<p class="vc-quiz-q">The model is unsure what "lo de siempre de lácteos" means for Doña Elsa. What should the screen do?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="Hiding the uncertainty means Paula finds out from the customer, after the delivery.">Show the best guess as a normal line like the others, so the screen stays clean and quick to scan.</button>
+<button class="vc-quiz-opt" data-correct>Show the guess marked as uncertain, with the reason, and make it one tap to confirm or to edit it.</button>
+<button class="vc-quiz-opt" data-why="Dropping the line silently loses something the customer asked for. A visible, editable guess is better than a missing line.">Leave the line out of the proposal altogether, so that nothing wrong can ever be shown to the rep.</button>
+</div>
+<p class="vc-quiz-fb">Visible uncertainty plus an easy correction is the pattern. Paula spends two seconds on the one line that needs her and trusts the rest.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">A customer writes only "hola, me llamas?". What should QuoteDesk show?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="An empty table looks like a bug, not like a message with no order in it.">An empty items table with the usual columns, ready for the rep to fill in by hand.</button>
+<button class="vc-quiz-opt" data-why="A generic error does not say what happened or what to do next, so the rep goes back to the old way.">A red banner saying that something went wrong and asking the rep to try again later.</button>
+<button class="vc-quiz-opt" data-correct>That no items were found, with the manual form and a call-back note one tap away.</button>
+</div>
+<p class="vc-quiz-fb">An honest error says what happened and what the user can do next. It keeps Paula inside the tool.</p>
+</div>
+</div>
+```
+
+## Topic 5 · Teach the assistant how you work: project instructions and skills {#topic-5}
+
+```{=html}
+<p class="vc-guide"><strong>Guiding question:</strong> you have explained Cerro Azul's quote format to the assistant four times this week. Where should that explanation live so that you never type it again?</p>
+```
+
+### Three things people call "the AI"
+
+Before teaching "the assistant" anything, be exact about which one. From this session on, three different things are in play, and most confusion in AI projects comes from blurring them.
+
+| | What it is | Who uses it | What it can reach |
+|---|---|---|---|
+| **The building assistant** | The agentic coding assistant your team builds QuoteDesk with | Your team, while building | The repository, plus the project instructions, skills and connectors you give it |
+| **A rep's assistant** | The assistant Paula or Carla uses directly for daily work: drafting a quote, summarizing calls, the morning digest | A rep or a manager, every day | The same skills and connectors, with that person's own access |
+| **The model inside QuoteDesk** | The model that the deployed app calls through an API | Nobody directly; the app calls it | Only what the app sends it, and only the tools the app defines. No skills, no connectors |
+
+The consequence matters for your milestone. Everything in this topic and the next extends the first two: the skill and the connector you deliver in M2 belong to your team's assistants, not to the deployed app. QuoteDesk itself cannot open a skill or pass through a connector. In session 3 it gets its prices from its own products table, imported from the price sheet.
+
+### Project instructions and skills
+
+The assistant starts every session knowing nothing about Cerro Azul. It does not know that a quote request is not a quote, that a *caja* of aceite holds 12 bottles, or that only Carla approves discounts. So far you have repeated these things in every prompt. There are two better places to put them, and they do different jobs.
+
+**Project instructions** are a plain-text file in the project that the assistant reads at the start of every session. Different tools give it different names (for example `CLAUDE.md` or `AGENTS.md`); the idea is the same. It holds what is always true: what the product is, your vocabulary, the rules ("one story per change", "all money in CLP without decimals", "ask before touching the login") and how you want changes reported. Because it is always loaded, every line is paid for in every session. Keep it under a page.
+
+**Skills** hold procedures that are needed only sometimes. A skill is a folder with a file called `SKILL.md`: a name, a one-line description that says when to use it, and the steps. It can carry other files too: a template, examples, even small scripts. The assistant sees only the names and descriptions of your skills until a request matches one, and then it opens that folder and follows it. This is called progressive disclosure, and it is why twenty installed skills cost almost nothing until one is used. The format was published as an open standard in December 2025 and dozens of assistants and coding tools support it, so a skill written for one tool usually works in another.
+
+| | Loaded | Good for | At Cerro Azul |
+|---|---|---|---|
+| A prompt | Once, now | A one-off request | "Summarize yesterday's calls" |
+| Project instructions | Every session, always | Rules and vocabulary that never change | "Money in CLP, no decimals. Never change the login without asking." |
+| A skill | Only when a request matches its description | A procedure with steps, a template and examples | "How we write a quote", "the Monday sales note" |
+
+One detail decides whether a skill works: **the description is the trigger**. It is the only part the assistant reads before choosing. "Formats quotes" gives it nothing to match. "Drafts or checks a Cerro Azul quote in the house format. Use whenever the user asks for a quote, cotización or price offer for a customer" tells it what the skill does and when to open it. Try both below.
+
+```{=html}
+<div class="vc-widget" data-widget="c2-skills"></div>
+```
+
+One caution for later. A skill from the internet is a stranger's instructions, and sometimes a stranger's code, running with your access. Read it yourself before you install it; the assistant may help you read it, but its verdict is not the control. Session 4 treats this as what it is: a supply chain.
+
+::: {.callout-tip title="In the business"}
+A skill is how know-how stops living in Paula's head. When Carla changes the discount rule, she edits one file and every assistant that has the skill installed follows the new rule from the next request. That is process documentation that executes itself, and it deserves what any process document gets: an owner, a date, and a review when the process changes.
 :::
 
 ```{=html}
 <div class="vc-practice">
 <p class="vc-practice-t"><span>Practice · Topic 5</span></p>
 <div class="vc-quiz">
-<p class="vc-quiz-q">The model is unsure whether "lo de siempre de lácteos" means the customer's usual dairy order. What should the screen do?</p>
+<p class="vc-quiz-q">"All money in CLP without decimals. Never change the login without asking first." Where do these two rules belong?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Hiding the uncertainty means the rep finds out from the customer, after delivery.">Show the best guess as a normal line, like the others.</button>
-<button class="vc-quiz-opt" data-correct>Show the guess marked as uncertain, with the reason, and make it one tap to confirm or edit.</button>
-<button class="vc-quiz-opt" data-why="Dropping the line silently loses information the rep needed. A visible, editable guess is better than nothing.">Leave the line out so nothing wrong is shown.</button>
+<button class="vc-quiz-opt" data-why="A skill is opened only when a request matches its description. These rules must hold in every request, including the ones no skill matches.">In a skill called house-rules, so that they sit with the other procedures of the team.</button>
+<button class="vc-quiz-opt" data-correct>In the project instructions file, because they apply to every request in the project.</button>
+<button class="vc-quiz-opt" data-why="Repeating rules by hand is what you are trying to stop, and the day you forget is the day the login changes.">At the top of every prompt, typed again each time, so the assistant always sees them.</button>
 </div>
-<p class="vc-quiz-fb">Visible uncertainty plus an easy correction is the pattern. The rep spends two seconds on the one line that needs it and trusts the rest.</p>
+<p class="vc-quiz-fb">What is always true goes in project instructions, which are always loaded. What is needed sometimes, and has steps, goes in a skill.</p>
 </div>
 <div class="vc-quiz">
-<p class="vc-quiz-q">Why stream results instead of showing them all at once after three seconds?</p>
+<p class="vc-quiz-q">Your team installed the quote-format skill. Paula asks her assistant for a quote for Doña Elsa and gets a generic letter with an invented 5% discount. What is the most likely cause?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="Streaming does not make the model faster. It changes how the wait feels, which is what the rep experiences.">Because streaming makes the model compute faster.</button>
-<button class="vc-quiz-opt" data-correct>Because a screen that shows progress feels responsive, and the rep can start checking the first lines while the rest arrive.</button>
-<button class="vc-quiz-opt" data-why="Streaming is a presentation choice, not a cost choice. The number of tokens is the same.">Because it is cheaper per request.</button>
+<button class="vc-quiz-opt" data-why="Length is not the problem: the instructions were never opened. The assistant decides from the description alone.">The skill's instructions are too long, so the assistant stopped reading before reaching the template.</button>
+<button class="vc-quiz-opt" data-correct>The description does not say when to use the skill, so the assistant never opened the folder.</button>
+<button class="vc-quiz-opt" data-why="A larger model cannot follow instructions it did not load, and no model knows Cerro Azul's format by itself.">The model is too small for this task, so it could not follow a format with that many columns.</button>
 </div>
-<p class="vc-quiz-fb">Perceived latency is what matters to the user. Three seconds of visible progress feel shorter than three seconds of a spinner, and the rep gets a head start on checking.</p>
+<p class="vc-quiz-fb">The description is the trigger. If the skill is right and the output ignores it, fix the description first: say what the skill does and when to use it, in the words a rep would use.</p>
 </div>
 <div class="vc-quiz">
-<p class="vc-quiz-q">The model cannot find any items in a message that is just "hola, me llamas?". What is the honest error?</p>
+<p class="vc-quiz-q">Diego finds a "sales-email-writer" skill online with thousands of downloads and wants to install it for the team. What comes first?</p>
 <div class="vc-quiz-opts">
-<button class="vc-quiz-opt" data-why="An empty table looks like a bug, not like a message with no order in it.">Show an empty items table.</button>
-<button class="vc-quiz-opt" data-why="A generic error does not tell the rep what happened or what to do next.">Show "Something went wrong".</button>
-<button class="vc-quiz-opt" data-correct>Say that no items were found in this message and offer the manual form or a call-back note.</button>
+<button class="vc-quiz-opt" data-correct>Open the folder and read SKILL.md and any script in it, as you would read a contract before signing.</button>
+<button class="vc-quiz-opt" data-why="Popularity is not a review. Malicious skills have been found in public registries, and a skill runs with your team's access.">Install it for the team now: thousands of downloads mean that many people have already checked it.</button>
+<button class="vc-quiz-opt" data-why="The assistant may help you read it, but its verdict is not the control. Read it yourself.">Ask the assistant whether the skill is safe, and install it for the team if the answer is yes.</button>
 </div>
-<p class="vc-quiz-fb">An honest error says what happened and what the user can do next. It keeps the rep inside the tool instead of sending them back to the old way.</p>
+<p class="vc-quiz-fb">A skill is instructions, and sometimes code, that will act with your permissions. It is short enough to read in five minutes. Read it yourself, and prefer writing your own for anything that touches customers.</p>
 </div>
 </div>
 ```
 
-## Build lab · QuoteDesk v1: login, real data, rollback {#lab}
+## Topic 6 · Connect the assistant to your systems: connectors and MCP {#topic-6}
+
+```{=html}
+<p class="vc-guide"><strong>Guiding question:</strong> the price list lives in Drive and the customers live in the ERP. How does your team's assistant reach them without you copying and pasting?</p>
+```
+
+Until now the assistant has known only what you pasted into it. Ask it what aceite 900 cc costs for Minimarket Los Aromos and it has two honest options: say it does not know, or guess. The answer sits in two systems it cannot see.
+
+A **connector** gives the assistant a door into one of those systems. Underneath, most connectors use the same open standard, the **Model Context Protocol (MCP)**, introduced in late 2024 and since handed to a neutral foundation, so that a connector built once works with many assistants. Each system is presented by a small program called a server, which offers three things:
+
+| A server offers | Which means | At Cerro Azul |
+|---|---|---|
+| Tools | Actions the assistant can ask for | "look up a price", "find a customer", "send an email" |
+| Resources | Data it can read | the price list, the delivery policy document |
+| Prompts | Ready-made requests | "weekly price changes" |
+
+You rarely build one. For Drive, email, calendars, the common CRMs and databases they already exist, and in most assistants you switch them on in a settings screen. Signing in uses the "Sign in with…" window you already know (the standard is called OAuth), and it has a consequence worth saying aloud: the assistant gets **at most the access of the person who signed in**, narrowed by the permissions the connector asks for. If Paula cannot open the payroll folder, neither can her assistant. What Paula can open, her assistant can usually open too. One exception to watch: a connector set up with a shared service account gives everyone who uses it that account's access, whoever they are.
+
+That makes every connector a decision about access. Three rules cover most of it:
+
+1. **Read before write.** A connector that can only read can produce a wrong answer. One that can send or write can produce a wrong action.
+2. **One system at a time.** Add a door, use it for a week, then add the next. If five open at once you cannot tell which one caused the problem.
+3. **What comes back is data, not instructions.** A document or an email fetched through a connector may contain text that looks like an order. Session 4 shows what happens when the assistant obeys it.
+
+Skills and connectors complete each other. The skill is *how we write a quote*. The connector is *where the prices are*. With both, Paula's one-line request to her assistant produces a quote in the house format with real prices. Remember whose doors these are: they belong to the team's assistants. The deployed QuoteDesk does not pass through them.
+
+```{=html}
+<div class="vc-widget" data-widget="c2-mcp"></div>
+```
+
+::: {.callout-tip title="In the business"}
+A manager should be able to say, in one sentence, which systems the assistant can read, which it can change, and who approved that. Start with the price list, read-only: the worst case is a wrong number on Paula's screen, with the source one click away. Email and ERP orders are a different conversation, and they come with approval in session 3 and with permissions in session 4.
+:::
+
+```{=html}
+<div class="vc-practice">
+<p class="vc-practice-t"><span>Practice · Topic 6</span></p>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Paula's assistant now drafts quotes in the right house format, but the prices are invented. What is missing?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="The format is already right, so the skill is being found and followed. A skill describes how; it does not contain today's prices.">A better description on the skill, so that the assistant finds the prices inside the template.</button>
+<button class="vc-quiz-opt" data-correct>A connector to the price list, so that the assistant reads the prices and does not guess them.</button>
+<button class="vc-quiz-opt" data-why="No model, of any size, knows Cerro Azul's price list. It needs access, not more capacity.">A larger model, because bigger models have seen more price lists and guess them more accurately.</button>
+</div>
+<p class="vc-quiz-fb">The skill is how; the connector is where. Invented prices mean the assistant has the procedure and no access to the data.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Which connector should the team switch on first for its assistants?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="Creating orders is the most consequential action available. A mistake there reaches the warehouse and a truck.">ERP orders with write access, because creating the order is where most of the reps' time is saved.</button>
+<button class="vc-quiz-opt" data-why="With five new doors opened together you cannot tell which one caused a problem, and two of them can act on customers.">All five at once, so the team sees in one afternoon everything that the assistant is able to do.</button>
+<button class="vc-quiz-opt" data-correct>The price list, read-only: useful today, and the worst case is a wrong answer that Paula can check.</button>
+</div>
+<p class="vc-quiz-fb">Read before write, one system at a time. Pick the door with the most value and the smallest worst case, and open the next one after a week of use.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Paula connects her assistant to Drive by signing in with her own account. What can the assistant read?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="Access follows the person who signed in. Folders Paula cannot open stay closed to her assistant.">Everything in Cerro Azul's Drive, because the connector belongs to the company account.</button>
+<button class="vc-quiz-opt" data-correct>At most what Paula herself can open, which is a good deal more than the price list.</button>
+<button class="vc-quiz-opt" data-why="The sign-in grants access to her account, not to one file. Unless the connector is limited to a folder, everything she can open is in reach.">Only the price list, because that is the one file she asked the assistant about.</button>
+</div>
+<p class="vc-quiz-fb">The assistant can reach at most what Paula can open, narrowed by the permissions the connector asks for. If that is too wide, share a single folder with a dedicated account, or limit the connector to that folder.</p>
+</div>
+</div>
+```
+
+## Build lab · QuoteDesk v1, one skill, one connector {#lab}
 
 ```{=html}
 <div class="vc-lab">
 <p class="vc-lab-t">What your team builds in the next 120 minutes</p>
-<p class="vc-lab-time">Teams of 2 to 3 · the instructor circulates · save a checkpoint every 20 minutes</p>
+<p class="vc-lab-time">Teams of 2 to 3 · the instructor circulates · minutes in brackets are a guide and include a 10-minute break · save a checkpoint after every story that passes, and at least every 20 minutes</p>
 <ol>
-<li><strong>Move the project to the agentic assistant and GitHub.</strong> Open your QuoteDesk v0 from session 1 in the agentic coding assistant from the toolkit. Ask it to create a GitHub repository for the project and save a first checkpoint called "v0 from session 1". Open the repository in the browser and confirm the checkpoint is there.</li>
-<li><strong>Write the first story with criteria.</strong> In your shared document, write the user story for saving a quote request with 3 to 6 acceptance criteria (fields, rules, failure case). Paste it to the assistant as one request. Do not add other features in the same message.</li>
-<li><strong>Test by using.</strong> Open the app, paste a real customer message from your team's case, pick a customer, save, refresh. Try an empty message. Try it on a phone. If anything fails, ask the assistant "what did you change and why?" and adjust the criteria before asking for a fix.</li>
-<li><strong>Save a checkpoint</strong> named after what works, for example "quote request saves with customer and date".</li>
-<li><strong>Add the managed database.</strong> Ask the assistant to store quote requests in the managed database from the toolkit, keeping the same fields. Test: save a request on one device, open the app on another, the request is there. Checkpoint.</li>
-<li><strong>Add the login.</strong> Ask for a login for reps with email and password, password reset, and the rule that each request is tied to the rep who created it and the list shows "my requests" first. Test with two different rep accounts. Checkpoint.</li>
-<li><strong>Break something on purpose and roll back.</strong> Ask for a risky change you do not need, such as "replace the list with a calendar view". Confirm it broke or changed something you did not want. Ask the assistant to roll back to the last checkpoint. Confirm the app is exactly as before. This step is graded.</li>
-<li><strong>Start a branch for an experiment.</strong> One teammate asks for a new layout of the quote list on a branch while another keeps testing the main version. Merge only if the test passes.</li>
-<li><strong>Apply two UX patterns.</strong> Add the honest empty state ("no requests yet, paste a message to start") and a loading state when the list is fetching. Mark in your build log which patterns from topic 5 you chose and why.</li>
-<li><strong>Deploy and share.</strong> Publish the app to its public URL, open it on a phone, and paste the URL, the repository link and the checkpoint list into your team's milestone M2 document.</li>
+<li><strong>Open the project you prepared (5).</strong> Before class you followed the <a href="setup.html">setup guide</a>: QuoteDesk v0 is in a GitHub repository, it opens in the building assistant, and an empty database project exists. Confirm that the repository is private. Ask the assistant to save a first checkpoint called "v0 from session 1" and check that it appears in the repository's history. If your setup is not finished, tell the instructor now and start from the template repository.</li>
+<li><strong>Write the project instructions file (10).</strong> Use the first prompt below. Read what the assistant proposes, cut it to under 40 lines, and save it. From now on you stop repeating these rules.</li>
+<li><strong>Write the first story with criteria (10).</strong> In your shared document, write the user story for saving a quote request with 3 to 6 acceptance criteria: the fields, the rules, the failure case, the device. Paste it as one request. Nothing else in the same message.</li>
+<li><strong>Test by using, then checkpoint (10).</strong> Paste a realistic message with names and numbers changed, pick a customer, save. Try an empty message. Try it on a phone. If something fails, ask "what did you change and why?" and fix the criteria before asking for a fix. When it passes, save a checkpoint named after what works.</li>
+<li><strong>Add the database (15).</strong> Use the database prompt below: quote requests go into the database project from the setup guide, with the same fields. The connection keys are already in the project's settings, so nobody pastes a key into the chat. Test: save, refresh, the request is still there; open the app on a second device, it is there too. Save the checkpoint "database working".</li>
+<li><strong>Add the login, as its own request (15).</strong> Use the login prompt below: sign-in with email and password, a password reset, two roles (rep and manager, with Carla's account as the manager), and each request tied to the rep who created it. Test with two rep accounts and signed out. Save the checkpoint "login working".</li>
+<li><strong>Break (10).</strong> Stand up. Leave the laptop open on the last checkpoint.</li>
+<li><strong>Break something on purpose, roll back, try a branch (10).</strong> Ask for a risky change you do not need, such as "replace the list with a calendar view". Confirm it changed something you did not want, roll back to the last checkpoint and confirm the app is exactly as before, and notice that the requests in the database were not touched by the rollback. Then let one teammate try a new list layout on a branch, and merge it only if it passes the test. The rollback is graded.</li>
+<li><strong>Apply two UX patterns (5).</strong> In one request, add the honest empty state ("no requests yet, paste a message to start") and a loading state while the queue is fetched. Note in your build log which patterns from topic 4 you chose and why.</li>
+<li><strong>Create the quote-format skill and prove it triggers (15).</strong> Use the skill prompt below with your own format. Start a new session, ask for a quote without mentioning the skill, and check that the output follows your template. Then ask for something unrelated and check that the skill stays closed.</li>
+<li><strong>Connect the price list, read-only (10).</strong> Put your price list in a shared folder (a sheet with 20 rows is enough, with invented prices if yours are confidential), switch on the connector for it in your assistant with read access only, and run the connector test prompt. Check the answer against the sheet with your own eyes and take a screenshot for M2.</li>
+<li><strong>Deploy and share (5).</strong> Publish the app following the hosting section of the <a href="setup.html">setup guide</a>, open it on a phone, and paste the URL, the repository link and the checkpoint list into your team's M2 document.</li>
 </ol>
 </div>
 ```
 
-Two prompts to adapt. The first is the kind of request that produces surprises; the second is the same story written so the assistant does not have to guess.
+Six prompts to adapt. Start with the difference between a request that produces surprises and the same story written so the assistant does not have to guess.
 
 ```{=html}
 <div class="vc-compare">
 <div class="is-weak"><p>Weak request</p><p>Add a way to save quote requests and make a nice list. Also add login and a database and make it work on mobile.</p></div>
-<div class="is-strong"><p>Strong request</p><p>One story, with the fields, the rules, the failure case and the device named. Login and database come as separate requests after this one passes.</p></div>
+<div class="is-strong"><p>Strong request</p><p>One story, with the fields, the rules, the failure case and the device named. The database comes as its own request after this one passes, and the login after that.</p></div>
 </div>
 ```
 
 ```{=html}
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · story 1</div><div class="vc-prompt-b">User story: as a Cerro Azul sales rep using a phone between visits, I want to paste a customer's WhatsApp message and save it as a quote request for one customer, so that I stop retyping it into the ERP.
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · project instructions (step 2)</div><div class="vc-prompt-b">Create the project instructions file for this repository, using the file name you read at the start of every session. Keep it under 40 lines. Include:
+
+What this is: QuoteDesk, an internal tool for Cerro Azul's 14 sales reps to turn pasted customer messages into quote requests.
+Vocabulary: a quote request is the customer's message saved against a customer; a quote is the priced answer. Keep product units as written (caja, saco); never convert them.
+Rules: one user story per change. Do not add features I did not ask for. All money in CLP without decimals. Dates as day-month-year. Ask before changing the login or the structure of the database. Never write a key or a password into a file. Use only invented or de-identified customer data. After each story I confirm works, save a checkpoint named after what works.
+Reporting: after every change, tell me in plain language what you changed and how to test it on a phone.
+
+Show me the file before you save it.</div></div>
+```
+
+```{=html}
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · story 1 (step 3)</div><div class="vc-prompt-b">User story: as a Cerro Azul sales rep using a phone between visits, I want to paste a customer's WhatsApp message and save it as a quote request for one customer, so that I stop retyping it into the ERP.
 
 Acceptance criteria:
 1. The customer is chosen from the existing customer list (search by name), not typed freely.
 2. A quote request has: customer, pasted message, date and time created, rep name, status "new".
 3. The save button is disabled while the message is empty.
 4. After saving, the request appears at the top of the list with customer, date and the first line of the message.
-5. The list and the form work on a phone screen without horizontal scrolling.
+5. The list and the form work on a phone screen without sideways scrolling.
 
-Build only this. Do not add other features. When done, tell me in plain language what you changed.</div></div>
+Build only this. When done, tell me in plain language what you changed.</div></div>
 ```
 
 ```{=html}
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · data and login, after story 1 passes</div><div class="vc-prompt-b">Store quote requests in the managed database we set up, with the same fields. Then add a login for reps with email and password and a password reset. Each quote request must be tied to the rep who created it. After login, a rep sees their own requests first, newest at the top. Do not change the form or the list layout. Save a checkpoint called "database and login working" when you are done and tell me how to test it with two rep accounts.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · database (step 5, after story 1 passes)</div><div class="vc-prompt-b">Store quote requests in the database project that is already connected to this repository, with the same fields: customer, message, date and time created, rep name, status. The connection keys are in the project's settings. Do not ask me to paste them here and do not write them into any file the browser downloads. Do not change the form or the list. Build only this, and tell me how to test it from two devices.</div></div>
 ```
 
 ```{=html}
-<div class="vc-prompt is-ai"><div class="vc-prompt-h">The assistant, a good reply</div><div class="vc-prompt-b">Done. I moved quote requests to the database (table quote_requests with customer_id, message, created_at, rep_id, status). I added sign-in with email and password, a reset link, and a rule so each saved request carries the signed-in rep. The list now filters by the current rep. To test: create two accounts, save a request from each, and confirm each account sees its own request first. Checkpoint "database and login working" is saved.</div></div>
+<div class="vc-prompt is-ai"><div class="vc-prompt-h">The assistant, a good reply</div><div class="vc-prompt-b">Done. Quote requests are now saved in the database with the five fields you listed. I read the connection keys from the project's settings and wrote none of them into the page. To test: save a request and refresh, it is still there; open the app on a second device, it is there too. I did not touch the form or the list. Tell me when it passes and I will save the checkpoint "database working".</div></div>
+```
+
+```{=html}
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · login (step 6, after the database passes)</div><div class="vc-prompt-b">Add sign-in for reps with email and password, and a password reset. There are two roles: rep and manager. Carla's account is the manager; every other account is a rep. Each quote request is tied to the rep who created it and shows that rep's name. After signing in, every rep sees the shared queue of quote requests, newest at the top. Someone who is not signed in sees only the sign-in screen. Do not change the form or the layout of the list. Build only this, and tell me how to test it with two rep accounts and signed out.</div></div>
+```
+
+```{=html}
+<div class="vc-prompt is-ai"><div class="vc-prompt-h">The assistant, a good reply</div><div class="vc-prompt-b">Done. I added sign-in with email and password and a reset link, and two roles: Carla's account is the manager, the others are reps. Each saved request carries the signed-in rep and shows the name in the queue. To test: create two rep accounts, save one request from each, and confirm both appear in the queue under the right name; then sign out and confirm you see only the sign-in screen. I did not touch the form or the layout. Tell me when it passes and I will save the checkpoint "login working".</div></div>
+```
+
+```{=html}
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the skill (step 10)</div><div class="vc-prompt-b">Create a skill called quote-format in this project's skills folder.
+
+Description, written so that you will find it: "Drafts or checks a Cerro Azul quote in the house format. Use whenever I ask for a quote, cotización or price offer for a customer, or paste a quote request."
+
+Instructions:
+1. Find the customer in the customer list. If there is no match, stop and ask me.
+2. One line per product: code, name, quantity, unit, list price in CLP.
+3. Mark any line you are not sure about with CHECK and say why.
+4. Never apply a discount. Discounts need Carla's approval.
+5. Fill template.md and compare with the example before answering.
+
+Add template.md with our header, the product lines and the delivery note, and one worked example made from the request I paste below. Then tell me how to check, in a new session, that the skill loads without my naming it.</div></div>
+```
+
+```{=html}
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · connector test (step 11)</div><div class="vc-prompt-b">Using the price list connector, tell me the list price of aceite 900 cc, caja de 12, and name the file and the row where you found it. Do not change anything in the file. If you cannot find the product, say so. Do not estimate a price.</div></div>
 ```
 
 Your lab checklist. It stays saved in this browser.
 
 ```{=html}
 <ul class="vc-checklist" id="lab-checklist">
-<li>Project is in the agentic assistant with a GitHub repository and a first checkpoint.</li>
-<li>Story 1 written with 3 to 6 acceptance criteria before asking the assistant.</li>
-<li>Story 1 tested by using: real message, empty message, refresh, phone.</li>
-<li>Quote requests are stored in the managed database and visible from a second device.</li>
-<li>Login works with two rep accounts; each sees their own requests first.</li>
+<li>The project is in a private repository, opens in the building assistant, and has a first checkpoint.</li>
+<li>The project instructions file exists, is under 40 lines, and the team has read it.</li>
+<li>Story 1 was written with 3 to 6 acceptance criteria before asking the assistant.</li>
+<li>Story 1 was tested by using: a realistic message with names changed, an empty message, a phone.</li>
+<li>Quote requests are in the database: they survive a refresh and show on a second device.</li>
+<li>Sign-in works with two rep accounts, signed-out visitors see nothing, and each request shows its rep.</li>
 <li>One risky change was made on purpose and rolled back to a checkpoint.</li>
 <li>One experiment was tried on a branch and merged or discarded.</li>
-<li>Honest empty state and loading state are in the app.</li>
-<li>App deployed to a public URL and opened on a phone.</li>
-<li>Each team member's build log is updated with prompts, decisions and what the assistant changed.</li>
+<li>The honest empty state and the loading state are in the app.</li>
+<li>The quote-format skill triggers in a new session without being named, and stays closed for an unrelated request.</li>
+<li>One connector is on in the team's assistant, read-only, and its answer was checked against the source.</li>
+<li>The app is deployed and opened on a phone, no key was pasted into a chat, and every build log is up to date.</li>
 </ul>
 ```
 
 ## Critique and reflection
 
-Two teams show one user story end to end: paste a message, pick the customer, save, refresh, log in as a second rep. The class applies the rubric with the criterion in focus for this session, **functionality**: does the product work for its user end to end, including the failure cases? The class also asks the presenting team to roll back one change live.
+Two teams show one user story end to end: paste a message, pick the customer, save, refresh, sign in as a second rep. The class then asks each presenting team for two things live: roll back one change, and make the quote-format skill trigger without naming it. The rubric criterion in focus this session is **functionality**: does the product work for its user end to end, including the cases that should fail?
 
-Reflection prompt for your build log: *what did the assistant guess that you should have specified, and what would the criterion have said?*
+Reflection prompt for your build log: *what did the assistant guess that you should have specified, and which line would you now add to your acceptance criteria, your project instructions or your skill?*
 
 ## Before next session
 
-Milestone **M2** is due before session 3. It is a team deliverable: the deployed prototype v1 with login and persistent data, three working user stories with their acceptance criteria, the repository link with named checkpoints, and each member's build log.
+Milestone **M2** is due before session 3. It is a team deliverable worth 20%:
 
-Pre-work for session 3 (about 90 minutes): read Anthropic's *Building effective agents*, and collect 20 to 30 real or realistic customer messages that your AI feature will receive, with what the correct extracted items would be. This becomes your test set.
+- the deployed prototype v1, with sign-in and persistent data;
+- three working user stories with their acceptance criteria;
+- the link to the private repository, with named checkpoints;
+- the project instructions file and one skill for your team's assistant (quote-format, or the equivalent for your case);
+- one read-only connector for your team's assistant, with a screenshot of its test;
+- each member's build log.
+
+Pre-work for session 3: read the Class 3 page (about 95 minutes) and Anthropic's *Building effective agents* (about 20 minutes). Then collect 20 to 30 messages that your AI feature will receive: real ones, de-identified, or realistic ones, each with the items a careful rep would extract from it. This becomes your test set.
 
 ## Summary
 
-- The assistant builds what you specify and guesses the rest. Acceptance criteria remove the guesses.
+- The assistant builds what you specify and guesses the rest. Three to six acceptance criteria remove the guesses.
 - One story per request. Test by using, not by reading. Ask "what did you change and why?"
-- A checkpoint is a known-good state with a name. Save one after every story that passes.
-- A branch is an experiment that cannot break the working app. Rollback is the safety net that makes small steps cheap.
-- Data for two or more people belongs in a managed database with a login per user.
-- Authentication is "who are you". Authorization, "what may you do", comes in session 4.
+- A checkpoint is a state that worked, with a name. A branch is an experiment that cannot break the working app. Rollback makes small steps cheap, and it restores the code, not the data or the emails already sent.
+- Data for two or more people belongs in a managed database with a login. Authentication is "who are you"; authorization comes in session 4.
 - Four UX patterns for output that is sometimes wrong: visible confidence, streaming, honest errors, user correction.
-- Milestone M2 is the proof: deployed, with login, with data, with three stories and a history you can roll back.
+- Three things are called "the AI": the building assistant, a rep's assistant, and the model inside QuoteDesk. Skills and connectors extend the first two, never the deployed app.
+- Project instructions hold what is always true and are always loaded, so keep them short. A skill holds a procedure and is opened only when a request matches its description. The description is the trigger.
+- A connector is a door into one system, with at most the access of whoever signed in. Read before write, one system at a time, and treat what comes back as data.
