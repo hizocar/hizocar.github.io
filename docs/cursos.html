@@ -78,14 +78,14 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Sebastián Azócar - Cursos">
-<meta property="og:description" content="Material de los cursos que dicto en la Universidad Técnica Federico Santa María">
+<meta property="og:description" content="Talleres abiertos y el material de los cursos que dicto en la Universidad Técnica Federico Santa María.">
 <meta property="og:site-name" content="Sebastián Azócar">
 <meta name="twitter:title" content="Sebastián Azócar - Cursos">
-<meta name="twitter:description" content="Material de los cursos que dicto en la Universidad Técnica Federico Santa María">
+<meta name="twitter:description" content="Talleres abiertos y el material de los cursos que dicto en la Universidad Técnica Federico Santa María.">
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -127,68 +127,19 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Cursos</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./vibe_coding_mba/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Vibe Coding for Business Leaders</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./machine_learning_egei/classes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Machine Learning with Business Application UTFSM</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./introduction_to_python/classes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Python</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./machine_learning_ICO_USM/classes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Machine Learning ICO USM 202401</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Cursos</h1>
-<p class="subtitle lead">Material de los cursos que dicto en la Universidad Técnica Federico Santa María</p>
+<p class="subtitle lead">Talleres abiertos y el material de los cursos que dicto en la Universidad Técnica Federico Santa María.</p>
 </div>
 
 
@@ -203,16 +154,32 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="cursos-grid">
+<div class="cursos-page">
 
-<a class="curso-card" href="vibe_coding_mba/index.html">
-  <span class="curso-tag">Nuevo · MBA USM 2026</span>
-  <span class="curso-sigla">MGE 4xx · 2 SCT · en inglés</span>
-  <h3 class="anchored">Vibe Coding for Business Leaders</h3>
-  <p>De un problema de negocio a un producto de IA funcionando, sin saber programar: cinco talleres de 4 horas con páginas y apps web, skills, conectores MCP, agentes, automatizaciones y presentaciones, y cómo gobernar lo construido.</p>
-  <span class="curso-link">Ir al curso →</span>
-</a>
+<section class="curso-featured" aria-labelledby="cf-title">
+  <div class="cf-copy">
+    <span class="curso-tag curso-tag-now">Inscripciones abiertas · 20 cupos</span>
+    <h2 id="cf-title" class="anchored">Tu web desde cero<br><em>con Claude Code</em></h2>
+    <p>Taller en vivo para personas que nunca han programado: instalamos VS Code y Claude Code, usamos skills y conexiones MCP con Vercel y Supabase, compramos el dominio y terminas con tu web publicada.</p>
+    <div class="cf-actions">
+      <a class="hz-btn" href="https://web-desde-cero.vercel.app/inscripcion">Inscribirme · $9.990</a>
+      <a class="hz-link" href="https://web-desde-cero.vercel.app">Ver temario</a>
+    </div>
+  </div>
+  <dl class="cf-facts">
+    <div><dt>Fecha</dt><dd>Sábado 21 de noviembre</dd></div>
+    <div><dt>Horario</dt><dd>10:00 – 13:00 · en vivo</dd></div>
+    <div><dt>Para</dt><dd>Sin experiencia previa</dd></div>
+    <div><dt>Terminas con</dt><dd>Tu web y dominio propio</dd></div>
+  </dl>
+</section>
 
+<section class="cursos-section" aria-labelledby="cs-now">
+  <header class="cursos-head">
+    <p class="hz-mono">01 / En curso</p>
+    <h2 id="cs-now" class="anchored">Este semestre</h2>
+  </header>
+  <div class="cursos-grid">
 <a class="curso-card" href="https://hizocar.github.io/econometria-usm/">
   <span class="curso-tag curso-tag-now">En curso · Trimestre 3, 2026</span>
   <span class="curso-sigla">ICS-294 · USM</span>
@@ -220,7 +187,6 @@ ul.task-list li input[type="checkbox"] {
   <p>Regresión lineal, causalidad, inferencia, variables dummy, heterocedasticidad y series de tiempo, con clases interactivas y simuladores.</p>
   <span class="curso-link">Ir al curso →</span>
 </a>
-
 <a class="curso-card" href="https://hizocar.github.io/analitica-negocios-2/">
   <span class="curso-tag curso-tag-now">En curso · 29 oct – 3 dic, 2026</span>
   <span class="curso-sigla">Intensivo · Modo tutoría · USM</span>
@@ -228,7 +194,6 @@ ul.task-list li input[type="checkbox"] {
   <p>De redes neuronales a LLMs aplicados a negocios: embeddings, transformers, prompting y asistentes RAG, con cápsulas interactivas, Python en el navegador y un proyecto final por sprints.</p>
   <span class="curso-link">Ir al curso →</span>
 </a>
-
 <a class="curso-card" href="https://hizocar.github.io/usm-course-intensivo/">
   <span class="curso-tag curso-tag-now">En curso · 26 oct – 4 dic, 2026</span>
   <span class="curso-sigla">Modalidad Intensivo · USM</span>
@@ -236,7 +201,6 @@ ul.task-list li input[type="checkbox"] {
   <p>Seis semanas de Python, análisis de datos y modelos de machine learning, siguiendo a una misma empresa en todas las clases, con avances semanales y un proyecto final. Secciones Casa Central y Vitacura.</p>
   <span class="curso-link">Ir al curso →</span>
 </a>
-
 <a class="curso-card" href="https://hizocar.github.io/ia-course-usm/">
   <span class="curso-tag curso-tag-now">En curso · 2026</span>
   <span class="curso-sigla">ICS64225 · USM</span>
@@ -244,12 +208,27 @@ ul.task-list li input[type="checkbox"] {
   <p>IA, machine learning e IA generativa aplicados a modelos de negocio, con un proyecto de prototipo a lo largo del semestre.</p>
   <span class="curso-link">Ir al curso →</span>
 </a>
-
 <a class="curso-card" href="https://hizocar.github.io/machine_learning_egei/">
   <span class="curso-tag curso-tag-now">En curso · 2026</span>
   <span class="curso-sigla">EGEI · UTFSM</span>
   <h3 class="anchored">Machine Learning with Business Applications</h3>
   <p>Machine learning aplicado a negocios, trabajando con asistentes de IA para programar.</p>
+  <span class="curso-link">Ir al curso →</span>
+</a>
+  </div>
+</section>
+
+<section class="cursos-section" aria-labelledby="cs-more">
+  <header class="cursos-head">
+    <p class="hz-mono">02 / Electivos y anteriores</p>
+    <h2 id="cs-more" class="anchored">Material disponible</h2>
+  </header>
+  <div class="cursos-grid">
+<a class="curso-card" href="vibe_coding_mba/index.html">
+  <span class="curso-tag">Nuevo · MBA USM 2026</span>
+  <span class="curso-sigla">MGE 4xx · 2 SCT · en inglés</span>
+  <h3 class="anchored">Vibe Coding for Business Leaders</h3>
+  <p>De un problema de negocio a un producto de IA funcionando, sin saber programar: cinco talleres de 4 horas con páginas y apps web, skills, conectores MCP, agentes, automatizaciones y presentaciones, y cómo gobernar lo construido.</p>
   <span class="curso-link">Ir al curso →</span>
 </a>
 
@@ -260,6 +239,8 @@ ul.task-list li input[type="checkbox"] {
   <p>Curso de machine learning de la USM: fundamentos, modelos y aplicaciones a problemas de negocio.</p>
   <span class="curso-link">Ir al curso →</span>
 </a>
+  </div>
+</section>
 
 </div>
 

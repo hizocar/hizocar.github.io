@@ -75,8 +75,22 @@ toc: false
 
     <ol class="hz-courses" data-stagger>
     <li class="hz-course">
-      <a href="vibe_coding_mba/index.html">
+      <a href="https://web-desde-cero.vercel.app">
         <span class="hz-num hz-mono">01</span>
+        <span class="hz-course-body">
+          <h3>Tu web desde cero con Claude Code</h3>
+          <p>Taller en vivo de 3 horas para quien nunca ha programado: VS Code, Claude Code, skills, MCP con Vercel y Supabase, dominio propio y la web publicada.</p>
+        </span>
+        <span class="hz-course-meta">
+          <span class="hz-tag is-now">Sáb 21 nov · 20 cupos</span>
+          <span class="hz-mono">Abierto · $9.990</span>
+        </span>
+        <span class="hz-arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+    <li class="hz-course">
+      <a href="vibe_coding_mba/index.html">
+        <span class="hz-num hz-mono">02</span>
         <span class="hz-course-body">
           <h3>Vibe Coding for Business Leaders</h3>
           <p>Electivo MBA en inglés: de un problema de negocio a un producto de IA desplegado, con skills, conectores MCP, agentes y automatizaciones, sin saber programar y gobernando lo construido.</p>
@@ -90,7 +104,7 @@ toc: false
     </li>
     <li class="hz-course">
       <a href="https://hizocar.github.io/econometria-usm/">
-        <span class="hz-num hz-mono">02</span>
+        <span class="hz-num hz-mono">03</span>
         <span class="hz-course-body">
           <h3>Econometría</h3>
           <p>Regresión lineal, causalidad, inferencia, variables dummy, heterocedasticidad y series de tiempo, con clases interactivas y simuladores.</p>
@@ -104,7 +118,7 @@ toc: false
     </li>
     <li class="hz-course">
       <a href="https://hizocar.github.io/analitica-negocios-2/">
-        <span class="hz-num hz-mono">03</span>
+        <span class="hz-num hz-mono">04</span>
         <span class="hz-course-body">
           <h3>Analítica para los Negocios II · Intensivo</h3>
           <p>De redes neuronales a LLMs: embeddings, transformers y asistentes RAG aplicados a texto de clientes, con cápsulas interactivas y tutoría semanal.</p>
@@ -118,7 +132,7 @@ toc: false
     </li>
     <li class="hz-course">
       <a href="https://hizocar.github.io/usm-course-intensivo/">
-        <span class="hz-num hz-mono">04</span>
+        <span class="hz-num hz-mono">05</span>
         <span class="hz-course-body">
           <h3>Analítica para los Negocios I · Modalidad Intensivo</h3>
           <p>Seis semanas de Python, análisis de datos y machine learning, siguiendo a una misma empresa en todas las clases, con avances semanales y un proyecto final.</p>
@@ -132,7 +146,7 @@ toc: false
     </li>
     <li class="hz-course">
       <a href="https://hizocar.github.io/ia-course-usm/">
-        <span class="hz-num hz-mono">05</span>
+        <span class="hz-num hz-mono">06</span>
         <span class="hz-course-body">
           <h3>Inteligencia Artificial y Estrategia Empresarial</h3>
           <p>IA, machine learning e IA generativa aplicados a modelos de negocio, con un prototipo construido a lo largo del semestre.</p>
@@ -146,7 +160,7 @@ toc: false
     </li>
     <li class="hz-course">
       <a href="https://hizocar.github.io/machine_learning_egei/">
-        <span class="hz-num hz-mono">06</span>
+        <span class="hz-num hz-mono">07</span>
         <span class="hz-course-body">
           <h3>Machine Learning with Business Applications</h3>
           <p>Machine learning aplicado a negocios, programando junto a asistentes de IA. Parte del programa Erasmus Mundus.</p>
@@ -160,7 +174,7 @@ toc: false
     </li>
     <li class="hz-course">
       <a href="https://hizocar.github.io/usm-course/">
-        <span class="hz-num hz-mono">07</span>
+        <span class="hz-num hz-mono">08</span>
         <span class="hz-course-body">
           <h3>Machine Learning and Business Applications</h3>
           <p>Fundamentos, modelos y aplicaciones de machine learning a problemas de negocio.</p>
@@ -255,7 +269,7 @@ toc: false
     <dl class="hz-facts" data-stagger>
       <div class="hz-fact"><dt class="hz-mono">años enseñando</dt><dd><span class="hz-count" data-to="11">11</span></dd></div>
       <div class="hz-fact"><dt class="hz-mono">empresas</dt><dd><span class="hz-count" data-to="3">3</span></dd></div>
-      <div class="hz-fact"><dt class="hz-mono">cursos activos</dt><dd><span class="hz-count" data-to="6">6</span></dd></div>
+      <div class="hz-fact"><dt class="hz-mono">cursos activos</dt><dd><span class="hz-count" data-to="7">7</span></dd></div>
     </dl>
   </div>
 </section>
