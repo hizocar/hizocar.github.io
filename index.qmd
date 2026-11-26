@@ -96,7 +96,7 @@ toc: false
           <p>Electivo MBA en inglés: de un problema de negocio a un producto de IA desplegado, con skills, conectores MCP, agentes y automatizaciones, sin saber programar y gobernando lo construido.</p>
         </span>
         <span class="hz-course-meta">
-          <span class="hz-tag is-now">Desde el 29 de noviembre</span>
+          <span class="hz-tag is-now">En curso · nov–ene</span>
           <span class="hz-mono">MBA USM · 3 jornadas</span>
         </span>
         <span class="hz-arrow" aria-hidden="true">→</span>

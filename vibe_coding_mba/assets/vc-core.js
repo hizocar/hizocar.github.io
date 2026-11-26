@@ -90,7 +90,8 @@
       return M().animate(from, to, Object.assign({ duration: DUR.slow, ease: EASE.out, onUpdate }, opts)).finished;
     },
     onView(el, fn) {
-      if (M() && M().inView) { const stop = M().inView(el, () => { fn(); stop && stop(); }, { amount: 0.25 }); }
+      // "some": fire as soon as any part shows. A fractional threshold never fires on blocks taller than the screen.
+      if (M() && M().inView) { const stop = M().inView(el, () => { fn(); stop && stop(); }, { amount: "some" }); }
       else fn();
     },
     /** Types text into el, line by line (array) or char by char (string). Returns a promise. Honors reduced motion. */
@@ -248,7 +249,7 @@
     const total = blocks.reduce((a, b) => a + b.min, 0) || 1;
     const track = h("div", { class: "vc-daybar-track", role: "img", "aria-label": "The day: " + blocks.map((b) => `${b.from ? b.from + " to " + b.to + ", " : ""}${b.label}`).join("; ") });
     const segs = blocks.map((b) => {
-      const s = h("div", { class: "vc-daybar-seg is-" + b.kind, style: { flexGrow: String(b.min), flexBasis: "0" } }, b.kind === "pause" ? "" : (b.from || b.min + "′"));
+      const s = h("div", { class: "vc-daybar-seg is-" + b.kind, style: { flexGrow: String(b.min), flexBasis: "0" } }, b.kind === "pause" || b.min < 60 ? "" : (b.from || b.min + "′"));
       track.append(s);
       return s;
     });
@@ -397,6 +398,8 @@
       document.querySelectorAll(".vc-widget, .vc-lab, .vc-practice").forEach((el) => {
         if (el.dataset.entered) return;
         el.dataset.entered = "1";
+        // Blocks taller than one and a half screens are shown as they are: an entrance there is never seen whole.
+        if (el.getBoundingClientRect().height > window.innerHeight * 1.5) return;
         el.style.opacity = "0";
         motion.onView(el, () => motion.enter(el));
       });

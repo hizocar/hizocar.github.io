@@ -32,7 +32,7 @@ Class page: [Class 1 · Ship something today](class1.html)
 
 **Build goal.** A deployed web application that a real user could open on a phone, and a one-page public site that explains it.
 
-**Before Day 1.** Read the class page (90 min). Create a GitHub account. Read Karpathy's original post on vibe coding and Willison's "Not all AI-assisted programming is vibe coding" (20 min). Bring one problem from your organization in which people enter, read or act on information by hand, and a laptop on which you can install programs.
+**Before Day 1.** Read the class page (90 min). Create a GitHub account, and the app builder account if your instructor's email has named it; otherwise you create it during the live demo. Read Karpathy's original post on vibe coding and Willison's "Not all AI-assisted programming is vibe coding" (20 min). Bring one problem from your organization in which people enter, read or act on information by hand, and a laptop on which you can install programs.
 
 **08:00 to 10:00.** Framework recap (45): what changed in the cost of building software; the toolkit map; vibe coding versus AI-assisted engineering; Problem Pull versus AI Push; the one-paragraph brief. Then the build lab starts with the instructor's live demo, which includes a bug and its recovery, and teams begin their own first version (75).
 

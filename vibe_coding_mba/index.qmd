@@ -73,7 +73,7 @@ include-after-body:
     <li>Create a GitHub account with a personal email you will keep after the course.</li>
     <li>Read the <a href="class1.html">Class 1 page</a>, about 90 minutes.</li>
     <li>Bring one problem from your organization in which people enter, read or act on information by hand.</li>
-    <li>Watch for your instructor's email confirming the AI assistant and app builder for the course. If it has not arrived, come anyway: the remaining accounts are created in the room during the setup clinic.</li>
+    <li>Watch for your instructor's email naming the AI assistant and app builder for the course, and create the builder account if you can. If the email has not arrived, come anyway: you create the builder account during the live demo that opens the lab, and the remaining accounts in the setup clinic at 12:30.</li>
   </ul>
 </section>
 

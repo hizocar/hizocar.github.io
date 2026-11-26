@@ -9,7 +9,7 @@ include-after-body:
     <script src="assets/vc-core.js"></script>
 ---
 
-This guide gets your tools ready. It is written for someone who has never programmed. The exact names of buttons change between tools and between months, so each step says what you are trying to achieve and what you should see when it worked. Your instructor confirms the specific tools by email. If that email has not reached you before Day 1, come anyway: the accounts are created in the room during the setup clinic.
+This guide gets your tools ready. It is written for someone who has never programmed. The exact names of buttons change between tools and between months, so each step says what you are trying to achieve and what you should see when it worked. Your instructor confirms the specific tools by email. If that email has not reached you before Day 1, come anyway: the app builder account is created during the live demo that opens the Class 1 lab, and the remaining accounts in the setup clinic.
 
 If a step fails, do not guess. Copy the sentence in "Ask the assistant" and paste it, with the error message, into your assistant.
 
@@ -31,7 +31,7 @@ Until your team has completed the Class 4 lab, closed every critical finding, an
 
 ## Before Day 1 (about 20 minutes, every student)
 
-Day 1 is Sunday 29 November 2026. Only the GitHub account and the problem are certain to be needed before you arrive; if you already know which assistant and builder the course uses, create those accounts too.
+Day 1 is Sunday 29 November 2026. Only the GitHub account and the problem are certain to be needed before you arrive. Create the app builder account too if you know which one the course uses, because the Class 1 lab uses it at about 08:50; otherwise you create it during the live demo that opens the lab.
 
 ```{=html}
 <ul class="vc-checklist" id="setup-before-1">
