@@ -1,6 +1,6 @@
 ---
-title: "Toolkit setup guide"
-subtitle: "From zero to an app you can edit, with a database and a public address. No programming required."
+title: "Setup guide"
+subtitle: "Three accounts, four programs, five tests. About 45 minutes, before Sunday 29 November. No programming required."
 lang: en
 css: assets/vc.css
 include-after-body:
@@ -9,161 +9,127 @@ include-after-body:
     <script src="assets/vc-core.js"></script>
 ---
 
-This guide gets your tools ready. It is written for someone who has never programmed. The exact names of buttons change between tools and between months, so each step says what you are trying to achieve and what you should see when it worked. Your instructor confirms the specific tools by email. If that email has not reached you before Day 1, come anyway: the app builder account is created during the live demo that opens the Class 1 lab, and the remaining accounts in the setup clinic.
+Do this at home, before Day 1. If you arrive with the accounts created and the programs installed, Day 1 goes to building instead of waiting for confirmation emails. If something fails, come anyway: from 08:20 to 09:00 on Day 1 there is a setup check, and neighbors help neighbors.
 
-If a step fails, do not guess. Copy the sentence in "Ask the assistant" and paste it, with the error message, into your assistant.
+**Golden rule.** If a command answers with an error in red, do not continue to the next step. Copy the whole error and bring it to class, or paste it into [claude.ai](https://claude.ai) with: *"What does this mean and how do I fix it on Mac / Windows?"*
 
-## The tools and what each is for
+## The pieces, one sentence each
 
-| Tool | What it is for | You will recognize it by |
+| Piece | What it is | Think of it as |
 |---|---|---|
-| An AI assistant that supports skills, connectors and agents | Thinking, drafting, and later building in your repository | A chat window that can also open a folder of files and act on it |
-| An app builder | Your first version, from a sentence to a deployed app | You describe the app and it appears, with a "Publish" button |
-| GitHub | The home of your app's files, with every version kept | A website where each project is a "repository" |
-| A managed database and a hosting platform | Where the data lives, and where the public address comes from | Dashboards with a project name, keys and a web address |
-| A model provider's developer account (before Day 2) | The model your app calls, billed by use | A console with usage, a spending limit and API keys |
+| **VS Code** | The editor where the files of your web live | Your desk |
+| **Claude Code** | An assistant that reads, writes and runs code in your project | A very capable colleague working next to you |
+| **Git and GitHub** | Every version of your files, kept and backed up | A drive with the full history of changes |
+| **Vercel** | The service that publishes your web at a public address | The shop where you open the doors |
+| **Node.js** | The engine your web runs on while you build it | The kitchen behind the shop |
 
-**Expected cost for the course:** USD 45 to 60 per student: two months of the assistant's individual plan and about USD 5 to 10 of model usage. Confirm the current prices before you pay; they change.
+## What it costs
 
-## The data rule
+| Item | Cost |
+|---|---|
+| Claude **Pro** plan, paid by each student | About USD 20 a month. Claude Code does not work on the free plan. You need it active on Day 1 and from Day 2 to Day 3; keeping it between them lets you practice. |
+| GitHub, Vercel Hobby, Supabase Free | Free |
 
-Until your team has completed the Class 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade. A realistic message with the names, phone numbers and addresses changed teaches you exactly as much as the real one.
+Confirm the current price at [claude.ai](https://claude.ai) before you pay; prices change.
 
-## Before Day 1 (about 20 minutes, every student)
+## Part 1 · Accounts (15 minutes)
 
-Day 1 is Sunday 29 November 2026. Only the GitHub account and the problem are certain to be needed before you arrive. Create the app builder account too if you know which one the course uses, because the Class 1 lab uses it at about 08:50; otherwise you create it during the live demo that opens the lab.
+Use **the same email** for all of them. A personal email you will keep after the MBA is best.
 
 ```{=html}
-<ul class="vc-checklist" id="setup-before-1">
-<li>Create an account on the AI assistant named by your instructor, on the individual paid plan if the free plan does not include skills and connectors.</li>
-<li>Create an account on the app builder. The free tier is enough for Class 1.</li>
-<li>Create a GitHub account. Use a personal email you will keep after the course.</li>
-<li>Write down the one business problem you will bring: who has it, how often, and what it costs them.</li>
+<ul class="vc-checklist" id="setup-accounts">
+<li><span><strong>Claude</strong> at <a href="https://claude.ai">claude.ai</a>, with the <strong>Pro</strong> plan or higher.</span></li>
+<li><span><strong>GitHub</strong> at <a href="https://github.com/signup">github.com/signup</a>. Free.</span></li>
+<li><span><strong>Vercel</strong> at <a href="https://vercel.com/signup">vercel.com/signup</a>. Choose <strong>Continue with GitHub</strong> and the <strong>Hobby</strong> plan (free).</span></li>
+<li><span>Write five lines about <strong>your idea</strong>: what the web is for, who visits it, what they should do there, two sites whose look you like, and what you do not want.</span></li>
 </ul>
 ```
 
-## In the setup clinic (Day 1, 12:30 to 14:30)
+## Part 2 · Programs (30 minutes)
 
-In Class 1 you built a first version inside the app builder. In the third block of Day 1 you move it, in the room and with the instructor walking between tables, to a place where your assistant can work on it properly, and you prepare the database. Parts A to E take about 75 minutes; the clinic gives them 90, with time to fix what fails, and the last 30 minutes go to the M1 brief. If you miss Day 1, do these parts on your own before Sunday 10 January 2027 and write to the course channel when you get stuck.
+Everything happens in a **terminal**, a window where you type instructions to your computer. On a Mac: ⌘ + Space, type `Terminal`, Enter. On Windows: Start menu, type `PowerShell`, open it. To run a command, copy it, paste it into the terminal and press Enter. After each program there is a **test**: do not move on if it fails.
 
-**Who does what.** Parts A, C and D are done once per team, by the member whose builder account holds the app. Part B is done by every member, on their own laptop. Do the parts in order.
+### 1. VS Code
 
-### Part A. Put the app in a private repository (10 minutes, once per team)
+Download it from [code.visualstudio.com](https://code.visualstudio.com) and install it like any program. On a Mac, drag it into **Applications**; do not open it from Downloads. Open it, and in the top menu choose **Terminal → New Terminal**. From here on, use that terminal.
 
-**Goal:** the files of your app live in a GitHub repository that only your team can see.
+**Test:** `code --version` shows a number. On a Mac, if it says `command not found: code`: press ⌘ + Shift + P, type *Shell Command: Install 'code' command in PATH*, and press Enter.
 
-1. In the app builder, open your project and find the option to connect to GitHub or export the project. It is usually in the project settings or behind a GitHub icon.
-2. Allow the builder to create a repository in your GitHub account. Name it after your product, for example `quotedesk`.
-3. Open GitHub in your browser, find the new repository, open its settings, and confirm its visibility is **Private**. If it says Public, change it now.
-4. In the repository settings, invite your teammates as collaborators.
-
-**It worked when:** you can see a list of files in the repository on GitHub, a small padlock or the word "Private" sits next to its name, and your teammates can open it.
-
-**Ask the assistant:** "I am not a programmer. I built an app in [builder name] and I need its files in a private GitHub repository. Tell me exactly where to click, one step at a time, and wait for me to confirm each step."
-
-### Part B. Open the repository in your assistant (30 minutes, every member)
-
-**Goal:** your assistant can read and change the files of your app on your own laptop.
-
-1. Install the desktop version of your assistant, or the editor your instructor named, on your laptop.
-2. Sign in to GitHub from inside it when it asks.
-3. Choose the option to open a repository from GitHub (it may be called "clone", which means download a linked copy), pick your repository from the list, and choose a folder on your laptop to keep it in.
-4. Ask the assistant: "Describe this project to me in five sentences. What does it do, what are its main parts, and how do I run it on my laptop to see it?"
-5. Follow its instructions to run the app on your laptop. It will ask to install two free programs (Git and Node.js) and may ask for your computer password; say yes. Allow 30 minutes the first time. A browser tab opens with your app in it.
-
-**It worked when:** the assistant describes your app correctly and you can see the app in a browser tab on your own laptop.
-
-**Ask the assistant:** "I cannot see my app running. Here is what I see: [paste]. Fix it and tell me in one sentence what was wrong."
-
-### Part C. Create the database project (15 minutes, once per team)
-
-**Goal:** an empty database exists, ready for Class 2. You do not design tables now.
-
-1. Create an account on the managed database service named by your instructor and create a new project. Give it the same name as your product. Choose the region closest to your users.
-2. The service shows you a project address and two keys. Read the section "Keys" below before you copy anything.
-3. Put the project address and the **publishable** key in your project's settings, following your assistant's instructions (see "Ask the assistant" in the Keys section). The **secret** key waits for Part D.
-4. Do not create tables. Your team does that together in the Class 2 lab.
-
-**It worked when:** you can see an empty project dashboard, your project's settings hold the address and the publishable key, and no secret key is anywhere in the repository.
-
-### Part D. Connect the hosting platform (10 minutes, once per team)
-
-**Goal:** every time your team saves a checkpoint, a public address updates by itself.
-
-1. Create an account on the hosting platform named by your instructor, signing in with GitHub.
-2. Choose "import a project" or "new project" and pick your repository.
-3. Before you deploy, open the platform's page for "environment variables" or "secrets" (settings stored on the server, outside the code) and add the database project's address, its publishable key and its **secret** key there. This page is the only place a secret key is ever typed.
-4. Accept the suggested settings and deploy. The platform gives you a public address.
-5. Open that address on your phone.
-
-**It worked when:** your app opens on your phone at an address from the hosting platform, not from the builder, and the secret key appears in the hosting platform's settings and nowhere else: no chat, no message, no file.
-
-### Part E. Five checks (10 minutes)
+### 2. Git
 
 ```{=html}
-<ul class="vc-checklist" id="setup-before-2">
-<li>The repository is private, and every teammate can open it.</li>
-<li>Every member's assistant can describe the project and run it on their laptop.</li>
-<li>The database project exists and its secret key has not been pasted into any chat, message or file.</li>
-<li>The hosting address opens on a phone.</li>
-<li>You asked the assistant to make one small visible change (for example the page title), saved a checkpoint, and saw the change appear at the public address a minute later.</li>
+<div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Mac</div><div class="vc-prompt-b">xcode-select --install</div></div>
+```
+
+A window opens: accept and install, which takes a few minutes. **Windows:** download it from [git-scm.com](https://git-scm.com/download/win) and keep every default option. Then tell Git who you are, with the same email as GitHub:
+
+```{=html}
+<div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Mac and Windows</div><div class="vc-prompt-b">git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"</div></div>
+```
+
+**Test:** `git --version` shows something like `git version 2.4x`.
+
+### 3. Node.js
+
+Go to [nodejs.org](https://nodejs.org), download the **LTS** version (the recommended one, not "Current") and install it with the default options. Then **close and reopen VS Code**, or its terminal will not see the new program.
+
+**Test:** `node -v` and `npm -v` both show numbers; Node must be 22 or higher.
+
+**Windows only:** if `npm -v` answers *running scripts is disabled on this system*, run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`, answer Y, and reopen the terminal.
+
+### 4. Claude Code
+
+```{=html}
+<div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Mac</div><div class="vc-prompt-b">curl -fsSL https://claude.ai/install.sh | bash</div></div>
+<div class="vc-prompt"><div class="vc-prompt-h">In PowerShell · Windows</div><div class="vc-prompt-b">irm https://claude.ai/install.ps1 | iex</div></div>
+```
+
+Close and reopen the terminal, then type `claude`. The first time, it asks you to sign in: choose your **Claude account (Pro or higher)**, accept in the browser, and come back to the terminal.
+
+**Test:** inside Claude Code, type `/status`. Your account appears. Type `/exit` to leave. Running `claude` once in the terminal also sets up Anthropic's official plugin catalog, which you use on Sunday.
+
+**The VS Code extension.** In VS Code, open **Extensions** (the squares icon on the left, or ⌘/Ctrl + Shift + X), search for **Claude Code** published by **Anthropic**, and install it. Open any file: a Spark icon (✻) appears at the top right of the editor, and clicking it opens Claude in a panel next to your files. The panel and the terminal are the same Claude. In class we use the panel, and the terminal when we need it.
+
+### Where your projects live
+
+Create a folder called **Proyectos** in your user folder: `/Users/your-name/Proyectos` on a Mac, `C:\Users\your-name\Proyectos` on Windows.
+
+**Not** on the Desktop, in Documents, iCloud, OneDrive or Google Drive. Those folders sync and "optimize" files while Claude is writing them, and they have deleted whole projects. Your backup is GitHub, not the sync folder.
+
+## A warm-up that saves time on Sunday (5 to 10 minutes)
+
+Thirty laptops downloading the same web project on the room's wifi is slow. Download it once at home, so that on Sunday most of it comes from your laptop. In the terminal, one line at a time:
+
+```{=html}
+<div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Mac</div><div class="vc-prompt-b">mkdir -p ~/Proyectos && cd ~/Proyectos
+npx --yes create-next-app@latest calentamiento --yes</div></div>
+<div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Windows</div><div class="vc-prompt-b">mkdir $HOME\Proyectos -Force; cd $HOME\Proyectos
+npx --yes create-next-app@latest calentamiento --yes</div></div>
+```
+
+It ends with *Success! Created calentamiento*. You can delete that folder afterwards; it was only a rehearsal.
+
+## The five tests
+
+```{=html}
+<ul class="vc-checklist" id="setup-tests">
+<li><code>code --version</code> shows a number.</li>
+<li><code>git config --global user.email</code> shows the email of your GitHub account.</li>
+<li><code>node -v</code> shows 22 or higher.</li>
+<li><code>claude</code> opens, and inside it <code>/status</code> shows your account (then <code>/exit</code>).</li>
+<li>In VS Code, the Spark icon (✻), or <strong>✻ Claude Code</strong> in the status bar at the bottom, opens the Claude Code panel.</li>
 </ul>
 ```
 
-A **checkpoint** is a named snapshot of the whole app at a moment it worked. In this course, saving a checkpoint always includes sending it to GitHub, which is what updates your public address. Until then, a change exists only on one laptop.
+## On a work laptop
 
-## Before Day 2 (about 25 minutes, once per team, by Sunday 10 January 2027)
+A laptop managed by your employer may block installing programs, or block the Claude Code installer. Try at home first. If it is blocked, bring a personal laptop, or ask your IT team for permission before Sunday. Do not work around your employer's security controls.
 
-In Class 3, on the afternoon of Day 2, your app calls a language model. That needs an account that is separate from your assistant subscription and is billed by use.
+## Before Day 2
 
-1. Create an account on the model provider's developer console named by your instructor. Add USD 5 of credit.
-2. Set a monthly spending limit of USD 10 and an email alert.
-3. Create one API key (a secret key that lets your app use the model), name it after your product, and type it into your hosting platform's environment variables page. Nowhere else.
-
-**It worked when:** the key appears on the hosting platform's page, the spending limit shows in the provider's console, and the key is in no chat, message or file.
-
-Because the key lives only on the hosting platform, the AI feature will not run on your laptop. In the Class 3 lab you save a checkpoint, wait a minute for the public address to update, and test there.
-
-## For the morning digest (Class 3, option B)
-
-One of the two options in Class 3 is a morning digest that your team's assistant prepares on a schedule. The assistant cannot see inside your deployed app, so you hand it a file through the same door it already uses for the price list.
-
-1. Ask the building assistant: "Add a manager-only button 'Export pending requests' that downloads a file with customer, time received and rep. No prices, no phone numbers."
-2. Save that file each morning into the shared folder your price-list connector already reads. In the lab you do this once by hand.
-3. Ask your assistant one question that needs the file ("how many requests are older than three hours?") and check the answer against the app.
-
-**It worked when:** the answer matches what you see in the app, and the connector's settings still show read access and nothing else.
-
-A real deployment needs a view that refreshes by itself and a second alert channel. Note both as open items in your risk memo.
-
-## Keys
-
-A key is a long string that lets software use a service on your behalf. Treat it like the keys of a building.
-
-| Kind of key | Who may see it | Where it goes |
-|---|---|---|
-| **Publishable key** (the database service may call it "anon" or "public") | Anyone. It is designed to reach the browser. | In the project's settings, where the assistant puts it |
-| **Secret key** (it may be called "service" or "secret"; the key of the model provider is always secret) | Nobody outside the server | On the hosting platform's "environment variables" or "secrets" page, and nowhere else |
-
-Three rules that are never broken:
-
-1. A secret key is never pasted into a chat, an email, a slide, a screenshot or the repository.
-2. If a secret key was ever pasted somewhere it should not be, it is revoked in the service's dashboard and a new one is created. Deleting the message is not enough.
-3. The publishable key does not protect your data. The rules inside the database do. You set the first rules in Class 2, with the login, and tighten and test them in Class 4.
-
-**Ask the assistant:** "I have a publishable key and a secret key for [service]. Tell me exactly where each one goes in this project and in [hosting platform], and confirm that the secret key will never be sent to the browser. Do not ask me to paste the secret key into this chat."
-
-## If you could not get your app out of the builder
-
-Use the course starter instead of Part A. It is the app as it stands at the end of Class 1: paste a message, pick a customer, save to today's list.
-
-1. Open [github.com/hizocar/vibe-coding-starter](https://github.com/hizocar/vibe-coding-starter). If the page says it cannot be found, ask your instructor for an invitation and open the link again.
-2. Press **Use this template**, then **Create a new repository**. Name it after your product, choose **Private**, and create it.
-3. Invite your teammates in the new repository's settings.
-4. Continue this guide from Part B with your new repository. In the lab you will reshape its one screen to fit your own product.
-
-**It worked when:** your own copy shows the word "Private" next to its name and contains a file called `AGENTS.md`, the standing instructions your assistant will read.
+By Sunday 10 January 2027, create a free [Supabase](https://supabase.com/dashboard) account with **Continue with GitHub**. Day 2 connects it to Claude to give your web a database and a login. The free plan pauses a project after a week without use; a click on **Restore** in its dashboard brings it back. Anything else Day 2 needs is listed on its class page.
 
 ## If you could not finish
 
-Write to the course channel or to [sebastian.azocarm@usm.cl](mailto:sebastian.azocarm@usm.cl) before Sunday 10 January 2027, so it can be solved before Day 2. Nobody is graded on this guide.
+Come to Day 1 anyway: the setup check from 08:20 is for exactly this. If you will miss Day 1, write to [sebastian.azocarm@usm.cl](mailto:sebastian.azocarm@usm.cl) before it. Nobody is graded on this guide.

@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day 1 · Ship your first web with Claude Code</title>
+<meta name="description" content="Vibe Coding for Business Leaders, MBA USM. Day 1 slides: ship your first web with Claude Code.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f1e33; --paper:#fbfbf8; --accent:#1d4e89; --brass:#a07a3f; --brass-ink:#7c5c2a;
+  --muted:#56637a; --line:rgba(15,30,51,.16); --hair:rgba(15,30,51,.09);
+  --wash:#edf2f8; --wash2:#f4f1ea; --card:#ffffff;
+  --serif:"Cormorant Garamond","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:"Geist",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#e9ebee;overflow:hidden}
+body{font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+#stage{position:fixed;left:50%;top:50%;width:1600px;height:900px;transform-origin:50% 50%;background:var(--paper);box-shadow:0 1px 2px rgba(15,30,51,.06),0 18px 60px rgba(15,30,51,.10);overflow:hidden}
+
+/* ---------- slide frame ---------- */
+.s{position:absolute;inset:0;padding:84px 120px 118px;display:none;flex-direction:column;gap:34px}
+.s.is-cur{display:flex}
+.t{font-family:var(--serif);font-weight:600;font-size:74px;line-height:1.04;letter-spacing:-.012em;max-width:1300px;font-variant-numeric:lining-nums;text-wrap:balance}
+.t em{font-style:italic;font-weight:500;color:var(--accent)}
+.sub{font-size:32px;line-height:1.35;color:var(--muted);max-width:1180px;text-wrap:pretty}
+.body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:28px}
+.lines{display:flex;flex-direction:column;gap:14px}
+.lines p{font-size:32px;line-height:1.32;text-wrap:pretty}
+.lines p.quiet{color:var(--muted)}
+.split{display:grid;grid-template-columns:1.08fr 1fr;gap:72px;align-items:center}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch}
+code,.mono{font-family:var(--mono);font-size:.86em;letter-spacing:-.01em}
+.k{color:var(--accent);font-weight:600}
+.brass{color:var(--brass)}
+
+.foot{position:absolute;left:120px;right:120px;bottom:44px;display:flex;justify-content:space-between;align-items:center;font-size:20px;color:var(--muted);pointer-events:none}
+.foot .count{font-variant-numeric:tabular-nums}
+.bar{position:absolute;left:0;bottom:0;height:4px;background:var(--brass);transition:width .45s var(--ease)}
+
+/* ---------- building blocks ---------- */
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:30px 34px}
+.card h3{font-size:32px;font-weight:600;line-height:1.2;margin-bottom:10px}
+.card p{font-size:27px;line-height:1.38;color:var(--muted)}
+.card.is-key{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.try{margin-top:auto;align-self:flex-start;display:inline-flex;gap:16px;align-items:baseline;background:var(--wash);border-radius:999px;padding:16px 30px;font-size:25px;line-height:1.3;max-width:100%}
+.try b{color:var(--accent);font-weight:600;white-space:nowrap}
+.kbd{display:inline-flex;align-items:center;justify-content:center;min-width:1.9em;padding:.16em .5em;border:1.5px solid var(--line);box-shadow:0 3px 0 var(--line);border-radius:12px;background:var(--card);font-family:var(--sans);font-weight:600;font-size:.92em;line-height:1.1;white-space:nowrap}
+.prompt{position:relative;background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:30px 36px 32px;font-size:29px;line-height:1.45}
+.prompt.big{font-size:34px;line-height:1.45}
+.portrait .prompt.big{font-size:31px}
+.prompt .who{display:block;font-size:21px;color:var(--muted);margin-bottom:10px}
+.copy{position:absolute;right:20px;top:18px;font:500 19px var(--sans);color:var(--accent);background:var(--wash);border:0;border-radius:999px;padding:9px 18px;cursor:pointer}
+.copy:hover{background:#dfe8f3}
+
+/* flow: nodes and arrows */
+.flow{display:flex;align-items:stretch;gap:0}
+.flow .node{flex:1 1 0;min-width:0}
+.node{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:26px 26px 28px;display:flex;flex-direction:column;gap:8px}
+.node b{font-size:31px;font-weight:600;line-height:1.15}
+.node span{font-size:24px;line-height:1.35;color:var(--muted)}
+.node.is-key{border-color:var(--accent)}
+.node .num{font-family:var(--serif);font-size:40px;font-weight:600;color:var(--brass);line-height:1;font-variant-numeric:lining-nums}
+.arr{flex:0 0 64px;display:flex;align-items:center;justify-content:center}
+.arr svg{width:52px;height:24px;overflow:visible}
+.arr path{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.55}
+
+/* ---------- motion (final state is the base style; motion only adds a "from") ---------- */
+.on .b{animation:rise .5s var(--ease) var(--d,0ms) both}
+.on .fx{animation:fade .6s var(--ease) var(--d,0ms) both}
+.on .gx{animation:gx .65s var(--ease) var(--d,0ms) both}
+.on .gf{animation:gx .65s var(--ease) var(--d,0ms) both}
+.on .draw{animation:draw .7s var(--ease) var(--d,0ms) both}
+.gx,.gf{transform-origin:0 50%}
+.draw{stroke-dasharray:1;stroke-dashoffset:0}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+@keyframes fade{from{opacity:0}}
+@keyframes gx{from{transform:scaleX(0)}}
+@keyframes gy{from{transform:scaleY(0)}}
+@keyframes draw{from{stroke-dashoffset:1}}
+
+/* ---------- 1 title ---------- */
+.s-title{justify-content:center}
+.s-title .grid{display:grid;grid-template-columns:1.15fr 1fr;gap:80px;align-items:center}
+.s-title h1{font-family:var(--serif);font-weight:600;font-size:118px;line-height:.98;letter-spacing:-.018em;text-wrap:balance}
+.s-title h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+.s-title .rule{height:2px;width:220px;background:var(--brass);margin:38px 0 30px}
+.s-title .meta{font-size:28px;line-height:1.5;color:var(--muted)}
+.s-title .meta b{color:var(--ink);font-weight:500}
+.browser{background:var(--card);border:1.5px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(15,30,51,.10)}
+.browser .chrome{display:flex;align-items:center;gap:10px;padding:16px 20px;border-bottom:1.5px solid var(--hair)}
+.browser .dot{width:13px;height:13px;border-radius:50%;background:var(--hair)}
+.browser .url{margin-left:12px;flex:1;background:var(--wash);border-radius:999px;padding:8px 18px;font-size:19px;color:var(--muted);font-family:var(--mono)}
+.browser .page{padding:40px 40px 46px;display:flex;flex-direction:column;gap:18px}
+.browser .ln{height:18px;border-radius:9px;background:var(--hair)}
+.browser .hd{height:40px;width:72%;border-radius:10px;background:var(--ink);opacity:.9}
+.browser .btn{margin-top:10px;width:180px;height:52px;border-radius:12px;background:var(--accent)}
+.browser .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+.browser .tiles i{display:block;height:92px;border-radius:12px;background:var(--wash)}
+
+/* ---------- 2 leave with ---------- */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.three .card{display:flex;flex-direction:column;gap:14px;padding:36px 34px 40px}
+.three .n{font-family:var(--serif);font-weight:600;font-size:76px;line-height:.9;color:var(--brass);font-variant-numeric:lining-nums}
+.three h3{font-size:34px;margin:0}
+
+/* ---------- 3 timeline ---------- */
+.tl{display:flex;gap:10px;height:300px}
+.seg{flex:var(--m) 1 0;min-width:0;border-radius:18px;padding:26px 26px;background:var(--card);border:1.5px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.seg .time{font-size:22px;color:var(--muted);font-variant-numeric:tabular-nums}
+.seg b{font-size:30px;line-height:1.2;font-weight:600}
+.seg ul{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.seg li{font-size:22px;line-height:1.3;color:var(--muted)}
+.seg.is-key{border-color:var(--accent)}
+.seg.brk{background:var(--wash2);border-style:dashed;padding:12px 6px;align-items:center;justify-content:center}
+.seg.brk span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:20px;color:var(--brass-ink);white-space:nowrap}
+
+/* ---------- demo ---------- */
+.s-demo{justify-content:center;align-items:flex-start}
+.s-demo .big{font-family:var(--serif);font-weight:600;font-size:150px;line-height:.95;letter-spacing:-.02em}
+.s-demo .sub{font-size:38px;margin-top:22px}
+.ring{width:240px;height:240px}
+.ring circle{fill:none;stroke-width:10}
+.ring .bg{stroke:var(--hair)}
+.ring .fg{stroke:var(--accent);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%}
+.ring text{font-family:var(--serif);font-weight:600;font-size:64px;font-variant-numeric:lining-nums;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.s-demo .row{display:flex;gap:80px;align-items:center}
+
+/* ---------- checks ---------- */
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:18px 48px}
+.check{display:flex;align-items:center;gap:22px;font-size:30px;padding:20px 26px;border:1.5px solid var(--line);border-radius:16px;background:var(--card)}
+.check svg{flex:0 0 34px;width:34px;height:34px}
+.check svg path{fill:none;stroke:var(--accent);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.check svg circle{fill:none;stroke:var(--line);stroke-width:2}
+
+/* ---------- bars (cost, next token) ---------- */
+.bars{display:flex;flex-direction:column;gap:26px}
+.brow{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center}
+.brow .lab{font-size:28px;font-weight:600}
+.brow .track{position:relative;height:84px}
+.brow .fill{height:100%;border-radius:14px;background:var(--wash);display:flex;align-items:center;padding:0 26px;font-size:25px;color:var(--ink);white-space:nowrap;overflow:hidden}
+.brow .fill.is-now{background:var(--accent);color:#fff}
+.cand .brow{grid-template-columns:150px 1fr 90px}
+.cand .brow .lab{font-family:var(--serif);font-size:44px;font-weight:600;font-variant-numeric:lining-nums}
+.cand .track{height:52px}
+.cand .fill{background:var(--accent);opacity:.85}
+.cand .brow:nth-child(n+2) .fill{opacity:.35}
+.cand .pct{font-size:26px;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+.sentence{font-family:var(--serif);font-size:60px;line-height:1.15;font-weight:500;font-variant-numeric:lining-nums}
+.sentence .blank{display:inline-block;width:150px;border-bottom:3px solid var(--accent);margin-left:12px;transform:translateY(-6px)}
+.tag{font-size:21px;color:var(--muted)}
+
+/* ---------- tokens ---------- */
+.tokens{display:flex;flex-wrap:wrap;gap:10px 8px;font-size:46px;line-height:1}
+.tokens span{padding:16px 16px 18px;border-radius:12px;background:var(--wash);white-space:pre}
+.tokens span:nth-child(even){background:#e3ddcf}
+.tcount{font-family:var(--serif);font-size:44px;font-weight:600;color:var(--brass);font-variant-numeric:lining-nums}
+
+/* ---------- context window ---------- */
+.ctx{display:flex;height:150px;border:2px solid var(--ink);border-radius:20px;padding:10px;gap:8px}
+.ctx div{flex:0 0 calc(var(--w) - 8px);border-radius:12px;background:var(--wash);display:flex;align-items:center;justify-content:center;text-align:center;font-size:22px;line-height:1.2;padding:0 8px;overflow:hidden}
+.ctx div:nth-child(1){background:#e3ddcf}
+.ctx div:nth-child(4){background:#dfe7f1}
+.ctx div:last-child{background:var(--accent);color:#fff}
+.ctxlab{display:flex;justify-content:space-between;font-size:22px;color:var(--muted)}
+
+/* ---------- confidently wrong ---------- */
+.bubble{background:var(--card);border:1.5px solid var(--line);border-radius:22px 22px 22px 6px;padding:30px 34px;font-size:32px;line-height:1.4}
+.bubble .who{display:block;font-size:21px;color:var(--muted);margin-bottom:8px}
+.verdict{display:flex;flex-direction:column;gap:0}
+.verdict .browser .page{padding:34px;gap:16px}
+.verdict .note{font-size:27px;line-height:1.35;color:var(--ink)}
+.verdict .note b{color:var(--brass-ink)}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+
+/* ---------- chat vs agent ---------- */
+.mini{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+.mini div{font-size:26px;line-height:1.3;padding:14px 20px;border-radius:12px;background:var(--wash2)}
+.mini div.ag{background:var(--wash)}
+.cols .card h3{font-family:var(--serif);font-size:46px;font-weight:600;margin-bottom:14px}
+
+/* ---------- agent loop ---------- */
+.loop{width:100%;max-width:450px;justify-self:center}
+.loop .ring0{fill:none;stroke:var(--line);stroke-width:3}
+.loop .ring1{fill:none;stroke:var(--accent);stroke-width:3;opacity:.6}
+.loop .nd circle{fill:var(--card);stroke:var(--line);stroke-width:2.5}
+.loop .nd.ask circle{stroke:var(--brass);stroke-width:3.5}
+.loop .nd text{font-family:var(--sans);font-size:23px;font-weight:600;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.loop .ctr{font-family:var(--serif);font-size:40px;font-weight:600;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.loop .ctr2{font-family:var(--sans);font-size:20px;fill:var(--muted);text-anchor:middle;dominant-baseline:central}
+.loop .orbit{transform-box:view-box;transform-origin:300px 300px}
+.loop .orbit circle{fill:var(--accent)}
+.on .loop .orbit{animation:orbit .9s cubic-bezier(.45,.05,.4,.95) .2s both}
+.on .loop .nd circle{animation:hl .3s ease-out calc(.2s + var(--k) * .18s) both}
+@keyframes orbit{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes hl{0%{fill:var(--card)}45%{fill:#d6e2f0}100%{fill:var(--card)}}
+
+/* ---------- good request ---------- */
+.req{display:grid;grid-template-columns:.62fr 1.38fr;gap:44px;align-items:start}
+.bad{display:flex;flex-direction:column;gap:16px}
+.bad .prompt{font-size:34px}
+.bad p{font-size:25px;line-height:1.35;color:var(--muted)}
+.good .prompt{padding-top:24px}
+.good .ln{display:grid;grid-template-columns:1fr 150px;gap:20px;align-items:baseline;font-size:25px;line-height:1.38;padding:7px 0;border-bottom:1px solid var(--hair)}
+.good .ln:last-child{border-bottom:0}
+.good .ln i{font-style:normal;font-size:20px;color:var(--accent);text-align:right}
+.good .ln.key{font-weight:600}
+.good .ln.key i{color:var(--brass-ink)}
+
+/* ---------- plan mode ---------- */
+.modes{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.mode{position:relative;font-size:28px;padding:18px 28px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--muted)}
+.mode.is-on{color:#fff;background:var(--accent);border-color:var(--accent)}
+.on .mode.is-on{animation:modeon .3s ease-out .85s both}
+.on .mode.was{animation:modewas .7s ease-out .25s both}
+@keyframes modeon{from{background:var(--card);color:var(--muted);border-color:var(--line)}}
+@keyframes modewas{0%{background:var(--card)}30%{background:var(--wash);color:var(--accent);border-color:var(--accent)}100%{background:var(--card)}}
+.mode-key{display:flex;align-items:center;gap:22px;font-size:28px;color:var(--muted)}
+
+/* ---------- permissions ---------- */
+.perm{display:flex;flex-direction:column;gap:16px}
+.prow{display:grid;grid-template-columns:400px 1fr;gap:34px;align-items:center;padding:22px 30px;border:1.5px solid var(--line);border-radius:18px;background:var(--card)}
+.prow b{font-size:30px;font-weight:600;display:flex;align-items:center;gap:16px}
+.prow b::before{content:"";flex:0 0 16px;height:16px;border-radius:50%;background:var(--accent)}
+.prow.p2 b::before{background:transparent;border:3px solid var(--accent)}
+.prow.p3{border-color:var(--brass)}
+.prow.p3 b::before{background:var(--brass)}
+.prow span{font-size:26px;line-height:1.35;color:var(--muted)}
+
+/* ---------- keys (going wrong) ---------- */
+.keys{display:flex;flex-direction:column;gap:22px}
+.krow{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:center}
+.krow .kk{display:flex;gap:10px;font-size:36px}
+.keys.steps .krow{grid-template-columns:64px 1fr;gap:28px}
+.krow b{display:block;font-size:31px;font-weight:600;margin-bottom:4px}
+.krow span{font-size:26px;color:var(--muted);line-height:1.35}
+
+/* ---------- skills shelf ---------- */
+.shelf{display:flex;gap:16px;align-items:flex-end;padding-bottom:16px;border-bottom:3px solid var(--ink)}
+.book{flex:1;height:250px;border-radius:12px 12px 4px 4px;border:1.5px solid var(--line);background:var(--card);display:flex;align-items:center;justify-content:flex-end;padding:18px 0;writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--mono);font-size:22px;line-height:1;color:var(--muted);white-space:nowrap}
+.book:nth-child(2){height:290px}
+.book:nth-child(3){height:230px}
+.book:nth-child(4){height:270px}
+.book.is-key{background:var(--accent);border-color:var(--accent);color:#fff}
+.on .book.is-key{animation:lift .45s var(--ease) .7s both}
+@keyframes lift{from{transform:rotate(180deg) translateY(0);background:var(--card);color:var(--muted);border-color:var(--line)}}
+.book.is-key{transform:rotate(180deg) translateY(26px)}
+.ask{display:inline-block;align-self:flex-start;background:var(--wash);border-radius:20px 20px 20px 6px;padding:20px 28px;font-size:29px}
+.cmds{display:flex;flex-direction:column;gap:10px}
+.cmds code{display:block;font-size:22px;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:14px 18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ---------- file mock ---------- */
+.file{background:var(--card);border:1.5px solid var(--line);border-radius:18px;overflow:hidden}
+.file .fname{padding:16px 26px;border-bottom:1.5px solid var(--hair);font-family:var(--mono);font-size:21px;color:var(--muted)}
+.file pre{padding:24px 28px 28px;font-family:var(--mono);font-size:23px;line-height:1.6;white-space:pre-wrap}
+.file pre .h{color:var(--accent);font-weight:500}
+.file pre .c{color:var(--brass)}
+
+/* ---------- secrets ---------- */
+.sec{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:center}
+.sec .card b{font-family:var(--mono);font-size:28px}
+.dest{display:flex;flex-direction:column;gap:18px}
+.dest .route{display:flex;align-items:center;gap:18px}
+.dest .route .arr{flex:0 0 64px}
+.dest .route .card{flex:1;padding:22px 28px}
+.dest .route.no .card{border-style:dashed;opacity:.75}
+.dest .route.no .arr path{stroke:var(--brass);opacity:1}
+.dest .route.ok .arr path{stroke:var(--accent);opacity:1}
+.dest .route .card h3{font-size:28px;margin-bottom:4px}
+.dest .route .card p{font-size:23px}
+.xmark{color:var(--brass-ink);font-weight:600}
+
+/* ---------- deck file ---------- */
+.deckfile{display:flex;gap:64px;align-items:center}
+.ficon{flex:0 0 260px;height:330px;position:relative;background:var(--card);border:2px solid var(--ink);border-radius:18px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:36px;font-family:var(--mono);font-size:30px}
+.ficon::before{content:"";position:absolute;top:-2px;right:-2px;width:70px;height:70px;background:var(--paper);border-left:2px solid var(--ink);border-bottom:2px solid var(--ink);border-radius:0 18px 0 14px}
+.ficon .tagx{position:absolute;top:96px;left:36px;right:36px;display:flex;flex-direction:column;gap:14px}
+.ficon .tagx i{display:block;height:14px;border-radius:7px;background:var(--hair)}
+.ficon .tagx i:nth-child(2){width:70%;background:var(--wash)}
+.facts{display:flex;flex-direction:column;gap:18px}
+.facts div{font-size:34px;display:flex;gap:20px;align-items:baseline}
+.facts div span{font-family:var(--serif);font-size:44px;font-weight:600;color:var(--brass);min-width:60px;font-variant-numeric:lining-nums}
+
+/* ---------- days ---------- */
+.days .card{display:flex;flex-direction:column;gap:12px}
+.days .when{font-size:23px;color:var(--brass-ink)}
+.days ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.days li{font-size:27px;line-height:1.3;padding-left:26px;position:relative}
+.days li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+
+/* ---------- homework ---------- */
+.hw{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:stretch}
+.hw ol{list-style:none;counter-reset:i;display:flex;flex-direction:column;gap:12px;margin-top:12px}
+.hw ol li{counter-increment:i;font-size:26px;line-height:1.3;display:flex;gap:16px}
+.hw ol li::before{content:counter(i);font-family:var(--serif);font-weight:600;font-size:32px;color:var(--brass);min-width:22px;line-height:1;font-variant-numeric:lining-nums}
+.hw .due{font-size:24px;color:var(--accent);font-weight:500}
+
+/* ---------- portrait stage (phones) ---------- */
+.portrait .s{padding:88px 52px 116px;gap:30px}
+.portrait .foot{left:52px;right:52px;bottom:46px;font-size:21px}
+.portrait .t{font-size:58px}
+.portrait .sub{font-size:31px}
+.portrait .split,.portrait .cols,.portrait .three,.portrait .vs,.portrait .req,.portrait .sec,.portrait .hw,.portrait .s-title .grid{grid-template-columns:1fr;gap:28px}
+.portrait .s-title h1{font-size:90px}
+.portrait .flow{flex-direction:column}
+.portrait .flow .node{flex:0 0 auto}
+.portrait .arr{flex:0 0 46px}
+.portrait .arr svg{transform:rotate(90deg)}
+.portrait .tl{flex-direction:column;height:auto;flex:1;max-height:1060px}
+.portrait .seg{flex:var(--m) 1 0}
+.portrait .seg.brk{flex:0 0 52px}
+.portrait .seg.brk span{writing-mode:horizontal-tb;transform:none}
+.portrait .on .gf{animation-name:gy;transform-origin:50% 0}
+.portrait .ctx{flex-direction:column;height:760px}
+.portrait .ctx div{flex:0 0 calc(var(--w) - 8px);font-size:26px}
+.portrait .checks{grid-template-columns:1fr}
+.portrait .brow{grid-template-columns:1fr;gap:12px}
+.portrait .cand .brow{grid-template-columns:110px 1fr 80px;gap:18px}
+.portrait .sentence{font-size:48px}
+.portrait .brow .fill{width:100% !important}
+.portrait .brow .fill.is-now{width:64% !important}
+.portrait .cand .brow .fill{width:var(--pw) !important}
+.portrait .tokens{font-size:36px}
+.portrait .ficon{flex-basis:260px;width:210px;font-size:26px}
+.portrait .prow{grid-template-columns:1fr;gap:8px}
+.portrait .krow{grid-template-columns:1fr;gap:12px}
+.portrait .good .ln{grid-template-columns:1fr;gap:2px}
+.portrait .good .ln i{text-align:left;order:-1}
+.portrait .deckfile{flex-direction:column;align-items:flex-start;gap:40px}
+.portrait .ficon{flex:0 0 300px;width:240px}
+.portrait .s-demo .big{font-size:112px}
+.portrait .s-demo .row{flex-direction:column;align-items:flex-start;gap:56px}
+.portrait .modes{flex-direction:column;align-items:flex-start}
+.portrait .loop{max-width:600px}
+.portrait .shelf .book{height:220px}
+.portrait .shelf .book:nth-child(2){height:250px}
+.portrait .cmds code{font-size:18.5px}
+.portrait .dest .route .arr svg{transform:none}
+.portrait .browser .page{padding:30px}
+.portrait .three .card{padding:28px 30px 30px}
+.portrait .try{border-radius:24px}
+
+@media (prefers-reduced-motion: reduce){
+  .on *, .on *::before{animation:none !important}
+  .bar{transition:none}
+}
+</style>
+</head>
+<body>
+<div id="stage" role="region" aria-roledescription="slide deck" aria-label="Day 1 slides">
+
+<!-- 1 -->
+<section class="s s-title" data-title="Ship your first web">
+  <div class="grid">
+    <div>
+      <h1 class="b">Ship your first web with <em>Claude Code</em></h1>
+      <div class="rule gx"></div>
+      <p class="meta b"><b>Day 1</b> · Sunday 29 November 2026<br>Vibe Coding for Business Leaders · MBA USM<br>Sebastián Azócar</p>
+    </div>
+    <div class="browser b" aria-hidden="true">
+      <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">your-idea.vercel.app</span></div>
+      <div class="page">
+        <div class="hd gx"></div>
+        <div class="ln gx" style="width:92%"></div>
+        <div class="ln gx" style="width:80%"></div>
+        <div class="btn fx"></div>
+        <div class="tiles"><i class="b"></i><i class="b"></i><i class="b"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="s" data-title="What you leave with">
+  <h2 class="t b">By 14:30 you leave with three things</h2>
+  <div class="body">
+    <div class="three">
+      <div class="card b"><span class="n">1</span><h3>A web for your own idea</h3><p>Public, at a URL you can open on your phone.</p></div>
+      <div class="card b"><span class="n">2</span><h3>A deck about it</h3><p>One HTML file, published at the same address.</p></div>
+      <div class="card b"><span class="n">3</span><h3>Your own skill</h3><p>my-brand: your colors, fonts and tone, applied for you.</p></div>
+    </div>
+  </div>
+  <p class="sub b">Your idea, your plan, your project. Nobody builds the same thing.</p>
+</section>
+
+<!-- 3 -->
+<section class="s" data-title="The day" data-step="110">
+  <h2 class="t b">Three blocks: understand, build, ship</h2>
+  <div class="body">
+    <div class="tl">
+      <div class="seg gf" style="--m:120"><span class="time">08:00–10:00</span><b>Set up and how it works</b><ul><li>Live demo</li><li>Five setup checks</li><li>How a model and an agent work</li></ul></div>
+      <div class="seg brk gf" style="--m:15"><span>Coffee</span></div>
+      <div class="seg is-key gf" style="--m:120"><span class="time">10:15–12:15</span><b>Build your web</b><ul><li>Lab 1: your idea, live on localhost</li><li>Skills and memory</li></ul></div>
+      <div class="seg brk gf" style="--m:15"><span>Coffee</span></div>
+      <div class="seg gf" style="--m:120"><span class="time">12:30–14:30</span><b>Ship it</b><ul><li>Publish to a public URL</li><li>An HTML deck in five minutes</li><li>Your own skill, then pitches</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="s s-demo" data-title="Live demo">
+  <div class="row">
+    <svg class="ring b" viewBox="0 0 240 240" aria-hidden="true"><circle class="bg" cx="120" cy="120" r="108"/><circle class="fg draw" pathLength="1" cx="120" cy="120" r="108" style="--d:200ms"/><text x="120" y="124">10′</text></svg>
+    <div>
+      <p class="big b">Live demo</p>
+      <p class="sub b">An idea to a public URL in about ten minutes. Watch what I type, not how fast.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="s" data-title="Five checks" data-step="100">
+  <h2 class="t b">Five checks before anyone builds</h2>
+  <div class="body">
+    <div class="checks">
+      <div class="check b"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15"/><path class="draw" pathLength="1" d="M10 17.5l4.6 4.6L24.5 12"/></svg><code>code --version</code></div>
+      <div class="check b"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15"/><path class="draw" pathLength="1" d="M10 17.5l4.6 4.6L24.5 12"/></svg><code>git config --global user.email</code></div>
+      <div class="check b"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15"/><path class="draw" pathLength="1" d="M10 17.5l4.6 4.6L24.5 12"/></svg><code>node -v</code></div>
+      <div class="check b"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15"/><path class="draw" pathLength="1" d="M10 17.5l4.6 4.6L24.5 12"/></svg><code>claude</code>, then <code>/status</code></div>
+      <div class="check b"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15"/><path class="draw" pathLength="1" d="M10 17.5l4.6 4.6L24.5 12"/></svg><span>The ✻ Claude Code panel opens in VS Code</span></div>
+    </div>
+  </div>
+  <p class="sub b">Stuck? Ask your neighbor first, then me. We start together.</p>
+</section>
+
+<!-- 6 -->
+<section class="s" data-title="The cost fell" data-step="130">
+  <h2 class="t b">A working prototype used to take weeks. Now it takes an afternoon.</h2>
+  <div class="body">
+    <div class="bars">
+      <div class="brow b"><span class="lab">Before</span><div class="track"><div class="fill gx" style="width:100%">a brief, a developer, weeks of back and forth</div></div></div>
+      <div class="brow b"><span class="lab">Today</span><div class="track"><div class="fill is-now gx" style="width:38%">a clear brief, an agent, you</div></div></div>
+    </div>
+  </div>
+  <p class="sub b">Building got cheap. Knowing what to build did not. That part is yours.</p>
+</section>
+
+<!-- 7 -->
+<section class="s" data-title="Vibe coding vs engineering" data-step="120">
+  <h2 class="t b">Vibe coding gets you a prototype. Engineering keeps it alive.</h2>
+  <div class="body">
+    <div class="flow">
+      <div class="node b"><b>Vibe coding</b><span>Describe it, accept, see if it works. Right for testing an idea fast.</span></div>
+      <div class="arr fx"><svg viewBox="0 0 52 24"><path class="draw" pathLength="1" d="M2 12h46M38 3l10 9-10 9"/></svg></div>
+      <div class="node is-key b"><b>AI-assisted engineering</b><span>Plan, review, test, keep history. Needed once real people and data depend on it.</span></div>
+    </div>
+  </div>
+  <p class="sub b">Today we start on the left. Days 2 and 3 move you to the right.</p>
+</section>
+
+<!-- 8 -->
+<section class="s" data-title="Next token" data-step="120">
+  <h2 class="t b">A model writes by predicting the next piece of text</h2>
+  <div class="body">
+    <p class="sentence b">“Our bakery opens every day <span style="white-space:nowrap">at<span class="blank"></span>”</span></p>
+    <div class="bars cand">
+      <div class="brow b"><span class="lab">8:00</span><div class="track"><div class="fill gx" style="width:100%;--pw:100%"></div></div><span class="pct">61%</span></div>
+      <div class="brow b"><span class="lab">7:30</span><div class="track"><div class="fill gx" style="width:40%;--pw:40%"></div></div><span class="pct">24%</span></div>
+      <div class="brow b"><span class="lab">noon</span><div class="track"><div class="fill gx" style="width:15%;--pw:15%"></div></div><span class="pct">9%</span></div>
+    </div>
+    <p class="tag b">Illustrative numbers. It picks a likely piece, adds it, and repeats.</p>
+  </div>
+  <p class="try b"><b>Try it · 3 min</b> Ask Claude for three taglines for your idea. Ask again. Compare.</p>
+</section>
+
+<!-- 9 -->
+<section class="s" data-title="Tokens" data-step="60">
+  <h2 class="t b">Tokens are the unit of length and of cost</h2>
+  <div class="body">
+    <div class="tokens" aria-label="Dulce Norte bakes sourdough in Antofagasta, split into tokens">
+      <span class="b">Dul</span><span class="b">ce</span><span class="b"> Nor</span><span class="b">te</span><span class="b"> bakes</span><span class="b"> sour</span><span class="b">dough</span><span class="b"> in</span><span class="b"> Anto</span><span class="b">fag</span><span class="b">asta</span>
+    </div>
+    <p class="tcount b">11 tokens, 6 words</p>
+  </div>
+  <div class="lines">
+    <p class="b">A token is about three quarters of an English word. Names split into more.</p>
+    <p class="b quiet">Your plan's limit is counted in tokens: long files and long chats use it faster.</p>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="s" data-title="Context window" data-step="120">
+  <h2 class="t b">The context window is its working memory</h2>
+  <div class="body">
+    <div class="ctx" aria-label="The context window filling up">
+      <div class="gf" style="--w:13%">CLAUDE.md</div>
+      <div class="gf" style="--w:19%">your messages</div>
+      <div class="gf" style="--w:30%">files it read</div>
+      <div class="gf" style="--w:20%">command output</div>
+      <div class="gf" style="--w:18%">its replies</div>
+    </div>
+    <div class="ctxlab fx"><span>What it can see right now</span><span>Full: older parts get summarized</span></div>
+  </div>
+  <div class="lines">
+    <p class="b">It sees only what is in here. New task, clean window: type <code>/clear</code>.</p>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="s" data-title="Confidently wrong" data-step="160">
+  <h2 class="t b">It can be confidently wrong, so you check the screen</h2>
+  <div class="body">
+    <div class="vs">
+      <div class="bubble b"><span class="who">Claude</span>Done. The signup form now saves every email.</div>
+      <div class="verdict b">
+        <div class="browser">
+          <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">localhost:3000</span></div>
+          <div class="page"><p class="note">You click <b>Sign up</b>. Nothing happens.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="sub b">Believe what you see, not the summary. Then tell it exactly what you saw.</p>
+  <p class="try b"><b>Try it · 3 min</b> Ask for three facts about your market, with sources. Open one.</p>
+</section>
+
+<!-- 12 -->
+<section class="s" data-title="Chat vs agent" data-step="110">
+  <h2 class="t b">A chat answers. An agent acts.</h2>
+  <div class="body">
+    <div class="cols">
+      <div class="card b"><h3>Chat</h3>
+        <div class="mini"><div>You ask</div><div>It answers with text</div><div>You copy, paste and fix</div></div>
+      </div>
+      <div class="card is-key b"><h3>Agent</h3>
+        <div class="mini"><div class="ag">You set a goal</div><div class="ag">It reads, edits and runs your files</div><div class="ag">You review the result</div></div>
+      </div>
+    </div>
+  </div>
+  <p class="sub b">Claude Code is an agent that works inside the folder you open.</p>
+</section>
+
+<!-- 13 -->
+<section class="s" data-title="The agent loop">
+  <h2 class="t b">An agent works in a loop, and asks first</h2>
+  <div class="body">
+    <div class="split">
+      <svg class="loop fx" viewBox="0 0 600 600" role="img" aria-label="Loop: read, plan, ask you, edit, run, and back to read">
+        <circle class="ring0" cx="300" cy="300" r="214"/>
+        <circle class="ring1 draw" pathLength="1" cx="300" cy="300" r="214" transform="rotate(-90 300 300)"/>
+        <text class="ctr" x="300" y="286">your goal</text>
+        <text class="ctr2" x="300" y="330">until done, or it needs you</text>
+        <g class="orbit"><circle cx="300" cy="86" r="11"/></g>
+        <g class="nd" style="--k:0"><circle cx="300" cy="86" r="62"/><text x="300" y="86">Read</text></g>
+        <g class="nd" style="--k:1"><circle cx="503.5" cy="233.9" r="62"/><text x="503.5" y="233.9">Plan</text></g>
+        <g class="nd ask" style="--k:2"><circle cx="425.8" cy="473.1" r="62"/><text x="425.8" y="473.1">Ask you</text></g>
+        <g class="nd" style="--k:3"><circle cx="174.2" cy="473.1" r="62"/><text x="174.2" y="473.1">Edit</text></g>
+        <g class="nd" style="--k:4"><circle cx="96.5" cy="233.9" r="62"/><text x="96.5" y="233.9">Run</text></g>
+      </svg>
+      <div class="lines">
+        <p class="b">It reads your files, plans, asks your permission, edits, runs, and checks what happened.</p>
+        <p class="b quiet">You stay in charge at the brass circle: every edit or command waits for your yes.</p>
+      </div>
+    </div>
+  </div>
+  <p class="try b"><b>Try it · 3 min</b> Ask: “What is in this folder, and what do you need from me to build my web?” Create nothing yet.</p>
+</section>
+
+<!-- 14 -->
+<section class="s" data-title="The pieces" data-step="110">
+  <h2 class="t b">Four pieces, and what each one is for</h2>
+  <div class="body">
+    <div class="flow">
+      <div class="node b"><b>VS Code</b><span>your desk, where the files are</span></div>
+      <div class="arr fx"><svg viewBox="0 0 52 24"><path class="draw" pathLength="1" d="M2 12h46M38 3l10 9-10 9"/></svg></div>
+      <div class="node is-key b"><b>Claude Code</b><span>a capable colleague at your desk</span></div>
+      <div class="arr fx"><svg viewBox="0 0 52 24"><path class="draw" pathLength="1" d="M2 12h46M38 3l10 9-10 9"/></svg></div>
+      <div class="node b"><b>GitHub</b><span>a drive that keeps every version</span></div>
+      <div class="arr fx"><svg viewBox="0 0 52 24"><path class="draw" pathLength="1" d="M2 12h46M38 3l10 9-10 9"/></svg></div>
+      <div class="node b"><b>Vercel</b><span>the shop window anyone can visit</span></div>
+    </div>
+  </div>
+  <p class="sub b">You pay for one: Claude Pro. The other three are free for this course.</p>
+</section>
+
+<!-- 15 -->
+<section class="s" data-title="A good request" data-step="85">
+  <h2 class="t b">A good request gives context, a goal and limits</h2>
+  <div class="body">
+    <div class="req">
+      <div class="bad b">
+        <div class="prompt"><span class="who">Too little</span>make a web page</div>
+        <p>It will guess everything: audience, style, stack, scope.</p>
+      </div>
+      <div class="good b">
+        <div class="prompt"><span class="who">Enough to work with</span>
+          <div class="ln b"><span>The web for my bakery, Dulce Norte, in Antofagasta.</span><i>context</i></div>
+          <div class="ln b"><span>People see the products and leave their email for the weekly menu.</span><i>goal</i></div>
+          <div class="ln b"><span>For people aged 25 to 45 who buy on Instagram.</span><i>audience</i></div>
+          <div class="ln b"><span>Warm, handmade feel. No purple, no gradients.</span><i>style</i></div>
+          <div class="ln b"><span>Next.js with Tailwind, ready for Vercel. No database yet.</span><i>limits</i></div>
+          <div class="ln key b"><span>Before writing code, ask me what you need and propose a plan.</span><i>plan first</i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 16 -->
+<section class="s" data-title="Plan mode" data-step="110">
+  <h2 class="t b">Plan mode: it thinks and proposes, and touches nothing</h2>
+  <div class="body">
+    <div class="modes b">
+      <span class="mode was">Manual</span>
+      <span class="mode was" style="animation-delay:.5s">Edit automatically</span>
+      <span class="mode is-on">Plan</span>
+    </div>
+    <div class="mode-key b">In the panel, click the mode indicator under the prompt box. In the terminal, <span class="kbd">Shift</span> + <span class="kbd">Tab</span>.</div>
+  </div>
+  <div class="lines">
+    <p class="b">Read the plan, ask for changes, then approve. Use it whenever a change touches more than one file.</p>
+  </div>
+</section>
+
+<!-- 17 -->
+<section class="s" data-title="Permissions" data-step="120">
+  <h2 class="t b">Read every permission request before you answer</h2>
+  <div class="body">
+    <div class="perm">
+      <div class="prow b"><b>Yes</b><span>Creating or editing files in your project. <code>npm install</code>.</span></div>
+      <div class="prow p2 b"><b>Yes, don't ask again</b><span>Commands that repeat all day, like <code>npm run dev</code>.</span></div>
+      <div class="prow p3 b"><b>Stop and ask why</b><span><code>rm</code>, <code>sudo</code>, <code>git push --force</code>, or anything outside your folder.</span></div>
+    </div>
+  </div>
+  <p class="sub b">“Why do you need this?” is always a valid answer.</p>
+</section>
+
+<!-- 18 -->
+<section class="s" data-title="Lab 1" data-step="100">
+  <h2 class="t b">Lab 1: your web, running on your computer</h2>
+  <div class="body">
+    <div class="flow">
+      <div class="node b"><span class="num">1</span><b>Folder</b><span><code>~/Proyectos/my-web</code>, opened in VS Code</span></div>
+      <div class="arr fx"><svg viewBox="0 0 52 24"><path class="draw" pathLength="1" d="M2 12h46M38 3l10 9-10 9"/></svg></div>
+      <div class="node b"><span class="num">2</span><b>Brief</b><span>in plan mode; answer its questions</span></div>
+      <div class="arr fx"><svg viewBox="0 0 52 24"><path class="draw" pathLength="1" d="M2 12h46M38 3l10 9-10 9"/></svg></div>
+      <div class="node b"><span class="num">3</span><b>Build</b><span>approve the plan, read each request</span></div>
+      <div class="arr fx"><svg viewBox="0 0 52 24"><path class="draw" pathLength="1" d="M2 12h46M38 3l10 9-10 9"/></svg></div>
+      <div class="node is-key b"><span class="num">4</span><b>Look</b><span>“Run the dev server and give me the URL”</span></div>
+    </div>
+  </div>
+  <div class="lines">
+    <p class="b">Then one change at a time, and look after each one. Not on Desktop, iCloud or OneDrive.</p>
+  </div>
+</section>
+
+<!-- 19 -->
+<section class="s" data-title="When it goes wrong" data-step="130">
+  <h2 class="t b">When it goes wrong, stop, go back, or describe</h2>
+  <div class="body">
+    <div class="keys">
+      <div class="krow b"><div class="kk"><span class="kbd">Esc</span></div><div><b>Stop it now</b><span>It is heading the wrong way. Interrupt, then redirect.</span></div></div>
+      <div class="krow b"><div class="kk"><span class="kbd">Rewind</span></div><div><b>Go back to an earlier message</b><span>Hover your message, press rewind, choose “Rewind code to here”. Then try another way.</span></div></div>
+      <div class="krow b"><div class="kk"><span class="kbd">Describe</span></div><div><b>Say exactly what you see</b><span>What you clicked, what you expected, what happened, the error text.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 20 -->
+<section class="s" data-title="Skills" data-step="110">
+  <h2 class="t b">Skills are manuals it opens only when needed</h2>
+  <div class="body">
+    <div class="split">
+      <div style="display:flex;flex-direction:column;gap:46px">
+        <p class="ask b">“Redesign my home page so it feels premium.”</p>
+        <div class="shelf b" aria-label="Installed skills; frontend-design is picked">
+          <div class="book">skill-creator</div>
+          <div class="book is-key">frontend-design</div>
+          <div class="book">vercel</div>
+          <div class="book">my-brand</div>
+        </div>
+      </div>
+      <div class="lines">
+        <p class="b">Each skill waits on the shelf. Claude reads one only when your request needs it.</p>
+        <p class="b" style="font-size:22px;color:var(--muted)">In the VS Code terminal, one line at a time:</p><div class="cmds b"><code>claude</code><code>/plugin install frontend-design@claude-plugins-official</code><code>/exit</code></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 21 -->
+<section class="s" data-title="CLAUDE.md">
+  <h2 class="t b">CLAUDE.md is the project's memory</h2>
+  <div class="body">
+    <div class="split">
+      <div class="file b">
+        <div class="fname">CLAUDE.md</div>
+<pre><span class="h"># Dulce Norte web</span>
+<span class="h">## What it is</span>
+Catalog and a waitlist for the weekly menu.
+<span class="h">## Rules</span>
+- Next.js and Tailwind, deployed on Vercel.
+- Never put secret keys in the code.
+<span class="h">## Rules from real bugs</span>
+<span class="c">- Show a clear message when saving fails.</span></pre>
+      </div>
+      <div class="lines">
+        <p class="b">Claude forgets between sessions. It reads this file every time.</p>
+        <p class="b"><code>/init</code> writes the first version for you.</p>
+        <p class="b quiet">When it makes a mistake: “add this to CLAUDE.md so it doesn't happen again.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 22 -->
+<section class="s" data-title="Publish" data-step="110">
+  <h2 class="t b">Publishing is four steps, from your desk to the street</h2>
+  <div class="body">
+    <div class="flow">
+      <div class="node b"><b>Commit</b><span>save a named version</span></div>
+      <div class="arr fx"><svg viewBox="0 0 52 24"><path class="draw" pathLength="1" d="M2 12h46M38 3l10 9-10 9"/></svg></div>
+      <div class="node b"><b>Push</b><span>to a private GitHub repository</span></div>
+      <div class="arr fx"><svg viewBox="0 0 52 24"><path class="draw" pathLength="1" d="M2 12h46M38 3l10 9-10 9"/></svg></div>
+      <div class="node b"><b>Import</b><span>at vercel.com/new, once</span></div>
+      <div class="arr fx"><svg viewBox="0 0 52 24"><path class="draw" pathLength="1" d="M2 12h46M38 3l10 9-10 9"/></svg></div>
+      <div class="node is-key b"><b>Open</b><span>your URL, on your phone</span></div>
+    </div>
+  </div>
+  <div class="lines">
+    <p class="b"><span class="k">What is live is in GitHub.</span> Every push to main publishes again.</p>
+  </div>
+</section>
+
+<!-- 23 -->
+<section class="s" data-title="Publish, click by click" data-step="130">
+  <h2 class="t b">Publish, click by click</h2>
+  <div class="body">
+    <div class="keys steps">
+      <div class="krow b"><div class="kk"><span class="kbd">1</span></div><div><b>Ask Claude to check</b><span>“No keys, no .env files, everything committed. Do not push.”</span></div></div>
+      <div class="krow b"><div class="kk"><span class="kbd">2</span></div><div><b>Source Control → Publish Branch</b><span>Choose “Publish to GitHub private repository”.</span></div></div>
+      <div class="krow b"><div class="kk"><span class="kbd">3</span></div><div><b>vercel.com/new → Import → Deploy</b><span>Change nothing. Repository missing? Adjust GitHub App Permissions.</span></div></div>
+      <div class="krow b"><div class="kk"><span class="kbd">4</span></div><div><b>Open it on your phone</b><span>Then one change, commit, Sync Changes: it publishes itself.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 24 -->
+<section class="s" data-title="This deck is HTML" data-step="120">
+  <h2 class="t b">This deck is a single HTML file</h2>
+  <div class="body">
+    <div class="deckfile">
+      <div class="ficon b" aria-hidden="true"><div class="tagx"><i></i><i></i><i></i></div>day1.html</div>
+      <div class="facts">
+        <div class="b"><span>1</span>file, no PowerPoint</div>
+        <div class="b"><span>0</span>libraries to install</div>
+        <div class="b"><span>←→</span>arrow keys, and it works on a phone</div>
+      </div>
+    </div>
+  </div>
+  <p class="sub b">Yours takes five minutes, and publishes with your web.</p>
+</section>
+
+<!-- 25 -->
+<section class="s" data-title="Your deck">
+  <h2 class="t b">Your deck in five minutes</h2>
+  <div class="body">
+    <div class="prompt big b"><span class="who">Paste in Claude Code, inside your project</span><button class="copy" data-copy="p-deck">Copy</button><span id="p-deck">Create a 6-slide HTML presentation about my project in a single file, public/slides.html. Slides: the problem, who it is for, what my web does, how it works, why now, what I need. One idea per slide, large type, my site's colors, arrow keys to move, works on a phone. No external libraries.</span></div>
+  </div>
+  <div class="lines">
+    <p class="b">Then open <code>localhost:3000/slides.html</code>. Commit and push: it is live at your URL too.</p>
+  </div>
+</section>
+
+<!-- 26 -->
+<section class="s" data-title="Your own skill">
+  <h2 class="t b">Your own skill: my-brand</h2>
+  <div class="body">
+    <div class="prompt big b"><span class="who">Paste in Claude Code, with your own colors</span><button class="copy" data-copy="p-skill">Copy</button><span id="p-skill">Use skill-creator to create a personal skill called my-brand with my colors (#XXXXXX, #XXXXXX), my fonts, and the tone of my texts: close, no jargon. Its description must say to use it whenever I ask for a page, a slide or a text for my project. Save it in ~/.claude/skills/my-brand, not inside this project. No test cases or evals: just write the SKILL.md.</span></div>
+  </div>
+  <div class="lines">
+    <p class="b">Test it in a new conversation: “Make me a one-page price list for my project.” No colors, no tone. Does it come out in your brand?</p>
+  </div>
+</section>
+
+<!-- 27 -->
+<section class="s" data-title="Pitch" data-step="110">
+  <h2 class="t b">Sixty seconds: your problem, your web, your ask</h2>
+  <div class="body">
+    <div class="split" style="grid-template-columns:auto 1fr">
+      <svg class="ring b" viewBox="0 0 240 240" aria-hidden="true"><circle class="bg" cx="120" cy="120" r="108"/><circle class="fg draw" pathLength="1" cx="120" cy="120" r="108" style="--d:200ms"/><text x="120" y="124">60″</text></svg>
+      <div class="flow">
+        <div class="node b"><b>Problem</b><span>and who has it</span></div>
+        <div class="arr fx"><svg viewBox="0 0 52 24"><path class="draw" pathLength="1" d="M2 12h46M38 3l10 9-10 9"/></svg></div>
+        <div class="node b"><b>Your web</b><span>open the URL</span></div>
+        <div class="arr fx"><svg viewBox="0 0 52 24"><path class="draw" pathLength="1" d="M2 12h46M38 3l10 9-10 9"/></svg></div>
+        <div class="node is-key b"><b>Your ask</b><span>what you need next</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="sub b">Volunteers, with your own deck on the screen.</p>
+</section>
+
+<!-- 28 -->
+<section class="s" data-title="Days 2 and 3" data-step="120">
+  <h2 class="t b">Next: from a web page to a working app</h2>
+  <div class="body">
+    <div class="cols days">
+      <div class="card b"><span class="when">Day 2 · Saturday 16 January 2027</span><h3>Connect it</h3>
+        <ul><li>MCP: Claude talks to Vercel and Supabase</li><li>Data, forms and login</li><li>AI inside your app, and automations</li></ul></div>
+      <div class="card b"><span class="when">Day 3 · Sunday 17 January 2027</span><h3>Make it safe, then show it</h3>
+        <ul><li>Agents and a security review</li><li>Your domain and the pitch deck</li><li>Demo Day</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 29 -->
+<section class="s" data-title="Homework" data-step="110">
+  <h2 class="t b">Before Day 2</h2>
+  <div class="body">
+    <div class="hw">
+      <div class="card b"><h3>M1 · your app idea on one page</h3><p class="due">Due Sunday 13 December 2026, 23:59</p>
+        <ol><li>Who has the problem, and the pain with a number</li><li>What the app does, and how you will know it works</li><li>Three user stories, with acceptance criteria</li><li>Links to your published web and deck</li></ol></div>
+      <div class="card b"><h3>Create a Supabase account</h3><p>By Sunday 10 January, with GitHub. On Day 2 Claude connects to it.</p>
+        <h3 style="margin-top:26px">Keep shipping</h3><p>One small change a week, committed and pushed.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot"><span>Vibe Coding for Business Leaders · Day 1</span><span class="count" aria-live="polite"></span></footer>
+<div class="bar" aria-hidden="true"></div>
+</div>
+
+<script>
+(() => {
+  const stage = document.getElementById("stage");
+  const root = document.documentElement;
+  const slides = [...stage.querySelectorAll(".s")];
+  const count = stage.querySelector(".count");
+  const bar = stage.querySelector(".bar");
+  let cur = -1;
+
+  // staggered build order: every animated element in DOM order, capped so a slide finishes under ~1.2 s
+  slides.forEach((s) => {
+    const step = +(s.dataset.step || 90);
+    [...s.querySelectorAll(".b,.fx,.gx,.gf,.draw")].forEach((el, i) => {
+      if (!el.style.getPropertyValue("--d")) el.style.setProperty("--d", Math.min(i * step, 540) + "ms");
+    });
+  });
+
+  function layout() {
+    const portrait = innerWidth / innerHeight < 0.82;
+    root.classList.toggle("portrait", portrait);
+    const W = portrait ? 780 : 1600;
+    const H = portrait ? Math.round(Math.min(1800, Math.max(1150, 780 * innerHeight / innerWidth))) : 900;
+    const k = Math.min(innerWidth / W, innerHeight / H);
+    stage.style.width = W + "px";
+    stage.style.height = H + "px";
+    stage.style.transform = "translate(-50%,-50%) scale(" + k + ")";
+  }
+
+  function go(n) {
+    n = Math.max(0, Math.min(slides.length - 1, n));
+    if (n === cur) return;
+    if (cur >= 0) slides[cur].classList.remove("is-cur", "on");
+    cur = n;
+    const s = slides[cur];
+    s.classList.add("is-cur");
+    void s.offsetWidth; // restart the build each time a slide is entered
+    s.classList.add("on");
+    count.textContent = (cur + 1) + " / " + slides.length;
+    bar.style.width = ((cur + 1) / slides.length * 100) + "%";
+    document.title = s.dataset.title + " · Day 1";
+    const h = "#" + (cur + 1);
+    if (location.hash !== h) history.replaceState(null, "", h);
+  }
+  const next = () => go(cur + 1), prev = () => go(cur - 1);
+  const fromHash = () => { const n = parseInt(location.hash.slice(1), 10); return isNaN(n) ? 0 : n - 1; };
+
+  addEventListener("keydown", (e) => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key;
+    if (k === "ArrowRight" || k === "ArrowDown" || k === "PageDown" || (k === " " && !e.shiftKey) || k === "Enter") { e.preventDefault(); next(); }
+    else if (k === "ArrowLeft" || k === "ArrowUp" || k === "PageUp" || (k === " " && e.shiftKey) || k === "Backspace") { e.preventDefault(); prev(); }
+    else if (k === "Home") { e.preventDefault(); go(0); }
+    else if (k === "End") { e.preventDefault(); go(slides.length - 1); }
+    else if (k === "f" || k === "F") { if (!document.fullscreenElement) document.documentElement.requestFullscreen?.().catch(() => {}); else document.exitFullscreen?.(); }
+  });
+
+  // tap or click: left half goes back, right half goes forward
+  addEventListener("click", (e) => {
+    if (e.target.closest("button, a")) return;
+    if (String(getSelection()).length) return;
+    (e.clientX < innerWidth / 2 ? prev : next)();
+  });
+  let tx = null, ty = null;
+  addEventListener("touchstart", (e) => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+  addEventListener("touchend", (e) => {
+    if (tx === null) return;
+    const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+    tx = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) { e.preventDefault(); (dx < 0 ? next : prev)(); }
+  });
+
+  // copy buttons for the two prompts students paste
+  stage.querySelectorAll(".copy").forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      const text = document.getElementById(btn.dataset.copy).textContent;
+      try { await navigator.clipboard.writeText(text); }
+      catch {
+        const r = document.createRange(); r.selectNodeContents(document.getElementById(btn.dataset.copy));
+        const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+        try { document.execCommand("copy"); } catch {}
+        sel.removeAllRanges();
+      }
+      btn.textContent = "Copied";
+      setTimeout(() => (btn.textContent = "Copy"), 1600);
+    });
+  });
+
+  addEventListener("resize", layout);
+  addEventListener("hashchange", () => go(fromHash()));
+  layout();
+  go(fromHash());
+})();
+</script>
+</body>
+</html>

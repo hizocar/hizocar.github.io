@@ -11,8 +11,8 @@ toc: false
 <a class="curso-card" href="class1.html">
   <span class="curso-tag">Day 1 · Sun 29 Nov · 08:00</span>
   <span class="curso-sigla">Milestone M1 · problem brief</span>
-  <h3>Ship something today</h3>
-  <p>What changed in the cost of building, the toolkit map, Problem Pull vs AI Push, when vibes are enough, and a first deployed app and web page before the morning ends.</p>
+  <h3>Your first web with Claude Code</h3>
+  <p>A hands-on workshop on your own idea: how a model and an agent work, plan mode and permissions, a web built and published on Vercel, skills and CLAUDE.md, an HTML deck in five minutes, and a skill of your own.</p>
   <span class="curso-link">Open class 1 →</span>
 </a>
 
@@ -71,11 +71,11 @@ One rule applies from the first minute. Until your team has completed the Class 
 
 | Building block | What it is for | Where you practice it |
 |---|---|---|
-| Prompt and brief | Saying what you want precisely enough to be built | Class 1 |
+| Prompt and plan mode | Saying what you want precisely enough to be built, and reading the plan first | Class 1 |
 | Web page and web app | Something a real user opens in a browser | Classes 1 and 2 |
-| Project instructions | Stop repeating conventions in every conversation | Class 2 |
-| Skill | Make "how we do it here" repeatable | Class 2 |
+| Project instructions (CLAUDE.md) | Stop repeating conventions in every conversation | Classes 1 and 2 |
+| Skill | Make "how we do it here" repeatable | Classes 1 and 2 |
 | Connector (MCP) | Give the assistant scoped access to company systems | Classes 2 and 4 |
 | Agent | Let a model take steps, with your approval | Class 3 |
 | Automation | Work that starts on a schedule or an event | Class 3 |
-| Presentation | A deck generated from your evidence, verified by you | Class 5 |
+| Presentation | An HTML deck in minutes, then one generated from your evidence and verified by you | Classes 1 and 5 |

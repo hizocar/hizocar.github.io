@@ -8,9 +8,9 @@ include-after-body:
     <script src="assets/vc-core.js"></script>
 ---
 
-The course runs on one Sunday in November and one weekend in January, with seven weeks in between. Each class takes two blocks. The first block opens with a recap of the class page, which you read beforehand, and starts the build lab. The second block finishes the lab, then two teams show their work for critique and the milestone review closes the class. Classes 1 to 3 follow this pattern; Class 4 has a 30-minute recap and the lab, with no critique, and Class 5 is the pitch clinic and Demo Day.
+The course runs on one Sunday in November and one weekend in January, with seven weeks in between. Each class takes two blocks. The first block opens with a recap of the class page, which you read beforehand, and starts the build lab. The second block finishes the lab, then two teams show their work for critique and the milestone review closes the class. Classes 2 and 3 follow this pattern, and Class 1 is a hands-on workshop; Class 4 has a 30-minute recap and the lab, with no critique, and Class 5 is the pitch clinic and Demo Day.
 
-Teams of 2 or 3 form on Day 1 around a problem from one member's organization. The capstone is **one** application, and each class adds a layer to it.
+On Day 1 every student builds their own web, for their own idea. The capstone is **one** application, and each class adds a layer to it.
 
 ```{=html}
 <figure class="vc-fig" data-fig="course-layers"><figcaption>Each class adds one layer to the same product: 1, a deployed app and public page (prompt and brief); 2, login, database and undo (project instructions, a skill, a connector); 3, an AI capability with a test set (an agent step and an automation); 4, findings fixed and a decision (least privilege); 5, a pitch to a panel (a deck built with AI).</figcaption></figure>
@@ -19,34 +19,29 @@ Teams of 2 or 3 form on Day 1 around a problem from one member's organization. T
 ## Day 1, Sunday 29 November 2026
 
 ```{=html}
-<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Class 1 · framework and the first part of the build lab:120|Coffee break:15|Class 1 · build lab, critique and milestone review:120|Coffee break:15|Setup clinic · your tools ready, in the room:120"></div>
+<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Class 1 · welcome, setup check, how it works:120|Coffee break:15|Class 1 · lab: your web, then skills:120|Coffee break:15|Class 1 · publish, HTML deck, your skill, pitch:120"></div>
 ```
 
-### Class 1. Ship something today
+### Class 1. Your first web with Claude Code
 
-Class page: [Class 1 · Ship something today](class1.html)
+Class page: [Class 1 · Your first web with Claude Code](class1.html) · Slides: [Day 1](slides/day1.html)
 
-**Build goal.** A deployed web application that a real user could open on a phone, and a one-page public site that explains it.
+**Build goal.** Every student, on their own idea: a web live at a public address, a six-slide HTML deck published with it, and a personal skill that keeps their brand.
 
-**Before Day 1.** Read the class page (90 min). Create a GitHub account, and the app builder account if your instructor's email has named it; otherwise you create it during the live demo. Read Karpathy's original post on vibe coding and Willison's "Not all AI-assisted programming is vibe coding" (20 min). Bring one problem from your organization in which people enter, read or act on information by hand, and a laptop on which you can install programs.
+**Before Day 1.** The [setup guide](setup.html), about 45 minutes: a Claude Pro plan (paid by each student), GitHub and Vercel accounts, VS Code, Git, Node.js and Claude Code installed, and five lines about your idea. Bring the laptop and its charger.
 
-**08:00 to 10:00.** Framework recap (45): what changed in the cost of building software; the toolkit map; vibe coding versus AI-assisted engineering; Problem Pull versus AI Push; the one-paragraph brief. Then the build lab starts with the instructor's live demo, which includes a bug and its recovery, and teams begin their own first version (75).
+**08:00 to 10:00.** Live demo: a page from an empty folder to a phone in about ten minutes (20). Setup check: the five tests pass on every laptop (40). How it works, with three short tries in Claude Code: what a model does, tokens and the usage limit, the context window, chat versus agent, a good request, plan mode and permissions (60).
 
-**10:15 to 12:15.** The build lab continues until the app is deployed and open on a phone, and the public page is up (45). Critique: two teams show their app and the class applies the rubric (45). Milestone review: M1 explained, teams confirmed (30).
+**10:15 to 12:15.** Lab 1, your web: brief, plan mode, build, localhost, one change at a time, going back with rewind, a first commit (75). Skills and memory: the frontend-design plugin from the official catalog, a redesign with it, CLAUDE.md with `/init` (45).
 
-### Setup clinic
-
-**12:30 to 14:30.** The [toolkit setup guide](setup.html) done in the room, with the instructor walking between tables: the remaining accounts, the app moved to a private repository, the assistant running it on every member's laptop, the database project, the hosting address, and where keys go (90). Then the M1 brief is started in teams (30). Everyone leaves Day 1 with a working setup, so the seven weeks ahead depend on nobody's luck.
+**12:30 to 14:30.** Publish: a private GitHub repository, an import in Vercel, the address open on a phone, a change that publishes itself (45). An HTML deck in five minutes, saved in the project and published with it (15). Your own skill, `my-brand`, created with skill-creator and tested in a clean conversation (35). Sixty-second pitches with the deck, what comes on Days 2 and 3, and M1 explained (25).
 
 ## Between the days, 30 November 2026 to 15 January 2027
 
 | By | What | Who |
 |---|---|---|
 | Sunday 13 December 2026, 23:59 | **M1.** Problem brief and product specification. Written feedback comes back before Day 2. | Individual |
-| Sunday 10 January 2027 | The five checks of the setup guide pass, and "Before Day 2" is done: the model provider's account, a USD 10 monthly spending limit and the key on the hosting platform. | Team |
-| Friday 15 January 2027 | The pages of Classes 2 to 5 read, about six and a half hours spread over the weeks, with Anthropic's *Building effective agents* and the summary of the OWASP Top 10 for LLM Applications. | Individual |
-| Friday 15 January 2027 | 20 to 30 messages collected for the test set: real ones with names, phone numbers and addresses changed, or realistic ones you write. | Team |
-| Friday 15 January 2027 | The baseline of your brief's metric: time five requests done the current way, before any tool. Then rehearse the structure of the pitch once, against the clock, with your planned numbers. | Team |
+| Sunday 10 January 2027 | The five tests of the setup guide still pass, your Claude Pro plan is active, and your free Supabase account exists. | Individual |
 
 Questions go to the course channel or to [sebastian.azocarm@usm.cl](mailto:sebastian.azocarm@usm.cl).
 

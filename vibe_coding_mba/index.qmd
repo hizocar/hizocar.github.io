@@ -36,9 +36,9 @@ include-after-body:
       <p class="vh-day-date">Sunday, November 2026</p>
       <p class="vh-day-hours">08:00 to 14:30, six hours</p>
       <ul class="vh-blocks">
-        <li><time>08:00</time><span><a href="class1.html">Class 1</a>Ship something today</span></li>
-        <li><time>10:15</time><span>Class 1 continues: the build lab and the critique</span></li>
-        <li><time>12:30</time><span>Setup clinic: every laptop ready for the weeks ahead</span></li>
+        <li><time>08:00</time><span><a href="class1.html">Class 1</a>Your first web with Claude Code</span></li>
+        <li><time>10:15</time><span>Lab: your own web, then skills and memory</span></li>
+        <li><time>12:30</time><span>Publish it, an HTML deck, your own skill</span></li>
       </ul>
     </li>
     <li class="vh-day">
@@ -63,17 +63,16 @@ include-after-body:
       </ul>
     </li>
   </ol>
-  <p class="vh-between">Between the first and second days there are seven weeks: time to submit the problem brief, read the pages of Classes 2 to 5 at your own pace, and finish the setup. The <a href="sessions.html">schedule</a> gives every block, break and due date.</p>
+  <p class="vh-between">Between the first and second days there are seven weeks: time to submit the brief, keep improving your web, and prepare for Day 2. The <a href="sessions.html">schedule</a> gives every block, break and due date.</p>
 </section>
 
 <section class="vh-section" aria-labelledby="vh-before">
   <h2 id="vh-before">Before Sunday 29 November</h2>
   <ul class="vc-checklist" id="before-day-1">
+    <li><span>Subscribe to the <strong>Claude Pro</strong> plan at <a href="https://claude.ai">claude.ai</a>, about USD 20 a month, paid by each student. Claude Code does not work on the free plan.</span></li>
+    <li><span>Create GitHub and Vercel accounts, and install VS Code, Git, Node.js and Claude Code: the <a href="setup.html">setup guide</a>, about 45 minutes.</span></li>
+    <li>Write five lines about your own idea: a business, a project, a service or a portfolio. You build its web on Sunday.</li>
     <li>Bring a laptop on which you can install programs, and its charger.</li>
-    <li>Create a GitHub account with a personal email you will keep after the course.</li>
-    <li>Read the <a href="class1.html">Class 1 page</a>, about 90 minutes.</li>
-    <li>Bring one problem from your organization in which people enter, read or act on information by hand.</li>
-    <li>Watch for your instructor's email naming the AI assistant and app builder for the course, and create the builder account if you can. If the email has not arrived, come anyway: you create the builder account during the live demo that opens the lab, and the remaining accounts in the setup clinic at 12:30.</li>
   </ul>
 </section>
 
@@ -116,12 +115,12 @@ include-after-body:
   <ul class="vh-materials">
     <li><a href="classes.html">Classes</a><span>Five self-teaching pages with simulators, practice questions and the build lab of each class.</span></li>
     <li><a href="sessions.html">Schedule</a><span>Every block, break and due date of the three days.</span></li>
-    <li><a href="setup.html">Toolkit setup guide</a><span>Accounts, private repository, database, hosting and keys, step by step.</span></li>
+    <li><a href="setup.html">Setup guide</a><span>Claude Pro, GitHub, Vercel, VS Code and Claude Code, with five tests.</span></li>
+    <li><a href="slides/day1.html">Day 1 slides</a><span>The deck projected on Sunday 29 November, itself a single HTML file.</span></li>
     <li><a href="rubric.html">Rubric</a><span>Four criteria, four levels, and how they apply to each graded component.</span></li>
     <li><a href="security-checklist.html">Security checklist</a><span>Fourteen checks a manager can run on an app built with AI.</span></li>
     <li><a href="syllabus.html">Syllabus</a><span>The official program: competencies, learning outcomes, contents and bibliography.</span></li>
     <li><a href="files/Vibe_Coding_MBA_Elective_Syllabus.docx">Syllabus in Word</a><span>The program in the USM MBA template.</span></li>
-    <li><a href="https://github.com/hizocar/vibe-coding-starter">Starter repository</a><span>A working first version of the course app, ready to copy if yours stays in the builder.</span></li>
   </ul>
 </section>
 

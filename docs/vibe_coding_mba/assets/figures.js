@@ -34,6 +34,34 @@
     back: "Then back to step 4. Building is the short step; judging is yours.",
   });
 
+  figure("c1-agent", {
+    kind: "flow",
+    title: "What Claude Code does with one request",
+    nodes: [
+      { k: "1", t: "You ask", d: "Context, goal, limits. Then: plan first." },
+      { k: "2", t: "It reads", d: "The files of the folder you opened, and CLAUDE.md." },
+      { k: "3", t: "It plans", d: "In plan mode it stops here and waits for you.", tone: "ai" },
+      { k: "4", t: "It acts", d: "Edits files, runs commands. Asks before each new kind of action." },
+      { k: "5", t: "It checks", d: "Runs the page, reads the error, tries again." },
+      { k: "6", t: "You judge", d: "Open the page and use it. Accept, or ask one change.", tone: "ink" },
+    ],
+    loop: true,
+    back: "A chat answers and stops. An agent loops through steps 2 to 5 until the job is done, or until you press Esc.",
+  });
+
+  figure("c1-ship", {
+    kind: "flow",
+    title: "From your laptop to a public address",
+    nodes: [
+      { k: "1", t: "Your laptop", d: "Your web at localhost, visible only to you.", tag: "test 1" },
+      { k: "2", t: "Commit", d: "A named snapshot of the project at a moment it worked." },
+      { k: "3", t: "Push to GitHub", d: "The snapshot goes to your private repository.", tone: "ai" },
+      { k: "4", t: "Vercel", d: "Sees the push and rebuilds by itself, in about a minute." },
+      { k: "5", t: "Public address", d: "A vercel.app link anyone can open.", tone: "ink", tag: "test 2: on a phone" },
+    ],
+    back: "From now on every push to main publishes. What is live must be in GitHub.",
+  });
+
   figure("c2-three-ai", {
     kind: "lanes",
     title: "Three things people call “the AI”",

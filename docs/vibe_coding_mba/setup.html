@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sebastián Azócar - Toolkit setup guide</title>
+<title>Sebastián Azócar - Setup guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,11 +81,11 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="assets/vc.css">
-<meta property="og:title" content="Sebastián Azócar - Toolkit setup guide">
-<meta property="og:description" content="From zero to an app you can edit, with a database and a public address. No programming required.">
+<meta property="og:title" content="Sebastián Azócar - Setup guide">
+<meta property="og:description" content="Three accounts, four programs, five tests. About 45 minutes, before Sunday 29 November. No programming required.">
 <meta property="og:site-name" content="Sebastián Azócar">
-<meta name="twitter:title" content="Sebastián Azócar - Toolkit setup guide">
-<meta name="twitter:description" content="From zero to an app you can edit, with a database and a public address. No programming required.">
+<meta name="twitter:title" content="Sebastián Azócar - Setup guide">
+<meta name="twitter:description" content="Three accounts, four programs, five tests. About 45 minutes, before Sunday 29 November. No programming required.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -141,21 +141,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-tools-and-what-each-is-for" id="toc-the-tools-and-what-each-is-for" class="nav-link active" data-scroll-target="#the-tools-and-what-each-is-for">The tools and what each is for</a></li>
-  <li><a href="#the-data-rule" id="toc-the-data-rule" class="nav-link" data-scroll-target="#the-data-rule">The data rule</a></li>
-  <li><a href="#before-day-1-about-20-minutes-every-student" id="toc-before-day-1-about-20-minutes-every-student" class="nav-link" data-scroll-target="#before-day-1-about-20-minutes-every-student">Before Day 1 (about 20 minutes, every student)</a></li>
-  <li><a href="#in-the-setup-clinic-day-1-1230-to-1430" id="toc-in-the-setup-clinic-day-1-1230-to-1430" class="nav-link" data-scroll-target="#in-the-setup-clinic-day-1-1230-to-1430">In the setup clinic (Day 1, 12:30 to 14:30)</a>
+  <li><a href="#the-pieces-one-sentence-each" id="toc-the-pieces-one-sentence-each" class="nav-link active" data-scroll-target="#the-pieces-one-sentence-each">The pieces, one sentence each</a></li>
+  <li><a href="#what-it-costs" id="toc-what-it-costs" class="nav-link" data-scroll-target="#what-it-costs">What it costs</a></li>
+  <li><a href="#part-1-accounts-15-minutes" id="toc-part-1-accounts-15-minutes" class="nav-link" data-scroll-target="#part-1-accounts-15-minutes">Part 1 · Accounts (15 minutes)</a></li>
+  <li><a href="#part-2-programs-30-minutes" id="toc-part-2-programs-30-minutes" class="nav-link" data-scroll-target="#part-2-programs-30-minutes">Part 2 · Programs (30 minutes)</a>
   <ul class="collapse">
-  <li><a href="#part-a.-put-the-app-in-a-private-repository-10-minutes-once-per-team" id="toc-part-a.-put-the-app-in-a-private-repository-10-minutes-once-per-team" class="nav-link" data-scroll-target="#part-a.-put-the-app-in-a-private-repository-10-minutes-once-per-team">Part A. Put the app in a private repository (10 minutes, once per team)</a></li>
-  <li><a href="#part-b.-open-the-repository-in-your-assistant-30-minutes-every-member" id="toc-part-b.-open-the-repository-in-your-assistant-30-minutes-every-member" class="nav-link" data-scroll-target="#part-b.-open-the-repository-in-your-assistant-30-minutes-every-member">Part B. Open the repository in your assistant (30 minutes, every member)</a></li>
-  <li><a href="#part-c.-create-the-database-project-15-minutes-once-per-team" id="toc-part-c.-create-the-database-project-15-minutes-once-per-team" class="nav-link" data-scroll-target="#part-c.-create-the-database-project-15-minutes-once-per-team">Part C. Create the database project (15 minutes, once per team)</a></li>
-  <li><a href="#part-d.-connect-the-hosting-platform-10-minutes-once-per-team" id="toc-part-d.-connect-the-hosting-platform-10-minutes-once-per-team" class="nav-link" data-scroll-target="#part-d.-connect-the-hosting-platform-10-minutes-once-per-team">Part D. Connect the hosting platform (10 minutes, once per team)</a></li>
-  <li><a href="#part-e.-five-checks-10-minutes" id="toc-part-e.-five-checks-10-minutes" class="nav-link" data-scroll-target="#part-e.-five-checks-10-minutes">Part E. Five checks (10 minutes)</a></li>
+  <li><a href="#vs-code" id="toc-vs-code" class="nav-link" data-scroll-target="#vs-code">1. VS Code</a></li>
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">2. Git</a></li>
+  <li><a href="#node.js" id="toc-node.js" class="nav-link" data-scroll-target="#node.js">3. Node.js</a></li>
+  <li><a href="#claude-code" id="toc-claude-code" class="nav-link" data-scroll-target="#claude-code">4. Claude Code</a></li>
+  <li><a href="#where-your-projects-live" id="toc-where-your-projects-live" class="nav-link" data-scroll-target="#where-your-projects-live">Where your projects live</a></li>
   </ul></li>
-  <li><a href="#before-day-2-about-25-minutes-once-per-team-by-sunday-10-january-2027" id="toc-before-day-2-about-25-minutes-once-per-team-by-sunday-10-january-2027" class="nav-link" data-scroll-target="#before-day-2-about-25-minutes-once-per-team-by-sunday-10-january-2027">Before Day 2 (about 25 minutes, once per team, by Sunday 10 January 2027)</a></li>
-  <li><a href="#for-the-morning-digest-class-3-option-b" id="toc-for-the-morning-digest-class-3-option-b" class="nav-link" data-scroll-target="#for-the-morning-digest-class-3-option-b">For the morning digest (Class 3, option B)</a></li>
-  <li><a href="#keys" id="toc-keys" class="nav-link" data-scroll-target="#keys">Keys</a></li>
-  <li><a href="#if-you-could-not-get-your-app-out-of-the-builder" id="toc-if-you-could-not-get-your-app-out-of-the-builder" class="nav-link" data-scroll-target="#if-you-could-not-get-your-app-out-of-the-builder">If you could not get your app out of the builder</a></li>
+  <li><a href="#a-warm-up-that-saves-time-on-sunday-5-to-10-minutes" id="toc-a-warm-up-that-saves-time-on-sunday-5-to-10-minutes" class="nav-link" data-scroll-target="#a-warm-up-that-saves-time-on-sunday-5-to-10-minutes">A warm-up that saves time on Sunday (5 to 10 minutes)</a></li>
+  <li><a href="#the-five-tests" id="toc-the-five-tests" class="nav-link" data-scroll-target="#the-five-tests">The five tests</a></li>
+  <li><a href="#on-a-work-laptop" id="toc-on-a-work-laptop" class="nav-link" data-scroll-target="#on-a-work-laptop">On a work laptop</a></li>
+  <li><a href="#before-day-2" id="toc-before-day-2" class="nav-link" data-scroll-target="#before-day-2">Before Day 2</a></li>
   <li><a href="#if-you-could-not-finish" id="toc-if-you-could-not-finish" class="nav-link" data-scroll-target="#if-you-could-not-finish">If you could not finish</a></li>
   </ul>
 </nav>
@@ -165,8 +165,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Toolkit setup guide</h1>
-<p class="subtitle lead">From zero to an app you can edit, with a database and a public address. No programming required.</p>
+<h1 class="title">Setup guide</h1>
+<p class="subtitle lead">Three accounts, four programs, five tests. About 45 minutes, before Sunday 29 November. No programming required.</p>
 </div>
 
 
@@ -181,10 +181,10 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This guide gets your tools ready. It is written for someone who has never programmed. The exact names of buttons change between tools and between months, so each step says what you are trying to achieve and what you should see when it worked. Your instructor confirms the specific tools by email. If that email has not reached you before Day 1, come anyway: the app builder account is created during the live demo that opens the Class 1 lab, and the remaining accounts in the setup clinic.</p>
-<p>If a step fails, do not guess. Copy the sentence in “Ask the assistant” and paste it, with the error message, into your assistant.</p>
-<section id="the-tools-and-what-each-is-for" class="level2">
-<h2 class="anchored" data-anchor-id="the-tools-and-what-each-is-for">The tools and what each is for</h2>
+<p>Do this at home, before Day 1. If you arrive with the accounts created and the programs installed, Day 1 goes to building instead of waiting for confirmation emails. If something fails, come anyway: from 08:20 to 09:00 on Day 1 there is a setup check, and neighbors help neighbors.</p>
+<p><strong>Golden rule.</strong> If a command answers with an error in red, do not continue to the next step. Copy the whole error and bring it to class, or paste it into <a href="https://claude.ai">claude.ai</a> with: <em>“What does this mean and how do I fix it on Mac / Windows?”</em></p>
+<section id="the-pieces-one-sentence-each" class="level2">
+<h2 class="anchored" data-anchor-id="the-pieces-one-sentence-each">The pieces, one sentence each</h2>
 <table class="table">
 <colgroup>
 <col style="width: 33%">
@@ -193,192 +193,142 @@ ul.task-list li input[type="checkbox"] {
 </colgroup>
 <thead>
 <tr class="header">
-<th>Tool</th>
-<th>What it is for</th>
-<th>You will recognize it by</th>
+<th>Piece</th>
+<th>What it is</th>
+<th>Think of it as</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>An AI assistant that supports skills, connectors and agents</td>
-<td>Thinking, drafting, and later building in your repository</td>
-<td>A chat window that can also open a folder of files and act on it</td>
+<td><strong>VS Code</strong></td>
+<td>The editor where the files of your web live</td>
+<td>Your desk</td>
 </tr>
 <tr class="even">
-<td>An app builder</td>
-<td>Your first version, from a sentence to a deployed app</td>
-<td>You describe the app and it appears, with a “Publish” button</td>
+<td><strong>Claude Code</strong></td>
+<td>An assistant that reads, writes and runs code in your project</td>
+<td>A very capable colleague working next to you</td>
 </tr>
 <tr class="odd">
-<td>GitHub</td>
-<td>The home of your app’s files, with every version kept</td>
-<td>A website where each project is a “repository”</td>
+<td><strong>Git and GitHub</strong></td>
+<td>Every version of your files, kept and backed up</td>
+<td>A drive with the full history of changes</td>
 </tr>
 <tr class="even">
-<td>A managed database and a hosting platform</td>
-<td>Where the data lives, and where the public address comes from</td>
-<td>Dashboards with a project name, keys and a web address</td>
+<td><strong>Vercel</strong></td>
+<td>The service that publishes your web at a public address</td>
+<td>The shop where you open the doors</td>
 </tr>
 <tr class="odd">
-<td>A model provider’s developer account (before Day 2)</td>
-<td>The model your app calls, billed by use</td>
-<td>A console with usage, a spending limit and API keys</td>
+<td><strong>Node.js</strong></td>
+<td>The engine your web runs on while you build it</td>
+<td>The kitchen behind the shop</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Expected cost for the course:</strong> USD 45 to 60 per student: two months of the assistant’s individual plan and about USD 5 to 10 of model usage. Confirm the current prices before you pay; they change.</p>
 </section>
-<section id="the-data-rule" class="level2">
-<h2 class="anchored" data-anchor-id="the-data-rule">The data rule</h2>
-<p>Until your team has completed the Class 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade. A realistic message with the names, phone numbers and addresses changed teaches you exactly as much as the real one.</p>
-</section>
-<section id="before-day-1-about-20-minutes-every-student" class="level2">
-<h2 class="anchored" data-anchor-id="before-day-1-about-20-minutes-every-student">Before Day 1 (about 20 minutes, every student)</h2>
-<p>Day 1 is Sunday 29 November 2026. Only the GitHub account and the problem are certain to be needed before you arrive. Create the app builder account too if you know which one the course uses, because the Class 1 lab uses it at about 08:50; otherwise you create it during the live demo that opens the lab.</p>
-<ul class="vc-checklist" id="setup-before-1">
-<li>Create an account on the AI assistant named by your instructor, on the individual paid plan if the free plan does not include skills and connectors.</li>
-<li>Create an account on the app builder. The free tier is enough for Class 1.</li>
-<li>Create a GitHub account. Use a personal email you will keep after the course.</li>
-<li>Write down the one business problem you will bring: who has it, how often, and what it costs them.</li>
-</ul>
-</section>
-<section id="in-the-setup-clinic-day-1-1230-to-1430" class="level2">
-<h2 class="anchored" data-anchor-id="in-the-setup-clinic-day-1-1230-to-1430">In the setup clinic (Day 1, 12:30 to 14:30)</h2>
-<p>In Class 1 you built a first version inside the app builder. In the third block of Day 1 you move it, in the room and with the instructor walking between tables, to a place where your assistant can work on it properly, and you prepare the database. Parts A to E take about 75 minutes; the clinic gives them 90, with time to fix what fails, and the last 30 minutes go to the M1 brief. If you miss Day 1, do these parts on your own before Sunday 10 January 2027 and write to the course channel when you get stuck.</p>
-<p><strong>Who does what.</strong> Parts A, C and D are done once per team, by the member whose builder account holds the app. Part B is done by every member, on their own laptop. Do the parts in order.</p>
-<section id="part-a.-put-the-app-in-a-private-repository-10-minutes-once-per-team" class="level3">
-<h3 class="anchored" data-anchor-id="part-a.-put-the-app-in-a-private-repository-10-minutes-once-per-team">Part A. Put the app in a private repository (10 minutes, once per team)</h3>
-<p><strong>Goal:</strong> the files of your app live in a GitHub repository that only your team can see.</p>
-<ol type="1">
-<li>In the app builder, open your project and find the option to connect to GitHub or export the project. It is usually in the project settings or behind a GitHub icon.</li>
-<li>Allow the builder to create a repository in your GitHub account. Name it after your product, for example <code>quotedesk</code>.</li>
-<li>Open GitHub in your browser, find the new repository, open its settings, and confirm its visibility is <strong>Private</strong>. If it says Public, change it now.</li>
-<li>In the repository settings, invite your teammates as collaborators.</li>
-</ol>
-<p><strong>It worked when:</strong> you can see a list of files in the repository on GitHub, a small padlock or the word “Private” sits next to its name, and your teammates can open it.</p>
-<p><strong>Ask the assistant:</strong> “I am not a programmer. I built an app in [builder name] and I need its files in a private GitHub repository. Tell me exactly where to click, one step at a time, and wait for me to confirm each step.”</p>
-</section>
-<section id="part-b.-open-the-repository-in-your-assistant-30-minutes-every-member" class="level3">
-<h3 class="anchored" data-anchor-id="part-b.-open-the-repository-in-your-assistant-30-minutes-every-member">Part B. Open the repository in your assistant (30 minutes, every member)</h3>
-<p><strong>Goal:</strong> your assistant can read and change the files of your app on your own laptop.</p>
-<ol type="1">
-<li>Install the desktop version of your assistant, or the editor your instructor named, on your laptop.</li>
-<li>Sign in to GitHub from inside it when it asks.</li>
-<li>Choose the option to open a repository from GitHub (it may be called “clone”, which means download a linked copy), pick your repository from the list, and choose a folder on your laptop to keep it in.</li>
-<li>Ask the assistant: “Describe this project to me in five sentences. What does it do, what are its main parts, and how do I run it on my laptop to see it?”</li>
-<li>Follow its instructions to run the app on your laptop. It will ask to install two free programs (Git and Node.js) and may ask for your computer password; say yes. Allow 30 minutes the first time. A browser tab opens with your app in it.</li>
-</ol>
-<p><strong>It worked when:</strong> the assistant describes your app correctly and you can see the app in a browser tab on your own laptop.</p>
-<p><strong>Ask the assistant:</strong> “I cannot see my app running. Here is what I see: [paste]. Fix it and tell me in one sentence what was wrong.”</p>
-</section>
-<section id="part-c.-create-the-database-project-15-minutes-once-per-team" class="level3">
-<h3 class="anchored" data-anchor-id="part-c.-create-the-database-project-15-minutes-once-per-team">Part C. Create the database project (15 minutes, once per team)</h3>
-<p><strong>Goal:</strong> an empty database exists, ready for Class 2. You do not design tables now.</p>
-<ol type="1">
-<li>Create an account on the managed database service named by your instructor and create a new project. Give it the same name as your product. Choose the region closest to your users.</li>
-<li>The service shows you a project address and two keys. Read the section “Keys” below before you copy anything.</li>
-<li>Put the project address and the <strong>publishable</strong> key in your project’s settings, following your assistant’s instructions (see “Ask the assistant” in the Keys section). The <strong>secret</strong> key waits for Part D.</li>
-<li>Do not create tables. Your team does that together in the Class 2 lab.</li>
-</ol>
-<p><strong>It worked when:</strong> you can see an empty project dashboard, your project’s settings hold the address and the publishable key, and no secret key is anywhere in the repository.</p>
-</section>
-<section id="part-d.-connect-the-hosting-platform-10-minutes-once-per-team" class="level3">
-<h3 class="anchored" data-anchor-id="part-d.-connect-the-hosting-platform-10-minutes-once-per-team">Part D. Connect the hosting platform (10 minutes, once per team)</h3>
-<p><strong>Goal:</strong> every time your team saves a checkpoint, a public address updates by itself.</p>
-<ol type="1">
-<li>Create an account on the hosting platform named by your instructor, signing in with GitHub.</li>
-<li>Choose “import a project” or “new project” and pick your repository.</li>
-<li>Before you deploy, open the platform’s page for “environment variables” or “secrets” (settings stored on the server, outside the code) and add the database project’s address, its publishable key and its <strong>secret</strong> key there. This page is the only place a secret key is ever typed.</li>
-<li>Accept the suggested settings and deploy. The platform gives you a public address.</li>
-<li>Open that address on your phone.</li>
-</ol>
-<p><strong>It worked when:</strong> your app opens on your phone at an address from the hosting platform, not from the builder, and the secret key appears in the hosting platform’s settings and nowhere else: no chat, no message, no file.</p>
-</section>
-<section id="part-e.-five-checks-10-minutes" class="level3">
-<h3 class="anchored" data-anchor-id="part-e.-five-checks-10-minutes">Part E. Five checks (10 minutes)</h3>
-<ul class="vc-checklist" id="setup-before-2">
-<li>The repository is private, and every teammate can open it.</li>
-<li>Every member's assistant can describe the project and run it on their laptop.</li>
-<li>The database project exists and its secret key has not been pasted into any chat, message or file.</li>
-<li>The hosting address opens on a phone.</li>
-<li>You asked the assistant to make one small visible change (for example the page title), saved a checkpoint, and saw the change appear at the public address a minute later.</li>
-</ul>
-<p>A <strong>checkpoint</strong> is a named snapshot of the whole app at a moment it worked. In this course, saving a checkpoint always includes sending it to GitHub, which is what updates your public address. Until then, a change exists only on one laptop.</p>
-</section>
-</section>
-<section id="before-day-2-about-25-minutes-once-per-team-by-sunday-10-january-2027" class="level2">
-<h2 class="anchored" data-anchor-id="before-day-2-about-25-minutes-once-per-team-by-sunday-10-january-2027">Before Day 2 (about 25 minutes, once per team, by Sunday 10 January 2027)</h2>
-<p>In Class 3, on the afternoon of Day 2, your app calls a language model. That needs an account that is separate from your assistant subscription and is billed by use.</p>
-<ol type="1">
-<li>Create an account on the model provider’s developer console named by your instructor. Add USD 5 of credit.</li>
-<li>Set a monthly spending limit of USD 10 and an email alert.</li>
-<li>Create one API key (a secret key that lets your app use the model), name it after your product, and type it into your hosting platform’s environment variables page. Nowhere else.</li>
-</ol>
-<p><strong>It worked when:</strong> the key appears on the hosting platform’s page, the spending limit shows in the provider’s console, and the key is in no chat, message or file.</p>
-<p>Because the key lives only on the hosting platform, the AI feature will not run on your laptop. In the Class 3 lab you save a checkpoint, wait a minute for the public address to update, and test there.</p>
-</section>
-<section id="for-the-morning-digest-class-3-option-b" class="level2">
-<h2 class="anchored" data-anchor-id="for-the-morning-digest-class-3-option-b">For the morning digest (Class 3, option B)</h2>
-<p>One of the two options in Class 3 is a morning digest that your team’s assistant prepares on a schedule. The assistant cannot see inside your deployed app, so you hand it a file through the same door it already uses for the price list.</p>
-<ol type="1">
-<li>Ask the building assistant: “Add a manager-only button ‘Export pending requests’ that downloads a file with customer, time received and rep. No prices, no phone numbers.”</li>
-<li>Save that file each morning into the shared folder your price-list connector already reads. In the lab you do this once by hand.</li>
-<li>Ask your assistant one question that needs the file (“how many requests are older than three hours?”) and check the answer against the app.</li>
-</ol>
-<p><strong>It worked when:</strong> the answer matches what you see in the app, and the connector’s settings still show read access and nothing else.</p>
-<p>A real deployment needs a view that refreshes by itself and a second alert channel. Note both as open items in your risk memo.</p>
-</section>
-<section id="keys" class="level2">
-<h2 class="anchored" data-anchor-id="keys">Keys</h2>
-<p>A key is a long string that lets software use a service on your behalf. Treat it like the keys of a building.</p>
+<section id="what-it-costs" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-costs">What it costs</h2>
 <table class="table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Kind of key</th>
-<th>Who may see it</th>
-<th>Where it goes</th>
+<th>Item</th>
+<th>Cost</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Publishable key</strong> (the database service may call it “anon” or “public”)</td>
-<td>Anyone. It is designed to reach the browser.</td>
-<td>In the project’s settings, where the assistant puts it</td>
+<td>Claude <strong>Pro</strong> plan, paid by each student</td>
+<td>About USD 20 a month. Claude Code does not work on the free plan. You need it active on Day 1 and from Day 2 to Day 3; keeping it between them lets you practice.</td>
 </tr>
 <tr class="even">
-<td><strong>Secret key</strong> (it may be called “service” or “secret”; the key of the model provider is always secret)</td>
-<td>Nobody outside the server</td>
-<td>On the hosting platform’s “environment variables” or “secrets” page, and nowhere else</td>
+<td>GitHub, Vercel Hobby, Supabase Free</td>
+<td>Free</td>
 </tr>
 </tbody>
 </table>
-<p>Three rules that are never broken:</p>
-<ol type="1">
-<li>A secret key is never pasted into a chat, an email, a slide, a screenshot or the repository.</li>
-<li>If a secret key was ever pasted somewhere it should not be, it is revoked in the service’s dashboard and a new one is created. Deleting the message is not enough.</li>
-<li>The publishable key does not protect your data. The rules inside the database do. You set the first rules in Class 2, with the login, and tighten and test them in Class 4.</li>
-</ol>
-<p><strong>Ask the assistant:</strong> “I have a publishable key and a secret key for [service]. Tell me exactly where each one goes in this project and in [hosting platform], and confirm that the secret key will never be sent to the browser. Do not ask me to paste the secret key into this chat.”</p>
+<p>Confirm the current price at <a href="https://claude.ai">claude.ai</a> before you pay; prices change.</p>
 </section>
-<section id="if-you-could-not-get-your-app-out-of-the-builder" class="level2">
-<h2 class="anchored" data-anchor-id="if-you-could-not-get-your-app-out-of-the-builder">If you could not get your app out of the builder</h2>
-<p>Use the course starter instead of Part A. It is the app as it stands at the end of Class 1: paste a message, pick a customer, save to today’s list.</p>
-<ol type="1">
-<li>Open <a href="https://github.com/hizocar/vibe-coding-starter">github.com/hizocar/vibe-coding-starter</a>. If the page says it cannot be found, ask your instructor for an invitation and open the link again.</li>
-<li>Press <strong>Use this template</strong>, then <strong>Create a new repository</strong>. Name it after your product, choose <strong>Private</strong>, and create it.</li>
-<li>Invite your teammates in the new repository’s settings.</li>
-<li>Continue this guide from Part B with your new repository. In the lab you will reshape its one screen to fit your own product.</li>
-</ol>
-<p><strong>It worked when:</strong> your own copy shows the word “Private” next to its name and contains a file called <code>AGENTS.md</code>, the standing instructions your assistant will read.</p>
+<section id="part-1-accounts-15-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-accounts-15-minutes">Part 1 · Accounts (15 minutes)</h2>
+<p>Use <strong>the same email</strong> for all of them. A personal email you will keep after the MBA is best.</p>
+<ul class="vc-checklist" id="setup-accounts">
+<li><span><strong>Claude</strong> at <a href="https://claude.ai">claude.ai</a>, with the <strong>Pro</strong> plan or higher.</span></li>
+<li><span><strong>GitHub</strong> at <a href="https://github.com/signup">github.com/signup</a>. Free.</span></li>
+<li><span><strong>Vercel</strong> at <a href="https://vercel.com/signup">vercel.com/signup</a>. Choose <strong>Continue with GitHub</strong> and the <strong>Hobby</strong> plan (free).</span></li>
+<li><span>Write five lines about <strong>your idea</strong>: what the web is for, who visits it, what they should do there, two sites whose look you like, and what you do not want.</span></li>
+</ul>
+</section>
+<section id="part-2-programs-30-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-programs-30-minutes">Part 2 · Programs (30 minutes)</h2>
+<p>Everything happens in a <strong>terminal</strong>, a window where you type instructions to your computer. On a Mac: ⌘ + Space, type <code>Terminal</code>, Enter. On Windows: Start menu, type <code>PowerShell</code>, open it. To run a command, copy it, paste it into the terminal and press Enter. After each program there is a <strong>test</strong>: do not move on if it fails.</p>
+<section id="vs-code" class="level3">
+<h3 class="anchored" data-anchor-id="vs-code">1. VS Code</h3>
+<p>Download it from <a href="https://code.visualstudio.com">code.visualstudio.com</a> and install it like any program. On a Mac, drag it into <strong>Applications</strong>; do not open it from Downloads. Open it, and in the top menu choose <strong>Terminal → New Terminal</strong>. From here on, use that terminal.</p>
+<p><strong>Test:</strong> <code>code --version</code> shows a number. On a Mac, if it says <code>command not found: code</code>: press ⌘ + Shift + P, type <em>Shell Command: Install ‘code’ command in PATH</em>, and press Enter.</p>
+</section>
+<section id="git" class="level3">
+<h3 class="anchored" data-anchor-id="git">2. Git</h3>
+<div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Mac</div><div class="vc-prompt-b">xcode-select --install</div></div>
+<p>A window opens: accept and install, which takes a few minutes. <strong>Windows:</strong> download it from <a href="https://git-scm.com/download/win">git-scm.com</a> and keep every default option. Then tell Git who you are, with the same email as GitHub:</p>
+<div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Mac and Windows</div><div class="vc-prompt-b">git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"</div></div>
+<p><strong>Test:</strong> <code>git --version</code> shows something like <code>git version 2.4x</code>.</p>
+</section>
+<section id="node.js" class="level3">
+<h3 class="anchored" data-anchor-id="node.js">3. Node.js</h3>
+<p>Go to <a href="https://nodejs.org">nodejs.org</a>, download the <strong>LTS</strong> version (the recommended one, not “Current”) and install it with the default options. Then <strong>close and reopen VS Code</strong>, or its terminal will not see the new program.</p>
+<p><strong>Test:</strong> <code>node -v</code> and <code>npm -v</code> both show numbers; Node must be 22 or higher.</p>
+<p><strong>Windows only:</strong> if <code>npm -v</code> answers <em>running scripts is disabled on this system</em>, run <code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code>, answer Y, and reopen the terminal.</p>
+</section>
+<section id="claude-code" class="level3">
+<h3 class="anchored" data-anchor-id="claude-code">4. Claude Code</h3>
+<div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Mac</div><div class="vc-prompt-b">curl -fsSL https://claude.ai/install.sh | bash</div></div>
+<div class="vc-prompt"><div class="vc-prompt-h">In PowerShell · Windows</div><div class="vc-prompt-b">irm https://claude.ai/install.ps1 | iex</div></div>
+<p>Close and reopen the terminal, then type <code>claude</code>. The first time, it asks you to sign in: choose your <strong>Claude account (Pro or higher)</strong>, accept in the browser, and come back to the terminal.</p>
+<p><strong>Test:</strong> inside Claude Code, type <code>/status</code>. Your account appears. Type <code>/exit</code> to leave. Running <code>claude</code> once in the terminal also sets up Anthropic’s official plugin catalog, which you use on Sunday.</p>
+<p><strong>The VS Code extension.</strong> In VS Code, open <strong>Extensions</strong> (the squares icon on the left, or ⌘/Ctrl + Shift + X), search for <strong>Claude Code</strong> published by <strong>Anthropic</strong>, and install it. Open any file: a Spark icon (✻) appears at the top right of the editor, and clicking it opens Claude in a panel next to your files. The panel and the terminal are the same Claude. In class we use the panel, and the terminal when we need it.</p>
+</section>
+<section id="where-your-projects-live" class="level3">
+<h3 class="anchored" data-anchor-id="where-your-projects-live">Where your projects live</h3>
+<p>Create a folder called <strong>Proyectos</strong> in your user folder: <code>/Users/your-name/Proyectos</code> on a Mac, <code>C:\Users\your-name\Proyectos</code> on Windows.</p>
+<p><strong>Not</strong> on the Desktop, in Documents, iCloud, OneDrive or Google Drive. Those folders sync and “optimize” files while Claude is writing them, and they have deleted whole projects. Your backup is GitHub, not the sync folder.</p>
+</section>
+</section>
+<section id="a-warm-up-that-saves-time-on-sunday-5-to-10-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="a-warm-up-that-saves-time-on-sunday-5-to-10-minutes">A warm-up that saves time on Sunday (5 to 10 minutes)</h2>
+<p>Thirty laptops downloading the same web project on the room’s wifi is slow. Download it once at home, so that on Sunday most of it comes from your laptop. In the terminal, one line at a time:</p>
+<div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Mac</div><div class="vc-prompt-b">mkdir -p ~/Proyectos &amp;&amp; cd ~/Proyectos
+npx --yes create-next-app@latest calentamiento --yes</div></div>
+<div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Windows</div><div class="vc-prompt-b">mkdir $HOME\Proyectos -Force; cd $HOME\Proyectos
+npx --yes create-next-app@latest calentamiento --yes</div></div>
+<p>It ends with <em>Success! Created calentamiento</em>. You can delete that folder afterwards; it was only a rehearsal.</p>
+</section>
+<section id="the-five-tests" class="level2">
+<h2 class="anchored" data-anchor-id="the-five-tests">The five tests</h2>
+<ul class="vc-checklist" id="setup-tests">
+<li><code>code --version</code> shows a number.</li>
+<li><code>git config --global user.email</code> shows the email of your GitHub account.</li>
+<li><code>node -v</code> shows 22 or higher.</li>
+<li><code>claude</code> opens, and inside it <code>/status</code> shows your account (then <code>/exit</code>).</li>
+<li>In VS Code, the Spark icon (✻), or <strong>✻ Claude Code</strong> in the status bar at the bottom, opens the Claude Code panel.</li>
+</ul>
+</section>
+<section id="on-a-work-laptop" class="level2">
+<h2 class="anchored" data-anchor-id="on-a-work-laptop">On a work laptop</h2>
+<p>A laptop managed by your employer may block installing programs, or block the Claude Code installer. Try at home first. If it is blocked, bring a personal laptop, or ask your IT team for permission before Sunday. Do not work around your employer’s security controls.</p>
+</section>
+<section id="before-day-2" class="level2">
+<h2 class="anchored" data-anchor-id="before-day-2">Before Day 2</h2>
+<p>By Sunday 10 January 2027, create a free <a href="https://supabase.com/dashboard">Supabase</a> account with <strong>Continue with GitHub</strong>. Day 2 connects it to Claude to give your web a database and a login. The free plan pauses a project after a week without use; a click on <strong>Restore</strong> in its dashboard brings it back. Anything else Day 2 needs is listed on its class page.</p>
 </section>
 <section id="if-you-could-not-finish" class="level2">
 <h2 class="anchored" data-anchor-id="if-you-could-not-finish">If you could not finish</h2>
-<p>Write to the course channel or to <a href="mailto:sebastian.azocarm@usm.cl">sebastian.azocarm@usm.cl</a> before Sunday 10 January 2027, so it can be solved before Day 2. Nobody is graded on this guide.</p>
+<p>Come to Day 1 anyway: the setup check from 08:20 is for exactly this. If you will miss Day 1, write to <a href="mailto:sebastian.azocarm@usm.cl">sebastian.azocarm@usm.cl</a> before it. Nobody is graded on this guide.</p>
 
 
 </section>
