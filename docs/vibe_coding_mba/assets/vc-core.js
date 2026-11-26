@@ -235,6 +235,8 @@
        data-blocks="Class 2 · framework and lab:120|Coffee break:30|..."></div>
      Segments are proportional to minutes. Breaks and lunch are drawn thin and quiet; the blocks of the current
      class are drawn in ink; other classes in a light tone. The legend gives the clock time of every block. */
+  const ES = /^es/i.test(document.documentElement.lang || "");
+  const T = (en, es) => (ES ? es : en);
   function mountDaybar(el) {
     if (el.dataset.mounted) return;
     el.dataset.mounted = "1";
@@ -244,10 +246,10 @@
     const toMin = (t) => { const [a, b] = t.split(":").map(Number); return a * 60 + b; };
     const fmt = (m) => `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
     let clock = start ? toMin(start) : null;
-    const kindOf = (label) => /^(coffee|lunch|break)/i.test(label) ? "pause" : (current === "*" || (current && label.startsWith(current)) ? "current" : "other");
+    const kindOf = (label) => /^(coffee|lunch|break|caf[eé]|almuerzo|pausa)/i.test(label) ? "pause" : (current === "*" || (current && label.startsWith(current)) ? "current" : "other");
     blocks.forEach((b) => { b.kind = kindOf(b.label); if (clock !== null) { b.from = fmt(clock); clock += b.min; b.to = fmt(clock); } });
     const total = blocks.reduce((a, b) => a + b.min, 0) || 1;
-    const track = h("div", { class: "vc-daybar-track", role: "img", "aria-label": "The day: " + blocks.map((b) => `${b.from ? b.from + " to " + b.to + ", " : ""}${b.label}`).join("; ") });
+    const track = h("div", { class: "vc-daybar-track", role: "img", "aria-label": T("The day: ", "El día: ") + blocks.map((b) => `${b.from ? b.from + T(" to ", " a ") + b.to + ", " : ""}${b.label}`).join("; ") });
     const segs = blocks.map((b) => {
       const s = h("div", { class: "vc-daybar-seg is-" + b.kind, style: { flexGrow: String(b.min), flexBasis: "0" } }, b.kind === "pause" || b.min < 60 ? "" : (b.from || b.min + "′"));
       track.append(s);
@@ -339,7 +341,7 @@
       items.forEach((it) => it.classList.remove("is-in"));
       items.forEach((it) => timers.push(setTimeout(() => it.classList.add("is-in"), 120 + (+it.dataset.step) * every)));
     }
-    const replay = h("button", { type: "button", class: "vc-fig-replay", "aria-label": "Replay the animation of this figure" }, "Replay");
+    const replay = h("button", { type: "button", class: "vc-fig-replay", "aria-label": T("Replay the animation of this figure", "Repetir la animación de esta figura") }, T("Replay", "Repetir"));
     replay.addEventListener("click", play);
     head.append(replay);
     el.classList.add("is-armed");
@@ -382,7 +384,7 @@
           const set = q.closest(".vc-practice");
           if (set) scorePractice(set);
         } else {
-          why.textContent = "Not this one. " + (o.dataset.why || "Try again.");
+          why.textContent = T("Not this one. ", "Esta no. ") + (o.dataset.why || T("Try again.", "Intenta de nuevo."));
           o.disabled = true;
           motion.shake(o);
         }
@@ -395,7 +397,7 @@
     const right = qs.filter((q) => q.dataset.first === "right").length;
     const out = set.querySelector(".vc-practice-score");
     if (!out) return;
-    out.textContent = done < qs.length ? `${done} of ${qs.length} answered` : `${right} of ${qs.length} right on the first try${right === qs.length ? " 🎉" : " · read the explanations"}`;
+    out.textContent = done < qs.length ? T(`${done} of ${qs.length} answered`, `${done} de ${qs.length} respondidas`) : T(`${right} of ${qs.length} right on the first try`, `${right} de ${qs.length} correctas al primer intento`) + (right === qs.length ? " 🎉" : T(" · read the explanations", " · lee las explicaciones"));
     const complete = done === qs.length;
     out.classList.toggle("is-complete", complete);
     if (complete) motion.pop(out);
@@ -406,7 +408,7 @@
     const head = set.querySelector(".vc-practice-t");
     if (!head) return;
     head.append(h("span", { class: "vc-practice-score" }));
-    const reset = btn(head, "↺ Retry", () => {
+    const reset = btn(head, T("↺ Retry", "↺ Reintentar"), () => {
       set.querySelectorAll(".vc-quiz").forEach((q) => {
         delete q.dataset.first; delete q.dataset.done;
         q.querySelectorAll(".vc-quiz-opt").forEach((o) => { o.disabled = false; o.classList.remove("is-right", "is-wrong"); });
@@ -415,7 +417,7 @@
       });
       scorePractice(set);
     }, "vc-btn-ghost vc-btn-sm");
-    reset.setAttribute("aria-label", "Retry the questions of this topic");
+    reset.setAttribute("aria-label", T("Retry the questions of this topic", "Reintentar las preguntas de este tema"));
     scorePractice(set);
   }
 
@@ -431,7 +433,7 @@
     ul.after(score);
     const update = () => {
       const done = items.filter((li) => li.classList.contains("is-done")).length;
-      score.textContent = `${done} of ${items.length} done`;
+      score.textContent = T(`${done} of ${items.length} done`, `${done} de ${items.length} listos`);
       if (done === items.length) motion.pop(score);
     };
     items.forEach((li, i) => {

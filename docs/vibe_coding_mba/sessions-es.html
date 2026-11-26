@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sebastián Azócar - Calendario</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<script>
+  (function () {
+    var d = document.documentElement;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    d.classList.add("hz-motion");
+    // If the motion script never runs, show the content anyway.
+    setTimeout(function () { if (!window.__hzReady) d.classList.remove("hz-motion"); }, 3000);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="assets/vc.css">
+<meta property="og:title" content="Sebastián Azócar - Calendario">
+<meta property="og:description" content="Tres días, 20 horas presenciales en bloques de dos horas. Las pausas y el almuerzo no cuentan como horas presenciales.">
+<meta property="og:site-name" content="Sebastián Azócar">
+<meta name="twitter:title" content="Sebastián Azócar - Calendario">
+<meta name="twitter:description" content="Tres días, 20 horas presenciales en bloques de dos horas. Las pausas y el almuerzo no cuentan como horas presenciales.">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="Inicio" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../cursos.html" rel="" target="">
+ <span class="menu-text">Cursos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html#contacto" rel="" target="">
+ <span class="menu-text">Contacto</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto tools-wide">
+    <a href="https://github.com/hizocar" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo lector">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#day-1-sunday-29-november-2026" id="toc-day-1-sunday-29-november-2026" class="nav-link active" data-scroll-target="#day-1-sunday-29-november-2026">Día 1, domingo 29 de noviembre de 2026</a>
+  <ul class="collapse">
+  <li><a href="#class-1.-your-first-web-with-claude-code" id="toc-class-1.-your-first-web-with-claude-code" class="nav-link" data-scroll-target="#class-1.-your-first-web-with-claude-code">Clase 1. Tu primera web con Claude Code</a></li>
+  </ul></li>
+  <li><a href="#between-the-days-30-november-2026-to-15-january-2027" id="toc-between-the-days-30-november-2026-to-15-january-2027" class="nav-link" data-scroll-target="#between-the-days-30-november-2026-to-15-january-2027">Entre los días, del 30 de noviembre de 2026 al 15 de enero de 2027</a></li>
+  <li><a href="#day-2-saturday-16-january-2027" id="toc-day-2-saturday-16-january-2027" class="nav-link" data-scroll-target="#day-2-saturday-16-january-2027">Día 2, sábado 16 de enero de 2027</a></li>
+  <li><a href="#day-3-sunday-17-january-2027" id="toc-day-3-sunday-17-january-2027" class="nav-link" data-scroll-target="#day-3-sunday-17-january-2027">Día 3, domingo 17 de enero de 2027</a></li>
+  <li><a href="#deliverables-and-weights" id="toc-deliverables-and-weights" class="nav-link" data-scroll-target="#deliverables-and-weights">Entregables y ponderaciones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Calendario</h1>
+<p class="subtitle lead">Tres días, 20 horas presenciales en bloques de dos horas. Las pausas y el almuerzo no cuentan como horas presenciales.</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>El curso se hace un domingo de noviembre y un fin de semana de enero, con siete semanas entre medio. El día 1 es un taller práctico: cada estudiante construye su propia web, para su propia idea, con Claude Code. El programa de los días 2 y 3 se publica antes del día 2.</p>
+<section id="day-1-sunday-29-november-2026" class="level2">
+<h2 class="anchored" data-anchor-id="day-1-sunday-29-november-2026">Día 1, domingo 29 de noviembre de 2026</h2>
+<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Clase 1 · bienvenida, revisión de instalación, cómo funciona:120|Café:15|Clase 1 · laboratorio: tu web, luego skills:120|Café:15|Clase 1 · publicar, presentación HTML, tu skill, pitch:120"></div>
+<section id="class-1.-your-first-web-with-claude-code" class="level3">
+<h3 class="anchored" data-anchor-id="class-1.-your-first-web-with-claude-code">Clase 1. Tu primera web con Claude Code</h3>
+<p>Página de la clase: <a href="class1-es.html">Clase 1 · Tu primera web con Claude Code</a> · Presentación: <a href="slides/day1-es.html">Día 1</a></p>
+<p><strong>Meta de construcción.</strong> Cada estudiante, sobre su propia idea: una web publicada en una dirección pública, una presentación HTML de seis diapositivas publicada junto a ella, y una skill personal que mantiene su marca.</p>
+<p><strong>Antes del día 1.</strong> La <a href="setup-es.html">guía de instalación</a>, unos 45 minutos: un plan Claude Pro (pagado por cada estudiante), cuentas de GitHub y Vercel, VS Code, Git, Node.js y Claude Code instalados, y cinco líneas sobre tu idea. Trae el notebook y su cargador.</p>
+<p><strong>08:00 a 10:00.</strong> Demostración en vivo: una página que va de una carpeta vacía a un celular en unos diez minutos (20). Revisión de instalación: las cinco pruebas pasan en cada notebook (40). Cómo funciona, con tres pruebas cortas en Claude Code: qué hace un modelo, los tokens y el límite de uso, la ventana de contexto, chat versus agente, un buen pedido, el modo plan y los permisos (60).</p>
+<p><strong>10:15 a 12:15.</strong> Laboratorio 1, tu web: brief, modo plan, construir, localhost, un cambio a la vez, volver atrás con rewind, un primer commit (75). Skills y memoria: el plugin frontend-design del catálogo oficial, un rediseño con él, CLAUDE.md con <code>/init</code> (45).</p>
+<p><strong>12:30 a 14:30.</strong> Publicar: un repositorio privado en GitHub, una importación en Vercel, la dirección abierta en un celular, un cambio que se publica solo (45). Una presentación HTML en cinco minutos, guardada en el proyecto y publicada con él (15). Tu propia skill, <code>my-brand</code>, creada con skill-creator y probada en una conversación nueva (35). Pitches de sesenta segundos con la presentación, qué viene en los días 2 y 3, y la explicación del M1 (25).</p>
+</section>
+</section>
+<section id="between-the-days-30-november-2026-to-15-january-2027" class="level2">
+<h2 class="anchored" data-anchor-id="between-the-days-30-november-2026-to-15-january-2027">Entre los días, del 30 de noviembre de 2026 al 15 de enero de 2027</h2>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>A más tardar</th>
+<th>Qué</th>
+<th>Quién</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Domingo 13 de diciembre de 2026, 23:59</td>
+<td><strong>M1.</strong> Brief del problema y especificación del producto. La retroalimentación escrita llega antes del día 2.</td>
+<td>Individual</td>
+</tr>
+<tr class="even">
+<td>Domingo 10 de enero de 2027</td>
+<td>Las cinco pruebas de la guía de instalación siguen pasando, tu plan Claude Pro está activo y tu cuenta gratis de Supabase existe.</td>
+<td>Individual</td>
+</tr>
+</tbody>
+</table>
+<p>Las preguntas van al canal del curso o a <a href="mailto:sebastian.azocarm@usm.cl">sebastian.azocarm@usm.cl</a>.</p>
+</section>
+<section id="day-2-saturday-16-january-2027" class="level2">
+<h2 class="anchored" data-anchor-id="day-2-saturday-16-january-2027">Día 2, sábado 16 de enero de 2027</h2>
+<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Clase 2:120|Café:30|Clase 2:120|Almuerzo:90|Clase 3:120|Café:30|Clase 3:120"></div>
+<p>El programa de las clases 2 y 3 se publica antes del día 2.</p>
+</section>
+<section id="day-3-sunday-17-january-2027" class="level2">
+<h2 class="anchored" data-anchor-id="day-3-sunday-17-january-2027">Día 3, domingo 17 de enero de 2027</h2>
+<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Clase 4:120|Café:15|Clase 4:30|Clase 5:90|Café:15|Clase 5:120"></div>
+<p>El programa de las clases 4 y 5 y del Demo Day se publica antes del día 2.</p>
+</section>
+<section id="deliverables-and-weights" class="level2">
+<h2 class="anchored" data-anchor-id="deliverables-and-weights">Entregables y ponderaciones</h2>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Entregable</th>
+<th>Quién</th>
+<th>Entrega</th>
+<th>Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>M1. Brief del problema y especificación del producto</td>
+<td>Individual</td>
+<td>Domingo 13 de diciembre de 2026</td>
+<td>15%</td>
+</tr>
+<tr class="even">
+<td>M2. Prototipo v1 con inicio de sesión, datos, una skill, un conector y bitácoras de construcción</td>
+<td>Equipo</td>
+<td>Sábado 16 de enero de 2027</td>
+<td>20%</td>
+</tr>
+<tr class="odd">
+<td>Demo Day, con una presentación generada con IA y declarada</td>
+<td>Equipo, con ajuste individual</td>
+<td>Domingo 17 de enero de 2027</td>
+<td>25%</td>
+</tr>
+<tr class="even">
+<td>M3. Funcionalidad de IA, set de pruebas, paso agéntico, automatización, medición de la métrica y memo de riesgos</td>
+<td>Equipo</td>
+<td>Domingo 24 de enero de 2027</td>
+<td>25%</td>
+</tr>
+<tr class="odd">
+<td>Memo de reflexión y participación</td>
+<td>Individual</td>
+<td>Domingo 24 de enero de 2027</td>
+<td>15%</td>
+</tr>
+</tbody>
+</table>
+<p>Todo se evalúa con la <a href="rubric.html">rúbrica</a> (en inglés). Los trabajos escritos se entregan a las 23:59 del día indicado.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<script src="assets/course.js"></script>
+<script src="assets/figures.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
+<script src="assets/vc-core.js"></script>
+
+
+
+</body></html>

@@ -168,6 +168,16 @@ main.content .vh-section h2 { margin-top: 0; border-bottom: 0; padding-bottom: 0
   display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.6rem 1.6rem;
   margin: 0.2rem 0 2.2rem; padding: 0 0 0.85rem; border-bottom: 1px solid var(--hz-line);
 }
+.vc-coursenav-top { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; width: 100%; }
+.vc-lang { display: inline-flex; align-items: center; flex: none; border: 1px solid var(--hz-line-strong); border-radius: 999px; padding: 2px; }
+.vc-lang a {
+  display: inline-block; min-width: 2.3rem; padding: 0.22rem 0.6rem; border-radius: 999px; text-align: center;
+  font-size: 0.74rem; font-weight: 600; letter-spacing: 0.06em; line-height: 1.3;
+  color: var(--hz-muted) !important; text-decoration: none !important; transition: color 0.15s ease, background-color 0.15s ease;
+}
+.vc-lang a:hover { color: var(--hz-ink) !important; }
+.vc-lang a[aria-current="true"] { background: var(--hz-ink); color: var(--hz-bg) !important; cursor: default; }
+.vc-lang a:focus-visible { outline: 2px solid var(--vc-brass); outline-offset: 2px; }
 .vc-coursenav-brand { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; text-decoration: none !important; }
 .vc-coursenav-title { font-family: var(--hz-serif); font-weight: 600; font-size: 1.22rem; color: var(--hz-ink); }
 .vc-coursenav-sub { font-size: 0.82rem; color: var(--hz-muted); }

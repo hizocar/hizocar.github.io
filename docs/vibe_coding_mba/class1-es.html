@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sebastián Azócar - Clase 1 · Tu primera web con Claude Code</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<script>
+  (function () {
+    var d = document.documentElement;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    d.classList.add("hz-motion");
+    // If the motion script never runs, show the content anyway.
+    setTimeout(function () { if (!window.__hzReady) d.classList.remove("hz-motion"); }, 3000);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="assets/vc.css">
+<link rel="stylesheet" href="assets/day1.css">
+<meta property="og:title" content="Sebastián Azócar - Clase 1 · Tu primera web con Claude Code">
+<meta property="og:description" content="A las 14:30 tienes una web para tu propia idea en una dirección pública, una presentación HTML de seis diapositivas sobre ella y una skill propia que Claude usa cada vez que le pides una página.">
+<meta property="og:site-name" content="Sebastián Azócar">
+<meta name="twitter:title" content="Sebastián Azócar - Clase 1 · Tu primera web con Claude Code">
+<meta name="twitter:description" content="A las 14:30 tienes una web para tu propia idea en una dirección pública, una presentación HTML de seis diapositivas sobre ella y una skill propia que Claude usa cada vez que le pides una página.">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="Inicio" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../cursos.html" rel="" target="">
+ <span class="menu-text">Cursos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html#contacto" rel="" target="">
+ <span class="menu-text">Contacto</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto tools-wide">
+    <a href="https://github.com/hizocar" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo lector">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#con-qué-te-vas-hoy" id="toc-con-qué-te-vas-hoy" class="nav-link active" data-scroll-target="#con-qué-te-vas-hoy">Con qué te vas hoy</a></li>
+  <li><a href="#las-piezas-que-usas-hoy" id="toc-las-piezas-que-usas-hoy" class="nav-link" data-scroll-target="#las-piezas-que-usas-hoy">Las piezas que usas hoy</a></li>
+  <li><a href="#el-día" id="toc-el-día" class="nav-link" data-scroll-target="#el-día">El día</a></li>
+  <li><a href="#demo" id="toc-demo" class="nav-link" data-scroll-target="#demo">1 · Demostración en vivo</a></li>
+  <li><a href="#setup-check" id="toc-setup-check" class="nav-link" data-scroll-target="#setup-check">2 · Revisión de instalación</a></li>
+  <li><a href="#how" id="toc-how" class="nav-link" data-scroll-target="#how">3 · Cómo funciona</a>
+  <ul class="collapse">
+  <li><a href="#un-modelo-predice-el-siguiente-trozo-de-texto" id="toc-un-modelo-predice-el-siguiente-trozo-de-texto" class="nav-link" data-scroll-target="#un-modelo-predice-el-siguiente-trozo-de-texto">Un modelo predice el siguiente trozo de texto</a></li>
+  <li><a href="#los-tokens-son-lo-que-pagas" id="toc-los-tokens-son-lo-que-pagas" class="nav-link" data-scroll-target="#los-tokens-son-lo-que-pagas">Los tokens son lo que pagas</a></li>
+  <li><a href="#la-ventana-de-contexto-es-su-memoria-de-trabajo" id="toc-la-ventana-de-contexto-es-su-memoria-de-trabajo" class="nav-link" data-scroll-target="#la-ventana-de-contexto-es-su-memoria-de-trabajo">La ventana de contexto es su memoria de trabajo</a></li>
+  <li><a href="#puede-equivocarse-con-total-seguridad" id="toc-puede-equivocarse-con-total-seguridad" class="nav-link" data-scroll-target="#puede-equivocarse-con-total-seguridad">Puede equivocarse con total seguridad</a></li>
+  <li><a href="#un-chat-responde-un-agente-trabaja" id="toc-un-chat-responde-un-agente-trabaja" class="nav-link" data-scroll-target="#un-chat-responde-un-agente-trabaja">Un chat responde; un agente trabaja</a></li>
+  <li><a href="#un-buen-pedido-contexto-objetivo-límites-y-luego-un-plan" id="toc-un-buen-pedido-contexto-objetivo-límites-y-luego-un-plan" class="nav-link" data-scroll-target="#un-buen-pedido-contexto-objetivo-límites-y-luego-un-plan">Un buen pedido: contexto, objetivo, límites y luego un plan</a></li>
+  <li><a href="#modo-plan-y-permisos" id="toc-modo-plan-y-permisos" class="nav-link" data-scroll-target="#modo-plan-y-permisos">Modo plan y permisos</a></li>
+  </ul></li>
+  <li><a href="#lab" id="toc-lab" class="nav-link" data-scroll-target="#lab">4 · Laboratorio 1: tu web</a></li>
+  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills">5 · Skills y memoria</a>
+  <ul class="collapse">
+  <li><a href="#skills-manuales-que-claude-abre-cuando-el-trabajo-los-necesita" id="toc-skills-manuales-que-claude-abre-cuando-el-trabajo-los-necesita" class="nav-link" data-scroll-target="#skills-manuales-que-claude-abre-cuando-el-trabajo-los-necesita">Skills: manuales que Claude abre cuando el trabajo los necesita</a></li>
+  <li><a href="#claude.md-la-memoria-del-proyecto" id="toc-claude.md-la-memoria-del-proyecto" class="nav-link" data-scroll-target="#claude.md-la-memoria-del-proyecto">CLAUDE.md: la memoria del proyecto</a></li>
+  </ul></li>
+  <li><a href="#publish" id="toc-publish" class="nav-link" data-scroll-target="#publish">6 · Publicar</a></li>
+  <li><a href="#deck" id="toc-deck" class="nav-link" data-scroll-target="#deck">7 · Una presentación HTML en cinco minutos</a></li>
+  <li><a href="#own-skill" id="toc-own-skill" class="nav-link" data-scroll-target="#own-skill">8 · Tu propia skill: my-brand</a></li>
+  <li><a href="#close" id="toc-close" class="nav-link" data-scroll-target="#close">9 · Pitches y lo que viene</a></li>
+  <li><a href="#cuando-algo-sale-mal" id="toc-cuando-algo-sale-mal" class="nav-link" data-scroll-target="#cuando-algo-sale-mal">Cuando algo sale mal</a></li>
+  <li><a href="#comandos-que-vas-a-usar" id="toc-comandos-que-vas-a-usar" class="nav-link" data-scroll-target="#comandos-que-vas-a-usar">Comandos que vas a usar</a></li>
+  <li><a href="#checklist-de-hoy" id="toc-checklist-de-hoy" class="nav-link" data-scroll-target="#checklist-de-hoy">Checklist de hoy</a></li>
+  <li><a href="#antes-del-día-2" id="toc-antes-del-día-2" class="nav-link" data-scroll-target="#antes-del-día-2">Antes del Día 2</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Clase 1 · Tu primera web con Claude Code</h1>
+<p class="subtitle lead">A las 14:30 tienes una web para tu propia idea en una dirección pública, una presentación HTML de seis diapositivas sobre ella y una skill propia que Claude usa cada vez que le pides una página.</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="vc-meta">
+<span class="is-accent">Día 1 · domingo 29 de noviembre de 2026 · 08:00 a 14:30</span>
+<span>Construyes: tu propia web, publicada en Vercel</span>
+<span>Hito: brief M1, entrega el domingo 13 de diciembre</span>
+</div>
+<div class="vc-daybar" data-start="08:00" data-current="Clase 1" data-blocks="Clase 1 · bienvenida, revisión de instalación, cómo funciona:120|Café:15|Clase 1 · laboratorio: tu web, luego skills:120|Café:15|Clase 1 · publicar, presentación HTML, tu skill, pitch:120"></div>
+<p>Un taller sobre <strong>tu propia idea</strong>: cada concepto en pocos minutos y luego lo haces de verdad en Claude Code. Antes de la clase solo necesitas <a href="setup-es.html">la guía de instalación</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Cómo usar esta página">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cómo usar esta página
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Tenla abierta junto a VS Code y sigue las partes en orden.</li>
+<li>Un recuadro con el título <strong>Tú, a Claude</strong> es un prompt (la instrucción que le escribes): cópialo, reemplaza lo que está entre [corchetes] y pégalo.</li>
+<li>Las <a href="slides/day1-es.html">diapositivas que se proyectan</a> son un solo archivo HTML, como el que harás a las 13:15.</li>
+<li><strong>Dos reglas.</strong> Nada de contraseñas, llaves ni datos personales de otras personas en Claude. Ninguna afirmación en tu web que no puedas defender.</li>
+</ul>
+</div>
+</div>
+<section id="con-qué-te-vas-hoy" class="level2">
+<h2 class="anchored" data-anchor-id="con-qué-te-vas-hoy">Con qué te vas hoy</h2>
+<div class="d1" data-d1="">
+<div class="d1-leave">
+<div class="d1-card d1-a"><div class="d1-mock"><div class="d1-mock-bar"><i></i><i></i><i></i><span>mi-web.vercel.app</span></div><div class="d1-mock-body"><b></b><s></s><s style="width:70%"></s><u></u></div></div><p class="d1-h">Una web para tu idea</p><p>Hecha conversando con Claude Code. Se abre en tu celular, en una dirección pública.</p></div>
+<div class="d1-card d1-a"><div class="d1-slides"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div><p class="d1-h">Una presentación de seis diapositivas</p><p>Un archivo HTML, publicado con tu web en <code>/slides.html</code>.</p></div>
+<div class="d1-card d1-a"><div class="d1-file"><b>SKILL.md</b><br><em>name:</em> my-brand<br><em>description:</em> úsala en cada página, diapositiva o texto…<br>colores · tipografías · tono</div><p class="d1-h">Una skill propia</p><p>Tus colores y tu tono, aplicados siempre sin pedirlo.</p></div>
+</div>
+<p class="d1-cap">Y los hábitos que te mantienen al mando de un agente: <strong>primero el plan, lee cada permiso, un cambio a la vez, vuelve atrás cuando algo sale mal.</strong></p>
+</div>
+</section>
+<section id="las-piezas-que-usas-hoy" class="level2">
+<h2 class="anchored" data-anchor-id="las-piezas-que-usas-hoy">Las piezas que usas hoy</h2>
+<div class="d1" data-d1="">
+<div class="d1-pieces">
+<div class="d1-card d1-piece d1-a"><i class="lg lg-vscode" aria-hidden="true"></i><p class="d1-h">VS Code</p><p>Tu escritorio: la carpeta con los archivos de tu web.</p></div>
+<span class="d1-arrow d1-a" aria-hidden="true">→</span>
+<div class="d1-card d1-piece is-key d1-a"><i class="lg lg-claude" aria-hidden="true"></i><p class="d1-h">Claude Code</p><p>Un colega muy capaz en tu escritorio, que escribe el código.</p></div>
+<span class="d1-arrow d1-a" aria-hidden="true">→</span>
+<div class="d1-card d1-piece d1-a"><i class="lg lg-github" aria-hidden="true"></i><p class="d1-h">GitHub</p><p>Un drive que guarda cada versión.</p></div>
+<span class="d1-arrow d1-a" aria-hidden="true">→</span>
+<div class="d1-card d1-piece d1-a"><i class="lg lg-vercel" aria-hidden="true"></i><p class="d1-h">Vercel</p><p>La vitrina: tu web en una dirección pública.</p></div>
+<div class="d1-card d1-piece is-later d1-a"><i class="lg lg-supabase" aria-hidden="true"></i><p class="d1-h">Supabase</p><p>La bodega: datos e inicio de sesión.</p><span class="d1-tag">Día 2</span></div>
+</div>
+<div class="d1-cost d1-a"><span><i class="lg lg-claude" aria-hidden="true"></i><b>Claude Pro</b> unos USD 20 al mes, lo pagas tú</span><span><i class="lg lg-github" aria-hidden="true"></i><i class="lg lg-vercel" aria-hidden="true"></i><i class="lg lg-supabase" aria-hidden="true"></i><b>Gratis</b> para este curso</span><span><i class="lg lg-next" aria-hidden="true"></i><i class="lg lg-tailwind" aria-hidden="true"></i><i class="lg lg-node" aria-hidden="true"></i>Next.js, Tailwind y Node: con lo que construye Claude</span></div>
+</div>
+</section>
+<section id="el-día" class="level2">
+<h2 class="anchored" data-anchor-id="el-día">El día</h2>
+<ol class="vc-route">
+<li><span class="vc-route-h">08:00 · 20 min</span><a class="vc-route-a" href="#demo"><span class="vc-route-n">1</span><span class="vc-route-t">Demostración en vivo: una página desde cero hasta una dirección pública</span><span class="vc-route-l">mira el orden de los pasos</span></a></li>
+<li><span class="vc-route-h">08:20 · 40 min</span><a class="vc-route-a" href="#setup-check"><span class="vc-route-n">2</span><span class="vc-route-t">Revisión de instalación: las cinco pruebas pasan en tu notebook</span><span class="vc-route-l">los vecinos se ayudan</span></a></li>
+<li><span class="vc-route-h">09:00 · 60 min</span><a class="vc-route-a" href="#how"><span class="vc-route-n">3</span><span class="vc-route-t">Cómo funciona, con tres pruebas cortas</span><span class="vc-route-l">modelo, tokens, contexto, agente, modo plan, permisos</span></a></li>
+<li class="is-break"><span class="vc-route-h">10:00 · 15 min</span><span class="vc-route-t">Café</span></li>
+<li><span class="vc-route-h">10:15 · 75 min</span><a class="vc-route-a" href="#lab"><span class="vc-route-n">4</span><span class="vc-route-t">Laboratorio 1: tu web, en tu notebook</span><span class="vc-route-l">brief, plan, construir, probar, un cambio, volver atrás</span></a></li>
+<li><span class="vc-route-h">11:30 · 45 min</span><a class="vc-route-a" href="#skills"><span class="vc-route-n">5</span><span class="vc-route-t">Skills y memoria</span><span class="vc-route-l">un plugin, un rediseño, CLAUDE.md</span></a></li>
+<li class="is-break"><span class="vc-route-h">12:15 · 15 min</span><span class="vc-route-t">Café</span></li>
+<li><span class="vc-route-h">12:30 · 45 min</span><a class="vc-route-a" href="#publish"><span class="vc-route-n">6</span><span class="vc-route-t">Publicar: GitHub, Vercel, tu celular</span><span class="vc-route-l">la dirección que vas a compartir</span></a></li>
+<li><span class="vc-route-h">13:15 · 15 min</span><a class="vc-route-a" href="#deck"><span class="vc-route-n">7</span><span class="vc-route-t">Una presentación HTML en cinco minutos</span><span class="vc-route-l">un prompt, seis diapositivas</span></a></li>
+<li><span class="vc-route-h">13:30 · 35 min</span><a class="vc-route-a" href="#own-skill"><span class="vc-route-n">8</span><span class="vc-route-t">Tu propia skill: my-brand</span><span class="vc-route-l">se escribe una vez, se aplica siempre</span></a></li>
+<li><span class="vc-route-h">14:05 · 25 min</span><a class="vc-route-a" href="#close"><span class="vc-route-n">9</span><span class="vc-route-t">Pitches, lo que viene, tarea</span><span class="vc-route-l">60 segundos cada uno, voluntarios</span></a></li>
+</ol>
+</section>
+<section id="demo" class="level2">
+<h2 class="anchored" data-anchor-id="demo">1 · Demostración en vivo</h2>
+<p>De una carpeta vacía a una página en el celular en unos diez minutos. Mira el orden, no los clics: <strong>describir, planificar, leer, construir, mirar, un cambio, publicar.</strong> Lo repites todo el día.</p>
+</section>
+<section id="setup-check" class="level2">
+<h2 class="anchored" data-anchor-id="setup-check">2 · Revisión de instalación</h2>
+<p>Abre una terminal (en VS Code: <strong>Terminal → New Terminal</strong>) y corre las cinco pruebas de la <a href="setup-es.html">guía de instalación</a>. Escribe una línea, presiona Enter, lee la respuesta y pasa a la siguiente.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Prueba</th>
+<th>Pasa cuando</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. <code>code --version</code></td>
+<td>muestra un número</td>
+</tr>
+<tr class="even">
+<td>2. <code>git config --global user.email</code></td>
+<td>muestra el correo de tu cuenta de GitHub</td>
+</tr>
+<tr class="odd">
+<td>3. <code>node -v</code></td>
+<td>muestra v22 o superior</td>
+</tr>
+<tr class="even">
+<td>4. <code>claude</code>, luego dentro <code>/status</code>, luego <code>/exit</code></td>
+<td>aparece tu cuenta de Claude</td>
+</tr>
+<tr class="odd">
+<td>5. El panel</td>
+<td>el ícono Spark (✻) o <strong>✻ Claude Code</strong> en la barra de estado, abajo en VS Code, abre el panel de Claude Code</td>
+</tr>
+</tbody>
+</table>
+<p>Si una prueba falla, la guía de instalación tiene la solución. Si después de diez minutos sigue fallando, siéntate con un vecino y trabajen en pareja en su notebook hasta el café; el profesor arregla el tuyo en ese momento.</p>
+<p>Luego crea la carpeta de tu proyecto, aquí llamada <code>mi-web</code>: elige tu propio nombre, en minúsculas, sin espacios ni tildes. Va en <code>Proyectos</code>, <strong>fuera</strong> del Escritorio, Documentos, iCloud, OneDrive o Google Drive, que sincronizan archivos mientras Claude los escribe.</p>
+<div class="vc-prompt"><div class="vc-prompt-h">En la terminal · Mac</div><div class="vc-prompt-b">mkdir -p ~/Proyectos/mi-web &amp;&amp; code ~/Proyectos/mi-web</div></div>
+<div class="vc-prompt"><div class="vc-prompt-h">En la terminal · Windows</div><div class="vc-prompt-b">mkdir $HOME\Proyectos\mi-web; code $HOME\Proyectos\mi-web</div></div>
+<p>Se abre una nueva ventana de VS Code con la carpeta vacía. Abre el panel desde <strong>✻ Claude Code</strong> en la barra de estado de abajo (o ⌘/Ctrl + Shift + P, escribe <em>Claude Code</em> y elige el comando que lo abre). No crees ningún archivo tú: la carpeta debe quedar vacía hasta que Claude cree el proyecto. <strong>Claude trabaja dentro de la carpeta que abriste</strong>: no ve el resto de tu computador salvo que se lo permitas.</p>
+</section>
+<section id="how" class="level2">
+<h2 class="anchored" data-anchor-id="how">3 · Cómo funciona</h2>
+<p>Siete ideas, cada una en una diapositiva y aquí en una imagen. Tres traen una prueba de tres minutos en tu propio panel.</p>
+<section id="un-modelo-predice-el-siguiente-trozo-de-texto" class="level3">
+<h3 class="anchored" data-anchor-id="un-modelo-predice-el-siguiente-trozo-de-texto">Un modelo predice el siguiente trozo de texto</h3>
+<div class="d1" data-d1="">
+<p class="d1-sentence d1-a">“Nuestra panadería abre todos los días a las<span class="blank"></span>”</p>
+<div class="d1-bars">
+<span class="w d1-a">8:00</span><span class="t"><i class="d1-grow" style="--w:61%"></i></span><span class="p d1-a">61%</span>
+<span class="w d1-a">7:30</span><span class="t"><i class="d1-grow" style="--w:24%;--o:.55"></i></span><span class="p d1-a">24%</span>
+<span class="w d1-a">12:00</span><span class="t"><i class="d1-grow" style="--w:9%;--o:.35"></i></span><span class="p d1-a">9%</span>
+</div>
+<p class="d1-cap">Números ilustrativos. Elige un trozo probable y repite; no busca datos. <strong>Que suene bien no significa que sea cierto.</strong></p>
+</div>
+<p><strong>Prueba (3 min).</strong> Pídele a Claude tres eslóganes para tu idea. Pídelo de nuevo con las mismas palabras y compara. Misma pregunta, respuestas distintas: predice, no consulta.</p>
+</section>
+<section id="los-tokens-son-lo-que-pagas" class="level3">
+<h3 class="anchored" data-anchor-id="los-tokens-son-lo-que-pagas">Los tokens son lo que pagas</h3>
+<div class="d1" data-d1="">
+<div class="d1-chips"><span class="d1-a">Dul</span><span class="d1-a">ce</span><i class="gap"></i><span class="d1-a">Nor</span><span class="d1-a">te</span><i class="gap"></i><span class="d1-a">hor</span><span class="d1-a">nea</span><i class="gap"></i><span class="d1-a">masa</span><i class="gap"></i><span class="d1-a">ma</span><span class="d1-a">dre</span><i class="gap"></i><span class="d1-a">en</span><i class="gap"></i><span class="d1-a">Anto</span><span class="d1-a">fag</span><span class="d1-a">asta</span></div>
+<p class="d1-count d1-a">13 tokens, 7 palabras</p>
+<p class="d1-cap">División ilustrativa. El límite de tu plan Pro se cuenta en tokens: se renueva unas cinco horas después de tu primer mensaje, y además hay un límite semanal. Claude relee toda la conversación en cada paso, así que <strong>empieza una conversación nueva cuando cambies de tarea.</strong></p>
+</div>
+</section>
+<section id="la-ventana-de-contexto-es-su-memoria-de-trabajo" class="level3">
+<h3 class="anchored" data-anchor-id="la-ventana-de-contexto-es-su-memoria-de-trabajo">La ventana de contexto es su memoria de trabajo</h3>
+<div class="d1" data-d1="">
+<div class="d1-ctx">
+<span class="d1-a is-mem" style="flex:1.1">CLAUDE.md</span>
+<span class="d1-a" style="flex:1.4">tus mensajes</span>
+<span class="d1-a" style="flex:2">archivos que leyó</span>
+<span class="d1-a" style="flex:1.6">salida de comandos</span>
+<span class="d1-a is-new" style="flex:1.3">sus respuestas</span>
+</div>
+<div class="d1-ctx-l"><span>Lo que ve en este momento</span><span>Llena: lo más antiguo se resume</span></div>
+<p class="d1-ctx-out d1-a"><s>la conversación de ayer</s> no está en la ventana, así que Claude no la conoce</p>
+</div>
+</section>
+<section id="puede-equivocarse-con-total-seguridad" class="level3">
+<h3 class="anchored" data-anchor-id="puede-equivocarse-con-total-seguridad">Puede equivocarse con total seguridad</h3>
+<div class="d1" data-d1="">
+<div class="d1-vs">
+<div class="d1-card d1-say d1-a"><p class="who"><i class="lg lg-claude" aria-hidden="true"></i>Claude dice</p><p>“Listo. El formulario de contacto ya guarda cada mensaje.”</p></div>
+<div class="d1-see d1-a"><p class="who">El navegador muestra</p><div class="d1-mock"><div class="d1-mock-bar"><i></i><i></i><i></i><span>localhost:3000</span></div><div class="d1-mock-body">Tocas <span class="btn">Enviar</span>. <span class="nothing">No pasa nada.</span></div></div></div>
+</div>
+<p class="d1-cap"><strong>Créele a la pantalla, no al resumen.</strong> Luego dile a Claude exactamente lo que viste.</p>
+</div>
+<p><strong>Prueba (3 min).</strong> Pide tres datos sobre tu mercado, con sus fuentes. Abre una fuente. ¿El dato realmente está ahí?</p>
+</section>
+<section id="un-chat-responde-un-agente-trabaja" class="level3">
+<h3 class="anchored" data-anchor-id="un-chat-responde-un-agente-trabaja">Un chat responde; un agente trabaja</h3>
+<div class="d1" data-d1="">
+<div class="d1-two">
+<div class="d1-card d1-a"><p class="d1-h">Chat</p><ol><li>Tú preguntas</li><li>Responde con texto</li><li>Tú copias, pegas y corriges</li></ol></div>
+<div class="d1-card is-agent d1-a"><p class="d1-h"><i class="lg lg-claude" aria-hidden="true"></i> Agente: Claude Code</p><ol><li>Tú fijas un objetivo</li><li>Lee, edita y ejecuta tus archivos</li><li>Tú juzgas el resultado usándolo</li></ol></div>
+</div>
+</div>
+<figure class="vc-fig figure" data-fig="c1-agent-es"><figcaption class="figure-caption">Un pedido a Claude Code: tú pides, lee la carpeta, planifica, actúa sobre archivos y comandos, revisa el resultado y vuelve a intentar, y tú juzgas el resultado usándolo.</figcaption></figure>
+<p>Como actúa en tu notebook, pide permiso, y puedes detenerlo en cualquier momento con <strong>Esc</strong>.</p>
+<p><strong>Prueba (3 min).</strong> Pregunta: <em>“¿Qué hay en esta carpeta y qué necesitarías de mí para construir mi web?”</em> Fíjate cómo mira antes de responder. No dejes que cree nada todavía: la carpeta debe seguir vacía para el laboratorio.</p>
+</section>
+<section id="un-buen-pedido-contexto-objetivo-límites-y-luego-un-plan" class="level3">
+<h3 class="anchored" data-anchor-id="un-buen-pedido-contexto-objetivo-límites-y-luego-un-plan">Un buen pedido: contexto, objetivo, límites y luego un plan</h3>
+<p>Claude Code es como un colega nuevo muy capaz que no sabe nada de tu proyecto. Dile lo que le dirías a ese colega.</p>
+<div class="vc-compare">
+<div class="is-weak"><p>Débil</p><p>"Hazme una página web para mi consultora."</p><p>Sin público, sin objetivo, sin límites. Claude va a inventar todo eso y vas a pasar la hora siguiente deshaciendo sus suposiciones.</p></div>
+<div class="is-strong"><p>Fuerte</p><p>"Tengo Asesorías Norte, una consultora de dos personas que ayuda a empresas familiares de Antofagasta a preparar una solicitud de crédito bancario. Objetivo: que quien visite entienda en diez segundos qué hacemos y agende una llamada. Público: dueños de 40 a 65 años, que leen en el celular. Estilo: sobrio y cálido, sin degradados morados. Usa Next.js con Tailwind, lista para Vercel. Todavía sin base de datos. Antes de escribir código, pregúntame lo que necesites y propón un plan."</p><p>La última frase es la más importante: <strong>primero el plan, después el código.</strong></p></div>
+</div>
+</section>
+<section id="modo-plan-y-permisos" class="level3">
+<h3 class="anchored" data-anchor-id="modo-plan-y-permisos">Modo plan y permisos</h3>
+<div class="d1" data-d1="">
+<div class="d1-modes">
+<div class="d1-mode d1-a"><span class="pill">Manual</span><p>Pregunta antes de cada edición.</p></div>
+<div class="d1-mode d1-a"><span class="pill">Edit automatically</span><p>Edita archivos sin preguntar.</p></div>
+<div class="d1-mode is-on d1-a"><span class="pill">Plan</span><p>Lee y propone. No toca nada hasta que apruebes.</p></div>
+</div>
+<p class="d1-howto d1-a"><span>Panel: haz clic en el indicador de modo bajo la caja del prompt.</span><span>Terminal: <span class="d1-kbd">Shift</span> + <span class="d1-kbd">Tab</span></span></p>
+<p class="d1-cap">Usa <strong>Plan</strong> cada vez que un cambio toque más de un archivo o no tengas claro lo que quieres: lee el plan, pide cambios, aprueba.</p>
+</div>
+<p><strong>Permisos.</strong> Antes de crear un archivo o ejecutar un comando por primera vez, Claude pregunta. Al principio, lee cada solicitud.</p>
+<div class="d1" data-d1="">
+<div class="d1-perm">
+<div class="d1-perm-r go d1-a"><span class="a"><i></i>Sí</span><span class="q">Crear o editar archivos de tu proyecto.</span></div>
+<div class="d1-perm-r go2 d1-a"><span class="a"><i></i>Sí, y no preguntes de nuevo</span><span class="q">Comandos que se repiten todo el día: <code>npm install …</code>, <code>npm run dev</code>. En la pantalla dice <em>Yes, and don't ask again</em>.</span></div>
+<div class="d1-perm-r stop d1-a"><span class="a"><i></i>Detente y pregunta por qué</span><span class="q"><code>rm</code>, <code>sudo</code>, <code>git push --force</code>, o cualquier cosa fuera de tu carpeta. Pregunta: "¿para qué necesitas esto?"</span></div>
+<div class="d1-perm-r exc d1-a"><span class="a"><i></i>La única excepción</span><span class="q">Escribir en <code>~/.claude/skills</code> cuando crees tu propia skill a las 13:30: sí, ahí viven las skills personales.</span></div>
+</div>
+</div>
+<div class="vc-practice">
+<p class="vc-practice-t"><span>Práctica · Cómo funciona</span></p>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Claude dice que tu formulario de contacto "ya funciona". ¿Qué haces ahora?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="Un modelo escribe las palabras más probables; &quot;funciona&quot; es probable sea cierto o no.">Le creo, porque Claude ejecutó el código y avisaría si hay un error.</button>
+<button class="vc-quiz-opt" data-correct="">Abro la página, lleno el formulario como lo haría un visitante y miro.</button>
+<button class="vc-quiz-opt" data-why="Preguntar de nuevo te da otra respuesta que suena bien, no evidencia. Solo usar la página es evidencia.">Le pregunto a Claude otra vez si está seguro de que el formulario funciona.</button>
+</div>
+<p class="vc-quiz-fb">Que suene bien no significa que sea cierto. Juzgar el resultado usándolo es tu parte del ciclo, y es la parte que nadie puede hacer por ti.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Después de dos horas en la página de inicio empiezas la presentación en la misma conversación, y Claude se pone lento y confuso. ¿Por qué?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-correct="">La conversación es larga: en cada paso la relee entera. Usa /clear.</button>
+<button class="vc-quiz-opt" data-why="Claude no se cansa. Una conversación larga llena la ventana de contexto y gasta tokens en cada paso.">Claude se cansa después de dos horas de trabajo y necesita una pausa.</button>
+<button class="vc-quiz-opt" data-why="El modo plan decide si Claude edita archivos; no acorta la conversación que tiene que releer.">Quedó activado el modo plan, así que Claude ya no puede editar archivos.</button>
+</div>
+<p class="vc-quiz-fb">La ventana de contexto es memoria de trabajo. Una tarea nueva merece una ventana limpia; lo que debe perdurar va en CLAUDE.md.</p>
+</div>
+<div class="vc-quiz">
+<p class="vc-quiz-q">Claude pide permiso para ejecutar <code>rm -rf ~/Documents/old</code>. ¿Cuál es la respuesta correcta?</p>
+<div class="vc-quiz-opts">
+<button class="vc-quiz-opt" data-why="Borra archivos fuera de tu proyecto, y rm no usa la papelera: nada vuelve.">Sí, porque solo borra una carpeta antigua que ya nadie usa.</button>
+<button class="vc-quiz-opt" data-why="Eso aprueba también todos los borrados futuros, sin leerlos.">Sí, y que no pregunte de nuevo, para que no interrumpa más.</button>
+<button class="vc-quiz-opt" data-correct="">No. Le pregunto por qué necesita borrar algo fuera de mi proyecto.</button>
+</div>
+<p class="vc-quiz-fb">rm, sudo, un push forzado o cualquier cosa fuera de tu carpeta: detente y pregunta. Un agente con tus permisos puede hacer todo lo que tú puedes.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="lab" class="level2">
+<h2 class="anchored" data-anchor-id="lab">4 · Laboratorio 1: tu web</h2>
+<div class="d1" data-d1="">
+<div class="d1-gantt">
+<div class="d1-g"><span class="l d1-a"><b>1</b>Brief</span><span class="t"><i class="d1-grow" style="--x:0.00%;--w:2.67%"></i><em class="d1-f" style="--x:0.00%;--w:2.67%">2 min</em></span></div>
+<div class="d1-g"><span class="l d1-a"><b>2</b>Primer prompt</span><span class="t"><i class="d1-grow" style="--x:2.67%;--w:6.67%"></i><em class="d1-f" style="--x:2.67%;--w:6.67%">5 min</em></span></div>
+<div class="d1-g"><span class="l d1-a"><b>3</b>Leer el plan</span><span class="t"><i class="d1-grow" style="--x:9.33%;--w:13.33%"></i><em class="d1-f" style="--x:9.33%;--w:13.33%">10 min</em></span></div>
+<div class="d1-g is-long"><span class="l d1-a"><b>4</b>Construir</span><span class="t"><i class="d1-grow" style="--x:22.67%;--w:24.00%"></i><em class="d1-f" style="--x:22.67%;--w:24.00%">18 min</em></span></div>
+<div class="d1-g"><span class="l d1-a"><b>5</b>Abrirla</span><span class="t"><i class="d1-grow" style="--x:46.67%;--w:6.67%"></i><em class="d1-f" style="--x:46.67%;--w:6.67%">5 min</em></span></div>
+<div class="d1-g"><span class="l d1-a"><b>6</b>Probar</span><span class="t"><i class="d1-grow" style="--x:53.33%;--w:13.33%"></i><em class="d1-f" style="--x:53.33%;--w:13.33%">10 min</em></span></div>
+<div class="d1-g is-late"><span class="l d1-a"><b>7</b>Cambios</span><span class="t"><i class="d1-grow" style="--x:66.67%;--w:20.00%"></i><em class="d1-f" style="--x:66.67%;--w:20.00%">15 min</em></span></div>
+<div class="d1-g is-late"><span class="l d1-a"><b>8</b>Volver atrás</span><span class="t"><i class="d1-grow" style="--x:86.67%;--w:6.67%"></i><em class="d1-f" style="--x:86.67%;--w:6.67%">5 min</em></span></div>
+<div class="d1-g is-late"><span class="l d1-a"><b>9</b>Commit</span><span class="t"><i class="d1-grow" style="--x:93.33%;--w:6.67%"></i><em class="d1-f" style="--x:93.33%;--w:6.67%">5 min</em></span></div>
+</div>
+<div class="d1-axis"><span></span><div><span>10:15</span><span>10:30</span><span>10:45</span><span>11:00</span><span>11:15</span><span>11:30</span></div></div>
+<p class="d1-cap">Los 75 minutos del laboratorio. El paso más largo es esperar mientras Claude construye: <strong>lee cada permiso y no empieces otra cosa mientras tanto.</strong></p>
+</div>
+<div class="vc-lab">
+<p class="vc-lab-t">Lo que construyes en los próximos 75 minutos</p>
+<p class="vc-lab-time">Solo, sobre tu propia idea. El profesor recorre la sala. Si llevas más de cinco minutos atascado, levanta la mano.</p>
+<ol>
+<li><strong>Abre tu brief (2 min).</strong> Las cinco líneas que escribiste en casa: cuál es tu idea, para quién es, la única cosa que debe hacer quien visite, cómo debe sentirse (dos sitios que te gusten) y lo que no quieres. ¿No tienes brief? Escríbelo ahora, cinco líneas.</li>
+<li><strong>Pasa a modo plan y envía el primer prompt (5 min).</strong> Usa el prompt de abajo con tu brief dentro.</li>
+<li><strong>Responde sus preguntas y lee el plan (10 min).</strong> Si el plan agrega cosas que no pediste, como un inicio de sesión, un blog o una base de datos, dile: "Quita X por ahora; la primera versión se limita al brief." Aprueba cuando calce.</li>
+<li><strong>Déjalo construir, leyendo cada permiso (18 min).</strong> Crear un proyecto Next.js descarga mucho y pide varios permisos. Con el wifi compartido es lento: ten paciencia y no empieces otra tarea mientras tanto.</li>
+<li><strong>Ábrela (5 min).</strong> Pide: "Levanta el servidor de desarrollo y dame la URL." Abre <code>http://localhost:3000</code>. Esa es tu web, visible solo en tu notebook. Se actualiza sola cada vez que Claude cambia un archivo.</li>
+<li><strong>Pruébala como un visitante (10 min).</strong> Léela como la leería tu público. Revisa cada afirmación que Claude escribió sobre tu negocio: precios, promesas, cifras, nombres. Inventa algunas que suenan creíbles; quita lo que no sea cierto. Luego angosta la ventana del navegador, como un celular. Anota las tres cosas que menos te gustan.</li>
+<li><strong>Un cambio a la vez (15 min).</strong> Arregla esas tres cosas, un prompt cada una, mirando la página después de cada cambio.</li>
+<li><strong>Vuelve atrás una vez, a propósito (5 min).</strong> Pide un cambio que no te guste y luego deshazlo: pasa el mouse sobre tu mensaje en el panel, presiona el botón de rewind y elige <em>Rewind code to here</em> (volver el código a este punto). (En la terminal, <code>/rewind</code> o <strong>Esc</strong> dos veces.) Así sales de un camino equivocado en segundos.</li>
+<li><strong>Guarda tu avance (5 min).</strong> Pide: "Haz commit de todo con el mensaje 'primera versión'." Un commit es una foto guardada del proyecto, a la que siempre puedes volver.</li>
+</ol>
+</div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">Tú, a Claude · el primer prompt (en modo plan)</div><div class="vc-prompt-b">Quiero crear la web de [mi idea, en una frase].
+Objetivo: [la única cosa que debe hacer quien visite: escribirme, agendar una llamada, inscribirse en la lista].
+Público: [quiénes son], que leen sobre todo en el celular.
+Estilo: [dos o tres adjetivos]. Sitios que me gustan: [uno o dos links]. Evita: [lo que no quieres].
+Secciones: [tres a cinco secciones].
+Usa Next.js con Tailwind, lista para publicar en Vercel. Crea el proyecto directamente en esta carpeta, no en una subcarpeta. Todavía sin base de datos ni inicio de sesión.
+Antes de escribir código, hazme las preguntas que necesites y propón un plan.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">Tú, a Claude · un cambio</div><div class="vc-prompt-b">Un solo cambio, nada más: [lo que quieres, lo más preciso posible, por ejemplo: el título es muy largo, déjalo en menos de ocho palabras sin perder el sentido].
+Deja todo lo demás como está. Cuando termines, dime en una frase qué cambiaste.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">Tú, a Claude · cuando algo se ve mal</div><div class="vc-prompt-b">En una ventana del tamaño de un celular, [exactamente lo que ves, por ejemplo: el menú tapa el título y no lo puedo cerrar]. En una ventana ancha se ve bien.
+Primero explícame en palabras simples qué crees que está pasando. Luego arréglalo y dime cómo comprobarlo.</div></div>
+<p>Describe lo que <strong>ves</strong>, no lo que crees que debería hacer el código. “El botón no hace nada cuando lo toco” es mejor que “arregla el JavaScript”. Si el mismo error vuelve tres veces, deja de pedir arreglos: presiona <strong>Esc</strong>, vuelve atrás con rewind hasta antes de que empezara el problema y pide el cambio de otra forma.</p>
+</section>
+<section id="skills" class="level2">
+<h2 class="anchored" data-anchor-id="skills">5 · Skills y memoria</h2>
+<section id="skills-manuales-que-claude-abre-cuando-el-trabajo-los-necesita" class="level3">
+<h3 class="anchored" data-anchor-id="skills-manuales-que-claude-abre-cuando-el-trabajo-los-necesita">Skills: manuales que Claude abre cuando el trabajo los necesita</h3>
+<div class="d1" data-d1="">
+<div class="d1-shelfwrap">
+<div>
+<p class="d1-ask d1-a">“Rediseña mi página de inicio para que se vea premium.”</p>
+<div class="d1-shelf">
+<div class="d1-book h2 d1-a"><span>skill-creator</span></div>
+<div class="d1-book is-pick d1-a"><span>frontend-design</span></div>
+<div class="d1-book h3 is-yours d1-a"><span>my-brand</span></div>
+</div>
+</div>
+<div class="d1-shelf-note d1-a"><p>Una skill es un manual para un tipo de trabajo. Claude lee solo su lomo, una descripción de una línea, hasta que un pedido calza; entonces lo abre.</p><p>Las skills vienen en <strong>plugins</strong>. Hoy: frontend-design a las 11:30, skill-creator y my-brand a las 13:30.</p></div>
+</div>
+</div>
+<p>Instala el plugin de diseño desde el catálogo oficial de Anthropic. Hazlo en la terminal de VS Code, donde el catálogo ya está configurado:</p>
+<div class="vc-prompt"><div class="vc-prompt-h">En la terminal de VS Code · escribe <code>claude</code> y luego cada línea dentro, una a la vez</div><div class="vc-prompt-b">claude
+/plugin install frontend-design@claude-plugins-official
+/exit</div></div>
+<p>Vuelve al panel. Si dice <em>Restart Claude to apply plugin changes</em>, hazlo. Escribe <code>/skills</code> para ver lo que tienes ahora; <code>/plugins</code> en el panel los administra. Un plugin puede ejecutar comandos en tu computador: instala solo desde el catálogo oficial o de autores que conozcas, como harías con cualquier programa.</p>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">Tú, a Claude · el rediseño (20 min)</div><div class="vc-prompt-b">Usa la skill frontend-design para mejorar el diseño de mi página de inicio. Primero propón dos direcciones visuales distintas, en pocas líneas cada una, y espera a que yo elija.</div></div>
+<p>Elige una, mira el resultado en una ventana angosta y pide uno o dos cambios.</p>
+</section>
+<section id="claude.md-la-memoria-del-proyecto" class="level3">
+<h3 class="anchored" data-anchor-id="claude.md-la-memoria-del-proyecto">CLAUDE.md: la memoria del proyecto</h3>
+<div class="d1" data-d1="">
+<div class="d1-mem">
+<div class="d1-conv is-old d1-a"><span class="h">La conversación de esta mañana</span><span>tu brief</span><span>"el sitio en español"</span><span>"revisa la vista en celular"</span></div>
+<div class="mid d1-a"><span aria-hidden="true">→</span>conversación nueva: lo olvida todo</div>
+<div class="d1-conv d1-a"><span class="h">La conversación siguiente</span><span class="is-mem">CLAUDE.md, cargado primero</span><span>tu nuevo pedido</span></div>
+</div>
+<p class="d1-cap">Lo que Claude debe saber siempre va en <code>CLAUDE.md</code>, en la raíz de tu proyecto.</p>
+</div>
+<p>Créalo ahora: escribe <code>/init</code> en el panel, o simplemente pide <em>“Crea un CLAUDE.md para este proyecto.”</em></p>
+<p>Abre el archivo y agrega unas líneas tuyas. La sección más útil es la última: cada vez que Claude cometa un error que no quieres que se repita, dile <em>“agrega esto a CLAUDE.md para que no vuelva a pasar”</em>.</p>
+<div class="vc-prompt"><div class="vc-prompt-h">Un ejemplo · CLAUDE.md</div><div class="vc-prompt-b"># Web de Asesorías Norte
+
+## Qué es
+El sitio de una consultora de dos personas: qué hacemos, para quién, agenda una llamada.
+
+## Reglas
+- Escribe los textos del sitio en español y háblame en español.
+- Stack: Next.js + Tailwind, publicado en Vercel.
+- Para diseño, usa la skill frontend-design.
+- Nunca pongas llaves ni contraseñas en el código.
+
+## Reglas que salieron de errores reales
+- La vista en celular se revisa antes de decir "listo".</div></div>
+<p>Haz commit de nuevo: <em>“Haz commit de todo con el mensaje ‘diseño y CLAUDE.md’.”</em></p>
+</section>
+</section>
+<section id="publish" class="level2">
+<h2 class="anchored" data-anchor-id="publish">6 · Publicar</h2>
+<figure class="vc-fig figure" data-fig="c1-ship-es"><figcaption class="figure-caption">Tu web corre en localhost; un commit guarda una foto; un push la sube a tu repositorio privado de GitHub; Vercel ve el push, reconstruye y la sirve en una dirección pública que abres en el celular.</figcaption></figure>
+<div class="d1" data-d1="">
+<div class="d1-path">
+<div class="d1-card d1-a"><span class="n"><b>1</b><i class="lg lg-claude" aria-hidden="true"></i></span><p class="d1-h">Pídele a Claude que revise</p><p>Sin llaves, sin archivos .env, todo con commit. Sin push.</p></div>
+<div class="d1-card d1-a"><span class="n"><b>2</b><i class="lg lg-vscode" aria-hidden="true"></i><i class="lg lg-github" aria-hidden="true"></i></span><p class="d1-h">Publish Branch</p><p>Source Control → repositorio privado de GitHub.</p></div>
+<div class="d1-card d1-a"><span class="n"><b>3</b><i class="lg lg-vercel" aria-hidden="true"></i></span><p class="d1-h">Import, Deploy</p><p>vercel.com/new. No cambies nada.</p></div>
+<div class="d1-card d1-a"><span class="n"><b>4</b><span class="phone" aria-hidden="true"></span></span><p class="d1-h">Ábrela en tu celular</p><p>Luego un cambio, commit, Sync Changes.</p></div>
+</div>
+</div>
+<p><strong>Sube a <span class="d1-tool"><i class="lg lg-github" aria-hidden="true"></i>GitHub</span> (15 min).</strong> Dos pasos, en este orden. Primero, pídele a Claude que revise:</p>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">Tú, a Claude · antes del primer push</div><div class="vc-prompt-b">Revisa que nada de lo que voy a subir contenga llaves, contraseñas ni archivos .env, y que todo tenga commit. No hagas push.</div></div>
+<p>Luego, tú: abre <strong>Source Control</strong> en VS Code (el ícono de ramas a la izquierda, o Ctrl + Shift + G), presiona <strong>Publish Branch</strong> y elige <strong>Publish to GitHub private repository</strong>. La primera vez, VS Code te pide iniciar sesión en GitHub en el navegador.</p>
+<p><strong>Importa en <span class="d1-tool"><i class="lg lg-vercel" aria-hidden="true"></i>Vercel</span> (15 min).</strong> Entra a <a href="https://vercel.com/new">vercel.com/new</a>, con tu sesión de GitHub. Busca tu repositorio, presiona <strong>Import</strong>, no cambies nada, presiona <strong>Deploy</strong>. En uno o dos minutos tienes una dirección como <code>mi-web.vercel.app</code>. Si tu repositorio no aparece en la lista, elige <strong>Adjust GitHub App Permissions</strong>, dale a Vercel acceso a todos los repositorios (o a este), guarda y vuelve.</p>
+<p><strong>Ábrela en tu celular (5 min).</strong> Luego un cambio pequeño: commit, <strong>Sync Changes</strong>, y Vercel lo publica solo en alrededor de un minuto.</p>
+<p><strong>Una regla de proyectos reales: lo que está publicado tiene que estar en GitHub.</strong> Commit y push primero, siempre, para que el siguiente deploy automático no deshaga tu trabajo. (Las llaves llegan el Día 2, con sus propias reglas.)</p>
+<p>Un deploy fallido no rompe tu web: Vercel mantiene la última versión que funcionó. Revisa <em>Cuando algo sale mal</em>, más abajo.</p>
+</section>
+<section id="deck" class="level2">
+<h2 class="anchored" data-anchor-id="deck">7 · Una presentación HTML en cinco minutos</h2>
+<p>Sin PowerPoint: un archivo HTML se abre en cualquier navegador, proyector o celular, y Claude lo escribe en un par de minutos.</p>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">Tú, a Claude · la presentación</div><div class="vc-prompt-b">Crea una presentación HTML de 6 diapositivas sobre mi proyecto en un solo archivo, public/slides.html. Diapositivas: el problema, para quién es, qué hace mi web, cómo funciona, por qué ahora, qué necesito. Una idea por diapositiva, letra grande, los colores de mi sitio, flechas del teclado para avanzar, que funcione en el celular. Sin librerías externas.</div></div>
+<div class="d1" data-d1="">
+<div class="d1-map">
+<div class="d1-tree d1-a"><b>mi-web/</b>
+├─ app/            <span>tus páginas</span>
+├─ <b>public/</b>
+│  └─ <span class="hl">slides.html</span>
+├─ CLAUDE.md
+└─ package.json</div>
+<span class="d1-arrow d1-a" aria-hidden="true">→</span>
+<div class="d1-url d1-a"><div class="d1-mock-bar"><i></i><i></i><i></i><span>mi-web.vercel.app/<b>slides.html</b></span></div><div class="body"><i class="lg lg-vercel" aria-hidden="true"></i>Se publica tal cual, en la raíz de tu dirección.</div></div>
+</div>
+</div>
+<p>Abre <code>http://localhost:3000/slides.html</code>. Corrige con un solo prompt la diapositiva que menos te guste. Haz commit y push: la presentación ya es pública en <code>mi-web.vercel.app/slides.html</code>, y ese es el link que compartes.</p>
+</section>
+<section id="own-skill" class="level2">
+<h2 class="anchored" data-anchor-id="own-skill">8 · Tu propia skill: my-brand</h2>
+<p>Escribe tus colores y tu tono una vez, como skill, y cada página, diapositiva y texto futuro sale bien sin pedirlo.</p>
+<div class="d1" data-d1="">
+<div class="d1-scope">
+<div class="d1-a"><p class="lab"><b>Personal</b>: todos los proyectos de este notebook</p><div class="d1-tree"><b>~/.claude/skills/</b>
+└─ my-brand/
+   └─ <span class="hl">SKILL.md</span></div></div>
+<div class="d1-a"><p class="lab">Solo <b>este proyecto</b></p><div class="d1-tree"><b>~/Proyectos/mi-web/</b>
+├─ CLAUDE.md
+├─ app/
+└─ public/slides.html</div></div>
+</div>
+<p class="d1-cap">Cuando trabajas en <code>mi-web</code>, Claude lee ambos: el CLAUDE.md del proyecto, y tus skills personales cuando un pedido calza.</p>
+</div>
+<div class="vc-prompt"><div class="vc-prompt-h">En la terminal de VS Code · escribe <code>claude</code> y luego cada línea dentro, una a la vez</div><div class="vc-prompt-b">claude
+/plugin install skill-creator@claude-plugins-official
+/exit</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">Tú, a Claude · crea la skill (15 min)</div><div class="vc-prompt-b">Usa skill-creator para crear una skill personal llamada my-brand con mis colores ([#XXXXXX], [#XXXXXX]), mis tipografías ([nombres]) y el tono de mis textos: [cercano, sin tecnicismos]. Su descripción debe decir que se use cada vez que pida una página, una diapositiva o un texto para mi proyecto. Guárdala en ~/.claude/skills/my-brand, como skill personal, no dentro de este proyecto. No crees casos de prueba ni corras evaluaciones: solo escribe el SKILL.md y muéstramelo.</div></div>
+<p>Claude va a pedir escribir fuera de tu carpeta, en <code>~/.claude/skills</code>. Esta es la única excepción a la regla de permisos: responde que sí. Luego lee lo que escribió: en la terminal, <code>code ~/.claude/skills/my-brand/SKILL.md</code>. Es texto plano, y sus primeras líneas (la <em>description</em>) son lo que Claude lee para decidir cuándo usarla.</p>
+<p><strong>Pruébala (10 min).</strong> Empieza una conversación nueva (<code>/clear</code>, o el botón de conversación nueva del panel) y pide: <em>“Hazme una lista de precios de una página para mi proyecto.”</em> No menciones colores ni tono. Si el resultado sale con tu marca, la skill funciona. Si <code>/skills</code> no la muestra, reinicia el panel. Si aparece pero no se usa, pídele a Claude que haga su descripción más específica.</p>
+</section>
+<section id="close" class="level2">
+<h2 class="anchored" data-anchor-id="close">9 · Pitches y lo que viene</h2>
+<p><strong>Pitches (15 min).</strong> Voluntarios proyectan su <code>slides.html</code> y presentan en 60 segundos. El curso dice una cosa que funciona y una pregunta que haría un cliente.</p>
+<p><strong>Lo que viene.</strong> El Día 2 (sábado 16 de enero de 2027) agrega una base de datos y un inicio de sesión con <span class="d1-tool"><i class="lg lg-supabase" aria-hidden="true"></i>Supabase</span>, conectada a Claude por MCP, una función de IA dentro de tu app y una primera automatización. El Día 3 (domingo 17 de enero) es seguridad, una presentación construida con tu evidencia y el Demo Day.</p>
+</section>
+<section id="cuando-algo-sale-mal" class="level2">
+<h2 class="anchored" data-anchor-id="cuando-algo-sale-mal">Cuando algo sale mal</h2>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Lo que ves</th>
+<th>Qué hacer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>command not found: code</code> en Mac</td>
+<td>En VS Code: ⌘ + Shift + P, escribe <em>Shell Command: Install ‘code’ command in PATH</em> y presiona Enter.</td>
+</tr>
+<tr class="even">
+<td><code>command not found: claude</code></td>
+<td>Cierra y vuelve a abrir la terminal. Si sigue fallando en Mac: ejecuta <code>echo 'export PATH="$HOME/.local/bin:$PATH"' &gt;&gt; ~/.zshrc</code> y vuelve a abrirla. En Windows: agrega al PATH la carpeta que mostró el instalador (normalmente <code>%USERPROFILE%\.local\bin</code>).</td>
+</tr>
+<tr class="odd">
+<td>Windows: <em>running scripts is disabled on this system</em></td>
+<td>En PowerShell: <code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code>, responde Y y vuelve a abrir la terminal.</td>
+</tr>
+<tr class="even">
+<td>Claude va por mal camino</td>
+<td><strong>Esc</strong> lo detiene al instante. Luego dile lo que quieres en cambio.</td>
+</tr>
+<tr class="odd">
+<td>Un cambio empeoró las cosas</td>
+<td>Pasa el mouse sobre tu mensaje, presiona rewind, elige <em>Rewind code to here</em>. O pide: “vuelve al último commit”.</td>
+</tr>
+<tr class="even">
+<td>El mismo error vuelve una y otra vez</td>
+<td>Deja de pedir arreglos. Vuelve a antes de que empezara y pide distinto, o pide: “Encuentra la causa antes de cambiar nada: [lo que ves]”.</td>
+</tr>
+<tr class="odd">
+<td><code>localhost:3000</code> no abre</td>
+<td>Pídele a Claude: “Levanta el servidor de desarrollo y dime la URL.” Puede que otro programa use el puerto; elegirá el 3001.</td>
+</tr>
+<tr class="even">
+<td>Funciona en tu notebook, no en Vercel</td>
+<td>Dale a Claude el error de Vercel: <em>“Explícame la causa en palabras simples, arréglalo y corre npm run build antes de que vuelva a hacer push.”</em></td>
+</tr>
+<tr class="odd">
+<td>Vercel: <em>No Next.js version detected</em></td>
+<td>El proyecto quedó en una subcarpeta. En la configuración del proyecto en Vercel, pon en <strong>Root Directory</strong> la carpeta que tiene <code>package.json</code> y vuelve a desplegar.</td>
+</tr>
+<tr class="even">
+<td>Tu repositorio no aparece en Vercel</td>
+<td><strong>Adjust GitHub App Permissions</strong> en vercel.com/new, dale acceso, guarda y vuelve.</td>
+</tr>
+<tr class="odd">
+<td>“You have reached your usage limit”</td>
+<td>Trabaja en pareja con un vecino hasta que se renueve; en claude.ai, Settings → Usage muestra cuándo. La próxima vez, <code>/clear</code> entre tareas y conversaciones cortas.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="comandos-que-vas-a-usar" class="level2">
+<h2 class="anchored" data-anchor-id="comandos-que-vas-a-usar">Comandos que vas a usar</h2>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Comando</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Esc</strong></td>
+<td>Detiene a Claude ahora</td>
+</tr>
+<tr class="even">
+<td>Pasar el mouse sobre un mensaje → rewind (panel) · <code>/rewind</code> (terminal)</td>
+<td>Vuelve a un mensaje anterior y, si quieres, al código de ese momento</td>
+</tr>
+<tr class="odd">
+<td><code>/clear</code></td>
+<td>Una conversación nueva y limpia. Úsalo al cambiar de tarea</td>
+</tr>
+<tr class="even">
+<td><code>/compact</code></td>
+<td>Resume una conversación larga para hacer espacio</td>
+</tr>
+<tr class="odd">
+<td><code>/init</code></td>
+<td>Crea CLAUDE.md a partir de tu proyecto</td>
+</tr>
+<tr class="even">
+<td><code>/plugins</code> (panel) · <code>/plugin</code> (terminal)</td>
+<td>Explorar e instalar plugins</td>
+</tr>
+<tr class="odd">
+<td><code>/skills</code></td>
+<td>Lista las skills que tienes</td>
+</tr>
+<tr class="even">
+<td><code>/status</code></td>
+<td>Tu cuenta, modelo y versión</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="checklist-de-hoy" class="level2">
+<h2 class="anchored" data-anchor-id="checklist-de-hoy">Checklist de hoy</h2>
+<ul class="vc-checklist" id="day1-checklist-es">
+<li>Las cinco pruebas pasan en mi notebook.</li>
+<li>La carpeta de mi proyecto está en ~/Proyectos, fuera de cualquier carpeta sincronizada.</li>
+<li>Mi brief tiene cinco líneas: idea, público, la única acción, la sensación, las secciones.</li>
+<li>Leí el plan de Claude antes de aprobarlo y corregí al menos una cosa.</li>
+<li>Mi web corre en localhost:3000 y la revisé en una ventana del tamaño de un celular.</li>
+<li>Pedí al menos tres cambios, uno a la vez, mirando la página después de cada uno.</li>
+<li>Volví atrás una vez con rewind.</li>
+<li>El plugin frontend-design está instalado y lo usé para un rediseño.</li>
+<li>CLAUDE.md existe, con al menos una regla mía.</li>
+<li>Mi proyecto está en un repositorio privado de GitHub, sin llaves ni archivos .env.</li>
+<li>Mi web está publicada en Vercel y la abrí en mi celular.</li>
+<li>Un cambio que subí apareció solo en la dirección pública.</li>
+<li>Mi presentación de seis diapositivas está publicada en mi-web.vercel.app/slides.html.</li>
+<li>Mi skill my-brand existe y funcionó en una conversación limpia sin repetirle los colores.</li>
+</ul>
+</section>
+<section id="antes-del-día-2" class="level2">
+<h2 class="anchored" data-anchor-id="antes-del-día-2">Antes del Día 2</h2>
+<p><strong>Hito M1 · individual · 15% · entrega el domingo 13 de diciembre de 2026, 23:59.</strong> Una página sobre la app que vas a construir los Días 2 y 3, sobre la web de hoy:</p>
+<ul>
+<li>para quién es, y su dolor con una cifra;</li>
+<li>qué hace la app;</li>
+<li>cómo vas a saber que funciona;</li>
+<li>tres historias de usuario, cada una con sus criterios de aceptación (por ejemplo: “un visitante puede dejar su correo; aparece en mi lista en menos de un minuto; no se puede enviar un correo vacío”);</li>
+<li>los links a tu web y a tu presentación.</li>
+</ul>
+<p>Se evalúa con la <a href="rubric.html">rúbrica del curso</a> (en inglés) en problema y valor, y en comunicación. La retroalimentación escrita llega antes del Día 2.</p>
+<p><strong>Antes del domingo 10 de enero de 2027.</strong> Crea una cuenta gratuita de <span class="d1-tool"><i class="lg lg-supabase" aria-hidden="true"></i>Supabase</span> en <a href="https://supabase.com/dashboard">supabase.com</a> con <strong>Continue with GitHub</strong>; el Día 2 la conectamos a Claude. Mantén activo tu plan Claude Pro y sigue mejorando tu web: cada cambio que subes es práctica.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<script src="assets/course.js"></script>
+<script src="assets/figures.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
+<script src="assets/vc-core.js"></script>
+<script src="assets/day1-visuals.js"></script>
+
+
+
+</body></html>

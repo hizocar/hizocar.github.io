@@ -62,6 +62,34 @@
     back: "From now on every push to main publishes. What is live must be in GitHub.",
   });
 
+  figure("c1-agent-es", {
+    kind: "flow",
+    title: "Lo que hace Claude Code con un pedido",
+    nodes: [
+      { k: "1", t: "Tú pides", d: "Contexto, objetivo, límites. Luego: primero el plan." },
+      { k: "2", t: "Lee", d: "Los archivos de la carpeta que abriste, y CLAUDE.md." },
+      { k: "3", t: "Planifica", d: "En modo plan se detiene aquí y te espera.", tone: "ai" },
+      { k: "4", t: "Actúa", d: "Edita archivos, ejecuta comandos. Pide permiso ante cada acción nueva." },
+      { k: "5", t: "Revisa", d: "Abre la página, lee el error, vuelve a intentar." },
+      { k: "6", t: "Tú juzgas", d: "Abre la página y úsala. Acepta, o pide un cambio.", tone: "ink" },
+    ],
+    loop: true,
+    back: "Un chat responde y se detiene. Un agente repite los pasos 2 a 5 hasta terminar el trabajo, o hasta que presiones Esc.",
+  });
+
+  figure("c1-ship-es", {
+    kind: "flow",
+    title: "De tu notebook a una dirección pública",
+    nodes: [
+      { k: "1", t: "Tu notebook", d: "Tu web en localhost, visible solo para ti.", tag: "prueba 1" },
+      { k: "2", t: "Commit", d: "Una foto guardada del proyecto en un momento en que funcionaba." },
+      { k: "3", t: "Push a GitHub", d: "La foto sube a tu repositorio privado.", tone: "ai" },
+      { k: "4", t: "Vercel", d: "Ve el push y reconstruye solo, en alrededor de un minuto." },
+      { k: "5", t: "Dirección pública", d: "Un link vercel.app que cualquiera puede abrir.", tone: "ink", tag: "prueba 2: en el celular" },
+    ],
+    back: "Desde ahora cada push a main publica. Lo que está publicado tiene que estar en GitHub.",
+  });
+
   figure("c2-three-ai", {
     kind: "lanes",
     title: "Three things people call “the AI”",

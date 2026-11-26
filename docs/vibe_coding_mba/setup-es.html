@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sebastián Azócar - Guía de instalación</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<script>
+  (function () {
+    var d = document.documentElement;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    d.classList.add("hz-motion");
+    // If the motion script never runs, show the content anyway.
+    setTimeout(function () { if (!window.__hzReady) d.classList.remove("hz-motion"); }, 3000);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="assets/vc.css">
+<link rel="stylesheet" href="assets/day1.css">
+<meta property="og:title" content="Sebastián Azócar - Guía de instalación">
+<meta property="og:description" content="Tres cuentas, cuatro programas, cinco pruebas. Unos 45 minutos, antes del domingo 29 de noviembre. No necesitas saber programar.">
+<meta property="og:site-name" content="Sebastián Azócar">
+<meta name="twitter:title" content="Sebastián Azócar - Guía de instalación">
+<meta name="twitter:description" content="Tres cuentas, cuatro programas, cinco pruebas. Unos 45 minutos, antes del domingo 29 de noviembre. No necesitas saber programar.">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="Inicio" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../cursos.html" rel="" target="">
+ <span class="menu-text">Cursos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html#contacto" rel="" target="">
+ <span class="menu-text">Contacto</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto tools-wide">
+    <a href="https://github.com/hizocar" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo lector">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#the-pieces-one-sentence-each" id="toc-the-pieces-one-sentence-each" class="nav-link active" data-scroll-target="#the-pieces-one-sentence-each">Las piezas, en una frase cada una</a></li>
+  <li><a href="#what-it-costs" id="toc-what-it-costs" class="nav-link" data-scroll-target="#what-it-costs">Cuánto cuesta</a></li>
+  <li><a href="#part-1-accounts-15-minutes" id="toc-part-1-accounts-15-minutes" class="nav-link" data-scroll-target="#part-1-accounts-15-minutes">Parte 1 · Cuentas (15 minutos)</a></li>
+  <li><a href="#part-2-programs-30-minutes" id="toc-part-2-programs-30-minutes" class="nav-link" data-scroll-target="#part-2-programs-30-minutes">Parte 2 · Programas (30 minutos)</a>
+  <ul class="collapse">
+  <li><a href="#vs-code" id="toc-vs-code" class="nav-link" data-scroll-target="#vs-code">1. <i class="lg lg-vscode" aria-hidden="true"></i> VS Code</a></li>
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">2. <i class="lg lg-git" aria-hidden="true"></i> Git</a></li>
+  <li><a href="#node.js" id="toc-node.js" class="nav-link" data-scroll-target="#node.js">3. <i class="lg lg-node" aria-hidden="true"></i> Node.js</a></li>
+  <li><a href="#claude-code" id="toc-claude-code" class="nav-link" data-scroll-target="#claude-code">4. <i class="lg lg-claude" aria-hidden="true"></i> Claude Code</a></li>
+  <li><a href="#where-your-projects-live" id="toc-where-your-projects-live" class="nav-link" data-scroll-target="#where-your-projects-live">Dónde viven tus proyectos</a></li>
+  </ul></li>
+  <li><a href="#a-warm-up-that-saves-time-on-sunday-5-to-10-minutes" id="toc-a-warm-up-that-saves-time-on-sunday-5-to-10-minutes" class="nav-link" data-scroll-target="#a-warm-up-that-saves-time-on-sunday-5-to-10-minutes">Un calentamiento que ahorra tiempo el domingo (5 a 10 minutos)</a></li>
+  <li><a href="#the-five-tests" id="toc-the-five-tests" class="nav-link" data-scroll-target="#the-five-tests">Las cinco pruebas</a></li>
+  <li><a href="#on-a-work-laptop" id="toc-on-a-work-laptop" class="nav-link" data-scroll-target="#on-a-work-laptop">En un notebook del trabajo</a></li>
+  <li><a href="#before-day-2" id="toc-before-day-2" class="nav-link" data-scroll-target="#before-day-2">Antes del día 2</a></li>
+  <li><a href="#if-you-could-not-finish" id="toc-if-you-could-not-finish" class="nav-link" data-scroll-target="#if-you-could-not-finish">Si no alcanzaste a terminar</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Guía de instalación</h1>
+<p class="subtitle lead">Tres cuentas, cuatro programas, cinco pruebas. Unos 45 minutos, antes del domingo 29 de noviembre. No necesitas saber programar.</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Hazlo en tu casa, antes del día 1. Si llegas con las cuentas creadas y los programas instalados, el día 1 se va en construir y no en esperar correos de confirmación. Si algo falla, ven igual: el día 1, de 08:20 a 09:00, revisamos la instalación de todos y los compañeros se ayudan entre sí.</p>
+<p><strong>Regla de oro.</strong> Si un comando responde con un error en rojo, no sigas al paso siguiente. Copia el error completo y tráelo a clases, o pégalo en <a href="https://claude.ai">claude.ai</a> con: <em>“¿Qué significa esto y cómo lo arreglo en Mac / Windows?”</em></p>
+<section id="the-pieces-one-sentence-each" class="level2">
+<h2 class="anchored" data-anchor-id="the-pieces-one-sentence-each">Las piezas, en una frase cada una</h2>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pieza</th>
+<th>Qué es</th>
+<th>Piénsalo como</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="d1-tool"><i class="lg lg-vscode" aria-hidden="true"></i>VS Code</span></td>
+<td>El editor donde viven los archivos de tu web</td>
+<td>Tu escritorio</td>
+</tr>
+<tr class="even">
+<td><span class="d1-tool"><i class="lg lg-claude" aria-hidden="true"></i>Claude Code</span></td>
+<td>Un asistente que lee, escribe y ejecuta código en tu proyecto</td>
+<td>Un colega muy capaz trabajando a tu lado</td>
+</tr>
+<tr class="odd">
+<td><span class="d1-tool"><i class="lg lg-git" aria-hidden="true"></i><i class="lg lg-github" aria-hidden="true"></i>Git y GitHub</span></td>
+<td>Todas las versiones de tus archivos, guardadas y respaldadas</td>
+<td>Un drive con el historial completo de cambios</td>
+</tr>
+<tr class="even">
+<td><span class="d1-tool"><i class="lg lg-vercel" aria-hidden="true"></i>Vercel</span></td>
+<td>El servicio que publica tu web en una dirección pública</td>
+<td>La tienda donde abres las puertas</td>
+</tr>
+<tr class="odd">
+<td><span class="d1-tool"><i class="lg lg-node" aria-hidden="true"></i>Node.js</span></td>
+<td>El motor en que corre tu web mientras la construyes</td>
+<td>La cocina detrás de la tienda</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-it-costs" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-costs">Cuánto cuesta</h2>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ítem</th>
+<th>Costo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Plan <span class="d1-tool"><i class="lg lg-claude" aria-hidden="true"></i>Claude Pro</span>, pagado por cada estudiante</td>
+<td>Unos USD 20 al mes. Claude Code no funciona con el plan gratis. Lo necesitas activo el día 1 y del día 2 al día 3; mantenerlo entre medio te permite practicar.</td>
+</tr>
+<tr class="even">
+<td><span class="d1-tool"><i class="lg lg-github" aria-hidden="true"></i>GitHub</span>, <span class="d1-tool"><i class="lg lg-vercel" aria-hidden="true"></i>Vercel Hobby</span>, <span class="d1-tool"><i class="lg lg-supabase" aria-hidden="true"></i>Supabase Free</span></td>
+<td>Gratis</td>
+</tr>
+</tbody>
+</table>
+<p>Confirma el precio vigente en <a href="https://claude.ai">claude.ai</a> antes de pagar; los precios cambian.</p>
+</section>
+<section id="part-1-accounts-15-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-accounts-15-minutes">Parte 1 · Cuentas (15 minutos)</h2>
+<p>Usa <strong>el mismo correo</strong> en todas. Lo mejor es un correo personal que vayas a mantener después del MBA.</p>
+<ul class="vc-checklist" id="setup-accounts-es">
+<li><span><span class="d1-tool"><i class="lg lg-claude" aria-hidden="true"></i>Claude</span> en <a href="https://claude.ai">claude.ai</a>, con el plan <strong>Pro</strong> o superior.</span></li>
+<li><span><span class="d1-tool"><i class="lg lg-github" aria-hidden="true"></i>GitHub</span> en <a href="https://github.com/signup">github.com/signup</a>. Gratis.</span></li>
+<li><span><span class="d1-tool"><i class="lg lg-vercel" aria-hidden="true"></i>Vercel</span> en <a href="https://vercel.com/signup">vercel.com/signup</a>. Elige <strong>Continue with GitHub</strong> y el plan <strong>Hobby</strong> (gratis).</span></li>
+<li><span>Escribe cinco líneas sobre <strong>tu idea</strong>: para qué es la web, quién la visita, qué debería hacer ahí, dos sitios cuyo estilo te guste y lo que no quieres.</span></li>
+</ul>
+</section>
+<section id="part-2-programs-30-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-programs-30-minutes">Parte 2 · Programas (30 minutos)</h2>
+<p>Todo pasa en una <strong>terminal</strong>, una ventana donde le escribes instrucciones al computador. En Mac: ⌘ + Espacio, escribe <code>Terminal</code>, Enter. En Windows: menú Inicio, escribe <code>PowerShell</code> y ábrelo. Para ejecutar un comando, cópialo, pégalo en la terminal y presiona Enter. Después de cada programa hay una <strong>prueba</strong>: no avances si falla.</p>
+<section id="vs-code" class="level3">
+<h3 class="anchored" data-anchor-id="vs-code">1. <i class="lg lg-vscode" aria-hidden="true"></i> VS Code</h3>
+<p>Descárgalo desde <a href="https://code.visualstudio.com">code.visualstudio.com</a> e instálalo como cualquier programa. En Mac, arrástralo a <strong>Aplicaciones</strong>; no lo abras desde Descargas. Ábrelo y, en el menú de arriba, elige <strong>Terminal → New Terminal</strong>. De aquí en adelante, usa esa terminal.</p>
+<p><strong>Prueba:</strong> <code>code --version</code> muestra un número. En Mac, si dice <code>command not found: code</code>: presiona ⌘ + Shift + P, escribe <em>Shell Command: Install ‘code’ command in PATH</em> y presiona Enter.</p>
+</section>
+<section id="git" class="level3">
+<h3 class="anchored" data-anchor-id="git">2. <i class="lg lg-git" aria-hidden="true"></i> Git</h3>
+<div class="vc-prompt"><div class="vc-prompt-h">En la terminal · Mac</div><div class="vc-prompt-b">xcode-select --install</div></div>
+<p>Se abre una ventana: acepta e instala, demora unos minutos. <strong>Windows:</strong> descárgalo desde <a href="https://git-scm.com/download/win">git-scm.com</a> y deja todas las opciones por defecto. Después dile a Git quién eres, con el mismo correo de GitHub:</p>
+<div class="vc-prompt"><div class="vc-prompt-h">En la terminal · Mac y Windows</div><div class="vc-prompt-b">git config --global user.name "Tu Nombre"
+git config --global user.email "tu-correo@ejemplo.com"</div></div>
+<p><strong>Prueba:</strong> <code>git --version</code> muestra algo como <code>git version 2.4x</code>.</p>
+</section>
+<section id="node.js" class="level3">
+<h3 class="anchored" data-anchor-id="node.js">3. <i class="lg lg-node" aria-hidden="true"></i> Node.js</h3>
+<p>Entra a <a href="https://nodejs.org">nodejs.org</a>, descarga la versión <strong>LTS</strong> (la recomendada, no “Current”) e instálala con las opciones por defecto. Después <strong>cierra y vuelve a abrir VS Code</strong>; si no, su terminal no verá el programa nuevo.</p>
+<p><strong>Prueba:</strong> <code>node -v</code> y <code>npm -v</code> muestran números; Node debe ser 22 o superior.</p>
+<p><strong>Solo en Windows:</strong> si <code>npm -v</code> responde <em>running scripts is disabled on this system</em>, ejecuta <code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code>, responde Y y vuelve a abrir la terminal.</p>
+</section>
+<section id="claude-code" class="level3">
+<h3 class="anchored" data-anchor-id="claude-code">4. <i class="lg lg-claude" aria-hidden="true"></i> Claude Code</h3>
+<div class="vc-prompt"><div class="vc-prompt-h">En la terminal · Mac</div><div class="vc-prompt-b">curl -fsSL https://claude.ai/install.sh | bash</div></div>
+<div class="vc-prompt"><div class="vc-prompt-h">En PowerShell · Windows</div><div class="vc-prompt-b">irm https://claude.ai/install.ps1 | iex</div></div>
+<p>Cierra y vuelve a abrir la terminal, y escribe <code>claude</code>. La primera vez te pide iniciar sesión: elige tu <strong>cuenta de Claude (Pro o superior)</strong>, acepta en el navegador y vuelve a la terminal.</p>
+<p><strong>Prueba:</strong> dentro de Claude Code, escribe <code>/status</code>. Aparece tu cuenta. Escribe <code>/exit</code> para salir. Ejecutar <code>claude</code> una vez en la terminal también deja configurado el catálogo oficial de plugins de Anthropic, que usarás el domingo.</p>
+<p><strong>La extensión de VS Code.</strong> En VS Code, abre <strong>Extensions</strong> (el ícono de cuadritos a la izquierda, o ⌘/Ctrl + Shift + X), busca <strong>Claude Code</strong>, publicada por <strong>Anthropic</strong>, e instálala. Abre cualquier archivo: aparece un ícono Spark (✻) arriba a la derecha del editor, y al hacer clic se abre Claude en un panel junto a tus archivos. El panel y la terminal son el mismo Claude. En clases usamos el panel, y la terminal cuando haga falta.</p>
+</section>
+<section id="where-your-projects-live" class="level3">
+<h3 class="anchored" data-anchor-id="where-your-projects-live">Dónde viven tus proyectos</h3>
+<p>Crea una carpeta llamada <strong>Proyectos</strong> en tu carpeta de usuario: <code>/Users/tu-nombre/Proyectos</code> en Mac, <code>C:\Users\tu-nombre\Proyectos</code> en Windows.</p>
+<p><strong>No</strong> en el Escritorio, en Documentos, iCloud, OneDrive ni Google Drive. Esas carpetas sincronizan y “optimizan” archivos mientras Claude los escribe, y han llegado a borrar proyectos completos. Tu respaldo es GitHub, no la carpeta sincronizada.</p>
+</section>
+</section>
+<section id="a-warm-up-that-saves-time-on-sunday-5-to-10-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="a-warm-up-that-saves-time-on-sunday-5-to-10-minutes">Un calentamiento que ahorra tiempo el domingo (5 a 10 minutos)</h2>
+<p>Treinta notebooks descargando el mismo proyecto web por el wifi de la sala es lento. Descárgalo una vez en tu casa, así el domingo casi todo sale de tu propio notebook. En la terminal, una línea a la vez:</p>
+<div class="vc-prompt"><div class="vc-prompt-h">En la terminal · Mac</div><div class="vc-prompt-b">mkdir -p ~/Proyectos &amp;&amp; cd ~/Proyectos
+npx --yes create-next-app@latest calentamiento --yes</div></div>
+<div class="vc-prompt"><div class="vc-prompt-h">En la terminal · Windows</div><div class="vc-prompt-b">mkdir $HOME\Proyectos -Force; cd $HOME\Proyectos
+npx --yes create-next-app@latest calentamiento --yes</div></div>
+<p>Termina con <em>Success! Created calentamiento</em>. Después puedes borrar esa carpeta; era solo un ensayo.</p>
+</section>
+<section id="the-five-tests" class="level2">
+<h2 class="anchored" data-anchor-id="the-five-tests">Las cinco pruebas</h2>
+<ul class="vc-checklist" id="setup-tests-es">
+<li><code>code --version</code> muestra un número.</li>
+<li><code>git config --global user.email</code> muestra el correo de tu cuenta de GitHub.</li>
+<li><code>node -v</code> muestra 22 o superior.</li>
+<li><code>claude</code> abre y, dentro, <code>/status</code> muestra tu cuenta (después <code>/exit</code>).</li>
+<li>En VS Code, el ícono Spark (✻), o <strong>✻ Claude Code</strong> en la barra de estado de abajo, abre el panel de Claude Code.</li>
+</ul>
+</section>
+<section id="on-a-work-laptop" class="level2">
+<h2 class="anchored" data-anchor-id="on-a-work-laptop">En un notebook del trabajo</h2>
+<p>Un notebook administrado por tu empleador puede bloquear la instalación de programas, o el instalador de Claude Code. Prueba primero en tu casa. Si está bloqueado, trae un notebook personal o pide permiso a tu equipo de TI antes del domingo. No te saltes los controles de seguridad de tu empleador.</p>
+</section>
+<section id="before-day-2" class="level2">
+<h2 class="anchored" data-anchor-id="before-day-2">Antes del día 2</h2>
+<p>A más tardar el domingo 10 de enero de 2027, crea una cuenta gratis en <i class="lg lg-supabase" aria-hidden="true"></i> <a href="https://supabase.com/dashboard">Supabase</a> con <strong>Continue with GitHub</strong>. El día 2 la conectamos a Claude para darle a tu web una base de datos y un inicio de sesión. El plan gratis pausa un proyecto después de una semana sin uso; un clic en <strong>Restore</strong> en su panel lo reactiva. Todo lo demás que necesite el día 2 aparecerá en la página de su clase.</p>
+</section>
+<section id="if-you-could-not-finish" class="level2">
+<h2 class="anchored" data-anchor-id="if-you-could-not-finish">Si no alcanzaste a terminar</h2>
+<p>Ven igual al día 1: la revisión de instalación desde las 08:20 es justamente para esto. Si vas a faltar al día 1, escribe antes a <a href="mailto:sebastian.azocarm@usm.cl">sebastian.azocarm@usm.cl</a>. Esta guía no tiene nota.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<script src="assets/course.js"></script>
+<script src="assets/figures.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
+<script src="assets/vc-core.js"></script>
+
+
+
+</body></html>

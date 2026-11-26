@@ -1,0 +1,127 @@
+---
+pagetitle: "Vibe Coding for Business Leaders · MBA USM"
+description: "Construye, conecta y gobierna software con asistentes de IA, sin escribir código. Electivo del MBA de la Universidad Técnica Federico Santa María, en tres días intensivos."
+lang: es
+toc: false
+include-after-body:
+  text: |
+    <script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
+    <script src="assets/vc-core.js"></script>
+---
+
+```{=html}
+<div class="vh">
+
+<section class="vh-hero" aria-labelledby="vh-title">
+  <h1 id="vh-title" class="vh-title">Vibe Coding for Business Leaders</h1>
+  <p class="vh-lede">Construye, conecta y gobierna software con asistentes de IA, sin escribir código. Un electivo del MBA de la Universidad Técnica Federico Santa María, dictado en inglés en tres días intensivos, con sus materiales también en español.</p>
+  <div class="vh-actions">
+    <a class="vh-btn" href="sessions-es.html">Ver el calendario</a>
+    <a class="vh-btn is-quiet" href="class1-es.html">Leer la clase 1</a>
+  </div>
+</section>
+
+<dl class="vh-facts">
+  <div><dt>Fechas</dt><dd>29 de noviembre de 2026<br>16 y 17 de enero de 2027</dd></div>
+  <div><dt>Horas presenciales</dt><dd>20, en bloques de dos horas</dd></div>
+  <div><dt>Créditos</dt><dd>2 SCT-Chile, 45 horas de trabajo en total</dd></div>
+  <div><dt>Profesor</dt><dd>Sebastián Azócar<br><a href="mailto:sebastian.azocarm@usm.cl">sebastian.azocarm@usm.cl</a></dd></div>
+</dl>
+
+<section class="vh-section" aria-labelledby="vh-days">
+  <h2 id="vh-days">Tres días</h2>
+  <ol class="vh-daylist">
+    <li class="vh-day">
+      <p class="vh-day-num">29</p>
+      <p class="vh-day-date">Domingo, noviembre de 2026</p>
+      <p class="vh-day-hours">08:00 a 14:30, seis horas</p>
+      <ul class="vh-blocks">
+        <li><time>08:00</time><span><a href="class1-es.html">Clase 1</a>Tu primera web con Claude Code</span></li>
+        <li><time>10:15</time><span>Laboratorio: tu propia web, luego skills y memoria</span></li>
+        <li><time>12:30</time><span>Publicarla, una presentación HTML, tu propia skill</span></li>
+      </ul>
+    </li>
+    <li class="vh-day">
+      <p class="vh-day-num">16</p>
+      <p class="vh-day-date">Sábado, enero de 2027</p>
+      <p class="vh-day-hours">08:00 a 18:30, ocho horas</p>
+      <ul class="vh-blocks">
+        <li><time>08:00</time><span>Clase 2</span></li>
+        <li><time>14:00</time><span>Clase 3</span></li>
+        <li><time></time><span>Se publica antes del día 2</span></li>
+      </ul>
+    </li>
+    <li class="vh-day">
+      <p class="vh-day-num">17</p>
+      <p class="vh-day-date">Domingo, enero de 2027</p>
+      <p class="vh-day-hours">08:00 a 14:30, seis horas</p>
+      <ul class="vh-blocks">
+        <li><time>08:00</time><span>Clase 4</span></li>
+        <li><time>10:45</time><span>Clase 5 y Demo Day</span></li>
+        <li><time></time><span>Se publica antes del día 2</span></li>
+      </ul>
+    </li>
+  </ol>
+  <p class="vh-between">Entre el primer y el segundo día hay siete semanas: tiempo para entregar el brief, seguir mejorando tu web y prepararte para el día 2. El <a href="sessions-es.html">calendario</a> tiene cada bloque, pausa y fecha de entrega.</p>
+</section>
+
+<section class="vh-section" aria-labelledby="vh-before">
+  <h2 id="vh-before">Antes del domingo 29 de noviembre</h2>
+  <ul class="vc-checklist" id="before-day-1-es">
+    <li><span>Contrata el plan <strong>Claude Pro</strong> en <a href="https://claude.ai">claude.ai</a>, unos USD 20 al mes, pagado por cada estudiante. Claude Code no funciona con el plan gratis.</span></li>
+    <li><span>Crea tus cuentas de GitHub y Vercel, e instala VS Code, Git, Node.js y Claude Code: la <a href="setup-es.html">guía de instalación</a>, unos 45 minutos.</span></li>
+    <li>Escribe cinco líneas sobre tu propia idea: un negocio, un proyecto, un servicio o un portafolio. El domingo construyes su web.</li>
+    <li>Trae un notebook en el que puedas instalar programas, y su cargador.</li>
+  </ul>
+</section>
+
+<section class="vh-section" aria-labelledby="vh-what">
+  <h2 id="vh-what">Qué construyes y con qué te vas</h2>
+  <p class="vh-para">Cada equipo lleva un problema real de la organización de uno de sus integrantes hasta una aplicación web publicada con una capacidad de IA, luego la gobierna y la presenta ante un panel. En el camino usas los componentes del trabajo actual con IA.</p>
+  <dl class="vh-blocks-def">
+    <div><dt>Páginas web y aplicaciones</dt><dd>Una aplicación publicada con inicio de sesión y datos guardados, y una página pública que la explica.</dd></div>
+    <div><dt>Skills</dt><dd>"Cómo lo hacemos aquí", empaquetado para que el asistente lo repita.</dd></div>
+    <div><dt>Conectores y MCP</dt><dd>Acceso acotado a los sistemas de la empresa: primero leer, después escribir.</dd></div>
+    <div><dt>Agentes</dt><dd>Un modelo que da pasos con herramientas y espera tu aprobación.</dd></div>
+    <div><dt>Automatizaciones</dt><dd>Trabajo que parte con un horario, con un responsable y un registro.</dd></div>
+    <div><dt>Presentaciones</dt><dd>Una presentación para el Demo Day generada a partir de tu evidencia y revisada por ti.</dd></div>
+  </dl>
+  <p class="vh-para">No se requiere ni se supone experiencia en programación. Te vas con un producto que funciona, un set de pruebas y un memo de riesgos, un pequeño sistema personal para trabajar con IA y una forma probada de decidir entre mantener un prototipo, pasárselo a ingeniería, comprar un producto o parar.</p>
+</section>
+
+<section class="vh-section" aria-labelledby="vh-grade">
+  <h2 id="vh-grade">Evaluación</h2>
+  <table class="vh-table">
+    <thead><tr><th>Componente</th><th>Quién</th><th>Entrega</th><th>Peso</th></tr></thead>
+    <tbody>
+      <tr><td>M1. Brief del problema y especificación del producto</td><td>Individual</td><td>Domingo 13 de diciembre de 2026</td><td>15%</td></tr>
+      <tr><td>M2. Prototipo v1 con inicio de sesión, datos, una skill y un conector</td><td>Equipo</td><td>Sábado 16 de enero de 2027</td><td>20%</td></tr>
+      <tr><td>Demo Day</td><td>Equipo, con ajuste individual</td><td>Domingo 17 de enero de 2027</td><td>25%</td></tr>
+      <tr><td>M3. Funcionalidad de IA, set de pruebas, agente y automatización, memo de riesgos</td><td>Equipo</td><td>Domingo 24 de enero de 2027</td><td>25%</td></tr>
+      <tr><td>Memo de reflexión y participación</td><td>Individual</td><td>Domingo 24 de enero de 2027</td><td>15%</td></tr>
+    </tbody>
+  </table>
+  <p class="vh-note">Los trabajos escritos se entregan a las 23:59 del día indicado; el Demo Day es en la sala. Todo se evalúa con una sola <a href="rubric.html">rúbrica</a> (en inglés). El curso se aprueba con 55 de 100. Usar IA es obligatorio y debe declararse.</p>
+</section>
+
+<section class="vh-section" aria-labelledby="vh-data">
+  <h2 id="vh-data">Una regla desde el primer minuto</h2>
+  <p class="vh-para">Hasta que tu equipo haya completado el laboratorio de la clase 4, cerrado todos los hallazgos críticos y tenga el acuerdo escrito de la organización dueña de los datos, usa solo información inventada o anonimizada: nada de nombres, teléfonos, direcciones ni RUT reales. La mayoría de los equipos se quedará con datos anonimizados hasta el Demo Day, y eso no le cuesta nada en la nota.</p>
+</section>
+
+<section class="vh-section" aria-labelledby="vh-materials">
+  <h2 id="vh-materials">Materiales del curso</h2>
+  <ul class="vh-materials">
+    <li><a href="classes-es.html">Clases</a><span>Páginas de cada clase con visualizaciones, preguntas de práctica y el laboratorio.</span></li>
+    <li><a href="sessions-es.html">Calendario</a><span>Cada bloque, pausa y fecha de entrega de los tres días.</span></li>
+    <li><a href="setup-es.html">Guía de instalación</a><span>Claude Pro, GitHub, Vercel, VS Code y Claude Code, con cinco pruebas.</span></li>
+    <li><a href="slides/day1-es.html">Presentación del día 1</a><span>La presentación que se proyecta el domingo 29 de noviembre, en sí misma un archivo HTML.</span></li>
+    <li><a href="rubric.html">Rúbrica (en inglés)</a><span>Cuatro criterios, cuatro niveles y cómo se aplican a cada componente evaluado.</span></li>
+    <li><a href="security-checklist.html">Checklist de seguridad (en inglés)</a><span>Catorce revisiones que un gerente puede hacer a una app construida con IA.</span></li>
+    <li><a href="syllabus.html">Programa (en inglés)</a><span>El programa oficial: competencias, resultados de aprendizaje, contenidos y bibliografía.</span></li>
+    <li><a href="files/Vibe_Coding_MBA_Elective_Syllabus.docx">Programa en Word (en inglés)</a><span>El programa en el formato del MBA USM.</span></li>
+  </ul>
+</section>
+
+</div>
+```

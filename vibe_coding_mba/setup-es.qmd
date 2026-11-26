@@ -1,0 +1,139 @@
+---
+title: "Guía de instalación"
+subtitle: "Tres cuentas, cuatro programas, cinco pruebas. Unos 45 minutos, antes del domingo 29 de noviembre. No necesitas saber programar."
+lang: es
+css:
+  - assets/vc.css
+  - assets/day1.css
+resources:
+  - assets/logos/*.svg
+include-after-body:
+  text: |
+    <script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
+    <script src="assets/vc-core.js"></script>
+---
+
+Hazlo en tu casa, antes del día 1. Si llegas con las cuentas creadas y los programas instalados, el día 1 se va en construir y no en esperar correos de confirmación. Si algo falla, ven igual: el día 1, de 08:20 a 09:00, revisamos la instalación de todos y los compañeros se ayudan entre sí.
+
+**Regla de oro.** Si un comando responde con un error en rojo, no sigas al paso siguiente. Copia el error completo y tráelo a clases, o pégalo en [claude.ai](https://claude.ai) con: *"¿Qué significa esto y cómo lo arreglo en Mac / Windows?"*
+
+## Las piezas, en una frase cada una {#the-pieces-one-sentence-each}
+
+| Pieza | Qué es | Piénsalo como |
+|---|---|---|
+| <span class="d1-tool"><i class="lg lg-vscode" aria-hidden="true"></i>VS Code</span> | El editor donde viven los archivos de tu web | Tu escritorio |
+| <span class="d1-tool"><i class="lg lg-claude" aria-hidden="true"></i>Claude Code</span> | Un asistente que lee, escribe y ejecuta código en tu proyecto | Un colega muy capaz trabajando a tu lado |
+| <span class="d1-tool"><i class="lg lg-git" aria-hidden="true"></i><i class="lg lg-github" aria-hidden="true"></i>Git y GitHub</span> | Todas las versiones de tus archivos, guardadas y respaldadas | Un drive con el historial completo de cambios |
+| <span class="d1-tool"><i class="lg lg-vercel" aria-hidden="true"></i>Vercel</span> | El servicio que publica tu web en una dirección pública | La tienda donde abres las puertas |
+| <span class="d1-tool"><i class="lg lg-node" aria-hidden="true"></i>Node.js</span> | El motor en que corre tu web mientras la construyes | La cocina detrás de la tienda |
+
+## Cuánto cuesta {#what-it-costs}
+
+| Ítem | Costo |
+|---|---|
+| Plan <span class="d1-tool"><i class="lg lg-claude" aria-hidden="true"></i>Claude Pro</span>, pagado por cada estudiante | Unos USD 20 al mes. Claude Code no funciona con el plan gratis. Lo necesitas activo el día 1 y del día 2 al día 3; mantenerlo entre medio te permite practicar. |
+| <span class="d1-tool"><i class="lg lg-github" aria-hidden="true"></i>GitHub</span>, <span class="d1-tool"><i class="lg lg-vercel" aria-hidden="true"></i>Vercel Hobby</span>, <span class="d1-tool"><i class="lg lg-supabase" aria-hidden="true"></i>Supabase Free</span> | Gratis |
+
+Confirma el precio vigente en [claude.ai](https://claude.ai) antes de pagar; los precios cambian.
+
+## Parte 1 · Cuentas (15 minutos) {#part-1-accounts-15-minutes}
+
+Usa **el mismo correo** en todas. Lo mejor es un correo personal que vayas a mantener después del MBA.
+
+```{=html}
+<ul class="vc-checklist" id="setup-accounts-es">
+<li><span><span class="d1-tool"><i class="lg lg-claude" aria-hidden="true"></i>Claude</span> en <a href="https://claude.ai">claude.ai</a>, con el plan <strong>Pro</strong> o superior.</span></li>
+<li><span><span class="d1-tool"><i class="lg lg-github" aria-hidden="true"></i>GitHub</span> en <a href="https://github.com/signup">github.com/signup</a>. Gratis.</span></li>
+<li><span><span class="d1-tool"><i class="lg lg-vercel" aria-hidden="true"></i>Vercel</span> en <a href="https://vercel.com/signup">vercel.com/signup</a>. Elige <strong>Continue with GitHub</strong> y el plan <strong>Hobby</strong> (gratis).</span></li>
+<li><span>Escribe cinco líneas sobre <strong>tu idea</strong>: para qué es la web, quién la visita, qué debería hacer ahí, dos sitios cuyo estilo te guste y lo que no quieres.</span></li>
+</ul>
+```
+
+## Parte 2 · Programas (30 minutos) {#part-2-programs-30-minutes}
+
+Todo pasa en una **terminal**, una ventana donde le escribes instrucciones al computador. En Mac: ⌘ + Espacio, escribe `Terminal`, Enter. En Windows: menú Inicio, escribe `PowerShell` y ábrelo. Para ejecutar un comando, cópialo, pégalo en la terminal y presiona Enter. Después de cada programa hay una **prueba**: no avances si falla.
+
+### 1. <i class="lg lg-vscode" aria-hidden="true"></i> VS Code {#vs-code}
+
+Descárgalo desde [code.visualstudio.com](https://code.visualstudio.com) e instálalo como cualquier programa. En Mac, arrástralo a **Aplicaciones**; no lo abras desde Descargas. Ábrelo y, en el menú de arriba, elige **Terminal → New Terminal**. De aquí en adelante, usa esa terminal.
+
+**Prueba:** `code --version` muestra un número. En Mac, si dice `command not found: code`: presiona ⌘ + Shift + P, escribe *Shell Command: Install 'code' command in PATH* y presiona Enter.
+
+### 2. <i class="lg lg-git" aria-hidden="true"></i> Git {#git}
+
+```{=html}
+<div class="vc-prompt"><div class="vc-prompt-h">En la terminal · Mac</div><div class="vc-prompt-b">xcode-select --install</div></div>
+```
+
+Se abre una ventana: acepta e instala, demora unos minutos. **Windows:** descárgalo desde [git-scm.com](https://git-scm.com/download/win) y deja todas las opciones por defecto. Después dile a Git quién eres, con el mismo correo de GitHub:
+
+```{=html}
+<div class="vc-prompt"><div class="vc-prompt-h">En la terminal · Mac y Windows</div><div class="vc-prompt-b">git config --global user.name "Tu Nombre"
+git config --global user.email "tu-correo@ejemplo.com"</div></div>
+```
+
+**Prueba:** `git --version` muestra algo como `git version 2.4x`.
+
+### 3. <i class="lg lg-node" aria-hidden="true"></i> Node.js {#node.js}
+
+Entra a [nodejs.org](https://nodejs.org), descarga la versión **LTS** (la recomendada, no "Current") e instálala con las opciones por defecto. Después **cierra y vuelve a abrir VS Code**; si no, su terminal no verá el programa nuevo.
+
+**Prueba:** `node -v` y `npm -v` muestran números; Node debe ser 22 o superior.
+
+**Solo en Windows:** si `npm -v` responde *running scripts is disabled on this system*, ejecuta `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`, responde Y y vuelve a abrir la terminal.
+
+### 4. <i class="lg lg-claude" aria-hidden="true"></i> Claude Code {#claude-code}
+
+```{=html}
+<div class="vc-prompt"><div class="vc-prompt-h">En la terminal · Mac</div><div class="vc-prompt-b">curl -fsSL https://claude.ai/install.sh | bash</div></div>
+<div class="vc-prompt"><div class="vc-prompt-h">En PowerShell · Windows</div><div class="vc-prompt-b">irm https://claude.ai/install.ps1 | iex</div></div>
+```
+
+Cierra y vuelve a abrir la terminal, y escribe `claude`. La primera vez te pide iniciar sesión: elige tu **cuenta de Claude (Pro o superior)**, acepta en el navegador y vuelve a la terminal.
+
+**Prueba:** dentro de Claude Code, escribe `/status`. Aparece tu cuenta. Escribe `/exit` para salir. Ejecutar `claude` una vez en la terminal también deja configurado el catálogo oficial de plugins de Anthropic, que usarás el domingo.
+
+**La extensión de VS Code.** En VS Code, abre **Extensions** (el ícono de cuadritos a la izquierda, o ⌘/Ctrl + Shift + X), busca **Claude Code**, publicada por **Anthropic**, e instálala. Abre cualquier archivo: aparece un ícono Spark (✻) arriba a la derecha del editor, y al hacer clic se abre Claude en un panel junto a tus archivos. El panel y la terminal son el mismo Claude. En clases usamos el panel, y la terminal cuando haga falta.
+
+### Dónde viven tus proyectos {#where-your-projects-live}
+
+Crea una carpeta llamada **Proyectos** en tu carpeta de usuario: `/Users/tu-nombre/Proyectos` en Mac, `C:\Users\tu-nombre\Proyectos` en Windows.
+
+**No** en el Escritorio, en Documentos, iCloud, OneDrive ni Google Drive. Esas carpetas sincronizan y "optimizan" archivos mientras Claude los escribe, y han llegado a borrar proyectos completos. Tu respaldo es GitHub, no la carpeta sincronizada.
+
+## Un calentamiento que ahorra tiempo el domingo (5 a 10 minutos) {#a-warm-up-that-saves-time-on-sunday-5-to-10-minutes}
+
+Treinta notebooks descargando el mismo proyecto web por el wifi de la sala es lento. Descárgalo una vez en tu casa, así el domingo casi todo sale de tu propio notebook. En la terminal, una línea a la vez:
+
+```{=html}
+<div class="vc-prompt"><div class="vc-prompt-h">En la terminal · Mac</div><div class="vc-prompt-b">mkdir -p ~/Proyectos && cd ~/Proyectos
+npx --yes create-next-app@latest calentamiento --yes</div></div>
+<div class="vc-prompt"><div class="vc-prompt-h">En la terminal · Windows</div><div class="vc-prompt-b">mkdir $HOME\Proyectos -Force; cd $HOME\Proyectos
+npx --yes create-next-app@latest calentamiento --yes</div></div>
+```
+
+Termina con *Success! Created calentamiento*. Después puedes borrar esa carpeta; era solo un ensayo.
+
+## Las cinco pruebas {#the-five-tests}
+
+```{=html}
+<ul class="vc-checklist" id="setup-tests-es">
+<li><code>code --version</code> muestra un número.</li>
+<li><code>git config --global user.email</code> muestra el correo de tu cuenta de GitHub.</li>
+<li><code>node -v</code> muestra 22 o superior.</li>
+<li><code>claude</code> abre y, dentro, <code>/status</code> muestra tu cuenta (después <code>/exit</code>).</li>
+<li>En VS Code, el ícono Spark (✻), o <strong>✻ Claude Code</strong> en la barra de estado de abajo, abre el panel de Claude Code.</li>
+</ul>
+```
+
+## En un notebook del trabajo {#on-a-work-laptop}
+
+Un notebook administrado por tu empleador puede bloquear la instalación de programas, o el instalador de Claude Code. Prueba primero en tu casa. Si está bloqueado, trae un notebook personal o pide permiso a tu equipo de TI antes del domingo. No te saltes los controles de seguridad de tu empleador.
+
+## Antes del día 2 {#before-day-2}
+
+A más tardar el domingo 10 de enero de 2027, crea una cuenta gratis en <i class="lg lg-supabase" aria-hidden="true"></i> [Supabase](https://supabase.com/dashboard) con **Continue with GitHub**. El día 2 la conectamos a Claude para darle a tu web una base de datos y un inicio de sesión. El plan gratis pausa un proyecto después de una semana sin uso; un clic en **Restore** en su panel lo reactiva. Todo lo demás que necesite el día 2 aparecerá en la página de su clase.
+
+## Si no alcanzaste a terminar {#if-you-could-not-finish}
+
+Ven igual al día 1: la revisión de instalación desde las 08:20 es justamente para esto. Si vas a faltar al día 1, escribe antes a [sebastian.azocarm@usm.cl](mailto:sebastian.azocarm@usm.cl). Esta guía no tiene nota.

@@ -1,0 +1,35 @@
+---
+title: "Clases"
+subtitle: "Cinco clases en tres días. La clase 1 ya está disponible; las demás se publican antes del día 2."
+lang: es
+toc: false
+---
+
+```{=html}
+<div class="cursos-grid">
+
+<a class="curso-card" href="class1-es.html">
+  <span class="curso-tag">Día 1 · dom 29 nov · 08:00</span>
+  <span class="curso-sigla">Hito M1 · brief del problema</span>
+  <h3>Tu primera web con Claude Code</h3>
+  <p>Un taller práctico sobre tu propia idea: cómo funcionan un modelo y un agente, el modo plan y los permisos, una web construida y publicada en Vercel, skills y CLAUDE.md, una presentación HTML en cinco minutos y una skill propia.</p>
+  <span class="curso-link">Abrir la clase 1 →</span>
+</a>
+
+<div class="curso-card is-soon">
+  <span class="curso-tag">Días 2 y 3 · 16 y 17 ene</span>
+  <span class="curso-sigla">Clases 2 a 5</span>
+  <h3>Se publican antes del día 2</h3>
+  <p>El día 2 parte de la web que hiciste el día 1. Sus páginas aparecen aquí antes del sábado 16 de enero de 2027.</p>
+</div>
+
+</div>
+```
+
+## Páginas de apoyo {#support-pages}
+
+| Página | Cuándo la necesitas |
+|---|---|
+| [Guía de instalación](setup-es.html) | Antes del día 1: cuentas, programas y las cinco pruebas |
+| [Presentación del día 1](slides/day1-es.html) | La presentación que se proyecta el domingo 29 de noviembre |
+| [Rúbrica](rubric.html) (en inglés) | Antes del M1 |

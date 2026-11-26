@@ -360,6 +360,12 @@ code,.mono{font-family:var(--mono);font-size:.86em;letter-spacing:-.01em}
 .tools-row{display:flex;gap:26px;align-items:center;margin-top:26px;font-size:24px;color:var(--muted)}
 .tools-row span{display:inline-flex;align-items:center;gap:10px}
 .tools-row .lgi{font-size:30px}
+.lang{position:absolute;top:30px;right:44px;z-index:6;display:flex;align-items:center;gap:2px;font-size:17px;letter-spacing:.04em;color:var(--muted)}
+.lang a{color:var(--muted);text-decoration:none;padding:6px 9px;border-radius:8px;transition:color .2s var(--ease),background-color .2s var(--ease)}
+.lang a:hover{color:var(--ink);background:var(--wash2)}
+.lang a[aria-current]{color:var(--ink);font-weight:600;cursor:default;background:transparent}
+.lang i{font-style:normal;opacity:.45}
+@media print{.lang{display:none}}
 </style>
 </head>
 <body>
@@ -815,7 +821,7 @@ Catalog and a waitlist for the weekly menu.
   <div class="body">
     <div class="cols days">
       <div class="card b"><span class="when">Day 2 · Saturday 16 January 2027</span><h3>Connect it</h3>
-        <ul><li>MCP: Claude talks to <svg class="lgi c-vercel" aria-hidden="true"><use href="#lg-vercel"/></svg> Vercel and <svg class="lgi c-supabase" aria-hidden="true"><use href="#lg-supabase"/></svg> Supabase</li><li>Data, forms and login</li><li>AI inside your app, and automations</li></ul></div>
+        <ul><li>MCP: Claude talks to <svg class="lgi c-vercel" aria-hidden="true"><use href="#lg-vercel"/></svg> Vercel and <span style="white-space:nowrap"><svg class="lgi c-supabase" aria-hidden="true"><use href="#lg-supabase"/></svg> Supabase</span></li><li>Data, forms and login</li><li>AI inside your app, and automations</li></ul></div>
       <div class="card b"><span class="when">Day 3 · Sunday 17 January 2027</span><h3>Make it safe, then show it</h3>
         <ul><li>Agents and a security review</li><li>Your domain and the pitch deck</li><li>Demo Day</li></ul></div>
     </div>
@@ -835,6 +841,7 @@ Catalog and a waitlist for the weekly menu.
   </div>
 </section>
 
+<nav class="lang" aria-label="Language"><a href="day1.html" lang="en" aria-current="true">EN</a><i aria-hidden="true">|</i><a href="day1-es.html" lang="es">ES</a></nav>
 <footer class="foot"><span>Vibe Coding for Business Leaders · Day 1</span><span class="count" aria-live="polite"></span></footer>
 <div class="bar" aria-hidden="true"></div>
 </div>
@@ -932,6 +939,15 @@ Catalog and a waitlist for the weekly menu.
   layout();
   go(fromHash());
 })();
+
+  // language switch: go to the twin deck on the same slide
+  document.querySelectorAll(".lang a").forEach((a) => {
+    a.addEventListener("click", (e) => {
+      e.stopPropagation(); e.preventDefault();
+      if (!a.hasAttribute("aria-current")) location.href = a.getAttribute("href") + location.hash;
+    });
+    a.addEventListener("touchend", (e) => e.stopPropagation());
+  });
 </script>
 </body>
 </html>

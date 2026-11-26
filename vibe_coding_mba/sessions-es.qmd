@@ -1,0 +1,68 @@
+---
+title: "Calendario"
+subtitle: "Tres días, 20 horas presenciales en bloques de dos horas. Las pausas y el almuerzo no cuentan como horas presenciales."
+lang: es
+include-after-body:
+  text: |
+    <script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
+    <script src="assets/vc-core.js"></script>
+---
+
+El curso se hace un domingo de noviembre y un fin de semana de enero, con siete semanas entre medio. El día 1 es un taller práctico: cada estudiante construye su propia web, para su propia idea, con Claude Code. El programa de los días 2 y 3 se publica antes del día 2.
+
+## Día 1, domingo 29 de noviembre de 2026 {#day-1-sunday-29-november-2026}
+
+```{=html}
+<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Clase 1 · bienvenida, revisión de instalación, cómo funciona:120|Café:15|Clase 1 · laboratorio: tu web, luego skills:120|Café:15|Clase 1 · publicar, presentación HTML, tu skill, pitch:120"></div>
+```
+
+### Clase 1. Tu primera web con Claude Code {#class-1.-your-first-web-with-claude-code}
+
+Página de la clase: [Clase 1 · Tu primera web con Claude Code](class1-es.html) · Presentación: [Día 1](slides/day1-es.html)
+
+**Meta de construcción.** Cada estudiante, sobre su propia idea: una web publicada en una dirección pública, una presentación HTML de seis diapositivas publicada junto a ella, y una skill personal que mantiene su marca.
+
+**Antes del día 1.** La [guía de instalación](setup-es.html), unos 45 minutos: un plan Claude Pro (pagado por cada estudiante), cuentas de GitHub y Vercel, VS Code, Git, Node.js y Claude Code instalados, y cinco líneas sobre tu idea. Trae el notebook y su cargador.
+
+**08:00 a 10:00.** Demostración en vivo: una página que va de una carpeta vacía a un celular en unos diez minutos (20). Revisión de instalación: las cinco pruebas pasan en cada notebook (40). Cómo funciona, con tres pruebas cortas en Claude Code: qué hace un modelo, los tokens y el límite de uso, la ventana de contexto, chat versus agente, un buen pedido, el modo plan y los permisos (60).
+
+**10:15 a 12:15.** Laboratorio 1, tu web: brief, modo plan, construir, localhost, un cambio a la vez, volver atrás con rewind, un primer commit (75). Skills y memoria: el plugin frontend-design del catálogo oficial, un rediseño con él, CLAUDE.md con `/init` (45).
+
+**12:30 a 14:30.** Publicar: un repositorio privado en GitHub, una importación en Vercel, la dirección abierta en un celular, un cambio que se publica solo (45). Una presentación HTML en cinco minutos, guardada en el proyecto y publicada con él (15). Tu propia skill, `my-brand`, creada con skill-creator y probada en una conversación nueva (35). Pitches de sesenta segundos con la presentación, qué viene en los días 2 y 3, y la explicación del M1 (25).
+
+## Entre los días, del 30 de noviembre de 2026 al 15 de enero de 2027 {#between-the-days-30-november-2026-to-15-january-2027}
+
+| A más tardar | Qué | Quién |
+|---|---|---|
+| Domingo 13 de diciembre de 2026, 23:59 | **M1.** Brief del problema y especificación del producto. La retroalimentación escrita llega antes del día 2. | Individual |
+| Domingo 10 de enero de 2027 | Las cinco pruebas de la guía de instalación siguen pasando, tu plan Claude Pro está activo y tu cuenta gratis de Supabase existe. | Individual |
+
+Las preguntas van al canal del curso o a [sebastian.azocarm@usm.cl](mailto:sebastian.azocarm@usm.cl).
+
+## Día 2, sábado 16 de enero de 2027 {#day-2-saturday-16-january-2027}
+
+```{=html}
+<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Clase 2:120|Café:30|Clase 2:120|Almuerzo:90|Clase 3:120|Café:30|Clase 3:120"></div>
+```
+
+El programa de las clases 2 y 3 se publica antes del día 2.
+
+## Día 3, domingo 17 de enero de 2027 {#day-3-sunday-17-january-2027}
+
+```{=html}
+<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Clase 4:120|Café:15|Clase 4:30|Clase 5:90|Café:15|Clase 5:120"></div>
+```
+
+El programa de las clases 4 y 5 y del Demo Day se publica antes del día 2.
+
+## Entregables y ponderaciones {#deliverables-and-weights}
+
+| Entregable | Quién | Entrega | Peso |
+|---|---|---|---|
+| M1. Brief del problema y especificación del producto | Individual | Domingo 13 de diciembre de 2026 | 15% |
+| M2. Prototipo v1 con inicio de sesión, datos, una skill, un conector y bitácoras de construcción | Equipo | Sábado 16 de enero de 2027 | 20% |
+| Demo Day, con una presentación generada con IA y declarada | Equipo, con ajuste individual | Domingo 17 de enero de 2027 | 25% |
+| M3. Funcionalidad de IA, set de pruebas, paso agéntico, automatización, medición de la métrica y memo de riesgos | Equipo | Domingo 24 de enero de 2027 | 25% |
+| Memo de reflexión y participación | Individual | Domingo 24 de enero de 2027 | 15% |
+
+Todo se evalúa con la [rúbrica](rubric.html) (en inglés). Los trabajos escritos se entregan a las 23:59 del día indicado.
