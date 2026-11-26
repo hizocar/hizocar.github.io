@@ -444,6 +444,7 @@ In the business
 </ol>
 <p>Use retrieval when the documents are too many or too long to attach whole. A few short policies can simply be attached. Prices are looked up with a tool, never retrieved as text: a price is a number in the products table, and a passage that mentions a price goes stale the day the list changes. Extracting order lines needs none of the three, because everything the model needs is in the message.</p>
 <p>Retrieval fails in its own ways. The right chunk is not among the top few. The chunks are stale: the policy changed in March and the stored passages still say what it said in January. Or too many chunks are attached, which costs tokens and distracts the model. The simulator shows the trade-off.</p>
+<figure class="vc-fig figure" data-fig="c3-retrieval"><figcaption class="figure-caption">Retrieval in six steps: documents are split once into passages and stored; when a question arrives, the three closest passages are found and attached to the call, and the answer shows its source.</figcaption></figure>
 <div class="vc-widget" data-widget="c3-rag"></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="In the business">
 <div class="callout-header d-flex align-content-center">
@@ -1193,6 +1194,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 <script src="assets/course.js"></script>
+<script src="assets/figures.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
 <script src="assets/vc-core.js"></script>
 <script src="assets/widgets-class3.js"></script>

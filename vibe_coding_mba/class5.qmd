@@ -90,6 +90,10 @@ The roadmap figure is the kind of number to check twice: about 2,600 requests a 
 A side example. Imagine an HR team that built a tool for onboarding contractors and asks the assistant for "a deck about our project". It returns 19 slides, including one on the future of work. The team deletes every slide whose title is not one of their six sentences and presents eight.
 
 ```{=html}
+<figure class="vc-fig" data-fig="c5-evidence"><figcaption>From evidence to deck: gather the sources, write a six-sentence storyline, let the assistant lay out eight slides, trace every number to its file, and declare the sources and the use of AI on the closing slide.</figcaption></figure>
+```
+
+```{=html}
 <div class="vc-widget" data-widget="c5-deck"></div>
 ```
 

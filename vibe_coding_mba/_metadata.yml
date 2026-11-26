@@ -8,3 +8,4 @@ include-in-header:
 include-after-body:
   - text: |
       <script src="assets/course.js"></script>
+      <script src="assets/figures.js"></script>

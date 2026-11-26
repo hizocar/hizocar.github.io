@@ -326,6 +326,7 @@ In the business
 <p>Rollback has a limit worth knowing before you rely on it. It restores the code. It does not restore what is in the database, emails that were already sent, or what customers already saw. A change that deletes or rewrites data needs its own care: ask the assistant what the change does to existing rows before you approve it.</p>
 <p>You ask for all of it in plain language: <em>save a checkpoint called “login working”</em>, <em>start a branch to try a new layout</em>, <em>go back to the checkpoint before the PDF export</em>.</p>
 <p>That gives every test in the lab one of two places. <strong>On your laptop</strong>, before the checkpoint: the app runs on your own machine and only you can see it. <strong>At the public address</strong>, after the checkpoint: a phone or a second device can open it, about a minute later. A test on a real phone always belongs to the second kind.</p>
+<figure class="vc-fig figure" data-fig="c2-checkpoint"><figcaption class="figure-caption">A change is made and tested on your laptop, saved as a named checkpoint, sent to your private GitHub repository, rebuilt by the hosting platform in about a minute, and tested again at the public address on a phone.</figcaption></figure>
 <div class="vc-widget" data-widget="c2-commits"></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="In the business">
 <div class="callout-header d-flex align-content-center">
@@ -468,42 +469,7 @@ In the business
 <section id="three-things-people-call-the-ai" class="level3">
 <h3 class="anchored" data-anchor-id="three-things-people-call-the-ai">Three things people call “the AI”</h3>
 <p>Before teaching “the assistant” anything, be exact about which one. From this class on, three different things are in play, and most confusion in AI projects comes from blurring them.</p>
-<table class="table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>What it is</th>
-<th>Who uses it</th>
-<th>What it can reach</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>The building assistant</strong></td>
-<td>The agentic coding assistant your team builds QuoteDesk with</td>
-<td>Your team, while building</td>
-<td>The repository and its project instructions, plus the assistant’s own skills and connectors</td>
-</tr>
-<tr class="even">
-<td><strong>A rep’s assistant</strong></td>
-<td>The assistant Paula or Carla uses directly for daily work: drafting a quote, summarizing calls, the morning digest</td>
-<td>A rep or a manager, every day</td>
-<td>The same skills and connectors, with that person’s own access. Not the project instructions</td>
-</tr>
-<tr class="odd">
-<td><strong>The model inside QuoteDesk</strong></td>
-<td>The model that the deployed app calls through an API (an API is the door through which one program asks another for a service)</td>
-<td>Nobody directly; the app calls it</td>
-<td>Only what the app sends it, and only the tools the app defines. No skills, no connectors</td>
-</tr>
-</tbody>
-</table>
+<figure class="vc-fig figure" data-fig="c2-three-ai"><figcaption class="figure-caption">Three different things are called "the AI". The building assistant works on the repository, reads the project instructions and uses skills and connectors. A rep's assistant is the same app opened elsewhere: it uses the same skills and connectors but does not see the project instructions. The model inside QuoteDesk is called by the deployed app through an API (the door through which one program asks another for a service): it sees only what the app sends and has no skills and no connectors.</figcaption></figure>
 <p>In this course one assistant app plays both parts: opened on the repository it is the building assistant; opened anywhere else it is your rep’s assistant.</p>
 <p>The consequence matters for your milestone. Everything in this topic and the next extends the first two, never the deployed app. The project instructions belong to the repository and reach only the building assistant. The skill and the connector you deliver in M2 belong to the assistant itself and work in any conversation. QuoteDesk cannot open a skill or pass through a connector. In Class 3 it gets its prices from its own products table, imported from the price sheet.</p>
 </section>
@@ -1148,6 +1114,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 <script src="assets/course.js"></script>
+<script src="assets/figures.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
 <script src="assets/vc-core.js"></script>
 <script src="assets/widgets-class2.js"></script>

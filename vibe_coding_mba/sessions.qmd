@@ -12,13 +12,9 @@ The course runs on one Sunday in November and one weekend in January, with seven
 
 Teams of 2 or 3 form on Day 1 around a problem from one member's organization. The capstone is **one** application, and each class adds a layer to it.
 
-| Class | The product gains | New building block |
-|---|---|---|
-| 1 | A deployed app and a public web page | Prompts and the brief |
-| 2 | Login, a database, rollback | Project instructions, one skill, one connector |
-| 3 | An AI capability with a test set | One agentic step with approval, one automation |
-| 4 | Fixed security findings and a decision | Least-privilege permissions |
-| 5 | A pitch in front of a panel | A deck generated with AI |
+```{=html}
+<figure class="vc-fig" data-fig="course-layers"><figcaption>Each class adds one layer to the same product: 1, a deployed app and public page (prompt and brief); 2, login, database and undo (project instructions, a skill, a connector); 3, an AI capability with a test set (an agent step and an automation); 4, findings fixed and a decision (least privilege); 5, a pitch to a panel (a deck built with AI).</figcaption></figure>
+```
 
 ## Day 1, Sunday 29 November 2026
 

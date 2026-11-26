@@ -83,6 +83,10 @@ The fix is not complicated, and you do not need to understand code to request it
 | In a server environment variable | Only the server | Nothing. This is where it belongs |
 
 ```{=html}
+<figure class="vc-fig" data-fig="c4-keys"><figcaption>The publishable key of the database may be in the browser; the data is protected by the rules inside the database. Secret keys (the database's secret key and the model provider's key) live only in the hosting platform's environment variables. No key is ever pasted into a chat, a file, a slide or the repository; one that was is revoked and replaced.</figcaption></figure>
+```
+
+```{=html}
 <div class="vc-widget" data-widget="c4-secrets"></div>
 ```
 
@@ -186,6 +190,10 @@ The customer message is not the only door. Everything a model reads lands in the
 Three guardrails cover most of it, and each one is a sentence you can say to the assistant. First, treat everything the model reads as data: the instructions state that the text between markers is material to extract from, never to obey. Second, constrain the output and check it: the model may only return items, quantities and units in a fixed format; it cannot return a discount, a status or free text, and every product it returns is checked against the catalog, so anything that does not match is flagged instead of saved. Third, keep a person in charge of anything with money or an outside effect: discounts, approvals, price overrides and emails are decided by a rep or by Carla, never by the model.
 
 Notice what the guardrails do. They do not make injection impossible, and they do not try to catch every bad message, because models cannot reliably tell instructions from data and you will never list every phrasing an attacker could use. They limit what a successful injection can do. For the extraction, a fixed output is most of the answer. For the agentic step it is not enough, because an agent's output is an action: there the guardrail is the permission on each tool, which is the next topic.
+
+```{=html}
+<figure class="vc-fig" data-fig="c4-injection"><figcaption>An instruction hidden in a message or a file reaches the model, which cannot reliably tell it from data. Three stops limit the damage: the model can only return fixed fields, the app checks them against its own rules, and a person approves discounts and sending.</figcaption></figure>
+```
 
 ```{=html}
 <div class="vc-widget" data-widget="c4-injection"></div>

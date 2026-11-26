@@ -208,6 +208,10 @@ Use retrieval when the documents are too many or too long to attach whole. A few
 Retrieval fails in its own ways. The right chunk is not among the top few. The chunks are stale: the policy changed in March and the stored passages still say what it said in January. Or too many chunks are attached, which costs tokens and distracts the model. The simulator shows the trade-off.
 
 ```{=html}
+<figure class="vc-fig" data-fig="c3-retrieval"><figcaption>Retrieval in six steps: documents are split once into passages and stored; when a question arrives, the three closest passages are found and attached to the call, and the answer shows its source.</figcaption></figure>
+```
+
+```{=html}
 <div class="vc-widget" data-widget="c3-rag"></div>
 ```
 

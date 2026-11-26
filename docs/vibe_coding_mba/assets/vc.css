@@ -602,3 +602,92 @@ main.content .callout { border-left-width: 1px !important; }
 main.content p code:not(.sourceCode), main.content li code:not(.sourceCode), main.content td code:not(.sourceCode) {
   color: var(--hz-ink-2); background: var(--hz-surface); border-radius: 4px; padding: 0.08em 0.32em; font-size: 0.86em;
 }
+
+/* ==========================================================================
+   Motion figures (vc-fig): explanatory diagrams built from HTML.
+   Steps reveal once, in order, with plain ease-out. No loops.
+   ========================================================================== */
+.vc-fig { margin: 1.8rem 0 2rem; padding: 0; }
+.vc-fig-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--vc-brass-soft); padding-top: 0.7rem; margin-bottom: 0.9rem; }
+.vc-fig-title { font-family: var(--hz-serif); font-weight: 600; font-size: 1.28rem; line-height: 1.2; font-variant-numeric: lining-nums; color: var(--hz-ink); }
+.vc-fig-replay { font: inherit; font-size: 0.8rem; color: var(--hz-muted); background: none; border: 0; padding: 0.4rem 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--hz-line-strong); text-underline-offset: 3px; flex: none; }
+.vc-fig-replay:hover { color: var(--hz-ink); }
+.vc-fig-replay:focus-visible { outline: 2px solid var(--hz-accent); outline-offset: 2px; border-radius: 4px; }
+.vc-fig figcaption { margin-top: 0.8rem; font-size: 0.88rem; line-height: 1.5; color: var(--hz-muted); max-width: 44rem; }
+
+.vc-fig [data-step] { transition: opacity 0.45s cubic-bezier(0.2, 0, 0, 1), transform 0.45s cubic-bezier(0.2, 0, 0, 1); }
+.vc-fig.is-armed [data-step] { opacity: 0; transform: translateY(8px); }
+.vc-fig.is-armed [data-step].is-in { opacity: 1; transform: none; }
+
+.vc-fig-k { display: block; font-family: var(--hz-serif); font-size: 1.05rem; line-height: 1; color: var(--vc-brass); font-variant-numeric: lining-nums; margin-bottom: 0.3rem; }
+.vc-fig-d { display: block; font-size: 0.84rem; line-height: 1.45; color: var(--hz-ink-2); margin-top: 0.2rem; }
+.vc-fig-tag { display: inline-block; margin-top: 0.5rem; font-size: 0.74rem; line-height: 1.3; padding: 0.14rem 0.55rem; border-radius: 999px; border: 1px solid var(--hz-line-strong); color: var(--hz-ink-2); }
+.vc-fig-tag.is-ok { border-color: var(--vc-ok); color: var(--vc-ok); }
+.vc-fig-tag.is-bad { border-color: var(--vc-bad); color: var(--vc-bad); }
+.vc-fig-tag.is-accent { border-color: var(--hz-accent); color: var(--hz-accent); }
+
+/* flow */
+.vc-fig-flow { display: flex; align-items: stretch; gap: 0; }
+.vc-fig-node { flex: 1 1 0; min-width: 0; border: 1px solid var(--hz-line-strong); border-radius: 10px; padding: 0.7rem 0.75rem 0.75rem; background: var(--hz-bg); }
+.vc-fig-node strong { display: block; font-size: 0.93rem; line-height: 1.25; color: var(--hz-ink); }
+.vc-fig-node.is-ink { background: var(--hz-ink); border-color: var(--hz-ink); }
+.vc-fig-node.is-ink strong, .vc-fig-node.is-ink .vc-fig-d { color: var(--hz-bg); }
+.vc-fig-node.is-ai { background: var(--vc-ai-soft); border-color: transparent; }
+.vc-fig-node.is-accent { background: var(--hz-accent-soft); border-color: transparent; }
+.vc-fig-node.is-bad { border-color: var(--vc-bad); }
+.vc-fig-node.is-ok { border-color: var(--vc-ok); }
+.vc-fig-arrow { flex: none; width: 1.5rem; position: relative; align-self: center; height: 1px; background: var(--hz-ink-2); margin: 0 0.2rem; transform-origin: left center; }
+.vc-fig-arrow::after { content: ""; position: absolute; right: -1px; top: -3.5px; border-left: 6px solid var(--hz-ink-2); border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+.vc-fig.is-armed .vc-fig-arrow[data-step] { transform: scaleX(0); opacity: 1; }
+.vc-fig.is-armed .vc-fig-arrow[data-step].is-in { transform: scaleX(1); }
+.vc-fig-back { margin: 0.7rem 0 0; font-size: 0.86rem; color: var(--hz-muted); }
+@media (max-width: 820px) {
+  .vc-fig-flow { flex-direction: column; }
+  .vc-fig-arrow { width: 1px; height: 1.1rem; margin: 0.2rem 0 0.2rem 1.2rem; align-self: flex-start; transform-origin: center top; }
+  .vc-fig-arrow::after { right: -3.5px; top: auto; bottom: -1px; border-top: 6px solid var(--hz-ink-2); border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 0; }
+  .vc-fig.is-armed .vc-fig-arrow[data-step] { transform: scaleY(0); }
+  .vc-fig.is-armed .vc-fig-arrow[data-step].is-in { transform: scaleY(1); }
+}
+
+/* lanes */
+.vc-fig-lanes { display: grid; grid-template-columns: repeat(var(--vc-cols, 3), minmax(0, 1fr)); gap: 0 1.6rem; }
+.vc-fig-lane-h { border-top: 2px solid var(--hz-ink); padding: 0.6rem 0 0.7rem; }
+.vc-fig-lane-h strong { display: block; font-size: 0.98rem; line-height: 1.25; }
+.vc-fig-lane.is-ai .vc-fig-lane-h { border-top-color: var(--vc-ai); }
+.vc-fig-lane.is-accent .vc-fig-lane-h { border-top-color: var(--hz-accent); }
+.vc-fig-lane.is-bad .vc-fig-lane-h { border-top-color: var(--vc-bad); }
+.vc-fig-lane ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--hz-line); }
+.vc-fig-lane li { padding: 0.5rem 0; border-bottom: 1px solid var(--hz-line); font-size: 0.86rem; line-height: 1.45; color: var(--hz-ink-2); }
+.vc-fig-lane li b { display: block; font-weight: 500; font-size: 0.76rem; color: var(--hz-muted); }
+.vc-fig-lane li.is-no span::before { content: "✕  "; color: var(--vc-bad); }
+.vc-fig-lane li.is-yes span::before { content: "✓  "; color: var(--vc-ok); }
+@media (max-width: 720px) { .vc-fig-lanes { grid-template-columns: 1fr; gap: 1.2rem 0; } }
+
+/* layers */
+.vc-fig-layers { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--hz-line); }
+.vc-fig-layers li { display: grid; grid-template-columns: 2.2rem 1fr auto; gap: 0.8rem; align-items: baseline; padding: 0.65rem 0; border-bottom: 1px solid var(--hz-line); }
+.vc-fig-layers .vc-fig-k { font-size: 1.5rem; margin: 0; }
+.vc-fig-layer-b strong { display: block; font-size: 0.96rem; line-height: 1.3; }
+.vc-fig-layers .vc-fig-tag { margin-top: 0; white-space: nowrap; }
+@media (max-width: 600px) {
+  .vc-fig-layers li { grid-template-columns: 1.8rem 1fr; }
+  .vc-fig-layers .vc-fig-tag { grid-column: 2; justify-self: start; white-space: normal; }
+}
+@media (prefers-reduced-motion: reduce) { .vc-fig [data-step] { transition: none; } }
+
+/* Figures: the caption is the text alternative when scripts fail; once the figure is built it is for screen readers only */
+.vc-fig[data-mounted] figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+/* Long flows (six steps or more) read as a vertical sequence at every width */
+.vc-fig-flow.is-stack { flex-direction: column; }
+.vc-fig-flow.is-stack .vc-fig-arrow { width: 1px; height: 0.9rem; margin: 0.15rem 0 0.15rem 1.35rem; align-self: flex-start; transform-origin: center top; }
+.vc-fig-flow.is-stack .vc-fig-arrow::after { right: -3.5px; top: auto; bottom: -1px; border-top: 6px solid var(--hz-ink-2); border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 0; }
+.vc-fig.is-armed .vc-fig-flow.is-stack .vc-fig-arrow[data-step] { transform: scaleY(0); }
+.vc-fig.is-armed .vc-fig-flow.is-stack .vc-fig-arrow[data-step].is-in { transform: scaleY(1); }
+@media (min-width: 821px) {
+  .vc-fig-flow.is-stack .vc-fig-node { display: grid; grid-template-columns: 1.6rem 11rem 1fr auto; gap: 0 0.9rem; align-items: baseline; padding: 0.6rem 0.9rem; }
+  .vc-fig-flow.is-stack .vc-fig-node .vc-fig-k { margin: 0; }
+  .vc-fig-flow.is-stack .vc-fig-node .vc-fig-d, .vc-fig-flow.is-stack .vc-fig-node .vc-fig-tag { margin-top: 0; }
+}
+
+.vc-fig-node.is-ink .vc-fig-tag { color: var(--hz-bg); border-color: var(--hz-bg); }
+.vc-fig-node.is-ink .vc-fig-k { color: var(--vc-brass-soft); }

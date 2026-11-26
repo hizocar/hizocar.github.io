@@ -553,6 +553,7 @@ In the business
 <h2 class="anchored" data-anchor-id="topic-6">Topic 6 · Your first build, including the bug</h2>
 <p class="vc-guide"><strong>Guiding question:</strong> the instructor will build and deploy QuoteDesk v0 in twenty minutes, and something will go wrong on purpose. What should you be watching?</p>
 <p>The build lab opens with a live demo. Watch it for the rhythm, not the details. The instructor pastes the brief into an app builder with three constraints: one page, no login yet, keep it simple. The assistant replies with a plan in plain language. The instructor reads the plan against the brief, accepts it, and waits while the assistant produces the page. Then the instructor does something most people skip: uses the page the way a rep would, three times, in a phone-sized window (the browser window dragged narrow, to about the width of a phone).</p>
+<figure class="vc-fig figure" data-fig="c1-loop"><figcaption class="figure-caption">The loop of the course: write the brief, read the assistant's plan, let it build, test by using the app, ask for one change, save a checkpoint, and test again.</figcaption></figure>
 <p>The third time, something fails. The Save button does nothing on the phone layout. This is the moment the demo is about. The instructor does not open the code. The instructor describes what happened, in the same words a rep would use, and asks the assistant to explain what it did and fix it. The assistant finds the cause (on narrow screens the customer picker was covering the button), changes it, and says what it changed. The instructor tests again. Then the instructor publishes the page to a public address and opens it on a real phone.</p>
 <p>Five things to notice. The plan is in plain language and you can reject it. The assistant always says what it did; read that paragraph every time. Testing by using is your job and takes longer than building. A bug is normal and recovery is a conversation, not a crisis. Deploying is one click and gives you an address anyone can open.</p>
 <p>The simulator below replays the sequence so you can see each step on its own, including the bug.</p>
@@ -1047,6 +1048,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 <script src="assets/course.js"></script>
+<script src="assets/figures.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
 <script src="assets/vc-core.js"></script>
 <script src="assets/widgets-class1.js"></script>

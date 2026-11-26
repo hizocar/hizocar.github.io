@@ -141,6 +141,10 @@ You ask for all of it in plain language: *save a checkpoint called "login workin
 That gives every test in the lab one of two places. **On your laptop**, before the checkpoint: the app runs on your own machine and only you can see it. **At the public address**, after the checkpoint: a phone or a second device can open it, about a minute later. A test on a real phone always belongs to the second kind.
 
 ```{=html}
+<figure class="vc-fig" data-fig="c2-checkpoint"><figcaption>A change is made and tested on your laptop, saved as a named checkpoint, sent to your private GitHub repository, rebuilt by the hosting platform in about a minute, and tested again at the public address on a phone.</figcaption></figure>
+```
+
+```{=html}
 <div class="vc-widget" data-widget="c2-commits"></div>
 ```
 
@@ -284,11 +288,9 @@ Trust can be measured: how often reps edit a proposed line, how often they give 
 
 Before teaching "the assistant" anything, be exact about which one. From this class on, three different things are in play, and most confusion in AI projects comes from blurring them.
 
-| | What it is | Who uses it | What it can reach |
-|---|---|---|---|
-| **The building assistant** | The agentic coding assistant your team builds QuoteDesk with | Your team, while building | The repository and its project instructions, plus the assistant's own skills and connectors |
-| **A rep's assistant** | The assistant Paula or Carla uses directly for daily work: drafting a quote, summarizing calls, the morning digest | A rep or a manager, every day | The same skills and connectors, with that person's own access. Not the project instructions |
-| **The model inside QuoteDesk** | The model that the deployed app calls through an API (an API is the door through which one program asks another for a service) | Nobody directly; the app calls it | Only what the app sends it, and only the tools the app defines. No skills, no connectors |
+```{=html}
+<figure class="vc-fig" data-fig="c2-three-ai"><figcaption>Three different things are called "the AI". The building assistant works on the repository, reads the project instructions and uses skills and connectors. A rep's assistant is the same app opened elsewhere: it uses the same skills and connectors but does not see the project instructions. The model inside QuoteDesk is called by the deployed app through an API (the door through which one program asks another for a service): it sees only what the app sends and has no skills and no connectors.</figcaption></figure>
+```
 
 In this course one assistant app plays both parts: opened on the repository it is the building assistant; opened anywhere else it is your rep's assistant.
 

@@ -272,6 +272,83 @@
     addEventListener("scroll", upd, { passive: true }); addEventListener("resize", upd, { passive: true }); upd();
   }
 
+  /* ---------- Motion figures ----------
+     <figure class="vc-fig" data-fig="name"><figcaption>Text alternative and caption</figcaption></figure>
+     Figures are declared in figures.js as data (kind: flow | lanes | layers). They are built from HTML, so text is
+     real pixels and wraps on phones. Animation is CSS transitions only: steps reveal in order once, when the figure
+     enters the screen, in under six seconds. Reduced motion, or no IntersectionObserver, shows the final frame. */
+  const TONES = ["ai", "accent", "ok", "bad", "warn", "ink"];
+  function figNode(n, i) {
+    const el = h("div", { class: "vc-fig-node" + (n.tone ? " is-" + n.tone : ""), "data-step": String(i) },
+      n.k ? h("span", { class: "vc-fig-k" }, n.k) : null,
+      h("strong", {}, n.t),
+      n.d ? h("span", { class: "vc-fig-d", html: n.d }) : null,
+      n.tag ? h("span", { class: "vc-fig-tag" + (n.tagTone ? " is-" + n.tagTone : "") }, n.tag) : null);
+    return el;
+  }
+  const FIG_KINDS = {
+    flow(stage, f) {
+      const row = h("div", { class: "vc-fig-flow" + (f.nodes.length >= 6 ? " is-stack" : "") });
+      f.nodes.forEach((n, i) => {
+        if (i) row.append(h("span", { class: "vc-fig-arrow", "data-step": String(i * 2 - 1), "aria-hidden": "true" }));
+        const el = figNode(n, i * 2); row.append(el);
+      });
+      stage.append(row);
+      if (f.back) stage.append(h("p", { class: "vc-fig-back", "data-step": String(f.nodes.length * 2) }, f.loop ? h("span", { "aria-hidden": "true" }, "↺ ") : null, f.back));
+      return f.nodes.length * 2 + (f.back ? 1 : 0);
+    },
+    lanes(stage, f) {
+      const row = h("div", { class: "vc-fig-lanes", style: { "--vc-cols": String(f.lanes.length) } });
+      let step = 0;
+      f.lanes.forEach((l) => {
+        const col = h("div", { class: "vc-fig-lane" + (l.tone ? " is-" + l.tone : "") });
+        col.append(h("div", { class: "vc-fig-lane-h", "data-step": String(step++) }, l.k ? h("span", { class: "vc-fig-k" }, l.k) : null, h("strong", {}, l.t), l.sub ? h("span", { class: "vc-fig-d" }, l.sub) : null));
+        const ul = h("ul", {});
+        l.items.forEach((it) => ul.append(h("li", { "data-step": String(step++), class: it.no ? "is-no" : (it.yes ? "is-yes" : "") }, it.label ? h("b", {}, it.label) : null, h("span", { html: it.text || it }))));
+        col.append(ul); row.append(col);
+      });
+      stage.append(row);
+      return step;
+    },
+    layers(stage, f) {
+      const list = h("ol", { class: "vc-fig-layers" });
+      f.layers.forEach((l, i) => list.append(h("li", { "data-step": String(i), class: l.tone ? "is-" + l.tone : "" },
+        h("span", { class: "vc-fig-k" }, l.k || String(i + 1)),
+        h("span", { class: "vc-fig-layer-b" }, h("strong", {}, l.t), l.d ? h("span", { class: "vc-fig-d", html: l.d }) : null),
+        l.tag ? h("span", { class: "vc-fig-tag" }, l.tag) : null)));
+      stage.append(list);
+      return f.layers.length;
+    },
+  };
+  function mountFigure(el) {
+    if (el.dataset.mounted) return;
+    const f = (window.VC_FIGS || {})[el.dataset.fig];
+    if (!f || !FIG_KINDS[f.kind]) return;
+    el.dataset.mounted = "1";
+    const stage = h("div", { class: "vc-fig-stage" });
+    const head = h("div", { class: "vc-fig-head" }, h("span", { class: "vc-fig-title" }, f.title));
+    el.prepend(head, stage);
+    const steps = FIG_KINDS[f.kind](stage, f);
+    const items = [...stage.querySelectorAll("[data-step]")].sort((a, b) => +a.dataset.step - +b.dataset.step);
+    if (reduced() || !("IntersectionObserver" in window)) return;
+    const every = Math.min(420, Math.floor(5200 / Math.max(1, steps)));
+    let timers = [];
+    function play() {
+      timers.forEach(clearTimeout); timers = [];
+      el.classList.add("is-armed");
+      items.forEach((it) => it.classList.remove("is-in"));
+      items.forEach((it) => timers.push(setTimeout(() => it.classList.add("is-in"), 120 + (+it.dataset.step) * every)));
+    }
+    const replay = h("button", { type: "button", class: "vc-fig-replay", "aria-label": "Replay the animation of this figure" }, "Replay");
+    replay.addEventListener("click", play);
+    head.append(replay);
+    el.classList.add("is-armed");
+    const io = new IntersectionObserver((entries) => { if (entries.some((e) => e.isIntersecting)) { io.disconnect(); play(); } }, { threshold: 0.2 });
+    io.observe(el);
+    // Safety: never leave a figure hidden if the observer does not fire.
+    setTimeout(() => { if (!items.some((it) => it.classList.contains("is-in"))) { const r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) play(); } }, 2500);
+  }
+
   /* ---------- Quizzes ---------- */
   function mountQuiz(q) {
     if (q.dataset.mounted) return;
@@ -393,6 +470,7 @@
     document.querySelectorAll(".vc-practice").forEach(mountPractice);
     document.querySelectorAll(".vc-checklist").forEach(mountChecklist);
     document.querySelectorAll(".vc-daybar").forEach(mountDaybar);
+    document.querySelectorAll(".vc-fig[data-fig]").forEach(mountFigure);
     mountProgress();
     if (!reduced() && M()) {
       document.querySelectorAll(".vc-widget, .vc-lab, .vc-practice").forEach((el) => {
