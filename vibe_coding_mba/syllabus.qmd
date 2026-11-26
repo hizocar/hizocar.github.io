@@ -17,7 +17,7 @@ Format follows the USM MBA *Programa de Asignatura* template. A Word version in 
 | **Prerequisites** | As set out in the MBA admission profile. No programming experience required. |
 | **SCT-Chile credits** | 2 |
 | **Exam** | No |
-| **Direct teaching hours** | 20 (15 lecture/workshop + 5 assessment) |
+| **Direct teaching hours** | 20 (16 lecture/workshop + 4 assessment) |
 | **Autonomous work hours** | 25 |
 | **Total workload (clock hours)** | 45 hours |
 | **Language** | English |
@@ -27,9 +27,9 @@ Format follows the USM MBA *Programa de Asignatura* template. A Word version in 
 
 This course belongs to the elective area of the MBA. In it, students analyze business problems that can be solved with software and develop the ability to build, deploy and govern working AI-powered applications, web pages, presentations and automations by directing AI assistants in natural language, without prior programming experience.
 
-*Vibe coding*, the practice of building software by describing intent to an AI and iterating on what it produces, has collapsed the cost of a working prototype from weeks of engineering to hours of a manager's time. This changes which ideas are worth testing, how managers specify what they need, how they work with technology teams, and which risks they now own. Over five intensive workshop sessions, students take one real business problem from framing to a deployed web application with an integrated language-model capability. They extend it with the building blocks of current AI work: project instructions and skills that package how their organization works, connectors (the Model Context Protocol) that give the assistant scoped access to company systems, agents that act with human approval, and automations that run on a schedule. They then evaluate the security, privacy, cost and maintainability risks of what they built, and present a working product and business case to decision makers with a deck generated with AI and verified by them.
+*Vibe coding*, the practice of building software by describing intent to an AI and iterating on what it produces, has collapsed the cost of a working prototype from weeks of engineering to hours of a manager's time. This changes which ideas are worth testing, how managers specify what they need, how they work with technology teams, and which risks they now own. Over three intensive days, students take one real business problem from framing to a deployed web application with an integrated language-model capability. They extend it with the building blocks of current AI work: project instructions and skills that package how their organization works, connectors (the Model Context Protocol) that give the assistant scoped access to company systems, agents that act with human approval, and automations that run on a schedule. They then evaluate the security, privacy, cost and maintainability risks of what they built, and present a working product and business case to decision makers with a deck generated with AI and verified by them.
 
-The course is deliberately built around *build first, then reflect*. Students ship a first application in the first session; strategy, user experience, governance and organizational questions are then examined on something they have made themselves. Students leave with a deployed product, a small personal system for working with AI (skills, connectors and one automation), a tested decision framework for build / buy / vibe, and a first-hand understanding of what has changed in the economics of building software.
+The course is deliberately built around *build first, then reflect*. Students ship a first application on the first day; strategy, user experience, governance and organizational questions are then examined on something they have made themselves. Students leave with a deployed product, a small personal system for working with AI (skills, connectors and one automation), a tested decision framework for build / buy / vibe, and a first-hand understanding of what has changed in the economics of building software.
 
 ## 3. Entry requirements / prior learning
 
@@ -77,7 +77,7 @@ As set out in the MBA admission profile. In addition:
 - What changed: from writing code to expressing intent. Vibe coding versus AI-assisted engineering; what each is good for.
 - The toolkit map: chat assistants, app builders, agentic coding assistants and desktop agent apps; and the building blocks used with them: prompts, project instructions, skills, connectors, agents and automations. Which one for which job.
 - Problem Pull versus AI Push. Selecting a business problem worth building for: users, pain, value hypothesis, success metric.
-- First builds: from a one-paragraph brief to a deployed web application and a public web page within the session.
+- First builds: from a one-paragraph brief to a deployed web application and a public web page within the first class.
 
 **Unit 2. From specification to product**
 
@@ -116,11 +116,11 @@ As set out in the MBA admission profile. In addition:
 
 ## 7. Methodology (teaching and learning strategies)
 
-- **Workshop format, build first then reflect.** Sessions 1 to 4 follow the same rhythm: a 45-minute framework block, a 2-hour guided build in teams working on their own project (with a 10-minute break), a 45-minute critique and reflection block, and a 30-minute milestone review. Session 5 is Demo Day.
-- **Interactive class pages.** Each session has a self-teaching page with simulators, practice questions, the lab guide and prompts to adapt, read before class (90 to 100 minutes) so class time is spent building. Three support pages complete them: a [toolkit setup guide](setup.html), a [security checklist](security-checklist.html) and the [rubric](rubric.html).
+- **Intensive format, build first then reflect.** The course is taught in three intensive days, 20 contact hours in two-hour blocks. Each class combines a short framework recap, a guided build in teams on their own project, and critique of the work; the last class is Demo Day. A setup clinic on the first day prepares every student's tools in the room.
+- **Interactive class pages.** Each class has a self-teaching page with simulators, practice questions, the lab guide and prompts to adapt, read before class (90 to 100 minutes) so class time is spent building. Three support pages complete them: a [toolkit setup guide](setup.html), a [security checklist](security-checklist.html) and the [rubric](rubric.html).
 - **A live demonstration** by the instructor opens every build lab, including one failure and its recovery.
 - **One cumulative team project** (teams of 2 to 3) chosen by the students from their own organizations, carried from problem brief to deployed product to Demo Day. A running case, a food distributor's quote-request tool, is used in every class.
-- **Data rule.** Until your team has completed the session 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade.
+- **Data rule.** Until your team has completed the Class 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade.
 - **Individual build log**: each student keeps a running record of prompts, decisions, failures and what the AI did, used for assessment and reflection.
 - **Peer review** at every milestone with a shared rubric.
 - **Course toolkit** (subject to update each term): an AI assistant that supports project instructions, skills, connectors (MCP), agents and scheduled tasks as the primary tool; a conversational app builder; GitHub for version control; a managed database and a managed hosting platform. Principles are taught tool-agnostically so students can switch tools.
@@ -130,13 +130,13 @@ As set out in the MBA admission profile. In addition:
 
 | Component | Weight | Type | Learning outcomes | Due |
 |---|---|---|---|---|
-| M1. Problem brief and product specification | 15% | Individual | LO-S1, LO-G3 | Before session 2 |
-| M2. Working prototype v1, deployed, with one skill, one connector and the build log | 20% | Team | LO-S2, LO-S3, LO-G2 | Before session 3 |
-| M3. AI feature with evaluation set, one agentic step with approval, one automation, the measurement of the brief's metric, and risk memo | 25% | Team | LO-S2, LO-S3, LO-G1 | Before session 5 |
-| Demo Day: live demo and business case (10 min + Q&A), deck generated with AI and declared | 25% | Team, individually adjusted | LO-S4, LO-G3, LO-G2 | Session 5 |
-| Individual reflection memo and participation | 15% | Individual | LO-G1, LO-S3 | End of session 5 |
+| M1. Problem brief and product specification | 15% | Individual | LO-S1, LO-G3 | After Class 1 |
+| M2. Working prototype v1, deployed, with one skill, one connector and the build log | 20% | Team | LO-S2, LO-S3, LO-G2 | After Class 2 |
+| M3. AI feature with evaluation set, one agentic step with approval, one automation, the measurement of the brief's metric, and risk memo | 25% | Team | LO-S2, LO-S3, LO-G1 | After Class 5 |
+| Demo Day: live demo and business case (10 min + Q&A), deck generated with AI and declared | 25% | Team, individually adjusted | LO-S4, LO-G3, LO-G2 | Class 5 |
+| Individual reflection memo and participation | 15% | Individual | LO-G1, LO-S3 | After Class 5 |
 
-**Passing and grading.** Grades on the 0 to 100 scale used by the MBA; the course is passed with a weighted average of 55 or higher and attendance of at least 75% of sessions, in accordance with MBA regulations. There is no final exam. Team components receive one grade for the team; the Demo Day grade alone is adjusted individually by up to ±10 points, based on the build log and peer assessment.
+**Passing and grading.** Grades on the 0 to 100 scale used by the MBA; the course is passed with a weighted average of 55 or higher and attendance of at least 75% of the contact hours, in accordance with MBA regulations. There is no final exam. Team components receive one grade for the team; the Demo Day grade alone is adjusted individually by up to ±10 points, based on the build log and peer assessment.
 
 **Rubrics.** Every component is graded with the published [rubric](rubric.html), which gives level descriptors and the weight of each criterion per component. The four criteria are: problem and value (is the problem real, the user named, the metric measurable), functionality (does the product work for its user end to end), AI quality and safety (is the model capability useful, evaluated and guarded, and are permissions minimal), and communication (is the product and decision explained clearly to its audience).
 
@@ -170,8 +170,8 @@ As set out in the MBA admission profile. In addition:
 | Activity | Hours |
 |---|---|
 | **In class** | |
-| Lectures / workshop | 15 |
-| Assessment (milestone reviews, Demo Day and reflection memo) | 5 |
+| Lectures / workshop | 16 |
+| Assessment (milestone reviews, Demo Day, peer assessment) | 4 |
 | **Autonomous** | |
 | Mandatory assignments (milestones M1 to M3) | 8 |
 | Preparation of presentations (Demo Day) | 7 |

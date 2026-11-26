@@ -174,7 +174,7 @@
   /* ================= c2-commits ================= */
   register("c2-commits", function (root) {
     panel(root, "Checkpoints, branches and undo", "QuoteDesk's history as a line of checkpoints. Make changes, break something, roll back, try an experiment on a branch, merge. The app preview shows the state you are on.", "accent");
-    let main = [{ name: "v0 from session 1", state: { customer: false, login: false, layout: "list" } }];
+    let main = [{ name: "v0 from Class 1", state: { customer: false, login: false, layout: "list" } }];
     let branch = null;            // { base: index, commits: [...] }
     let head = { on: "main", i: 0 };
     let broken = false;
@@ -312,7 +312,7 @@
       branch = null; head = { on: "main", i: base };
       sync("Branch discarded. The experiment did not pass, and the main line never noticed it existed.", "");
     }
-    sync("Start: one checkpoint, “v0 from session 1”. Make a change to save the next one.");
+    sync("Start: one checkpoint, “v0 from Class 1”. Make a change to save the next one.");
   });
 
   /* ================= c2-data ================= */
@@ -368,7 +368,7 @@
       }
       setRows(visible + " of 3", visible === 3 ? "ok" : "bad");
       const msgs = {
-        page: "Refresh: the three requests are gone. Diego sees an empty list. The phone sees nothing. Good for the first hour of session 1, useless for a second rep.",
+        page: "Refresh: the three requests are gone. Diego sees an empty list. The phone sees nothing. Good for the first hour of Class 1, useless for a second rep.",
         file: "Refresh: fine. Diego opens the app at the same moment Paula saves and one request is overwritten (2 remain). Nobody knows who saved what. Works for one person, fails for a team.",
         db: "All three pass: the requests survive refresh, Diego sees the shared queue of requests, the phone shows the same data, and each row carries the rep who created it. This is what milestone M2 requires.",
       };

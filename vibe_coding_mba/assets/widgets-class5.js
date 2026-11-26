@@ -21,7 +21,7 @@
     panel(root, "Generate the Demo Day deck from your sources",
       "Switch on what the assistant may read, then generate. One slide carries one message, and every number needs a source. Click a slide to see it large.", "accent");
 
-    const SRC = [["log", "Build log"], ["tests", "Test-set results"], ["risk", "Risk memo"], ["shots", "Screenshots"], ["cost", "Cost model"]];
+    const SRC = [["log", "Build log"], ["tests", "Test-set results"], ["risk", "Class 4 findings"], ["shots", "Screenshots"], ["cost", "Cost model"]];
     const NAME = Object.fromEntries(SRC);
     const on = { log: true, tests: true, risk: false, shots: true, cost: false };
 
@@ -53,7 +53,7 @@
       { block: "Added", sec: 60, short: "Architecture overview", needs: [], fixed: "not in your storyline",
         sentence: "The architecture has a web page, a database and a model call.", body: ["Keep it for the questions, as a backup slide."] },
       { block: "Added", sec: 60, short: "Team and timeline", needs: [], fixed: "not in your storyline",
-        sentence: "The team built QuoteDesk across five sessions.", body: ["The panel knows. It is the course."] },
+        sentence: "The team built QuoteDesk across three days.", body: ["The panel knows. It is the course."] },
     ];
 
     let mode = "one", extras = false, backup = false, sel = 2, prev = {};
@@ -193,7 +193,7 @@
       { k: "Problem", sec: 60, screen: "title slide, then the problem slide", hear: "Who the user is, the pain, and the one number that will tell them if it worked. Cerro Azul: 14 reps, about 120 quote requests a day, quotes in 3 to 6 hours." },
       { k: "Live demo", sec: 180, screen: "the product itself", hear: "One user story, end to end, with a de-identified message. They watch whether you trust it and whether the rep stays in control." },
       { k: "Evidence", sec: 120, screen: "the test-set slide", hear: "The test set: how many examples, the result before and after the guardrail, and how much human review it costs. Numbers, not adjectives." },
-      { k: "Risks", sec: 90, screen: "the risks slide", hear: "Three findings from the risk memo, what you did about each, and what is still open. Honesty about the open item builds more trust than a clean sheet." },
+      { k: "Risks", sec: 90, screen: "the risks slide", hear: "Three findings from the Class 4 lab, what you did about each, and what is still open. Honesty about the open item builds more trust than a clean sheet." },
       { k: "Decision", sec: 60, screen: "the decision slide", hear: "The build / buy / vibe decision in one sentence: keep vibe coding it, hand it to engineering to build properly, buy a product, or stop, with the criteria that drove it. They want a decision, not a wish." },
       { k: "Roadmap", sec: 90, screen: "the roadmap slide, then sources", hear: "The three conditions for rollout to 14 reps, who owns each, and roughly what it costs. They are doing the arithmetic while you talk." },
     ];
@@ -523,7 +523,7 @@
       "Five parts, one paragraph each, with a concrete moment from your build log in every one. 400 to 600 words. The draft is saved in this browser.", "accent");
     const MIN = 400, MAX = 600, KEY = "vc:class5:reflection";
     const PARTS = [
-      { k: "What the AI did", ph: "What the assistant produced that you could not have: the first deployed version in 40 minutes, the extraction table, the morning digest. Cite the session and what you typed." },
+      { k: "What the AI did", ph: "What the assistant produced that you could not have: the first deployed version in 40 minutes, the extraction table, the morning digest. Cite the class and what you typed." },
       { k: "What I decided", ph: "The decisions that were yours: which problem, which user story first, where the guardrail goes, who approves discounts. Cite the moment in the log." },
       { k: "Where it misled me", ph: "The time it said the tests passed and they had not, the price it invented, the confident wrong answer about the delivery policy. The prompt, the output, how you noticed." },
       { k: "What I would do differently", ph: "Smaller steps, a test set in week one, a checkpoint before every risky change, read access before write access. Be specific." },
@@ -564,7 +564,7 @@
       let msg;
       if (words === 0) msg = "Empty. The memo is graded on honesty and specificity, not on how well QuoteDesk works.";
       else if (parts < 5) msg = `${parts} of 5 parts written, ${fmt(words)} words. Every part needs a paragraph; the grader reads the five headings first.`;
-      else if (ev < 5) msg = `All five parts written, ${fmt(words)} words. ${5 - ev} part${5 - ev > 1 ? "s" : ""} still without a concrete moment: add a session number, a date or the exact prompt in quotes.`;
+      else if (ev < 5) msg = `All five parts written, ${fmt(words)} words. ${5 - ev} part${5 - ev > 1 ? "s" : ""} still without a concrete moment: add a class number, a date or the exact prompt in quotes.`;
       else if (words < MIN) msg = `All parts written with evidence, ${fmt(words)} words. Under ${MIN}: expand the moments, say what you saw and what you did next.`;
       else if (words > MAX) msg = `${fmt(words)} words, over ${MAX}. Cut the sentences that describe the product; the memo is about what you learned.`;
       else msg = `${fmt(words)} words, five parts, five concrete moments. Copy it and submit.`;

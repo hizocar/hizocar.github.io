@@ -1,6 +1,6 @@
 ---
 title: "Security checklist"
-subtitle: "Fourteen checks a manager can run on an AI-built app. Session 4 pre-work: run them on your own product and bring the results."
+subtitle: "Fourteen checks a manager can run on an AI-built app. They open the Class 4 lab on Day 3, run on your own product."
 lang: en
 css: assets/vc.css
 include-after-body:
@@ -11,7 +11,7 @@ include-after-body:
 
 You do not need to read code to run this list. Each check is something you do in a browser, or a question you put to your building assistant together with the proof you should ask for. An answer of "yes, it is secure" is not proof. Ask to be shown.
 
-Run the checks on your own app before session 4 and note, for each one, **pass**, **fail** or **could not tell**. "Could not tell" is a finding. In the session 4 lab you fix the failures with your team. Your check marks are saved in this browser.
+Your team runs the checks on your own app at the start of the Class 4 lab, splitting them between members, and notes for each one **pass**, **fail** or **could not tell**. "Could not tell" is a finding. The rest of the lab fixes the failures. You may run them earlier, at home, on the evening of Day 2. Your check marks are saved in this browser.
 
 ## Keys and secrets
 
@@ -55,6 +55,6 @@ Run the checks on your own app before session 4 and note, for each one, **pass**
 </ul>
 ```
 
-## What to bring to session 4
+## What it produces
 
 A single page with the fourteen checks and, next to each, pass, fail or could not tell, plus one sentence for every item that is not a pass. That page is the source for the findings section of your risk memo; attach it to your build log.

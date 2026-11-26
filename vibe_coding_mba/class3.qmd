@@ -12,22 +12,22 @@ include-after-body:
 
 ```{=html}
 <div class="vc-meta">
-<span class="is-accent">Session 3 · 4 hours</span>
+<span class="is-accent">Day 2 · Saturday 16 January 2027 · 14:00 to 18:30</span>
 <span>Build goal: one AI capability, a test set with a guardrail, and one step that acts</span>
-<span>Milestone: M3 due before session 5</span>
+<span>Milestone: M3 due Sunday 24 January, 23:59</span>
 </div>
-<div class="vc-daybar" data-blocks="Framework:45|Build lab:120|Critique:45|Milestone review:30"></div>
+<div class="vc-daybar" data-start="08:00" data-current="Class 3" data-blocks="Class 2 · framework (45) and the first part of the build lab (75):120|Coffee break:30|Class 2 · build lab (45), critique (45), milestone review (30):120|Lunch:90|Class 3 · framework (45) and the first part of the build lab (75):120|Coffee break:30|Class 3 · build lab (45), critique (45), milestone review (30):120"></div>
 ```
 
-The session is four hours. The framework block is a recap of this page, which you read before class, so that the time in the room goes to building.
+Class 3 takes the afternoon of Day 2, from 14:00 to 18:30, with a coffee break at 16:00. The framework block is a recap of this page, which you read in the weeks before Day 2, so that the time in the room goes to building.
 
 ::: {.callout-note title="How to use this page"}
-- Read the topics in order before the session. Each one opens with a guiding question, explains the idea with the Cerro Azul case, gives you one simulator, one "In the business" note and a short practice set.
+- Read the topics in order before Day 2. Each one opens with a guiding question, explains the idea with the Cerro Azul case, gives you one simulator, one "In the business" note and a short practice set.
 - The simulators are safe. Predict what will happen before you press a button, then check.
 - The build lab is what your team does in the 120-minute block. The prompts are written to be copied and adapted to your own product.
-- The lab checklist is saved in your browser, so you can pick it up between sessions.
-- Data rule: only invented or de-identified information until the session 4 lab is done, critical findings are closed and the data's owner has agreed in writing. No real names, phone numbers, addresses or tax numbers in the app, in the test set or in any prompt.
-- Before class, complete "Before session 3" in the [toolkit setup guide](setup.html): the model provider's account, a spending limit, and the key on your hosting platform.
+- The lab checklist is saved in your browser, so you can pick it up between days.
+- Data rule: only invented or de-identified information until the Class 4 lab is done, critical findings are closed and the data's owner has agreed in writing. No real names, phone numbers, addresses or tax numbers in the app, in the test set or in any prompt.
+- By Sunday 10 January, complete "Before Day 2" in the [toolkit setup guide](setup.html): the model provider's account, a spending limit, and the key on your hosting platform.
 - Prices and token counts are illustrative. Check current prices before you budget; the reasoning does not change.
 :::
 
@@ -41,7 +41,7 @@ The session is four hours. The framework block is a recap of this page, which yo
 - Set up an automation with a trigger, an owner, a log, an alert and a spending limit.
 - Build a test set of 20 to 30 de-identified examples, run it, add one guardrail, and report what changed with numbers.
 
-## Route of the session
+## Route of the class
 
 The times in the first six rows are reading times for this page, about 100 minutes in total, at your own pace before class. The last three rows are minutes in the room.
 
@@ -55,7 +55,7 @@ The times in the first six rows are reading times for this page, about 100 minut
 <li><span class="vc-route-h">20 min</span><a class="vc-route-a" href="#topic-6"><span class="vc-route-n">6</span><span class="vc-route-t">Prove it works: test sets and guardrails</span><span class="vc-route-l">simulator · 3 questions</span></a></li>
 <li><span class="vc-route-h">120 min</span><a class="vc-route-a" href="#lab"><span class="vc-route-n">▶</span><span class="vc-route-t">In class · Build lab: the AI feature, the test set, one step that acts</span><span class="vc-route-l">team build · 5 prompts · checklist</span></a></li>
 <li class="is-break"><span class="vc-route-h">45 min</span><span class="vc-route-t">In class · Critique: two teams report their results before and after the guardrail</span></li>
-<li class="is-break"><span class="vc-route-h">30 min</span><span class="vc-route-t">In class · Milestone review: feedback on M2 and the briefing for M3</span></li>
+<li class="is-break"><span class="vc-route-h">30 min</span><span class="vc-route-t">In class · Milestone review: M2 checked, M3 and Day 3 explained</span></li>
 </ol>
 ```
 
@@ -433,22 +433,21 @@ A test result is a sentence you can put in front of Carla: "on our 24 test messa
 ```{=html}
 <div class="vc-lab">
 <p class="vc-lab-t">What your team builds in the next 120 minutes</p>
-<p class="vc-lab-time">Teams of 2 to 3 · the instructor circulates · save a checkpoint after every story that passes, and at least every 20 minutes</p>
+<p class="vc-lab-time">Teams of 2 to 3 · the instructor circulates · save a checkpoint after every story that passes, and at least every 20 minutes · steps 1 to 8 fit before the 16:00 coffee break and steps 9 to 12 come after it</p>
 <p>A checkpoint always includes sending it to GitHub, which updates your public address a minute later. The model key lives only on the hosting platform, so anything that calls the model does not run on your laptop: save a checkpoint, wait for the public address to update, and test there. If it fails, fix it or roll back.</p>
 <ol>
 <li><strong>Watch the live demo</strong> (10 min). The instructor connects a model, builds an extraction step and runs it at the public address, with one failure and its recovery.</li>
 <li><strong>Import the product list</strong> (10 min). Use the first prompt below. QuoteDesk gets its own products table (code, name, unit, list price), imported from a file exported from the price sheet, and the page shows the import date. The model inside QuoteDesk cannot use the connector from Class 2; it reads this table.</li>
 <li><strong>Name the one capability that matters most to your user</strong> (5 min). Name its pattern: classification, extraction, summarization or assistant. If you cannot name it, split the idea until you can. Write one sentence: "When the user does X, the app sends Y to the model and shows Z."</li>
-<li><strong>Connect the model the right way</strong> (8 min). The key is already on your hosting platform as an environment variable, a setting stored on the server, outside the code (<a href="setup.html">setup guide</a>, "Before session 3"). Ask the assistant to call the provider from the server using that environment variable and to confirm with one test call from the deployed app. Check that your spending limit of USD 10 a month is set.</li>
+<li><strong>Connect the model the right way</strong> (8 min). The key is already on your hosting platform as an environment variable, a setting stored on the server, outside the code (<a href="setup.html">setup guide</a>, "Before Day 2"). Ask the assistant to call the provider from the server using that environment variable and to confirm with one test call from the deployed app. Check that your spending limit of USD 10 a month is set.</li>
 <li><strong>Write the instructions and the output shape</strong> (10 min). Use the second prompt below. Keep the instructions under 200 words. Ask for structured output with a confidence field on every item and an explicit rule not to invent.</li>
-<li><strong>Build the feature in the smallest step that works</strong> (10 min). One screen, one call, the result shown next to the original input so that the user can compare. Save a checkpoint, wait for the public address to update, and try it there with a realistic message, with names, phone numbers and addresses changed. If it fails, fix it or roll back.</li>
-<li><strong>Break</strong> (10 min). Stand up. The test set is next, and it needs a clear head.</li>
+<li><strong>Build the feature in the smallest step that works</strong> (12 min). One screen, one call, the result shown next to the original input so that the user can compare. Save a checkpoint, wait for the public address to update, and try it there with a realistic message, with names, phone numbers and addresses changed. If it fails, fix it or roll back.</li>
 <li><strong>Load your 20 to 30 examples as a test set</strong> (10 min). Use the third prompt below. Each example needs the input and the expected answer. The assistant builds a page that runs all of them and reports pass or fail for each. Save a checkpoint so that the page is at the public address.</li>
-<li><strong>Run it at the public address and write down the count</strong> (8 min). Read every failure. Group them: abbreviations, missing information, wrong quantity, invented items. Count the invented items separately.</li>
-<li><strong>Add one guardrail</strong> (10 min). The common ones: flag items below a confidence threshold for a person; refuse items that are not in the products table; never let the model set a price or a discount. Pick the one that addresses your largest failure group, and save a checkpoint.</li>
+<li><strong>Run it at the public address and write down the count</strong> (10 min). Read every failure. Group them: abbreviations, missing information, wrong quantity, invented items. Count the invented items separately.</li>
+<li><strong>Add one guardrail</strong> (12 min). The common ones: flag items below a confidence threshold for a person; refuse items that are not in the products table; never let the model set a price or a discount. Pick the one that addresses your largest failure group, and save a checkpoint.</li>
 <li><strong>Run the test set again at the public address</strong> (7 min). Record three numbers: how many right, how many invented items, and how many examples are now flagged. These are what you present in the critique.</li>
 <li><strong>Add one step that acts: choose A or B</strong> (15 min). <strong>A, an agentic step with approval:</strong> use the fourth prompt; give the model the five tools, let the app hold the rules, save a checkpoint, and open the step log for one message at the public address. In the lab <code>send_quote</code> sends nothing; it shows the message it would have sent. <strong>B, the morning digest:</strong> ask the building assistant for a manager-only "Export pending requests" button (customer, time received, rep; no prices, no phone numbers). Save the exported file by hand into the shared folder your price-list connector already reads, then give the fifth prompt to your team's assistant and run the task once by hand. A real deployment needs a view that refreshes by itself and a second alert channel; note both as open items in your risk memo. The option you do not choose is homework for M3.</li>
-<li><strong>Save the last checkpoint, check the public address, and write the build log entry</strong> (7 min): what the model got wrong, what you decided about the threshold, which action you kept behind approval and why, and what the assistant did that you did not expect.</li>
+<li><strong>Save the last checkpoint, record the fallback, check the public address, and write the build log entry</strong> (11 min). Record a 90-second video of one user story on the deployed app: it is your Demo Day fallback if the network fails. Then the build log entry: what the model got wrong, what you decided about the threshold, which action you kept behind approval and why, and what the assistant did that you did not expect.</li>
 </ol>
 <p><strong>Optional, and only if your product answers from documents:</strong> add retrieval as homework. Ask the assistant to split two or three documents into chunks, store them, attach the three closest chunks to each question, and show citations in the answer. Add five document questions to the test set. If the documents are short, attach them whole instead.</p>
 </div>
@@ -577,22 +576,19 @@ Questions the class should ask the presenting teams:
 
 Build-log reflection for everyone, written before leaving: *What did you decide after you saw the first count? Was there a moment when the assistant proposed a fix and you had to say no?*
 
-## Before next session
+## After Class 3
 
-**Milestone M3** (team, 25%, due before session 5):
+**Milestone M3** (team, 25%, due **Sunday 24 January 2027 at 23:59**, one week after Demo Day):
 
 - the AI feature, deployed;
 - the test set with its results before and after the guardrail;
 - one agentic step with approval **and** one scheduled automation, each with its log. You built one in class; the other is homework;
-- a baseline and one measurement of the metric in your brief, on at least five timed requests. For QuoteDesk: how long five requests take by hand, and how long the same five take with the feature;
-- a two-page risk memo, completed after session 4, which covers security, permissions, personal data, cost and maintainability. Start a draft now with today's numbers.
+- a baseline and one measurement of the metric in your brief, on at least five timed requests. You timed the baseline, five requests done by hand, in the weeks before Day 2; in the week after Demo Day you time the same kind of five requests with the feature;
+- a two-page risk memo, written after Class 4, which covers security, permissions, personal data, cost and maintainability.
 
-**Pre-work for session 4** (the Class 4 page, about 95 minutes, plus about 45 minutes for the tasks below):
+**From now until Demo Day the product is frozen.** No new features: Demo Day runs on what you have at 18:30, plus the security fixes of tomorrow's Class 4 lab.
 
-- Run the [course security checklist](security-checklist.html) on your own app and bring the results. Expect to find at least one issue; everyone does.
-- List every connector, tool and automation your product and your team's assistant now have, and next to each write what it may read, what it may change, and who approves. You will tighten that list in class.
-- Note the spending limits you set today and the cost of your test-set run. You will scale those numbers in class.
-- Skim the summary of the OWASP Top 10 for LLM Applications (2025), about 15 minutes. Class 4 maps it to QuoteDesk line by line.
+**Tomorrow, Class 4 at 08:00.** You read its page in the weeks before Day 2, together with the summary of the OWASP Top 10 for LLM Applications (2025). Nothing else needs preparing tonight: the [security checklist](security-checklist.html), the list of connectors and tools with their permissions, and the cost figures at scale are all done in the room.
 
 ## Summary
 

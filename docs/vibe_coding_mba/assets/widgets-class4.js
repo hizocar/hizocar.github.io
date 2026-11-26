@@ -703,7 +703,7 @@
       setRec(opts[best]);
       const level = stakes >= 2.8 ? "High" : stakes >= 1.8 ? "Moderate" : "Low";
       const why = {
-        vibe: `${level} stakes (${stakes.toFixed(1)} of 4 across users, data, lifetime and integration). A small group, a limited lifetime and no deep integration are where a prototype owned by its team is the right size. Keep this session's governance in place and set a date to revisit.`,
+        vibe: `${level} stakes (${stakes.toFixed(1)} of 4 across users, data, lifetime and integration). A small group, a limited lifetime and no deep integration are where a prototype owned by its team is the right size. Keep the governance from Class 4 in place and set a date to revisit.`,
         hand: `${level} stakes (${stakes.toFixed(1)} of 4 across users, data, lifetime and integration) and a workflow specific enough that buying would not fit. The prototype proved the value; a product with these users and this data needs an owner who can operate it. Hand over the evidence, not just the code.`,
         buy: `The workflow is close to generic (uniqueness: ${labels.unique[1][s.unique]}) and the stakes justify a vendor who runs it for you. Use the prototype to write the requirements and to test vendors against your test set.`,
         stop: "A short lifetime, few users or no budget: the prototype answered the question. Stopping after a cheap test is a success, not a failure. Record what you learned.",

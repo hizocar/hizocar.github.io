@@ -48,9 +48,9 @@ Class page: [Class 1 · Ship something today](class1.html)
 |---|---|---|
 | Sunday 13 December 2026, 23:59 | **M1.** Problem brief and product specification. Written feedback comes back before Day 2. | Individual |
 | Sunday 10 January 2027 | The five checks of the setup guide pass, and "Before Day 2" is done: the model provider's account, a USD 10 monthly spending limit and the key on the hosting platform. | Team |
-| Friday 15 January 2027 | The pages of Classes 2 to 5 read, about six and a half hours spread over the weeks. Anthropic's *Building effective agents* read. | Individual |
+| Friday 15 January 2027 | The pages of Classes 2 to 5 read, about six and a half hours spread over the weeks, with Anthropic's *Building effective agents* and the summary of the OWASP Top 10 for LLM Applications. | Individual |
 | Friday 15 January 2027 | 20 to 30 messages collected for the test set: real ones with names, phone numbers and addresses changed, or realistic ones you write. | Team |
-| Friday 15 January 2027 | The baseline of your brief's metric: time five requests done the current way, before any tool. | Team |
+| Friday 15 January 2027 | The baseline of your brief's metric: time five requests done the current way, before any tool. Then rehearse the structure of the pitch once, against the clock, with your planned numbers. | Team |
 
 Questions go to the course channel or to [sebastian.azocarm@usm.cl](mailto:sebastian.azocarm@usm.cl).
 
@@ -102,7 +102,7 @@ Class page: [Class 4 · Govern what you built](class4.html)
 
 Class page: [Class 5 · Demo Day and strategy revisited](class5.html)
 
-**10:45 to 11:15. Pitch clinic.** Teams generate the deck with AI from their own sources (build log, test results, the morning's security findings, cost figures), check every number against its source, and do one timed run of ten minutes.
+**10:45 to 11:15. Pitch clinic.** Teams generate the deck with AI from their own sources (build log, test results, the morning's security findings, cost figures) and check every number against its source (20). The order is drawn and every team tests its deployed address, its fallback video and its deck on the classroom screen (10). The structure of the pitch was rehearsed in the weeks before Day 2.
 
 **11:15 to 13:30. Demo Day** (120 minutes, with the coffee break at 12:15). Each team has 10 minutes plus 5 of questions in front of a panel (the instructor and two invited managers or alumni): a live demonstration with a user story, the problem and the baseline of the metric, evidence from the test set, the main security findings, the build / buy / vibe decision and a roadmap to production. The deck is generated with AI and its use is declared. The time fits eight teams; with more teams, the strategy block shortens.
 

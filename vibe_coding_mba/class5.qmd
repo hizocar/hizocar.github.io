@@ -1,6 +1,6 @@
 ---
 title: "Class 5 · Demo Day and strategy revisited"
-subtitle: "By the end of the session you will have presented QuoteDesk to a panel with a deck you generated and checked, graded it against the rubric, decided what in it is defensible, and written your reflection memo."
+subtitle: "By the end of Day 3 you will have presented QuoteDesk to a panel with a deck you generated and checked, graded it against the rubric, decided what in it is defensible, and started your reflection memo."
 lang: en
 css: assets/vc.css
 include-after-body:
@@ -12,21 +12,21 @@ include-after-body:
 
 ```{=html}
 <div class="vc-meta">
-<span class="is-accent">Session 5 · 4 hours</span>
-<span>Build goal: none. The product is frozen 24 hours before.</span>
+<span class="is-accent">Day 3 · Sunday 17 January 2027 · 10:45 to 14:30</span>
+<span>Build goal: none. The product has been frozen since the end of Day 2.</span>
 <span>Deliverables: Demo Day (25%) · reflection memo and participation (15%)</span>
 </div>
-<div class="vc-daybar" data-blocks="Pitch clinic:30|Demo Day:150|Strategy revisited:30|Reflection memo:30"></div>
+<div class="vc-daybar" data-start="08:00" data-current="Class 5" data-blocks="Class 4 · framework (30) and the build lab (90):120|Coffee break:15|Class 4 · build lab, last part:30|Class 5 · pitch clinic:30|Class 5 · Demo Day:60|Coffee break:15|Class 5 · Demo Day:60|Class 5 · strategy revisited:30|Class 5 · reflection and peer assessment:30"></div>
 ```
 
-The session is 4 hours. The pitch clinic is a recap of topics 1 to 3 of this page, which you read before class; the strategy block discusses topics 4 and 5.
+Class 5 runs from 10:45 to 14:30 on Day 3, straight after Class 4: the pitch clinic (30 minutes), Demo Day (120, with the coffee break at 12:15), strategy revisited (30) and the reflection block (30). The pitch clinic puts topics 1 to 3 of this page into practice; the strategy block discusses topics 4 and 5. You read the page in the weeks before Day 2.
 
 ::: {.callout-note title="How to use this page"}
-- Read it before Demo Day, in order. Topics 1 to 3 prepare the pitch: the deck, the ten minutes, the rubric. Topics 4 and 5 are the strategy block we discuss after the pitches.
+- Read it in the weeks before Day 2, in order. Topics 1 to 3 prepare the pitch: the deck, the ten minutes, the rubric. Topics 4 and 5 are the strategy block we discuss after the pitches.
 - Every topic opens with a guiding question, explains the idea with Cerro Azul and QuoteDesk, gives you one simulator, an "In the business" note and a short practice set.
-- The deck builder, the pitch timer and the rubric self-scorer are tools for your rehearsal. Use them with your team the day before.
-- The reflection memo builder keeps your draft in this browser. Draft the five parts before class and finish them in the last block.
-- The Demo Day checklist is also saved in your browser. Check it off the night before.
+- The deck builder, the pitch timer and the rubric self-scorer are tools for your rehearsal. Use them with your team in the weeks before Day 2, with your planned numbers.
+- The reflection memo builder keeps your draft in this browser. Start it in the last block of Day 3; the memo is due with M3 on Sunday 24 January.
+- The Demo Day checklist is also saved in your browser. Check it off at the end of Day 2 and again in the pitch clinic.
 :::
 
 ## What you will be able to do
@@ -38,9 +38,9 @@ The session is 4 hours. The pitch clinic is a recap of topics 1 to 3 of this pag
 - Order the steps that take a vibe-coded prototype to a production system, and say who owns each one.
 - Write a reflection memo that separates what the AI did from what you decided, and leave with a small AI work system of your own: skills, connectors and one automation.
 
-## Route of the session
+## Route of the class
 
-Times beside the numbered topics are reading times for this page, about 90 minutes in total, before class. Rows that start with "In class" are the four blocks of the session.
+Times beside the numbered topics are reading times for this page, about 90 minutes in total, before Day 2. Rows that start with "In class" are the four parts of Class 5 on Day 3.
 
 ```{=html}
 <ol class="vc-route">
@@ -48,8 +48,8 @@ Times beside the numbered topics are reading times for this page, about 90 minut
 <li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-2"><span class="vc-route-n">2</span><span class="vc-route-t">The ten minutes that matter</span><span class="vc-route-l">pitch timer · 2 questions</span></a></li>
 <li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-3"><span class="vc-route-n">3</span><span class="vc-route-t">How the panel grades you</span><span class="vc-route-l">rubric self-scorer · 3 questions</span></a></li>
 <li><span class="vc-route-h">30 min</span><a class="vc-route-a" href="#lab"><span class="vc-route-n">▶</span><span class="vc-route-t">In class · Pitch clinic</span><span class="vc-route-l">order drawn · screens tested · every team says its opening line</span></a></li>
-<li><span class="vc-route-h">150 min</span><a class="vc-route-a" href="#lab"><span class="vc-route-n">★</span><span class="vc-route-t">In class · Demo Day</span><span class="vc-route-l">8 teams · 10 minutes each plus 5 of questions · panel of three · checklist</span></a></li>
-<li class="is-break"><span class="vc-route-h">☕</span><span class="vc-route-t">Break after the fourth team. Stretch, do not fix your demo.</span></li>
+<li><span class="vc-route-h">120 min</span><a class="vc-route-a" href="#lab"><span class="vc-route-n">★</span><span class="vc-route-t">In class · Demo Day</span><span class="vc-route-l">8 teams · 10 minutes each plus 5 of questions · panel of three · checklist</span></a></li>
+<li class="is-break"><span class="vc-route-h">☕</span><span class="vc-route-t">Coffee break at 12:15, after the fourth team. Stretch, do not fix your demo.</span></li>
 <li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-4"><span class="vc-route-n">4</span><span class="vc-route-t">What remains a moat when building is cheap</span><span class="vc-route-l">defensibility meter · 3 questions</span></a></li>
 <li><span class="vc-route-h">12 min</span><a class="vc-route-a" href="#topic-5"><span class="vc-route-n">5</span><span class="vc-route-t">From prototype to production, and who owns it</span><span class="vc-route-l">roadmap builder · 2 questions</span></a></li>
 <li><span class="vc-route-h">30 min</span><a class="vc-route-a" href="#topic-4"><span class="vc-route-n">◆</span><span class="vc-route-t">In class · Strategy revisited</span><span class="vc-route-l">discussion of topics 4 and 5 with the panel</span></a></li>
@@ -64,7 +64,7 @@ Times beside the numbered topics are reading times for this page, about 90 minut
 <p class="vc-guide"><strong>Guiding question:</strong> The assistant can produce twelve slides in a minute. Which of them would you put your name under in front of the panel?</p>
 ```
 
-By now the raw material for the pitch exists: your build log, the results of the 24-message test set, the risk memo, screenshots of QuoteDesk and the cost model. An assistant with a presentation skill turns those files into a deck in about the time it takes to read this paragraph. A presentation skill is a skill like the one you wrote in Class 2, except that it knows how to produce slides in a given format. Most assistants ship with one built in, and your instructor shares one for the course. Without a skill, ask for an HTML deck, which any assistant can write. The output is an HTML deck you open in a browser or a PowerPoint file. The deck is no longer the work. The judgment is.
+By now the raw material for the pitch exists: your build log, the results of the 24-message test set, the risk findings from this morning's Class 4 lab, screenshots of QuoteDesk and the cost figures. The risk memo itself comes a week later, with M3. An assistant with a presentation skill turns those files into a deck in about the time it takes to read this paragraph. A presentation skill is a skill like the one you wrote in Class 2, except that it knows how to produce slides in a given format. Most assistants ship with one built in, and your instructor shares one for the course. Without a skill, ask for an HTML deck, which any assistant can write. The output is an HTML deck you open in a browser or a PowerPoint file. The deck is no longer the work. The judgment is.
 
 **Storyline first.** Before any slide exists, write six sentences, one for each block of the pitch in Topic 2. Sentences, not labels. "Problem" is a label. "Cerro Azul's 14 reps retype about 120 quote requests a day, and a quote goes out 3 to 6 hours later" is a message the panel can agree or disagree with. Each sentence becomes the title of one slide, and a slide carries one message. If you cannot write the sentence, the slide has nothing to say.
 
@@ -72,11 +72,11 @@ By now the raw material for the pitch exists: your build log, the results of the
 
 | Block | The message, as a sentence | Where the number must come from |
 |---|---|---|
-| Problem | 14 reps retype about 120 requests a day; a quote takes 3 to 6 hours | The brief (M1) and the five timed requests from M3, in the build log |
+| Problem | 14 reps retype about 120 requests a day; a quote takes 3 to 6 hours | The brief (M1) and the baseline: five requests timed by hand before Day 2 |
 | Live demo | Paula quotes Doña Elsa's request in under two minutes | The product itself; a screenshot holds the slide |
 | Evidence | On 24 de-identified messages, the guardrail cut unnoticed wrong quotes from 6 to 1 | Test-set results |
-| Risks | Three findings fixed, one still open | Risk memo |
-| Decision | Keep vibe coding QuoteDesk; hand the ERP write-back to engineering | Risk memo and the decision matrix from Class 4 |
+| Risks | Three findings fixed, one still open | The findings from the Class 4 lab |
+| Decision | Keep vibe coding QuoteDesk; hand the ERP write-back to engineering | The decision matrix and the findings from the Class 4 lab |
 | Roadmap | Three conditions for rollout and about USD 28 a month in model calls | Cost model |
 
 The roadmap figure is the kind of number to check twice: about 2,600 requests a month on a mid-sized model at the illustrative prices from Class 3, under the USD 50 monthly limit you set in Class 4. Prices change, so the slide names its source and the date.
@@ -96,7 +96,7 @@ A side example. Imagine an HR team that built a tool for onboarding contractors 
 Three prompts, in this order. The first produces no slides at all, on purpose.
 
 ```{=html}
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · 1 of 3, the storyline</div><div class="vc-prompt-b">Read the attached build log, test-set results, risk memo and cost model for QuoteDesk. Do not make slides yet. Write the storyline for a 10-minute pitch to a panel of three managers as six full sentences, one for each block: problem, live demo, evidence, risks, decision, roadmap. Each sentence states one claim. If it contains a number, name the file and the line the number comes from. If a block has no evidence in the files, write MISSING instead of a sentence and tell me what I would need to measure.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · 1 of 3, the storyline</div><div class="vc-prompt-b">Read the attached build log, test-set results, risk findings from the Class 4 lab and cost figures for QuoteDesk. Do not make slides yet. Write the storyline for a 10-minute pitch to a panel of three managers as six full sentences, one for each block: problem, live demo, evidence, risks, decision, roadmap. Each sentence states one claim. If it contains a number, name the file and the line the number comes from. If a block has no evidence in the files, write MISSING instead of a sentence and tell me what I would need to measure.</div></div>
 <div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · 2 of 3, the slides</div><div class="vc-prompt-b">Use your presentation skill; if you have none, produce an HTML deck. Turn the six approved sentences below into a deck of eight slides: a title slide, one slide per sentence with the sentence as its title, and a closing slide that lists the sources, gives the address of our demo page, and says the deck was generated with an AI assistant and checked by the team. One message per slide, at most 25 words of body text, no stock images, no slide I did not ask for. Print the source under every number in small type. For the live demo slide use the screenshot quote-screen.png and the words "Live demo". Then list every number you used with its source, and list anything you wanted to add and did not.</div></div>
 <div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · 3 of 3, the one-page handout</div><div class="vc-prompt-b">From the same six sentences and the same sources, write a one-page handout the panel can keep: the problem in two lines, what QuoteDesk does in three, a small table with the test-set result before and after the guardrail, the three risk findings with their status, our decision, and the three conditions for rollout with an owner and a cost for each. No adjectives about the product. Same numbers as the deck, same sources. End with one line saying the deck and this page were drafted with an AI assistant and checked by the team.</div></div>
 ```
@@ -112,10 +112,10 @@ For a long time the deck was the bottleneck: days of someone's time. When a deck
 <p class="vc-quiz-q">The generated deck has a slide that says "QuoteDesk reduces quoting time by 70%". Nothing in your build log supports that figure. What do you do?</p>
 <div class="vc-quiz-opts">
 <button class="vc-quiz-opt" data-why="Roughly what the team saw is not a source. The panel's first question will be how you measured it.">Keep it as it stands, since 70% is roughly what the team saw while testing the product last week.</button>
-<button class="vc-quiz-opt" data-correct>Replace it with the figure from your five timed requests in M3, with its source, or take it off.</button>
+<button class="vc-quiz-opt" data-correct>Take it off, or show your timed baseline and the target instead, each with its own source.</button>
 <button class="vc-quiz-opt" data-why="A softer wording of an invented number is still an invented number, and now it has a footnote.">Soften it to "up to 70%" and add a footnote saying the figure is an estimate made by the team.</button>
 </div>
-<p class="vc-quiz-fb">The assistant filled a gap with a plausible figure. Either the number is traceable to a file of yours or it does not go in front of the panel. Five timed requests is a small sample, and it is real.</p>
+<p class="vc-quiz-fb">The assistant filled a gap with a plausible figure. Either the number is traceable to a file of yours or it does not go in front of the panel. On Demo Day that means the baseline of five requests timed by hand; the measurement with the tool comes in M3. Five timed requests is a small sample, and it is real.</p>
 </div>
 <div class="vc-quiz">
 <p class="vc-quiz-q">Which of these is a storyline sentence, not a label?</p>
@@ -153,7 +153,7 @@ The pitch has six blocks, the same six as your storyline.
 | Problem | 1:00 | Cerro Azul's reps retype about 120 quote requests a day, a quote takes 3 to 6 hours, and the number that matters is quote time. |
 | Live demo | 3:00 | One user story, end to end, with a de-identified message. Paula pastes it, QuoteDesk extracts the items and flags the line it is unsure about ("lo de siempre de lácteos"), Paula corrects it, the quote is saved. If a discount appears, Carla approves it. Nothing else. |
 | Evidence | 2:00 | The test set: 24 messages, the result before and after the guardrail, and what the review workload looks like. |
-| Risks | 1:30 | The three findings from your risk memo that a manager would want to know, and what you did about each. |
+| Risks | 1:30 | The three findings from the Class 4 lab that a manager would want to know, and what you did about each. |
 | Decision | 1:00 | The build / buy / vibe decision: keep vibe coding it, hand it to engineering to build properly, buy a product, or stop, with the reasoning. |
 | Roadmap | 1:30 | What has to be true to put this in front of 14 reps, who does it, and roughly what it costs. |
 
@@ -210,7 +210,7 @@ Demo Day is 25% of the course grade. It is graded as a team, with an individual 
 
 Where a criterion does not apply to a component, it is left out. M1, a brief with no product yet, was graded on problem and value and on communication. The reflection memo is graded on AI quality and safety (what the AI did, what you decided, where it misled you) and on communication. The level descriptors for every component are on the [rubric page](rubric.html).
 
-Each criterion has four levels. Level 1 is "absent or not credible". Level 4 is "a manager could act on this tomorrow". Expect to arrive at level 3 on functionality, because you have been building for four sessions, and at level 2 on problem and value if the brief from session 1 was never revisited. That is the cheapest grade to recover: the metric you wrote in M1, measured in M3 on at least five timed requests, moves you a full level.
+Each criterion has four levels. Level 1 is "absent or not credible". Level 4 is "a manager could act on this tomorrow". Expect to arrive at level 3 on functionality, because you have been building across four classes, and at level 2 on problem and value if the brief from Class 1 was never revisited. That is the cheapest grade to recover: the baseline of the metric you wrote in M1, timed by hand on five requests before Day 2 and shown next to the target, moves you a full level on Demo Day; the measurement with the tool does the same in M3.
 
 The simulator lets you score QuoteDesk as the panel would. It converts levels into an approximate grade: level 2 across the board is about 55, the pass mark, and level 3 is about 80. Look for the criterion that is lowest in your own case and is one evening of work away from the next level.
 
@@ -226,7 +226,7 @@ Large organizations decide on prototypes with a rubric too, usually an unwritten
 <div class="vc-practice">
 <p class="vc-practice-t"><span>Practice · Topic 3</span></p>
 <div class="vc-quiz">
-<p class="vc-quiz-q">A team's QuoteDesk extracts items perfectly in the demo, but the team never did the five timed requests for M3. Which criterion suffers most?</p>
+<p class="vc-quiz-q">A team's QuoteDesk extracts items perfectly in the demo, but the team never timed the baseline of its brief's metric. Which criterion suffers most?</p>
 <div class="vc-quiz-opts">
 <button class="vc-quiz-opt" data-why="The product completes the story in the demo. Functionality is about whether it works, and it does.">Functionality, because a product without timings cannot be said to work.</button>
 <button class="vc-quiz-opt" data-correct>Problem and value, because the metric in the brief has no measurement.</button>
@@ -241,7 +241,7 @@ Large organizations decide on prototypes with a rubric too, usually an unwritten
 <button class="vc-quiz-opt" data-why="The reflection memo is a separate component, worth 15% together with participation. It replaces nothing.">The reflection memo grade replaces the Demo Day grade for any student who did not present at all.</button>
 <button class="vc-quiz-opt" data-correct>Up to ±10 points on the Demo Day grade, from each member's build log and the peer assessment.</button>
 </div>
-<p class="vc-quiz-fb">The build log is the evidence of what each person did and decided. The peer assessment at the end of the session confirms it. Together they move the Demo Day grade up or down by at most ten points per person, and no other component.</p>
+<p class="vc-quiz-fb">The build log is the evidence of what each person did and decided. The peer assessment at the end of Day 3 confirms it. Together they move the Demo Day grade up or down by at most ten points per person, and no other component.</p>
 </div>
 <div class="vc-quiz">
 <p class="vc-quiz-q">Which single addition is most likely to move a team from level 2 to level 3 on "AI quality and safety"?</p>
@@ -259,22 +259,22 @@ Large organizations decide on prototypes with a rubric too, usually an unwritten
 
 ```{=html}
 <div class="vc-lab">
-<p class="vc-lab-t">What happens in the first 180 minutes of the session</p>
-<p class="vc-lab-time">Pitch clinic 30 min · then 8 teams, 10 minutes plus 5 of questions each · panel: the instructor and two invited managers or alumni · break after team 4</p>
+<p class="vc-lab-t">What happens from 10:45 to 13:30</p>
+<p class="vc-lab-time">Pitch clinic 30 min · then Demo Day, 120 minutes for 8 teams of 10 minutes plus 5 of questions · panel: the instructor and two invited managers or alumni · coffee break at 12:15, after team 4</p>
 <ol>
-<li><strong>Pitch clinic (30 min).</strong> The order is drawn. Every team opens its deployed address, its recording and its deck on the classroom screen once, then says its opening line aloud. The instructor recaps the six blocks and the rubric. Nobody changes the product.</li>
-<li>Each pitch follows the six blocks: problem, live demo, evidence from the test set, risk memo findings, the build / buy / vibe decision, roadmap to production. The timer is visible to everyone and stops at 10:00.</li>
+<li><strong>Pitch clinic (30 min).</strong> Generate the deck from your sources with the three prompts of Topic 1 and check every number against its source (20). The order is drawn; every team opens its deployed address, its recording and its deck on the classroom screen once and says its opening line aloud (10). Nobody changes the product.</li>
+<li>Each pitch follows the six blocks: problem, live demo, evidence from the test set, the security findings from Class 4, the build / buy / vibe decision, roadmap to production. The timer is visible to everyone and stops at 10:00.</li>
 <li>Five minutes of questions. The panel asks first; the class asks if time remains. Answer the question that was asked. "We did not test that" is a complete answer.</li>
 <li>While a team presents, every other student scores it on the four criteria of the <a href="rubric.html">rubric</a>. Scores are collected after each pitch, not at the end.</li>
 <li>The panel's grade counts for the Demo Day component. The class scores go back to each team as feedback the same day.</li>
-<li>After team 4, ten minutes of break. Nobody touches their product; it was frozen 24 hours ago and the panel knows it.</li>
+<li>After team 4, the coffee break at 12:15. Nobody touches their product; it has been frozen since the end of Day 2, apart from the security fixes of the Class 4 lab, and the panel knows it.</li>
 <li>After the last pitch, the panel gives five minutes of overall comments before the strategy block.</li>
 <li>Products stay deployed for one week after Demo Day so the instructor can verify any claim made in a pitch.</li>
 </ol>
 </div>
 ```
 
-Three prompts for the day before, when you rehearse. The first turns the assistant into a hostile panel member, the second checks your script against the rubric, the third fits it to the clock.
+Three prompts for rehearsing. Use them with your team in the weeks before Day 2, with your planned numbers. The first turns the assistant into a hostile panel member, the second checks your script against the rubric, the third fits it to the clock.
 
 ```{=html}
 <div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the hostile panel</div><div class="vc-prompt-b">You are a skeptical operations director at a Chilean food distributor with 14 sales reps. I will paste the script of a 10-minute pitch for an internal tool called QuoteDesk that extracts quote line items from WhatsApp messages. Ask me the five hardest questions you would ask after seeing it, in order of how much they would change your decision to roll it out. Do not be polite. Then tell me which of my claims you would want to verify yourself.</div></div>
@@ -293,17 +293,17 @@ What the panel hears in a weak and a strong risks block:
 
 ```{=html}
 <ul class="vc-checklist" id="lab-checklist">
-<li>Product frozen 24 hours before the session; no changes after that.</li>
+<li>Product frozen at the end of Day 2; after that, only the security fixes of the Class 4 lab.</li>
 <li>Deployed address opens on a phone and on the classroom screen; the login for the demo rep works.</li>
-<li>A 90-second recording of the demo story is saved on the presenting laptop, as the fallback if the deployed app fails.</li>
+<li>A 90-second recording of the demo story, made in the last step of the Class 3 lab, is saved on the presenting laptop as the fallback if the deployed app fails.</li>
 <li>One user story chosen for the demo, with a de-identified message, rehearsed three times, under three minutes.</li>
 <li>Deck generated from your sources: six sentences, one message per slide, eight slides.</li>
-<li>Every number on every slide traced to the build log, the test set, the risk memo or the cost model.</li>
+<li>Every number on every slide traced to the build log, the test set, the Class 4 findings or the cost figures.</li>
 <li>Closing slide names the sources and declares the use of AI; the prompts are in the build log.</li>
 <li>The public page from Class 1 updated as the demo page, with no claim your sources cannot support.</li>
 <li>Three risk findings with what was done about each, and what is still open.</li>
 <li>The build / buy / vibe decision stated in one sentence, and three conditions for rollout with an owner and a rough cost for each.</li>
-<li>Full rehearsal done against the clock with another team acting as the panel; their five questions answered.</li>
+<li>The structure of the pitch rehearsed against the clock in the weeks before Day 2, with another team acting as the panel.</li>
 <li>Build logs of every member exported and ready for the peer assessment.</li>
 </ul>
 ```
@@ -314,7 +314,7 @@ What the panel hears in a weak and a strong risks block:
 <p class="vc-guide"><strong>Guiding question:</strong> Any competitor of Cerro Azul could build QuoteDesk in a weekend. So what, if anything, is worth protecting?</p>
 ```
 
-In session 1 you saw that the cost of a working prototype fell from weeks of engineering to hours of a manager's time. Over four sessions you felt it on your own product. Now follow that fact to its strategic conclusion: if the software is cheap to build, the software is not where the advantage lives.
+In Class 1 you saw that the cost of a working prototype fell from weeks of engineering to hours of a manager's time. Over four classes you felt it on your own product. Now follow that fact to its strategic conclusion: if the software is cheap to build, the software is not where the advantage lives.
 
 The classic view of an AI moat was about data, learning and algorithms. Look at QuoteDesk through that lens. The algorithm is a rented model that every competitor can rent too. The code was written by an assistant and could be written again by the same assistant for anyone. What is left are four things that were never in the code.
 
@@ -340,7 +340,7 @@ This changes where a manager should spend the next budget. Not on a better model
 <p class="vc-quiz-q">A rival distributor copies QuoteDesk's features exactly in a weekend. Which of Cerro Azul's advantages survives that copy?</p>
 <div class="vc-quiz-opts">
 <button class="vc-quiz-opt" data-why="Both companies rent from the same providers, and the rival can switch models in a day.">A more capable language model than the one the rival chose to rent for its own copy.</button>
-<button class="vc-quiz-opt" data-why="A clean interface is one prompt away for anyone with the same assistant.">The clean interface and the quote layout that the team designed back in session 2.</button>
+<button class="vc-quiz-opt" data-why="A clean interface is one prompt away for anyone with the same assistant.">The clean interface and the quote layout that the team designed back in Class 2.</button>
 <button class="vc-quiz-opt" data-correct>Three months of rep corrections and what each of its 1,800 customers usually orders.</button>
 </div>
 <p class="vc-quiz-fb">Proprietary data accumulates with use and does not copy with the code. The rival starts the same weekend with zero corrections and no customer histories.</p>
@@ -421,13 +421,13 @@ The simulator asks you to put those steps in order. The exact order is debatable
 </div>
 ```
 
-## Reflection memo, written in class {#reflection}
+## Reflection memo {#reflection}
 
-The last block is 30 minutes and it is individual: about 20 minutes to finish the reflection memo from your build log, then 10 for the peer assessment. You hand the memo in before leaving. It is worth 15% together with participation. It is graded with the [rubric](rubric.html) on the two criteria that apply to a memo, AI quality and safety and communication, and what earns the levels is honesty and specificity, not the quality of your product. A memo that says the assistant misled you three times and shows the three prompts scores higher than one that says everything went well.
+The last block is 30 minutes and it is individual: about 20 minutes to start the reflection memo from your build log, then 10 for the peer assessment. The memo is due with M3, on Sunday 24 January 2027 at 23:59. It is worth 15% together with participation. It is graded with the [rubric](rubric.html) on the two criteria that apply to a memo, AI quality and safety and communication, and what earns the levels is honesty and specificity, not the quality of your product. A memo that says the assistant misled you three times and shows the three prompts scores higher than one that says everything went well.
 
-The memo has five parts: what the AI did, what I decided, where it misled me, what I would do differently, and how this changes my work with technology teams. Each part cites at least one concrete moment from your build log: the session, and what you typed. Length: 400 to 600 words. English or Spanish. The reflection is yours: if an assistant helped you edit it, say so in the last line, as with everything else in the course.
+The memo has five parts: what the AI did, what I decided, where it misled me, what I would do differently, and how this changes my work with technology teams. Each part cites at least one concrete moment from your build log: the class, and what you typed. Length: 400 to 600 words. English or Spanish. The reflection is yours: if an assistant helped you edit it, say so in the last line, as with everything else in the course.
 
-Twenty minutes is enough to finish a memo, not to start one. Draft the five parts in the builder before class; it keeps the draft in this browser, counts the words, and the copy button puts the memo on your clipboard for the submission form.
+Twenty minutes is enough to choose the moments and write the first two parts. Use the builder; it keeps the draft in this browser, counts the words, and the copy button puts the memo on your clipboard for the submission form.
 
 ```{=html}
 <div class="vc-widget" data-widget="c5-reflection"></div>
@@ -441,7 +441,7 @@ Then the peer assessment within your team, in the last ten minutes: each member 
 <p class="vc-guide"><strong>Guiding question:</strong> The assistant you used this month will be replaced before you finish the MBA. What do you keep?</p>
 ```
 
-**Due at the end of this session:** the reflection memo and the peer assessment. **One week later:** revoke the keys of your deployed product and delete the personal data in it, then either hand it to an owner in your organization or shut it down. A deployed tool with no owner is the first risk on the memo you just wrote.
+**Due at the end of Day 3:** the peer assessment. **Sunday 24 January:** the reflection memo and M3. **One week after that:** revoke the keys of your deployed product and delete the personal data in it, then either hand it to an owner in your organization or shut it down. A deployed tool with no owner is the first risk on the memo you just wrote.
 
 What you take with you is not QuoteDesk. It is a small work system for the assistant you use yourself, and it has three parts.
 
