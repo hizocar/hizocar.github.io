@@ -230,19 +230,35 @@
   }
 
   /* ---------- Day bar: <div class="vc-daybar" data-blocks="Framework:45|Build:120|Critique:45|Milestone review:30"></div> ---------- */
+  /* Day line: <div class="vc-daybar" data-start="08:00" data-current="Class 2"
+       data-blocks="Class 2 · framework and lab:120|Coffee break:30|..."></div>
+     Segments are proportional to minutes. Breaks and lunch are drawn thin and quiet; the blocks of the current
+     class are drawn in ink; other classes in a light tone. The legend gives the clock time of every block. */
   function mountDaybar(el) {
     if (el.dataset.mounted) return;
     el.dataset.mounted = "1";
     const blocks = (el.dataset.blocks || "").split("|").map((s) => { const i = s.lastIndexOf(":"); return { label: s.slice(0, i).trim(), min: +s.slice(i + 1) }; }).filter((b) => b.min > 0);
+    const current = (el.dataset.current || "").trim();
+    const start = el.dataset.start || "";
+    const toMin = (t) => { const [a, b] = t.split(":").map(Number); return a * 60 + b; };
+    const fmt = (m) => `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
+    let clock = start ? toMin(start) : null;
+    const kindOf = (label) => /^(coffee|lunch|break)/i.test(label) ? "pause" : (current === "*" || (current && label.startsWith(current)) ? "current" : "other");
+    blocks.forEach((b) => { b.kind = kindOf(b.label); if (clock !== null) { b.from = fmt(clock); clock += b.min; b.to = fmt(clock); } });
     const total = blocks.reduce((a, b) => a + b.min, 0) || 1;
-    const track = h("div", { class: "vc-daybar-track", role: "img", "aria-label": "The session: " + blocks.map((b) => `${b.label} ${b.min} minutes`).join(", ") });
-    const segs = blocks.map((b) => { const s = h("div", { class: "vc-daybar-seg", style: { width: `calc(${(b.min / total) * 100}% - 3px)` } }, b.min + "′"); track.append(s); return s; });
-    const colors = ["var(--vc-ai)", "var(--hz-accent)", "var(--hz-ink-2)", "var(--hz-muted)"];
-    const legend = h("ul", { class: "vc-daybar-legend" }, blocks.map((b, i) => h("li", {}, h("i", { style: { background: colors[i % 4] } }), h("b", {}, b.label), ` ${b.min} min`)));
+    const track = h("div", { class: "vc-daybar-track", role: "img", "aria-label": "The day: " + blocks.map((b) => `${b.from ? b.from + " to " + b.to + ", " : ""}${b.label}`).join("; ") });
+    const segs = blocks.map((b) => {
+      const s = h("div", { class: "vc-daybar-seg is-" + b.kind, style: { flexGrow: String(b.min), flexBasis: "0" } }, b.kind === "pause" ? "" : (b.from || b.min + "′"));
+      track.append(s);
+      return s;
+    });
+    const legend = h("ol", { class: "vc-daybar-legend" }, blocks.map((b) => h("li", { class: "is-" + b.kind },
+      h("span", { class: "vc-daybar-time" }, b.from ? `${b.from}–${b.to}` : `${b.min} min`),
+      h("span", { class: "vc-daybar-label" }, b.label))));
     el.append(track, legend);
     if (!reduced() && M()) {
       segs.forEach((s) => { s.style.transform = "scaleX(0)"; });
-      motion.onView(el, () => M().animate(segs, { scaleX: [0, 1] }, { duration: 0.5, ease: EASE.out, delay: M().stagger(0.11) }));
+      motion.onView(el, () => M().animate(segs, { scaleX: [0, 1] }, { duration: 0.5, ease: EASE.out, delay: M().stagger(0.06) }));
     }
   }
 
@@ -342,6 +358,10 @@
     };
     items.forEach((li, i) => {
       if (li.querySelector("input")) return;
+      // Keep the item's text and links together in one box, so the flex gap never splits a sentence around a link.
+      const body = h("span", { class: "vc-checklist-text" });
+      while (li.firstChild) body.append(li.firstChild);
+      li.append(body);
       const cb = h("input", { type: "checkbox", "aria-label": li.textContent.trim().slice(0, 80) });
       const on = !!saved[i];
       cb.checked = on; li.classList.toggle("is-done", on);

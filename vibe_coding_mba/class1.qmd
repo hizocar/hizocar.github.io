@@ -1,6 +1,6 @@
 ---
 title: "Class 1 · Ship something today"
-subtitle: "By the end of this session your team has a web application a real user can open on a phone, a public page that explains it, and a one-paragraph brief that tells the assistant what to build next."
+subtitle: "By the end of Class 1 your team has a web application a real user can open on a phone, a public page that explains it, and a one-paragraph brief that tells the assistant what to build next."
 lang: en
 css: assets/vc.css
 include-after-body:
@@ -12,22 +12,22 @@ include-after-body:
 
 ```{=html}
 <div class="vc-meta">
-<span class="is-accent">Session 1 · 4 hours</span>
+<span class="is-accent">Day 1 · Sunday 29 November 2026 · 08:00 to 12:15</span>
 <span>Build goal: QuoteDesk v0 deployed to a public URL</span>
-<span>Milestone: M1 problem brief, due before session 2</span>
+<span>Milestone: M1 problem brief, due Sunday 13 December</span>
 </div>
-<div class="vc-daybar" data-blocks="Framework:45|Build lab:120|Critique:45|Milestone review:30"></div>
+<div class="vc-daybar" data-start="08:00" data-current="Class 1" data-blocks="Class 1 · framework (45) and the first part of the build lab (75):120|Coffee break:15|Class 1 · build lab (45), critique (45), milestone review (30):120|Coffee break:15|Setup clinic · your tools ready, in the room:120"></div>
 ```
 
-The session is 4 hours. The framework block is a recap of this page, which you read before class, so that most of the time in the room goes to building.
+Class 1 takes the first two blocks of Day 1, from 08:00 to 12:15, with a coffee break at 10:00. The framework block is a recap of this page, which you read before class, so that most of the time in the room goes to building. The third block of the day, from 12:30, is the setup clinic: the [toolkit setup guide](setup.html) done in the room.
 
 ::: {.callout-note title="How to use this page"}
-- Read it before the session, in order. Each topic opens with a guiding question, explains the idea with the Cerro Azul case, gives you one simulator to play with, one note on what it means in the business, and a short practice set.
+- Read it before class, in order. Each topic opens with a guiding question, explains the idea with the Cerro Azul case, gives you one simulator to play with, one note on what it means in the business, and a short practice set.
 - The simulators cannot break. Predict what will happen before you move a slider or press a button, then check.
 - The build lab is what you do in class with your team during the 120-minute build block. The prompts in it are meant to be copied and adapted.
 - The lab checklist is saved in your browser, so you can close the page and come back.
 - **Data rule.** Until your team has completed the Class 4 lab, closed every critical finding and has the written agreement of the organization that owns the data, use only invented or de-identified messages: no real names, phone numbers, addresses or tax numbers in the app, in a test or in any prompt.
-- Also before this session: create your accounts on the course toolkit (the [setup guide](setup.html) lists them), read Karpathy's original post on vibe coding and Willison's "Not all AI-assisted programming is vibe coding", and bring one problem from your organization in which people enter, read or act on information by hand.
+- Also before Day 1: create a GitHub account (the other accounts are created in the setup clinic if your instructor's email has not arrived), read Karpathy's original post on vibe coding and Willison's "Not all AI-assisted programming is vibe coding", and bring one problem from your organization in which people enter, read or act on information by hand.
 :::
 
 ## What you will be able to do
@@ -39,7 +39,7 @@ The session is 4 hours. The framework block is a recap of this page, which you r
 - Build and deploy a first version of a web application and a one-page public site by directing an assistant in plain language, test them by using them, and recover from a bug.
 - Start a build log that records what you asked, what the assistant did, and what you decided.
 
-## Route of the session
+## Route of the class
 
 The times next to each topic are reading times for this page, at your own pace, before class: about 90 minutes in total. The last three rows are what happens in the room.
 
@@ -53,7 +53,7 @@ The times next to each topic are reading times for this page, at your own pace, 
 <li><span class="vc-route-h">15 min</span><a class="vc-route-a" href="#topic-6"><span class="vc-route-n">6</span><span class="vc-route-t">Your first build, including the bug</span><span class="vc-route-l">simulator · 2 questions</span></a></li>
 <li><span class="vc-route-h">120 min in class</span><a class="vc-route-a" href="#lab"><span class="vc-route-n">▶</span><span class="vc-route-t">Build lab: QuoteDesk v0 and its public page, or your own problem, deployed</span><span class="vc-route-l">live demo first · prompts to adapt · checklist</span></a></li>
 <li class="is-break"><span class="vc-route-h">45 min in class</span><span class="vc-route-t">Critique: two teams show their page, then reflection in the build log</span></li>
-<li class="is-break"><span class="vc-route-h">30 min in class</span><span class="vc-route-t">Milestone review: M1 explained, teams confirmed, pre-work for session 2</span></li>
+<li class="is-break"><span class="vc-route-h">30 min in class</span><span class="vc-route-t">Milestone review: M1 explained, teams confirmed, what to do before Day 2</span></li>
 </ol>
 ```
 
@@ -374,7 +374,7 @@ A public address changes who can give feedback. Before the lab ends, send yours 
 ```{=html}
 <div class="vc-lab">
 <p class="vc-lab-t">What your team builds in the next 120 minutes</p>
-<p class="vc-lab-time">Teams of 2 to 3 · the instructor circulates · save a checkpoint after every change that passes your test, and at least every 20 minutes · a 10-minute break is included</p>
+<p class="vc-lab-time">Teams of 2 to 3. The instructor circulates. Save a checkpoint after every change that passes your test, and at least every 20 minutes. Steps 1 to 7 fit before the 10:00 coffee break; steps 8 to 13 come after it.</p>
 <ol>
 <li><strong>Watch the live demo (20 min).</strong> The instructor builds and deploys QuoteDesk v0, including the bug from Topic 6. Note the order of moves, not the clicks.</li>
 <li><strong>Pick the problem (10 min).</strong> Each member reads their problem aloud. Apply the Pull test from Topic 4: named user, number, moment. Choose the one that passes with the strongest number. If none passes, build QuoteDesk for Cerro Azul and use the lab to learn the tools.</li>
@@ -384,7 +384,7 @@ A public address changes who can give feedback. Before the lab ends, send yours 
 <li><strong>Test by using (10 min).</strong> Do the three things your user would do, in order, in a phone-sized window (drag the browser window narrow). Paste a realistic message with names, phone numbers and addresses changed, never a real one. Write in the build log what worked and what did not, in the user's words.</li>
 <li><strong>Ask for one change at a time (15 min).</strong> Use the second prompt below. After each change, read the assistant's summary of what it did, then test again. Two focused changes beat one long list. Save a checkpoint after every change that works (the builder calls it a version, a snapshot or a publish). You will learn in Class 2 why this matters; for now, just do it.</li>
 <li><strong>Deploy the app (5 min).</strong> Publish to a public address. Open it on a real phone, not only in the narrow window on your laptop.</li>
-<li><strong>Break (10 min).</strong> Stand up. On the way back, open your app on someone else's phone and watch them use it without helping.</li>
+<li><strong>Watch a stranger use it (10 min).</strong> Open your app on someone else's phone, from another team, and watch them use it without helping. Note the first place they hesitate and fix that before anything else.</li>
 <li><strong>Build the public page (15 min).</strong> In the same builder, start a second project: one page that explains your product to the people it is for. Use the fourth prompt below. Check it against the four review questions under that prompt, then publish it.</li>
 <li><strong>Ask for feedback (5 min).</strong> Send both addresses to one person outside the team, ideally someone who has the actual problem, with one sentence: "paste a realistic message, with names, phone numbers and addresses changed, and tell me what is wrong".</li>
 <li><strong>Write the build log entry (5 min).</strong> What you asked, what the assistant did, what you decided, what surprised you. Include both public addresses.</li>
@@ -470,7 +470,7 @@ Review the page with four questions before you publish it. Would the person it i
 <li>The app is deployed to a public address and opens on a real phone.</li>
 <li>The public page is published: one audience, one action, no number or claim you cannot defend, and a fictional company name unless your employer agreed.</li>
 <li>Both addresses were sent to one person outside the team with a request for feedback.</li>
-<li>The build log entry for session 1 is written: what you asked, what the assistant did, what you decided, what surprised you.</li>
+<li>The build log entry for Class 1 is written: what you asked, what the assistant did, what you decided, what surprised you.</li>
 </ul>
 ```
 
@@ -478,13 +478,13 @@ Review the page with four questions before you publish it. Would the person it i
 
 Two teams show their work end to end, in 5 minutes each: the brief in one sentence, then the three user actions in a phone-sized window, then one thing that broke and how it was fixed, then the public page. The class applies one criterion of the [course rubric](rubric.html), **problem and value**: is the user named, is the pain measured, would that user open this page tomorrow? Comments go to the team's build log, not into the air.
 
-Then 10 minutes alone with your build log. The reflection prompt for session 1: *what did you expect to be hard that turned out to be easy, and what did you expect to be easy that turned out to be hard?* Write it down before the discussion; the point is to notice how your own estimate of "hard" has to change.
+Then 10 minutes alone with your build log. The reflection prompt for Class 1: *what did you expect to be hard that turned out to be easy, and what did you expect to be easy that turned out to be hard?* Write it down before the discussion; the point is to notice how your own estimate of "hard" has to change.
 
-## Before next session
+## Before Day 2
 
-**Milestone M1, individual, 15% of the grade, due before session 2.** A one-page problem brief and product specification, written as an instruction to an AI: the user, the pain with a number, the value hypothesis, the success metric, and three user stories, each with acceptance criteria ("a rep can paste a message and save it; the saved request appears at the top of the list within two seconds; an empty message cannot be saved"). The brief from the lab is the first paragraph; the three user stories are what you want QuoteDesk, or your own product, to do by session 3. It is graded with the [course rubric](rubric.html) on the two criteria that apply to a brief: problem and value, and communication. Write it with invented or de-identified examples only.
+**Milestone M1, individual, 15% of the grade, due Sunday 13 December 2026 at 23:59.** Written feedback comes back before Day 2. A one-page problem brief and product specification, written as an instruction to an AI: the user, the pain with a number, the value hypothesis, the success metric, and three user stories, each with acceptance criteria ("a rep can paste a message and save it; the saved request appears at the top of the list within two seconds; an empty message cannot be saved"). The brief from the lab is the first paragraph; the three user stories are what you want QuoteDesk, or your own product, to do by Class 3. It is graded with the [course rubric](rubric.html) on the two criteria that apply to a brief: problem and value, and communication. Write it with invented or de-identified examples only.
 
-**Pre-work for session 2.** Read the [Class 2 page](class2.html), about 100 minutes; its topic 2 covers checkpoints and undo, which the lab uses from the first minute. Then follow the [toolkit setup guide](setup.html) so that, before class, your app is in a private repository and opens in the building assistant, and the database project exists. Session 2 starts from there: it adds stored data and a login, and then teaches the assistant how your team works with project instructions, a first skill and a read-only connector. Optional reading: the chapters of Mollick's *Co-Intelligence* on working with AI as a co-worker.
+**In the seven weeks before Day 2** (Saturday 16 January 2027). Read the [Class 2 page](class2.html), about 100 minutes; its topic 2 covers checkpoints and undo, which the lab uses from the first minute. Read the pages of Classes 3, 4 and 5 at your own pace as well, because Day 2 and Day 3 follow each other with no time to read in between. By Sunday 10 January, make sure the five checks of the [toolkit setup guide](setup.html) still pass on every laptop and complete its section "Before Day 2". Class 2 starts from there: it adds stored data and a login, and then teaches the assistant how your team works with project instructions, a first skill and a read-only connector. Optional reading: the chapters of Mollick's *Co-Intelligence* on working with AI as a co-worker.
 
 ## Summary
 

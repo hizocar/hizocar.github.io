@@ -3,9 +3,27 @@
    Components for the interactive class pages. Uses the site tokens (--hz-*)
    and adds course tokens (--vc-*). Prefix: vc-
    ========================================================================== */
+/* ---------- Course identity ----------
+   This file loads only on course pages, so these values restyle the course without touching the rest of the site.
+   Palette: ink navy on porcelain, one interactive blue, a fine brass detail. Display serif: Cormorant Garamond. */
 :root {
-  --vc-ai: #2f5d8a;          /* the assistant / AI */
-  --vc-ai-soft: rgba(47, 93, 138, 0.12);
+  --hz-bg: #fbfbf8;
+  --hz-surface: #f2f3f4;
+  --hz-ink: #0f1e33;
+  --hz-ink-2: #2a3a52;
+  --hz-muted: #5c697b;
+  --hz-line: rgba(15, 30, 51, 0.12);
+  --hz-line-strong: rgba(15, 30, 51, 0.26);
+  --hz-accent: #1d4e89;
+  --hz-accent-bright: #2a63a6;
+  --hz-accent-soft: rgba(29, 78, 137, 0.08);
+  --hz-on-accent: #ffffff;
+  --hz-nav: rgba(251, 251, 248, 0.88);
+  --hz-serif: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --vc-brass: #a07a3f;
+  --vc-brass-soft: rgba(160, 122, 63, 0.35);
+  --vc-ai: #2c6b67;          /* the assistant / AI */
+  --vc-ai-soft: rgba(44, 107, 103, 0.11);
   --vc-ok: #2e7d4f;
   --vc-ok-soft: rgba(46, 125, 79, 0.14);
   --vc-warn: #a8740a;
@@ -16,11 +34,25 @@
   --vc-ease: cubic-bezier(0.34, 1.36, 0.64, 1);
   --vc-radius: 10px;
 }
-/* Dark scheme: lighter signal colours so text and borders keep their contrast */
+/* Dark scheme: deep navy, ivory ink, lighter signal colours so text and borders keep their contrast */
 body.quarto-dark {
-  --vc-ai: #8db8e0;
-  --vc-ai-soft: rgba(141, 184, 224, 0.16);
-  --vc-on-ai: #10202f;
+  --hz-bg: #0b1422;
+  --hz-surface: #121e30;
+  --hz-ink: #e9edf3;
+  --hz-ink-2: #c8d1dd;
+  --hz-muted: #97a5b8;
+  --hz-line: rgba(233, 237, 243, 0.12);
+  --hz-line-strong: rgba(233, 237, 243, 0.28);
+  --hz-accent: #8fb9ea;
+  --hz-accent-bright: #abcbf1;
+  --hz-accent-soft: rgba(143, 185, 234, 0.12);
+  --hz-on-accent: #0b1422;
+  --hz-nav: rgba(11, 20, 34, 0.86);
+  --vc-brass: #d3b37c;
+  --vc-brass-soft: rgba(211, 179, 124, 0.35);
+  --vc-ai: #7fc6bd;
+  --vc-ai-soft: rgba(127, 198, 189, 0.15);
+  --vc-on-ai: #0b1a19;
   --vc-ok: #8fd19e;
   --vc-ok-soft: rgba(143, 209, 158, 0.16);
   --vc-warn: #e2b659;
@@ -29,14 +61,135 @@ body.quarto-dark {
   --vc-bad-soft: rgba(240, 154, 147, 0.16);
 }
 
-/* ---------- Session meta chips ---------- */
-.vc-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.4rem 0 1.4rem; }
-.vc-meta span {
-  font-family: var(--hz-mono); font-size: 0.74rem; letter-spacing: 0.01em;
-  padding: 0.28rem 0.7rem; border-radius: 6px;
-  background: var(--hz-surface); color: var(--hz-ink-2); border: 1px solid var(--hz-line);
+body { background-color: var(--hz-bg) !important; color: var(--hz-ink); }
+main.content { color: var(--hz-ink); }
+main.content a { color: var(--hz-accent); text-decoration-color: var(--hz-line-strong); text-underline-offset: 3px; }
+main.content a:hover { text-decoration-color: currentColor; }
+
+/* Titles and headings in the display serif */
+#title-block-header h1.title, main.content h1.title {
+  font-family: var(--hz-serif); font-weight: 500; letter-spacing: -0.01em; line-height: 1.04;
+  font-size: clamp(2.5rem, 5.6vw, 3.9rem); color: var(--hz-ink);
 }
-.vc-meta span.is-accent { background: var(--hz-accent); color: var(--hz-on-accent); border-color: transparent; }
+#title-block-header .subtitle { color: var(--hz-muted); font-size: 1.08rem; line-height: 1.55; max-width: 46rem; }
+main.content h2 {
+  font-family: var(--hz-serif); font-weight: 600; font-size: clamp(1.75rem, 3.2vw, 2.15rem); line-height: 1.12;
+  color: var(--hz-ink); border-bottom: 1px solid var(--vc-brass-soft); padding-bottom: 0.35rem; margin-top: 2.6rem;
+}
+main.content h3 { font-family: var(--hz-serif); font-weight: 600; font-size: 1.55rem; line-height: 1.18; color: var(--hz-ink); }
+main.content h4 { font-weight: 600; font-size: 1.02rem; }
+main.content table { font-variant-numeric: tabular-nums; }
+main.content table th { font-weight: 600; color: var(--hz-ink-2); }
+
+/* Cormorant uses old-style figures by default; "Class 1" must never read as "Class I" */
+#title-block-header h1.title, main.content h1, main.content h2, main.content h3,
+.vh-title, .vh-day-num, .vc-coursenav-title, .vh-blocks-def dt { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+
+/* Table of contents in the course palette */
+nav[role="doc-toc"] a, #TOC a { color: var(--hz-muted); }
+nav[role="doc-toc"] a:hover, #TOC a:hover { color: var(--hz-ink); }
+nav[role="doc-toc"] ul > li > a.active, nav[role="doc-toc"] a.nav-link.active, #TOC a.active {
+  color: var(--hz-ink) !important; border-left-color: var(--vc-brass) !important;
+}
+nav[role="doc-toc"] h2#toc-title, #toc-title { font-family: inherit; font-size: 0.86rem; border: 0; color: var(--hz-muted); }
+
+/* Callouts in the course palette */
+main.content .callout { border-radius: 10px; border-color: var(--hz-line) !important; border-left-width: 3px !important; background: var(--hz-bg); }
+main.content .callout.callout-style-default .callout-header { background: var(--hz-surface); }
+
+/* ---------- Course home ---------- */
+.vh { color: var(--hz-ink); }
+.vh h1, .vh h2 { border: 0; }
+.vh-hero { padding: 1.2rem 0 1.6rem; max-width: 44rem; }
+.vh-title {
+  font-family: var(--hz-serif); font-weight: 500; letter-spacing: -0.015em; line-height: 0.98;
+  font-size: clamp(2.9rem, 7.2vw, 5.1rem); margin: 0 0 1.2rem; color: var(--hz-ink);
+}
+.vh-lede { font-size: 1.18rem; line-height: 1.6; color: var(--hz-ink-2); margin: 0 0 1.6rem; max-width: 38rem; }
+.vh-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+main.content a.vh-btn {
+  display: inline-flex; align-items: center; min-height: 2.9rem; padding: 0 1.3rem; border-radius: 999px;
+  background: var(--hz-ink); color: var(--hz-bg) !important; font-weight: 500; font-size: 0.95rem; text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s var(--vc-ease);
+}
+main.content a.vh-btn:hover { background: var(--hz-accent); transform: translateY(-1px); }
+main.content a.vh-btn.is-quiet { background: transparent; color: var(--hz-ink) !important; box-shadow: inset 0 0 0 1px var(--hz-line-strong); }
+main.content a.vh-btn.is-quiet:hover { box-shadow: inset 0 0 0 1px var(--hz-ink); background: transparent; }
+
+.vh-facts {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr)); gap: 0;
+  margin: 1.6rem 0 0.4rem; border-top: 1px solid var(--vc-brass-soft); border-bottom: 1px solid var(--hz-line);
+}
+.vh-facts > div { padding: 1rem 1.2rem 1.05rem 0; }
+.vh-facts dt { font-size: 0.82rem; font-weight: 500; color: var(--hz-muted); margin: 0 0 0.3rem; }
+.vh-facts dd { margin: 0; font-size: 0.98rem; line-height: 1.45; color: var(--hz-ink); }
+
+.vh-section { margin-top: 3.2rem; }
+main.content .vh-section h2 { margin-top: 0; border-bottom: 0; padding-bottom: 0; margin-bottom: 0.6rem; }
+@media (min-width: 760px) { .vh-facts { grid-template-columns: 1.35fr 1fr 1fr 1.25fr; } }
+.vh-para { font-size: 1.04rem; line-height: 1.65; color: var(--hz-ink-2); max-width: 44rem; }
+
+.vh-daylist { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 1.4rem 2rem; }
+.vh-day { border-top: 2px solid var(--hz-ink); padding-top: 0.9rem; }
+.vh-day-num { font-family: var(--hz-serif); font-weight: 500; font-size: 4.2rem; line-height: 0.9; margin: 0; color: var(--hz-ink); font-variant-numeric: lining-nums; }
+.vh-day-date { margin: 0.35rem 0 0; font-weight: 600; font-size: 0.98rem; }
+.vh-day-hours { margin: 0.1rem 0 0.9rem; font-size: 0.9rem; color: var(--hz-muted); font-variant-numeric: tabular-nums; }
+.vh-blocks { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--hz-line); }
+.vh-blocks li { display: grid; grid-template-columns: 3.4rem 1fr; gap: 0.6rem; padding: 0.6rem 0; border-bottom: 1px solid var(--hz-line); font-size: 0.93rem; line-height: 1.4; }
+.vh-blocks time { font-variant-numeric: tabular-nums; color: var(--vc-brass); font-weight: 500; }
+.vh-blocks a { display: block; font-weight: 600; color: var(--hz-ink) !important; text-decoration: none; }
+.vh-blocks a:hover { color: var(--hz-accent) !important; }
+.vh-between { margin: 1.4rem 0 0; font-size: 0.96rem; line-height: 1.6; color: var(--hz-muted); max-width: 44rem; }
+
+.vh-blocks-def { margin: 1.2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 0 2.2rem; }
+.vh-blocks-def > div { display: grid; grid-template-columns: 10rem 1fr; gap: 0.8rem; padding: 0.75rem 0; border-bottom: 1px solid var(--hz-line); }
+.vh-blocks-def dt { font-family: var(--hz-serif); font-weight: 600; font-size: 1.15rem; line-height: 1.25; }
+.vh-blocks-def dd { margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--hz-ink-2); }
+
+.vh-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; margin: 1rem 0 0.6rem; }
+.vh-table th { text-align: left; font-weight: 500; font-size: 0.84rem; color: var(--hz-muted); padding: 0 0.8rem 0.5rem 0; border-bottom: 1px solid var(--hz-line-strong); }
+.vh-table td { padding: 0.7rem 0.8rem 0.7rem 0; border-bottom: 1px solid var(--hz-line); vertical-align: top; }
+.vh-table td:last-child, .vh-table th:last-child { text-align: right; padding-right: 0; font-variant-numeric: tabular-nums; }
+.vh-note { font-size: 0.9rem; color: var(--hz-muted); line-height: 1.55; max-width: 44rem; }
+
+.vh-materials { list-style: none; padding: 0; margin: 1rem 0 0; border-top: 1px solid var(--hz-line); }
+.vh-materials li { display: grid; grid-template-columns: 13rem 1fr; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--hz-line); }
+.vh-materials a { font-weight: 600; }
+.vh-materials span { color: var(--hz-ink-2); font-size: 0.95rem; line-height: 1.5; }
+
+@media (max-width: 640px) {
+  .vh-blocks-def > div, .vh-materials li { grid-template-columns: 1fr; gap: 0.2rem; }
+  .vh-facts > div { padding-right: 0; }
+  .vh-table { display: block; overflow-x: auto; }
+}
+
+/* ---------- Course navigation band (inserted by course.js) ---------- */
+.vc-coursenav {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.6rem 1.6rem;
+  margin: 0.2rem 0 2.2rem; padding: 0 0 0.85rem; border-bottom: 1px solid var(--hz-line);
+}
+.vc-coursenav-brand { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; text-decoration: none !important; }
+.vc-coursenav-title { font-family: var(--hz-serif); font-weight: 600; font-size: 1.22rem; color: var(--hz-ink); }
+.vc-coursenav-sub { font-size: 0.82rem; color: var(--hz-muted); }
+.vc-coursenav ul { display: flex; flex-wrap: wrap; gap: 0.2rem 1.25rem; list-style: none; margin: 0; padding: 0; }
+.vc-coursenav ul a {
+  display: inline-block; padding: 0.3rem 0; font-size: 0.9rem; color: var(--hz-muted) !important;
+  text-decoration: none !important; border-bottom: 1.5px solid transparent; transition: color 0.15s ease, border-color 0.15s ease;
+}
+.vc-coursenav ul a:hover { color: var(--hz-ink) !important; }
+.vc-coursenav ul a[aria-current="page"] { color: var(--hz-ink) !important; border-bottom-color: var(--vc-brass); }
+@media (max-width: 640px) {
+  .vc-coursenav ul { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding-bottom: 0.15rem; scrollbar-width: none; }
+  .vc-coursenav ul a { padding: 0.55rem 0; white-space: nowrap; }
+}
+
+/* ---------- Class meta line ---------- */
+.vc-meta { display: flex; flex-wrap: wrap; gap: 0.45rem 0.6rem; margin: 0.4rem 0 1.2rem; }
+.vc-meta span {
+  font-size: 0.84rem; line-height: 1.35; padding: 0.3rem 0.75rem; border-radius: 999px;
+  background: transparent; color: var(--hz-ink-2); border: 1px solid var(--hz-line-strong);
+}
+.vc-meta span.is-accent { background: var(--hz-ink); color: var(--hz-bg); border-color: transparent; }
 
 /* ---------- Route of the class ---------- */
 ol.vc-route { list-style: none; padding: 0; margin: 1rem 0 1.6rem; counter-reset: none; }
@@ -228,7 +381,8 @@ a.vc-route-a:hover { background: var(--hz-accent-soft); transform: translateX(3p
 .vc-checklist li { display: flex; gap: 0.6rem; align-items: flex-start; padding: 0.45rem 0.2rem; border-bottom: 1px solid var(--hz-line); font-size: 0.9rem; }
 .vc-checklist input { margin-top: 0.3rem; accent-color: var(--hz-accent); width: 1rem; height: 1rem; flex: none; }
 .vc-checklist li.is-done { color: var(--hz-muted); text-decoration: line-through; }
-.vc-checklist-score { font-family: var(--hz-mono); font-size: 0.74rem; color: var(--hz-muted); margin: 0.3rem 0 0; }
+.vc-checklist-text { flex: 1; min-width: 0; }
+.vc-checklist-score { font-size: 0.82rem; font-variant-numeric: tabular-nums; color: var(--hz-muted); margin: 0.4rem 0 0; }
 
 /* ---------- Build lab block ---------- */
 .vc-lab {
@@ -272,22 +426,26 @@ a.vc-route-a:hover { background: var(--hz-accent-soft); transform: translateX(3p
 /* ---------- Big callout number ---------- */
 .vc-big { font-family: var(--hz-serif); font-size: clamp(2rem, 5vw, 3rem); line-height: 1; font-variant-numeric: tabular-nums; color: var(--hz-accent); }
 
-/* ---------- Day bar: the four blocks of the 4-hour session (one orchestrated entrance) ---------- */
-.vc-daybar { margin: 0.2rem 0 1.6rem; }
-.vc-daybar-track { display: flex; gap: 3px; height: 2.6rem; border-radius: 9px; overflow: hidden; }
+/* ---------- Day line: the clock of the day, with this class's blocks in ink (one orchestrated entrance) ---------- */
+.vc-daybar { margin: 0.4rem 0 1.8rem; }
+.vc-daybar-track { display: flex; gap: 3px; height: 2.4rem; }
 .vc-daybar-seg {
-  flex: 0 0 auto; display: flex; align-items: center; justify-content: center; min-width: 0;
-  font-family: var(--hz-mono); font-size: 0.72rem; color: var(--hz-on-accent); background: var(--hz-ink-2);
-  white-space: nowrap; overflow: hidden; transform-origin: left center;
+  display: flex; align-items: center; justify-content: flex-start; padding: 0 0.6rem; min-width: 0;
+  font-size: 0.78rem; font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; transform-origin: left center;
+  border-radius: 4px;
 }
-.vc-daybar-seg:nth-child(1) { background: var(--vc-ai); color: var(--vc-on-ai); }
-.vc-daybar-seg:nth-child(2) { background: var(--hz-accent); }
-.vc-daybar-seg:nth-child(3) { background: var(--hz-ink-2); color: var(--hz-bg); }
-.vc-daybar-seg:nth-child(4) { background: var(--hz-muted); color: var(--hz-bg); }
-.vc-daybar-legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; margin: 0.5rem 0 0; padding: 0; list-style: none; font-size: 0.78rem; color: var(--hz-muted); }
-.vc-daybar-legend li { display: flex; align-items: center; gap: 0.4rem; }
-.vc-daybar-legend i { width: 0.7rem; height: 0.7rem; border-radius: 3px; display: inline-block; }
-.vc-daybar-legend b { color: var(--hz-ink); font-weight: 600; }
+.vc-daybar-seg.is-current { background: var(--hz-ink); color: var(--hz-bg); }
+.vc-daybar-seg.is-other { background: var(--hz-surface); color: var(--hz-muted); box-shadow: inset 0 0 0 1px var(--hz-line); }
+.vc-daybar-seg.is-pause { background: repeating-linear-gradient(135deg, var(--hz-line) 0 2px, transparent 2px 6px); padding: 0; }
+.vc-daybar-legend { list-style: none; margin: 0.8rem 0 0; padding: 0; display: grid; gap: 0.15rem; font-size: 0.9rem; }
+.vc-daybar-legend li { display: grid; grid-template-columns: 7.6rem 1fr; gap: 0.8rem; padding: 0.22rem 0; color: var(--hz-ink-2); }
+.vc-daybar-legend li.is-pause { color: var(--hz-muted); font-size: 0.84rem; }
+.vc-daybar-legend li.is-current .vc-daybar-label { color: var(--hz-ink); font-weight: 600; }
+.vc-daybar-time { font-variant-numeric: tabular-nums; color: var(--hz-muted); }
+@media (max-width: 600px) {
+  .vc-daybar-seg { font-size: 0.7rem; padding: 0 0.35rem; }
+  .vc-daybar-legend li { grid-template-columns: 6.6rem 1fr; gap: 0.5rem; }
+}
 
 /* ---------- Reading progress (scroll-linked, top of the window) ---------- */
 .vc-progress { position: fixed; left: 0; top: 0; height: 3px; width: 100%; z-index: 1100; pointer-events: none; }

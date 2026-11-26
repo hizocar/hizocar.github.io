@@ -9,7 +9,7 @@ include-after-body:
     <script src="assets/vc-core.js"></script>
 ---
 
-This guide gets your tools ready. It is written for someone who has never programmed. The exact names of buttons change between tools and between months, so each step says what you are trying to achieve and what you should see when it worked. Your instructor names the specific tools by email one week before session 1.
+This guide gets your tools ready. It is written for someone who has never programmed. The exact names of buttons change between tools and between months, so each step says what you are trying to achieve and what you should see when it worked. Your instructor confirms the specific tools by email. If that email has not reached you before Day 1, come anyway: the accounts are created in the room during the setup clinic.
 
 If a step fails, do not guess. Copy the sentence in "Ask the assistant" and paste it, with the error message, into your assistant.
 
@@ -21,28 +21,30 @@ If a step fails, do not guess. Copy the sentence in "Ask the assistant" and past
 | An app builder | Your first version, from a sentence to a deployed app | You describe the app and it appears, with a "Publish" button |
 | GitHub | The home of your app's files, with every version kept | A website where each project is a "repository" |
 | A managed database and a hosting platform | Where the data lives, and where the public address comes from | Dashboards with a project name, keys and a web address |
-| A model provider's developer account (from session 3) | The model your app calls, billed by use | A console with usage, a spending limit and API keys |
+| A model provider's developer account (before Day 2) | The model your app calls, billed by use | A console with usage, a spending limit and API keys |
 
 **Expected cost for the course:** USD 45 to 60 per student: two months of the assistant's individual plan and about USD 5 to 10 of model usage. Confirm the current prices before you pay; they change.
 
 ## The data rule
 
-Until your team has completed the session 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade. A realistic message with the names, phone numbers and addresses changed teaches you exactly as much as the real one.
+Until your team has completed the Class 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade. A realistic message with the names, phone numbers and addresses changed teaches you exactly as much as the real one.
 
-## Before session 1 (about 20 minutes, every student)
+## Before Day 1 (about 20 minutes, every student)
+
+Day 1 is Sunday 29 November 2026. Only the GitHub account and the problem are certain to be needed before you arrive; if you already know which assistant and builder the course uses, create those accounts too.
 
 ```{=html}
 <ul class="vc-checklist" id="setup-before-1">
 <li>Create an account on the AI assistant named by your instructor, on the individual paid plan if the free plan does not include skills and connectors.</li>
-<li>Create an account on the app builder. The free tier is enough for session 1.</li>
+<li>Create an account on the app builder. The free tier is enough for Class 1.</li>
 <li>Create a GitHub account. Use a personal email you will keep after the course.</li>
 <li>Write down the one business problem you will bring: who has it, how often, and what it costs them.</li>
 </ul>
 ```
 
-## Before session 2 (about 75 minutes)
+## In the setup clinic (Day 1, 12:30 to 14:30)
 
-In session 1 you built a first version inside the app builder. Before session 2 you move it to a place where your assistant can work on it properly, and you prepare the database.
+In Class 1 you built a first version inside the app builder. In the third block of Day 1 you move it, in the room and with the instructor walking between tables, to a place where your assistant can work on it properly, and you prepare the database. Parts A to E take about 75 minutes; the rest of the block goes to the M1 brief. If you miss Day 1, do these parts on your own before Sunday 10 January 2027 and write to the course channel when you get stuck.
 
 **Who does what.** Parts A, C and D are done once per team, by the member whose builder account holds the app. Part B is done by every member, on their own laptop. Do the parts in order.
 
@@ -75,12 +77,12 @@ In session 1 you built a first version inside the app builder. Before session 2 
 
 ### Part C. Create the database project (15 minutes, once per team)
 
-**Goal:** an empty database exists, ready for session 2. You do not design tables now.
+**Goal:** an empty database exists, ready for Class 2. You do not design tables now.
 
 1. Create an account on the managed database service named by your instructor and create a new project. Give it the same name as your product. Choose the region closest to your users.
 2. The service shows you a project address and two keys. Read the section "Keys" below before you copy anything.
 3. Put the project address and the **publishable** key in your project's settings, following your assistant's instructions (see "Ask the assistant" in the Keys section). The **secret** key waits for Part D.
-4. Do not create tables. Your team does that together in the session 2 lab.
+4. Do not create tables. Your team does that together in the Class 2 lab.
 
 **It worked when:** you can see an empty project dashboard, your project's settings hold the address and the publishable key, and no secret key is anywhere in the repository.
 
@@ -110,9 +112,9 @@ In session 1 you built a first version inside the app builder. Before session 2 
 
 A **checkpoint** is a named snapshot of the whole app at a moment it worked. In this course, saving a checkpoint always includes sending it to GitHub, which is what updates your public address. Until then, a change exists only on one laptop.
 
-## Before session 3 (about 25 minutes, once per team)
+## Before Day 2 (about 25 minutes, once per team, by Sunday 10 January 2027)
 
-In session 3 your app calls a language model. That needs an account that is separate from your assistant subscription and is billed by use.
+In Class 3, on the afternoon of Day 2, your app calls a language model. That needs an account that is separate from your assistant subscription and is billed by use.
 
 1. Create an account on the model provider's developer console named by your instructor. Add USD 5 of credit.
 2. Set a monthly spending limit of USD 10 and an email alert.
@@ -120,11 +122,11 @@ In session 3 your app calls a language model. That needs an account that is sepa
 
 **It worked when:** the key appears on the hosting platform's page, the spending limit shows in the provider's console, and the key is in no chat, message or file.
 
-Because the key lives only on the hosting platform, the AI feature will not run on your laptop. In the session 3 lab you save a checkpoint, wait a minute for the public address to update, and test there.
+Because the key lives only on the hosting platform, the AI feature will not run on your laptop. In the Class 3 lab you save a checkpoint, wait a minute for the public address to update, and test there.
 
-## For the morning digest (session 3, option B)
+## For the morning digest (Class 3, option B)
 
-One of the two options in session 3 is a morning digest that your team's assistant prepares on a schedule. The assistant cannot see inside your deployed app, so you hand it a file through the same door it already uses for the price list.
+One of the two options in Class 3 is a morning digest that your team's assistant prepares on a schedule. The assistant cannot see inside your deployed app, so you hand it a file through the same door it already uses for the price list.
 
 1. Ask the building assistant: "Add a manager-only button 'Export pending requests' that downloads a file with customer, time received and rep. No prices, no phone numbers."
 2. Save that file each morning into the shared folder your price-list connector already reads. In the lab you do this once by hand.
@@ -147,13 +149,13 @@ Three rules that are never broken:
 
 1. A secret key is never pasted into a chat, an email, a slide, a screenshot or the repository.
 2. If a secret key was ever pasted somewhere it should not be, it is revoked in the service's dashboard and a new one is created. Deleting the message is not enough.
-3. The publishable key does not protect your data. The rules inside the database do. You set the first rules in session 2, with the login, and tighten and test them in session 4.
+3. The publishable key does not protect your data. The rules inside the database do. You set the first rules in Class 2, with the login, and tighten and test them in Class 4.
 
 **Ask the assistant:** "I have a publishable key and a secret key for [service]. Tell me exactly where each one goes in this project and in [hosting platform], and confirm that the secret key will never be sent to the browser. Do not ask me to paste the secret key into this chat."
 
 ## If you could not get your app out of the builder
 
-Use the course starter instead of Part A. It is the app as it stands at the end of session 1: paste a message, pick a customer, save to today's list.
+Use the course starter instead of Part A. It is the app as it stands at the end of Class 1: paste a message, pick a customer, save to today's list.
 
 1. Open [github.com/hizocar/vibe-coding-starter](https://github.com/hizocar/vibe-coding-starter). If the page says it cannot be found, ask your instructor for an invitation and open the link again.
 2. Press **Use this template**, then **Create a new repository**. Name it after your product, choose **Private**, and create it.
@@ -164,4 +166,4 @@ Use the course starter instead of Part A. It is the app as it stands at the end 
 
 ## If you could not finish
 
-Bring your laptop to session 2 fifteen minutes early. Nobody is graded on this guide.
+Write to the course channel or to [sebastian.azocarm@usm.cl](mailto:sebastian.azocarm@usm.cl) before Sunday 10 January 2027, so it can be solved before Day 2. Nobody is graded on this guide.

@@ -1,87 +1,129 @@
 ---
-title: "Vibe Coding for Business Leaders"
-subtitle: "From business problem to working AI product · MBA USM elective · 2 SCT-Chile · taught in English"
+pagetitle: "Vibe Coding for Business Leaders · MBA USM"
+description: "Build, connect and govern software with AI assistants, without writing code. MBA elective at Universidad Técnica Federico Santa María, three intensive days."
 lang: en
 toc: false
+include-after-body:
+  text: |
+    <script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
+    <script src="assets/vc-core.js"></script>
 ---
 
 ```{=html}
-<div class="cursos-grid">
+<div class="vh">
 
-<a class="curso-card" href="classes.html">
-  <span class="curso-tag">Classes</span>
-  <span class="curso-sigla">5 interactive pages · simulators · labs</span>
-  <h3>Class material</h3>
-  <p>Each session as a self-teaching page: guiding questions, simulators, practice questions, the build lab with prompts to adapt, and a checklist that remembers your progress.</p>
-  <span class="curso-link">Go to the classes →</span>
-</a>
+<section class="vh-hero" aria-labelledby="vh-title">
+  <h1 id="vh-title" class="vh-title">Vibe Coding for Business Leaders</h1>
+  <p class="vh-lede">Build, connect and govern software with AI assistants, without writing code. An elective of the MBA at Universidad Técnica Federico Santa María, taught in English over three intensive days.</p>
+  <div class="vh-actions">
+    <a class="vh-btn" href="sessions.html">See the schedule</a>
+    <a class="vh-btn is-quiet" href="class1.html">Read Class 1</a>
+  </div>
+</section>
 
-<a class="curso-card" href="syllabus.html">
-  <span class="curso-tag">Program</span>
-  <span class="curso-sigla">USM MBA template · 9 sections + SCT hours</span>
-  <h3>Course syllabus</h3>
-  <p>Description, competencies CE1–CE4 and CGT1–CGT3, learning outcomes, five content units, methodology, weighted assessment and bibliography.</p>
-  <span class="curso-link">Read the syllabus →</span>
-</a>
+<dl class="vh-facts">
+  <div><dt>Dates</dt><dd>29 November 2026<br>16 and 17 January 2027</dd></div>
+  <div><dt>Contact hours</dt><dd>20, in two-hour blocks</dd></div>
+  <div><dt>Credits</dt><dd>2 SCT-Chile, 45 hours of work in total</dd></div>
+  <div><dt>Instructor</dt><dd>Sebastián Azócar<br><a href="mailto:sebastian.azocarm@usm.cl">sebastian.azocarm@usm.cl</a></dd></div>
+</dl>
 
-<a class="curso-card" href="sessions.html">
-  <span class="curso-tag">Plan</span>
-  <span class="curso-sigla">5 sessions · 4 hours each</span>
-  <h3>Session plan</h3>
-  <p>Build goal, pre-work, framework, guided build and critique for each session, with the milestones that carry one product from brief to Demo Day.</p>
-  <span class="curso-link">See the sessions →</span>
-</a>
+<section class="vh-section" aria-labelledby="vh-days">
+  <h2 id="vh-days">Three days</h2>
+  <ol class="vh-daylist">
+    <li class="vh-day">
+      <p class="vh-day-num">29</p>
+      <p class="vh-day-date">Sunday, November 2026</p>
+      <p class="vh-day-hours">08:00 to 14:30, six hours</p>
+      <ul class="vh-blocks">
+        <li><time>08:00</time><span><a href="class1.html">Class 1</a>Ship something today</span></li>
+        <li><time>10:15</time><span>Class 1 continues: the build lab and the critique</span></li>
+        <li><time>12:30</time><span>Setup clinic: every laptop ready for the weeks ahead</span></li>
+      </ul>
+    </li>
+    <li class="vh-day">
+      <p class="vh-day-num">16</p>
+      <p class="vh-day-date">Saturday, January 2027</p>
+      <p class="vh-day-hours">08:00 to 18:30, eight hours</p>
+      <ul class="vh-blocks">
+        <li><time>08:00</time><span><a href="class2.html">Class 2</a>Specify, iterate, keep what works</span></li>
+        <li><time>10:30</time><span>Class 2 continues</span></li>
+        <li><time>14:00</time><span><a href="class3.html">Class 3</a>Add intelligence, then prove it works</span></li>
+        <li><time>16:30</time><span>Class 3 continues</span></li>
+      </ul>
+    </li>
+    <li class="vh-day">
+      <p class="vh-day-num">17</p>
+      <p class="vh-day-date">Sunday, January 2027</p>
+      <p class="vh-day-hours">08:00 to 14:30, six hours</p>
+      <ul class="vh-blocks">
+        <li><time>08:00</time><span><a href="class4.html">Class 4</a>Govern what you built</span></li>
+        <li><time>10:15</time><span><a href="class5.html">Class 5</a>Pitch clinic, then Demo Day</span></li>
+        <li><time>12:30</time><span>Demo Day, strategy revisited, reflection</span></li>
+      </ul>
+    </li>
+  </ol>
+  <p class="vh-between">Between the first and second days there are seven weeks: time to submit the problem brief, read the pages of Classes 2 to 5 at your own pace, and finish the setup. The <a href="sessions.html">schedule</a> gives every block, break and due date.</p>
+</section>
 
-<a class="curso-card" href="files/Vibe_Coding_MBA_Elective_Syllabus.docx">
-  <span class="curso-tag">Download</span>
-  <span class="curso-sigla">.docx · Programa de Asignatura</span>
-  <h3>Word version</h3>
-  <p>The syllabus filled into the official USM MBA <em>Programa de Asignatura</em> template, ready for departmental review.</p>
-  <span class="curso-link">Download →</span>
-</a>
+<section class="vh-section" aria-labelledby="vh-before">
+  <h2 id="vh-before">Before Sunday 29 November</h2>
+  <ul class="vc-checklist" id="before-day-1">
+    <li>Bring a laptop on which you can install programs, and its charger.</li>
+    <li>Create a GitHub account with a personal email you will keep after the course.</li>
+    <li>Read the <a href="class1.html">Class 1 page</a>, about 90 minutes.</li>
+    <li>Bring one problem from your organization in which people enter, read or act on information by hand.</li>
+    <li>Watch for your instructor's email confirming the AI assistant and app builder for the course. If it has not arrived, come anyway: the remaining accounts are created in the room during the setup clinic.</li>
+  </ul>
+</section>
+
+<section class="vh-section" aria-labelledby="vh-what">
+  <h2 id="vh-what">What you build, and what you leave with</h2>
+  <p class="vh-para">Each team takes one real problem from a member's organization to a deployed web application with an AI capability, then governs it and presents it to a panel. Along the way you use the building blocks of current AI work.</p>
+  <dl class="vh-blocks-def">
+    <div><dt>Web pages and apps</dt><dd>A deployed application with login and stored data, and a public page that explains it.</dd></div>
+    <div><dt>Skills</dt><dd>"How we do it here", packaged so the assistant repeats it.</dd></div>
+    <div><dt>Connectors and MCP</dt><dd>Scoped access to company systems, read before write.</dd></div>
+    <div><dt>Agents</dt><dd>A model that takes steps with tools and waits for your approval.</dd></div>
+    <div><dt>Automations</dt><dd>Work that starts on a schedule, with an owner and a log.</dd></div>
+    <div><dt>Presentations</dt><dd>A Demo Day deck generated from your evidence and checked by you.</dd></div>
+  </dl>
+  <p class="vh-para">No programming experience is required or assumed. You leave with a working product, a test set and a risk memo for it, a small personal system for working with AI, and a tested way to decide between keeping a prototype, handing it to engineering, buying a product, or stopping.</p>
+</section>
+
+<section class="vh-section" aria-labelledby="vh-grade">
+  <h2 id="vh-grade">Assessment</h2>
+  <table class="vh-table">
+    <thead><tr><th>Component</th><th>Who</th><th>Due</th><th>Weight</th></tr></thead>
+    <tbody>
+      <tr><td>M1. Problem brief and product specification</td><td>Individual</td><td>Sunday 13 December 2026</td><td>15%</td></tr>
+      <tr><td>M2. Prototype v1 with login, data, one skill and one connector</td><td>Team</td><td>Saturday 16 January 2027</td><td>20%</td></tr>
+      <tr><td>Demo Day</td><td>Team, individually adjusted</td><td>Sunday 17 January 2027</td><td>25%</td></tr>
+      <tr><td>M3. AI feature, test set, agent and automation, risk memo</td><td>Team</td><td>Sunday 24 January 2027</td><td>25%</td></tr>
+      <tr><td>Reflection memo and participation</td><td>Individual</td><td>Sunday 24 January 2027</td><td>15%</td></tr>
+    </tbody>
+  </table>
+  <p class="vh-note">Written work is due at 23:59 on the day shown; Demo Day happens in the room. Everything is graded with one <a href="rubric.html">rubric</a>. The course is passed with 55 out of 100. Using AI is required and must be declared.</p>
+</section>
+
+<section class="vh-section" aria-labelledby="vh-data">
+  <h2 id="vh-data">One rule from the first minute</h2>
+  <p class="vh-para">Until your team has completed the Class 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade.</p>
+</section>
+
+<section class="vh-section" aria-labelledby="vh-materials">
+  <h2 id="vh-materials">Course materials</h2>
+  <ul class="vh-materials">
+    <li><a href="classes.html">Classes</a><span>Five self-teaching pages with simulators, practice questions and the build lab of each class.</span></li>
+    <li><a href="sessions.html">Schedule</a><span>Every block, break and due date of the three days.</span></li>
+    <li><a href="setup.html">Toolkit setup guide</a><span>Accounts, private repository, database, hosting and keys, step by step.</span></li>
+    <li><a href="rubric.html">Rubric</a><span>Four criteria, four levels, and how they apply to each graded component.</span></li>
+    <li><a href="security-checklist.html">Security checklist</a><span>Fourteen checks a manager can run on an app built with AI.</span></li>
+    <li><a href="syllabus.html">Syllabus</a><span>The official program: competencies, learning outcomes, contents and bibliography.</span></li>
+    <li><a href="files/Vibe_Coding_MBA_Elective_Syllabus.docx">Syllabus in Word</a><span>The program in the USM MBA template.</span></li>
+    <li><a href="https://github.com/hizocar/vibe-coding-starter">Starter repository</a><span>A working first version of the course app, ready to copy if yours stays in the builder.</span></li>
+  </ul>
+</section>
 
 </div>
 ```
-
-## The course in one paragraph
-
-Vibe coding, building software by describing intent to an AI and iterating on what it produces, has collapsed the cost of a working prototype from weeks of engineering to hours of a manager's time. This elective puts that capability in the hands of MBA students with no programming background. Over five 4-hour workshops, teams take one real problem from their own organizations to a deployed web application with an integrated language-model capability. Along the way they teach the assistant how their organization works with skills, connect it to company systems, let it act as an agent with their approval, and set one automation running. They then evaluate the security, privacy, cost and maintainability risks of what they built, make the build / buy / vibe decision (keep vibe coding it, hand it to engineering to build properly, buy a product, or stop), and present a working product and business case to a panel on Demo Day.
-
-## Who it is for
-
-MBA students and managers who need to test ideas, specify what they need from technology teams, and judge AI-built software, without becoming programmers. No coding experience is required or assumed.
-
-## What students build and use
-
-| | |
-|---|---|
-| Web pages and apps | A deployed application with login and stored data, and a public page that explains it |
-| Skills | "How we do it here" packaged so the assistant repeats it |
-| Connectors (MCP) | Scoped access to company systems, read before write |
-| Agents | A model that takes steps with tools and waits for approval |
-| Automations | Work that starts on a schedule, with an owner and a log |
-| Presentations | A Demo Day deck generated from the evidence and verified by the team |
-
-## The data rule
-
-Until your team has completed the session 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade.
-
-## What students leave with
-
-- A deployed, working AI-powered application built for a problem they chose.
-- A test set with results and a risk memo for that application.
-- A small personal system for working with AI: skills, trusted connectors and one automation with an owner and a log.
-- A build / buy / vibe decision framework they have applied once.
-- A first-hand understanding of what has changed in the economics of building software, and of what remains a defensible advantage.
-
-## At a glance
-
-| | |
-|---|---|
-| Credits | 2 SCT-Chile (20 contact hours + 25 autonomous = 45 hours) |
-| Format | 5 workshop sessions of 4 hours, teams of 2 to 3 |
-| Language | English (deliverables in English or Spanish) |
-| Assessment | 5 weighted components graded with one [rubric](rubric.html), no final exam, pass at 55/100 |
-| Before you start | [Toolkit setup guide](setup.html) |
-| Competencies | CE1, CE2, CE4 (CE3 secondary); CGT1, CGT2, CGT3 |
-| Instructor | Sebastián Azócar M. · [hizocar@gmail.com](mailto:hizocar@gmail.com) |

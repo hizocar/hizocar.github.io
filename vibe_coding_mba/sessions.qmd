@@ -1,122 +1,134 @@
 ---
-title: "Session plan"
-subtitle: "Five 4-hour workshops. One business problem carried from brief to deployed product."
+title: "Schedule"
+subtitle: "Three days, 20 contact hours in two-hour blocks. Breaks and lunch are not counted as contact time."
 lang: en
-css: assets/vc.css
+include-after-body:
+  text: |
+    <script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
+    <script src="assets/vc-core.js"></script>
 ---
 
-Sessions 1 to 4 follow the same rhythm so students spend their attention on the product, not the format. Session 5 is Demo Day. Each session has an interactive class page, read before class; the full list is in [Classes](classes.html).
+The course runs on one Sunday in November and one weekend in January, with seven weeks in between. Each class takes two blocks. The first block opens with a recap of the class page, which you read beforehand, and starts the build lab. The second block finishes the lab, then two teams show their work for critique and the milestone review closes the class.
 
-| Block | Minutes | What happens |
-|---|---|---|
-| Framework | 45 | A recap of the class page and questions on it |
-| Build lab | 120 | Opens with the instructor's live demo, including one failure and its recovery. Teams then work on their own project toward the session's build goal, with a 10-minute break |
-| Critique | 45 | Two teams show their work; the class applies the rubric; reflection prompt in the build log |
-| Milestone review | 30 | Milestone check-in, feedback on the last deliverable, pre-work for next session |
+Teams of 2 or 3 form on Day 1 around a problem from one member's organization. The capstone is **one** application, and each class adds a layer to it.
 
-Teams of 2 to 3 form in session 1 around a problem from one member's organization. The capstone is **one** application; each session adds a layer to it.
-
-| Session | The product gains | New building block |
+| Class | The product gains | New building block |
 |---|---|---|
 | 1 | A deployed app and a public web page | Prompts and the brief |
 | 2 | Login, a database, rollback | Project instructions, one skill, one connector |
 | 3 | An AI capability with a test set | One agentic step with approval, one automation |
-| 4 | Fixed security findings, a risk memo, a decision | Least-privilege permissions |
+| 4 | Fixed security findings and a decision | Least-privilege permissions |
 | 5 | A pitch in front of a panel | A deck generated with AI |
 
-**The data rule.** Until your team has completed the session 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade.
+## Day 1, Sunday 29 November 2026
 
-**Work outside class.** Each session asks for the class page (90 to 100 minutes), one short reading (about 20 minutes) and one task. The milestones take about 8 hours in total and Demo Day preparation about 7.
+```{=html}
+<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Class 1 · framework and the first part of the build lab:120|Coffee break:15|Class 1 · build lab, critique and milestone review:120|Coffee break:15|Setup clinic · your tools ready, in the room:120"></div>
+```
 
-## Session 1. Ship something today
+### Class 1. Ship something today
 
 Class page: [Class 1 · Ship something today](class1.html)
 
-**Build goal:** a deployed web application that a real user could open in a browser by the end of the session, and a one-page public site that explains it.
+**Build goal.** A deployed web application that a real user could open on a phone, and a one-page public site that explains it.
 
-**Before the session.** Read the class page (90 min). Create the accounts in the [toolkit setup guide](setup.html) (20 min). Read Karpathy's original post and Willison's "Not all AI-assisted programming is vibe coding" (20 min). Bring one business problem from your organization in which people enter, read or act on information.
+**Before Day 1.** Read the class page (90 min). Create a GitHub account. Read Karpathy's original post on vibe coding and Willison's "Not all AI-assisted programming is vibe coding" (20 min). Bring one problem from your organization in which people enter, read or act on information by hand, and a laptop on which you can install programs.
 
-**Framework.** What changed in the cost of building software. The toolkit map: which tool and which building block (prompt, project instructions, skill, connector, agent, automation) for which job. Vibe coding versus AI-assisted engineering: where the "vibes" are enough (prototypes, internal tools, tests of demand) and where they are not (regulated, high-volume, safety-critical). Problem Pull versus AI Push. A one-paragraph product brief: user, pain, what the tool does, how we know it works.
+**08:00 to 10:00.** Framework recap (45): what changed in the cost of building software; the toolkit map; vibe coding versus AI-assisted engineering; Problem Pull versus AI Push; the one-paragraph brief. Then the build lab starts with the instructor's live demo, which includes a bug and its recovery, and teams begin their own first version (75).
 
-**Build.** The lab opens with the live demo: the instructor builds and deploys a working app from a brief in 20 minutes, including a bug. Teams then choose a problem, write the brief, and build a first version with a conversational app builder. Deploy to a public address. Open it on a phone. Second deliverable: a one-page public site for the product.
+**10:15 to 12:15.** The build lab continues until the app is deployed and open on a phone, and the public page is up (45). Critique: two teams show their app and the class applies the rubric (45). Milestone review: M1 explained, teams confirmed (30).
 
-**Critique.** Reflection prompt: *what did you expect to be hard that was easy, and vice versa?*
+### Setup clinic
 
-**Milestone set:** M1, individual, due before session 2. A one-page problem brief and product specification (user, pain, value hypothesis, success metric, three user stories with acceptance criteria), written as an instruction to an AI.
+**12:30 to 14:30.** The [toolkit setup guide](setup.html) done in the room, with the instructor walking between tables: the remaining accounts, the app moved to a private repository, the assistant running it on every member's laptop, the database project, the hosting address, and where keys go (90). Then the M1 brief is started in teams (30). Everyone leaves Day 1 with a working setup, so the seven weeks ahead depend on nobody's luck.
 
-## Session 2. Specify, iterate, keep what works
+## Between the days, 30 November 2026 to 15 January 2027
+
+| By | What | Who |
+|---|---|---|
+| Sunday 13 December 2026, 23:59 | **M1.** Problem brief and product specification. Written feedback comes back before Day 2. | Individual |
+| Sunday 10 January 2027 | The five checks of the setup guide pass, and "Before Day 2" is done: the model provider's account, a USD 10 monthly spending limit and the key on the hosting platform. | Team |
+| Friday 15 January 2027 | The pages of Classes 2 to 5 read, about six and a half hours spread over the weeks. Anthropic's *Building effective agents* read. | Individual |
+| Friday 15 January 2027 | 20 to 30 messages collected for the test set: real ones with names, phone numbers and addresses changed, or realistic ones you write. | Team |
+| Friday 15 January 2027 | The baseline of your brief's metric: time five requests done the current way, before any tool. | Team |
+
+Questions go to the course channel or to [sebastian.azocarm@usm.cl](mailto:sebastian.azocarm@usm.cl).
+
+## Day 2, Saturday 16 January 2027
+
+```{=html}
+<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Class 2 · framework and the first part of the build lab:120|Coffee break:30|Class 2 · build lab, critique and milestone review:120|Lunch:90|Class 3 · framework and the first part of the build lab:120|Coffee break:30|Class 3 · build lab, critique and milestone review:120"></div>
+```
+
+### Class 2. Specify, iterate, keep what works
 
 Class page: [Class 2 · Specify, iterate, keep what works](class2.html)
 
-**Build goal:** the application stores data for signed-in users and has a version history you can roll back, and the team's assistants know how the team works: project instructions, one skill and one read-only connector.
+**Build goal.** The application stores data for signed-in users and has a version history you can roll back, and the team's assistants know how the team works: project instructions, one skill and one read-only connector.
 
-**Before the session.** Submit M1. Read the class page (100 min). Complete the second part of the [toolkit setup guide](setup.html): the app in a private repository, opened in your assistant, with an empty database project and a hosting address (60 min).
+**08:00 to 10:00.** Framework recap (45): prompting as specification; small steps, checkpoints and rollback; where the data lives; UX for output that is sometimes wrong; the three things people call "the AI"; project instructions and skills; connectors and the Model Context Protocol. Then the live demo and the first part of the build lab: the database and sign-in, as two separate requests with two checkpoints (75).
 
-**Framework.** Prompting as specification: the product brief, user stories and acceptance criteria as the contract with the assistant. Working in small steps with checkpoints, branches and rollback. Where the data lives. UX for AI products: non-deterministic output, visible uncertainty, error and loading states. The three things people call "the AI": the assistant you build with, the assistant a person uses directly, and the model inside the app. Project instructions and skills: packaging "how we do it here". Connectors and the Model Context Protocol: scoped access to company systems, read before write.
+**10:30 to 12:30.** The build lab continues: a deliberate rollback, two UX patterns, the project instructions file, one skill that triggers, one read-only connector (45). Critique: two teams show a user story end to end and their skill being used; rubric criterion in focus, *functionality* (45). Milestone review: feedback on M1, briefing for M2 (30).
 
-**Build.** Add the database and sign-in, as two separate requests with two checkpoints. Practice a deliberate rollback: break something, go back. Apply two UX patterns. Write the project instructions file, create one skill and test that it triggers, connect one company source read-only.
-
-**Critique.** Two teams demonstrate a user story end to end and show their skill being used. Rubric criterion in focus: *functionality*.
-
-**Milestone set:** M2, team, due before session 3. Deployed prototype v1 with sign-in and stored data, three working user stories, the project instructions file, one skill, one connector, a private repository, and each member's build log.
-
-## Session 3. Add intelligence, then prove it works
+### Class 3. Add intelligence, then prove it works
 
 Class page: [Class 3 · Add intelligence, then prove it works](class3.html)
 
-**Build goal:** the application uses a language model for one capability that matters to the user, the team can show a test set with results before and after a guardrail, and one step runs either as an agent that waits for approval or as a scheduled automation.
+**Build goal.** The application uses a language model for one capability that matters to the user, the team can show a test set with results before and after a guardrail, and one step runs either as an agent that waits for approval or as a scheduled automation.
 
-**Before the session.** Submit M2. Read the class page (100 min). Read Anthropic, *Building effective agents* (20 min). Complete "Before session 3" in the [toolkit setup guide](setup.html): the model provider's account, the spending limit and the key (25 min). Collect 20 to 30 messages your AI feature will receive: real ones with names, phone numbers and addresses changed, or realistic ones you write.
+**14:00 to 16:00.** Framework recap (45): what a model call costs; four patterns that cover most business cases; retrieval over company documents; agents and the three levels of autonomy; automations with owners, logs and limits; test sets. Then the live demo and the first part of the build lab: the products table, the model connected the right way, the AI feature deployed and tested at the public address (75).
 
-**Framework.** Language-model APIs for managers: a request, a response, tokens, cost, latency, the context window, choosing a model. Four patterns that cover most business cases: classification, extraction with structured output, summarization, conversational assistant. Retrieval over company documents: when you need it and how it fails. Agents: a model in a loop with tools, and the three levels of autonomy. Automations: triggers, schedules, owners, logs and spending limits. Evaluation: a test set, a success definition, a human in the loop.
+**16:30 to 18:30.** The build lab continues: the test set run before and after a guardrail, then one of two, the agentic step with approval or the morning digest (45). Critique: pass rates before and after the guardrail; rubric criterion in focus, *AI quality and safety* (45). Milestone review: M2 checked, M3 explained, Day 3 explained (30).
 
-**Build.** Add one language-model capability to the product. Build a test set from the pre-work messages, run it, record results. Add a guardrail and re-run. Then one of two: an agentic step that proposes and waits for approval, or a scheduled automation (for the running case, a morning digest of pending quotes). The other one is homework.
+**After 18:30.** The product is frozen: no new features until Demo Day. On Day 3 you only fix security findings. **M2** is the state of your repository at the end of Day 2; submit the link and each member's build log by **23:59**.
 
-**Critique.** Teams report the number of tests passed before and after the guardrail. Rubric criterion in focus: *AI quality and safety*.
+## Day 3, Sunday 17 January 2027
 
-**Milestone set:** M3, team, due before session 5. The AI feature deployed, the test set and results, the guardrail, one agentic step with approval and one scheduled automation, a baseline and one measurement of the brief's metric on at least five timed requests, and a two-page risk memo (written after session 4).
+```{=html}
+<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Class 4 · framework and the build lab:120|Coffee break:15|Class 4 · build lab, last part:30|Class 5 · pitch clinic:30|Class 5 · Demo Day:60|Coffee break:15|Class 5 · Demo Day:60|Class 5 · strategy revisited:30|Class 5 · reflection and peer assessment:30"></div>
+```
 
-## Session 4. Govern what you built
+### Class 4. Govern what you built
 
 Class page: [Class 4 · Govern what you built](class4.html)
 
-**Build goal:** the application has no leaked secrets, authorization is enforced, the assistants' permissions are minimal, personal data is handled deliberately, the monthly cost is known, and the team has made the build / buy / vibe decision.
+**Build goal.** No leaked secrets, authorization enforced, the assistants' permissions as small as the job allows, personal data handled deliberately, the monthly cost known, and the build / buy / vibe decision made: keep vibe coding it, hand it to engineering to build properly, buy a product, or stop.
 
-**Before the session.** Read the class page (95 min). Run the [security checklist](security-checklist.html) on your own app and bring the results (30 min). Skim the OWASP Top 10 for LLM Applications (15 min).
+**08:00 to 10:00.** Framework recap (30): secrets, authorization, prompt injection, permissions, personal data under Ley 21.719, cost at scale, maintainability. Then the build lab (90), which opens with the [security checklist](security-checklist.html) run on your own app in the room and goes on to fix what it finds.
 
-**Framework.** Security of AI-generated software: secrets, authentication versus authorization, prompt injection in messages and in content returned by connectors. Permissions for skills, connectors and agents: least privilege, approval for consequential actions, third-party skills as a supply chain. Data protection: personal data under Ley 21.719, what vendors do with your data. Cost: token economics, budgets, caching, runaway automations. Maintainability, ownership of generated code and lock-in. The build / buy / vibe decision and its four answers: keep vibe coding it, hand it to engineering to build properly, buy a product, or stop.
+**10:15 to 10:45.** The build lab ends with the cost at 10x and 100x and the build / buy / vibe decision (30). In this format Class 4 has no separate critique block: the questions an engineering team would ask go into your risk memo.
 
-**Build.** Fix the findings of the security checklist with the assistant. Reduce every connector and tool to the least permission that still works. Decide purpose, retention and provider for the personal data you hold. Compute the cost of the AI feature at 10x and 100x current usage. Make the build / buy / vibe decision. The risk memo is written from these results as homework.
-
-**Critique.** A simulated handoff: one team presents its product to another team acting as the engineering department, which asks the questions from the framework block. Rubric criterion in focus: *communication*.
-
-**Before Demo Day.** Finish M3. Read the Class 5 page (90 min). Generate the deck with AI from the build log, the test results and the risk memo (Class 5, topic 1), verify every number, and rehearse once with another team.
-
-## Session 5. Demo Day and strategy revisited
+### Class 5. Demo Day and strategy revisited
 
 Class page: [Class 5 · Demo Day and strategy revisited](class5.html)
 
-| Block | Minutes | What happens |
+**10:45 to 11:15. Pitch clinic.** Teams generate the deck with AI from their own sources (build log, test results, the morning's security findings, cost figures), check every number against its source, and do one timed run of ten minutes.
+
+**11:15 to 13:30. Demo Day** (120 minutes, with the coffee break at 12:15). Each team has 10 minutes plus 5 of questions in front of a panel (the instructor and two invited managers or alumni): a live demonstration with a user story, the problem and the baseline of the metric, evidence from the test set, the main security findings, the build / buy / vibe decision and a roadmap to production. The deck is generated with AI and its use is declared. The time fits eight teams; with more teams, the strategy block shortens.
+
+**13:30 to 14:00. Strategy revisited.** What remains a moat when building is cheap; citizen developers and how an organization governs them; the personal AI work system you keep after the course.
+
+**14:00 to 14:30. Reflection.** The reflection memo is started from the build log (20) and teams complete the peer assessment (10).
+
+## After the course
+
+| By | What | Who |
 |---|---|---|
-| Pitch clinic | 30 | Last check of the deck and the demo against the rubric |
-| Demo Day | 150 | Each team: 10 minutes plus 5 of questions, in front of the panel |
-| Strategy revisited | 30 | What remains a moat; from prototype to production |
-| Reflection memo | 30 | Memo drafted before class and finished in class from the build log (20), peer assessment (10) |
+| Sunday 24 January 2027, 23:59 | **M3.** The AI feature deployed, the test set with results and the guardrail, the agentic step with approval and the scheduled automation, the brief's metric measured with the tool on five timed requests, and the two-page risk memo with its two annexes. | Team |
+| Sunday 24 January 2027, 23:59 | **Reflection memo**, 400 to 600 words, from the build log. | Individual |
 
-**Build goal:** none. The product is frozen 24 hours before.
+## Deliverables and weights
 
-**Demo Day (150 min).** Each team has 10 minutes plus 5 of questions in front of a panel (instructor plus two invited managers or alumni): live demonstration of the product with a user story, the problem and value hypothesis, evidence from the test set, the risk memo's main findings, the build / buy / vibe decision and a roadmap to production. The deck is generated with AI and its use is declared. The class grades with the [rubric](rubric.html); the panel's grade counts.
-
-**Strategy revisited (30 min).** What remains a moat when building is cheap (proprietary data, distribution, workflow integration, earned trust); organizational implications of citizen developers and how to govern them; the personal AI work system each student keeps after the course: a library of skills, trusted connectors, one automation with an owner and a log.
-
-**Reflection (30 min).** Individual reflection memo, drafted before class and finished in class from the build log: what the AI did, what I decided, where it misled me, what I would do differently, and how this changes my work with technology teams. Peer assessment within teams.
-
-## Deliverable summary
-
-| Deliverable | Who | When | Weight |
+| Deliverable | Who | Due | Weight |
 |---|---|---|---|
-| M1. Problem brief and product specification | Individual | Before S2 | 15% |
-| M2. Deployed prototype v1 with one skill, one connector and build logs | Team | Before S3 | 20% |
-| M3. AI feature, test set, agentic step, automation, metric measurement and risk memo | Team | Before S5 | 25% |
-| Demo Day, with a deck generated with AI and declared | Team, individually adjusted | S5 | 25% |
-| Reflection memo and participation | Individual | S5 | 15% |
+| M1. Problem brief and product specification | Individual | Sunday 13 December 2026 | 15% |
+| M2. Prototype v1 with login, data, one skill, one connector and build logs | Team | Saturday 16 January 2027 | 20% |
+| Demo Day, with a deck generated with AI and declared | Team, individually adjusted | Sunday 17 January 2027 | 25% |
+| M3. AI feature, test set, agentic step, automation, metric measurement and risk memo | Team | Sunday 24 January 2027 | 25% |
+| Reflection memo and participation | Individual | Sunday 24 January 2027 | 15% |
+
+Everything is graded with the [rubric](rubric.html). Written work is due at 23:59 on the day shown.
+
+**The data rule.** Until your team has completed the Class 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade.
+
+**Work outside class.** The class pages take 90 to 100 minutes each, the milestones about 8 hours in total, and Demo Day preparation about 7 hours, most of it in the weeks between Day 1 and Day 2.

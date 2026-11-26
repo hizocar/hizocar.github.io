@@ -1,6 +1,6 @@
 ---
 title: "Classes"
-subtitle: "Five interactive sessions. Each page teaches on its own, with simulators, practice questions and the build lab for the session."
+subtitle: "Five classes over three days. Each page teaches on its own, with simulators, practice questions and the build lab of the class."
 lang: en
 toc: false
 ---
@@ -9,15 +9,15 @@ toc: false
 <div class="cursos-grid">
 
 <a class="curso-card" href="class1.html">
-  <span class="curso-tag">Session 1 · 4 h</span>
+  <span class="curso-tag">Day 1 · Sun 29 Nov · 08:00</span>
   <span class="curso-sigla">Milestone M1 · problem brief</span>
   <h3>Ship something today</h3>
-  <p>What changed in the cost of building, the toolkit map, Problem Pull vs AI Push, when vibes are enough, and a first deployed app and web page before the session ends.</p>
+  <p>What changed in the cost of building, the toolkit map, Problem Pull vs AI Push, when vibes are enough, and a first deployed app and web page before the morning ends.</p>
   <span class="curso-link">Open class 1 →</span>
 </a>
 
 <a class="curso-card" href="class2.html">
-  <span class="curso-tag">Session 2 · 4 h</span>
+  <span class="curso-tag">Day 2 · Sat 16 Jan · 08:00</span>
   <span class="curso-sigla">Milestone M2 · prototype v1</span>
   <h3>Specify, iterate, keep what works</h3>
   <p>Prompting as specification, checkpoints and rollback, a database and login, UX for uncertain output, and teaching the assistant how you work with project instructions, skills and connectors (MCP).</p>
@@ -25,7 +25,7 @@ toc: false
 </a>
 
 <a class="curso-card" href="class3.html">
-  <span class="curso-tag">Session 3 · 4 h</span>
+  <span class="curso-tag">Day 2 · Sat 16 Jan · 14:00</span>
   <span class="curso-sigla">Milestone M3 · AI feature and test set</span>
   <h3>Add intelligence, then prove it works</h3>
   <p>What a model call costs, four patterns, retrieval over company documents, an agent that acts with approval, an automation that runs every morning, and a test set with a guardrail.</p>
@@ -33,7 +33,7 @@ toc: false
 </a>
 
 <a class="curso-card" href="class4.html">
-  <span class="curso-tag">Session 4 · 4 h</span>
+  <span class="curso-tag">Day 3 · Sun 17 Jan · 08:00</span>
   <span class="curso-sigla">Risk memo · build / buy / vibe</span>
   <h3>Govern what you built</h3>
   <p>Leaked keys, authorization, prompt injection, least-privilege permissions for skills, connectors and agents, personal data under Ley 21.719, cost at scale, and when to hand off.</p>
@@ -41,7 +41,7 @@ toc: false
 </a>
 
 <a class="curso-card" href="class5.html">
-  <span class="curso-tag">Session 5 · 4 h</span>
+  <span class="curso-tag">Day 3 · Sun 17 Jan · 10:45</span>
   <span class="curso-sigla">Demo Day · reflection memo</span>
   <h3>Demo Day and strategy revisited</h3>
   <p>The deck built with AI, the 10-minute pitch, the rubric, what remains a moat when building is cheap, the road to production, and the AI work system you keep.</p>
@@ -53,19 +53,19 @@ toc: false
 
 ## How the classes work
 
-Sessions 1 to 4 have the same rhythm: a 45-minute framework block, a 2-hour guided build on your team's own product with a short break, a 45-minute critique, and a 30-minute milestone review. Session 5 is Demo Day. The class page is the framework block and the lab guide in one place. Read it before the session (90 to 100 minutes); during the session you will spend most of the time building.
+Each class takes two two-hour blocks. The first opens with a recap of the class page, which you read beforehand, and starts the build lab; the second finishes the lab, then comes the critique and the milestone review. Class 4 is shorter and Class 5 is Demo Day; the [schedule](sessions.html) gives every block. Read each page before its day, 90 to 100 minutes; in the room you will spend most of the time building. Day 2 and Day 3 follow each other, so read the pages of Classes 2 to 5 in the seven weeks after Day 1.
 
-The simulators are safe to play with. The practice questions explain why each wrong option is wrong. The lab checklist is saved in your browser, so you can come back to it between sessions.
+The simulators are safe to play with. The practice questions explain why each wrong option is wrong. The lab checklist is saved in your browser, so you can come back to it between days.
 
 ## Support pages
 
 | Page | When you need it |
 |---|---|
-| [Toolkit setup guide](setup.html) | Before session 1 (accounts) and before session 2 (repository, database, hosting, keys) |
-| [Security checklist](security-checklist.html) | Before session 4: fourteen checks to run on your own app |
+| [Toolkit setup guide](setup.html) | Before Day 1 (accounts), in the setup clinic on Day 1 (repository, database, hosting, keys) and before Day 2 (model account) |
+| [Security checklist](security-checklist.html) | In the Class 4 lab on Day 3: fourteen checks run on your own app |
 | [Rubric](rubric.html) | Before every milestone and before Demo Day |
 
-One rule applies from the first minute. Until your team has completed the session 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade.
+One rule applies from the first minute. Until your team has completed the Class 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade.
 
 ## What you will have used by the end
 
