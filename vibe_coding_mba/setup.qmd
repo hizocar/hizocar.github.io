@@ -44,7 +44,7 @@ Day 1 is Sunday 29 November 2026. Only the GitHub account and the problem are ce
 
 ## In the setup clinic (Day 1, 12:30 to 14:30)
 
-In Class 1 you built a first version inside the app builder. In the third block of Day 1 you move it, in the room and with the instructor walking between tables, to a place where your assistant can work on it properly, and you prepare the database. Parts A to E take about 75 minutes; the rest of the block goes to the M1 brief. If you miss Day 1, do these parts on your own before Sunday 10 January 2027 and write to the course channel when you get stuck.
+In Class 1 you built a first version inside the app builder. In the third block of Day 1 you move it, in the room and with the instructor walking between tables, to a place where your assistant can work on it properly, and you prepare the database. Parts A to E take about 75 minutes; the clinic gives them 90, with time to fix what fails, and the last 30 minutes go to the M1 brief. If you miss Day 1, do these parts on your own before Sunday 10 January 2027 and write to the course channel when you get stuck.
 
 **Who does what.** Parts A, C and D are done once per team, by the member whose builder account holds the app. Part B is done by every member, on their own laptop. Do the parts in order.
 
@@ -96,7 +96,7 @@ In Class 1 you built a first version inside the app builder. In the third block 
 4. Accept the suggested settings and deploy. The platform gives you a public address.
 5. Open that address on your phone.
 
-**It worked when:** your app opens on your phone at an address you did not have yesterday, and the secret key appears in the hosting platform's settings and nowhere else: no chat, no message, no file.
+**It worked when:** your app opens on your phone at an address from the hosting platform, not from the builder, and the secret key appears in the hosting platform's settings and nowhere else: no chat, no message, no file.
 
 ### Part E. Five checks (10 minutes)
 

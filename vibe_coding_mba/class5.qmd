@@ -85,7 +85,7 @@ The roadmap figure is the kind of number to check twice: about 2,600 requests a 
 
 **AI use is declared, here as everywhere in the course.** The closing slide names the sources and says the slides were generated with an assistant and checked by the team. The prompts go in the build log.
 
-**The public page from Class 1 becomes the demo page.** Update it with what is now true and give the panel its address on the closing slide. The same rule applies: no claim on it that your sources cannot support.
+**The public page from Class 1 becomes the demo page.** Update it before Day 2 with the brief and the baseline, and give the panel its address on the closing slide; like the product, it is frozen at 18:30 on Day 2. The same rule applies: no claim on it that your sources cannot support.
 
 A side example. Imagine an HR team that built a tool for onboarding contractors and asks the assistant for "a deck about our project". It returns 19 slides, including one on the future of work. The team deletes every slide whose title is not one of their six sentences and presents eight.
 
@@ -157,7 +157,7 @@ The pitch has six blocks, the same six as your storyline.
 | Decision | 1:00 | The build / buy / vibe decision: keep vibe coding it, hand it to engineering to build properly, buy a product, or stop, with the reasoning. |
 | Roadmap | 1:30 | What has to be true to put this in front of 14 reps, who does it, and roughly what it costs. |
 
-Two rules that are easy to break. First, the demo is live. Use the deployed app; if it fails, play the recording and say that it is a recording. Screenshots alone tell the panel you do not trust your product, and a failure you name becomes a risk finding, which is what the risks block is for. Second, the business case is not a slide of benefits. It is the metric from your brief (three reps use it for two weeks and quote time drops below one hour), the number you measured in M3 on at least five timed requests, and the gap between them.
+Two rules that are easy to break. First, the demo is live. Use the deployed app; if it fails, play the recording and say that it is a recording. Screenshots alone tell the panel you do not trust your product, and a failure you name becomes a risk finding, which is what the risks block is for. Second, the business case is not a slide of benefits. It is the metric from your brief (three reps use it for two weeks and quote time drops below one hour), the baseline you timed by hand on five requests before Day 2, and the gap between it and the target; the measurement with the tool comes in M3.
 
 A side example. Imagine a dental clinic team that built a tool for rescheduling appointments. Their first rehearsal spends six minutes on how retrieval works. Their second opens with the receptionist's screen at 8:05 on a Monday, 40 unread rescheduling requests, and the tool proposing new slots for them in twelve seconds. The panel asks about retrieval themselves, which is where you want that question to come from.
 
@@ -196,7 +196,7 @@ Executives are used to pitches that end with "and so we need budget". A working 
 ## Topic 3 · How the panel grades you {#topic-3}
 
 ```{=html}
-<p class="vc-guide"><strong>Guiding question:</strong> If you could improve one thing in QuoteDesk tonight, which one would raise your grade most?</p>
+<p class="vc-guide"><strong>Guiding question:</strong> If you could improve one thing in QuoteDesk before Day 2, which one would raise your grade most?</p>
 ```
 
 Demo Day is 25% of the course grade. It is graded as a team, with an individual adjustment of up to ten points from the build log and the peer assessment. That adjustment applies to the Demo Day grade only. The class grades with the rubric too, and the panel's grade is the one that counts. The rubric has four criteria, the same four used for every graded component of the course:
@@ -212,7 +212,7 @@ Where a criterion does not apply to a component, it is left out. M1, a brief wit
 
 Each criterion has four levels. Level 1 is "absent or not credible". Level 4 is "a manager could act on this tomorrow". Expect to arrive at level 3 on functionality, because you have been building across four classes, and at level 2 on problem and value if the brief from Class 1 was never revisited. That is the cheapest grade to recover: the baseline of the metric you wrote in M1, timed by hand on five requests before Day 2 and shown next to the target, moves you a full level on Demo Day; the measurement with the tool does the same in M3.
 
-The simulator lets you score QuoteDesk as the panel would. It converts levels into an approximate grade: level 2 across the board is about 55, the pass mark, and level 3 is about 80. Look for the criterion that is lowest in your own case and is one evening of work away from the next level.
+The simulator lets you score QuoteDesk as the panel would. It converts levels into an approximate grade: level 2 across the board is about 55, the pass mark, and level 3 is about 80. Look for the criterion that is lowest in your own case and can be raised before Day 2.
 
 ```{=html}
 <div class="vc-widget" data-widget="c5-rubric"></div>
@@ -268,8 +268,8 @@ Large organizations decide on prototypes with a rubric too, usually an unwritten
 <li>While a team presents, every other student scores it on the four criteria of the <a href="rubric.html">rubric</a>. Scores are collected after each pitch, not at the end.</li>
 <li>The panel's grade counts for the Demo Day component. The class scores go back to each team as feedback the same day.</li>
 <li>After team 4, the coffee break at 12:15. Nobody touches their product; it has been frozen since the end of Day 2, apart from the security fixes of the Class 4 lab, and the panel knows it.</li>
-<li>After the last pitch, the panel gives five minutes of overall comments before the strategy block.</li>
-<li>Products stay deployed for one week after Demo Day so the instructor can verify any claim made in a pitch.</li>
+<li>The strategy block opens with five minutes of overall comments from the panel.</li>
+<li>Products stay deployed until Sunday 31 January 2027, one week after M3, so the instructor can verify any claim made in a pitch or in M3.</li>
 </ol>
 </div>
 ```
@@ -278,7 +278,7 @@ Three prompts for rehearsing. Use them with your team in the weeks before Day 2,
 
 ```{=html}
 <div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the hostile panel</div><div class="vc-prompt-b">You are a skeptical operations director at a Chilean food distributor with 14 sales reps. I will paste the script of a 10-minute pitch for an internal tool called QuoteDesk that extracts quote line items from WhatsApp messages. Ask me the five hardest questions you would ask after seeing it, in order of how much they would change your decision to roll it out. Do not be polite. Then tell me which of my claims you would want to verify yourself.</div></div>
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the strict grader</div><div class="vc-prompt-b">Here is our rubric: four criteria (problem and value, functionality, AI quality and safety, communication), each scored 1 to 4, where 4 means a manager could act on it tomorrow. Here are our pitch script and our test-set results. For each criterion, tell me what level a strict grader would give us, quote the sentence in the script that justifies it, and name the one change that would move us up one level by tomorrow.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the strict grader</div><div class="vc-prompt-b">Here is our rubric: four criteria (problem and value, functionality, AI quality and safety, communication), each scored 1 to 4, where 4 means a manager could act on it tomorrow. Here are our pitch script and the test-set results we expect. For each criterion, tell me what level a strict grader would give us, quote the sentence in the script that justifies it, and name the one change that would move us up one level before Day 2.</div></div>
 <div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the clock</div><div class="vc-prompt-b">Here is our script, block by block. The limits are: problem 1:00, live demo 3:00, evidence 2:00, risks 1:30, decision 1:00, roadmap 1:30. At 130 words a minute, tell me how long each block runs. Where a block is over, cut it to fit without removing any number or the name of any source, and show me what you cut. Do not add anything.</div></div>
 ```
 
@@ -296,11 +296,11 @@ What the panel hears in a weak and a strong risks block:
 <li>Product frozen at the end of Day 2; after that, only the security fixes of the Class 4 lab.</li>
 <li>Deployed address opens on a phone and on the classroom screen; the login for the demo rep works.</li>
 <li>A 90-second recording of the demo story, made in the last step of the Class 3 lab, is saved on the presenting laptop as the fallback if the deployed app fails.</li>
-<li>One user story chosen for the demo, with a de-identified message, rehearsed three times, under three minutes.</li>
+<li>One user story chosen for the demo, the same one as the fallback recording, run end to end at the public address in the last step of the Class 3 lab and once more on the classroom screen in the pitch clinic.</li>
 <li>Deck generated from your sources: six sentences, one message per slide, eight slides.</li>
 <li>Every number on every slide traced to the build log, the test set, the Class 4 findings or the cost figures.</li>
 <li>Closing slide names the sources and declares the use of AI; the prompts are in the build log.</li>
-<li>The public page from Class 1 updated as the demo page, with no claim your sources cannot support.</li>
+<li>The public page from Class 1, updated before Day 2, used as the demo page, with no claim your sources cannot support.</li>
 <li>Three risk findings with what was done about each, and what is still open.</li>
 <li>The build / buy / vibe decision stated in one sentence, and three conditions for rollout with an owner and a rough cost for each.</li>
 <li>The structure of the pitch rehearsed against the clock in the weeks before Day 2, with another team acting as the panel.</li>
@@ -438,7 +438,7 @@ Then the peer assessment within your team, in the last ten minutes: each member 
 ## Your AI work system {#after}
 
 ```{=html}
-<p class="vc-guide"><strong>Guiding question:</strong> The assistant you used this month will be replaced before you finish the MBA. What do you keep?</p>
+<p class="vc-guide"><strong>Guiding question:</strong> The assistant you used in this course will be replaced before you finish the MBA. What do you keep?</p>
 ```
 
 **Due at the end of Day 3:** the peer assessment. **Sunday 24 January:** the reflection memo and M3. **One week after that:** revoke the keys of your deployed product and delete the personal data in it, then either hand it to an owner in your organization or shut it down. A deployed tool with no owner is the first risk on the memo you just wrote.

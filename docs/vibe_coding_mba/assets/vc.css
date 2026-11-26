@@ -548,3 +548,57 @@ a.vc-route-a:hover { background: var(--hz-accent-soft); transform: translateX(3p
   .vc-tree button { padding: 0.4rem 0.5rem; }
   .vc-control input[type="range"] { height: 2rem; }
 }
+
+/* ==========================================================================
+   Elegance pass: no thick one-sided borders. Meaning that was carried by a
+   coloured side bar is carried by a small dot next to the label instead.
+   ========================================================================== */
+main.content .callout { border-left-width: 1px !important; }
+
+/* Guiding question as a quiet pull quote between two brass hairlines */
+.vc-guide {
+  border-left: 0; border-radius: 0; background: transparent; padding: 0.85rem 0;
+  border-top: 1px solid var(--vc-brass-soft); border-bottom: 1px solid var(--vc-brass-soft);
+  font-family: var(--hz-serif); font-size: 1.32rem; line-height: 1.38; font-style: italic; color: var(--hz-ink);
+}
+.vc-guide strong { font-family: inherit; font-style: normal; font-weight: 600; color: var(--vc-brass); }
+
+/* Widgets, labs and quizzes: one even hairline, the kind shown on the chip */
+.vc-widget, .vc-widget.is-accent, .vc-widget.is-ok, .vc-widget.is-bad { border-top: 1px solid var(--hz-line); }
+.vc-widget.is-accent .vc-chip-k { background: var(--hz-accent); color: var(--hz-on-accent); }
+.vc-widget.is-ok .vc-chip-k { background: var(--vc-ok); color: var(--hz-bg); }
+.vc-widget.is-bad .vc-chip-k { background: var(--vc-bad); color: var(--hz-bg); }
+.vc-lab { border-left: 1px solid var(--hz-line); border-top: 2px solid var(--hz-ink); border-radius: 0 0 var(--vc-radius) var(--vc-radius); }
+.vc-lab-t { font-family: var(--hz-serif); font-weight: 600; font-size: 1.3rem; }
+.vc-quiz { border-left: 1px solid var(--hz-line); }
+
+/* Stat cards: the tone becomes a dot before the label */
+.vc-stat, .vc-stat.is-accent, .vc-stat.is-ok, .vc-stat.is-bad, .vc-stat.is-warn { border-left: 1px solid var(--hz-line); --vc-tone: var(--vc-ai); }
+.vc-stat.is-accent { --vc-tone: var(--hz-accent); }
+.vc-stat.is-ok { --vc-tone: var(--vc-ok); }
+.vc-stat.is-bad { --vc-tone: var(--vc-bad); }
+.vc-stat.is-warn { --vc-tone: var(--vc-warn); }
+.vc-stat > span::before { content: ""; display: inline-block; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--vc-tone); margin-right: 0.4rem; vertical-align: 0.06em; }
+
+/* Prompt blocks: who is speaking is already the dot in the header */
+.vc-prompt.is-ai, .vc-prompt.is-weak, .vc-prompt.is-strong { border-left: 1px solid var(--hz-line); }
+
+/* Agent loop: the step type becomes a dot before its label */
+.vc-loop li.is-tool, .vc-loop li.is-human, .vc-loop li.is-done, .vc-loop li.is-bad { border-left: 1.5px solid var(--hz-line); }
+.vc-loop li > b::before { content: ""; display: inline-block; width: 0.42rem; height: 0.42rem; border-radius: 50%; background: var(--hz-line-strong); margin-right: 0.35rem; vertical-align: 0.08em; }
+.vc-loop li.is-think > b::before { background: var(--vc-ai); }
+.vc-loop li.is-tool > b::before { background: var(--vc-ai); }
+.vc-loop li.is-human > b::before { background: var(--hz-accent); }
+.vc-loop li.is-done > b::before { background: var(--vc-ok); }
+.vc-loop li.is-bad > b::before { background: var(--vc-bad); }
+
+/* Weak and strong examples: the label carries the colour */
+.vc-compare .is-weak, .vc-compare .is-strong { border-top: 1px solid var(--hz-line); }
+.vc-compare .is-weak > p:first-child { color: var(--vc-bad); }
+.vc-compare .is-strong > p:first-child { color: var(--vc-ok); }
+
+/* Counters in the text face; inline code in ink on the surface tone, not the theme's pink */
+.vc-practice-score { font-family: inherit; font-size: 0.84rem; font-variant-numeric: tabular-nums; }
+main.content p code:not(.sourceCode), main.content li code:not(.sourceCode), main.content td code:not(.sourceCode) {
+  color: var(--hz-ink-2); background: var(--hz-surface); border-radius: 4px; padding: 0.08em 0.32em; font-size: 0.86em;
+}

@@ -116,7 +116,7 @@ As set out in the MBA admission profile. In addition:
 
 ## 7. Methodology (teaching and learning strategies)
 
-- **Intensive format, build first then reflect.** The course is taught in three intensive days, 20 contact hours in two-hour blocks. Each class combines a short framework recap, a guided build in teams on their own project, and critique of the work; the last class is Demo Day. A setup clinic on the first day prepares every student's tools in the room.
+- **Intensive format, build first then reflect.** The course is taught in three intensive days, 20 contact hours in two-hour blocks. Classes 1 to 3 combine a short framework recap, a guided build in teams on their own project, and critique; Class 4 is a governance lab; the last class is Demo Day. A setup clinic on the first day prepares every student's tools in the room.
 - **Interactive class pages.** Each class has a self-teaching page with simulators, practice questions, the lab guide and prompts to adapt, read before class (90 to 100 minutes) so class time is spent building. Three support pages complete them: a [toolkit setup guide](setup.html), a [security checklist](security-checklist.html) and the [rubric](rubric.html).
 - **A live demonstration** by the instructor opens every build lab, including one failure and its recovery.
 - **One cumulative team project** (teams of 2 to 3) chosen by the students from their own organizations, carried from problem brief to deployed product to Demo Day. A running case, a food distributor's quote-request tool, is used in every class.
@@ -124,7 +124,7 @@ As set out in the MBA admission profile. In addition:
 - **Individual build log**: each student keeps a running record of prompts, decisions, failures and what the AI did, used for assessment and reflection.
 - **Peer review** at every milestone with a shared rubric.
 - **Course toolkit** (subject to update each term): an AI assistant that supports project instructions, skills, connectors (MCP), agents and scheduled tasks as the primary tool; a conversational app builder; GitHub for version control; a managed database and a managed hosting platform. Principles are taught tool-agnostically so students can switch tools.
-- **Asynchronous support** through a course channel between sessions.
+- **Asynchronous support** through a course channel between the class days.
 
 ## 8. Assessment of learning outcomes
 
@@ -171,7 +171,7 @@ As set out in the MBA admission profile. In addition:
 |---|---|
 | **In class** | |
 | Lectures / workshop | 16 |
-| Assessment (milestone reviews, Demo Day, peer assessment) | 4 |
+| Assessment (milestone reviews, Demo Day, reflection memo started in class, peer assessment) | 4 |
 | **Autonomous** | |
 | Mandatory assignments (milestones M1 to M3) | 8 |
 | Preparation of presentations (Demo Day) | 7 |

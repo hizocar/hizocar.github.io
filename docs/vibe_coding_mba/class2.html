@@ -82,10 +82,10 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="assets/vc.css">
 <meta property="og:title" content="Sebastián Azócar - Class 2 · Specify, iterate, keep what works">
-<meta property="og:description" content="By the end of this session QuoteDesk keeps quote requests for every rep behind a login, has a history you can roll back, and your team’s assistant knows how Cerro Azul writes a quote and where the price list lives.">
+<meta property="og:description" content="By the end of this class QuoteDesk keeps quote requests for every rep behind a login, has a history you can roll back, and your team’s assistant knows how Cerro Azul writes a quote and where the price list lives.">
 <meta property="og:site-name" content="Sebastián Azócar">
 <meta name="twitter:title" content="Sebastián Azócar - Class 2 · Specify, iterate, keep what works">
-<meta name="twitter:description" content="By the end of this session QuoteDesk keeps quote requests for every rep behind a login, has a history you can roll back, and your team’s assistant knows how Cerro Azul writes a quote and where the price list lives.">
+<meta name="twitter:description" content="By the end of this class QuoteDesk keeps quote requests for every rep behind a login, has a history you can roll back, and your team’s assistant knows how Cerro Azul writes a quote and where the price list lives.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -166,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Class 2 · Specify, iterate, keep what works</h1>
-<p class="subtitle lead">By the end of this session QuoteDesk keeps quote requests for every rep behind a login, has a history you can roll back, and your team’s assistant knows how Cerro Azul writes a quote and where the price list lives.</p>
+<p class="subtitle lead">By the end of this class QuoteDesk keeps quote requests for every rep behind a login, has a history you can roll back, and your team’s assistant knows how Cerro Azul writes a quote and where the price list lives.</p>
 </div>
 
 
@@ -467,7 +467,7 @@ In the business
 <p class="vc-guide"><strong>Guiding question:</strong> you have explained Cerro Azul's quote format to the assistant four times this week. Where should that explanation live so that you never type it again?</p>
 <section id="three-things-people-call-the-ai" class="level3">
 <h3 class="anchored" data-anchor-id="three-things-people-call-the-ai">Three things people call “the AI”</h3>
-<p>Before teaching “the assistant” anything, be exact about which one. From this session on, three different things are in play, and most confusion in AI projects comes from blurring them.</p>
+<p>Before teaching “the assistant” anything, be exact about which one. From this class on, three different things are in play, and most confusion in AI projects comes from blurring them.</p>
 <table class="table">
 <colgroup>
 <col style="width: 25%">
@@ -733,7 +733,7 @@ Build only this. When done, tell me in plain language what you changed.</div></d
 
 <div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · login (step 7, after the database passes)</div><div class="vc-prompt-b">Add sign-in for reps with email and password, and a password reset. There are two roles: rep and manager. Carla's account is the manager; every other account is a rep. Each quote request is tied to the rep who created it and shows that rep's name. After signing in, every rep sees the shared queue of quote requests, newest at the top. Someone who is not signed in sees only the sign-in screen. Then turn on row-level rules in the database so that every table refuses reads and writes when nobody is signed in. Run that test and show me the refusals. Do not change the form or the layout of the list. Build only this, and tell me how to test it on my laptop with two rep accounts and signed out.</div></div>
 <div class="vc-prompt is-ai"><div class="vc-prompt-h">The assistant, a good reply</div><div class="vc-prompt-b">Done. I added sign-in with email and password and a reset link, and two roles: Carla's account is the manager, the others are reps. Each saved request carries the signed-in rep and shows the name in the queue. To test: create two rep accounts, save one request from each, and confirm both appear in the queue under the right name; then sign out and confirm you see only the sign-in screen. I turned on row-level rules: with no signed-in user, reading and writing the quote requests table are both refused, and the two refusals are shown below. I did not touch the form or the layout. Tell me when it passes and I will save the checkpoint "login working" and push it.</div></div>
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the skill (step 11)</div><div class="vc-prompt-b">Create a skill called quote-format as a personal skill of this assistant, not inside the QuoteDesk repository, so that it is available in any conversation.
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the skill (step 10)</div><div class="vc-prompt-b">Create a skill called quote-format as a personal skill of this assistant, not inside the QuoteDesk repository, so that it is available in any conversation.
 
 Description, written so that you will find it: "Drafts or checks a Cerro Azul quote in the house format. Use whenever I ask for a quote, cotización or price offer for a customer, or paste a quote request."
 
@@ -745,7 +745,7 @@ Instructions:
 5. Fill template.md and compare with the example before answering.
 
 Add template.md with our header, the product lines and the delivery note, and one worked example made from the request I paste below. Then tell me how to check, in a new conversation, that the skill loads without my naming it.</div></div>
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · connector test (step 12)</div><div class="vc-prompt-b">Using the price list connector, tell me the list price of aceite 900 cc, caja de 12, and name the file and the row where you found it. Do not change anything in the file. If you cannot find the product, say so. Do not estimate a price.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · connector test (step 11)</div><div class="vc-prompt-b">Using the price list connector, tell me the list price of aceite 900 cc, caja de 12, and name the file and the row where you found it. Do not change anything in the file. If you cannot find the product, say so. Do not estimate a price.</div></div>
 <p>Your lab checklist. It stays saved in this browser.</p>
 <ul class="vc-checklist" id="lab-checklist">
 <li>The project is in a private repository, opens in the building assistant, and has a first checkpoint.</li>
@@ -764,7 +764,7 @@ Add template.md with our header, the product lines and the delivery note, and on
 </section>
 <section id="critique-and-reflection" class="level2">
 <h2 class="anchored" data-anchor-id="critique-and-reflection">Critique and reflection</h2>
-<p>Two teams show one user story end to end: paste a message, pick the customer, save, refresh, sign in as a second rep. The class then asks each presenting team for two things live: roll back one change, and make the quote-format skill trigger without naming it. The rubric criterion in focus this session is <strong>functionality</strong>: does the product work for its user end to end, including the cases that should fail?</p>
+<p>Two teams show one user story end to end: paste a message, pick the customer, save, refresh, sign in as a second rep. The class then asks each presenting team for two things live: roll back one change, and make the quote-format skill trigger without naming it. The rubric criterion in focus in this class is <strong>functionality</strong>: does the product work for its user end to end, including the cases that should fail?</p>
 <p>Reflection prompt for your build log: <em>what did the assistant guess that you should have specified, and which line would you now add to your acceptance criteria, your project instructions or your skill?</em></p>
 </section>
 <section id="after-class-2" class="level2">

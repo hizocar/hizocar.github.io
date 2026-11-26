@@ -28,7 +28,7 @@
     const STORY = [
       { block: "Problem", sec: 60, short: "120 requests a day, 3 to 6 hours each", needs: ["log"],
         sentence: "Cerro Azul's 14 reps retype about 120 quote requests a day, and a quote goes out 3 to 6 hours later.",
-        body: ["Each request costs about 12 minutes of retyping.", "The number we promised to move: quote time, to under one hour. Baseline and result from five timed requests."] },
+        body: ["Each request costs about 12 minutes of retyping.", "The number we promised to move: quote time, to under one hour. Baseline from five requests timed by hand before Day 2; the result with the tool comes in M3."] },
       { block: "Live demo", sec: 180, short: "Live: Paula quotes Doña Elsa", needs: ["shots"],
         sentence: "Paula pastes Restaurante Doña Elsa's message and has a quote ready in under two minutes.",
         body: ["This slide holds the screen while the product loads.", "Then the product itself, live, with a de-identified message."] },
@@ -97,7 +97,7 @@
       }
       if (extras) EXTRA.forEach((s) => deck.push(Object.assign({ key: s.short, msgs: 1 }, s)));
       deck.push({ key: "close", block: "Sources", sec: 0, short: "Sources, and how this deck was made", needs: [], msgs: 1,
-        sentence: "Every number here comes from our build log, test set, risk memo or cost model.",
+        sentence: "Every number here comes from our build log, test set, Class 4 findings or cost model.",
         body: ["Slides generated with an AI assistant from those sources, then checked line by line by the team.", "Stays on screen during the questions."] });
       if (backup) deck.push({ key: "backup", block: "Backup", sec: 0, short: "Backup: 90-second recording", needs: ["shots"], msgs: 1,
         sentence: "A 90-second recording of the same user story, used only if the deployed app fails.",
@@ -295,14 +295,14 @@
      ================================================================ */
   register("c5-rubric", function (root) {
     panel(root, "Score QuoteDesk as the panel would",
-      "Pick a level for each criterion. The total updates, and the note tells you which criterion is cheapest to raise tonight.");
+      "Pick a level for each criterion. The total updates, and the note tells you which criterion is cheapest to raise before Day 2.");
     const CRIT = [
       { k: "Problem and value", lv: [
         "No named user or metric; the problem is a slogan.",
         "User named, pain described, but no measured metric.",
-        "Metric from the brief measured once, on at least five timed requests.",
-        "Metric measured, baseline and gap shown; a manager could decide on it tomorrow."],
-        fix: "Put the five timed requests from M3 on the problem slide, baseline beside result. If you never timed them, do it tonight with de-identified messages." },
+        "The baseline, five requests timed the current way, shown next to the target.",
+        "Baseline with its source, and the plan for the M3 measurement; a manager could decide on it tomorrow."],
+        fix: "Put the baseline, five requests timed by hand before Day 2, on the problem slide beside the target. If you have not timed them, do it before Day 2 with de-identified messages; the measurement with the tool comes in M3." },
       { k: "Functionality", lv: [
         "The demo does not complete a user story.",
         "One story works with the team driving; breaks on a new input.",
@@ -364,7 +364,7 @@
       rows.forEach((r, i) => { r.style.borderColor = !top && i === mi ? "var(--vc-warn)" : ""; });
       noteEl.innerHTML = top
         ? `Total 16 of 16. Every criterion at level 4 means a manager could act on QuoteDesk tomorrow. Rehearse the questions; that is all that is left.`
-        : `Total ${total} of 16, about ${grade}/100${grade >= 55 ? " (a pass)" : " (below 55, not a pass)"}. The cheapest move tonight is <strong>${CRIT[mi].k}</strong>, now at level ${scores[mi] + 1}: ${CRIT[mi].fix}`;
+        : `Total ${total} of 16, about ${grade}/100${grade >= 55 ? " (a pass)" : " (below 55, not a pass)"}. The cheapest move before Day 2 is <strong>${CRIT[mi].k}</strong>, now at level ${scores[mi] + 1}: ${CRIT[mi].fix}`;
       noteEl.className = "vc-note " + (grade >= 70 ? "is-ok" : grade >= 55 ? "" : "is-bad");
     }
     update();

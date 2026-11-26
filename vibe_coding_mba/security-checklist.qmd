@@ -11,7 +11,7 @@ include-after-body:
 
 You do not need to read code to run this list. Each check is something you do in a browser, or a question you put to your building assistant together with the proof you should ask for. An answer of "yes, it is secure" is not proof. Ask to be shown.
 
-Your team runs the checks on your own app at the start of the Class 4 lab, splitting them between members, and notes for each one **pass**, **fail** or **could not tell**. "Could not tell" is a finding. The rest of the lab fixes the failures. You may run them earlier, at home, on the evening of Day 2. Your check marks are saved in this browser.
+Your team runs the checks on your own app at the start of the Class 4 lab, splitting them between members, and notes for each one **pass**, **fail** or **could not tell**. "Could not tell" is a finding. The rest of the lab fixes the failures. Your check marks are saved in this browser.
 
 ## Keys and secrets
 

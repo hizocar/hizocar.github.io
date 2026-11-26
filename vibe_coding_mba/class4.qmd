@@ -1,6 +1,6 @@
 ---
 title: "Class 4 · Govern what you built"
-subtitle: "By the end of this session QuoteDesk has no leaked secrets, every person and every assistant can reach only what the job needs, personal data is handled on purpose, the monthly cost is known, and your team has made the build / buy / vibe decision."
+subtitle: "By the end of this class QuoteDesk has no leaked secrets, every person and every assistant can reach only what the job needs, personal data is handled on purpose, the monthly cost is known, and your team has made the build / buy / vibe decision."
 lang: en
 css: assets/vc.css
 include-after-body:
@@ -493,7 +493,7 @@ Engineering teams are often skeptical of prototypes built outside their control,
 <li><strong>Cost and limits (10 min).</strong> Take your Class 3 cost figures and compute 10x and 100x. Check that the USD 10 monthly spending limit and the email alert from the setup guide are still set on your model account. Give each automation an owner and a log, and check that its failure notification reaches a phone. If you built the morning digest, a view that refreshes by itself and a second alert channel are open items for the risk memo. Write down the usage level at which you would revisit the architecture.</li>
 <li><strong>Maintainability (5 min).</strong> Ask the assistant for a one-page description of how the app is organized and for tests on the two features that matter most. Confirm you can export the code and the data. Save a checkpoint.</li>
 <li><strong>Decide (10 min).</strong> Run the build / buy / vibe matrix for your product as a team, disagree out loud, and record which of the four answers you chose and why.</li>
-<li><strong>Outline the risk memo (5 min).</strong> The memo itself is homework. In class you collect its inputs under six headings: findings and fixes (secrets, authorization, injection), cost at 1x / 10x / 100x and the spending limit, maintainability actions, the build / buy / vibe decision, the five questions for engineering, and what is still open. The memo is two pages. The permissions register and the personal data inventory go with it as one-page annexes.</li>
+<li><strong>Outline the risk memo (5 min).</strong> The memo itself is written in the week after Demo Day, for M3. In class you collect its inputs under six headings: findings and fixes (secrets, authorization, injection), cost at 1x / 10x / 100x and the spending limit, maintainability actions, the build / buy / vibe decision, the five questions for engineering, and what is still open. The memo is two pages. The permissions register and the personal data inventory go with it as one-page annexes.</li>
 </ol>
 </div>
 ```
@@ -543,7 +543,7 @@ Reflection prompt for the build log, two lines before the pitch clinic: what did
 ## After Class 4
 
 - **Pitch clinic at 10:45.** Class 5 starts straight away. The deck is generated in the room from your sources, as [Class 5, Topic 1](class5.html#topic-1) describes; the risk slide uses the findings of this morning's lab.
-- **Milestone M3**, team, 25% of the course grade, due **Sunday 24 January 2027 at 23:59**: the AI feature deployed, the test set with results, the guardrail, one agentic step with approval and one scheduled automation, the measurement of your brief's metric on at least five timed requests, and the two-page risk memo with its two annexes. You built one of the agentic step and the automation in Class 3; the other is homework.
+- **Milestone M3**, team, 25% of the course grade, due **Sunday 24 January 2027 at 23:59**: the AI feature deployed, the test set with results, the guardrail, one agentic step with approval and one scheduled automation, the measurement of your brief's metric on at least five timed requests, and the two-page risk memo with its two annexes. You built one of the agentic step and the automation in Class 3; the other is built in the week after Demo Day.
 - **Write the risk memo** in the week after Demo Day, from the inputs you collected today. Two pages, plus the permissions register and the personal data inventory as one-page annexes, plus the engineering questions above.
 
 ## Summary

@@ -1,6 +1,6 @@
 ---
 title: "Class 2 · Specify, iterate, keep what works"
-subtitle: "By the end of this session QuoteDesk keeps quote requests for every rep behind a login, has a history you can roll back, and your team's assistant knows how Cerro Azul writes a quote and where the price list lives."
+subtitle: "By the end of this class QuoteDesk keeps quote requests for every rep behind a login, has a history you can roll back, and your team's assistant knows how Cerro Azul writes a quote and where the price list lives."
 lang: en
 css: assets/vc.css
 include-after-body:
@@ -282,7 +282,7 @@ Trust can be measured: how often reps edit a proposed line, how often they give 
 
 ### Three things people call "the AI"
 
-Before teaching "the assistant" anything, be exact about which one. From this session on, three different things are in play, and most confusion in AI projects comes from blurring them.
+Before teaching "the assistant" anything, be exact about which one. From this class on, three different things are in play, and most confusion in AI projects comes from blurring them.
 
 | | What it is | Who uses it | What it can reach |
 |---|---|---|---|
@@ -493,7 +493,7 @@ Build only this. When done, tell me in plain language what you changed.</div></d
 ```
 
 ```{=html}
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the skill (step 11)</div><div class="vc-prompt-b">Create a skill called quote-format as a personal skill of this assistant, not inside the QuoteDesk repository, so that it is available in any conversation.
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · the skill (step 10)</div><div class="vc-prompt-b">Create a skill called quote-format as a personal skill of this assistant, not inside the QuoteDesk repository, so that it is available in any conversation.
 
 Description, written so that you will find it: "Drafts or checks a Cerro Azul quote in the house format. Use whenever I ask for a quote, cotización or price offer for a customer, or paste a quote request."
 
@@ -508,7 +508,7 @@ Add template.md with our header, the product lines and the delivery note, and on
 ```
 
 ```{=html}
-<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · connector test (step 12)</div><div class="vc-prompt-b">Using the price list connector, tell me the list price of aceite 900 cc, caja de 12, and name the file and the row where you found it. Do not change anything in the file. If you cannot find the product, say so. Do not estimate a price.</div></div>
+<div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the assistant · connector test (step 11)</div><div class="vc-prompt-b">Using the price list connector, tell me the list price of aceite 900 cc, caja de 12, and name the file and the row where you found it. Do not change anything in the file. If you cannot find the product, say so. Do not estimate a price.</div></div>
 ```
 
 Your lab checklist. It stays saved in this browser.
@@ -532,7 +532,7 @@ Your lab checklist. It stays saved in this browser.
 
 ## Critique and reflection
 
-Two teams show one user story end to end: paste a message, pick the customer, save, refresh, sign in as a second rep. The class then asks each presenting team for two things live: roll back one change, and make the quote-format skill trigger without naming it. The rubric criterion in focus this session is **functionality**: does the product work for its user end to end, including the cases that should fail?
+Two teams show one user story end to end: paste a message, pick the customer, save, refresh, sign in as a second rep. The class then asks each presenting team for two things live: roll back one change, and make the quote-format skill trigger without naming it. The rubric criterion in focus in this class is **functionality**: does the product work for its user end to end, including the cases that should fail?
 
 Reflection prompt for your build log: *what did the assistant guess that you should have specified, and which line would you now add to your acceptance criteria, your project instructions or your skill?*
 

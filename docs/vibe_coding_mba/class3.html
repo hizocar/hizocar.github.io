@@ -82,10 +82,10 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="assets/vc.css">
 <meta property="og:title" content="Sebastián Azócar - Class 3 · Add intelligence, then prove it works">
-<meta property="og:description" content="By the end of this session QuoteDesk reads a pasted message into order lines, your team has a test set with results before and after a guardrail, and one thing acts without being asked: an agentic step that waits for a person’s approval, or a morning digest. The other one is homework for M3.">
+<meta property="og:description" content="By the end of this class QuoteDesk reads a pasted message into order lines, your team has a test set with results before and after a guardrail, and one thing acts without being asked: an agentic step that waits for a person’s approval, or a morning digest. The other one is built in the week after Demo Day, for M3.">
 <meta property="og:site-name" content="Sebastián Azócar">
 <meta name="twitter:title" content="Sebastián Azócar - Class 3 · Add intelligence, then prove it works">
-<meta name="twitter:description" content="By the end of this session QuoteDesk reads a pasted message into order lines, your team has a test set with results before and after a guardrail, and one thing acts without being asked: an agentic step that waits for a person’s approval, or a morning digest. The other one is homework for M3.">
+<meta name="twitter:description" content="By the end of this class QuoteDesk reads a pasted message into order lines, your team has a test set with results before and after a guardrail, and one thing acts without being asked: an agentic step that waits for a person’s approval, or a morning digest. The other one is built in the week after Demo Day, for M3.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -162,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Class 3 · Add intelligence, then prove it works</h1>
-<p class="subtitle lead">By the end of this session QuoteDesk reads a pasted message into order lines, your team has a test set with results before and after a guardrail, and one thing acts without being asked: an agentic step that waits for a person’s approval, or a morning digest. The other one is homework for M3.</p>
+<p class="subtitle lead">By the end of this class QuoteDesk reads a pasted message into order lines, your team has a test set with results before and after a guardrail, and one thing acts without being asked: an agentic step that waits for a person’s approval, or a morning digest. The other one is built in the week after Demo Day, for M3.</p>
 </div>
 
 
@@ -661,7 +661,7 @@ In the business
 <div class="vc-practice">
 <p class="vc-practice-t"><span>Practice · Topic 6</span></p>
 <div class="vc-quiz">
-<p class="vc-quiz-q">Your team's test set has 24 messages, all made up by the team in ten minutes during the session. What is the problem?</p>
+<p class="vc-quiz-q">Your team's test set has 24 messages, all made up by the team in ten minutes during the lab. What is the problem?</p>
 <div class="vc-quiz-opts">
 <button class="vc-quiz-opt" data-why="24 is small but enough for a first run. The issue is where the messages came from.">It is too small: a test set needs at least a thousand messages before it means anything.</button>
 <button class="vc-quiz-opt" data-correct="">The builders wrote it, so it is cleaner than real messages and flatters the result.</button>
@@ -707,10 +707,10 @@ In the business
 <li><strong>Run it at the public address and write down the count</strong> (10 min). Read every failure. Group them: abbreviations, missing information, wrong quantity, invented items. Count the invented items separately.</li>
 <li><strong>Add one guardrail</strong> (12 min). The common ones: flag items below a confidence threshold for a person; refuse items that are not in the products table; never let the model set a price or a discount. Pick the one that addresses your largest failure group, and save a checkpoint.</li>
 <li><strong>Run the test set again at the public address</strong> (7 min). Record three numbers: how many right, how many invented items, and how many examples are now flagged. These are what you present in the critique.</li>
-<li><strong>Add one step that acts: choose A or B</strong> (15 min). <strong>A, an agentic step with approval:</strong> use the fourth prompt; give the model the five tools, let the app hold the rules, save a checkpoint, and open the step log for one message at the public address. In the lab <code>send_quote</code> sends nothing; it shows the message it would have sent. <strong>B, the morning digest:</strong> ask the building assistant for a manager-only "Export pending requests" button (customer, time received, rep; no prices, no phone numbers). Save the exported file by hand into the shared folder your price-list connector already reads, then give the fifth prompt to your team's assistant and run the task once by hand. A real deployment needs a view that refreshes by itself and a second alert channel; note both as open items in your risk memo. The option you do not choose is homework for M3.</li>
+<li><strong>Add one step that acts: choose A or B</strong> (15 min). <strong>A, an agentic step with approval:</strong> use the fourth prompt; give the model the five tools, let the app hold the rules, save a checkpoint, and open the step log for one message at the public address. In the lab <code>send_quote</code> sends nothing; it shows the message it would have sent. <strong>B, the morning digest:</strong> ask the building assistant for a manager-only "Export pending requests" button (customer, time received, rep; no prices, no phone numbers). Save the exported file by hand into the shared folder your price-list connector already reads, then give the fifth prompt to your team's assistant and run the task once by hand. A real deployment needs a view that refreshes by itself and a second alert channel; note both as open items in your risk memo. The option you do not choose is built in the week after Demo Day, for M3.</li>
 <li><strong>Save the last checkpoint, record the fallback, check the public address, and write the build log entry</strong> (11 min). Record a 90-second video of one user story on the deployed app: it is your Demo Day fallback if the network fails. Then the build log entry: what the model got wrong, what you decided about the threshold, which action you kept behind approval and why, and what the assistant did that you did not expect.</li>
 </ol>
-<p><strong>Optional, and only if your product answers from documents:</strong> add retrieval as homework. Ask the assistant to split two or three documents into chunks, store them, attach the three closest chunks to each question, and show citations in the answer. Add five document questions to the test set. If the documents are short, attach them whole instead.</p>
+<p><strong>Optional, and only if your product answers from documents:</strong> add retrieval in the week after Demo Day, for M3. Ask the assistant to split two or three documents into chunks, store them, attach the three closest chunks to each question, and show citations in the answer. Add five document questions to the test set. If the documents are short, attach them whole instead.</p>
 </div>
 <div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to the building assistant · the products table</div><div class="vc-prompt-b">Add a products table to QuoteDesk's database with four fields: code, name, unit and list price in CLP.
 
@@ -818,12 +818,12 @@ Keep a run log I can open (start time, steps, result). Then run it once now, by 
 <ul>
 <li>the AI feature, deployed;</li>
 <li>the test set with its results before and after the guardrail;</li>
-<li>one agentic step with approval <strong>and</strong> one scheduled automation, each with its log. You built one in class; the other is homework;</li>
+<li>one agentic step with approval <strong>and</strong> one scheduled automation, each with its log. You built one in class; the other is built in the week after Demo Day;</li>
 <li>a baseline and one measurement of the metric in your brief, on at least five timed requests. You timed the baseline, five requests done by hand, in the weeks before Day 2; in the week after Demo Day you time the same kind of five requests with the feature;</li>
 <li>a two-page risk memo, written after Class 4, which covers security, permissions, personal data, cost and maintainability.</li>
 </ul>
 <p><strong>From now until Demo Day the product is frozen.</strong> No new features: Demo Day runs on what you have at 18:30, plus the security fixes of tomorrow’s Class 4 lab.</p>
-<p><strong>Tomorrow, Class 4 at 08:00.</strong> You read its page in the weeks before Day 2, together with the summary of the OWASP Top 10 for LLM Applications (2025). Nothing else needs preparing tonight: the <a href="security-checklist.html">security checklist</a>, the list of connectors and tools with their permissions, and the cost figures at scale are all done in the room.</p>
+<p><strong>Tomorrow, Class 4 at 08:00.</strong> You read its page in the weeks before Day 2, together with the summary of the OWASP Top 10 for LLM Applications (2025). Nothing else needs preparing tonight beyond submitting M2 (the repository link and each build log) by 23:59: the <a href="security-checklist.html">security checklist</a>, the list of connectors and tools with their permissions, and the cost figures at scale are all done in the room.</p>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
