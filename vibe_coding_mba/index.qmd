@@ -46,10 +46,9 @@ include-after-body:
       <p class="vh-day-date">Saturday, January 2027</p>
       <p class="vh-day-hours">08:00 to 18:30, eight hours</p>
       <ul class="vh-blocks">
-        <li><time>08:00</time><span><a href="class2.html">Class 2</a>Specify, iterate, keep what works</span></li>
-        <li><time>10:30</time><span>Class 2 continues</span></li>
-        <li><time>14:00</time><span><a href="class3.html">Class 3</a>Add intelligence, then prove it works</span></li>
-        <li><time>16:30</time><span>Class 3 continues</span></li>
+        <li><time>08:00</time><span>Class 2</span></li>
+        <li><time>14:00</time><span>Class 3</span></li>
+        <li><time></time><span>Published before Day 2</span></li>
       </ul>
     </li>
     <li class="vh-day">
@@ -57,9 +56,9 @@ include-after-body:
       <p class="vh-day-date">Sunday, January 2027</p>
       <p class="vh-day-hours">08:00 to 14:30, six hours</p>
       <ul class="vh-blocks">
-        <li><time>08:00</time><span><a href="class4.html">Class 4</a>Govern what you built</span></li>
-        <li><time>10:45</time><span><a href="class5.html">Class 5</a>Pitch clinic, then Demo Day</span></li>
-        <li><time>12:30</time><span>Demo Day, strategy revisited, reflection</span></li>
+        <li><time>08:00</time><span>Class 4</span></li>
+        <li><time>10:45</time><span>Class 5 and Demo Day</span></li>
+        <li><time></time><span>Published before Day 2</span></li>
       </ul>
     </li>
   </ol>

@@ -2,11 +2,16 @@
 title: "Class 1 · Your first web with Claude Code"
 subtitle: "By 14:30 you have a web for your own idea at a public address, a six-slide HTML deck about it, and a skill of your own that Claude uses every time you ask for a page."
 lang: en
-css: assets/vc.css
+css:
+  - assets/vc.css
+  - assets/day1.css
+resources:
+  - assets/logos/*.svg
 include-after-body:
   text: |
     <script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
     <script src="assets/vc-core.js"></script>
+    <script src="assets/day1-visuals.js"></script>
 ---
 
 ```{=html}
@@ -18,21 +23,45 @@ include-after-body:
 <div class="vc-daybar" data-start="08:00" data-current="Class 1" data-blocks="Class 1 · welcome, setup check, how it works:120|Coffee break:15|Class 1 · lab: your web, then skills:120|Coffee break:15|Class 1 · publish, HTML deck, your skill, pitch:120"></div>
 ```
 
-Today is a workshop. You will spend most of it typing to Claude Code about **your own idea**: a business, a side project, a service, a portfolio. Each idea is explained in a few minutes and then you do it for real. Nothing on this page needs to be read before class except [the setup guide](setup.html).
+A workshop on **your own idea**: each concept in a few minutes, then you do it for real in Claude Code. Before class, only [the setup guide](setup.html).
 
 ::: {.callout-note title="How to use this page"}
-- Keep it open in your browser next to VS Code. Follow the parts in order; each one says how long it takes.
-- A box headed **You, to Claude** is a prompt. Copy it, replace the words in [brackets] with your own, and paste it into Claude Code.
-- The slides projected in the room are [here](slides/day1.html). They are themselves an HTML file, the same kind you will make at 13:15.
-- **Two rules for the whole course.** Never paste a password, an API key or someone else's personal data into Claude. Never publish a claim about your business you cannot defend.
+- Keep it open next to VS Code and follow the parts in order.
+- A box headed **You, to Claude** is a prompt: copy it, replace the [brackets], paste it.
+- The [projected slides](slides/day1.html) are one HTML file, like the one you make at 13:15.
+- **Two rules.** No passwords, keys or other people's personal data in Claude. No claim on your web you cannot defend.
 :::
 
 ## What you leave with today
 
-- A web for your idea, built by directing Claude Code in plain language, open on your phone at `your-web.vercel.app`.
-- A six-slide presentation about it, in one HTML file, published at the same address.
-- A skill of your own, `my-brand`, that makes every future page and slide come out in your colors and your tone.
-- The habits that keep you in control of an agent: plan first, read the permission, one change at a time, go back when it goes wrong.
+```{=html}
+<div class="d1" data-d1>
+<div class="d1-leave">
+<div class="d1-card d1-a"><div class="d1-mock"><div class="d1-mock-bar"><i></i><i></i><i></i><span>mi-web.vercel.app</span></div><div class="d1-mock-body"><b></b><s></s><s style="width:70%"></s><u></u></div></div><p class="d1-h">A web for your idea</p><p>Built by talking to Claude Code. Open on your phone, at a public address.</p></div>
+<div class="d1-card d1-a"><div class="d1-slides"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div><p class="d1-h">A six-slide deck</p><p>One HTML file, published with your web at <code>/slides.html</code>.</p></div>
+<div class="d1-card d1-a"><div class="d1-file"><b>SKILL.md</b><br><em>name:</em> my-brand<br><em>description:</em> use for every page, slide or text…<br>colors · fonts · tone</div><p class="d1-h">A skill of your own</p><p>Your colors and tone, applied every time without asking.</p></div>
+</div>
+<p class="d1-cap">And the habits that keep you in control of an agent: <strong>plan first, read the permission, one change at a time, go back when it goes wrong.</strong></p>
+</div>
+```
+
+## The pieces you use today
+
+```{=html}
+<div class="d1" data-d1>
+<div class="d1-pieces">
+<div class="d1-card d1-piece d1-a"><i class="lg lg-vscode" aria-hidden="true"></i><p class="d1-h">VS Code</p><p>Your desk: the folder with the files of your web.</p></div>
+<span class="d1-arrow d1-a" aria-hidden="true">→</span>
+<div class="d1-card d1-piece is-key d1-a"><i class="lg lg-claude" aria-hidden="true"></i><p class="d1-h">Claude Code</p><p>A capable colleague at your desk who writes the code.</p></div>
+<span class="d1-arrow d1-a" aria-hidden="true">→</span>
+<div class="d1-card d1-piece d1-a"><i class="lg lg-github" aria-hidden="true"></i><p class="d1-h">GitHub</p><p>A drive that keeps every version.</p></div>
+<span class="d1-arrow d1-a" aria-hidden="true">→</span>
+<div class="d1-card d1-piece d1-a"><i class="lg lg-vercel" aria-hidden="true"></i><p class="d1-h">Vercel</p><p>The shop window: your web at a public address.</p></div>
+<div class="d1-card d1-piece is-later d1-a"><i class="lg lg-supabase" aria-hidden="true"></i><p class="d1-h">Supabase</p><p>The storeroom: data and login.</p><span class="d1-tag">Day 2</span></div>
+</div>
+<div class="d1-cost d1-a"><span><i class="lg lg-claude" aria-hidden="true"></i><b>Claude Pro</b> about USD 20 a month, paid by you</span><span><i class="lg lg-github" aria-hidden="true"></i><i class="lg lg-vercel" aria-hidden="true"></i><i class="lg lg-supabase" aria-hidden="true"></i><b>Free</b> for this course</span><span><i class="lg lg-next" aria-hidden="true"></i><i class="lg lg-tailwind" aria-hidden="true"></i><i class="lg lg-node" aria-hidden="true"></i>Next.js, Tailwind and Node: what Claude builds with</span></div>
+</div>
+```
 
 ## The day
 
@@ -54,7 +83,7 @@ Today is a workshop. You will spend most of it typing to Claude Code about **you
 
 ## 1 · Live demo {#demo}
 
-The instructor starts from an empty folder and, in about ten minutes, has a page open on a phone at a public address. Do not copy the clicks. Notice the order: **describe, ask for a plan, read it, build, look at it, one change, publish.** You will repeat that order all day.
+From an empty folder to a page on a phone in about ten minutes. Watch the order, not the clicks: **describe, plan, read, build, look, one change, publish.** You repeat it all day.
 
 ## 2 · Setup check {#setup-check}
 
@@ -81,33 +110,80 @@ A new VS Code window opens on the empty folder. Open the panel from **✻ Claude
 
 ## 3 · How it works {#how}
 
-Seven ideas, each one on a slide and in a few lines here. Three of them come with a three-minute try in your own panel.
+Seven ideas, each one on a slide and in a picture here. Three of them come with a three-minute try in your own panel.
 
 ### A model predicts the next piece of text
 
-Claude writes by predicting the most likely next piece of text, very well. It does not look facts up, so it can be fluent and wrong at once. **Fluent is not the same as true:** when it says "done", open the page and look.
+```{=html}
+<div class="d1" data-d1>
+<p class="d1-sentence d1-a">“Our bakery opens every day at<span class="blank"></span>”</p>
+<div class="d1-bars">
+<span class="w d1-a">8:00</span><span class="t"><i class="d1-grow" style="--w:61%"></i></span><span class="p d1-a">61%</span>
+<span class="w d1-a">7:30</span><span class="t"><i class="d1-grow" style="--w:24%;--o:.55"></i></span><span class="p d1-a">24%</span>
+<span class="w d1-a">noon</span><span class="t"><i class="d1-grow" style="--w:9%;--o:.35"></i></span><span class="p d1-a">9%</span>
+</div>
+<p class="d1-cap">Illustrative numbers. It picks a likely piece and repeats; it does not look facts up. <strong>Fluent is not the same as true.</strong></p>
+</div>
+```
 
 **Try (3 min).** Ask Claude for three taglines for your idea. Ask again with the same words, and compare. Same question, different answers: it predicts, it does not retrieve.
 
 ### Tokens are what you pay for
 
-Text is cut into tokens, about three quarters of a word each. Your Pro plan has a usage limit counted in tokens: it resets about five hours after your first message, and there is also a weekly limit. Long, wandering conversations spend it fastest, because Claude re-reads the whole conversation at every step. Start a new conversation when you change task.
+```{=html}
+<div class="d1" data-d1>
+<div class="d1-chips"><span class="d1-a">Dul</span><span class="d1-a">ce</span><i class="gap"></i><span class="d1-a">Nor</span><span class="d1-a">te</span><i class="gap"></i><span class="d1-a">bakes</span><i class="gap"></i><span class="d1-a">sour</span><span class="d1-a">dough</span><i class="gap"></i><span class="d1-a">in</span><i class="gap"></i><span class="d1-a">Anto</span><span class="d1-a">fag</span><span class="d1-a">asta</span></div>
+<p class="d1-count d1-a">11 tokens, 6 words</p>
+<p class="d1-cap">Illustrative split. Your Pro limit is counted in tokens: it resets about five hours after your first message, plus a weekly limit. Claude re-reads the whole conversation at every step, so <strong>start a new conversation when you change task.</strong></p>
+</div>
+```
 
 ### The context window is its working memory
 
-Claude sees only the current conversation: your messages, the files it opened, the output of its commands. What is not there, it does not know, including yesterday. What must last goes in `CLAUDE.md`, which you create at the end of the morning.
+```{=html}
+<div class="d1" data-d1>
+<div class="d1-ctx">
+<span class="d1-a is-mem" style="flex:1.1">CLAUDE.md</span>
+<span class="d1-a" style="flex:1.4">your messages</span>
+<span class="d1-a" style="flex:2">files it read</span>
+<span class="d1-a" style="flex:1.6">command output</span>
+<span class="d1-a is-new" style="flex:1.3">its replies</span>
+</div>
+<div class="d1-ctx-l"><span>What it can see right now</span><span>Full: older parts get summarized</span></div>
+<p class="d1-ctx-out d1-a"><s>yesterday's conversation</s> not in the window, so Claude does not know it</p>
+</div>
+```
 
 ### It can be confidently wrong
+
+```{=html}
+<div class="d1" data-d1>
+<div class="d1-vs">
+<div class="d1-card d1-say d1-a"><p class="who"><i class="lg lg-claude" aria-hidden="true"></i>Claude says</p><p>“Done. The contact form now saves every message.”</p></div>
+<div class="d1-see d1-a"><p class="who">The browser shows</p><div class="d1-mock"><div class="d1-mock-bar"><i></i><i></i><i></i><span>localhost:3000</span></div><div class="d1-mock-body">You tap <span class="btn">Send</span>. <span class="nothing">Nothing happens.</span></div></div></div>
+</div>
+<p class="d1-cap"><strong>Believe the screen, not the summary.</strong> Then tell Claude exactly what you saw.</p>
+</div>
+```
 
 **Try (3 min).** Ask for three facts about your market, with their sources. Open one source. Is the fact really there?
 
 ### A chat answers; an agent works
 
 ```{=html}
+<div class="d1" data-d1>
+<div class="d1-two">
+<div class="d1-card d1-a"><p class="d1-h">Chat</p><ol><li>You ask</li><li>It answers with text</li><li>You copy, paste and fix</li></ol></div>
+<div class="d1-card is-agent d1-a"><p class="d1-h"><i class="lg lg-claude" aria-hidden="true"></i> Agent: Claude Code</p><ol><li>You set a goal</li><li>It reads, edits and runs your files</li><li>You judge the result by using it</li></ol></div>
+</div>
+</div>
+```
+
+```{=html}
 <figure class="vc-fig" data-fig="c1-agent"><figcaption>One request to Claude Code: you ask, it reads the folder, plans, acts on files and commands, checks the result and tries again, and you judge the result by using it.</figcaption></figure>
 ```
 
-A chat assistant gives you text to copy. Claude Code is an **agent**: it opens files, writes them, runs commands, reads the errors and tries again, on your laptop, until the job is done. That is why it asks permission, and why you can stop it at any moment with **Esc**.
+Because it acts on your laptop, it asks permission, and you can stop it at any moment with **Esc**.
 
 **Try (3 min).** Ask: *"What is in this folder, and what would you need from me to build my web?"* Watch it look before it answers. Do not let it create anything yet: the folder must stay empty for the lab.
 
@@ -124,16 +200,30 @@ Claude Code is like a very capable new colleague who knows nothing about your pr
 
 ### Plan mode and permissions
 
-**Plan mode.** In the panel, click the mode indicator under the prompt box and choose **Plan**. (In the terminal, **Shift + Tab** cycles the modes.) In plan mode Claude only reads and proposes; it touches nothing. You read the plan, ask for changes, and approve it. Use it whenever a change touches more than one file or you are not sure what you want.
+```{=html}
+<div class="d1" data-d1>
+<div class="d1-modes">
+<div class="d1-mode d1-a"><span class="pill">Manual</span><p>Asks before every edit.</p></div>
+<div class="d1-mode d1-a"><span class="pill">Edit automatically</span><p>Edits files without asking.</p></div>
+<div class="d1-mode is-on d1-a"><span class="pill">Plan</span><p>Reads and proposes. Touches nothing until you approve.</p></div>
+</div>
+<p class="d1-howto d1-a"><span>Panel: click the mode indicator under the prompt box.</span><span>Terminal: <span class="d1-kbd">Shift</span> + <span class="d1-kbd">Tab</span></span></p>
+<p class="d1-cap">Use <strong>Plan</strong> whenever a change touches more than one file or you are not sure what you want: read the plan, ask for changes, approve.</p>
+</div>
+```
 
 **Permissions.** Before creating a file or running a command for the first time, Claude asks. At the beginning, read every request.
 
-| Claude asks to… | Your answer |
-|---|---|
-| create or edit files in your project | Yes |
-| run `npm install …` or `npm run dev` | Yes. For commands that repeat, *Yes, and don't ask again* |
-| run anything with `rm`, `sudo` or `git push --force`, or touch files outside your folder | Stop. Ask it: "why do you need this?" |
-| write in `~/.claude/skills`, when you create your own skill at 13:30 | Yes. The one exception: personal skills live there |
+```{=html}
+<div class="d1" data-d1>
+<div class="d1-perm">
+<div class="d1-perm-r go d1-a"><span class="a"><i></i>Yes</span><span class="q">Create or edit files in your project.</span></div>
+<div class="d1-perm-r go2 d1-a"><span class="a"><i></i>Yes, don't ask again</span><span class="q">Commands that repeat all day: <code>npm install …</code>, <code>npm run dev</code>.</span></div>
+<div class="d1-perm-r stop d1-a"><span class="a"><i></i>Stop and ask why</span><span class="q"><code>rm</code>, <code>sudo</code>, <code>git push --force</code>, or anything outside your folder. Ask: "why do you need this?"</span></div>
+<div class="d1-perm-r exc d1-a"><span class="a"><i></i>The one exception</span><span class="q">Writing in <code>~/.claude/skills</code> when you create your own skill at 13:30: yes, personal skills live there.</span></div>
+</div>
+</div>
+```
 
 ```{=html}
 <div class="vc-practice">
@@ -169,6 +259,24 @@ Claude Code is like a very capable new colleague who knows nothing about your pr
 ```
 
 ## 4 · Lab 1: your web {#lab}
+
+```{=html}
+<div class="d1" data-d1>
+<div class="d1-gantt">
+<div class="d1-g"><span class="l d1-a"><b>1</b>Brief</span><span class="t"><i class="d1-grow" style="--x:0.00%;--w:2.67%"></i><em class="d1-f" style="--x:0.00%;--w:2.67%">2 min</em></span></div>
+<div class="d1-g"><span class="l d1-a"><b>2</b>First prompt</span><span class="t"><i class="d1-grow" style="--x:2.67%;--w:6.67%"></i><em class="d1-f" style="--x:2.67%;--w:6.67%">5 min</em></span></div>
+<div class="d1-g"><span class="l d1-a"><b>3</b>Read the plan</span><span class="t"><i class="d1-grow" style="--x:9.33%;--w:13.33%"></i><em class="d1-f" style="--x:9.33%;--w:13.33%">10 min</em></span></div>
+<div class="d1-g is-long"><span class="l d1-a"><b>4</b>Build</span><span class="t"><i class="d1-grow" style="--x:22.67%;--w:24.00%"></i><em class="d1-f" style="--x:22.67%;--w:24.00%">18 min</em></span></div>
+<div class="d1-g"><span class="l d1-a"><b>5</b>Open it</span><span class="t"><i class="d1-grow" style="--x:46.67%;--w:6.67%"></i><em class="d1-f" style="--x:46.67%;--w:6.67%">5 min</em></span></div>
+<div class="d1-g"><span class="l d1-a"><b>6</b>Test</span><span class="t"><i class="d1-grow" style="--x:53.33%;--w:13.33%"></i><em class="d1-f" style="--x:53.33%;--w:13.33%">10 min</em></span></div>
+<div class="d1-g is-late"><span class="l d1-a"><b>7</b>Changes</span><span class="t"><i class="d1-grow" style="--x:66.67%;--w:20.00%"></i><em class="d1-f" style="--x:66.67%;--w:20.00%">15 min</em></span></div>
+<div class="d1-g is-late"><span class="l d1-a"><b>8</b>Rewind</span><span class="t"><i class="d1-grow" style="--x:86.67%;--w:6.67%"></i><em class="d1-f" style="--x:86.67%;--w:6.67%">5 min</em></span></div>
+<div class="d1-g is-late"><span class="l d1-a"><b>9</b>Commit</span><span class="t"><i class="d1-grow" style="--x:93.33%;--w:6.67%"></i><em class="d1-f" style="--x:93.33%;--w:6.67%">5 min</em></span></div>
+</div>
+<div class="d1-axis"><span></span><div><span>10:15</span><span>10:30</span><span>10:45</span><span>11:00</span><span>11:15</span><span>11:30</span></div></div>
+<p class="d1-cap">The 75 minutes of the lab. The longest step is waiting while Claude builds: <strong>read each permission, and start nothing else meanwhile.</strong></p>
+</div>
+```
 
 ```{=html}
 <div class="vc-lab">
@@ -214,7 +322,23 @@ Describe what you **see**, not what you think the code should do. "The button do
 
 ### Skills: manuals Claude opens when the job needs them
 
-A skill is a folder with instructions, and sometimes scripts, for one kind of job: designing an interface, planning a feature, deploying. Claude reads only each skill's one-line description until a task matches, then loads the whole manual. Skills come grouped in **plugins**. Install one from Anthropic's official catalog, for design. Do it in the VS Code terminal, where the catalog is already set up:
+```{=html}
+<div class="d1" data-d1>
+<div class="d1-shelfwrap">
+<div>
+<p class="d1-ask d1-a">“Redesign my home page so it feels premium.”</p>
+<div class="d1-shelf">
+<div class="d1-book h2 d1-a"><span>skill-creator</span></div>
+<div class="d1-book is-pick d1-a"><span>frontend-design</span></div>
+<div class="d1-book h3 is-yours d1-a"><span>my-brand</span></div>
+</div>
+</div>
+<div class="d1-shelf-note d1-a"><p>A skill is a manual for one kind of job. Claude reads only its spine, a one-line description, until a request matches; then it opens it.</p><p>Skills come in <strong>plugins</strong>. Today: frontend-design at 11:30, skill-creator and my-brand at 13:30.</p></div>
+</div>
+</div>
+```
+
+Install the design plugin from Anthropic's official catalog. Do it in the VS Code terminal, where the catalog is already set up:
 
 ```{=html}
 <div class="vc-prompt"><div class="vc-prompt-h">In the VS Code terminal · type <code>claude</code>, then each line inside it, one at a time</div><div class="vc-prompt-b">claude
@@ -232,7 +356,18 @@ Choose one, look at the result on a narrow window, and ask for one or two change
 
 ### CLAUDE.md: the project's memory
 
-Claude does not remember earlier conversations. What it must always know goes in a file called `CLAUDE.md` at the root of your project, loaded at the start of every conversation. Create it now: type `/init` in the panel, or simply ask *"Create a CLAUDE.md for this project."*
+```{=html}
+<div class="d1" data-d1>
+<div class="d1-mem">
+<div class="d1-conv is-old d1-a"><span class="h">This morning's conversation</span><span>your brief</span><span>"Spanish for the site"</span><span>"check the phone layout"</span></div>
+<div class="mid d1-a"><span aria-hidden="true">→</span>new conversation: it forgets everything</div>
+<div class="d1-conv d1-a"><span class="h">The next conversation</span><span class="is-mem">CLAUDE.md, loaded first</span><span>your new request</span></div>
+</div>
+<p class="d1-cap">What Claude must always know goes in <code>CLAUDE.md</code> at the root of your project.</p>
+</div>
+```
+
+Create it now: type `/init` in the panel, or simply ask *"Create a CLAUDE.md for this project."*
 
 Open the file and add a few lines of your own. The most useful section is the last one: every time Claude makes a mistake you never want repeated, tell it *"add this to CLAUDE.md so it does not happen again"*.
 
@@ -260,7 +395,18 @@ Commit again: *"Commit everything with the message 'design and CLAUDE.md'."*
 <figure class="vc-fig" data-fig="c1-ship"><figcaption>Your web runs on localhost; a commit saves a snapshot; a push sends it to your private GitHub repository; Vercel sees the push, rebuilds, and serves it at a public address you open on a phone.</figcaption></figure>
 ```
 
-**Push to GitHub (15 min).** Two steps, in this order. First, ask Claude to check:
+```{=html}
+<div class="d1" data-d1>
+<div class="d1-path">
+<div class="d1-card d1-a"><span class="n"><b>1</b><i class="lg lg-claude" aria-hidden="true"></i></span><p class="d1-h">Ask Claude to check</p><p>No keys, no .env files, all committed. Do not push.</p></div>
+<div class="d1-card d1-a"><span class="n"><b>2</b><i class="lg lg-vscode" aria-hidden="true"></i><i class="lg lg-github" aria-hidden="true"></i></span><p class="d1-h">Publish Branch</p><p>Source Control → private GitHub repository.</p></div>
+<div class="d1-card d1-a"><span class="n"><b>3</b><i class="lg lg-vercel" aria-hidden="true"></i></span><p class="d1-h">Import, Deploy</p><p>vercel.com/new. Change nothing.</p></div>
+<div class="d1-card d1-a"><span class="n"><b>4</b><span class="phone" aria-hidden="true"></span></span><p class="d1-h">Open it on your phone</p><p>Then one change, commit, Sync Changes.</p></div>
+</div>
+</div>
+```
+
+**Push to <span class="d1-tool"><i class="lg lg-github" aria-hidden="true"></i>GitHub</span> (15 min).** Two steps, in this order. First, ask Claude to check:
 
 ```{=html}
 <div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to Claude · before the first push</div><div class="vc-prompt-b">Check that nothing I am about to upload contains keys, passwords or .env files, and that everything is committed. Do not push.</div></div>
@@ -268,27 +414,57 @@ Commit again: *"Commit everything with the message 'design and CLAUDE.md'."*
 
 Then, yourself: open **Source Control** in VS Code (the branch icon on the left, or Ctrl + Shift + G), press **Publish Branch** and choose **Publish to GitHub private repository**. The first time, VS Code asks you to sign in to GitHub in the browser.
 
-**Import in Vercel (15 min).** Go to [vercel.com/new](https://vercel.com/new), signed in with GitHub. Find your repository, press **Import**, change nothing, press **Deploy**. In one or two minutes you have an address like `mi-web.vercel.app`. If your repository is not in the list, choose **Adjust GitHub App Permissions**, give Vercel access to all repositories (or to this one), save, and come back.
+**Import in <span class="d1-tool"><i class="lg lg-vercel" aria-hidden="true"></i>Vercel</span> (15 min).** Go to [vercel.com/new](https://vercel.com/new), signed in with GitHub. Find your repository, press **Import**, change nothing, press **Deploy**. In one or two minutes you have an address like `mi-web.vercel.app`. If your repository is not in the list, choose **Adjust GitHub App Permissions**, give Vercel access to all repositories (or to this one), save, and come back.
 
-**Open it on your phone (5 min).** Send the address to yourself and open it. Then make one small change with Claude, commit it, push it (**Sync Changes** in Source Control), and watch Vercel publish it by itself in about a minute.
+**Open it on your phone (5 min).** Then one small change: commit, **Sync Changes**, and Vercel publishes it by itself in about a minute.
 
 **One rule from real projects: what is live must be in GitHub.** Commit and push first, always, so that the next automatic deploy does not undo your work. (Keys come on Day 2, with their own rules.)
 
-If the deploy fails, your web is not broken: Vercel keeps showing the last version that worked. Copy the error from the Vercel page and give it to Claude: *"The Vercel build failed with this error: [paste]. Explain the cause in plain words, fix it, and run npm run build before I push again."*
+A failed deploy does not break your web: Vercel keeps the last version that worked. See *When something goes wrong* below.
 
 ## 7 · An HTML deck in five minutes {#deck}
 
-A presentation does not need PowerPoint. A single HTML file with large type and arrow-key navigation opens in any browser, on any projector and on any phone, and Claude writes one in a couple of minutes. The deck projected in the room today is one of these files.
+No PowerPoint: one HTML file opens in any browser, projector or phone, and Claude writes it in a couple of minutes.
 
 ```{=html}
 <div class="vc-prompt is-strong"><div class="vc-prompt-h">You, to Claude · the deck</div><div class="vc-prompt-b">Create a 6-slide HTML presentation about my project in a single file, public/slides.html. Slides: the problem, who it is for, what my web does, how it works, why now, what I need. One idea per slide, large type, my site's colors, arrow keys to move, works on a phone. No external libraries.</div></div>
 ```
 
-Open `http://localhost:3000/slides.html`. Fix the one slide you like least with a single prompt. Commit and push: the deck is now public at `mi-web.vercel.app/slides.html`, and that is the link you share. Files in the `public` folder are published exactly as they are, at the root of your address.
+```{=html}
+<div class="d1" data-d1>
+<div class="d1-map">
+<div class="d1-tree d1-a"><b>mi-web/</b>
+├─ app/            <span>your pages</span>
+├─ <b>public/</b>
+│  └─ <span class="hl">slides.html</span>
+├─ CLAUDE.md
+└─ package.json</div>
+<span class="d1-arrow d1-a" aria-hidden="true">→</span>
+<div class="d1-url d1-a"><div class="d1-mock-bar"><i></i><i></i><i></i><span>mi-web.vercel.app/<b>slides.html</b></span></div><div class="body"><i class="lg lg-vercel" aria-hidden="true"></i>Published exactly as it is, at the root of your address.</div></div>
+</div>
+</div>
+```
+
+Open `http://localhost:3000/slides.html`. Fix the one slide you like least with a single prompt. Commit and push: the deck is now public at `mi-web.vercel.app/slides.html`, and that is the link you share.
 
 ## 8 · Your own skill: my-brand {#own-skill}
 
-You have told Claude your colors and your tone several times today. Write them once, as a skill, and every future page, slide and text comes out right without asking. A personal skill lives in `~/.claude/skills/` and works in all your projects.
+Write your colors and tone once, as a skill, and every future page, slide and text comes out right without asking.
+
+```{=html}
+<div class="d1" data-d1>
+<div class="d1-scope">
+<div class="d1-a"><p class="lab"><b>Personal</b>: every project on this laptop</p><div class="d1-tree"><b>~/.claude/skills/</b>
+└─ my-brand/
+   └─ <span class="hl">SKILL.md</span></div></div>
+<div class="d1-a"><p class="lab"><b>This project</b> only</p><div class="d1-tree"><b>~/Proyectos/mi-web/</b>
+├─ CLAUDE.md
+├─ app/
+└─ public/slides.html</div></div>
+</div>
+<p class="d1-cap">When you work in <code>mi-web</code>, Claude reads both: the project's CLAUDE.md, and your personal skills when a request matches.</p>
+</div>
+```
 
 ```{=html}
 <div class="vc-prompt"><div class="vc-prompt-h">In the VS Code terminal · type <code>claude</code>, then each line inside it, one at a time</div><div class="vc-prompt-b">claude
@@ -303,9 +479,9 @@ Claude will ask to write outside your folder, in `~/.claude/skills`. This is the
 
 ## 9 · Pitches and what comes next {#close}
 
-**Pitches (15 min).** Volunteers project their own `slides.html` from their phone or laptop and pitch their project in 60 seconds. The class says one thing that works and one question a customer would ask.
+**Pitches (15 min).** Volunteers project their `slides.html` and pitch in 60 seconds. The class gives one thing that works and one question a customer would ask.
 
-**What comes next.** Day 2 (Saturday 16 January 2027) gives your web a memory and a brain: a database and a login with Supabase, connected to Claude through MCP, an AI feature inside your app, and a first automation. Day 3 (Sunday 17 January) is security, a deck built from your evidence, and Demo Day.
+**What comes next.** Day 2 (Saturday 16 January 2027) adds a database and a login with <span class="d1-tool"><i class="lg lg-supabase" aria-hidden="true"></i>Supabase</span>, connected to Claude through MCP, an AI feature inside your app, and a first automation. Day 3 (Sunday 17 January) is security, a deck built from your evidence, and Demo Day.
 
 ## When something goes wrong
 
@@ -318,7 +494,7 @@ Claude will ask to write outside your folder, in `~/.claude/skills`. This is the
 | A change made things worse | Hover over your message, press rewind, choose *Rewind code to here*. Or ask: "go back to the last commit". |
 | The same error keeps coming back | Stop asking for fixes. Go back to before it started and ask differently, or ask: "Find the cause before changing anything: [what you see]". |
 | `localhost:3000` does not open | Ask Claude: "Start the development server and tell me the URL." Another program may be using the port; it will pick 3001. |
-| Works on your laptop, not on Vercel | Copy the Vercel error to Claude and ask it to run `npm run build` locally before pushing again. |
+| Works on your laptop, not on Vercel | Give Claude the Vercel error: *"Explain the cause in plain words, fix it, and run npm run build before I push again."* |
 | Vercel: *No Next.js version detected* | The project was created in a subfolder. In Vercel's project settings, set **Root Directory** to the folder that has `package.json`, and deploy again. |
 | Your repository is not listed in Vercel | **Adjust GitHub App Permissions** on vercel.com/new, give it access, save, come back. |
 | "You have reached your usage limit" | Pair with a neighbor until it resets; Settings → Usage on claude.ai shows when. Next time, `/clear` between tasks and keep conversations short. |
@@ -327,7 +503,6 @@ Claude will ask to write outside your folder, in `~/.claude/skills`. This is the
 
 | Command | What it does |
 |---|---|
-| Mode indicator (panel) · **Shift + Tab** (terminal) | Switch mode: Manual, Edit automatically, Plan |
 | **Esc** | Stop Claude now |
 | Hover a message → rewind (panel) · `/rewind` (terminal) | Go back to an earlier message, and optionally to the code as it was then |
 | `/clear` | A new, clean conversation. Use it when you change task |
@@ -370,13 +545,4 @@ Claude will ask to write outside your folder, in `~/.claude/skills`. This is the
 
 Graded with the [course rubric](rubric.html) on problem and value, and communication. Written feedback comes back before Day 2.
 
-**By Sunday 10 January 2027.** Create a free [Supabase](https://supabase.com/dashboard) account with **Continue with GitHub**; Day 2 connects it to Claude. Keep your Claude Pro plan active, and keep improving your web: every change you push is practice.
-
-## The day in six lines
-
-- Claude predicts text, fluently. Fluent is not true: judge every result by using it.
-- Tokens are your budget and the context window is its memory. `/clear` between tasks; what must last goes in CLAUDE.md.
-- A good request has context, goal and limits, and ends with "propose a plan first".
-- Read every permission. rm, sudo, a forced push or anything outside your folder: stop and ask why.
-- One change at a time. When it goes wrong, Esc, then rewind.
-- What is live is in GitHub. A key that reached GitHub is revoked, not deleted.
+**By Sunday 10 January 2027.** Create a free <span class="d1-tool"><i class="lg lg-supabase" aria-hidden="true"></i>Supabase</span> account at [supabase.com](https://supabase.com/dashboard) with **Continue with GitHub**; Day 2 connects it to Claude. Keep your Claude Pro plan active, and keep improving your web: every change you push is practice.

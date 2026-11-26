@@ -81,6 +81,7 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="assets/vc.css">
+<link rel="stylesheet" href="assets/day1.css">
 <meta property="og:title" content="Sebastián Azócar - Setup guide">
 <meta property="og:description" content="Three accounts, four programs, five tests. About 45 minutes, before Sunday 29 November. No programming required.">
 <meta property="og:site-name" content="Sebastián Azócar">
@@ -146,10 +147,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#part-1-accounts-15-minutes" id="toc-part-1-accounts-15-minutes" class="nav-link" data-scroll-target="#part-1-accounts-15-minutes">Part 1 · Accounts (15 minutes)</a></li>
   <li><a href="#part-2-programs-30-minutes" id="toc-part-2-programs-30-minutes" class="nav-link" data-scroll-target="#part-2-programs-30-minutes">Part 2 · Programs (30 minutes)</a>
   <ul class="collapse">
-  <li><a href="#vs-code" id="toc-vs-code" class="nav-link" data-scroll-target="#vs-code">1. VS Code</a></li>
-  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">2. Git</a></li>
-  <li><a href="#node.js" id="toc-node.js" class="nav-link" data-scroll-target="#node.js">3. Node.js</a></li>
-  <li><a href="#claude-code" id="toc-claude-code" class="nav-link" data-scroll-target="#claude-code">4. Claude Code</a></li>
+  <li><a href="#vs-code" id="toc-vs-code" class="nav-link" data-scroll-target="#vs-code">1. <i class="lg lg-vscode" aria-hidden="true"></i> VS Code</a></li>
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">2. <i class="lg lg-git" aria-hidden="true"></i> Git</a></li>
+  <li><a href="#node.js" id="toc-node.js" class="nav-link" data-scroll-target="#node.js">3. <i class="lg lg-node" aria-hidden="true"></i> Node.js</a></li>
+  <li><a href="#claude-code" id="toc-claude-code" class="nav-link" data-scroll-target="#claude-code">4. <i class="lg lg-claude" aria-hidden="true"></i> Claude Code</a></li>
   <li><a href="#where-your-projects-live" id="toc-where-your-projects-live" class="nav-link" data-scroll-target="#where-your-projects-live">Where your projects live</a></li>
   </ul></li>
   <li><a href="#a-warm-up-that-saves-time-on-sunday-5-to-10-minutes" id="toc-a-warm-up-that-saves-time-on-sunday-5-to-10-minutes" class="nav-link" data-scroll-target="#a-warm-up-that-saves-time-on-sunday-5-to-10-minutes">A warm-up that saves time on Sunday (5 to 10 minutes)</a></li>
@@ -200,27 +201,27 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>VS Code</strong></td>
+<td><span class="d1-tool"><i class="lg lg-vscode" aria-hidden="true"></i>VS Code</span></td>
 <td>The editor where the files of your web live</td>
 <td>Your desk</td>
 </tr>
 <tr class="even">
-<td><strong>Claude Code</strong></td>
+<td><span class="d1-tool"><i class="lg lg-claude" aria-hidden="true"></i>Claude Code</span></td>
 <td>An assistant that reads, writes and runs code in your project</td>
 <td>A very capable colleague working next to you</td>
 </tr>
 <tr class="odd">
-<td><strong>Git and GitHub</strong></td>
+<td><span class="d1-tool"><i class="lg lg-git" aria-hidden="true"></i><i class="lg lg-github" aria-hidden="true"></i>Git and GitHub</span></td>
 <td>Every version of your files, kept and backed up</td>
 <td>A drive with the full history of changes</td>
 </tr>
 <tr class="even">
-<td><strong>Vercel</strong></td>
+<td><span class="d1-tool"><i class="lg lg-vercel" aria-hidden="true"></i>Vercel</span></td>
 <td>The service that publishes your web at a public address</td>
 <td>The shop where you open the doors</td>
 </tr>
 <tr class="odd">
-<td><strong>Node.js</strong></td>
+<td><span class="d1-tool"><i class="lg lg-node" aria-hidden="true"></i>Node.js</span></td>
 <td>The engine your web runs on while you build it</td>
 <td>The kitchen behind the shop</td>
 </tr>
@@ -242,11 +243,11 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Claude <strong>Pro</strong> plan, paid by each student</td>
+<td><span class="d1-tool"><i class="lg lg-claude" aria-hidden="true"></i>Claude Pro</span> plan, paid by each student</td>
 <td>About USD 20 a month. Claude Code does not work on the free plan. You need it active on Day 1 and from Day 2 to Day 3; keeping it between them lets you practice.</td>
 </tr>
 <tr class="even">
-<td>GitHub, Vercel Hobby, Supabase Free</td>
+<td><span class="d1-tool"><i class="lg lg-github" aria-hidden="true"></i>GitHub</span>, <span class="d1-tool"><i class="lg lg-vercel" aria-hidden="true"></i>Vercel Hobby</span>, <span class="d1-tool"><i class="lg lg-supabase" aria-hidden="true"></i>Supabase Free</span></td>
 <td>Free</td>
 </tr>
 </tbody>
@@ -257,9 +258,9 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="part-1-accounts-15-minutes">Part 1 · Accounts (15 minutes)</h2>
 <p>Use <strong>the same email</strong> for all of them. A personal email you will keep after the MBA is best.</p>
 <ul class="vc-checklist" id="setup-accounts">
-<li><span><strong>Claude</strong> at <a href="https://claude.ai">claude.ai</a>, with the <strong>Pro</strong> plan or higher.</span></li>
-<li><span><strong>GitHub</strong> at <a href="https://github.com/signup">github.com/signup</a>. Free.</span></li>
-<li><span><strong>Vercel</strong> at <a href="https://vercel.com/signup">vercel.com/signup</a>. Choose <strong>Continue with GitHub</strong> and the <strong>Hobby</strong> plan (free).</span></li>
+<li><span><span class="d1-tool"><i class="lg lg-claude" aria-hidden="true"></i>Claude</span> at <a href="https://claude.ai">claude.ai</a>, with the <strong>Pro</strong> plan or higher.</span></li>
+<li><span><span class="d1-tool"><i class="lg lg-github" aria-hidden="true"></i>GitHub</span> at <a href="https://github.com/signup">github.com/signup</a>. Free.</span></li>
+<li><span><span class="d1-tool"><i class="lg lg-vercel" aria-hidden="true"></i>Vercel</span> at <a href="https://vercel.com/signup">vercel.com/signup</a>. Choose <strong>Continue with GitHub</strong> and the <strong>Hobby</strong> plan (free).</span></li>
 <li><span>Write five lines about <strong>your idea</strong>: what the web is for, who visits it, what they should do there, two sites whose look you like, and what you do not want.</span></li>
 </ul>
 </section>
@@ -267,12 +268,12 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="part-2-programs-30-minutes">Part 2 · Programs (30 minutes)</h2>
 <p>Everything happens in a <strong>terminal</strong>, a window where you type instructions to your computer. On a Mac: ⌘ + Space, type <code>Terminal</code>, Enter. On Windows: Start menu, type <code>PowerShell</code>, open it. To run a command, copy it, paste it into the terminal and press Enter. After each program there is a <strong>test</strong>: do not move on if it fails.</p>
 <section id="vs-code" class="level3">
-<h3 class="anchored" data-anchor-id="vs-code">1. VS Code</h3>
+<h3 class="anchored" data-anchor-id="vs-code">1. <i class="lg lg-vscode" aria-hidden="true"></i> VS Code</h3>
 <p>Download it from <a href="https://code.visualstudio.com">code.visualstudio.com</a> and install it like any program. On a Mac, drag it into <strong>Applications</strong>; do not open it from Downloads. Open it, and in the top menu choose <strong>Terminal → New Terminal</strong>. From here on, use that terminal.</p>
 <p><strong>Test:</strong> <code>code --version</code> shows a number. On a Mac, if it says <code>command not found: code</code>: press ⌘ + Shift + P, type <em>Shell Command: Install ‘code’ command in PATH</em>, and press Enter.</p>
 </section>
 <section id="git" class="level3">
-<h3 class="anchored" data-anchor-id="git">2. Git</h3>
+<h3 class="anchored" data-anchor-id="git">2. <i class="lg lg-git" aria-hidden="true"></i> Git</h3>
 <div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Mac</div><div class="vc-prompt-b">xcode-select --install</div></div>
 <p>A window opens: accept and install, which takes a few minutes. <strong>Windows:</strong> download it from <a href="https://git-scm.com/download/win">git-scm.com</a> and keep every default option. Then tell Git who you are, with the same email as GitHub:</p>
 <div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Mac and Windows</div><div class="vc-prompt-b">git config --global user.name "Your Name"
@@ -280,13 +281,13 @@ git config --global user.email "your-email@example.com"</div></div>
 <p><strong>Test:</strong> <code>git --version</code> shows something like <code>git version 2.4x</code>.</p>
 </section>
 <section id="node.js" class="level3">
-<h3 class="anchored" data-anchor-id="node.js">3. Node.js</h3>
+<h3 class="anchored" data-anchor-id="node.js">3. <i class="lg lg-node" aria-hidden="true"></i> Node.js</h3>
 <p>Go to <a href="https://nodejs.org">nodejs.org</a>, download the <strong>LTS</strong> version (the recommended one, not “Current”) and install it with the default options. Then <strong>close and reopen VS Code</strong>, or its terminal will not see the new program.</p>
 <p><strong>Test:</strong> <code>node -v</code> and <code>npm -v</code> both show numbers; Node must be 22 or higher.</p>
 <p><strong>Windows only:</strong> if <code>npm -v</code> answers <em>running scripts is disabled on this system</em>, run <code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code>, answer Y, and reopen the terminal.</p>
 </section>
 <section id="claude-code" class="level3">
-<h3 class="anchored" data-anchor-id="claude-code">4. Claude Code</h3>
+<h3 class="anchored" data-anchor-id="claude-code">4. <i class="lg lg-claude" aria-hidden="true"></i> Claude Code</h3>
 <div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Mac</div><div class="vc-prompt-b">curl -fsSL https://claude.ai/install.sh | bash</div></div>
 <div class="vc-prompt"><div class="vc-prompt-h">In PowerShell · Windows</div><div class="vc-prompt-b">irm https://claude.ai/install.ps1 | iex</div></div>
 <p>Close and reopen the terminal, then type <code>claude</code>. The first time, it asks you to sign in: choose your <strong>Claude account (Pro or higher)</strong>, accept in the browser, and come back to the terminal.</p>
@@ -324,7 +325,7 @@ npx --yes create-next-app@latest calentamiento --yes</div></div>
 </section>
 <section id="before-day-2" class="level2">
 <h2 class="anchored" data-anchor-id="before-day-2">Before Day 2</h2>
-<p>By Sunday 10 January 2027, create a free <a href="https://supabase.com/dashboard">Supabase</a> account with <strong>Continue with GitHub</strong>. Day 2 connects it to Claude to give your web a database and a login. The free plan pauses a project after a week without use; a click on <strong>Restore</strong> in its dashboard brings it back. Anything else Day 2 needs is listed on its class page.</p>
+<p>By Sunday 10 January 2027, create a free <i class="lg lg-supabase" aria-hidden="true"></i> <a href="https://supabase.com/dashboard">Supabase</a> account with <strong>Continue with GitHub</strong>. Day 2 connects it to Claude to give your web a database and a login. The free plan pauses a project after a week without use; a click on <strong>Restore</strong> in its dashboard brings it back. Anything else Day 2 needs is listed on its class page.</p>
 </section>
 <section id="if-you-could-not-finish" class="level2">
 <h2 class="anchored" data-anchor-id="if-you-could-not-finish">If you could not finish</h2>

@@ -2,7 +2,11 @@
 title: "Setup guide"
 subtitle: "Three accounts, four programs, five tests. About 45 minutes, before Sunday 29 November. No programming required."
 lang: en
-css: assets/vc.css
+css:
+  - assets/vc.css
+  - assets/day1.css
+resources:
+  - assets/logos/*.svg
 include-after-body:
   text: |
     <script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.js"></script>
@@ -17,18 +21,18 @@ Do this at home, before Day 1. If you arrive with the accounts created and the p
 
 | Piece | What it is | Think of it as |
 |---|---|---|
-| **VS Code** | The editor where the files of your web live | Your desk |
-| **Claude Code** | An assistant that reads, writes and runs code in your project | A very capable colleague working next to you |
-| **Git and GitHub** | Every version of your files, kept and backed up | A drive with the full history of changes |
-| **Vercel** | The service that publishes your web at a public address | The shop where you open the doors |
-| **Node.js** | The engine your web runs on while you build it | The kitchen behind the shop |
+| <span class="d1-tool"><i class="lg lg-vscode" aria-hidden="true"></i>VS Code</span> | The editor where the files of your web live | Your desk |
+| <span class="d1-tool"><i class="lg lg-claude" aria-hidden="true"></i>Claude Code</span> | An assistant that reads, writes and runs code in your project | A very capable colleague working next to you |
+| <span class="d1-tool"><i class="lg lg-git" aria-hidden="true"></i><i class="lg lg-github" aria-hidden="true"></i>Git and GitHub</span> | Every version of your files, kept and backed up | A drive with the full history of changes |
+| <span class="d1-tool"><i class="lg lg-vercel" aria-hidden="true"></i>Vercel</span> | The service that publishes your web at a public address | The shop where you open the doors |
+| <span class="d1-tool"><i class="lg lg-node" aria-hidden="true"></i>Node.js</span> | The engine your web runs on while you build it | The kitchen behind the shop |
 
 ## What it costs
 
 | Item | Cost |
 |---|---|
-| Claude **Pro** plan, paid by each student | About USD 20 a month. Claude Code does not work on the free plan. You need it active on Day 1 and from Day 2 to Day 3; keeping it between them lets you practice. |
-| GitHub, Vercel Hobby, Supabase Free | Free |
+| <span class="d1-tool"><i class="lg lg-claude" aria-hidden="true"></i>Claude Pro</span> plan, paid by each student | About USD 20 a month. Claude Code does not work on the free plan. You need it active on Day 1 and from Day 2 to Day 3; keeping it between them lets you practice. |
+| <span class="d1-tool"><i class="lg lg-github" aria-hidden="true"></i>GitHub</span>, <span class="d1-tool"><i class="lg lg-vercel" aria-hidden="true"></i>Vercel Hobby</span>, <span class="d1-tool"><i class="lg lg-supabase" aria-hidden="true"></i>Supabase Free</span> | Free |
 
 Confirm the current price at [claude.ai](https://claude.ai) before you pay; prices change.
 
@@ -38,9 +42,9 @@ Use **the same email** for all of them. A personal email you will keep after the
 
 ```{=html}
 <ul class="vc-checklist" id="setup-accounts">
-<li><span><strong>Claude</strong> at <a href="https://claude.ai">claude.ai</a>, with the <strong>Pro</strong> plan or higher.</span></li>
-<li><span><strong>GitHub</strong> at <a href="https://github.com/signup">github.com/signup</a>. Free.</span></li>
-<li><span><strong>Vercel</strong> at <a href="https://vercel.com/signup">vercel.com/signup</a>. Choose <strong>Continue with GitHub</strong> and the <strong>Hobby</strong> plan (free).</span></li>
+<li><span><span class="d1-tool"><i class="lg lg-claude" aria-hidden="true"></i>Claude</span> at <a href="https://claude.ai">claude.ai</a>, with the <strong>Pro</strong> plan or higher.</span></li>
+<li><span><span class="d1-tool"><i class="lg lg-github" aria-hidden="true"></i>GitHub</span> at <a href="https://github.com/signup">github.com/signup</a>. Free.</span></li>
+<li><span><span class="d1-tool"><i class="lg lg-vercel" aria-hidden="true"></i>Vercel</span> at <a href="https://vercel.com/signup">vercel.com/signup</a>. Choose <strong>Continue with GitHub</strong> and the <strong>Hobby</strong> plan (free).</span></li>
 <li><span>Write five lines about <strong>your idea</strong>: what the web is for, who visits it, what they should do there, two sites whose look you like, and what you do not want.</span></li>
 </ul>
 ```
@@ -49,13 +53,13 @@ Use **the same email** for all of them. A personal email you will keep after the
 
 Everything happens in a **terminal**, a window where you type instructions to your computer. On a Mac: ⌘ + Space, type `Terminal`, Enter. On Windows: Start menu, type `PowerShell`, open it. To run a command, copy it, paste it into the terminal and press Enter. After each program there is a **test**: do not move on if it fails.
 
-### 1. VS Code
+### 1. <i class="lg lg-vscode" aria-hidden="true"></i> VS Code
 
 Download it from [code.visualstudio.com](https://code.visualstudio.com) and install it like any program. On a Mac, drag it into **Applications**; do not open it from Downloads. Open it, and in the top menu choose **Terminal → New Terminal**. From here on, use that terminal.
 
 **Test:** `code --version` shows a number. On a Mac, if it says `command not found: code`: press ⌘ + Shift + P, type *Shell Command: Install 'code' command in PATH*, and press Enter.
 
-### 2. Git
+### 2. <i class="lg lg-git" aria-hidden="true"></i> Git
 
 ```{=html}
 <div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Mac</div><div class="vc-prompt-b">xcode-select --install</div></div>
@@ -70,7 +74,7 @@ git config --global user.email "your-email@example.com"</div></div>
 
 **Test:** `git --version` shows something like `git version 2.4x`.
 
-### 3. Node.js
+### 3. <i class="lg lg-node" aria-hidden="true"></i> Node.js
 
 Go to [nodejs.org](https://nodejs.org), download the **LTS** version (the recommended one, not "Current") and install it with the default options. Then **close and reopen VS Code**, or its terminal will not see the new program.
 
@@ -78,7 +82,7 @@ Go to [nodejs.org](https://nodejs.org), download the **LTS** version (the recomm
 
 **Windows only:** if `npm -v` answers *running scripts is disabled on this system*, run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`, answer Y, and reopen the terminal.
 
-### 4. Claude Code
+### 4. <i class="lg lg-claude" aria-hidden="true"></i> Claude Code
 
 ```{=html}
 <div class="vc-prompt"><div class="vc-prompt-h">In the terminal · Mac</div><div class="vc-prompt-b">curl -fsSL https://claude.ai/install.sh | bash</div></div>
@@ -128,7 +132,7 @@ A laptop managed by your employer may block installing programs, or block the Cl
 
 ## Before Day 2
 
-By Sunday 10 January 2027, create a free [Supabase](https://supabase.com/dashboard) account with **Continue with GitHub**. Day 2 connects it to Claude to give your web a database and a login. The free plan pauses a project after a week without use; a click on **Restore** in its dashboard brings it back. Anything else Day 2 needs is listed on its class page.
+By Sunday 10 January 2027, create a free <i class="lg lg-supabase" aria-hidden="true"></i> [Supabase](https://supabase.com/dashboard) account with **Continue with GitHub**. Day 2 connects it to Claude to give your web a database and a login. The free plan pauses a project after a week without use; a click on **Restore** in its dashboard brings it back. Anything else Day 2 needs is listed on its class page.
 
 ## If you could not finish
 

@@ -1,6 +1,6 @@
 ---
 title: "Classes"
-subtitle: "Five classes over three days. Each page teaches on its own, with simulators, practice questions and the build lab of the class."
+subtitle: "Five classes over three days. Class 1 is open now; the others are published before Day 2."
 lang: en
 toc: false
 ---
@@ -16,66 +16,20 @@ toc: false
   <span class="curso-link">Open class 1 →</span>
 </a>
 
-<a class="curso-card" href="class2.html">
-  <span class="curso-tag">Day 2 · Sat 16 Jan · 08:00</span>
-  <span class="curso-sigla">Milestone M2 · prototype v1</span>
-  <h3>Specify, iterate, keep what works</h3>
-  <p>Prompting as specification, checkpoints and rollback, a database and login, UX for uncertain output, and teaching the assistant how you work with project instructions, skills and connectors (MCP).</p>
-  <span class="curso-link">Open class 2 →</span>
-</a>
-
-<a class="curso-card" href="class3.html">
-  <span class="curso-tag">Day 2 · Sat 16 Jan · 14:00</span>
-  <span class="curso-sigla">Milestone M3 · AI feature and test set</span>
-  <h3>Add intelligence, then prove it works</h3>
-  <p>What a model call costs, four patterns, retrieval over company documents, an agent that acts with approval, an automation that runs every morning, and a test set with a guardrail.</p>
-  <span class="curso-link">Open class 3 →</span>
-</a>
-
-<a class="curso-card" href="class4.html">
-  <span class="curso-tag">Day 3 · Sun 17 Jan · 08:00</span>
-  <span class="curso-sigla">Risk memo · build / buy / vibe</span>
-  <h3>Govern what you built</h3>
-  <p>Leaked keys, authorization, prompt injection, least-privilege permissions for skills, connectors and agents, personal data under Ley 21.719, cost at scale, and when to hand off.</p>
-  <span class="curso-link">Open class 4 →</span>
-</a>
-
-<a class="curso-card" href="class5.html">
-  <span class="curso-tag">Day 3 · Sun 17 Jan · 10:45</span>
-  <span class="curso-sigla">Demo Day · reflection memo</span>
-  <h3>Demo Day and strategy revisited</h3>
-  <p>The deck built with AI, the 10-minute pitch, the rubric, what remains a moat when building is cheap, the road to production, and the AI work system you keep.</p>
-  <span class="curso-link">Open class 5 →</span>
-</a>
+<div class="curso-card is-soon">
+  <span class="curso-tag">Days 2 and 3 · 16 and 17 Jan</span>
+  <span class="curso-sigla">Classes 2 to 5</span>
+  <h3>Published before Day 2</h3>
+  <p>Day 2 builds on the web you made on Day 1. Its pages appear here before Saturday 16 January 2027.</p>
+</div>
 
 </div>
 ```
-
-## How the classes work
-
-Each class takes two two-hour blocks. The first opens with a recap of the class page, which you read beforehand, and starts the build lab; the second finishes the lab, then comes the critique and the milestone review. Class 4 is shorter and Class 5 is Demo Day; the [schedule](sessions.html) gives every block. Read each page before its day, 90 to 100 minutes; in the room you will spend most of the time building. Day 2 and Day 3 follow each other, so read the pages of Classes 2 to 5 in the seven weeks after Day 1.
-
-The simulators are safe to play with. The practice questions explain why each wrong option is wrong. The lab checklist is saved in your browser, so you can come back to it between days.
 
 ## Support pages
 
 | Page | When you need it |
 |---|---|
-| [Toolkit setup guide](setup.html) | Before Day 1 (accounts), in the setup clinic on Day 1 (repository, database, hosting, keys) and before Day 2 (model account) |
-| [Security checklist](security-checklist.html) | In the Class 4 lab on Day 3: fourteen checks run on your own app |
-| [Rubric](rubric.html) | Before every milestone and before Demo Day |
-
-One rule applies from the first minute. Until your team has completed the Class 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade.
-
-## What you will have used by the end
-
-| Building block | What it is for | Where you practice it |
-|---|---|---|
-| Prompt and plan mode | Saying what you want precisely enough to be built, and reading the plan first | Class 1 |
-| Web page and web app | Something a real user opens in a browser | Classes 1 and 2 |
-| Project instructions (CLAUDE.md) | Stop repeating conventions in every conversation | Classes 1 and 2 |
-| Skill | Make "how we do it here" repeatable | Classes 1 and 2 |
-| Connector (MCP) | Give the assistant scoped access to company systems | Classes 2 and 4 |
-| Agent | Let a model take steps, with your approval | Class 3 |
-| Automation | Work that starts on a schedule or an event | Class 3 |
-| Presentation | An HTML deck in minutes, then one generated from your evidence and verified by you | Classes 1 and 5 |
+| [Setup guide](setup.html) | Before Day 1: accounts, programs and the five tests |
+| [Day 1 slides](slides/day1.html) | The deck projected on Sunday 29 November |
+| [Rubric](rubric.html) | Before M1 |

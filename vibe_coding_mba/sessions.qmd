@@ -8,13 +8,7 @@ include-after-body:
     <script src="assets/vc-core.js"></script>
 ---
 
-The course runs on one Sunday in November and one weekend in January, with seven weeks in between. Each class takes two blocks. The first block opens with a recap of the class page, which you read beforehand, and starts the build lab. The second block finishes the lab, then two teams show their work for critique and the milestone review closes the class. Classes 2 and 3 follow this pattern, and Class 1 is a hands-on workshop; Class 4 has a 30-minute recap and the lab, with no critique, and Class 5 is the pitch clinic and Demo Day.
-
-On Day 1 every student builds their own web, for their own idea. The capstone is **one** application, and each class adds a layer to it.
-
-```{=html}
-<figure class="vc-fig" data-fig="course-layers"><figcaption>Each class adds one layer to the same product: 1, a deployed app and public page (prompt and brief); 2, login, database and undo (project instructions, a skill, a connector); 3, an AI capability with a test set (an agent step and an automation); 4, findings fixed and a decision (least privilege); 5, a pitch to a panel (a deck built with AI).</figcaption></figure>
-```
+The course runs on one Sunday in November and one weekend in January, with seven weeks in between. Day 1 is a hands-on workshop: every student builds their own web, for their own idea, with Claude Code. The programme of Days 2 and 3 is published before Day 2.
 
 ## Day 1, Sunday 29 November 2026
 
@@ -48,65 +42,18 @@ Questions go to the course channel or to [sebastian.azocarm@usm.cl](mailto:sebas
 ## Day 2, Saturday 16 January 2027
 
 ```{=html}
-<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Class 2 · framework and the first part of the build lab:120|Coffee break:30|Class 2 · build lab, critique and milestone review:120|Lunch:90|Class 3 · framework and the first part of the build lab:120|Coffee break:30|Class 3 · build lab, critique and milestone review:120"></div>
+<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Class 2:120|Coffee break:30|Class 2:120|Lunch:90|Class 3:120|Coffee break:30|Class 3:120"></div>
 ```
 
-### Class 2. Specify, iterate, keep what works
-
-Class page: [Class 2 · Specify, iterate, keep what works](class2.html)
-
-**Build goal.** The application stores data for signed-in users and has a version history you can roll back, and the team's assistants know how the team works: project instructions, one skill and one read-only connector.
-
-**08:00 to 10:00.** Framework recap (45): prompting as specification; small steps, checkpoints and rollback; where the data lives; UX for output that is sometimes wrong; the three things people call "the AI"; project instructions and skills; connectors and the Model Context Protocol. Then the live demo and the first part of the build lab: the database and sign-in, as two separate requests with two checkpoints (75).
-
-**10:30 to 12:30.** The build lab continues: a deliberate rollback, two UX patterns, the project instructions file, one skill that triggers, one read-only connector (45). Critique: two teams show a user story end to end and their skill being used; rubric criterion in focus, *functionality* (45). Milestone review: feedback on M1, briefing for M2 (30).
-
-### Class 3. Add intelligence, then prove it works
-
-Class page: [Class 3 · Add intelligence, then prove it works](class3.html)
-
-**Build goal.** The application uses a language model for one capability that matters to the user, the team can show a test set with results before and after a guardrail, and one step runs either as an agent that waits for approval or as a scheduled automation.
-
-**14:00 to 16:00.** Framework recap (45): what a model call costs; four patterns that cover most business cases; retrieval over company documents; agents and the three levels of autonomy; automations with owners, logs and limits; test sets. Then the live demo and the first part of the build lab: the products table, the model connected the right way, the AI feature deployed and tested at the public address (75).
-
-**16:30 to 18:30.** The build lab continues: the test set run before and after a guardrail, then one of two, the agentic step with approval or the morning digest (45). Critique: pass rates before and after the guardrail; rubric criterion in focus, *AI quality and safety* (45). Milestone review: M2 checked, M3 explained, Day 3 explained (30).
-
-**After 18:30.** The product is frozen: no new features until Demo Day. On Day 3 you only fix security findings. **M2** is the state of your repository at the end of Day 2; submit the link and each member's build log by **23:59**.
+The programme of Classes 2 and 3 is published before Day 2.
 
 ## Day 3, Sunday 17 January 2027
 
 ```{=html}
-<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Class 4 · framework and the build lab:120|Coffee break:15|Class 4 · build lab, last part:30|Class 5 · pitch clinic:30|Class 5 · Demo Day:60|Coffee break:15|Class 5 · Demo Day:60|Class 5 · strategy revisited:30|Class 5 · reflection and peer assessment:30"></div>
+<div class="vc-daybar" data-start="08:00" data-current="*" data-blocks="Class 4:120|Coffee break:15|Class 4:30|Class 5:90|Coffee break:15|Class 5:120"></div>
 ```
 
-### Class 4. Govern what you built
-
-Class page: [Class 4 · Govern what you built](class4.html)
-
-**Build goal.** No leaked secrets, authorization enforced, the assistants' permissions as small as the job allows, personal data handled deliberately, the monthly cost known, and the build / buy / vibe decision made: keep vibe coding it, hand it to engineering to build properly, buy a product, or stop.
-
-**08:00 to 10:00.** Framework recap (30): secrets, authorization, prompt injection, permissions, personal data under Ley 21.719, cost at scale, maintainability. Then the build lab (90), which opens with the [security checklist](security-checklist.html) run on your own app in the room and goes on to fix what it finds.
-
-**10:15 to 10:45.** The build lab ends with the cost at 10x and 100x and the build / buy / vibe decision (30). In this format Class 4 has no separate critique block: the questions an engineering team would ask go into your risk memo.
-
-### Class 5. Demo Day and strategy revisited
-
-Class page: [Class 5 · Demo Day and strategy revisited](class5.html)
-
-**10:45 to 11:15. Pitch clinic.** Teams generate the deck with AI from their own sources (build log, test results, the morning's security findings, cost figures) and check every number against its source (20). The order is drawn and every team tests its deployed address, its fallback video and its deck on the classroom screen (10). The structure of the pitch was rehearsed in the weeks before Day 2.
-
-**11:15 to 13:30. Demo Day** (120 minutes, with the coffee break at 12:15). Each team has 10 minutes plus 5 of questions in front of a panel (the instructor and two invited managers or alumni): a live demonstration with a user story, the problem and the baseline of the metric, evidence from the test set, the main security findings, the build / buy / vibe decision and a roadmap to production. The deck is generated with AI and its use is declared. The time fits eight teams; with more teams, the strategy block shortens.
-
-**13:30 to 14:00. Strategy revisited.** What remains a moat when building is cheap; citizen developers and how an organization governs them; the personal AI work system you keep after the course.
-
-**14:00 to 14:30. Reflection.** The reflection memo is started from the build log (20) and teams complete the peer assessment (10).
-
-## After the course
-
-| By | What | Who |
-|---|---|---|
-| Sunday 24 January 2027, 23:59 | **M3.** The AI feature deployed, the test set with results and the guardrail, the agentic step with approval and the scheduled automation, the brief's metric measured with the tool on five timed requests, and the two-page risk memo with its two annexes. | Team |
-| Sunday 24 January 2027, 23:59 | **Reflection memo**, 400 to 600 words, from the build log. | Individual |
+The programme of Classes 4 and 5 and Demo Day is published before Day 2.
 
 ## Deliverables and weights
 
@@ -119,7 +66,3 @@ Class page: [Class 5 · Demo Day and strategy revisited](class5.html)
 | Reflection memo and participation | Individual | Sunday 24 January 2027 | 15% |
 
 Everything is graded with the [rubric](rubric.html). Written work is due at 23:59 on the day shown.
-
-**The data rule.** Until your team has completed the Class 4 lab, closed every critical finding, and has the written agreement of the organization that owns the data, use only invented or de-identified information: no real names, phone numbers, addresses or tax numbers. Most teams will stay with de-identified data through Demo Day, and that costs nothing in the grade.
-
-**Work outside class.** The class pages take 90 to 100 minutes each, the milestones about 8 hours in total, and Demo Day preparation about 7 hours, most of it in the weeks between Day 1 and Day 2.
